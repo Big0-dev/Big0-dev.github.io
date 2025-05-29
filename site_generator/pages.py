@@ -217,6 +217,9 @@ class TermsPage(Page):
         return "legal"
 
 
+# In pages.py, update the ServicesPage class:
+
+
 class ServicesPage(Page):
     """Services listing page"""
 
@@ -246,7 +249,9 @@ class ServicesPage(Page):
 
     @property
     def meta_description(self) -> str:
-        return "Professional services offered by Hassan Kamran - AI consulting, software development, technical project management, and engineering solutions."
+        return (
+            "Comprehensive AI and technology solutions tailored to your business needs."
+        )
 
     def get_context(self) -> Dict[str, Any]:
         return {"services": self._services}

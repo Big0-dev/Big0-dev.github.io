@@ -60,7 +60,7 @@
     "url": "services.html",
     "title": "Services",
     "content": "",
-    "description": "Professional services offered by Hassan Kamran - AI consulting, software development, technical project management, and engineering solutions.",
+    "description": "Comprehensive AI and technology solutions tailored to your business needs.",
     "type": "page"
   },
   {
@@ -152,11 +152,11 @@
     "date": "2024-11-05"
   },
   {
-    "id": "service-python-automation",
-    "url": "services/python-automation.html",
-    "title": "Python Automation & Scripting",
-    "content": "Automate repetitive tasks and streamline workflows with custom Python solutions",
-    "description": "Automate repetitive tasks and streamline workflows with custom Python solutions",
+    "id": "service-ai-integration",
+    "url": "services/ai-integration.html",
+    "title": "AI & Machine Learning Integration",
+    "content": "Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights",
+    "description": "Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights",
     "type": "service"
   },
   {
@@ -168,27 +168,11 @@
     "type": "service"
   },
   {
-    "id": "service-ai-integration",
-    "url": "services/ai-integration.html",
-    "title": "AI & Machine Learning Integration",
-    "content": "Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights",
-    "description": "Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights",
-    "type": "service"
-  },
-  {
     "id": "service-software-development",
     "url": "services/software-development.html",
     "title": "Custom Software Development",
     "content": "Build robust, scalable software solutions tailored to your unique business requirements",
     "description": "Build robust, scalable software solutions tailored to your unique business requirements",
-    "type": "service"
-  },
-  {
-    "id": "service-web-development",
-    "url": "services/web-development.html",
-    "title": "Modern Web Development",
-    "content": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
-    "description": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
     "type": "service"
   },
   {
@@ -205,6 +189,22 @@
     "title": "Interactive Dashboard Development",
     "content": "Build powerful, real-time dashboards that visualize your key metrics and drive data-driven decisions",
     "description": "Build powerful, real-time dashboards that visualize your key metrics and drive data-driven decisions",
+    "type": "service"
+  },
+  {
+    "id": "service-web-development",
+    "url": "services/web-development.html",
+    "title": "Modern Web Development",
+    "content": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
+    "description": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
+    "type": "service"
+  },
+  {
+    "id": "service-python-automation",
+    "url": "services/python-automation.html",
+    "title": "Python Automation & Scripting",
+    "content": "Automate repetitive tasks and streamline workflows with custom Python solutions",
+    "description": "Automate repetitive tasks and streamline workflows with custom Python solutions",
     "type": "service"
   }
 ]

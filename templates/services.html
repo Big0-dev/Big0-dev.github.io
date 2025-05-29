@@ -18,228 +18,37 @@
         We provide end-to-end technology solutions that transform how businesses operate, compete, and grow in the digital age.
       </p>
     </div>
-    
-    <div class="services-categories">
-      <a href="#ai-services" class="category-card">
-        <div class="category-icon">{{ inject_svg('ai_brain', True) | safe }}</div>
-        <h3>AI & Machine Learning</h3>
-      </a>
-      <a href="#cloud-services" class="category-card">
-        <div class="category-icon">{{ inject_svg('cloud', True) | safe }}</div>
-        <h3>Cloud Solutions</h3>
-      </a>
-      <a href="#iot-services" class="category-card">
-        <div class="category-icon">{{ inject_svg('iot', True) | safe }}</div>
-        <h3>IoT Services</h3>
-      </a>
-      <a href="#data-services" class="category-card">
-        <div class="category-icon">{{ inject_svg('data', True) | safe }}</div>
-        <h3>Data Analytics</h3>
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- AI Services Section -->
-<section id="ai-services" class="service-section">
+<!-- All Services Grid -->
+<section class="all-services">
   <div class="container">
-    <div class="service-header">
-      <div class="service-icon-large">{{ inject_svg('ai_brain', True) | safe }}</div>
-      <h2>AI & Machine Learning Solutions</h2>
-      <p class="service-description">
-        Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent systems that learn and adapt.
-      </p>
-    </div>
-    
-    <div class="service-features-grid">
-      <div class="service-feature">
-        <h3>Business Intelligence & AI</h3>
-        <p>Transform raw data into actionable insights with AI-powered analytics and reporting.</p>
-        <ul class="feature-list">
-          <li>Predictive Analytics</li>
-          <li>Real-time Dashboards</li>
-          <li>Automated Reporting</li>
-          <li>Decision Support Systems</li>
+    <div class="services-grid">
+      {% for service in services %}
+      <div class="service-card">
+        {% if service.icon %}
+        <div class="service-icon">
+          {{ inject_svg(service.icon, True) | safe }}
+        </div>
+        {% endif %}
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.short_description }}</p>
+        {% if service.features %}
+        <ul class="service-features">
+          {% for feature in service.features[:4] %}
+          <li>{{ feature }}</li>
+          {% endfor %}
         </ul>
-        <a href="{{ services_page }}/business-intelligence" class="feature-link">Learn More →</a>
+        {% endif %}
+        {% if service.price %}
+        <div class="service-price">{{ service.price }}</div>
+        {% endif %}
+        <a href="{{ services_page }}/{{ service.slug }}" class="service-link">
+          Learn More <span>→</span>
+        </a>
       </div>
-      
-      <div class="service-feature">
-        <h3>Machine Learning Models</h3>
-        <p>Custom ML models designed and trained for your specific business needs.</p>
-        <ul class="feature-list">
-          <li>Classification & Regression</li>
-          <li>Natural Language Processing</li>
-          <li>Computer Vision</li>
-          <li>Recommendation Systems</li>
-        </ul>
-        <a href="{{ services_page }}/machine-learning" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>Responsible AI Services</h3>
-        <p>Ethical AI implementation with transparency, fairness, and accountability.</p>
-        <ul class="feature-list">
-          <li>AI Ethics Consulting</li>
-          <li>Bias Detection & Mitigation</li>
-          <li>Explainable AI Solutions</li>
-          <li>Compliance & Governance</li>
-        </ul>
-        <a href="{{ services_page }}/responsible-ai" class="feature-link">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Cloud Services Section -->
-<section id="cloud-services" class="service-section alt-bg">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-icon-large">{{ inject_svg('cloud', True) | safe }}</div>
-      <h2>Cloud Solutions</h2>
-      <p class="service-description">
-        Scalable, secure, and cost-effective cloud infrastructure designed for modern businesses.
-      </p>
-    </div>
-    
-    <div class="service-features-grid">
-      <div class="service-feature">
-        <h3>Cloud Migration</h3>
-        <p>Seamless transition to the cloud with minimal disruption to your operations.</p>
-        <ul class="feature-list">
-          <li>Assessment & Planning</li>
-          <li>Data Migration</li>
-          <li>Application Modernization</li>
-          <li>Hybrid Cloud Solutions</li>
-        </ul>
-        <a href="{{ services_page }}/cloud-migration" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>Cloud Infrastructure</h3>
-        <p>Build and manage robust cloud environments optimized for performance.</p>
-        <ul class="feature-list">
-          <li>AWS, Azure, GCP</li>
-          <li>Container Orchestration</li>
-          <li>Serverless Architecture</li>
-          <li>Infrastructure as Code</li>
-        </ul>
-        <a href="{{ services_page }}/cloud-infrastructure" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>Cloud Security</h3>
-        <p>Comprehensive security solutions to protect your cloud assets.</p>
-        <ul class="feature-list">
-          <li>Security Architecture</li>
-          <li>Compliance Management</li>
-          <li>Identity & Access Management</li>
-          <li>Threat Detection & Response</li>
-        </ul>
-        <a href="{{ services_page }}/cloud-security" class="feature-link">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IoT Services Section -->
-<section id="iot-services" class="service-section">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-icon-large">{{ inject_svg('iot', True) | safe }}</div>
-      <h2>Internet of Things (IoT)</h2>
-      <p class="service-description">
-        Connect, monitor, and control devices to create smart, efficient operations.
-      </p>
-    </div>
-    
-    <div class="service-features-grid">
-      <div class="service-feature">
-        <h3>IoT Solutions</h3>
-        <p>End-to-end IoT implementations for various industries and use cases.</p>
-        <ul class="feature-list">
-          <li>Smart Manufacturing</li>
-          <li>Connected Healthcare</li>
-          <li>Smart Cities</li>
-          <li>Agricultural IoT</li>
-        </ul>
-        <a href="{{ services_page }}/iot-solutions" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>IoT Platform Development</h3>
-        <p>Custom IoT platforms to manage and analyze device data at scale.</p>
-        <ul class="feature-list">
-          <li>Device Management</li>
-          <li>Data Collection & Storage</li>
-          <li>Real-time Analytics</li>
-          <li>Remote Monitoring</li>
-        </ul>
-        <a href="{{ services_page }}/iot-platform" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>Edge Computing</h3>
-        <p>Process data closer to the source for faster insights and reduced latency.</p>
-        <ul class="feature-list">
-          <li>Edge AI Implementation</li>
-          <li>Local Data Processing</li>
-          <li>Offline Capabilities</li>
-          <li>Bandwidth Optimization</li>
-        </ul>
-        <a href="{{ services_page }}/edge-computing" class="feature-link">Learn More →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Data Services Section -->
-<section id="data-services" class="service-section alt-bg">
-  <div class="container">
-    <div class="service-header">
-      <div class="service-icon-large">{{ inject_svg('data', True) | safe }}</div>
-      <h2>Data Analytics & Engineering</h2>
-      <p class="service-description">
-        Turn your data into a strategic asset with advanced analytics and robust data infrastructure.
-      </p>
-    </div>
-    
-    <div class="service-features-grid">
-      <div class="service-feature">
-        <h3>Data Engineering</h3>
-        <p>Build scalable data pipelines and infrastructure for reliable insights.</p>
-        <ul class="feature-list">
-          <li>ETL/ELT Pipelines</li>
-          <li>Data Warehousing</li>
-          <li>Data Lakes</li>
-          <li>Stream Processing</li>
-        </ul>
-        <a href="{{ services_page }}/data-engineering" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>Advanced Analytics</h3>
-        <p>Uncover patterns and trends with sophisticated analytical techniques.</p>
-        <ul class="feature-list">
-          <li>Statistical Analysis</li>
-          <li>Predictive Modeling</li>
-          <li>Data Visualization</li>
-          <li>Business Metrics</li>
-        </ul>
-        <a href="{{ services_page }}/advanced-analytics" class="feature-link">Learn More →</a>
-      </div>
-      
-      <div class="service-feature">
-        <h3>Data Governance</h3>
-        <p>Ensure data quality, security, and compliance across your organization.</p>
-        <ul class="feature-list">
-          <li>Data Quality Management</li>
-          <li>Master Data Management</li>
-          <li>Privacy & Compliance</li>
-          <li>Data Cataloging</li>
-        </ul>
-        <a href="{{ services_page }}/data-governance" class="feature-link">Learn More →</a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

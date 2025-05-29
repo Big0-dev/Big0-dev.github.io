@@ -34,9 +34,11 @@ class BlogPost(ContentItem):
 @dataclass
 class Service(ContentItem):
     icon: str = None
-    image: str = None  # Add main service image
+    image: str = None
     price: str = None
     features: List[str] = None
+    order: int = 999  # Keep order for sorting
+    short_description: str = ""  # For the card description
 
     def __post_init__(self):
         if self.features is None:
@@ -296,7 +298,7 @@ class ContentLoader:
         return slug or "untitled"
 
     def load_services(self) -> List[Service]:
-        """Load services from markdown files with image support"""
+        """Load services from markdown files"""
         services = []
         services_dir = Path(self.config.services_dir)
 
@@ -328,28 +330,41 @@ class ContentLoader:
                     # Reset markdown for each service
                     self.md.reset()
 
+                    # Process template includes
+                    if self.renderer:
+                        markdown_content = self._process_template_includes(
+                            markdown_content, is_blog=False
+                        )
+
                     # Convert to HTML
                     html_content = self.md.convert(markdown_content)
+
+                    # Parse features list
+                    features = []
+                    if metadata.get("features"):
+                        features = [f.strip() for f in metadata["features"].split(",")]
 
                     service = Service(
                         slug=file_path.stem,
                         title=metadata.get("title", "Untitled Service"),
                         content_html=html_content,
                         meta_description=metadata.get("description", "")[:160],
+                        short_description=metadata.get(
+                            "short_description", metadata.get("description", "")
+                        )[:200],
                         icon=metadata.get("icon"),
                         image=metadata.get("image"),
                         price=metadata.get("price"),
-                        features=[
-                            f.strip() for f in metadata.get("features", "").split(",")
-                        ]
-                        if metadata.get("features")
-                        else [],
+                        features=features,
+                        order=int(metadata.get("order", 999)),
                     )
                     services.append(service)
 
                 except Exception as e:
                     print(f"Error loading service {file_path.name}: {e}")
 
+        # Sort services by order, then by title
+        services.sort(key=lambda s: (s.order, s.title))
         return services
 
     def load_gallery_images(self) -> List[GalleryImage]:

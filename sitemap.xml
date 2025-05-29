@@ -66,7 +66,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://big0.dev/services/python-automation.html</loc>
+    <loc>https://big0.dev/services/ai-integration.html</loc>
     <lastmod>2025-05-30</lastmod>
     <priority>0.8</priority>
   </url>
@@ -76,17 +76,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://big0.dev/services/ai-integration.html</loc>
-    <lastmod>2025-05-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://big0.dev/services/software-development.html</loc>
-    <lastmod>2025-05-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://big0.dev/services/web-development.html</loc>
     <lastmod>2025-05-30</lastmod>
     <priority>0.8</priority>
   </url>
@@ -97,6 +87,16 @@
   </url>
   <url>
     <loc>https://big0.dev/services/dashboards.html</loc>
+    <lastmod>2025-05-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/web-development.html</loc>
+    <lastmod>2025-05-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/python-automation.html</loc>
     <lastmod>2025-05-30</lastmod>
     <priority>0.8</priority>
   </url>

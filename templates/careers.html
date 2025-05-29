@@ -1,0 +1,225 @@
+<!-- careers.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        Join Our <span class="gradient-text">Team</span>
+      </h1>
+      <p class="page-subtitle">
+        Build the future of AI with passionate innovators
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Why Big0 Section -->
+<section class="why-big0">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Work at <span class="gradient-text">Big0</span>?</h2>
+      <p class="lead">
+        We're not just building technology – we're shaping the future of how
+        businesses operate and grow.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          {{ inject_svg('innovation', True) | safe }}
+        </div>
+        <h3>Cutting-edge Projects</h3>
+        <p>Work on the latest AI, ML, and cloud technologies</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">{{ inject_svg('growth', True) | safe }}</div>
+        <h3>Career Growth</h3>
+        <p>Continuous learning and advancement opportunities</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">{{ inject_svg('balance', True) | safe }}</div>
+        <h3>Work-Life Balance</h3>
+        <p>Flexible schedules and remote work options</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">{{ inject_svg('team', True) | safe }}</div>
+        <h3>Amazing Team</h3>
+        <p>Collaborate with talented professionals worldwide</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          {{ inject_svg('benefits', True) | safe }}
+        </div>
+        <h3>Great Benefits</h3>
+        <p>Competitive salary, health insurance, and more</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">{{ inject_svg('impact', True) | safe }}</div>
+        <h3>Make an Impact</h3>
+        <p>Work on solutions that transform businesses</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Open Positions Section -->
+<section class="open-positions">
+  <div class="container">
+    <h2 class="section-heading">
+      Open <span class="gradient-text">Positions</span>
+    </h2>
+
+    <div class="positions-filters">
+      <button class="filter-btn active" data-filter="all">All Positions</button>
+      <button class="filter-btn" data-filter="engineering">Engineering</button>
+      <button class="filter-btn" data-filter="data">Data & AI</button>
+      <button class="filter-btn" data-filter="cloud">Cloud</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+    </div>
+
+    <div class="positions-list">
+      <div class="position-card" data-category="engineering">
+        <div class="position-header">
+          <h3>Senior Full Stack Engineer</h3>
+          <span class="position-type">Full-time</span>
+        </div>
+        <div class="position-meta">
+          <span class="location"
+            >{{ inject_svg('location', True) | safe }} San Francisco /
+            Remote</span
+          >
+          <span class="department"
+            >{{ inject_svg('team', True) | safe }} Engineering</span
+          >
+        </div>
+        <p>
+          Build scalable web applications using modern technologies like React,
+          Node.js, and cloud services.
+        </p>
+        <a href="#" class="position-link">View Details →</a>
+      </div>
+
+      <div class="position-card" data-category="data">
+        <div class="position-header">
+          <h3>Machine Learning Engineer</h3>
+          <span class="position-type">Full-time</span>
+        </div>
+        <div class="position-meta">
+          <span class="location"
+            >{{ inject_svg('location', True) | safe }} New York / Remote</span
+          >
+          <span class="department"
+            >{{ inject_svg('team', True) | safe }} Data & AI</span
+          >
+        </div>
+        <p>
+          Design and implement ML models for enterprise clients across various
+          industries.
+        </p>
+        <a href="#" class="position-link">View Details →</a>
+      </div>
+
+      <div class="position-card" data-category="cloud">
+        <div class="position-header">
+          <h3>Cloud Solutions Architect</h3>
+          <span class="position-type">Full-time</span>
+        </div>
+        <div class="position-meta">
+          <span class="location"
+            >{{ inject_svg('location', True) | safe }} Austin / Remote</span
+          >
+          <span class="department"
+            >{{ inject_svg('team', True) | safe }} Cloud Services</span
+          >
+        </div>
+        <p>
+          Design and implement cloud infrastructure solutions for enterprise
+          clients.
+        </p>
+        <a href="#" class="position-link">View Details →</a>
+      </div>
+
+      <div class="position-card" data-category="data">
+        <div class="position-header">
+          <h3>Data Engineer</h3>
+          <span class="position-type">Full-time</span>
+        </div>
+        <div class="position-meta">
+          <span class="location"
+            >{{ inject_svg('location', True) | safe }} Remote</span
+          >
+          <span class="department"
+            >{{ inject_svg('team', True) | safe }} Data & AI</span
+          >
+        </div>
+        <p>
+          Build and maintain data pipelines and infrastructure for large-scale
+          analytics.
+        </p>
+        <a href="#" class="position-link">View Details →</a>
+      </div>
+
+      <div class="position-card" data-category="business">
+        <div class="position-header">
+          <h3>Product Manager</h3>
+          <span class="position-type">Full-time</span>
+        </div>
+        <div class="position-meta">
+          <span class="location"
+            >{{ inject_svg('location', True) | safe }} San Francisco</span
+          >
+          <span class="department"
+            >{{ inject_svg('team', True) | safe }} Product</span
+          >
+        </div>
+        <p>
+          Lead product development for our AI-powered business intelligence
+          platform.
+        </p>
+        <a href="#" class="position-link">View Details →</a>
+      </div>
+    </div>
+
+    <div class="careers-cta">
+      <p>
+        Don't see a position that fits? We're always looking for talented
+        individuals.
+      </p>
+      <a href="mailto:careers@big0.dev" class="primary-btn">
+        <span>Send Your Resume</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Culture Section -->
+<section class="careers-culture">
+  <div class="container">
+    <div class="culture-grid">
+      <div class="culture-content">
+        <h2>Our <span class="gradient-text">Culture</span></h2>
+        <p class="lead">
+          At Big0, we foster an environment where innovation thrives, ideas are
+          valued, and everyone has the opportunity to make a real impact.
+        </p>
+        <ul class="culture-values">
+          <li>Collaborative and inclusive workplace</li>
+          <li>Continuous learning and development</li>
+          <li>Innovation and creative problem-solving</li>
+          <li>Work-life balance and flexibility</li>
+          <li>Recognition and rewards for excellence</li>
+        </ul>
+      </div>
+      <div class="culture-images">
+        <img src="{{ static }}/culture-1.jpg" alt="Team collaboration" />
+        <img src="{{ static }}/culture-2.jpg" alt="Office environment" />
+      </div>
+    </div>
+  </div>
+</section>

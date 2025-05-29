@@ -1,0 +1,133 @@
+<!-- resources.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        Resources & <span class="gradient-text">Learning</span>
+      </h1>
+      <p class="page-subtitle">
+        Guides, whitepapers, and tools to help you succeed
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Resources Grid Section -->
+<section class="resources-main">
+  <div class="container">
+    <div class="resources-categories">
+      <button class="category-btn active" data-category="all">
+        All Resources
+      </button>
+      <button class="category-btn" data-category="whitepapers">
+        Whitepapers
+      </button>
+      <button class="category-btn" data-category="guides">Guides</button>
+      <button class="category-btn" data-category="case-studies">
+        Case Studies
+      </button>
+      <button class="category-btn" data-category="tools">Tools</button>
+      <button class="category-btn" data-category="webinars">Webinars</button>
+    </div>
+
+    <div class="resources-grid">
+      <!-- Whitepaper -->
+      <div class="resource-card" data-category="whitepapers">
+        <div class="resource-type">Whitepaper</div>
+        <h3>The Future of AI in Enterprise</h3>
+        <p>
+          Comprehensive analysis of AI adoption trends and best practices for
+          enterprise implementation.
+        </p>
+        <div class="resource-meta">
+          <span>{{ inject_svg('calendar', True) | safe }} Nov 2024</span>
+          <span>{{ inject_svg('time', True) | safe }} 15 min read</span>
+        </div>
+        <a href="#" class="resource-link">Download PDF →</a>
+      </div>
+
+      <!-- Guide -->
+      <div class="resource-card" data-category="guides">
+        <div class="resource-type">Guide</div>
+        <h3>Cloud Migration Checklist</h3>
+        <p>
+          Step-by-step guide to successfully migrate your infrastructure to the
+          cloud.
+        </p>
+        <div class="resource-meta">
+          <span>{{ inject_svg('calendar', True) | safe }} Oct 2024</span>
+          <span>{{ inject_svg('pages', True) | safe }} 24 pages</span>
+        </div>
+        <a href="#" class="resource-link">Access Guide →</a>
+      </div>
+
+      <!-- Case Study -->
+      <div class="resource-card" data-category="case-studies">
+        <div class="resource-type">Case Study</div>
+        <h3>FinTech Corp: AI Transformation</h3>
+        <p>
+          How we helped FinTech Corp increase efficiency by 40% with AI-powered
+          analytics.
+        </p>
+        <div class="resource-meta">
+          <span>{{ inject_svg('industry', True) | safe }} Finance</span>
+          <span
+            >{{ inject_svg('results', True) | safe }} 40% efficiency gain</span
+          >
+        </div>
+        <a href="#" class="resource-link">Read Case Study →</a>
+      </div>
+
+      <!-- Tool -->
+      <div class="resource-card" data-category="tools">
+        <div class="resource-type">Tool</div>
+        <h3>ROI Calculator</h3>
+        <p>
+          Calculate the potential return on investment for your AI
+          implementation project.
+        </p>
+        <div class="resource-meta">
+          <span>{{ inject_svg('calculator', True) | safe }} Interactive</span>
+          <span>{{ inject_svg('free', True) | safe }} Free</span>
+        </div>
+        <a href="#" class="resource-link">Use Calculator →</a>
+      </div>
+
+      <!-- Webinar -->
+      <div class="resource-card" data-category="webinars">
+        <div class="resource-type">Webinar</div>
+        <h3>Responsible AI Implementation</h3>
+        <p>
+          Learn best practices for ethical AI deployment in your organization.
+        </p>
+        <div class="resource-meta">
+          <span>{{ inject_svg('video', True) | safe }} 45 minutes</span>
+          <span>{{ inject_svg('users', True) | safe }} 500+ attendees</span>
+        </div>
+        <a href="#" class="resource-link">Watch Recording →</a>
+      </div>
+
+      <!-- More resources... -->
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-card">
+      <h2>Stay Updated</h2>
+      <p>
+        Get the latest insights, resources, and industry news delivered to your
+        inbox.
+      </p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="primary-btn">
+          <span>Subscribe</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

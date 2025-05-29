@@ -1,0 +1,192 @@
+<!-- gallery.html - Big0 Version -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">Project <span class="gradient-text">Gallery</span></h1>
+      <p class="page-subtitle">Showcasing our innovations and client success stories</p>
+    </div>
+  </div>
+</div>
+
+<section class="gallery-section">
+  <div class="container">
+    <!-- Gallery Filters -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai-projects">AI Projects</button>
+      <button class="filter-btn" data-filter="cloud">Cloud Solutions</button>
+      <button class="filter-btn" data-filter="iot">IoT Implementations</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+      <button class="filter-btn" data-filter="team">Team</button>
+    </div>
+    
+    <div class="gallery-grid">
+      {% for image in images %}
+      <div class="gallery-item" data-category="{{ image.category | lower | replace(' ', '-') }}">
+        <button 
+          class="gallery-link" 
+          popovertarget="gallery-lightbox-{{ loop.index }}"
+          popovertargetaction="toggle"
+        >
+          <img 
+            src="{{ gallery_url }}/{{ image.filename }}" 
+            alt="{{ image.title }}"
+            loading="lazy"
+          />
+          <div class="gallery-overlay">
+            <div class="overlay-content">
+              <h3>{{ image.title }}</h3>
+              <p class="gallery-category">{{ image.category }}</p>
+              <span class="view-icon">
+                {{ inject_svg('expand', True) | safe }}
+              </span>
+            </div>
+          </div>
+        </button>
+        
+        <!-- Lightbox popover -->
+        <div 
+          id="gallery-lightbox-{{ loop.index }}" 
+          popover="manual"
+          class="gallery-lightbox-popover"
+        >
+          <div class="lightbox-content">
+            <button 
+              class="lightbox-close" 
+              popovertarget="gallery-lightbox-{{ loop.index }}"
+              popovertargetaction="hide"
+              aria-label="Close"
+            >
+              {{ inject_svg('close', True) | safe }}
+            </button>
+            
+            <!-- Navigation -->
+            {% if loop.index > 1 %}
+            <button 
+              class="lightbox-nav prev"
+              popovertarget="gallery-lightbox-{{ loop.index }}"
+              popovertargetaction="hide"
+              onclick="setTimeout(() => document.getElementById('gallery-lightbox-{{ loop.index - 1 }}').showPopover(), 50)"
+              aria-label="Previous image"
+            >
+              {{ inject_svg('arrow-left', True) | safe }}
+            </button>
+            {% endif %}
+            
+            {% if loop.index < images|length %}
+            <button 
+              class="lightbox-nav next"
+              popovertarget="gallery-lightbox-{{ loop.index }}"
+              popovertargetaction="hide"
+              onclick="setTimeout(() => document.getElementById('gallery-lightbox-{{ loop.index + 1 }}').showPopover(), 50)"
+              aria-label="Next image"
+            >
+              {{ inject_svg('arrow-right', True) | safe }}
+            </button>
+            {% endif %}
+            
+            <div class="lightbox-inner">
+              <img src="{{ gallery_url }}/{{ image.filename }}" alt="{{ image.title }}" />
+              <div class="lightbox-details">
+                <h2>{{ image.title }}</h2>
+                <div class="lightbox-meta">
+                  <span class="lightbox-category">{{ image.category }}</span>
+                  <span class="lightbox-date">{{ image.date.strftime('%B %Y') }}</span>
+                </div>
+                {% if image.description %}
+                <p class="lightbox-description">{{ image.description }}</p>
+                {% endif %}
+                {% if image.tags %}
+                <div class="lightbox-tags">
+                  {% for tag in image.tags %}
+                  <span class="tag">#{{ tag }}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if pagination %}
+    <div class="pagination">
+      <div class="pagination-controls">
+        {% if pagination.has_prev %}
+        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
+          <span class="pagination-icon">{{ inject_svg('arrow-left', True) | safe }}</span>
+          Previous
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          <span class="pagination-icon">{{ inject_svg('arrow-left', True) | safe }}</span>
+          Previous
+        </span>
+        {% endif %}
+
+        <div class="pagination-numbers">
+          {% for page in range(1, pagination.total_pages + 1) %}
+            {% if page == pagination.current_page %}
+              <span class="page-number active">{{ page }}</span>
+            {% else %}
+              <a href="./gallery{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-number">{{ page }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if pagination.has_next %}
+        <a href="{{ pagination.next_url }}" class="pagination-link next">
+          Next
+          <span class="pagination-icon">{{ inject_svg('arrow-right', True) | safe }}</span>
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          Next
+          <span class="pagination-icon">{{ inject_svg('arrow-right', True) | safe }}</span>
+        </span>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+  const openPopover = document.querySelector('.gallery-lightbox-popover:popover-open');
+  if (!openPopover) return;
+  
+  if (event.key === 'Escape') {
+    openPopover.hidePopover();
+  }
+});
+
+// Filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filter = this.dataset.filter;
+      
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter items
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>

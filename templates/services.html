@@ -1,0 +1,305 @@
+<!-- services.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">What We <span class="gradient-text">Do</span></h1>
+      <p class="page-subtitle">Comprehensive AI and technology solutions tailored to your business needs</p>
+    </div>
+  </div>
+</div>
+
+<!-- Services Overview -->
+<section class="services-overview">
+  <div class="container">
+    <div class="overview-content">
+      <h2 class="text-center">Empowering Businesses Through <span class="gradient-text">Innovation</span></h2>
+      <p class="lead text-center">
+        We provide end-to-end technology solutions that transform how businesses operate, compete, and grow in the digital age.
+      </p>
+    </div>
+    
+    <div class="services-categories">
+      <a href="#ai-services" class="category-card">
+        <div class="category-icon">{{ inject_svg('ai_brain', True) | safe }}</div>
+        <h3>AI & Machine Learning</h3>
+      </a>
+      <a href="#cloud-services" class="category-card">
+        <div class="category-icon">{{ inject_svg('cloud', True) | safe }}</div>
+        <h3>Cloud Solutions</h3>
+      </a>
+      <a href="#iot-services" class="category-card">
+        <div class="category-icon">{{ inject_svg('iot', True) | safe }}</div>
+        <h3>IoT Services</h3>
+      </a>
+      <a href="#data-services" class="category-card">
+        <div class="category-icon">{{ inject_svg('data', True) | safe }}</div>
+        <h3>Data Analytics</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AI Services Section -->
+<section id="ai-services" class="service-section">
+  <div class="container">
+    <div class="service-header">
+      <div class="service-icon-large">{{ inject_svg('ai_brain', True) | safe }}</div>
+      <h2>AI & Machine Learning Solutions</h2>
+      <p class="service-description">
+        Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent systems that learn and adapt.
+      </p>
+    </div>
+    
+    <div class="service-features-grid">
+      <div class="service-feature">
+        <h3>Business Intelligence & AI</h3>
+        <p>Transform raw data into actionable insights with AI-powered analytics and reporting.</p>
+        <ul class="feature-list">
+          <li>Predictive Analytics</li>
+          <li>Real-time Dashboards</li>
+          <li>Automated Reporting</li>
+          <li>Decision Support Systems</li>
+        </ul>
+        <a href="{{ services_page }}/business-intelligence" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Machine Learning Models</h3>
+        <p>Custom ML models designed and trained for your specific business needs.</p>
+        <ul class="feature-list">
+          <li>Classification & Regression</li>
+          <li>Natural Language Processing</li>
+          <li>Computer Vision</li>
+          <li>Recommendation Systems</li>
+        </ul>
+        <a href="{{ services_page }}/machine-learning" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Responsible AI Services</h3>
+        <p>Ethical AI implementation with transparency, fairness, and accountability.</p>
+        <ul class="feature-list">
+          <li>AI Ethics Consulting</li>
+          <li>Bias Detection & Mitigation</li>
+          <li>Explainable AI Solutions</li>
+          <li>Compliance & Governance</li>
+        </ul>
+        <a href="{{ services_page }}/responsible-ai" class="feature-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cloud Services Section -->
+<section id="cloud-services" class="service-section alt-bg">
+  <div class="container">
+    <div class="service-header">
+      <div class="service-icon-large">{{ inject_svg('cloud', True) | safe }}</div>
+      <h2>Cloud Solutions</h2>
+      <p class="service-description">
+        Scalable, secure, and cost-effective cloud infrastructure designed for modern businesses.
+      </p>
+    </div>
+    
+    <div class="service-features-grid">
+      <div class="service-feature">
+        <h3>Cloud Migration</h3>
+        <p>Seamless transition to the cloud with minimal disruption to your operations.</p>
+        <ul class="feature-list">
+          <li>Assessment & Planning</li>
+          <li>Data Migration</li>
+          <li>Application Modernization</li>
+          <li>Hybrid Cloud Solutions</li>
+        </ul>
+        <a href="{{ services_page }}/cloud-migration" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Cloud Infrastructure</h3>
+        <p>Build and manage robust cloud environments optimized for performance.</p>
+        <ul class="feature-list">
+          <li>AWS, Azure, GCP</li>
+          <li>Container Orchestration</li>
+          <li>Serverless Architecture</li>
+          <li>Infrastructure as Code</li>
+        </ul>
+        <a href="{{ services_page }}/cloud-infrastructure" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Cloud Security</h3>
+        <p>Comprehensive security solutions to protect your cloud assets.</p>
+        <ul class="feature-list">
+          <li>Security Architecture</li>
+          <li>Compliance Management</li>
+          <li>Identity & Access Management</li>
+          <li>Threat Detection & Response</li>
+        </ul>
+        <a href="{{ services_page }}/cloud-security" class="feature-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IoT Services Section -->
+<section id="iot-services" class="service-section">
+  <div class="container">
+    <div class="service-header">
+      <div class="service-icon-large">{{ inject_svg('iot', True) | safe }}</div>
+      <h2>Internet of Things (IoT)</h2>
+      <p class="service-description">
+        Connect, monitor, and control devices to create smart, efficient operations.
+      </p>
+    </div>
+    
+    <div class="service-features-grid">
+      <div class="service-feature">
+        <h3>IoT Solutions</h3>
+        <p>End-to-end IoT implementations for various industries and use cases.</p>
+        <ul class="feature-list">
+          <li>Smart Manufacturing</li>
+          <li>Connected Healthcare</li>
+          <li>Smart Cities</li>
+          <li>Agricultural IoT</li>
+        </ul>
+        <a href="{{ services_page }}/iot-solutions" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>IoT Platform Development</h3>
+        <p>Custom IoT platforms to manage and analyze device data at scale.</p>
+        <ul class="feature-list">
+          <li>Device Management</li>
+          <li>Data Collection & Storage</li>
+          <li>Real-time Analytics</li>
+          <li>Remote Monitoring</li>
+        </ul>
+        <a href="{{ services_page }}/iot-platform" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Edge Computing</h3>
+        <p>Process data closer to the source for faster insights and reduced latency.</p>
+        <ul class="feature-list">
+          <li>Edge AI Implementation</li>
+          <li>Local Data Processing</li>
+          <li>Offline Capabilities</li>
+          <li>Bandwidth Optimization</li>
+        </ul>
+        <a href="{{ services_page }}/edge-computing" class="feature-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Services Section -->
+<section id="data-services" class="service-section alt-bg">
+  <div class="container">
+    <div class="service-header">
+      <div class="service-icon-large">{{ inject_svg('data', True) | safe }}</div>
+      <h2>Data Analytics & Engineering</h2>
+      <p class="service-description">
+        Turn your data into a strategic asset with advanced analytics and robust data infrastructure.
+      </p>
+    </div>
+    
+    <div class="service-features-grid">
+      <div class="service-feature">
+        <h3>Data Engineering</h3>
+        <p>Build scalable data pipelines and infrastructure for reliable insights.</p>
+        <ul class="feature-list">
+          <li>ETL/ELT Pipelines</li>
+          <li>Data Warehousing</li>
+          <li>Data Lakes</li>
+          <li>Stream Processing</li>
+        </ul>
+        <a href="{{ services_page }}/data-engineering" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Advanced Analytics</h3>
+        <p>Uncover patterns and trends with sophisticated analytical techniques.</p>
+        <ul class="feature-list">
+          <li>Statistical Analysis</li>
+          <li>Predictive Modeling</li>
+          <li>Data Visualization</li>
+          <li>Business Metrics</li>
+        </ul>
+        <a href="{{ services_page }}/advanced-analytics" class="feature-link">Learn More →</a>
+      </div>
+      
+      <div class="service-feature">
+        <h3>Data Governance</h3>
+        <p>Ensure data quality, security, and compliance across your organization.</p>
+        <ul class="feature-list">
+          <li>Data Quality Management</li>
+          <li>Master Data Management</li>
+          <li>Privacy & Compliance</li>
+          <li>Data Cataloging</li>
+        </ul>
+        <a href="{{ services_page }}/data-governance" class="feature-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="our-process">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-heading">Our <span class="gradient-text">Process</span></h2>
+      <p class="section-subtitle">A proven methodology for delivering exceptional results</p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Discovery</h3>
+          <p>We analyze your business needs, challenges, and goals to design the perfect solution.</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Strategy</h3>
+          <p>Develop a comprehensive roadmap aligned with your business objectives and timeline.</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Implementation</h3>
+          <p>Execute the solution with agile methodologies, ensuring quality and flexibility.</p>
+        </div>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Optimization</h3>
+          <p>Continuously monitor, improve, and scale your solution for maximum impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="services-cta">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how our services can help you achieve your goals</p>
+        <button class="primary-btn" popovertarget="modal">
+          <span>Schedule a Consultation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

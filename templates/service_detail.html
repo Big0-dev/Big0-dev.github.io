@@ -1,0 +1,41 @@
+<section class="service-detail">
+  <div class="container">
+    <div class="service-header">
+      <h1>{{ title }}</h1>
+      {% if price %}
+      <div class="service-price-badge">{{ price }}</div>
+      {% endif %}
+    </div>
+
+    {% if image %}
+    <div class="service-hero-image">
+      <img src="../static/{{ image }}" alt="{{ title }}" />
+    </div>
+    {% endif %}
+
+    <div class="service-content">{{ service_content | safe }}</div>
+
+    {% if features %}
+    <div class="service-features-section">
+      <h2>Key Features</h2>
+      <ul class="service-features-list">
+        {% for feature in features %}
+        <li>{{ feature }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="service-cta">
+      <h2>Ready to Get Started?</h2>
+      <p>Let's discuss how this service can help transform your business.</p>
+      <button class="popover-button btn primary-btn" popovertarget="modal">
+        Get in Touch
+      </button>
+    </div>
+
+    <div class="service-navigation">
+      <a href="../services.html">← Back to Services</a>
+    </div>
+  </div>
+</section>

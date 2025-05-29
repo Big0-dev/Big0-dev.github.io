@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://big0.dev/</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/hero.avif</image:loc>
+      <image:title>Next Level Innovation hero image</image:title>
+    </image:image>
+  </url>
+</urlset>

@@ -1,0 +1,92 @@
+<!-- blog.html - Big0 Version -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">Tech <span class="gradient-text">Insights</span></h1>
+      <p class="page-subtitle">
+        Industry trends, technical deep-dives, and innovation stories from the frontlines of AI
+      </p>
+    </div>
+  </div>
+</div>
+
+<section class="blog-section">
+  <div class="container">
+    <!-- Category Filter -->
+    <div class="blog-filters">
+      <button class="filter-btn active" data-category="all">All Posts</button>
+      <button class="filter-btn" data-category="ai-ml">AI & ML</button>
+      <button class="filter-btn" data-category="cloud">Cloud</button>
+      <button class="filter-btn" data-category="iot">IoT</button>
+      <button class="filter-btn" data-category="data">Data</button>
+      <button class="filter-btn" data-category="industry">Industry</button>
+    </div>
+    
+    <div class="blog-grid">
+      {% for post in blog_posts %}
+      <article class="blog-card" data-category="{{ post.category | lower | replace(' ', '-') }}">
+        <div class="blog-card-image">
+          <img src="{{ post.image_url }}" alt="{{ post.title }}" loading="lazy" />
+          <div class="blog-card-category">{{ post.category }}</div>
+        </div>
+        
+        <div class="blog-card-content">
+          <h3><a href="{{ post.filename }}">{{ post.title }}</a></h3>
+          <p>{{ post.meta_des | truncate(150) }}</p>
+          
+          <div class="blog-card-footer">
+            <span class="blog-date">{{ post.date }}</span>
+            <a href="{{ post.filename }}" class="read-more">
+              Read More 
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    
+    {% if pagination %}
+    <div class="pagination">
+      <div class="pagination-controls">
+        {% if pagination.has_prev %}
+        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
+          <span class="pagination-icon">{{ inject_svg('arrow-left', True) | safe }}</span>
+          Previous
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          <span class="pagination-icon">{{ inject_svg('arrow-left', True) | safe }}</span>
+          Previous
+        </span>
+        {% endif %}
+        
+        <div class="pagination-numbers">
+          {% for page in range(1, pagination.total_pages + 1) %}
+            {% if page == pagination.current_page %}
+              <span class="page-number active">{{ page }}</span>
+            {% else %}
+              <a href="./blog{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-number">{{ page }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        
+        {% if pagination.has_next %}
+        <a href="{{ pagination.next_url }}" class="pagination-link next">
+          Next
+          <span class="pagination-icon">{{ inject_svg('arrow-right', True) | safe }}</span>
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          Next
+          <span class="pagination-icon">{{ inject_svg('arrow-right', True) | safe }}</span>
+        </span>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>

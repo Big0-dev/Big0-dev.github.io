@@ -1,0 +1,331 @@
+from typing import Dict, Any, List  # Add List to the import
+from pathlib import Path
+from datetime import datetime
+from .core import Page, TemplateRenderer
+
+
+class HomePage(Page):
+    @property
+    def slug(self) -> str:
+        return "index"
+
+    @property
+    def title(self) -> str:
+        return "Next Level Innovation"
+
+    @property
+    def custom_css(self) -> str:
+        return "home"
+
+    @property
+    def template(self) -> str:
+        return "home.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("index.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Big0 - Transforming businesses with cutting-edge AI, machine learning, and data-driven solutions. Next level innovation grounded in responsibility."
+
+    @property
+    def preload(self) -> str:
+        return "hero"
+
+    def get_context(self) -> Dict[str, Any]:
+        # Add any Big0-specific context here
+        return {
+            "tagline": "Next Level Innovation",
+            "subtitle": "Grounded in Responsibility",
+            "hero_cta": "Get Started",
+            "services_preview": [
+                {
+                    "icon": "ai_brain",
+                    "title": "Business Intelligence & AI Services",
+                    "description": "Harness AI to transform your business operations",
+                },
+                {
+                    "icon": "cloud",
+                    "title": "Responsible AI Services",
+                    "description": "Ethical AI solutions built with transparency",
+                },
+                {
+                    "icon": "data",
+                    "title": "Cloud Services",
+                    "description": "Scalable cloud infrastructure for growth",
+                },
+                {
+                    "icon": "iot",
+                    "title": "Internet of Things (IoT) Services",
+                    "description": "Connected solutions for smart operations",
+                },
+            ],
+        }
+
+
+class ContactPage(Page):
+    @property
+    def slug(self) -> str:
+        return "contact"
+
+    @property
+    def title(self) -> str:
+        return "Get in Touch"
+
+    @property
+    def template(self) -> str:
+        return "contact.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("contact.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Get in touch with Big0. Contact us for AI consulting, cloud solutions, and digital transformation services."
+
+    @property
+    def custom_css(self) -> str:
+        return "contact"
+
+
+class CareersPage(Page):
+    @property
+    def slug(self) -> str:
+        return "careers"
+
+    @property
+    def title(self) -> str:
+        return "Careers"
+
+    @property
+    def template(self) -> str:
+        return "careers.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("careers.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Join the Big0 team. Explore career opportunities in AI, machine learning, cloud computing, and data analytics."
+
+    @property
+    def custom_css(self) -> str:
+        return "careers"
+
+
+class ResourcesPage(Page):
+    @property
+    def slug(self) -> str:
+        return "resources"
+
+    @property
+    def title(self) -> str:
+        return "Resources"
+
+    @property
+    def template(self) -> str:
+        return "resources.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("resources.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Access whitepapers, guides, case studies, and tools to help your business succeed with AI and digital transformation."
+
+    @property
+    def custom_css(self) -> str:
+        return "resources"
+
+
+# Update existing pages for Big0 context
+class AboutPage(Page):
+    @property
+    def slug(self) -> str:
+        return "about"
+
+    @property
+    def title(self) -> str:
+        return "About Us"
+
+    @property
+    def template(self) -> str:
+        return "about.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("about.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Learn about Big0's mission to transform businesses through responsible AI innovation. Meet our team and discover our values."
+
+    @property
+    def custom_css(self) -> str:
+        return "about"
+
+
+class PrivacyPage(Page):
+    @property
+    def slug(self) -> str:
+        return "privacy"
+
+    @property
+    def title(self) -> str:
+        return "Privacy Policy"
+
+    @property
+    def template(self) -> str:
+        return "privacy.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("privacy.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Big0's privacy policy. Learn how we collect, use, and protect your personal information."
+
+    @property
+    def custom_css(self) -> str:
+        return "legal"
+
+
+class TermsPage(Page):
+    @property
+    def slug(self) -> str:
+        return "terms"
+
+    @property
+    def title(self) -> str:
+        return "Terms of Service"
+
+    @property
+    def template(self) -> str:
+        return "terms.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("terms.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Terms of Service for Big0. Understand the legal agreements that govern the use of our services."
+
+    @property
+    def custom_css(self) -> str:
+        return "legal"
+
+
+class ServicesPage(Page):
+    """Services listing page"""
+
+    def __init__(self, renderer: TemplateRenderer):
+        super().__init__(renderer)
+        self._services = []
+
+    def set_services(self, services: List):
+        """Set services data"""
+        self._services = services
+
+    @property
+    def slug(self) -> str:
+        return "services"
+
+    @property
+    def title(self) -> str:
+        return "Services"
+
+    @property
+    def template(self) -> str:
+        return "services.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("services.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Professional services offered by Hassan Kamran - AI consulting, software development, technical project management, and engineering solutions."
+
+    def get_context(self) -> Dict[str, Any]:
+        return {"services": self._services}
+
+    @property
+    def custom_css(self) -> str:
+        return "services"
+
+
+class GalleryPage(Page):
+    """Gallery page"""
+
+    def __init__(self, renderer: TemplateRenderer):
+        super().__init__(renderer)
+        self._images = []
+
+    def set_images(self, images: List):
+        """Set gallery images"""
+        self._images = images
+
+    @property
+    def slug(self) -> str:
+        return "gallery"
+
+    @property
+    def title(self) -> str:
+        return "Gallery"
+
+    @property
+    def template(self) -> str:
+        return "gallery.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("gallery.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology."
+
+    def get_context(self) -> Dict[str, Any]:
+        return {
+            "images": self._images,
+            "gallery_url": f"{self.renderer.config.gallery_dir}",
+        }
+
+    @property
+    def custom_css(self) -> str:
+        return "gallery"
+
+
+class NotFoundPage(Page):
+    @property
+    def slug(self) -> str:
+        return "404"
+
+    @property
+    def title(self) -> str:
+        return "OOPs Not Found"
+
+    @property
+    def template(self) -> str:
+        return "404.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("404.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Page not found"
+
+    def get_context(self) -> Dict[str, Any]:
+        return {}
+
+    @property
+    def custom_css(self) -> str:
+        return "about"

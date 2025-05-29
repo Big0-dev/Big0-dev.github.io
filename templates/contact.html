@@ -1,0 +1,169 @@
+<!-- contact.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        Get in <span class="gradient-text">Touch</span>
+      </h1>
+      <p class="page-subtitle">
+        Let's discuss how we can help transform your business
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option value="ai-ml">AI & Machine Learning</option>
+              <option value="cloud">Cloud Solutions</option>
+              <option value="iot">IoT Services</option>
+              <option value="data">Data Analytics</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="primary-btn">
+            <span>Send Message</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h2>Let's Connect</h2>
+        <p class="info-intro">
+          Ready to take your business to the next level? We're here to help you
+          navigate the journey.
+        </p>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon">{{ inject_svg('mail', True) | safe }}</div>
+            <div class="info-content">
+              <h3>Email</h3>
+              <a href="mailto:hello@big0.dev">hello@big0.dev</a>
+              <a href="mailto:support@big0.dev">support@big0.dev</a>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">{{ inject_svg('phone', True) | safe }}</div>
+            <div class="info-content">
+              <h3>Phone</h3>
+              <a href="tel:+18001234567">+1 (800) 123-4567</a>
+              <p class="info-note">Mon-Fri 9AM-6PM EST</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              {{ inject_svg('location', True) | safe }}
+            </div>
+            <div class="info-content">
+              <h3>Office</h3>
+              <p>
+                Innovation Hub<br />
+                123 Tech Boulevard<br />
+                San Francisco, CA 94105
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-connect">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="https://linkedin.com/company/big0" aria-label="LinkedIn">
+              {{ inject_svg('linkedin', True) | safe }}
+            </a>
+            <a href="https://twitter.com/big0dev" aria-label="Twitter">
+              {{ inject_svg('twitter', True) | safe }}
+            </a>
+            <a href="https://github.com/big0" aria-label="GitHub">
+              {{ inject_svg('github', True) | safe }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="contact-faq">
+  <div class="container">
+    <h2 class="section-heading">
+      Frequently Asked <span class="gradient-text">Questions</span>
+    </h2>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>How quickly can we get started?</h3>
+        <p>
+          We typically begin projects within 2-4 weeks after initial
+          consultation, depending on scope and requirements.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do you work with startups?</h3>
+        <p>
+          Yes! We work with businesses of all sizes, from startups to enterprise
+          organizations.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What industries do you serve?</h3>
+        <p>
+          We serve various industries including finance, healthcare, retail,
+          manufacturing, and more.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Do you provide ongoing support?</h3>
+        <p>
+          Absolutely. We offer comprehensive support and maintenance packages
+          for all our solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

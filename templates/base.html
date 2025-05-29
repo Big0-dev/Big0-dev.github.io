@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ meta_des | safe }}" />
+    {% if base_tag %} {{ base_tag | safe }} {% endif %} {{ canonical | safe }}
+    <title>{{ title | safe }}</title>
+    {% if preload %}
+    <link
+      rel="preload"
+      as="image"
+      href="{{ static | safe }}/{{ preload | safe }}-mini.avif"
+      type="image/avif"
+      media="(max-width: 767px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="{{ static | safe }}/{{ preload | safe }}.avif"
+      type="image/avif"
+      media="(min-width: 768px)"
+    />
+    {% endif %}
+
+    <link
+      rel="preload"
+      href="{{ static | safe }}/Exo2-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{{ static | safe }}/base.css" />
+
+    {% if custom_css %}
+        <link rel="stylesheet" href="{{ static | safe }}/{{ custom_css }}.css"/>
+    {% endif %}
+
+    <link
+      class="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ static | safe }}/favicon.svg"
+    />
+    <script src="{{ static | safe }}/minisearch@7.1.2.min.js"></script>
+    <script src="{{ static | safe }}/search.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="siteHeader">
+        <div class="siteHeaderLeft">
+          <a href="{{ home }}" aria-label="Home">
+            {{ inject_svg('big0_logo', True, 'logo') | safe }}
+          </a>
+        </div>
+        <button
+          class="hamburger-btn"
+          popovertarget="sideMenuPopover"
+          popovertargetaction="toggle"
+          aria-label="Open menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div popover="manual" id="sideMenuPopover" class="side-menu-popover">
+          <div class="side-menu-container">
+            <div class="popover-header">
+              <button
+                class="close-btn"
+                popovertarget="sideMenuPopover"
+                popovertargetaction="hide"
+                aria-label="Close menu"
+              >
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+              </button>
+            </div>
+
+            <ul class="popover-menu">
+              <li><a href="{{ home }}" aria-label="Home">Home</a></li>
+              <li><a href="{{ about }}" aria-label="About Us">About Us</a></li>
+              <li><a href="{{ services_page }}" aria-label="Services">Services</a></li>
+              <li><a href="{{ blog }}" aria-label="Insights">Insights</a></li>
+              <li><a href="{{ resources }}" aria-label="Resources">Resources</a></li>
+              <li><a href="{{ careers }}" aria-label="Careers">Careers</a></li>
+              <li>
+                <button class="popover-button" popovertarget="modal">
+                  Contact
+                </button>
+              </li>
+              <li>
+                <button class="search-button" popovertarget="search-box">
+                  {{ inject_svg('search_icon', True, 'search-icon') | safe }}
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="siteHeaderCenter desktop-menu">
+          <ul>
+            <li><a href="{{ home }}" aria-label="Home">Home</a></li>
+            <li><a href="{{ about }}" aria-label="About Us">About Us</a></li>
+            <li><a href="{{ services_page }}" aria-label="Services">Services</a></li>
+            <li><a href="{{ blog }}" aria-label="Insights">Insights</a></li>
+            <li><a href="{{ resources }}" aria-label="Resources">Resources</a></li>
+            <li><a href="{{ careers }}" aria-label="Careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="siteHeaderRight desktop-menu">
+          <button class="cta-button" popovertarget="modal">
+            Get Started
+          </button>
+          <button
+            aria-label="Search"
+            class="search-button"
+            popovertarget="search-box"
+          >
+            {{ inject_svg('search_icon', True, 'search-icon') | safe }}
+          </button>
+        </div>
+      </nav>
+
+      <div id="search-box" popover="manual" class="search-popover">
+        <div class="search-container">
+          <div class="search-header">
+            <h2>Search</h2>
+            <button
+              class="close-btn"
+              popovertarget="search-box"
+              aria-label="Close search"
+            >
+              <span class="close-line"></span>
+              <span class="close-line"></span>
+            </button>
+          </div>
+          <form id="search-form">
+            <div class="search-input-container">
+              <input
+                type="text"
+                id="search-input"
+                name="q"
+                placeholder="Search insights, services, resources..."
+                aria-label="Search input"
+                autocomplete="off"
+                required
+              />
+              <button
+                type="submit"
+                class="search-submit"
+                aria-label="Submit search"
+              >
+                {{ inject_svg('search_icon', True, 'search-submit-icon') | safe
+                }}
+              </button>
+            </div>
+          </form>
+
+          <div id="search-results-container" class="search-results-container">
+            <div id="search-results" class="search-results"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="modal" popover="manual">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close-btn" popovertarget="modal">
+              <span class="close-line"></span>
+              <span class="close-line"></span>
+            </button>
+            <h2>Let's Build Something Amazing</h2>
+            <p>Transform your business with cutting-edge AI solutions</p>
+          </div>
+          <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+              <div class="contact-item">
+                {{ inject_svg('mail', True) | safe }}
+                <div>
+                  <ul>
+                    <li>
+                        <a aria-label="Email"
+                        href="mailto:contact@big0.dev"
+                        >contact@big0.dev</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="contact-item">
+                {{ inject_svg('phone', True) | safe }}
+                <ul>
+                  <li>
+                    <a aria-label="Phone Number" href="tel:+18001234567"
+                      >+1 (800) 123-4567</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="contact-item">
+                {{ inject_svg('location', True) | safe }}
+                <div>
+                  <ul>
+                    <li>
+                      <a href="#" aria-label="Address">
+                        Innovation Hub, Tech District
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+              <a
+            
+              href="https://www.linkedin.com/company/big0/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              {{ inject_svg('linkedin', True) | safe }}
+            </a>
+            <a
+            
+              href="https://github.com/Big0-dev"
+              target="_blank"
+              aria-label="Github"
+            >
+              {{ inject_svg('github', True) | safe }}
+            </a>
+            <a
+            
+              href="https://www.youtube.com/@big0_dev"
+              target="_blank"
+              aria-label="Youtube"
+            >
+              {{ inject_svg('youtube', True) | safe }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXX");
+    </script>
+
+    <main>{{ content | safe }}</main>
+
+    <footer class="siteFooter">
+      <div class="footerContent">
+        <div class="footerTop">
+          <div class="footerLogo">
+            {{ inject_svg('big0_logo', True, 'footer-logo') | safe }}
+            <p class="tagline">Next Level Innovation<br>Grounded in Responsibility</p>
+          </div>
+          <div class="footerColumns">
+            <div class="footerColumn">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="{{ about }}">About Us</a></li>
+                <li><a href="{{ careers }}">Careers</a></li>
+                <li><a href="{{ contact }}">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="{{ services_page }}">Our Services</a></li>
+                <li><a href="{{ industries }}">Industries</a></li>
+                <li><a href="{{ case_studies }}">Case Studies</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="{{ blog }}">Insights</a></li>
+                <li><a href="{{ resources }}">Resources</a></li>
+                <li><a href="{{ documentation }}">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Legal</h3>
+              <ul>
+                <li><a href="{{ privacy }}">Privacy Policy</a></li>
+                <li><a href="{{ terms }}">Terms of Service</a></li>
+                <li><a href="{{ sitemap }}">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footerBottom">
+          <div class="footerCopyright">
+            <p>&#169; {{ copyright }} Big0. All rights reserved.</p>
+          </div>
+          <div class="footerSocial">
+            <a href="https://linkedin.com/company/big0" aria-label="LinkedIn">
+              {{ inject_svg('linkedin', True) | safe }}
+            </a>
+            <a href="https://github.com/big0" aria-label="GitHub">
+              {{ inject_svg('github', True) | safe }}
+            </a>
+
+            <a href="https://www.youtube.com/@big0_dev" aria-label="Youtube">
+              {{ inject_svg('youtube', True) | safe }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

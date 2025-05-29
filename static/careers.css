@@ -1,0 +1,310 @@
+/* careers.css - Big0 Careers Page */
+
+/* ==============================
+   WHY BIG0 SECTION
+============================== */
+.why-big0 {
+  padding: var(--spacing-3xl) 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.benefit-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all var(--transition-default);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transition: transform var(--transition-default);
+}
+
+.benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  background: var(--accent-gradient);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--text-light);
+}
+
+.benefit-card h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+.benefit-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ==============================
+   OPEN POSITIONS
+============================== */
+.open-positions {
+  padding: var(--spacing-3xl) 0;
+  background: rgba(127, 62, 152, 0.02);
+}
+
+.positions-filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-3xl) 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(127, 62, 152, 0.3);
+  color: var(--text-muted);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-default);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.positions-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.position-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-default);
+}
+
+.position-card:hover {
+  border-color: rgba(127, 62, 152, 0.3);
+  transform: translateX(5px);
+  box-shadow: 0 6px 20px rgba(127, 62, 152, 0.1);
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.position-header h3 {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 1.4rem;
+}
+
+.position-type {
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.position-meta {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.position-meta span {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.position-meta svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-color);
+}
+
+.position-card > p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-muted);
+}
+
+.position-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: gap var(--transition-default);
+}
+
+.position-link:hover {
+  gap: var(--spacing-md);
+}
+
+.careers-cta {
+  text-align: center;
+  margin-top: var(--spacing-3xl);
+  padding: var(--spacing-3xl);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.careers-cta p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ==============================
+   CULTURE SECTION
+============================== */
+.careers-culture {
+  padding: var(--spacing-3xl) 0;
+  background: var(--bg-darker);
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.culture-content h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.culture-values {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-xl) 0;
+}
+
+.culture-values li {
+  position: relative;
+  padding-left: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-dark);
+}
+
+.culture-values li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.culture-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.culture-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  transition: transform var(--transition-default);
+}
+
+.culture-images img:hover {
+  transform: scale(1.05);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media screen and (max-width: 992px) {
+  .culture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .position-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .positions-filters {
+    gap: var(--spacing-sm);
+  }
+
+  .filter-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 14px;
+  }
+
+  .position-card {
+    padding: var(--spacing-lg);
+  }
+
+  .culture-images {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1091,6 +1091,67 @@ p {
 }
 
 /* ==============================
+   CTA
+============================== */
+.service-cta-section {
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+.service-cta-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(127, 62, 152, 0.1) 0%,
+    rgba(163, 102, 196, 0.05) 100%
+  );
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(127, 62, 152, 0.2);
+}
+
+.cta-glow-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(127, 62, 152, 0.1) 0%,
+    transparent 50%
+  );
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+.service-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.service-cta-content h3 {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.service-cta-content p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==============================
    MEDIA QUERIES
 ============================== */
 @media screen and (max-width: 992px) {
@@ -1145,6 +1206,20 @@ p {
   .modal-content {
     padding: var(--spacing-lg);
     width: 95%;
+  }
+
+  .service-cta-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons .btn,
+  .cta-buttons .primary-btn {
+    width: 100%;
   }
 }
 

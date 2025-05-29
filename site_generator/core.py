@@ -307,6 +307,7 @@ class Page(ABC):
             "copyright": datetime.now().year,
             "canonical": canonical,
             "custom_css": self.custom_css,
+            **page_urls,
         }
 
         # Merge with any additional context

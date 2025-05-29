@@ -353,18 +353,18 @@ p {
   background-color: rgba(127, 62, 152, 0.1);
 }
 
-/* Hamburger Menu Button */
 .hamburger-btn {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 24px;
+  height: 20px;
   background: transparent;
   border: 0;
   cursor: pointer;
   padding: 0;
   z-index: 20;
+  position: relative;
 }
 
 .hamburger-line {
@@ -374,6 +374,10 @@ p {
   background-color: var(--text-light);
   border-radius: 3px;
   transition: var(--transition-default);
+  position: relative;
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* ==============================
@@ -516,6 +520,47 @@ p {
   }
 }
 
+.close-btn {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(127, 62, 152, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.close-btn:hover {
+  background: rgba(127, 62, 152, 0.1);
+  border-color: var(--primary-color);
+}
+
+.close-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-light, #ffffff);
+  border-radius: 2px;
+}
+
+.close-line:first-child {
+  transform: rotate(45deg);
+}
+
+.close-line:last-child {
+  transform: rotate(-45deg);
+}
+
 .modal .close-btn {
   position: absolute;
   top: var(--spacing-lg);
@@ -527,6 +572,20 @@ p {
   cursor: pointer;
   z-index: 5;
   transition: transform var(--transition-default);
+  min-width: 30px;
+  min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.modal-header .close-btn {
+  position: absolute;
+  top: var(--spacing-lg, 20px);
+  right: var(--spacing-lg, 20px);
+}
+
+.search-header .close-btn {
+  margin-left: auto;
 }
 
 .search-popover .close-btn {
@@ -547,29 +606,10 @@ p {
   transform: rotate(90deg);
 }
 
-.close-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--text-muted);
-  border-radius: 3px;
-}
-
-.close-line:first-child {
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.close-line:last-child {
-  transform: translateY(-50%) rotate(-45deg);
-}
-
 .modal .close-btn:hover .close-line {
   background-color: var(--primary-color);
 }
 
-/* Modal Header */
 .modal-header {
   text-align: center;
   margin-top: var(--spacing-sm);
@@ -588,7 +628,6 @@ p {
   margin: 0;
 }
 
-/* Contact Section */
 .contact-section {
   margin-bottom: var(--spacing-lg);
 }
@@ -1156,11 +1195,32 @@ p {
 ============================== */
 @media screen and (max-width: 992px) {
   .hamburger-btn {
-    display: flex;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light, #ffffff);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
   }
 
   .desktop-menu {
-    display: none;
+    display: none !important;
   }
 
   .siteHeader {
@@ -1206,6 +1266,43 @@ p {
   .modal-content {
     padding: var(--spacing-lg);
     width: 95%;
+    max-width: 95%;
+    margin: 20px auto;
+  }
+
+  .modal .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+  }
+
+  .modal .close-line {
+    height: 2px;
+  }
+
+  .siteHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .siteHeaderLeft {
+    flex: 1;
+  }
+
+  .hamburger-btn {
+    margin-left: auto;
+  }
+
+  .modal-header {
+    padding-top: 60px;
+    position: relative;
   }
 
   .service-cta-card {
@@ -1253,5 +1350,29 @@ p {
 
   .section-heading {
     font-size: 1.5rem;
+  }
+
+  .hamburger-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hamburger-line {
+    width: 22px;
+    height: 2.5px;
+    margin: 3px 0;
+  }
+
+  .close-btn {
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px !important;
+    min-height: 35px !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+  }
+
+  .close-line {
+    width: 18px;
   }
 }

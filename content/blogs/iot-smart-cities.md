@@ -1,7 +1,7 @@
 IoT and Smart Cities: Building the Urban Future
 Internet of Things
 November 5, 2024
-iot-smart-cities.jpg
+iot.avif
 Explore how IoT technology is transforming urban environments into intelligent, sustainable, and citizen-centric smart cities.
 
 The convergence of Internet of Things (IoT) technology, 5G networks, and artificial intelligence is revolutionizing how cities operate, serve their citizens, and plan for the future. This deep dive explores the current state of smart city implementations and what lies ahead for urban innovation.

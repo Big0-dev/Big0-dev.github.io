@@ -105,8 +105,12 @@ class SiteGenerator:
 
     def _create_static_pages(self):
         """Create static pages"""
+        # Create HomePage with services and blog posts
+        home_page = HomePage(self.renderer, self.services, self.blog_posts)
+        self.pages.append(home_page)
+
+        # Other static pages
         static_page_classes = [
-            HomePage,
             AboutPage,
             ContactPage,
             CareersPage,

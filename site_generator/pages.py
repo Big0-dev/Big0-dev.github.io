@@ -5,6 +5,13 @@ from .core import Page, TemplateRenderer
 
 
 class HomePage(Page):
+    def __init__(
+        self, renderer: TemplateRenderer, services: List = None, blog_posts: List = None
+    ):
+        super().__init__(renderer)
+        self._services = services or []
+        self._blog_posts = blog_posts or []
+
     @property
     def slug(self) -> str:
         return "index"
@@ -27,40 +34,25 @@ class HomePage(Page):
 
     @property
     def meta_description(self) -> str:
-        return "Big0 - Transforming businesses with cutting-edge AI, machine learning, and data-driven solutions. Next level innovation grounded in responsibility."
+        return "Big0 - Transforming businesses with cutting-edge AI, machine learning, and data-driven solutions. Next level innovation powered by intelligence."
 
     @property
     def preload(self) -> str:
         return "hero"
 
     def get_context(self) -> Dict[str, Any]:
-        # Add any Big0-specific context here
+        # Get 3 most recent services
+        recent_services = self._services[:3] if self._services else []
+        # Get 3 most recent blog posts
+        recent_posts = self._blog_posts[:3] if self._blog_posts else []
+
         return {
             "tagline": "Next Level Innovation",
-            "subtitle": "Grounded in Responsibility",
+            "subtitle": "Powered by Intelligence",
             "hero_cta": "Get Started",
-            "services_preview": [
-                {
-                    "icon": "ai_brain",
-                    "title": "Business Intelligence & AI Services",
-                    "description": "Harness AI to transform your business operations",
-                },
-                {
-                    "icon": "cloud",
-                    "title": "Responsible AI Services",
-                    "description": "Ethical AI solutions built with transparency",
-                },
-                {
-                    "icon": "data",
-                    "title": "Cloud Services",
-                    "description": "Scalable cloud infrastructure for growth",
-                },
-                {
-                    "icon": "iot",
-                    "title": "Internet of Things (IoT) Services",
-                    "description": "Connected solutions for smart operations",
-                },
-            ],
+            "recent_services": recent_services,
+            "total_services": len(self._services),
+            "recent_posts": recent_posts,
         }
 
 

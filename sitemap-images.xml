@@ -8,4 +8,130 @@
       <image:title>Next Level Innovation hero image</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/python-automation.jpg</image:loc>
+      <image:title>Python Automation &amp; Scripting</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/cloud-management.jpg</image:loc>
+      <image:title>Cloud Infrastructure Management</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/ai-integration.jpg</image:loc>
+      <image:title>AI &amp; Machine Learning Integration</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/software-development.jpg</image:loc>
+      <image:title>Custom Software Development</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/web-development.jpg</image:loc>
+      <image:title>Modern Web Development</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/data-analytics.jpg</image:loc>
+      <image:title>Data Analytics &amp; Business Intelligence</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/dashboard-development.jpg</image:loc>
+      <image:title>Interactive Dashboard Development</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/blog.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/ai-transformation-2024.jpg</image:loc>
+      <image:title>The AI Revolution: How Businesses Are Transforming in 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/blog.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/cloud-migration-guide.jpg</image:loc>
+      <image:title>Cloud Migration Strategies: A Comprehensive Guide for 2024</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/blog.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/cybersecurity-trends-2024.jpg</image:loc>
+      <image:title>Cybersecurity in 2024: Protecting Your Business in an AI-Driven World</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/blog.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/iot-smart-cities.jpg</image:loc>
+      <image:title>IoT and Smart Cities: Building the Urban Future</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/python-automation.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/python-automation.jpg</image:loc>
+      <image:title>Python Automation &amp; Scripting image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/cloud-managment.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/cloud-management.jpg</image:loc>
+      <image:title>Cloud Infrastructure Management image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/ai-integration.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/ai-integration.jpg</image:loc>
+      <image:title>AI &amp; Machine Learning Integration image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/software-development.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/software-development.jpg</image:loc>
+      <image:title>Custom Software Development image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/web-development.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/web-development.jpg</image:loc>
+      <image:title>Modern Web Development image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/data-analytics.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/data-analytics.jpg</image:loc>
+      <image:title>Data Analytics &amp; Business Intelligence image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/dashboards.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/dashboard-development.jpg</image:loc>
+      <image:title>Interactive Dashboard Development image</image:title>
+    </image:image>
+  </url>
 </urlset>

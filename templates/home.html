@@ -8,15 +8,15 @@
         <span class="hero-subtitle">{{ subtitle }}</span>
       </h1>
       <p class="hero-description">
-        Enabling Businesses to Make Smart Choices by Bringing Endless Automation
-        Possibilities to their Disposal
+        Gain the clarity and predictive insights needed to make faster, smarter
+        strategic choices that drive growth.
       </p>
       <div class="hero-actions">
         <a href="{{ services_page }}" class="primary-btn hero-btn">
           <span>Explore Services</span>
         </a>
         <a href="{{ about }}" class="btn secondary-btn">
-          <span>Learn More</span>
+          <span>About Big0</span>
         </a>
       </div>
     </div>
@@ -44,16 +44,20 @@
     </div>
 
     <div class="services-grid">
-      {% for service in services_preview %}
+      {% for service in recent_services %}
       <div class="service-card">
         <div class="service-glow"></div>
         <div class="service-content">
+          {% if service.icon %}
           <div class="icon-box">
             {{ inject_svg(service.icon, True) | safe }}
           </div>
+          {% else %}
+          <div class="icon-box">{{ inject_svg('ai_brain', True) | safe }}</div>
+          {% endif %}
           <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-          <a href="{{ services_page }}" class="service-link">
+          <p>{{ service.meta_description[:120] }}...</p>
+          <a href="./services/{{ service.slug }}.html" class="service-link">
             Learn More
             <svg
               width="16"
@@ -71,11 +75,24 @@
       {% endfor %}
     </div>
 
+    {% if total_services > 3 %}
     <div class="text-center" style="margin-top: 3rem">
-      <a href="{{ services_page }}" class="primary-btn">
-        <span>View All Services</span>
+      <a href="{{ services_page }}" class="primary-btn gradient-btn">
+        <span>Explore All {{ total_services }} Services</span>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          style="margin-left: 8px"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
       </a>
     </div>
+    {% endif %}
   </div>
 </section>
 
@@ -85,37 +102,37 @@
     <div class="innovation-grid">
       <div class="innovation-content">
         <h2>
-          Transforming <span class="gradient-text">Data Into Insights</span>
+          Transforming <span class="gradient-text">Vision Into Reality</span>
         </h2>
         <p class="lead">
-          We empower businesses to push the boundaries of innovation in the
-          world of technology with our efficient Enterprise AI-driven Business
-          Intelligence (BI) solutions.
+          We empower businesses to push the boundaries of what's possible
+          through intelligent automation, data-driven insights, and cutting-edge
+          technology solutions tailored to your unique challenges.
         </p>
         <ul class="feature-list">
           <li>
             <span class="feature-icon"
               >{{ inject_svg('check', True) | safe }}</span
             >
-            <span>Data-driven insights and analytics</span>
+            <span>Custom AI and automation solutions</span>
           </li>
           <li>
             <span class="feature-icon"
               >{{ inject_svg('check', True) | safe }}</span
             >
-            <span>Predictive modeling and forecasting</span>
+            <span>End-to-end digital transformation</span>
           </li>
           <li>
             <span class="feature-icon"
               >{{ inject_svg('check', True) | safe }}</span
             >
-            <span>Real-time business intelligence</span>
+            <span>Scalable cloud infrastructure</span>
           </li>
           <li>
             <span class="feature-icon"
               >{{ inject_svg('check', True) | safe }}</span
             >
-            <span>Automated decision-making processes</span>
+            <span>24/7 support and continuous optimization</span>
           </li>
         </ul>
         <a href="{{ about }}" class="btn">
@@ -140,19 +157,19 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-number" data-count="500">500+</div>
+        <div class="stat-number">500+</div>
         <div class="stat-label">Projects Delivered</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number" data-count="50">50+</div>
+        <div class="stat-number">50+</div>
         <div class="stat-label">Enterprise Clients</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number" data-count="99">99%</div>
+        <div class="stat-number">99%</div>
         <div class="stat-label">Client Satisfaction</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number" data-count="24">24/7</div>
+        <div class="stat-number">24/7</div>
         <div class="stat-label">Support Available</div>
       </div>
     </div>
@@ -197,55 +214,19 @@
 
     <div class="industries-slider">
       <div class="industry-track">
+        {% set industries = [ {'icon': 'finance', 'name': 'Finance'}, {'icon':
+        'healthcare', 'name': 'Healthcare'}, {'icon': 'retail', 'name':
+        'Retail'}, {'icon': 'manufacturing', 'name': 'Manufacturing'}, {'icon':
+        'telecom', 'name': 'Telecommunications'}, {'icon': 'energy', 'name':
+        'Energy'} ] %} {% for industry in industries * 2 %} {# Duplicate for
+        smooth scroll #}
         <div class="industry-item">
           <div class="industry-icon">
-            {{ inject_svg('finance', True) | safe }}
+            {{ inject_svg(industry.icon, True) | safe }}
           </div>
-          <span>Finance</span>
+          <span>{{ industry.name }}</span>
         </div>
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('healthcare', True) | safe }}
-          </div>
-          <span>Healthcare</span>
-        </div>
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('retail', True) | safe }}
-          </div>
-          <span>Retail</span>
-        </div>
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('manufacturing', True) | safe }}
-          </div>
-          <span>Manufacturing</span>
-        </div>
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('telecom', True) | safe }}
-          </div>
-          <span>Telecommunications</span>
-        </div>
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('energy', True) | safe }}
-          </div>
-          <span>Energy</span>
-        </div>
-        <!-- Duplicate for continuous scroll -->
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('finance', True) | safe }}
-          </div>
-          <span>Finance</span>
-        </div>
-        <div class="industry-item">
-          <div class="industry-icon">
-            {{ inject_svg('healthcare', True) | safe }}
-          </div>
-          <span>Healthcare</span>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -262,59 +243,32 @@
     </div>
 
     <div class="insights-grid">
-      <!-- This would be populated dynamically in real implementation -->
+      {% for post in recent_posts %}
       <article class="insight-card">
+        {% if post.image %}
         <div class="insight-image">
-          <img src="{{ static }}/blog-ai-future.jpg" alt="The Future of AI" />
+          <img src="{{ static }}/{{ post.image }}" alt="{{ post.title }}" />
         </div>
+        {% else %}
+        <div class="insight-image">
+          <img src="{{ static }}/blog-default.jpg" alt="{{ post.title }}" />
+        </div>
+        {% endif %}
         <div class="insight-content">
           <div class="insight-meta">
-            <span class="insight-category">AI & ML</span>
-            <span class="insight-date">Nov 15, 2024</span>
+            <span class="insight-category">{{ post.category }}</span>
+            <span class="insight-date"
+              >{{ post.date.strftime('%b %d, %Y') }}</span
+            >
           </div>
-          <h3>The Future of AI in Business Intelligence</h3>
-          <p>
-            Exploring how artificial intelligence is reshaping business
-            decision-making...
-          </p>
-          <a href="{{ blog }}" class="insight-link">Read More →</a>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.meta_description[:100] }}...</p>
+          <a href="./blogs/{{ post.slug }}.html" class="insight-link"
+            >Read More →</a
+          >
         </div>
       </article>
-
-      <article class="insight-card">
-        <div class="insight-image">
-          <img src="{{ static }}/blog-cloud.jpg" alt="Cloud Migration" />
-        </div>
-        <div class="insight-content">
-          <div class="insight-meta">
-            <span class="insight-category">Cloud</span>
-            <span class="insight-date">Nov 10, 2024</span>
-          </div>
-          <h3>Cloud Migration Best Practices</h3>
-          <p>
-            A comprehensive guide to successful cloud transformation
-            strategies...
-          </p>
-          <a href="{{ blog }}" class="insight-link">Read More →</a>
-        </div>
-      </article>
-
-      <article class="insight-card">
-        <div class="insight-image">
-          <img src="{{ static }}/blog-iot.jpg" alt="IoT Security" />
-        </div>
-        <div class="insight-content">
-          <div class="insight-meta">
-            <span class="insight-category">IoT</span>
-            <span class="insight-date">Nov 5, 2024</span>
-          </div>
-          <h3>Securing the Internet of Things</h3>
-          <p>
-            Essential security measures for IoT implementations in enterprise...
-          </p>
-          <a href="{{ blog }}" class="insight-link">Read More →</a>
-        </div>
-      </article>
+      {% endfor %}
     </div>
 
     <div class="text-center" style="margin-top: 3rem">

@@ -4,7 +4,7 @@
     "url": "index.html",
     "title": "Next Level Innovation",
     "content": "",
-    "description": "Big0 - Transforming businesses with cutting-edge AI, machine learning, and data-driven solutions. Next level innovation grounded in responsibility.",
+    "description": "Big0 - Transforming businesses with cutting-edge AI, machine learning, and data-driven solutions. Next level innovation powered by intelligence.",
     "type": "page"
   },
   {
@@ -64,11 +64,147 @@
     "type": "page"
   },
   {
+    "id": "page-blog-ai-transformation-2024",
+    "url": "blogs/ai-transformation-2024.html",
+    "title": "The AI Revolution: How Businesses Are Transforming in 2024",
+    "content": "",
+    "description": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "type": "page"
+  },
+  {
+    "id": "page-blog-cloud-migration-best-practices",
+    "url": "blogs/cloud-migration-best-practices.html",
+    "title": "Cloud Migration Strategies: A Comprehensive Guide for 2024",
+    "content": "",
+    "description": "Learn the essential strategies and best practices for successful cloud migration, from planning to execution and optimization.",
+    "type": "page"
+  },
+  {
+    "id": "page-blog-cybersecurity-trends-2024",
+    "url": "blogs/cybersecurity-trends-2024.html",
+    "title": "Cybersecurity in 2024: Protecting Your Business in an AI-Driven World",
+    "content": "",
+    "description": "Explore the latest cybersecurity threats and defense strategies as AI transforms both attack vectors and protection mechanisms.",
+    "type": "page"
+  },
+  {
+    "id": "page-blog-iot-smart-cities",
+    "url": "blogs/iot-smart-cities.html",
+    "title": "IoT and Smart Cities: Building the Urban Future",
+    "content": "",
+    "description": "Explore how IoT technology is transforming urban environments into intelligent, sustainable, and citizen-centric smart cities.",
+    "type": "page"
+  },
+  {
+    "id": "page-blog",
+    "url": "blog.html",
+    "title": "Blog",
+    "content": "",
+    "description": "Explore cutting-edge insights on AI, Federated Learning, programming, big data, and robotics.",
+    "type": "page"
+  },
+  {
     "id": "page-gallery",
     "url": "gallery.html",
     "title": "Gallery",
     "content": "",
     "description": "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology.",
     "type": "page"
+  },
+  {
+    "id": "blog-ai-transformation-2024",
+    "url": "blogs/ai-transformation-2024.html",
+    "title": "The AI Revolution: How Businesses Are Transforming in 2024",
+    "content": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "description": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "type": "blog",
+    "category": "AI & Machine Learning",
+    "date": "2024-11-20"
+  },
+  {
+    "id": "blog-cloud-migration-best-practices",
+    "url": "blogs/cloud-migration-best-practices.html",
+    "title": "Cloud Migration Strategies: A Comprehensive Guide for 2024",
+    "content": "Learn the essential strategies and best practices for successful cloud migration, from planning to execution and optimization.",
+    "description": "Learn the essential strategies and best practices for successful cloud migration, from planning to execution and optimization.",
+    "type": "blog",
+    "category": "Cloud Computing",
+    "date": "2024-11-15"
+  },
+  {
+    "id": "blog-cybersecurity-trends-2024",
+    "url": "blogs/cybersecurity-trends-2024.html",
+    "title": "Cybersecurity in 2024: Protecting Your Business in an AI-Driven World",
+    "content": "Explore the latest cybersecurity threats and defense strategies as AI transforms both attack vectors and protection mechanisms.",
+    "description": "Explore the latest cybersecurity threats and defense strategies as AI transforms both attack vectors and protection mechanisms.",
+    "type": "blog",
+    "category": "Cybersecurity",
+    "date": "2024-11-10"
+  },
+  {
+    "id": "blog-iot-smart-cities",
+    "url": "blogs/iot-smart-cities.html",
+    "title": "IoT and Smart Cities: Building the Urban Future",
+    "content": "Explore how IoT technology is transforming urban environments into intelligent, sustainable, and citizen-centric smart cities.",
+    "description": "Explore how IoT technology is transforming urban environments into intelligent, sustainable, and citizen-centric smart cities.",
+    "type": "blog",
+    "category": "Internet of Things",
+    "date": "2024-11-05"
+  },
+  {
+    "id": "service-python-automation",
+    "url": "services/python-automation.html",
+    "title": "Python Automation & Scripting",
+    "content": "Automate repetitive tasks and streamline workflows with custom Python solutions",
+    "description": "Automate repetitive tasks and streamline workflows with custom Python solutions",
+    "type": "service"
+  },
+  {
+    "id": "service-cloud-managment",
+    "url": "services/cloud-managment.html",
+    "title": "Cloud Infrastructure Management",
+    "content": "Enterprise-grade cloud solutions with 24/7 monitoring, optimization, and support for AWS, Azure, and Google Cloud Platform",
+    "description": "Enterprise-grade cloud solutions with 24/7 monitoring, optimization, and support for AWS, Azure, and Google Cloud Platform",
+    "type": "service"
+  },
+  {
+    "id": "service-ai-integration",
+    "url": "services/ai-integration.html",
+    "title": "AI & Machine Learning Integration",
+    "content": "Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights",
+    "description": "Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights",
+    "type": "service"
+  },
+  {
+    "id": "service-software-development",
+    "url": "services/software-development.html",
+    "title": "Custom Software Development",
+    "content": "Build robust, scalable software solutions tailored to your unique business requirements",
+    "description": "Build robust, scalable software solutions tailored to your unique business requirements",
+    "type": "service"
+  },
+  {
+    "id": "service-web-development",
+    "url": "services/web-development.html",
+    "title": "Modern Web Development",
+    "content": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
+    "description": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
+    "type": "service"
+  },
+  {
+    "id": "service-data-analytics",
+    "url": "services/data-analytics.html",
+    "title": "Data Analytics & Business Intelligence",
+    "content": "Turn your data into actionable insights with advanced analytics, visualization, and reporting solutions",
+    "description": "Turn your data into actionable insights with advanced analytics, visualization, and reporting solutions",
+    "type": "service"
+  },
+  {
+    "id": "service-dashboards",
+    "url": "services/dashboards.html",
+    "title": "Interactive Dashboard Development",
+    "content": "Build powerful, real-time dashboards that visualize your key metrics and drive data-driven decisions",
+    "description": "Build powerful, real-time dashboards that visualize your key metrics and drive data-driven decisions",
+    "type": "service"
   }
 ]

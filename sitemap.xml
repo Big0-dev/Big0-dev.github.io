@@ -36,6 +36,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://big0.dev/partners.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://big0.dev/services.html</loc>
     <lastmod>2025-05-31</lastmod>
     <priority>0.8</priority>
@@ -62,6 +67,11 @@
   </url>
   <url>
     <loc>https://big0.dev/blog.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/staff-augmentation.html</loc>
     <lastmod>2025-05-31</lastmod>
     <priority>0.8</priority>
   </url>

@@ -56,6 +56,14 @@
     "type": "page"
   },
   {
+    "id": "page-partners",
+    "url": "partners.html",
+    "title": "Our Partners",
+    "content": "",
+    "description": "Big0 partners with leading technology companies to deliver comprehensive solutions. Explore our strategic partnerships and ecosystem.",
+    "type": "page"
+  },
+  {
     "id": "page-services",
     "url": "services.html",
     "title": "Services",
@@ -150,6 +158,14 @@
     "type": "blog",
     "category": "Internet of Things",
     "date": "2024-11-05"
+  },
+  {
+    "id": "service-staff-augmentation",
+    "url": "services/staff-augmentation.html",
+    "title": "Staff Augmentation",
+    "content": "Scale your team with top-tier tech talent on demand. Our staff augmentation services provide skilled professionals to seamlessly integrate with your existing te",
+    "description": "Scale your team with top-tier tech talent on demand. Our staff augmentation services provide skilled professionals to seamlessly integrate with your existing te",
+    "type": "service"
   },
   {
     "id": "service-ai-integration",

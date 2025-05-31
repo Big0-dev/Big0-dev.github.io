@@ -11,6 +11,13 @@
   <url>
     <loc>https://big0.dev/services.html</loc>
     <image:image>
+      <image:loc>https://big0.dev/static/staff-augmentation.jpg</image:loc>
+      <image:title>Staff Augmentation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services.html</loc>
+    <image:image>
       <image:loc>https://big0.dev/static/ai-integration.jpg</image:loc>
       <image:title>AI &amp; Machine Learning Integration</image:title>
     </image:image>
@@ -83,6 +90,13 @@
     <image:image>
       <image:loc>https://big0.dev/static/iot.avif</image:loc>
       <image:title>IoT and Smart Cities: Building the Urban Future</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://big0.dev/services/staff-augmentation.html</loc>
+    <image:image>
+      <image:loc>https://big0.dev/static/staff-augmentation.jpg</image:loc>
+      <image:title>Staff Augmentation image</image:title>
     </image:image>
   </url>
   <url>

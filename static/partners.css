@@ -1,0 +1,148 @@
+/* Partners Page Styles */
+.partner-ecosystem {
+  padding: var(--spacing-3xl) 0;
+}
+
+.partner-categories {
+  margin-top: var(--spacing-3xl);
+}
+
+.partner-category {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.partner-category h3 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-light);
+  font-size: 1.8rem;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.partner-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all var(--transition-default);
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
+}
+
+.partner-logo {
+  width: 120px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo svg {
+  max-width: 100%;
+  max-height: 100%;
+  color: var(--text-muted);
+}
+
+.partner-card h4 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-light);
+}
+
+.partner-card p {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Partner Benefits */
+.partner-benefits {
+  padding: var(--spacing-3xl) 0;
+  background: rgba(127, 62, 152, 0.02);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.benefit-card {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--text-light);
+}
+
+.benefit-card h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+/* Partner CTA */
+.partner-cta {
+  padding: var(--spacing-3xl) 0;
+}
+
+/* LinkedIn CTA for Careers */
+.linkedin-cta {
+  text-align: center;
+  padding: var(--spacing-3xl);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+}
+
+.linkedin-cta .lead {
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.linkedin-cta .primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.linkedin-cta svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .partner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

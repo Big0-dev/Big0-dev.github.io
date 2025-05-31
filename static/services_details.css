@@ -1,216 +1,97 @@
-/* ==============================
-   SERVICE DETAIL HEADER
-============================== */
-.service-detail {
-  padding-top: var(--spacing-3xl);
-  min-height: 100vh;
-}
-
-.service-header {
-  text-align: center;
-  margin-bottom: var(--spacing-3xl);
-  position: relative;
-  padding: var(--spacing-3xl) 0;
-  background: linear-gradient(
-    180deg,
-    rgba(127, 62, 152, 0.03) 0%,
-    transparent 100%
-  );
-}
-
-.service-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 2px;
-  background: var(--accent-gradient);
-  border-radius: 2px;
-}
-
-.service-header h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  color: var(--text-light);
-  margin-bottom: var(--spacing-lg);
-  position: relative;
-  display: inline-block;
-}
-
-.service-header h1::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: var(--accent-gradient);
-  border-radius: 3px;
-  opacity: 0.6;
-}
-
-/* Price Badge */
-.service-price-badge {
-  display: inline-block;
-  background: var(--accent-gradient);
-  color: var(--text-light);
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: 30px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: var(--spacing-md);
-  box-shadow: 0 5px 20px rgba(127, 62, 152, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.service-price-badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: left 0.5s ease;
-}
-
-.service-price-badge:hover::before {
-  left: 100%;
-}
-
-/* ==============================
-   HERO IMAGE
-============================== */
-.service-hero-image {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto var(--spacing-3xl);
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  background: var(--bg-card);
-  border: 1px solid rgba(127, 62, 152, 0.1);
-}
-
-.service-hero-image::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(127, 62, 152, 0.1) 0%,
-    transparent 50%
-  );
-  animation: rotate 20s linear infinite;
-  z-index: 1;
-}
-
-.service-hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 2;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* ==============================
-   SERVICE CONTENT
-============================== */
-.service-content {
-  max-width: 800px;
-  margin: 0 auto var(--spacing-3xl);
-  color: var(--text-dark);
-  line-height: 1.8;
-}
-
-.service-content h2 {
-  color: var(--text-light);
-  font-size: 2rem;
-  margin: var(--spacing-3xl) 0 var(--spacing-lg);
-  position: relative;
+/* Complete the blockquote styles */
+.service-content blockquote {
+  border-left: 4px solid var(--primary-color);
   padding-left: var(--spacing-lg);
-}
-
-.service-content h2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 80%;
-  background: var(--accent-gradient);
-  border-radius: 2px;
-}
-
-.service-content h3 {
-  color: var(--text-light);
-  font-size: 1.5rem;
-  margin: var(--spacing-xl) 0 var(--spacing-md);
-}
-
-.service-content p {
-  margin-bottom: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  font-style: italic;
   color: var(--text-muted);
 }
 
-.service-content ul,
-.service-content ol {
-  margin: var(--spacing-lg) 0;
-  padding-left: var(--spacing-xl);
-}
-
-.service-content li {
-  color: var(--text-dark);
-  margin-bottom: var(--spacing-sm);
-  position: relative;
-}
-
-.service-content ul li::marker {
-  color: var(--primary-color);
-}
-
-/* Code blocks */
-.service-content pre {
+/* Service Features Section */
+.service-features-section {
   background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3xl);
+  margin: var(--spacing-3xl) 0;
   border: 1px solid rgba(127, 62, 152, 0.1);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-lg);
-  overflow-x: auto;
-  margin: var(--spacing-lg) 0;
 }
 
-.service-content code {
-  font-family: "Consolas", "Monaco", monospace;
-  font-size: 0.9em;
-  color: var(--primary-light);
-  background: rgba(127, 62, 152, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
+.service-features-section h2 {
+  color: var(--text-light);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
 }
 
-.service-content pre code {
-  background: none;
+.service-features-list {
+  list-style: none;
   padding: 0;
-  color: var(--text-dark);
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
 }
 
-/* Blockquotes */
-.service-content blockquote {
-  border-left: 4px solid var(-
+.service-features-list li {
+  position: relative;
+  padding-left: var(--spacing-xl);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.service-features-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-gradient);
+  color: var(--text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Service CTA */
+.service-cta {
+  text-align: center;
+  padding: var(--spacing-3xl) 0;
+  margin: var(--spacing-3xl) 0;
+  background: linear-gradient(
+    135deg,
+    rgba(127, 62, 152, 0.05) 0%,
+    rgba(163, 102, 196, 0.02) 100%
+  );
+  border-radius: var(--border-radius-lg);
+}
+
+.service-cta h2 {
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-cta p {
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+/* Service Navigation */
+.service-navigation {
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(127, 62, 152, 0.1);
+  text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .service-features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-features-section {
+    padding: var(--spacing-xl);
+  }
+}

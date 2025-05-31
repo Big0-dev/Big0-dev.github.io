@@ -1,4 +1,4 @@
-from typing import Dict, Any, List  # Add List to the import
+from typing import Dict, Any, List
 from pathlib import Path
 from datetime import datetime
 from .core import Page, TemplateRenderer
@@ -41,9 +41,7 @@ class HomePage(Page):
         return "hero"
 
     def get_context(self) -> Dict[str, Any]:
-        # Get 3 most recent services
         recent_services = self._services[:3] if self._services else []
-        # Get 3 most recent blog posts
         recent_posts = self._blog_posts[:3] if self._blog_posts else []
 
         return {
@@ -138,7 +136,6 @@ class ResourcesPage(Page):
         return "resources"
 
 
-# Update existing pages for Big0 context
 class AboutPage(Page):
     @property
     def slug(self) -> str:
@@ -217,9 +214,6 @@ class TermsPage(Page):
         return "legal"
 
 
-# In pages.py, update the ServicesPage class:
-
-
 class ServicesPage(Page):
     """Services listing page"""
 
@@ -261,48 +255,6 @@ class ServicesPage(Page):
         return "services"
 
 
-class GalleryPage(Page):
-    """Gallery page"""
-
-    def __init__(self, renderer: TemplateRenderer):
-        super().__init__(renderer)
-        self._images = []
-
-    def set_images(self, images: List):
-        """Set gallery images"""
-        self._images = images
-
-    @property
-    def slug(self) -> str:
-        return "gallery"
-
-    @property
-    def title(self) -> str:
-        return "Gallery"
-
-    @property
-    def template(self) -> str:
-        return "gallery.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("gallery.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology."
-
-    def get_context(self) -> Dict[str, Any]:
-        return {
-            "images": self._images,
-            "gallery_url": f"{self.renderer.config.gallery_dir}",
-        }
-
-    @property
-    def custom_css(self) -> str:
-        return "gallery"
-
-
 class NotFoundPage(Page):
     @property
     def slug(self) -> str:
@@ -330,3 +282,29 @@ class NotFoundPage(Page):
     @property
     def custom_css(self) -> str:
         return "about"
+
+
+class PartnersPage(Page):
+    @property
+    def slug(self) -> str:
+        return "partners"
+
+    @property
+    def title(self) -> str:
+        return "Our Partners"
+
+    @property
+    def template(self) -> str:
+        return "partners.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("partners.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Big0 partners with leading technology companies to deliver comprehensive solutions. Explore our strategic partnerships and ecosystem."
+
+    @property
+    def custom_css(self) -> str:
+        return "partners"

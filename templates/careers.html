@@ -75,124 +75,18 @@
       Open <span class="gradient-text">Positions</span>
     </h2>
 
-    <div class="positions-filters">
-      <button class="filter-btn active" data-filter="all">All Positions</button>
-      <button class="filter-btn" data-filter="engineering">Engineering</button>
-      <button class="filter-btn" data-filter="data">Data & AI</button>
-      <button class="filter-btn" data-filter="cloud">Cloud</button>
-      <button class="filter-btn" data-filter="business">Business</button>
-    </div>
-
-    <div class="positions-list">
-      <div class="position-card" data-category="engineering">
-        <div class="position-header">
-          <h3>Senior Full Stack Engineer</h3>
-          <span class="position-type">Full-time</span>
-        </div>
-        <div class="position-meta">
-          <span class="location"
-            >{{ inject_svg('location', True) | safe }} San Francisco /
-            Remote</span
-          >
-          <span class="department"
-            >{{ inject_svg('team', True) | safe }} Engineering</span
-          >
-        </div>
-        <p>
-          Build scalable web applications using modern technologies like React,
-          Node.js, and cloud services.
-        </p>
-        <a href="#" class="position-link">View Details →</a>
-      </div>
-
-      <div class="position-card" data-category="data">
-        <div class="position-header">
-          <h3>Machine Learning Engineer</h3>
-          <span class="position-type">Full-time</span>
-        </div>
-        <div class="position-meta">
-          <span class="location"
-            >{{ inject_svg('location', True) | safe }} New York / Remote</span
-          >
-          <span class="department"
-            >{{ inject_svg('team', True) | safe }} Data & AI</span
-          >
-        </div>
-        <p>
-          Design and implement ML models for enterprise clients across various
-          industries.
-        </p>
-        <a href="#" class="position-link">View Details →</a>
-      </div>
-
-      <div class="position-card" data-category="cloud">
-        <div class="position-header">
-          <h3>Cloud Solutions Architect</h3>
-          <span class="position-type">Full-time</span>
-        </div>
-        <div class="position-meta">
-          <span class="location"
-            >{{ inject_svg('location', True) | safe }} Austin / Remote</span
-          >
-          <span class="department"
-            >{{ inject_svg('team', True) | safe }} Cloud Services</span
-          >
-        </div>
-        <p>
-          Design and implement cloud infrastructure solutions for enterprise
-          clients.
-        </p>
-        <a href="#" class="position-link">View Details →</a>
-      </div>
-
-      <div class="position-card" data-category="data">
-        <div class="position-header">
-          <h3>Data Engineer</h3>
-          <span class="position-type">Full-time</span>
-        </div>
-        <div class="position-meta">
-          <span class="location"
-            >{{ inject_svg('location', True) | safe }} Remote</span
-          >
-          <span class="department"
-            >{{ inject_svg('team', True) | safe }} Data & AI</span
-          >
-        </div>
-        <p>
-          Build and maintain data pipelines and infrastructure for large-scale
-          analytics.
-        </p>
-        <a href="#" class="position-link">View Details →</a>
-      </div>
-
-      <div class="position-card" data-category="business">
-        <div class="position-header">
-          <h3>Product Manager</h3>
-          <span class="position-type">Full-time</span>
-        </div>
-        <div class="position-meta">
-          <span class="location"
-            >{{ inject_svg('location', True) | safe }} San Francisco</span
-          >
-          <span class="department"
-            >{{ inject_svg('team', True) | safe }} Product</span
-          >
-        </div>
-        <p>
-          Lead product development for our AI-powered business intelligence
-          platform.
-        </p>
-        <a href="#" class="position-link">View Details →</a>
-      </div>
-    </div>
-
-    <div class="careers-cta">
-      <p>
-        Don't see a position that fits? We're always looking for talented
-        individuals.
+    <div class="linkedin-cta">
+      <p class="lead">
+        We're always looking for talented individuals to join our growing team.
+        Check out our current openings on LinkedIn to find your perfect role.
       </p>
-      <a href="mailto:careers@big0.dev" class="primary-btn">
-        <span>Send Your Resume</span>
+      <a
+        href="https://www.linkedin.com/company/big0/jobs/"
+        target="_blank"
+        class="primary-btn"
+      >
+        <span>View Jobs on LinkedIn</span>
+        {{ inject_svg('linkedin', True) | safe }}
       </a>
     </div>
   </div>

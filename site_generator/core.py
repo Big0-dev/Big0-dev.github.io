@@ -193,7 +193,7 @@ def get_urls(depth=0):
         "privacy": f"{prefix}privacy.html",
         "contact": f"{prefix}contact.html",
         "services_page": f"{prefix}services.html",
-        "gallery": f"{prefix}gallery.html",
+        "partners": f"{prefix}partners.html",
         "careers": f"{prefix}careers.html",
         "resources": f"{prefix}resources.html",
         "industries": f"{prefix}industries.html",

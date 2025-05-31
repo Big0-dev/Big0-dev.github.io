@@ -118,6 +118,7 @@ class SiteGenerator:
             PrivacyPage,
             TermsPage,
             NotFoundPage,
+            PartnersPage,
         ]
 
         for page_class in static_page_classes:

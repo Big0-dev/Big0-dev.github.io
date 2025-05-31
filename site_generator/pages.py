@@ -1,6 +1,5 @@
 from typing import Dict, Any, List
 from pathlib import Path
-from datetime import datetime
 from .core import Page, TemplateRenderer
 
 
@@ -107,32 +106,6 @@ class CareersPage(Page):
     @property
     def custom_css(self) -> str:
         return "careers"
-
-
-class ResourcesPage(Page):
-    @property
-    def slug(self) -> str:
-        return "resources"
-
-    @property
-    def title(self) -> str:
-        return "Resources"
-
-    @property
-    def template(self) -> str:
-        return "resources.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("resources.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Access whitepapers, guides, case studies, and tools to help your business succeed with AI and digital transformation."
-
-    @property
-    def custom_css(self) -> str:
-        return "resources"
 
 
 class AboutPage(Page):
@@ -310,3 +283,29 @@ class PartnersPage(Page):
     @property
     def custom_css(self) -> str:
         return "partners"
+
+
+class ProductsPage(Page):
+    @property
+    def slug(self) -> str:
+        return "products"
+
+    @property
+    def title(self) -> str:
+        return "Our Products"
+
+    @property
+    def template(self) -> str:
+        return "products.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("products.html")  # ✅ Fixed: should be products.html
+
+    @property
+    def meta_description(self) -> str:
+        return "Discover what Big0 is building"
+
+    @property
+    def custom_css(self) -> str:
+        return "products"

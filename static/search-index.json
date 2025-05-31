@@ -32,14 +32,6 @@
     "type": "page"
   },
   {
-    "id": "page-resources",
-    "url": "resources.html",
-    "title": "Resources",
-    "content": "",
-    "description": "Access whitepapers, guides, case studies, and tools to help your business succeed with AI and digital transformation.",
-    "type": "page"
-  },
-  {
     "id": "page-privacy",
     "url": "privacy.html",
     "title": "Privacy Policy",
@@ -61,6 +53,14 @@
     "title": "Our Partners",
     "content": "",
     "description": "Big0 partners with leading technology companies to deliver comprehensive solutions. Explore our strategic partnerships and ecosystem.",
+    "type": "page"
+  },
+  {
+    "id": "page-products",
+    "url": "products.html",
+    "title": "Our Products",
+    "content": "",
+    "description": "Discover what Big0 is building",
     "type": "page"
   },
   {

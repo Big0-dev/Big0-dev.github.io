@@ -114,11 +114,11 @@ class SiteGenerator:
             AboutPage,
             ContactPage,
             CareersPage,
-            ResourcesPage,
             PrivacyPage,
             TermsPage,
             NotFoundPage,
             PartnersPage,
+            ProductsPage,
         ]
 
         for page_class in static_page_classes:
@@ -186,15 +186,6 @@ class SiteGenerator:
                         "priority": priority,
                     }
                 )
-
-        # Add PDF resume
-        pages.append(
-            {
-                "loc": f"{self.config.domain}/static/hassan_resume.pdf",
-                "lastmod": datetime.now().strftime("%Y-%m-%d"),
-                "priority": "0.6",
-            }
-        )
 
         sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
         sitemap_content += (

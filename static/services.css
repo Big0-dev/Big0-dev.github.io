@@ -2,16 +2,16 @@
    SERVICES OVERVIEW
 ============================== */
 .services-overview {
-  padding: var(--spacing-xl) 0 var(--spacing-xl) 0; /* Reduced from 3xl */
+  padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
 }
 
 .overview-content {
   max-width: 800px;
-  margin: 0 auto var(--spacing-xl); /* Reduced from 3xl */
+  margin: 0 auto var(--spacing-xl);
 }
 
 .all-services {
-  padding: var(--spacing-xl) 0 var(--spacing-3xl) 0; /* Reduced top padding */
+  padding: var(--spacing-xl) 0 var(--spacing-3xl) 0;
 }
 .overview-content h2 {
   margin-bottom: var(--spacing-lg);

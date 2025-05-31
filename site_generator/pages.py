@@ -51,7 +51,6 @@ class HomePage(Page):
             "recent_services": recent_services,
             "total_services": len(self._services),
             "recent_posts": recent_posts,
-            # Add missing URLs for template
             "services_page": "./services.html",
             "about": "./about.html",
             "blog": "./blog.html",
@@ -160,6 +159,9 @@ class AboutPage(Page):
     @property
     def custom_css(self) -> str:
         return "about"
+
+    def get_context(self) -> Dict[str, Any]:
+        return {"careers": "./careers.html"}
 
 
 class PrivacyPage(Page):

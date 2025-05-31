@@ -204,6 +204,60 @@
   color: var(--text-light);
 }
 
+/* Google Form Container */
+.google-form-container {
+  width: 100%;
+  background: var(--bg-dark);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.google-form-container iframe {
+  width: 100%;
+  min-height: 1125px;
+  border: none;
+  background: var(--bg-dark);
+}
+
+/* Loading state for iframe */
+.google-form-container::before {
+  content: "Loading form...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  z-index: -1;
+}
+
+/* Adjust form wrapper for Google Forms */
+.contact-form-wrapper {
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .google-form-container iframe {
+    min-height: 1200px; /* Increase height for mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .google-form-container iframe {
+    min-height: 1300px; /* Further increase for small screens */
+  }
+
+  .contact-form-wrapper {
+    padding: var(--spacing-md);
+  }
+}
+
 /* ==============================
    FAQ SECTION
 ============================== */
@@ -243,6 +297,11 @@
 .faq-item p {
   margin: 0;
   color: var(--text-muted);
+}
+
+.google-form-container iframe {
+  background: var(--bg-card) !important;
+  color: var(--text-light) !important;
 }
 
 /* ==============================

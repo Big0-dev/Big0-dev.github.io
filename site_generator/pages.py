@@ -187,7 +187,7 @@ class PrivacyPage(Page):
 
     @property
     def custom_css(self) -> str:
-        return "legal"
+        return "info"
 
 
 class TermsPage(Page):
@@ -213,7 +213,7 @@ class TermsPage(Page):
 
     @property
     def custom_css(self) -> str:
-        return "legal"
+        return "info"
 
 
 class ServicesPage(Page):
@@ -283,7 +283,7 @@ class NotFoundPage(Page):
 
     @property
     def custom_css(self) -> str:
-        return "about"
+        return "info"
 
 
 class PartnersPage(Page):

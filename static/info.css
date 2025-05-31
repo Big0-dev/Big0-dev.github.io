@@ -1,0 +1,109 @@
+/* ========================
+   INFO PAGE STYLES
+   For: 404, Privacy, Terms
+======================== */
+
+.info-section {
+  padding: var(--spacing-3xl) 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.info-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.info-container h1 {
+  color: var(--text-light);
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  padding-bottom: var(--spacing-md);
+}
+
+.info-container h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+}
+
+.last-updated {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.info-content {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  box-shadow: var(--box-shadow);
+}
+
+.info-content h2 {
+  color: var(--text-light);
+  font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  padding-left: var(--spacing-md);
+}
+
+.info-content h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.info-content p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-404 {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-content {
+    padding: var(--spacing-lg);
+  }
+
+  .info-container h1 {
+    text-align: center;
+  }
+
+  .info-container h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .info-content {
+    padding: var(--spacing-md);
+  }
+
+  .info-content h2 {
+    padding-left: var(--spacing-sm);
+  }
+}

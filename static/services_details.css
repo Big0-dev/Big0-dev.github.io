@@ -247,6 +247,7 @@
 /* Service Navigation */
 .service-navigation {
   margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-3xl);
   padding-top: var(--spacing-xl);
   border-top: 1px solid rgba(127, 62, 152, 0.1);
   text-align: center;

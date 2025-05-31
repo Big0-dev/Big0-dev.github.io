@@ -2,7 +2,6 @@
 title: AI & Machine Learning Integration
 description: Integrate cutting-edge AI capabilities into your business processes with custom models, automation, and intelligent insights
 icon: ai
-image: ai-integration.jpg
 price: Custom pricing based on scope
 features: Custom AI models, Process automation, Predictive analytics, Natural language processing, Computer vision, MLOps
 ---

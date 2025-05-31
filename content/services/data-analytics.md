@@ -2,7 +2,6 @@
 title: Data Analytics & Business Intelligence
 description: Turn your data into actionable insights with advanced analytics, visualization, and reporting solutions
 icon: data
-image: data-analytics.jpg
 price: Starting at $3,000/month
 features: Data warehousing, ETL pipelines, Real-time analytics, Predictive modeling, Data visualization, Custom reporting
 ---

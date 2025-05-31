@@ -3,7 +3,6 @@ title: Staff Augmentation
 description: Scale your team with top-tier tech talent on demand. Our staff augmentation services provide skilled professionals to seamlessly integrate with your existing teams.
 short_description: Expand your development capacity with pre-vetted experts who work as an extension of your in-house team.
 icon: team
-image: staff-augmentation.jpg
 order: 3
 features: Rapid talent deployment (1-3 days), Flexible engagement models, Access to global talent pool, Full control over augmented staff, Cost-effective scaling, Reduced recruitment overhead
 ---

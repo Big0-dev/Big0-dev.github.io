@@ -200,6 +200,14 @@
     "type": "service"
   },
   {
+    "id": "service-cybersecurity-solutions",
+    "url": "services/cybersecurity-solutions.html",
+    "title": "Enterprise Cybersecurity Solutions",
+    "content": "Protect your business with comprehensive security services including threat monitoring, vulnerability assessment, and incident response",
+    "description": "Protect your business with comprehensive security services including threat monitoring, vulnerability assessment, and incident response",
+    "type": "service"
+  },
+  {
     "id": "service-dashboards",
     "url": "services/dashboards.html",
     "title": "Interactive Dashboard Development",

@@ -71,23 +71,56 @@
 <!-- Open Positions Section -->
 <section class="open-positions">
   <div class="container">
-    <h2 class="section-heading">
-      Open <span class="gradient-text">Positions</span>
-    </h2>
-
-    <div class="linkedin-cta">
+    <div class="section-header">
+      <h2>Open <span class="gradient-text">Positions</span></h2>
       <p class="lead">
         We're always looking for talented individuals to join our growing team.
-        Check out our current openings on LinkedIn to find your perfect role.
       </p>
-      <a
-        href="https://www.linkedin.com/company/big0/jobs/"
-        target="_blank"
-        class="primary-btn"
-      >
-        <span>View Jobs on LinkedIn</span>
-        {{ inject_svg('linkedin', True) | safe }}
-      </a>
+    </div>
+
+    <div class="positions-container">
+      <div class="position-cta-card">
+        <div class="position-cta-content">
+          <div class="position-cta-icon">
+            {{ inject_svg('linkedin', True) | safe }}
+          </div>
+          <h3>Explore Opportunities on LinkedIn</h3>
+          <p>
+            Discover our current openings and apply directly through our
+            LinkedIn page. We regularly update positions across engineering,
+            research, and operations.
+          </p>
+          <div class="position-benefits">
+            <div class="benefit-item">
+              {{ inject_svg('check', True) | safe }}
+              <span>Real-time job updates</span>
+            </div>
+            <div class="benefit-item">
+              {{ inject_svg('check', True) | safe }}
+              <span>Easy application process</span>
+            </div>
+            <div class="benefit-item">
+              {{ inject_svg('check', True) | safe }}
+              <span>Direct connection with our team</span>
+            </div>
+          </div>
+        </div>
+        <div class="position-cta-action">
+          <a
+            href="https://www.linkedin.com/company/big0/jobs/"
+            target="_blank"
+            class="primary-btn"
+          >
+            <span>View Jobs on LinkedIn</span>
+            {{ inject_svg('external-link', True) | safe }}
+          </a>
+          <p class="position-note">
+            All applications are processed through LinkedIn. You can get in
+            touch
+            <a aria-label="Email" href="mailto:hr@big0.dev">hr@big0.dev</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

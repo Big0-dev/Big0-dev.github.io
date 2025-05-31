@@ -2,7 +2,6 @@
 title: Modern Web Development
 description: Create stunning, high-performance web applications with cutting-edge technologies and responsive design
 icon: web
-image: web-development.jpg
 price: Starting at $5,000 per project
 features: Responsive design, Progressive web apps, SEO optimization, Performance optimization, API integration, CMS development
 ---

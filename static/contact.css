@@ -305,6 +305,115 @@
 }
 
 /* ==============================
+   MAP CONTAINER
+============================== */
+.map-container {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-default);
+}
+
+.map-container:hover {
+  border-color: rgba(127, 62, 152, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.map-container h3 {
+  color: var(--text-light);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.map-container h3::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-gradient);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.google-map {
+  position: relative;
+  height: 300px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.map-directions {
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.map-directions a {
+  color: var(--primary-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: color var(--transition-default);
+}
+
+.map-directions a::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: background var(--transition-default);
+}
+
+.map-directions a:hover {
+  color: var(--primary-light);
+}
+
+.map-directions a:hover::after {
+  background: var(--primary-light);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .map-container {
+    margin: var(--spacing-lg) 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .google-map {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .google-map {
+    height: 200px;
+  }
+}
+
+/* ==============================
    RESPONSIVE
 ============================== */
 @media screen and (max-width: 992px) {

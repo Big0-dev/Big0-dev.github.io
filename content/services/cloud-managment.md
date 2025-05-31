@@ -2,7 +2,6 @@
 title: Cloud Infrastructure Management
 description: Enterprise-grade cloud solutions with 24/7 monitoring, optimization, and support for AWS, Azure, and Google Cloud Platform
 icon: cloud
-image: cloud-management.jpg
 price: Starting at $2,500/month
 features: Multi-cloud support, Cost optimization, Security compliance, Auto-scaling, 24/7 monitoring, Disaster recovery
 ---

@@ -112,9 +112,25 @@
     "type": "page"
   },
   {
+    "id": "page-industries",
+    "url": "industries.html",
+    "title": "Industries We Serve",
+    "content": "",
+    "description": "Discover how Big0 delivers tailored AI and technology solutions across diverse industries including finance, healthcare, retail, and more.",
+    "type": "page"
+  },
+  {
     "id": "page-gallery",
     "url": "gallery.html",
     "title": "Gallery",
+    "content": "",
+    "description": "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology.",
+    "type": "page"
+  },
+  {
+    "id": "page-gallery-2",
+    "url": "gallery-2.html",
+    "title": "Gallery - Page 2",
     "content": "",
     "description": "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology.",
     "type": "page"
@@ -230,5 +246,53 @@
     "content": "Automate repetitive tasks and streamline workflows with custom Python solutions",
     "description": "Automate repetitive tasks and streamline workflows with custom Python solutions",
     "type": "service"
+  },
+  {
+    "id": "industry-finance",
+    "url": "industries/finance.html",
+    "title": "Financial Services",
+    "content": "Transforming financial services with AI-powered solutions for risk management, fraud detection, and customer experience enhancement",
+    "description": "Transforming financial services with AI-powered solutions for risk management, fraud detection, and customer experience enhancement",
+    "type": "industry"
+  },
+  {
+    "id": "industry-healthcare",
+    "url": "industries/healthcare.html",
+    "title": "Healthcare",
+    "content": "Revolutionizing healthcare delivery through AI-driven diagnostics, patient care optimization, and operational efficiency solutions",
+    "description": "Revolutionizing healthcare delivery through AI-driven diagnostics, patient care optimization, and operational efficiency solutions",
+    "type": "industry"
+  },
+  {
+    "id": "industry-retail",
+    "url": "industries/retail.html",
+    "title": "Retail & E-commerce",
+    "content": "Transforming retail experiences through AI-powered personalization, inventory optimization, and omnichannel customer engagement",
+    "description": "Transforming retail experiences through AI-powered personalization, inventory optimization, and omnichannel customer engagement",
+    "type": "industry"
+  },
+  {
+    "id": "industry-manufacturing",
+    "url": "industries/manufacturing.html",
+    "title": "Manufacturing",
+    "content": "Revolutionizing manufacturing through Industry 4.0 solutions, predictive maintenance, and smart factory automation",
+    "description": "Revolutionizing manufacturing through Industry 4.0 solutions, predictive maintenance, and smart factory automation",
+    "type": "industry"
+  },
+  {
+    "id": "industry-telecom",
+    "url": "industries/telecom.html",
+    "title": "Telecommunications",
+    "content": "Advancing telecommunications with AI-driven network optimization, customer experience enhancement, and 5G innovation",
+    "description": "Advancing telecommunications with AI-driven network optimization, customer experience enhancement, and 5G innovation",
+    "type": "industry"
+  },
+  {
+    "id": "industry-energy",
+    "url": "industries/energy.html",
+    "title": "Energy & Utilities",
+    "content": "Transforming energy sector with smart grid technologies, renewable energy optimization, and predictive asset management",
+    "description": "Transforming energy sector with smart grid technologies, renewable energy optimization, and predictive asset management",
+    "type": "industry"
   }
 ]

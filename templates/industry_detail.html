@@ -1,0 +1,41 @@
+<section class="industry-detail">
+  <div class="container">
+    <div class="industry-header">
+      <h1>{{ title }}</h1>
+      {% if icon %}
+      <div class="industry-icon-large">{{ inject_svg(icon, True) | safe }}</div>
+      {% endif %}
+    </div>
+
+    <div class="industry-content">{{ industry_content | safe }}</div>
+
+    {% if challenge %}
+    <div class="industry-challenge-section">
+      <h2>Industry Challenges</h2>
+      <p>{{ challenge }}</p>
+    </div>
+    {% endif %} {% if solutions %}
+    <div class="industry-solutions-section">
+      <h2>Our Solutions</h2>
+      <ul class="industry-solutions-list">
+        {% for solution in solutions %}
+        <li>{{ solution }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %} {% if case_studies %}
+    <div class="industry-case-studies-section">
+      <h2>Case Studies</h2>
+      <ul class="case-studies-list">
+        {% for case_study in case_studies %}
+        <li>{{ case_study }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="industry-navigation">
+      <a href="../industries.html" class="btn">← Back to Industries</a>
+    </div>
+  </div>
+</section>

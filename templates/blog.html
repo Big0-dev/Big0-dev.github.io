@@ -90,3 +90,63 @@
     {% endif %}
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    // Add disclaimer about pagination
+    const filtersContainer = document.querySelector('.blog-filters');
+    if (filtersContainer && document.querySelector('.pagination')) {
+        const disclaimer = document.createElement('p');
+        disclaimer.className = 'filter-disclaimer';
+        disclaimer.style.cssText = 'font-size: 0.9em; color: #666; margin-top: 0.5rem; font-style: italic;';
+        disclaimer.textContent = 'Filters apply only to posts on this page';
+        filtersContainer.appendChild(disclaimer);
+    }
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter blog cards
+            blogCards.forEach(card => {
+                const cardCategory = card.dataset.category;
+                
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Check if any posts are visible
+            const visibleCards = Array.from(blogCards).filter(card => 
+                card.style.display !== 'none'
+            );
+            
+            // Show/hide "no posts" message
+            let noPostsMsg = document.querySelector('.no-posts-message');
+            if (visibleCards.length === 0) {
+                if (!noPostsMsg) {
+                    noPostsMsg = document.createElement('div');
+                    noPostsMsg.className = 'no-posts-message';
+                    noPostsMsg.style.cssText = 'text-align: center; padding: 2rem; color: #666;';
+                    noPostsMsg.innerHTML = '<p>No posts found in this category on this page.</p>';
+                    document.querySelector('.blog-grid').appendChild(noPostsMsg);
+                }
+                noPostsMsg.style.display = 'block';
+            } else {
+                if (noPostsMsg) {
+                    noPostsMsg.style.display = 'none';
+                }
+            }
+        });
+    });
+});
+</script>

@@ -14,6 +14,8 @@ from .content import (
     ServicePage,
     BlogListingPage,
     GalleryListingPage,
+    IndustryPage,
+    IndustryListingPage,
 )
 from .utils import *
 
@@ -28,6 +30,7 @@ class SiteGenerator:
         self.blog_posts = []
         self.services = []
         self.gallery_images = []
+        self.industries = []
 
         # Setup Jinja2 environment
         env = Environment(
@@ -56,16 +59,19 @@ class SiteGenerator:
         self.blog_posts = self.content_loader.load_blog_posts()
         self.services = self.content_loader.load_services()
         self.gallery_images = self.content_loader.load_gallery_images()
+        self.industries = self.content_loader.load_industries()
 
         print(f"Loaded {len(self.blog_posts)} blog posts")
         print(f"Loaded {len(self.services)} services")
         print(f"Loaded {len(self.gallery_images)} gallery images")
+        print(f"Loaded {len(self.industries)} industries")
 
         # Create all pages
         self._create_static_pages()
         self._create_blog_pages()
         self._create_service_pages()
-        self._create_gallery_pages()  # NEW: Add gallery pages with pagination
+        self._create_industry_pages()  # Add this line
+        self._create_gallery_pages()
 
         # Render all pages
         for page in self.pages:
@@ -95,18 +101,18 @@ class SiteGenerator:
 
     def _clean_output(self):
         """Clean output directories"""
-        if os.path.exists("./blogs"):
-            shutil.rmtree("./blogs")
-        os.mkdir("./blogs")
+        directories_to_clean = ["./blogs", "./services", "./industries"]
 
-        if os.path.exists("./services"):
-            shutil.rmtree("./services")
-        os.mkdir("./services")
+        for directory in directories_to_clean:
+            if os.path.exists(directory):
+                shutil.rmtree(directory)
+            os.mkdir(directory)
 
     def _create_static_pages(self):
         """Create static pages"""
-        # Create HomePage with services and blog posts
-        home_page = HomePage(self.renderer, self.services, self.blog_posts)
+        home_page = HomePage(
+            self.renderer, self.services, self.blog_posts, self.industries
+        )
         self.pages.append(home_page)
 
         # Other static pages
@@ -159,6 +165,18 @@ class SiteGenerator:
         # Individual service pages
         for service in self.services:
             self.pages.append(ServicePage(self.renderer, service))
+
+    def _create_industry_pages(self):
+        """Create industry-related pages"""
+        if not self.industries:
+            return
+
+        # Individual industry pages
+        for industry in self.industries:
+            self.pages.append(IndustryPage(self.renderer, industry))
+
+        # Industries listing page
+        self.pages.append(IndustryListingPage(self.renderer, self.industries))
 
     def _generate_sitemap(self):
         """Generate sitemap.xml"""
@@ -255,7 +273,10 @@ class SiteGenerator:
 
         # Corrected call with proper parameters
         generate_search_index(
-            pages=self.pages, blog_posts=self.blog_posts, services=self.services
+            pages=self.pages,
+            blog_posts=self.blog_posts,
+            services=self.services,
+            industries=self.industries,
         )
 
     def _create_redirects(self):

@@ -663,6 +663,125 @@
 }
 
 /* ==============================
+   INDUSTRIES SECTION
+============================== */
+.industries-section {
+  padding: var(--spacing-3xl) 0;
+  background: rgba(127, 62, 152, 0.02);
+}
+
+.industries-slider {
+  overflow: hidden;
+  position: relative;
+  margin-top: var(--spacing-3xl);
+}
+
+.industry-track {
+  display: flex;
+  gap: var(--spacing-xl);
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.industry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  transition: all var(--transition-default);
+  min-width: 200px;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Remove blue color */
+}
+
+.industry-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+.industry-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-gradient);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-default);
+}
+
+.industry-item:hover .industry-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(127, 62, 152, 0.4);
+}
+
+.industry-icon svg {
+  width: 30px;
+  height: 30px;
+  color: var(--text-light);
+}
+
+.industry-item span {
+  color: var(--text-light);
+  font-weight: 600;
+  text-align: center;
+  transition: color var(--transition-default);
+}
+
+.industry-item:hover span {
+  color: var(--primary-light);
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.industries-slider:hover .industry-track {
+  animation-play-state: paused;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .industry-track {
+    gap: var(--spacing-lg);
+  }
+
+  .industry-item {
+    min-width: 150px;
+    padding: var(--spacing-md);
+  }
+
+  .industry-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .industry-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .industry-item {
+    min-width: 120px;
+  }
+}
+
+/* ==============================
    RESPONSIVE
 ============================== */
 @media screen and (max-width: 992px) {

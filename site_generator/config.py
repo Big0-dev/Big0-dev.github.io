@@ -14,6 +14,7 @@ class Config:
     static_dir: str = "./static"
     blog_dir: str = "./content/blogs"
     services_dir: str = "./content/services"
+    industries_dir: str = "./content/industries"
 
     # Site info
     domain: str = "https://big0.dev"
@@ -21,7 +22,7 @@ class Config:
 
     # Features
     posts_per_page: int = 6
-    gallery_imgs_per_page: int = 8
+    gallery_imgs_per_page: int = 9
 
     # Redirects
     redirects: Dict[str, str] = field(default_factory=dict)

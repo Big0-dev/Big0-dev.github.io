@@ -46,6 +46,23 @@ class Service(ContentItem):
 
 
 @dataclass
+class Industry(ContentItem):
+    icon: str = None
+    image: str = None
+    order: int = 999
+    short_description: str = ""
+    challenge: str = ""  # Industry-specific challenges
+    solutions: List[str] = None  # Solutions we provide
+    case_studies: List[str] = None  # Case study titles/links
+
+    def __post_init__(self):
+        if self.solutions is None:
+            self.solutions = []
+        if self.case_studies is None:
+            self.case_studies = []
+
+
+@dataclass
 class GalleryImage:
     filename: str
     title: str
@@ -113,6 +130,86 @@ class ContentLoader:
             return ""
 
         return re.sub(pattern, replace_template, markdown_content)
+
+    def load_industries(self) -> List[Industry]:
+        """Load industries from markdown files"""
+        industries = []
+        industries_dir = Path(self.config.industries_dir)
+
+        if not industries_dir.exists():
+            print(f"Industries directory not found: {industries_dir}")
+            return industries
+
+        for file_path in industries_dir.iterdir():
+            if file_path.suffix.lower() == ".md":
+                try:
+                    content = file_path.read_text(encoding="utf-8").strip()
+
+                    if not content:
+                        continue
+
+                    # Parse front matter
+                    metadata = {}
+                    markdown_content = content
+
+                    if content.startswith("---"):
+                        parts = content.split("---", 2)
+                        if len(parts) >= 3:
+                            for line in parts[1].strip().split("\n"):
+                                if ":" in line:
+                                    key, value = line.split(":", 1)
+                                    metadata[key.strip()] = value.strip()
+                            markdown_content = parts[2]
+
+                    # Reset markdown for each industry
+                    self.md.reset()
+
+                    # Process template includes
+                    if self.renderer:
+                        markdown_content = self._process_template_includes(
+                            markdown_content, is_blog=False
+                        )
+
+                    # Convert to HTML
+                    html_content = self.md.convert(markdown_content)
+
+                    # Parse solutions list
+                    solutions = []
+                    if metadata.get("solutions"):
+                        solutions = [
+                            s.strip() for s in metadata["solutions"].split(",")
+                        ]
+
+                    # Parse case studies list
+                    case_studies = []
+                    if metadata.get("case_studies"):
+                        case_studies = [
+                            c.strip() for c in metadata["case_studies"].split(",")
+                        ]
+
+                    industry = Industry(
+                        slug=file_path.stem,
+                        title=metadata.get("title", "Untitled Industry"),
+                        content_html=html_content,
+                        meta_description=metadata.get("description", "")[:160],
+                        short_description=metadata.get(
+                            "short_description", metadata.get("description", "")
+                        )[:200],
+                        icon=metadata.get("icon"),
+                        image=metadata.get("image"),
+                        challenge=metadata.get("challenge", ""),
+                        solutions=solutions,
+                        case_studies=case_studies,
+                        order=int(metadata.get("order", 999)),
+                    )
+                    industries.append(industry)
+
+                except Exception as e:
+                    print(f"Error loading industry {file_path.name}: {e}")
+
+        # Sort industries by order, then by title
+        industries.sort(key=lambda i: (i.order, i.title))
+        return industries
 
     def load_blog_posts(self) -> List[BlogPost]:
         """Load blog posts from markdown/txt files with enhanced detection"""
@@ -690,3 +787,82 @@ class GalleryListingPage(Page):
             }
 
         return context
+
+
+class IndustryPage(Page):
+    """Individual industry page"""
+
+    def __init__(self, renderer: TemplateRenderer, industry: Industry):
+        super().__init__(renderer)
+        self.industry = industry
+
+    @property
+    def slug(self) -> str:
+        return f"industry-{self.industry.slug}"
+
+    @property
+    def title(self) -> str:
+        return self.industry.title
+
+    @property
+    def template(self) -> str:
+        return "industry_detail.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path(f"industries/{self.industry.slug}.html")
+
+    @property
+    def meta_description(self) -> str:
+        return self.industry.meta_description
+
+    def get_context(self) -> Dict[str, Any]:
+        return {
+            "title": self.industry.title,
+            "image": self.industry.image,
+            "icon": self.industry.icon,
+            "challenge": self.industry.challenge,
+            "solutions": self.industry.solutions,
+            "case_studies": self.industry.case_studies,
+            "industry_content": self.industry.content_html,
+            "meta_des": self.industry.meta_description,
+        }
+
+    @property
+    def custom_css(self) -> str:
+        return "industry_details"
+
+
+class IndustryListingPage(Page):
+    """Industries listing page"""
+
+    def __init__(self, renderer: TemplateRenderer, industries: List[Industry]):
+        super().__init__(renderer)
+        self.industries = industries
+
+    @property
+    def slug(self) -> str:
+        return "industries"
+
+    @property
+    def title(self) -> str:
+        return "Industries We Serve"
+
+    @property
+    def template(self) -> str:
+        return "industries.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("industries.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Discover how Big0 delivers tailored AI and technology solutions across diverse industries including finance, healthcare, retail, and more."
+
+    @property
+    def custom_css(self) -> str:
+        return "industries"
+
+    def get_context(self) -> Dict[str, Any]:
+        return {"industries": self.industries}

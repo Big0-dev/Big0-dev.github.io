@@ -1,0 +1,110 @@
+{
+  "nutech-jobfair-2025-1.avif": {
+    "title": "NuTech Job Fair 2025 - Opening Ceremony",
+    "description": "The grand opening of NuTech Job Fair 2025, showcasing the latest opportunities in technology and innovation. Industry leaders and students gathering for networking and career opportunities.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["job fair", "technology", "networking", "careers", "innovation"]
+  },
+  "nutech-jobfair-2025-2.avif": {
+    "title": "Big0 Booth at NuTech Job Fair",
+    "description": "Big0's impressive booth display at the NuTech Job Fair, highlighting our AI and machine learning solutions. Team members engaging with potential candidates and showcasing our innovative projects.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["Big0", "booth", "AI", "machine learning", "recruitment"]
+  },
+  "nutech-jobfair-2025-3.avif": {
+    "title": "Tech Demo Presentations",
+    "description": "Live demonstrations of cutting-edge technology solutions at the job fair. Companies presenting their latest innovations and technical capabilities to prospective employees and partners.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["demo", "presentation", "technology", "innovation", "showcase"]
+  },
+  "nutech-jobfair-2025-4.avif": {
+    "title": "Student Networking Session",
+    "description": "Students and recent graduates networking with industry professionals. A vibrant atmosphere of learning, sharing experiences, and building professional connections.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["students", "networking", "professionals", "connections", "career"]
+  },
+  "nutech-jobfair-2025-5.avif": {
+    "title": "AI & Machine Learning Panel",
+    "description": "Expert panel discussion on the future of AI and machine learning in various industries. Industry thought leaders sharing insights on emerging trends and career opportunities.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["AI", "machine learning", "panel", "experts", "future tech"]
+  },
+  "nutech-jobfair-2025-6.avif": {
+    "title": "Interactive Tech Stations",
+    "description": "Hands-on experience zones where visitors could interact with the latest technology solutions. From VR experiences to IoT demonstrations, showcasing practical applications.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["interactive", "hands-on", "VR", "IoT", "technology"]
+  },
+  "nutech-jobfair-2025-7.avif": {
+    "title": "Career Counseling Corner",
+    "description": "One-on-one career guidance sessions with industry mentors. Providing personalized advice on career paths, skill development, and industry insights.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["career counseling", "mentorship", "guidance", "skills", "advice"]
+  },
+  "nutech-jobfair-2025-8.avif": {
+    "title": "Startup Showcase Pavilion",
+    "description": "Emerging startups presenting their innovative solutions and hiring opportunities. A hub of entrepreneurial energy and cutting-edge technological developments.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": [
+      "startups",
+      "innovation",
+      "entrepreneurship",
+      "emerging tech",
+      "opportunities"
+    ]
+  },
+  "nutech-jobfair-2025-9.avif": {
+    "title": "Big0 Team Recruitment Drive",
+    "description": "Big0 team conducting interviews and recruitment activities. Showcasing our company culture, values, and the exciting opportunities available for talented individuals.",
+    "category": "Team",
+    "date": "2025-01-15",
+    "tags": [
+      "Big0 team",
+      "recruitment",
+      "interviews",
+      "company culture",
+      "opportunities"
+    ]
+  },
+  "nutech-jobfair-2025-10.avif": {
+    "title": "Cloud Solutions Workshop",
+    "description": "Interactive workshop on cloud computing solutions and their practical applications in modern business environments. Hands-on learning experience for attendees.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": ["cloud computing", "workshop", "solutions", "business", "hands-on"]
+  },
+  "nutech-jobfair-2025-11.avif": {
+    "title": "Awards and Recognition Ceremony",
+    "description": "Celebrating outstanding achievements in technology and innovation. Recognition of top performers, innovative projects, and industry contributions.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": [
+      "awards",
+      "recognition",
+      "achievements",
+      "innovation",
+      "celebration"
+    ]
+  },
+  "nutech-jobfair-2025-12.avif": {
+    "title": "Closing Network Reception",
+    "description": "The closing reception of NuTech Job Fair 2025, featuring networking opportunities, refreshments, and final connections between employers and job seekers.",
+    "category": "Events",
+    "date": "2025-01-15",
+    "tags": [
+      "closing reception",
+      "networking",
+      "connections",
+      "employers",
+      "job seekers"
+    ]
+  }
+}

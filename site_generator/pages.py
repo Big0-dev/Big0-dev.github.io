@@ -5,11 +5,16 @@ from .core import Page, TemplateRenderer
 
 class HomePage(Page):
     def __init__(
-        self, renderer: TemplateRenderer, services: List = None, blog_posts: List = None
+        self,
+        renderer: TemplateRenderer,
+        services: List = None,
+        blog_posts: List = None,
+        industries: List = None,
     ):
         super().__init__(renderer)
         self._services = services or []
         self._blog_posts = blog_posts or []
+        self._industries = industries or []
 
     @property
     def slug(self) -> str:
@@ -50,9 +55,11 @@ class HomePage(Page):
             "recent_services": recent_services,
             "total_services": len(self._services),
             "recent_posts": recent_posts,
+            "industries": self._industries,
             "services_page": "./services.html",
             "about": "./about.html",
             "blog": "./blog.html",
+            "industries_page": "./industries.html",
         }
 
 

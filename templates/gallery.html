@@ -36,8 +36,10 @@
           />
           <div class="gallery-overlay">
             <div class="overlay-content">
-              <h3>{{ image.title }}</h3>
-              <p class="gallery-category">{{ image.category }}</p>
+              <div>
+                <h3>{{ image.title }}</h3>
+                <p class="gallery-category">{{ image.category }}</p>
+              </div>
               <span class="view-icon">
                 {{ inject_svg('expand', True) | safe }}
               </span>
@@ -188,5 +190,35 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // Scroll reveal functionality
+  const observeGalleryItems = () => {
+    const items = document.querySelectorAll('.gallery-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
+  };
+
+  // Add scroll reveal
+  if (window.IntersectionObserver) {
+    observeGalleryItems();
+  } else {
+    // Fallback for older browsers
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.classList.add('revealed');
+    });
+  }
 });
 </script>

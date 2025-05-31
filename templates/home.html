@@ -214,20 +214,21 @@
 
     <div class="industries-slider">
       <div class="industry-track">
-        {% set industries = [ {'icon': 'finance', 'name': 'Finance'}, {'icon':
-        'healthcare', 'name': 'Healthcare'}, {'icon': 'retail', 'name':
-        'Retail'}, {'icon': 'manufacturing', 'name': 'Manufacturing'}, {'icon':
-        'telecom', 'name': 'Telecommunications'}, {'icon': 'energy', 'name':
-        'Energy'} ] %} {% for industry in industries * 2 %} {# Duplicate for
-        smooth scroll #}
-        <div class="industry-item">
+        {% for industry in industries * 4 %} {# Duplicate for smooth scroll #}
+        <a href="./industries/{{ industry.slug }}.html" class="industry-item">
           <div class="industry-icon">
             {{ inject_svg(industry.icon, True) | safe }}
           </div>
-          <span>{{ industry.name }}</span>
-        </div>
+          <span>{{ industry.title }}</span>
+        </a>
         {% endfor %}
       </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 3rem">
+      <a href="./industries.html" class="btn">
+        <span>View All Industries</span>
+      </a>
     </div>
   </div>
 </section>

@@ -6,7 +6,7 @@ import json
 import shutil
 from bs4 import BeautifulSoup
 from .core import Page  # 👈 Add this
-from .content import BlogPost, Service  # 👈 Add these
+from .content import BlogPost, Service, Industry
 
 
 def ensure_directory(path: Path) -> None:
@@ -262,7 +262,10 @@ Sitemap: {config.domain}/sitemap-images.xml"""
 
 
 def generate_search_index(
-    pages: List[Page], blog_posts: List[BlogPost], services: List[Service]
+    pages: List[Page],
+    blog_posts: List[BlogPost],
+    services: List[Service],
+    industries: List = None,
 ) -> str:
     """Generate search index JSON with duplicate protection"""
     documents = []
@@ -279,8 +282,12 @@ def generate_search_index(
     # Add static pages (excluding blog post pages)
     for page in pages:
         if hasattr(page, "slug") and page.slug not in ["404"]:
-            # Skip blog post pages and service pages (they're handled separately)
-            if "blog/" in str(page.output_path) or "services/" in str(page.output_path):
+            # Skip blog post pages, service pages, and industry pages (they're handled separately)
+            if (
+                "blog/" in str(page.output_path)
+                or "services/" in str(page.output_path)
+                or "industries/" in str(page.output_path)
+            ):
                 continue
 
             add_document(
@@ -321,6 +328,20 @@ def generate_search_index(
                 "type": "service",
             }
         )
+
+    # Add industries directly from content
+    if industries:
+        for industry in industries:
+            add_document(
+                {
+                    "id": f"industry-{industry.slug}",
+                    "url": f"industries/{industry.slug}.html",
+                    "title": industry.title,
+                    "content": industry.meta_description,
+                    "description": industry.meta_description,
+                    "type": "industry",
+                }
+            )
 
     # Save to static directory
     output_path = Path("static/search-index.json")

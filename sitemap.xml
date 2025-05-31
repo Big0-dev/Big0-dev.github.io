@@ -116,7 +116,47 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://big0.dev/industries/finance.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/industries/healthcare.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/industries/retail.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/industries/manufacturing.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/industries/telecom.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/industries/energy.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/industries.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://big0.dev/gallery.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/gallery-2.html</loc>
     <lastmod>2025-06-01</lastmod>
     <priority>0.8</priority>
   </url>

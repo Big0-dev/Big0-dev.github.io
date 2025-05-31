@@ -1,0 +1,83 @@
+<!-- industries.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        Industries We <span class="gradient-text">Serve</span>
+      </h1>
+      <p class="page-subtitle">
+        Delivering tailored AI and technology solutions across diverse sectors
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Industries Overview -->
+<section class="industries-overview">
+  <div class="container">
+    <div class="overview-content">
+      <h2 class="text-center">
+        Transforming Businesses Across
+        <span class="gradient-text">Every Sector</span>
+      </h2>
+      <p class="lead text-center">
+        We understand that each industry has unique challenges and requirements.
+        Our solutions are tailored to meet the specific needs of your sector.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- All Industries Grid -->
+<section class="all-industries">
+  <div class="container">
+    <div class="industries-grid">
+      {% for industry in industries %}
+      <div class="industry-card">
+        {% if industry.icon %}
+        <div class="industry-icon">
+          {{ inject_svg(industry.icon, True) | safe }}
+        </div>
+        {% endif %}
+        <h3>{{ industry.title }}</h3>
+        <p>{{ industry.short_description }}</p>
+        {% if industry.challenge %}
+        <div class="industry-challenge">
+          <h4>Key Challenge</h4>
+          <p>{{ industry.challenge }}</p>
+        </div>
+        {% endif %} {% if industry.solutions %}
+        <ul class="industry-solutions">
+          {% for solution in industry.solutions[:3] %}
+          <li>{{ solution }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <a href="./industries/{{ industry.slug }}.html" class="industry-link">
+          Learn More <span>→</span>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="industries-cta">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <h2>Ready to Transform Your Industry?</h2>
+        <p>
+          Let's discuss how our solutions can address your industry-specific
+          challenges
+        </p>
+        <button class="primary-btn" popovertarget="modal">
+          <span>Get Industry Consultation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

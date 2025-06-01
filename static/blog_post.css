@@ -1,7 +1,5 @@
-/* blog_post.css - Blog Post Specific Styles */
-
 /* ==============================
-   BLOG POST CONTENT ENHANCEMENTS
+   BLOG POST LAYOUT
 ============================== */
 .blog-post {
   max-width: 900px;
@@ -15,7 +13,9 @@
 }
 
 .post-meta {
+  display: flex;
   justify-content: center;
+  gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
   flex-wrap: wrap;
 }
@@ -57,7 +57,9 @@
   border-radius: 2px;
 }
 
-/* Post content typography enhancements */
+/* ==============================
+   POST CONTENT TYPOGRAPHY
+============================== */
 .post-content {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -116,7 +118,7 @@
 }
 
 .post-content blockquote::before {
-  content: """;
+  content: "";
   position: absolute;
   top: -20px;
   left: 10px;
@@ -171,7 +173,7 @@
   margin: var(--spacing-xl) 0;
 }
 
-.post-content th, 
+.post-content th,
 .post-content td {
   padding: var(--spacing-md);
   text-align: left;
@@ -184,7 +186,9 @@
   font-weight: 600;
 }
 
-/* Post footer styling */
+/* ==============================
+   POST FOOTER
+============================== */
 .post-footer {
   margin-top: var(--spacing-3xl);
   padding-top: var(--spacing-xl);
@@ -316,32 +320,32 @@
 }
 
 /* ==============================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE
 ============================== */
 @media screen and (max-width: 768px) {
   .post-title {
     font-size: 1.8rem;
     padding-bottom: var(--spacing-md);
   }
-  
+
   .post-title::after {
     width: 60px;
     height: 3px;
   }
-  
+
   .post-content h2 {
     font-size: 1.5rem;
   }
-  
+
   .post-content h3 {
     font-size: 1.3rem;
   }
-  
+
   .post-author {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .author-social {
     justify-content: center;
   }
@@ -352,23 +356,23 @@
     flex-direction: column;
     gap: var(--spacing-sm);
   }
-  
+
   .post-title {
     font-size: 1.6rem;
   }
-  
+
   .post-content {
     font-size: 1rem;
   }
-  
+
   .post-content h2 {
     font-size: 1.3rem;
   }
-  
+
   .post-content blockquote {
     padding: var(--spacing-md);
   }
-  
+
   .back-link {
     width: 100%;
     justify-content: center;

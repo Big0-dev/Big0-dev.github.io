@@ -246,17 +246,27 @@ class Page(ABC):
     def get_context(self) -> Dict[str, Any]:
         return {}
 
+    @property
+    def depth(self) -> int:
+        """Calculate page depth from output path"""
+        page_name = str(self.output_path).replace(".html", "").replace("\\", "/")
+        return page_name.count("/")
+
+    @property
+    def static_path(self) -> str:
+        """Get relative static path based on depth"""
+        return "../" * self.depth + "static"
+
     def render(self) -> str:
         """Render page following original logic exactly"""
         # Calculate depth from output path
-        page_name = str(self.output_path).replace(".html", "").replace("\\", "/")
-        depth = page_name.count("/")
+        depth = self.depth
 
         # Get URLs adjusted for current page depth
         page_urls = get_urls(depth)
 
         # Calculate static path based on depth
-        static_path = "../" * depth + "static"
+        static_path = self.static_path
 
         # Load templates
         base_template = self.renderer.env.get_template("base.html")

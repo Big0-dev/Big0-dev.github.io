@@ -12,7 +12,7 @@
     "url": "about.html",
     "title": "About Us",
     "content": "",
-    "description": "Learn about Big0's mission to transform businesses through responsible AI innovation. Meet our team and discover our values.",
+    "description": "Learn about Big0's mission to transform businesses through responsible AI innovation.",
     "type": "page"
   },
   {
@@ -52,7 +52,7 @@
     "url": "partners.html",
     "title": "Our Partners",
     "content": "",
-    "description": "Big0 partners with leading technology companies to deliver comprehensive solutions. Explore our strategic partnerships and ecosystem.",
+    "description": "Big0 partners with leading technology companies to deliver comprehensive solutions.",
     "type": "page"
   },
   {
@@ -72,11 +72,11 @@
     "type": "page"
   },
   {
-    "id": "page-blog-ai-transformation-2024",
-    "url": "blogs/ai-transformation-2024.html",
-    "title": "The AI Revolution: How Businesses Are Transforming in 2024",
+    "id": "page-industries",
+    "url": "industries.html",
+    "title": "Industries We Serve",
     "content": "",
-    "description": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "description": "Discover how Big0 delivers tailored AI and technology solutions across diverse industries including finance, healthcare, retail, and more.",
     "type": "page"
   },
   {
@@ -104,19 +104,19 @@
     "type": "page"
   },
   {
+    "id": "page-blog-ai-transformation-2024",
+    "url": "blogs/ai-transformation-2024.html",
+    "title": "The AI Revolution: How Businesses Are Transforming in 2024",
+    "content": "",
+    "description": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "type": "page"
+  },
+  {
     "id": "page-blog",
     "url": "blog.html",
     "title": "Blog",
     "content": "",
     "description": "Explore cutting-edge insights on AI, Federated Learning, programming, big data, and robotics.",
-    "type": "page"
-  },
-  {
-    "id": "page-industries",
-    "url": "industries.html",
-    "title": "Industries We Serve",
-    "content": "",
-    "description": "Discover how Big0 delivers tailored AI and technology solutions across diverse industries including finance, healthcare, retail, and more.",
     "type": "page"
   },
   {
@@ -134,16 +134,6 @@
     "content": "",
     "description": "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology.",
     "type": "page"
-  },
-  {
-    "id": "blog-ai-transformation-2024",
-    "url": "blogs/ai-transformation-2024.html",
-    "title": "The AI Revolution: How Businesses Are Transforming in 2024",
-    "content": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
-    "description": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
-    "type": "blog",
-    "category": "AI & Machine Learning",
-    "date": "2024-11-20"
   },
   {
     "id": "blog-cloud-migration-best-practices",
@@ -174,6 +164,16 @@
     "type": "blog",
     "category": "Internet of Things",
     "date": "2024-11-05"
+  },
+  {
+    "id": "blog-ai-transformation-2024",
+    "url": "blogs/ai-transformation-2024.html",
+    "title": "The AI Revolution: How Businesses Are Transforming in 2024",
+    "content": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "description": "Discover how artificial intelligence is reshaping industries and creating new opportunities for businesses ready to embrace the future of technology.",
+    "type": "blog",
+    "category": "AI & Machine Learning",
+    "date": "2024-11-20"
   },
   {
     "id": "service-staff-augmentation",

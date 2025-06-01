@@ -46,9 +46,9 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://big0.dev/blogs/ai-transformation-2024.html</loc>
+    <loc>https://big0.dev/industries.html</loc>
     <lastmod>2025-06-01</lastmod>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://big0.dev/blogs/cloud-migration-best-practices.html</loc>
@@ -62,6 +62,11 @@
   </url>
   <url>
     <loc>https://big0.dev/blogs/iot-smart-cities.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/blogs/ai-transformation-2024.html</loc>
     <lastmod>2025-06-01</lastmod>
     <priority>0.7</priority>
   </url>
@@ -142,11 +147,6 @@
   </url>
   <url>
     <loc>https://big0.dev/industries/energy.html</loc>
-    <lastmod>2025-06-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://big0.dev/industries.html</loc>
     <lastmod>2025-06-01</lastmod>
     <priority>0.8</priority>
   </url>

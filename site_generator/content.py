@@ -1,529 +1,246 @@
+# content.py - Optimized version
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Type, TypeVar
 from datetime import datetime
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import markdown
-import os
-from bs4 import BeautifulSoup
 import json
+import logging
+from abc import ABC, abstractmethod
+from bs4 import BeautifulSoup
 
 from .core import Page, TemplateRenderer
 
+logger = logging.getLogger(__name__)
+
+T = TypeVar("T", bound="ContentItem")
+
 
 @dataclass
-class ContentItem:
-    """Base class for content items"""
+class ContentItem(ABC):
+    """Base class for all content items"""
 
     slug: str
     title: str
     content_html: str
     meta_description: str = ""
+    order: int = 999
+    image: str = None
+    icon: str = None
+
+    @classmethod
+    @abstractmethod
+    def from_metadata(
+        cls, slug: str, metadata: Dict[str, Any], html_content: str
+    ) -> "ContentItem":
+        """Create instance from metadata dict"""
+        pass
 
 
 @dataclass
 class BlogPost(ContentItem):
     category: str = "Uncategorized"
-    date: datetime = None
-    image: str = None
+    date: datetime = field(default_factory=datetime.now)
 
-    def __post_init__(self):
-        if self.date is None:
-            self.date = datetime.now()
+    @classmethod
+    def from_metadata(
+        cls, slug: str, metadata: Dict[str, Any], html_content: str
+    ) -> "BlogPost":
+        return cls(
+            slug=slug,
+            title=metadata.get("title", "Untitled Post"),
+            content_html=html_content,
+            meta_description=metadata.get("meta_description", "")[:160],
+            category=metadata.get("category", "Uncategorized"),
+            date=metadata.get("date", datetime.now()),
+            image=metadata.get("image"),
+        )
 
 
 @dataclass
 class Service(ContentItem):
-    icon: str = None
-    image: str = None
     price: str = None
-    features: List[str] = None
-    order: int = 999  # Keep order for sorting
-    short_description: str = ""  # For the card description
+    features: List[str] = field(default_factory=list)
+    short_description: str = ""
 
-    def __post_init__(self):
-        if self.features is None:
-            self.features = []
+    @classmethod
+    def from_metadata(
+        cls, slug: str, metadata: Dict[str, Any], html_content: str
+    ) -> "Service":
+        features = []
+        if metadata.get("features"):
+            features = [f.strip() for f in metadata["features"].split(",")]
+
+        return cls(
+            slug=slug,
+            title=metadata.get("title", "Untitled Service"),
+            content_html=html_content,
+            meta_description=metadata.get("description", "")[:160],
+            short_description=metadata.get(
+                "short_description", metadata.get("description", "")
+            )[:200],
+            icon=metadata.get("icon"),
+            image=metadata.get("image"),
+            price=metadata.get("price"),
+            features=features,
+            order=int(metadata.get("order", 999)),
+        )
 
 
 @dataclass
 class Industry(ContentItem):
-    icon: str = None
-    image: str = None
-    order: int = 999
     short_description: str = ""
-    challenge: str = ""  # Industry-specific challenges
-    solutions: List[str] = None  # Solutions we provide
-    case_studies: List[str] = None  # Case study titles/links
+    challenge: str = ""
+    solutions: List[str] = field(default_factory=list)
+    case_studies: List[str] = field(default_factory=list)
 
-    def __post_init__(self):
-        if self.solutions is None:
-            self.solutions = []
-        if self.case_studies is None:
-            self.case_studies = []
+    @classmethod
+    def from_metadata(
+        cls, slug: str, metadata: Dict[str, Any], html_content: str
+    ) -> "Industry":
+        solutions = []
+        if metadata.get("solutions"):
+            solutions = [s.strip() for s in metadata["solutions"].split(",")]
+
+        case_studies = []
+        if metadata.get("case_studies"):
+            case_studies = [c.strip() for c in metadata["case_studies"].split(",")]
+
+        return cls(
+            slug=slug,
+            title=metadata.get("title", "Untitled Industry"),
+            content_html=html_content,
+            meta_description=metadata.get("description", "")[:160],
+            short_description=metadata.get(
+                "short_description", metadata.get("description", "")
+            )[:200],
+            icon=metadata.get("icon"),
+            image=metadata.get("image"),
+            challenge=metadata.get("challenge", ""),
+            solutions=solutions,
+            case_studies=case_studies,
+            order=int(metadata.get("order", 999)),
+        )
 
 
 @dataclass
 class GalleryImage:
+    """Gallery image with metadata"""
+
     filename: str
     title: str
     description: str = ""
     category: str = "General"
-    date: datetime = None
-    tags: List[str] = None
-
-    def __post_init__(self):
-        if self.date is None:
-            self.date = datetime.now()
-        if self.tags is None:
-            self.tags = []
+    date: datetime = field(default_factory=datetime.now)
+    tags: List[str] = field(default_factory=list)
 
 
 class ContentLoader:
-    """Loads content from markdown/text files"""
+    """Unified content loader with better error handling"""
 
     def __init__(self, config, renderer=None):
         self.config = config
         self.renderer = renderer
         self.md = markdown.Markdown(extensions=["extra", "codehilite"])
 
-    def _process_template_includes(
-        self, markdown_content: str, is_blog: bool = True
-    ) -> str:
-        """Process template includes like {{template:cta}} and video embeds"""
-        import re
+    def load_content(
+        self, content_dir: Path, content_class: Type[T], use_frontmatter: bool = True
+    ) -> List[T]:
+        """Generic content loading method"""
+        items = []
 
-        # Combined pattern for templates and video embeds
-        pattern = r"{{(template|video):([a-zA-Z0-9_-]+)}}"
+        if not content_dir.exists():
+            logger.warning(f"Content directory not found: {content_dir}")
+            return items
 
-        def replace_template(match):
-            tag_type = match.group(1)
-            value = match.group(2)
-
-            if tag_type == "template":
-                template_name = value + ".html"
-                try:
-                    # Fixed context for proper static path handling
-                    context = {
-                        "inject_svg": self.renderer.inject_svg
-                        if self.renderer
-                        else None,
-                        "static": "../static" if is_blog else "./static",
-                        "config": self.config,  # Add config to context
-                    }
-                    template = self.renderer.env.get_template(template_name)
-                    rendered_content = template.render(**context)
-                    return rendered_content
-                except Exception as e:
-                    return f"<!-- Template include failed for {template_name}: {str(e)} -->"
-
-            elif tag_type == "video":
-                # Render video template with YouTube ID
-                try:
-                    template = self.renderer.env.get_template("video.html")
-                    return template.render(
-                        youtube_id=value,
-                        config=self.config,
-                    )
-                except Exception as e:
-                    return f"<!-- Video embed failed: {str(e)} -->"
-
-            return ""
-
-        return re.sub(pattern, replace_template, markdown_content)
-
-    def load_industries(self) -> List[Industry]:
-        """Load industries from markdown files"""
-        industries = []
-        industries_dir = Path(self.config.industries_dir)
-
-        if not industries_dir.exists():
-            print(f"Industries directory not found: {industries_dir}")
-            return industries
-
-        for file_path in industries_dir.iterdir():
-            if file_path.suffix.lower() == ".md":
-                try:
-                    content = file_path.read_text(encoding="utf-8").strip()
-
-                    if not content:
-                        continue
-
-                    # Parse front matter
-                    metadata = {}
-                    markdown_content = content
-
-                    if content.startswith("---"):
-                        parts = content.split("---", 2)
-                        if len(parts) >= 3:
-                            for line in parts[1].strip().split("\n"):
-                                if ":" in line:
-                                    key, value = line.split(":", 1)
-                                    metadata[key.strip()] = value.strip()
-                            markdown_content = parts[2]
-
-                    # Reset markdown for each industry
-                    self.md.reset()
-
-                    # Process template includes
-                    if self.renderer:
-                        markdown_content = self._process_template_includes(
-                            markdown_content, is_blog=False
-                        )
-
-                    # Convert to HTML
-                    html_content = self.md.convert(markdown_content)
-
-                    # Parse solutions list
-                    solutions = []
-                    if metadata.get("solutions"):
-                        solutions = [
-                            s.strip() for s in metadata["solutions"].split(",")
-                        ]
-
-                    # Parse case studies list
-                    case_studies = []
-                    if metadata.get("case_studies"):
-                        case_studies = [
-                            c.strip() for c in metadata["case_studies"].split(",")
-                        ]
-
-                    industry = Industry(
-                        slug=file_path.stem,
-                        title=metadata.get("title", "Untitled Industry"),
-                        content_html=html_content,
-                        meta_description=metadata.get("description", "")[:160],
-                        short_description=metadata.get(
-                            "short_description", metadata.get("description", "")
-                        )[:200],
-                        icon=metadata.get("icon"),
-                        image=metadata.get("image"),
-                        challenge=metadata.get("challenge", ""),
-                        solutions=solutions,
-                        case_studies=case_studies,
-                        order=int(metadata.get("order", 999)),
-                    )
-                    industries.append(industry)
-
-                except Exception as e:
-                    print(f"Error loading industry {file_path.name}: {e}")
-
-        # Sort industries by order, then by title
-        industries.sort(key=lambda i: (i.order, i.title))
-        return industries
-
-    def load_blog_posts(self) -> List[BlogPost]:
-        """Load blog posts from markdown/txt files with enhanced detection"""
-        posts = []
-        blog_dir = Path(self.config.blog_dir)
-        seen_slugs = set()
-        error_count = 0
-        processed_count = 0
-        skipped_files = []
-
-        if not blog_dir.exists():
-            print(f"❌ Blog directory not found: {blog_dir}")
-            return posts
-
-        print(f"📂 Scanning blog directory: {blog_dir}")
-
-        # Get all potential blog files (case-insensitive)
-        all_files = []
-        for file_path in blog_dir.iterdir():
-            if file_path.is_file():
-                # Case-insensitive extension check
-                if file_path.suffix.lower() in [".md", ".txt"]:
-                    all_files.append(file_path)
-                else:
-                    skipped_files.append((file_path.name, "Invalid extension"))
-
-        print(f"📋 Found {len(all_files)} potential blog files")
-
-        for file_path in sorted(all_files):
-            filename = file_path.name
-            print(f"🔍 Processing {filename}...")
+        for file_path in sorted(content_dir.iterdir()):
+            if file_path.suffix.lower() not in [".md", ".txt"]:
+                continue
 
             try:
-                # Read file with multiple encoding attempts
-                content = None
-                for encoding in ["utf-8", "utf-8-sig", "latin-1", "cp1252"]:
-                    try:
-                        content = file_path.read_text(encoding=encoding).strip()
-                        break
-                    except UnicodeDecodeError:
-                        continue
-
-                if content is None:
-                    print(f"❌ Could not decode {filename} with any encoding")
-                    skipped_files.append((filename, "Encoding error"))
-                    error_count += 1
-                    continue
-
+                content = self._read_file(file_path)
                 if not content:
-                    print(f"⚠️ Empty file skipped: {filename}")
-                    skipped_files.append((filename, "Empty file"))
-                    error_count += 1
                     continue
 
-                lines = content.split("\n")
-                if len(lines) < 5:
-                    print(
-                        f"⚠️ Insufficient metadata in {filename} (found {len(lines)} lines, need 5)"
+                if use_frontmatter:
+                    metadata, markdown_content = self._parse_frontmatter(content)
+                else:
+                    # For blog posts with line-based format
+                    metadata, markdown_content = self._parse_blog_format(
+                        content, file_path
                     )
-                    skipped_files.append((filename, f"Only {len(lines)} lines"))
-                    error_count += 1
+
+                if metadata is None:
                     continue
 
-                # Enhanced slug normalization
-                base_name = file_path.stem
-                slug = self._normalize_slug(base_name)
-
-                # Validate slug uniqueness
-                if slug in seen_slugs:
-                    original_slug = slug
-                    counter = 2
-                    while f"{slug}-{counter}" in seen_slugs:
-                        counter += 1
-                    slug = f"{slug}-{counter}"
-                    print(f"🔄 Duplicate slug '{original_slug}' renamed to '{slug}'")
-
-                seen_slugs.add(slug)
-
-                # Parse metadata with better error handling
-                try:
-                    title = lines[0].strip() or "Untitled Post"
-                    category = lines[1].strip() if len(lines) > 1 else "Uncategorized"
-                    date_str = lines[2].strip() if len(lines) > 2 else ""
-                    img_name = lines[3].strip() if len(lines) > 3 else ""
-                    meta_des = lines[4].strip() if len(lines) > 4 else ""
-
-                    # Validate and clean image name
-                    if img_name and not img_name.lower().endswith(
-                        (".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif")
-                    ):
-                        print(f"⚠️ Invalid image extension in {filename}: {img_name}")
-                        img_name = ""
-
-                except Exception as e:
-                    print(f"⚠️ Metadata parsing error in {filename}: {str(e)}")
-                    skipped_files.append((filename, "Metadata parsing error"))
-                    error_count += 1
-                    continue
-
-                # Enhanced date parsing
-                post_date = self._parse_date(date_str)
-                if not post_date:
-                    print(
-                        f"ℹ️ Invalid date '{date_str}' in {filename}, using current date"
-                    )
-                    post_date = datetime.now()
-
-                # Content processing
-                markdown_content = "\n".join(lines[5:]) if len(lines) > 5 else ""
-
-                # Process template includes BEFORE markdown conversion
+                # Process content
+                self.md.reset()
                 if self.renderer:
                     markdown_content = self._process_template_includes(
-                        markdown_content, is_blog=True
+                        markdown_content,
+                        is_blog=isinstance(content_class, type)
+                        and issubclass(content_class, BlogPost),
                     )
 
-                # Reset markdown instance for each file to avoid state issues
-                self.md.reset()
+                html_content = self.md.convert(markdown_content)
 
-                try:
-                    html_content = self.md.convert(markdown_content)
-                    cleaned_html = self._process_blog_html(html_content)
-                except Exception as e:
-                    print(f"⚠️ Markdown conversion error in {filename}: {str(e)}")
-                    skipped_files.append((filename, "Markdown conversion error"))
-                    error_count += 1
-                    continue
-
-                # Create blog post object
-                posts.append(
-                    BlogPost(
-                        slug=slug,
-                        title=title,
-                        category=category,
-                        date=post_date,
-                        content_html=cleaned_html,
-                        image=img_name,
-                        meta_description=meta_des[:160] if meta_des else title[:160],
-                    )
+                # Create content item
+                item = content_class.from_metadata(
+                    slug=file_path.stem, metadata=metadata, html_content=html_content
                 )
-                processed_count += 1
-                print(f"✅ Successfully processed: {filename} -> {slug}")
+                items.append(item)
 
             except Exception as e:
-                print(f"❌ Critical error processing {filename}: {str(e)}")
-                skipped_files.append((filename, f"Critical error: {str(e)}"))
-                error_count += 1
+                logger.error(f"Error loading {file_path.name}: {e}")
 
-        # Final reporting
-        posts.sort(key=lambda p: p.date, reverse=True)
-        print(f"\n📊 Blog Loading Summary:")
-        print(f"✅ Successfully processed: {processed_count} posts")
-        print(f"⛔ Errors encountered: {error_count}")
-        print(f"📁 Total files scanned: {len(all_files)}")
+        # Sort by order then title
+        items.sort(key=lambda x: (x.order, x.title))
+        return items
 
-        if skipped_files:
-            print(f"\n⚠️ Skipped files:")
-            for name, reason in skipped_files:
-                print(f"  - {name}: {reason}")
-
-        return posts
-
-    def _normalize_slug(self, text: str) -> str:
-        """Normalize text to create a valid slug"""
-        import re
-
-        # Convert to lowercase
-        slug = text.lower().strip()
-
-        # Replace spaces and special characters with hyphens
-        slug = re.sub(r"[^\w\s-]", "", slug)  # Remove special chars except hyphens
-        slug = re.sub(
-            r"[-\s]+", "-", slug
-        )  # Replace spaces and multiple hyphens with single hyphen
-
-        # Remove leading/trailing hyphens
-        slug = slug.strip("-")
-
-        # Limit length
-        if len(slug) > 100:
-            slug = slug[:100].rsplit("-", 1)[0]
-
-        return slug or "untitled"
-
-    def load_services(self) -> List[Service]:
-        """Load services from markdown files"""
-        services = []
-        services_dir = Path(self.config.services_dir)
-
-        if not services_dir.exists():
-            print(f"Services directory not found: {services_dir}")
-            return services
-
-        for file_path in services_dir.iterdir():
-            if file_path.suffix.lower() == ".md":
-                try:
-                    content = file_path.read_text(encoding="utf-8").strip()
-
-                    if not content:
-                        continue
-
-                    # Parse front matter
-                    metadata = {}
-                    markdown_content = content
-
-                    if content.startswith("---"):
-                        parts = content.split("---", 2)
-                        if len(parts) >= 3:
-                            for line in parts[1].strip().split("\n"):
-                                if ":" in line:
-                                    key, value = line.split(":", 1)
-                                    metadata[key.strip()] = value.strip()
-                            markdown_content = parts[2]
-
-                    # Reset markdown for each service
-                    self.md.reset()
-
-                    # Process template includes
-                    if self.renderer:
-                        markdown_content = self._process_template_includes(
-                            markdown_content, is_blog=False
-                        )
-
-                    # Convert to HTML
-                    html_content = self.md.convert(markdown_content)
-
-                    # Parse features list
-                    features = []
-                    if metadata.get("features"):
-                        features = [f.strip() for f in metadata["features"].split(",")]
-
-                    service = Service(
-                        slug=file_path.stem,
-                        title=metadata.get("title", "Untitled Service"),
-                        content_html=html_content,
-                        meta_description=metadata.get("description", "")[:160],
-                        short_description=metadata.get(
-                            "short_description", metadata.get("description", "")
-                        )[:200],
-                        icon=metadata.get("icon"),
-                        image=metadata.get("image"),
-                        price=metadata.get("price"),
-                        features=features,
-                        order=int(metadata.get("order", 999)),
-                    )
-                    services.append(service)
-
-                except Exception as e:
-                    print(f"Error loading service {file_path.name}: {e}")
-
-        # Sort services by order, then by title
-        services.sort(key=lambda s: (s.order, s.title))
-        return services
-
-    def load_gallery_images(self) -> List[GalleryImage]:
-        """Load gallery images with metadata support"""
-        images = []
-        gallery_dir = Path(self.config.gallery_dir)
-
-        if not gallery_dir.exists():
-            print(f"Gallery directory not found: {gallery_dir}")
-            return images
-
-        # Try to load metadata file
-        metadata = {}
-        metadata_file = gallery_dir / "metadata.json"
-        if metadata_file.exists():
+    def _read_file(self, file_path: Path) -> Optional[str]:
+        """Read file with multiple encoding attempts"""
+        for encoding in ["utf-8", "utf-8-sig", "latin-1", "cp1252"]:
             try:
-                metadata = json.loads(metadata_file.read_text())
-                print(f"✅ Loaded gallery metadata with {len(metadata)} entries")
-            except Exception as e:
-                print(f"⚠️ Error loading gallery metadata: {e}")
+                return file_path.read_text(encoding=encoding).strip()
+            except UnicodeDecodeError:
+                continue
+        return None
 
-        # Scan for image files
-        image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"}
+    def _parse_frontmatter(self, content: str) -> tuple[Dict[str, Any], str]:
+        """Parse YAML frontmatter from content"""
+        if not content.startswith("---"):
+            return {}, content
 
-        for file_path in sorted(gallery_dir.iterdir()):
-            if file_path.is_file() and file_path.suffix.lower() in image_extensions:
-                filename = file_path.name
+        parts = content.split("---", 2)
+        if len(parts) < 3:
+            return {}, content
 
-                # Get metadata for this image
-                image_meta = metadata.get(filename, {})
+        metadata = {}
+        for line in parts[1].strip().split("\n"):
+            if ":" in line:
+                key, value = line.split(":", 1)
+                metadata[key.strip()] = value.strip()
 
-                # Generate default title from filename
-                default_title = (
-                    file_path.stem.replace("-", " ").replace("_", " ").title()
-                )
+        return metadata, parts[2]
 
-                # Parse date
-                date_str = image_meta.get("date")
-                if date_str:
-                    try:
-                        date = datetime.fromisoformat(date_str)
-                    except:
-                        date = datetime.now()
-                else:
-                    date = datetime.now()
+    def _parse_blog_format(
+        self, content: str, file_path: Path
+    ) -> tuple[Dict[str, Any], str]:
+        """Parse blog posts in line-based format"""
+        lines = content.split("\n")
+        if len(lines) < 5:
+            return None, ""
 
-                images.append(
-                    GalleryImage(
-                        filename=filename,
-                        title=image_meta.get("title", default_title),
-                        description=image_meta.get("description", ""),
-                        category=image_meta.get("category", "General"),
-                        date=date,
-                        tags=image_meta.get("tags", []),
-                    )
-                )
+        metadata = {
+            "title": lines[0].strip() or "Untitled Post",
+            "category": lines[1].strip() if len(lines) > 1 else "Uncategorized",
+            "date": self._parse_date(lines[2].strip() if len(lines) > 2 else ""),
+            "image": lines[3].strip() if len(lines) > 3 else "",
+            "meta_description": lines[4].strip() if len(lines) > 4 else "",
+        }
 
-        # Sort by date (newest first)
-        images.sort(key=lambda img: img.date, reverse=True)
-
-        print(f"✅ Loaded {len(images)} gallery images")
-        return images
+        markdown_content = "\n".join(lines[5:]) if len(lines) > 5 else ""
+        return metadata, markdown_content
 
     def _parse_date(self, date_str: str) -> datetime:
         """Parse date from various formats"""
@@ -540,329 +257,98 @@ class ContentLoader:
 
         return datetime.now()
 
-    def _process_blog_html(self, html: str) -> str:
-        """Process blog HTML content"""
-        soup = BeautifulSoup(html, "html.parser")
+    def _process_template_includes(
+        self, markdown_content: str, is_blog: bool = True
+    ) -> str:
+        """Process template includes with proper error handling"""
+        import re
 
-        # Fix image paths
-        for img in soup.find_all("img"):
-            if img.get("src") and img["src"].startswith("static/"):
-                img["src"] = "../" + img["src"]
+        pattern = r"{{(template|video):([a-zA-Z0-9_-]+)}}"
 
-        # Add classes to tables
-        for table in soup.find_all("table"):
-            table["class"] = table.get("class", []) + ["blog-table"]
+        def replace_template(match):
+            tag_type = match.group(1)
+            value = match.group(2)
 
-        return str(soup)
+            try:
+                if tag_type == "template":
+                    template_name = value + ".html"
+                    context = {
+                        "inject_svg": self.renderer.inject_svg,
+                        "static": "../static" if is_blog else "./static",
+                        "config": self.config,
+                    }
+                    template = self.renderer.env.get_template(template_name)
+                    return template.render(**context)
 
+                elif tag_type == "video":
+                    template = self.renderer.env.get_template("video.html")
+                    return template.render(youtube_id=value, config=self.config)
 
-class BlogPostPage(Page):
-    """Individual blog post page"""
+            except Exception as e:
+                logger.error(f"Template include failed: {str(e)}")
+                return f"<!-- Template include failed: {str(e)} -->"
 
-    def __init__(self, renderer: TemplateRenderer, post: BlogPost):
-        super().__init__(renderer)
-        self.post = post
+            return ""
 
-    @property
-    def slug(self) -> str:
-        return f"blog-{self.post.slug}"
+        return re.sub(pattern, replace_template, markdown_content)
 
-    @property
-    def title(self) -> str:
-        return self.post.title
-
-    @property
-    def template(self) -> str:
-        return "blog_post.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path(f"blogs/{self.post.slug}.html")
-
-    @property
-    def meta_description(self) -> str:
-        return self.post.meta_description
-
-    def get_context(self) -> Dict[str, Any]:
-        return {
-            "title": self.post.title,
-            "category": self.post.category,
-            "date": self.post.date.strftime("%B %d, %Y"),
-            "blog_content": self.post.content_html,
-            "meta_des": self.post.meta_description,
-        }
-
-    @property
-    def custom_css(self) -> str:
-        return "blog_post"
-
-
-class ServicePage(Page):
-    """Individual service page"""
-
-    def __init__(self, renderer: TemplateRenderer, service: Service):
-        super().__init__(renderer)
-        self.service = service
-
-    @property
-    def slug(self) -> str:
-        return f"service-{self.service.slug}"
-
-    @property
-    def title(self) -> str:
-        return self.service.title
-
-    @property
-    def template(self) -> str:
-        return "service_detail.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path(f"services/{self.service.slug}.html")
-
-    @property
-    def meta_description(self) -> str:
-        return self.service.meta_description
-
-    def get_context(self) -> Dict[str, Any]:
-        return {
-            "title": self.service.title,
-            "price": self.service.price,
-            "image": self.service.image,
-            "icon": self.service.icon,
-            "features": self.service.features,
-            "service_content": self.service.content_html,
-            "meta_des": self.service.meta_description,
-        }
-
-    @property
-    def custom_css(self) -> str:
-        return "services_details"
-
-
-class BlogListingPage(Page):
-    """Blog listing page with pagination"""
-
-    def __init__(
-        self,
-        renderer: TemplateRenderer,
-        posts: List[BlogPost],
-        page_num: int = 1,
-        total_pages: int = 1,
-    ):
-        super().__init__(renderer)
-        self.posts = posts
-        self.page_num = page_num
-        self.total_pages = total_pages
-
-    @property
-    def slug(self) -> str:
-        return "blog" if self.page_num == 1 else f"blog-{self.page_num}"
-
-    @property
-    def is_paginated(self) -> bool:
-        return self.total_pages > 1
-
-    @property
-    def title(self) -> str:
-        return "Blog" if self.page_num == 1 else f"Blog - Page {self.page_num}"
-
-    @property
-    def template(self) -> str:
-        return "blog.html"
-
-    @property
-    def output_path(self) -> Path:
-        return (
-            Path("blog.html")
-            if self.page_num == 1
-            else Path(f"blog-{self.page_num}.html")
+    # Specific loading methods that use the generic loader
+    def load_blog_posts(self) -> List[BlogPost]:
+        """Load blog posts"""
+        return self.load_content(
+            Path(self.config.blog_dir), BlogPost, use_frontmatter=False
         )
 
-    @property
-    def custom_css(self) -> str:
-        return "blog"
-
-    @property
-    def meta_description(self) -> str:
-        return "Explore cutting-edge insights on AI, Federated Learning, programming, big data, and robotics."
-
-    def get_context(self) -> Dict[str, Any]:
-        # Format blog posts for template
-        blog_posts = []
-        for post in self.posts:
-            blog_posts.append(
-                {
-                    "title": post.title,
-                    "category": post.category,
-                    "date": post.date.strftime("%B %d, %Y"),
-                    "filename": f"./blogs/{post.slug}.html",
-                    "image_url": f"./static/{post.image}"
-                    if post.image
-                    else "./static/default.jpg",
-                    "meta_des": post.meta_description,
-                }
-            )
-
-        context = {"blog_posts": blog_posts}
-
-        if self.total_pages > 1:
-            context["pagination"] = {
-                "current_page": self.page_num,
-                "total_pages": self.total_pages,
-                "has_prev": self.page_num > 1,
-                "has_next": self.page_num < self.total_pages,
-                "prev_url": "./blog.html"
-                if self.page_num == 2
-                else f"./blog-{self.page_num - 1}.html",
-                "next_url": f"./blog-{self.page_num + 1}.html",
-            }
-
-        return context
-
-
-class GalleryListingPage(Page):
-    """Gallery listing page with pagination"""
-
-    def __init__(
-        self,
-        renderer: TemplateRenderer,
-        images: List[GalleryImage],
-        page_num: int = 1,
-        total_pages: int = 1,
-    ):
-        super().__init__(renderer)
-        self.images = images
-        self.page_num = page_num
-        self.total_pages = total_pages
-
-    @property
-    def slug(self) -> str:
-        return "gallery" if self.page_num == 1 else f"gallery-{self.page_num}"
-
-    @property
-    def is_paginated(self) -> bool:
-        return self.total_pages > 1
-
-    @property
-    def title(self) -> str:
-        return "Gallery" if self.page_num == 1 else f"Gallery - Page {self.page_num}"
-
-    @property
-    def template(self) -> str:
-        return "gallery.html"
-
-    @property
-    def output_path(self) -> Path:
-        return (
-            Path("gallery.html")
-            if self.page_num == 1
-            else Path(f"gallery-{self.page_num}.html")
+    def load_services(self) -> List[Service]:
+        """Load services"""
+        return self.load_content(
+            Path(self.config.services_dir), Service, use_frontmatter=True
         )
 
-    @property
-    def custom_css(self) -> str:
-        return "gallery"
+    def load_industries(self) -> List[Industry]:
+        """Load industries"""
+        return self.load_content(
+            Path(self.config.industries_dir), Industry, use_frontmatter=True
+        )
 
-    @property
-    def meta_description(self) -> str:
-        return "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology."
+    def load_gallery_images(self) -> List["GalleryImage"]:
+        """Load gallery images with metadata"""
+        images = []
+        gallery_dir = Path(self.config.gallery_dir)
 
-    def get_context(self) -> Dict[str, Any]:
-        context = {
-            "images": self.images,
-            "gallery_url": f"{self.renderer.config.gallery_dir}",
-        }
+        if not gallery_dir.exists():
+            logger.warning(f"Gallery directory not found: {gallery_dir}")
+            return images
 
-        if self.total_pages > 1:
-            context["pagination"] = {
-                "current_page": self.page_num,
-                "total_pages": self.total_pages,
-                "has_prev": self.page_num > 1,
-                "has_next": self.page_num < self.total_pages,
-                "prev_url": "./gallery.html"
-                if self.page_num == 2
-                else f"./gallery-{self.page_num - 1}.html",
-                "next_url": f"./gallery-{self.page_num + 1}.html",
-            }
+        # Load metadata
+        metadata = {}
+        metadata_file = gallery_dir / "metadata.json"
+        if metadata_file.exists():
+            try:
+                metadata = json.loads(metadata_file.read_text())
+            except Exception as e:
+                logger.error(f"Error loading gallery metadata: {e}")
 
-        return context
+        # Scan for images
+        image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"}
 
+        for file_path in sorted(gallery_dir.iterdir()):
+            if file_path.is_file() and file_path.suffix.lower() in image_extensions:
+                filename = file_path.name
+                image_meta = metadata.get(filename, {})
 
-class IndustryPage(Page):
-    """Individual industry page"""
+                images.append(
+                    GalleryImage(
+                        filename=filename,
+                        title=image_meta.get(
+                            "title", file_path.stem.replace("-", " ").title()
+                        ),
+                        description=image_meta.get("description", ""),
+                        category=image_meta.get("category", "General"),
+                        date=self._parse_date(image_meta.get("date", "")),
+                        tags=image_meta.get("tags", []),
+                    )
+                )
 
-    def __init__(self, renderer: TemplateRenderer, industry: Industry):
-        super().__init__(renderer)
-        self.industry = industry
-
-    @property
-    def slug(self) -> str:
-        return f"industry-{self.industry.slug}"
-
-    @property
-    def title(self) -> str:
-        return self.industry.title
-
-    @property
-    def template(self) -> str:
-        return "industry_detail.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path(f"industries/{self.industry.slug}.html")
-
-    @property
-    def meta_description(self) -> str:
-        return self.industry.meta_description
-
-    def get_context(self) -> Dict[str, Any]:
-        return {
-            "title": self.industry.title,
-            "image": self.industry.image,
-            "icon": self.industry.icon,
-            "challenge": self.industry.challenge,
-            "solutions": self.industry.solutions,
-            "case_studies": self.industry.case_studies,
-            "industry_content": self.industry.content_html,
-            "meta_des": self.industry.meta_description,
-        }
-
-    @property
-    def custom_css(self) -> str:
-        return "industry_details"
-
-
-class IndustryListingPage(Page):
-    """Industries listing page"""
-
-    def __init__(self, renderer: TemplateRenderer, industries: List[Industry]):
-        super().__init__(renderer)
-        self.industries = industries
-
-    @property
-    def slug(self) -> str:
-        return "industries"
-
-    @property
-    def title(self) -> str:
-        return "Industries We Serve"
-
-    @property
-    def template(self) -> str:
-        return "industries.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("industries.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Discover how Big0 delivers tailored AI and technology solutions across diverse industries including finance, healthcare, retail, and more."
-
-    @property
-    def custom_css(self) -> str:
-        return "industries"
-
-    def get_context(self) -> Dict[str, Any]:
-        return {"industries": self.industries}
+        images.sort(key=lambda img: img.date, reverse=True)
+        return images

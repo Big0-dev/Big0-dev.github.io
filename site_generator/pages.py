@@ -1,6 +1,53 @@
-from typing import Dict, Any, List
+# pages.py - Complete version with all page classes
+from typing import Dict, Any, List, Optional
 from pathlib import Path
+from abc import abstractmethod
 from .core import Page, TemplateRenderer
+from .content import ContentItem, BlogPost, Service, Industry, GalleryImage
+
+
+class SimplePage(Page):
+    """Base class for simple static pages"""
+
+    def __init__(
+        self,
+        renderer: TemplateRenderer,
+        slug: str,
+        title: str,
+        template: str,
+        meta_description: str,
+        custom_css: str = None,
+    ):
+        super().__init__(renderer)
+        self._slug = slug
+        self._title = title
+        self._template = template
+        self._meta_description = meta_description
+        self._custom_css = custom_css
+
+    @property
+    def slug(self) -> str:
+        return self._slug
+
+    @property
+    def title(self) -> str:
+        return self._title
+
+    @property
+    def template(self) -> str:
+        return self._template
+
+    @property
+    def output_path(self) -> Path:
+        return Path(f"{self._slug}.html")
+
+    @property
+    def meta_description(self) -> str:
+        return self._meta_description
+
+    @property
+    def custom_css(self) -> str:
+        return self._custom_css
 
 
 class HomePage(Page):
@@ -63,139 +110,6 @@ class HomePage(Page):
         }
 
 
-class ContactPage(Page):
-    @property
-    def slug(self) -> str:
-        return "contact"
-
-    @property
-    def title(self) -> str:
-        return "Get in Touch"
-
-    @property
-    def template(self) -> str:
-        return "contact.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("contact.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Get in touch with Big0. Contact us for AI consulting, cloud solutions, and digital transformation services."
-
-    @property
-    def custom_css(self) -> str:
-        return "contact"
-
-
-class CareersPage(Page):
-    @property
-    def slug(self) -> str:
-        return "careers"
-
-    @property
-    def title(self) -> str:
-        return "Careers"
-
-    @property
-    def template(self) -> str:
-        return "careers.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("careers.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Join the Big0 team. Explore career opportunities in AI, machine learning, cloud computing, and data analytics."
-
-    @property
-    def custom_css(self) -> str:
-        return "careers"
-
-
-class AboutPage(Page):
-    @property
-    def slug(self) -> str:
-        return "about"
-
-    @property
-    def title(self) -> str:
-        return "About Us"
-
-    @property
-    def template(self) -> str:
-        return "about.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("about.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Learn about Big0's mission to transform businesses through responsible AI innovation. Meet our team and discover our values."
-
-    @property
-    def custom_css(self) -> str:
-        return "about"
-
-    def get_context(self) -> Dict[str, Any]:
-        return {"careers": "./careers.html"}
-
-
-class PrivacyPage(Page):
-    @property
-    def slug(self) -> str:
-        return "privacy"
-
-    @property
-    def title(self) -> str:
-        return "Privacy Policy"
-
-    @property
-    def template(self) -> str:
-        return "privacy.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("privacy.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Big0's privacy policy. Learn how we collect, use, and protect your personal information."
-
-    @property
-    def custom_css(self) -> str:
-        return "info"
-
-
-class TermsPage(Page):
-    @property
-    def slug(self) -> str:
-        return "terms"
-
-    @property
-    def title(self) -> str:
-        return "Terms of Service"
-
-    @property
-    def template(self) -> str:
-        return "terms.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("terms.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Terms of Service for Big0. Understand the legal agreements that govern the use of our services."
-
-    @property
-    def custom_css(self) -> str:
-        return "info"
-
-
 class ServicesPage(Page):
     """Services listing page"""
 
@@ -203,7 +117,7 @@ class ServicesPage(Page):
         super().__init__(renderer)
         self._services = []
 
-    def set_services(self, services: List):
+    def set_services(self, services: List[Service]):
         """Set services data"""
         self._services = services
 
@@ -237,82 +151,323 @@ class ServicesPage(Page):
         return "services"
 
 
-class NotFoundPage(Page):
+class ContentPage(Page):
+    """Base class for content-based pages"""
+
+    def __init__(self, renderer: TemplateRenderer, content_item: ContentItem):
+        super().__init__(renderer)
+        self.content_item = content_item
+
     @property
     def slug(self) -> str:
-        return "404"
+        return f"{self.content_type}-{self.content_item.slug}"
 
     @property
     def title(self) -> str:
-        return "OOPs Not Found"
-
-    @property
-    def template(self) -> str:
-        return "404.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("404.html")
+        return self.content_item.title
 
     @property
     def meta_description(self) -> str:
-        return "Page not found"
+        return self.content_item.meta_description
+
+    @property
+    def output_path(self) -> Path:
+        return Path(f"{self.content_type}s/{self.content_item.slug}.html")
+
+    @property
+    @abstractmethod
+    def content_type(self) -> str:
+        """Type of content (blog, service, industry)"""
+        pass
 
     def get_context(self) -> Dict[str, Any]:
-        return {}
+        """Default context for content pages"""
+        return {
+            "title": self.title,
+            f"{self.content_type}_content": self.content_item.content_html,
+            "meta_des": self.meta_description,
+        }
+
+
+class BlogPostPage(ContentPage):
+    """Individual blog post page"""
+
+    def __init__(self, renderer: TemplateRenderer, post: BlogPost):
+        super().__init__(renderer, post)
+        self.post = post  # Keep reference for convenience
 
     @property
-    def custom_css(self) -> str:
-        return "info"
-
-
-class PartnersPage(Page):
-    @property
-    def slug(self) -> str:
-        return "partners"
-
-    @property
-    def title(self) -> str:
-        return "Our Partners"
-
-    @property
-    def template(self) -> str:
-        return "partners.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("partners.html")
-
-    @property
-    def meta_description(self) -> str:
-        return "Big0 partners with leading technology companies to deliver comprehensive solutions. Explore our strategic partnerships and ecosystem."
-
-    @property
-    def custom_css(self) -> str:
-        return "partners"
-
-
-class ProductsPage(Page):
-    @property
-    def slug(self) -> str:
-        return "products"
-
-    @property
-    def title(self) -> str:
-        return "Our Products"
+    def content_type(self) -> str:
+        return "blog"
 
     @property
     def template(self) -> str:
-        return "products.html"
-
-    @property
-    def output_path(self) -> Path:
-        return Path("products.html")  # ✅ Fixed: should be products.html
-
-    @property
-    def meta_description(self) -> str:
-        return "Discover what Big0 is building"
+        return "blog_post.html"
 
     @property
     def custom_css(self) -> str:
-        return "products"
+        return "blog_post"
+
+    def get_context(self) -> Dict[str, Any]:
+        context = super().get_context()
+        context.update(
+            {
+                "category": self.post.category,
+                "date": self.post.date.strftime("%B %d, %Y"),
+                "blog_content": self.post.content_html,  # Add this for compatibility
+            }
+        )
+        return context
+
+
+class ServicePage(ContentPage):
+    """Individual service page"""
+
+    def __init__(self, renderer: TemplateRenderer, service: Service):
+        super().__init__(renderer, service)
+        self.service = service
+
+    @property
+    def content_type(self) -> str:
+        return "service"
+
+    @property
+    def template(self) -> str:
+        return "service_detail.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "services_details"
+
+    def get_context(self) -> Dict[str, Any]:
+        context = super().get_context()
+        context.update(
+            {
+                "price": self.service.price,
+                "image": self.service.image,
+                "icon": self.service.icon,
+                "features": self.service.features,
+                "service_content": self.service.content_html,  # Add for compatibility
+            }
+        )
+        return context
+
+
+class IndustryPage(ContentPage):
+    """Individual industry page"""
+
+    def __init__(self, renderer: TemplateRenderer, industry: Industry):
+        super().__init__(renderer, industry)
+        self.industry = industry
+
+    @property
+    def content_type(self) -> str:
+        return "industry"  # Note: singular, not plural
+
+    @property
+    def output_path(self) -> Path:
+        # Override to use industries (plural) directory
+        return Path(f"industries/{self.content_item.slug}.html")
+
+    @property
+    def template(self) -> str:
+        return "industry_detail.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "industry_details"
+
+    def get_context(self) -> Dict[str, Any]:
+        context = super().get_context()
+        context.update(
+            {
+                "image": self.industry.image,
+                "icon": self.industry.icon,
+                "challenge": self.industry.challenge,
+                "solutions": self.industry.solutions,
+                "case_studies": self.industry.case_studies,
+                "industry_content": self.industry.content_html,  # Add for compatibility
+            }
+        )
+        return context
+
+
+class IndustryListingPage(Page):
+    """Industries listing page"""
+
+    def __init__(self, renderer: TemplateRenderer, industries: List[Industry]):
+        super().__init__(renderer)
+        self.industries = industries
+
+    @property
+    def slug(self) -> str:
+        return "industries"
+
+    @property
+    def title(self) -> str:
+        return "Industries We Serve"
+
+    @property
+    def template(self) -> str:
+        return "industries.html"
+
+    @property
+    def output_path(self) -> Path:
+        return Path("industries.html")
+
+    @property
+    def meta_description(self) -> str:
+        return "Discover how Big0 delivers tailored AI and technology solutions across diverse industries including finance, healthcare, retail, and more."
+
+    @property
+    def custom_css(self) -> str:
+        return "industries"
+
+    def get_context(self) -> Dict[str, Any]:
+        return {"industries": self.industries}
+
+
+class PaginatedListingPage(Page):
+    """Base class for paginated listing pages"""
+
+    def __init__(
+        self,
+        renderer: TemplateRenderer,
+        items: List[Any],
+        page_num: int = 1,
+        total_pages: int = 1,
+    ):
+        super().__init__(renderer)
+        self.items = items
+        self.page_num = page_num
+        self.total_pages = total_pages
+
+    @property
+    def is_paginated(self) -> bool:
+        return self.total_pages > 1
+
+    @property
+    def slug(self) -> str:
+        base_slug = self.base_slug
+        return base_slug if self.page_num == 1 else f"{base_slug}-{self.page_num}"
+
+    @property
+    def title(self) -> str:
+        base_title = self.base_title
+        return (
+            base_title if self.page_num == 1 else f"{base_title} - Page {self.page_num}"
+        )
+
+    @property
+    def output_path(self) -> Path:
+        filename = (
+            f"{self.base_slug}.html"
+            if self.page_num == 1
+            else f"{self.base_slug}-{self.page_num}.html"
+        )
+        return Path(filename)
+
+    @property
+    @abstractmethod
+    def base_slug(self) -> str:
+        pass
+
+    @property
+    @abstractmethod
+    def base_title(self) -> str:
+        pass
+
+    def get_pagination_context(self) -> Dict[str, Any]:
+        """Get pagination context"""
+        if not self.is_paginated:
+            return {}
+
+        return {
+            "pagination": {
+                "current_page": self.page_num,
+                "total_pages": self.total_pages,
+                "has_prev": self.page_num > 1,
+                "has_next": self.page_num < self.total_pages,
+                "prev_url": f"./{self.base_slug}.html"
+                if self.page_num == 2
+                else f"./{self.base_slug}-{self.page_num - 1}.html",
+                "next_url": f"./{self.base_slug}-{self.page_num + 1}.html",
+            }
+        }
+
+
+class BlogListingPage(PaginatedListingPage):
+    """Blog listing page with pagination"""
+
+    @property
+    def base_slug(self) -> str:
+        return "blog"
+
+    @property
+    def base_title(self) -> str:
+        return "Blog"
+
+    @property
+    def template(self) -> str:
+        return "blog.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "blog"
+
+    @property
+    def meta_description(self) -> str:
+        return "Explore cutting-edge insights on AI, Federated Learning, programming, big data, and robotics."
+
+    def get_context(self) -> Dict[str, Any]:
+        # Format blog posts for template
+        blog_posts = []
+        for post in self.items:
+            blog_posts.append(
+                {
+                    "title": post.title,
+                    "category": post.category,
+                    "date": post.date.strftime("%B %d, %Y"),
+                    "filename": f"./blogs/{post.slug}.html",
+                    "image_url": f"./static/{post.image}"
+                    if post.image
+                    else "./static/default.jpg",
+                    "meta_des": post.meta_description,
+                }
+            )
+
+        context = {"blog_posts": blog_posts}
+        context.update(self.get_pagination_context())
+        return context
+
+
+class GalleryListingPage(PaginatedListingPage):
+    """Gallery listing page with pagination"""
+
+    @property
+    def base_slug(self) -> str:
+        return "gallery"
+
+    @property
+    def base_title(self) -> str:
+        return "Gallery"
+
+    @property
+    def template(self) -> str:
+        return "gallery.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "gallery"
+
+    @property
+    def meta_description(self) -> str:
+        return "Photo gallery showcasing Hassan Kamran's projects, experiences, and achievements in AI, robotics, and technology."
+
+    def get_context(self) -> Dict[str, Any]:
+        context = {
+            "images": self.items,
+            "gallery_url": f"{self.renderer.config.gallery_dir}",
+        }
+        context.update(self.get_pagination_context())
+        return context

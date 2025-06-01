@@ -1,39 +1,40 @@
 import shutil
 from pathlib import Path
-from typing import List
+from typing import List, Dict, Type
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from datetime import datetime
+import logging
 import os
 
 from .config import Config
-from .core import TemplateRenderer
-from .pages import *
-from .content import (
-    ContentLoader,
-    BlogPostPage,
-    ServicePage,
-    BlogListingPage,
-    GalleryListingPage,
-    IndustryPage,
-    IndustryListingPage,
+from .core import TemplateRenderer, Page
+from .pages import *  # This imports all page classes including ContentPage
+from .content import ContentLoader  # Remove ContentPage from here
+from .utils import (
+    SitemapGenerator,
+    SearchIndexGenerator,
+    write_file,
+    generate_robots_txt,
+    create_redirect_page,
 )
-from .utils import *
+
+logger = logging.getLogger(__name__)
 
 
 class SiteGenerator:
-    """Simple site generator"""
+    """Optimized site generator with better organization"""
 
     def __init__(self, config: Config):
-        """Initialize the site generator"""
         self.config = config
         self.pages: List[Page] = []
-        self.blog_posts = []
-        self.services = []
-        self.gallery_images = []
-        self.industries = []
+        self.content = {
+            "blog_posts": [],
+            "services": [],
+            "gallery_images": [],
+            "industries": [],
+        }
 
-        # Setup Jinja2 environment
-        env = Environment(
+        # Setup Jinja2
+        self.env = Environment(
             loader=FileSystemLoader(config.templates_dir),
             autoescape=select_autoescape(
                 enabled_extensions=("html",), default_for_string=True
@@ -42,271 +43,245 @@ class SiteGenerator:
             lstrip_blocks=True,
         )
 
-        # Create renderer
-        self.renderer = TemplateRenderer(env, config)
-
-        # Create content loader with renderer
+        # Create renderer and loader
+        self.renderer = TemplateRenderer(self.env, config)
         self.content_loader = ContentLoader(config, self.renderer)
+
+        # Create utility classes
+        self.sitemap_gen = SitemapGenerator(config)
+        self.search_gen = SearchIndexGenerator(config)
 
     def generate(self):
         """Generate the website"""
-        print("Starting website generation...")
+        logger.info("Starting website generation...")
 
-        # Clean output directories
+        # Clean and prepare
         self._clean_output()
 
-        # Load content
-        self.blog_posts = self.content_loader.load_blog_posts()
-        self.services = self.content_loader.load_services()
-        self.gallery_images = self.content_loader.load_gallery_images()
-        self.industries = self.content_loader.load_industries()
-
-        print(f"Loaded {len(self.blog_posts)} blog posts")
-        print(f"Loaded {len(self.services)} services")
-        print(f"Loaded {len(self.gallery_images)} gallery images")
-        print(f"Loaded {len(self.industries)} industries")
+        # Load all content
+        self._load_content()
 
         # Create all pages
-        self._create_static_pages()
-        self._create_blog_pages()
-        self._create_service_pages()
-        self._create_industry_pages()  # Add this line
-        self._create_gallery_pages()
+        self._create_all_pages()
 
         # Render all pages
-        for page in self.pages:
-            output_path = Path(self.config.output_dir) / page.output_path
+        self._render_all_pages()
 
-            # Only create directories if needed (prevent empty string path)
-            if str(output_path.parent) != ".":
-                os.makedirs(output_path.parent, exist_ok=True)
+        # Generate additional files
+        self._generate_additional_files()
 
-            with open(output_path, "w", encoding="utf-8") as file:
-                file.write(page.render())
-
-        # Generate sitemaps
-        self._generate_sitemap()
-        self._generate_image_sitemap()
-
-        # Generate robots.txt
-        self._generate_robots()
-
-        # Generate search index
-        self._generate_search_index()
-
-        # Create redirects
-        self._create_redirects()
-
-        print(f"Website generation complete! Generated {len(self.pages)} pages.")
+        logger.info(f"Website generation complete! Generated {len(self.pages)} pages.")
 
     def _clean_output(self):
         """Clean output directories"""
-        directories_to_clean = ["./blogs", "./services", "./industries"]
+        directories = ["./blogs", "./services", "./industries"]
 
-        for directory in directories_to_clean:
+        for directory in directories:
             if os.path.exists(directory):
                 shutil.rmtree(directory)
-            os.mkdir(directory)
+            os.makedirs(directory, exist_ok=True)
+
+    def _load_content(self):
+        """Load all content with error handling"""
+        loaders = [
+            ("blog_posts", self.content_loader.load_blog_posts),
+            ("services", self.content_loader.load_services),
+            ("gallery_images", self.content_loader.load_gallery_images),
+            ("industries", self.content_loader.load_industries),
+        ]
+
+        for content_type, loader_func in loaders:
+            try:
+                self.content[content_type] = loader_func()
+                logger.info(f"Loaded {len(self.content[content_type])} {content_type}")
+            except Exception as e:
+                logger.error(f"Error loading {content_type}: {e}")
+                self.content[content_type] = []
+
+    def _create_all_pages(self):
+        """Create all pages"""
+        # Static pages
+        self._create_static_pages()
+
+        # Dynamic content pages
+        page_creators = [
+            (self.content["blog_posts"], self._create_blog_pages),
+            (self.content["services"], self._create_service_pages),
+            (self.content["industries"], self._create_industry_pages),
+            (self.content["gallery_images"], self._create_gallery_pages),
+        ]
+
+        for content_list, creator_func in page_creators:
+            if content_list:
+                creator_func()
 
     def _create_static_pages(self):
         """Create static pages"""
+        # Home page with content
         home_page = HomePage(
-            self.renderer, self.services, self.blog_posts, self.industries
+            self.renderer,
+            self.content["services"],
+            self.content["blog_posts"],
+            self.content["industries"],
         )
         self.pages.append(home_page)
 
-        # Other static pages
-        static_page_classes = [
-            AboutPage,
-            ContactPage,
-            CareersPage,
-            PrivacyPage,
-            TermsPage,
-            NotFoundPage,
-            PartnersPage,
-            ProductsPage,
+        # Simple static pages
+        static_pages = [
+            (
+                "about",
+                "About Us",
+                "about.html",
+                "Learn about Big0's mission to transform businesses through responsible AI innovation.",
+                "about",
+            ),
+            (
+                "contact",
+                "Get in Touch",
+                "contact.html",
+                "Get in touch with Big0. Contact us for AI consulting, cloud solutions, and digital transformation services.",
+                "contact",
+            ),
+            (
+                "careers",
+                "Careers",
+                "careers.html",
+                "Join the Big0 team. Explore career opportunities in AI, machine learning, cloud computing, and data analytics.",
+                "careers",
+            ),
+            (
+                "privacy",
+                "Privacy Policy",
+                "privacy.html",
+                "Big0's privacy policy. Learn how we collect, use, and protect your personal information.",
+                "info",
+            ),
+            (
+                "terms",
+                "Terms of Service",
+                "terms.html",
+                "Terms of Service for Big0. Understand the legal agreements that govern the use of our services.",
+                "info",
+            ),
+            ("404", "OOPs Not Found", "404.html", "Page not found", "info"),
+            (
+                "partners",
+                "Our Partners",
+                "partners.html",
+                "Big0 partners with leading technology companies to deliver comprehensive solutions.",
+                "partners",
+            ),
+            (
+                "products",
+                "Our Products",
+                "products.html",
+                "Discover what Big0 is building",
+                "products",
+            ),
         ]
 
-        for page_class in static_page_classes:
-            self.pages.append(page_class(self.renderer))
-
-        # Services page with data
-        services_page = ServicesPage(self.renderer)
-        services_page.set_services(self.services)
-        self.pages.append(services_page)
-
-    def _create_blog_pages(self):
-        """Create blog-related pages"""
-        if not self.blog_posts:
-            return
-
-        # Individual blog posts
-        for post in self.blog_posts:
-            self.pages.append(BlogPostPage(self.renderer, post))
-
-        # Paginated blog listing
-        posts_per_page = self.config.posts_per_page
-        total_pages = (len(self.blog_posts) + posts_per_page - 1) // posts_per_page
-
-        for page_num in range(1, total_pages + 1):
-            start = (page_num - 1) * posts_per_page
-            end = min(start + posts_per_page, len(self.blog_posts))
-            page_posts = self.blog_posts[start:end]
-
+        for slug, title, template, meta_desc, css in static_pages:
             self.pages.append(
-                BlogListingPage(self.renderer, page_posts, page_num, total_pages)
+                SimplePage(self.renderer, slug, title, template, meta_desc, css)
             )
 
-    def _create_service_pages(self):
-        """Create service-related pages"""
-        if not self.services:
-            return
+        # Services listing page
+        services_page = ServicesPage(self.renderer)
+        services_page.set_services(self.content["services"])
+        self.pages.append(services_page)
 
-        # Individual service pages
-        for service in self.services:
+        # Industries listing page
+        if self.content["industries"]:
+            self.pages.append(
+                IndustryListingPage(self.renderer, self.content["industries"])
+            )
+
+    def _create_blog_pages(self):
+        """Create blog pages"""
+        # Individual posts
+        for post in self.content["blog_posts"]:
+            self.pages.append(BlogPostPage(self.renderer, post))
+
+        # Paginated listings
+        self._create_paginated_pages(
+            self.content["blog_posts"], BlogListingPage, self.config.posts_per_page
+        )
+
+    def _create_service_pages(self):
+        """Create service pages"""
+        for service in self.content["services"]:
             self.pages.append(ServicePage(self.renderer, service))
 
     def _create_industry_pages(self):
-        """Create industry-related pages"""
-        if not self.industries:
-            return
-
-        # Individual industry pages
-        for industry in self.industries:
+        """Create industry pages"""
+        for industry in self.content["industries"]:
             self.pages.append(IndustryPage(self.renderer, industry))
 
-        # Industries listing page
-        self.pages.append(IndustryListingPage(self.renderer, self.industries))
-
-    def _generate_sitemap(self):
-        """Generate sitemap.xml"""
-        pages = []
-
-        for page in self.pages:
-            if hasattr(page, "slug") and page.slug != "404":
-                if page.output_path == Path("index.html"):
-                    loc = f"{self.config.domain}/"
-                else:
-                    loc = f"{self.config.domain}/{page.output_path}"
-
-                priority = (
-                    "1.0"
-                    if page.slug == "index"
-                    else "0.8"
-                    if not page.slug.startswith("blog-")
-                    else "0.7"
-                )
-
-                pages.append(
-                    {
-                        "loc": loc,
-                        "lastmod": datetime.now().strftime("%Y-%m-%d"),
-                        "priority": priority,
-                    }
-                )
-
-        sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
-        sitemap_content += (
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    def _create_gallery_pages(self):
+        """Create gallery pages"""
+        self._create_paginated_pages(
+            self.content["gallery_images"],
+            GalleryListingPage,
+            self.config.gallery_imgs_per_page,
         )
 
-        for page in pages:
-            sitemap_content += "  <url>\n"
-            sitemap_content += f"    <loc>{page['loc']}</loc>\n"
-            sitemap_content += f"    <lastmod>{page['lastmod']}</lastmod>\n"
-            sitemap_content += f"    <priority>{page['priority']}</priority>\n"
-            sitemap_content += "  </url>\n"
-
-        sitemap_content += "</urlset>"
-
-        with open("./sitemap.xml", "w", encoding="utf-8") as file:
-            file.write(sitemap_content)
-
-    def _create_gallery_pages(self):
-        """Create gallery-related pages with pagination"""
-        if not self.gallery_images:
-            # Create empty gallery page even if no images
-            self.pages.append(GalleryListingPage(self.renderer, [], 1, 1))
+    def _create_paginated_pages(
+        self, items: List, page_class: Type[Page], items_per_page: int
+    ):
+        """Create paginated pages for any content type"""
+        if not items:
+            # Create empty first page
+            self.pages.append(page_class(self.renderer, [], 1, 1))
             return
 
-        # Paginated gallery listing
-        imgs_per_page = self.config.gallery_imgs_per_page
-        total_pages = (len(self.gallery_images) + imgs_per_page - 1) // imgs_per_page
+        total_pages = (len(items) + items_per_page - 1) // items_per_page
 
         for page_num in range(1, total_pages + 1):
-            start = (page_num - 1) * imgs_per_page
-            end = min(start + imgs_per_page, len(self.gallery_images))
-            page_images = self.gallery_images[start:end]
+            start = (page_num - 1) * items_per_page
+            end = min(start + items_per_page, len(items))
+            page_items = items[start:end]
 
             self.pages.append(
-                GalleryListingPage(self.renderer, page_images, page_num, total_pages)
+                page_class(self.renderer, page_items, page_num, total_pages)
             )
 
-        print(f"✅ Created {total_pages} gallery pages")
+    def _render_all_pages(self):
+        """Render all pages"""
+        for page in self.pages:
+            try:
+                output_path = Path(self.config.output_dir) / page.output_path
+                write_file(output_path, page.render())
+            except Exception as e:
+                logger.error(f"Error rendering {page.slug}: {e}")
 
-    def _generate_image_sitemap(self):
-        """Generate image sitemap including ALL images from all pages"""
-        from .utils import generate_image_sitemap
+    def _generate_additional_files(self):
+        """Generate sitemaps, robots.txt, search index, and redirects"""
+        # Sitemaps
+        sitemap_xml = self.sitemap_gen.generate_sitemap(self.pages)
+        write_file(Path("sitemap.xml"), sitemap_xml)
 
-        sitemap_content = generate_image_sitemap(self.pages, self.config)
+        image_sitemap = self.sitemap_gen.generate_image_sitemap(self.pages)
+        if image_sitemap:
+            write_file(Path("sitemap-images.xml"), image_sitemap)
 
-        if sitemap_content:
-            with open("./sitemap-images.xml", "w", encoding="utf-8") as file:
-                file.write(sitemap_content)
+        # Robots.txt
+        write_file(Path("robots.txt"), generate_robots_txt(self.config))
 
-    def _generate_robots(self):
-        """Generate robots.txt"""
-        robots_content = f"# robots.txt for {self.config.domain}\n"
-        robots_content += "User-agent: *\n"
-        robots_content += "Allow: /\n\n"
-        robots_content += f"Sitemap: {self.config.domain}/sitemap.xml\n"
-
-        if self.gallery_images:
-            robots_content += f"Sitemap: {self.config.domain}/sitemap-images.xml\n"
-
-        with open("./robots.txt", "w", encoding="utf-8") as file:
-            file.write(robots_content)
-
-    def _generate_search_index(self):
-        """Generate search index"""
-        from .utils import generate_search_index
-
-        # Corrected call with proper parameters
-        generate_search_index(
-            pages=self.pages,
-            blog_posts=self.blog_posts,
-            services=self.services,
-            industries=self.industries,
+        # Search index
+        self.search_gen.generate(
+            self.pages,
+            self.content["blog_posts"],
+            self.content["services"],
+            self.content["industries"],
         )
 
-    def _create_redirects(self):
-        """Create basic redirect pages"""
-        print("Creating redirects...")
+        # Redirects
+        self._create_redirects()
 
+    def _create_redirects(self):
+        """Create redirect pages"""
         for old_url, new_url in self.config.redirects.items():
             output_path = Path(self.config.output_dir) / old_url
-            output_dir = output_path.parent
-
-            # Ensure output directory exists
-            os.makedirs(output_dir, exist_ok=True)
-
-            # Create redirect HTML
-            redirect_html = f"""<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Redirecting...</title>
-        <link rel="canonical" href="{self.config.domain}{new_url}">
-        <meta http-equiv="refresh" content="0;url={new_url}">
-        <script>window.location.href = "{new_url}";</script>
-    </head>
-    <body>
-        <h1>Redirecting...</h1>
-        <p>This page has moved. If you are not redirected automatically, <a href="{new_url}">click here</a>.</p>
-    </body>
-    </html>"""
-
-            with open(output_path, "w", encoding="utf-8") as file:
-                file.write(redirect_html)
-
-            print(f"✅ Created redirect: {old_url} → {new_url}")
+            redirect_html = create_redirect_page(old_url, new_url, self.config.domain)
+            write_file(output_path, redirect_html)
+            logger.info(f"Created redirect: {old_url} → {new_url}")

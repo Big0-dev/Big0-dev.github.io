@@ -1,4 +1,4 @@
-<!-- gallery.html - Big0 Version -->
+<!-- gallery.html - Complete Template -->
 <div class="page-hero">
   <div class="hero-bg-pattern"></div>
   <div class="container">
@@ -41,7 +41,9 @@
                 <p class="gallery-category">{{ image.category }}</p>
               </div>
               <span class="view-icon">
-                {{ inject_svg('expand', True) | safe }}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M14 10l6.5-6.5M21 14v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h7"/>
+                </svg>
               </span>
             </div>
           </div>
@@ -60,7 +62,7 @@
               popovertargetaction="hide"
               aria-label="Close"
             >
-              {{ inject_svg('close', True) | safe }}
+              ×
             </button>
             
             <!-- Navigation -->
@@ -72,7 +74,9 @@
               onclick="setTimeout(() => document.getElementById('gallery-lightbox-{{ loop.index - 1 }}').showPopover(), 50)"
               aria-label="Previous image"
             >
-              {{ inject_svg('arrow-left', True) | safe }}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
             </button>
             {% endif %}
             
@@ -84,7 +88,9 @@
               onclick="setTimeout(() => document.getElementById('gallery-lightbox-{{ loop.index + 1 }}').showPopover(), 50)"
               aria-label="Next image"
             >
-              {{ inject_svg('arrow-right', True) | safe }}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
             </button>
             {% endif %}
             
@@ -119,12 +125,16 @@
       <div class="pagination-controls">
         {% if pagination.has_prev %}
         <a href="{{ pagination.prev_url }}" class="pagination-link prev">
-          <span class="pagination-icon">{{ inject_svg('arrow-left', True) | safe }}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
           Previous
         </a>
         {% else %}
         <span class="pagination-link disabled">
-          <span class="pagination-icon">{{ inject_svg('arrow-left', True) | safe }}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
           Previous
         </span>
         {% endif %}
@@ -142,12 +152,16 @@
         {% if pagination.has_next %}
         <a href="{{ pagination.next_url }}" class="pagination-link next">
           Next
-          <span class="pagination-icon">{{ inject_svg('arrow-right', True) | safe }}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
         </a>
         {% else %}
         <span class="pagination-link disabled">
           Next
-          <span class="pagination-icon">{{ inject_svg('arrow-right', True) | safe }}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
         </span>
         {% endif %}
       </div>
@@ -157,18 +171,9 @@
 </section>
 
 <script>
-// Keyboard navigation
-document.addEventListener('keydown', function(event) {
-  const openPopover = document.querySelector('.gallery-lightbox-popover:popover-open');
-  if (!openPopover) return;
-  
-  if (event.key === 'Escape') {
-    openPopover.hidePopover();
-  }
-});
-
-// Filter functionality
+// Gallery functionality
 document.addEventListener('DOMContentLoaded', function() {
+  // Filter functionality
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
   
@@ -191,34 +196,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Scroll reveal functionality
-  const observeGalleryItems = () => {
-    const items = document.querySelectorAll('.gallery-item');
+  // Keyboard navigation for lightbox
+  document.addEventListener('keydown', function(event) {
+    const openPopover = document.querySelector('.gallery-lightbox-popover:popover-open');
+    if (!openPopover) return;
     
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    items.forEach(item => {
-      observer.observe(item);
-    });
-  };
-
-  // Add scroll reveal
-  if (window.IntersectionObserver) {
-    observeGalleryItems();
-  } else {
-    // Fallback for older browsers
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.classList.add('revealed');
-    });
-  }
+    if (event.key === 'Escape') {
+      openPopover.hidePopover();
+    }
+  });
 });
 </script>

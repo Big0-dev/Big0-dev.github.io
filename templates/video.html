@@ -1,18 +1,36 @@
-<div class="video-embed">
-  <div class="video-container">
-    <iframe 
-      width="560" 
-      height="315" 
-      src="https://www.youtube-nocookie.com/embed/{{ youtube_id }}?rel=0" 
-      title="YouTube video player" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+<!-- video.html - Enhanced Version -->
+<div class="video-section">
+  <div class="container">
+    <div class="video-card">
+      <div class="video-glow-effect"></div>
+      <div class="video-content">
+        {% if title %}
+        <h2 class="video-title">{{ title }}</h2>
+        {% endif %}
+        {% if description %}
+        <p class="video-description">{{ description }}</p>
+        {% endif %}
+        
+        <div class="video-wrapper">
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/{{ youtube_id }}?rel=0&modestbranding=1" 
+              title="{{ title | default('Video player') }}" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        
+        {% if cta_text %}
+        <div class="video-cta">
+          <button class="primary-btn" popovertarget="modal">
+            <span>{{ cta_text }}</span>
+          </button>
+        </div>
+        {% endif %}
+      </div>
+    </div>
   </div>
-  {% if config.domain in ['localhost', '127.0.0.1'] %}
-  <div class="video-note">
-    <small>Video embeds disabled in development mode</small>
-  </div>
-  {% endif %}
 </div>

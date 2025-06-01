@@ -1,36 +1,57 @@
-/* Partners Page Styles */
-.partner-ecosystem {
-  padding: var(--spacing-3xl) 0;
+/* partners.css - Complete Styles */
+
+/* Partners Section */
+.partners-section {
+  padding: 4rem 0;
 }
 
-.partner-categories {
-  margin-top: var(--spacing-3xl);
-}
-
-.partner-category {
-  margin-bottom: var(--spacing-3xl);
-}
-
-.partner-category h3 {
+.section-header {
   text-align: center;
-  margin-bottom: var(--spacing-xl);
-  color: var(--text-light);
-  font-size: 1.8rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
 }
 
-.partner-grid {
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Partners Grid */
+.partners-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .partner-card {
   background: var(--bg-card);
   border: 1px solid rgba(127, 62, 152, 0.1);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xl);
+  border-radius: 16px;
+  padding: 2rem;
   text-align: center;
-  transition: all var(--transition-default);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .partner-card:hover {
@@ -38,54 +59,80 @@
   box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
 }
 
+.partner-card:hover::before {
+  transform: scaleX(1);
+}
+
 .partner-logo {
   width: 120px;
   height: 80px;
-  margin: 0 auto var(--spacing-lg);
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.partner-logo svg {
-  max-width: 100%;
-  max-height: 100%;
-  color: var(--text-muted);
+.logo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(127, 62, 152, 0.1) 0%,
+    rgba(163, 102, 196, 0.05) 100%
+  );
+  border-radius: 8px;
+  border: 1px solid rgba(127, 62, 152, 0.2);
 }
 
-.partner-card h4 {
-  margin-bottom: var(--spacing-sm);
+.partner-card h3 {
+  margin: 0 0 0.5rem 0;
   color: var(--text-light);
+  font-size: 1.3rem;
 }
 
 .partner-card p {
   margin: 0;
-  color: var(--primary-color);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-/* Partner Benefits */
+/* Benefits Section */
 .partner-benefits {
-  padding: var(--spacing-3xl) 0;
+  padding: 4rem 0;
   background: rgba(127, 62, 152, 0.02);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-light);
 }
 
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
+  gap: 2rem;
 }
 
 .benefit-card {
   text-align: center;
-  padding: var(--spacing-xl);
+  padding: 2rem;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
 }
 
 .benefit-icon {
   width: 80px;
   height: 80px;
-  margin: 0 auto var(--spacing-lg);
+  margin: 0 auto 1.5rem;
   background: var(--accent-gradient);
   border-radius: 50%;
   display: flex;
@@ -96,53 +143,103 @@
 .benefit-icon svg {
   width: 40px;
   height: 40px;
-  color: var(--text-light);
+  color: white;
 }
 
 .benefit-card h3 {
-  margin-bottom: var(--spacing-md);
+  margin: 0 0 1rem 0;
+  color: var(--text-light);
+  font-size: 1.3rem;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.partner-cta {
+  padding: 4rem 0;
+}
+
+.cta-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(127, 62, 152, 0.1) 0%,
+    rgba(163, 102, 196, 0.05) 100%
+  );
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(127, 62, 152, 0.2);
+}
+
+.cta-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(127, 62, 152, 0.1) 0%,
+    transparent 50%
+  );
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   color: var(--text-light);
 }
 
-/* Partner CTA */
-.partner-cta {
-  padding: var(--spacing-3xl) 0;
-}
-
-/* LinkedIn CTA for Careers */
-.linkedin-cta {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  background: var(--bg-card);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid rgba(127, 62, 152, 0.1);
-}
-
-.linkedin-cta .lead {
-  margin-bottom: var(--spacing-xl);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.linkedin-cta .primary-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-md);
-}
-
-.linkedin-cta svg {
-  width: 24px;
-  height: 24px;
+.cta-content p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
 }
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .partner-grid {
-    grid-template-columns: 1fr;
+  .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
   .benefits-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-header h2,
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -114,8 +114,19 @@ class SitemapGenerator:
         if "blog_posts" in context:
             for post in context["blog_posts"]:
                 if "image_url" in post:
+                    # Fix: Ensure absolute URL for blog post images
+                    image_url = post["image_url"]
+                    if image_url.startswith("./static/"):
+                        absolute_url = f"{self.config.domain}/static/{image_url[9:]}"
+                    elif image_url.startswith("./"):
+                        absolute_url = f"{self.config.domain}/{image_url[2:]}"
+                    elif not image_url.startswith("http"):
+                        absolute_url = f"{self.config.domain}/{image_url}"
+                    else:
+                        absolute_url = image_url
+
                     alt_text = post.get("title", post.get("meta_des", ""))
-                    images.append((post["image_url"], alt_text))
+                    images.append((absolute_url, alt_text))
         return images
 
     def _extract_from_services(
@@ -126,7 +137,9 @@ class SitemapGenerator:
         if "services" in context:
             for service in context["services"]:
                 if hasattr(service, "image") and service.image:
-                    images.append((f"./static/{service.image}", service.title))
+                    # Fix: Generate absolute URL
+                    absolute_url = f"{self.config.domain}/static/{service.image}"
+                    images.append((absolute_url, service.title))
         return images
 
     def _extract_from_gallery(
@@ -137,7 +150,11 @@ class SitemapGenerator:
         if "images" in context:
             for img in context["images"]:
                 if hasattr(img, "filename"):
-                    images.append((f"./content/gallery/{img.filename}", img.title))
+                    # Fix: Generate absolute URL
+                    absolute_url = (
+                        f"{self.config.domain}/content/gallery/{img.filename}"
+                    )
+                    images.append((absolute_url, img.title))
         return images
 
     def _extract_from_simple_fields(
@@ -152,7 +169,9 @@ class SitemapGenerator:
                 img_value = context[key]
                 if isinstance(img_value, str) and self._is_image_file(img_value):
                     alt_text = f"{page_title} {key.replace('_', ' ')}"
-                    images.append((f"./static/{img_value}", alt_text))
+                    # Fix: Generate absolute URL
+                    absolute_url = f"{self.config.domain}/static/{img_value}"
+                    images.append((absolute_url, alt_text))
 
         return images
 

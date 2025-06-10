@@ -277,7 +277,20 @@ class Page(ABC):
         context["static"] = static_path  # 👈 Add static path to content context
         context["config"] = self.config
 
-        context.update(page_urls)
+        url_keys_to_add = [
+            "careers",
+            "services_page",
+            "about",
+            "blog",
+            "contact",
+            "industries",
+            "partners",
+            "products",
+            "gallery",
+        ]
+        for key in url_keys_to_add:
+            if key not in context:
+                context[key] = page_urls.get(key)
 
         # Render content template first with full context including static
         content = content_template.render(**context)

@@ -1468,8 +1468,8 @@ mark {
 
 .footerColumns {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-xl);
 }
 
 .footerColumn h3 {

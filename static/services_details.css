@@ -1,96 +1,57 @@
-/* service_detail.css - Individual Service Page Styles */
-
 /* ==============================
-   SERVICE DETAIL HEADER
+   SERVICE DETAIL PAGE
 ============================== */
 .service-detail {
-  padding-top: var(--spacing-3xl);
-  min-height: 100vh;
+  padding: var(--spacing-3xl) 0;
+  min-height: 70vh;
 }
 
 .service-header {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
-  position: relative;
-  padding: var(--spacing-3xl) 0;
-  background: linear-gradient(
-    180deg,
-    rgba(127, 62, 152, 0.03) 0%,
-    transparent 100%
-  );
-}
-
-.service-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 2px;
-  background: var(--accent-gradient);
-  border-radius: 2px;
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid rgba(127, 62, 152, 0.1);
 }
 
 .service-header h1 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: var(--text-light);
   margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
   position: relative;
-  display: inline-block;
+  padding-bottom: var(--spacing-md);
 }
 
 .service-header h1::after {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
+  width: 80px;
+  height: 4px;
   background: var(--accent-gradient);
-  border-radius: 3px;
-  opacity: 0.6;
+  border-radius: 2px;
 }
 
-/* Price Badge */
 .service-price-badge {
   display: inline-block;
   background: var(--accent-gradient);
   color: var(--text-light);
   padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: 30px;
-  font-size: 1.2rem;
+  border-radius: var(--border-radius-lg);
+  font-size: 1.1rem;
   font-weight: 600;
   margin-top: var(--spacing-md);
   box-shadow: 0 5px 20px rgba(127, 62, 152, 0.3);
-  position: relative;
-  overflow: hidden;
 }
 
-.service-price-badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: left 0.5s ease;
-}
-
-.service-price-badge:hover::before {
-  left: 100%;
-}
-
-/* ==============================
-   SERVICE CONTENT
-============================== */
 .service-content {
   max-width: 800px;
   margin: 0 auto var(--spacing-3xl);
-  color: var(--text-dark);
+  color: var(--text-muted);
   line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 .service-content h2 {
@@ -107,10 +68,10 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 4px;
-  height: 80%;
+  width: 5px;
+  height: 75%;
   background: var(--accent-gradient);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .service-content h3 {
@@ -121,72 +82,40 @@
 
 .service-content p {
   margin-bottom: var(--spacing-lg);
-  color: var(--text-muted);
 }
 
-.service-content ul,
-.service-content ol {
-  margin: var(--spacing-lg) 0;
-  padding-left: var(--spacing-xl);
-}
-
-.service-content li {
-  color: var(--text-dark);
-  margin-bottom: var(--spacing-sm);
-  position: relative;
-}
-
-.service-content ul li::marker {
-  color: var(--primary-color);
-}
-
-/* Code blocks */
-.service-content pre {
-  background: var(--bg-card);
-  border: 1px solid rgba(127, 62, 152, 0.1);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-lg);
-  overflow-x: auto;
-  margin: var(--spacing-lg) 0;
-}
-
-.service-content code {
-  font-family: "Consolas", "Monaco", monospace;
-  font-size: 0.9em;
-  color: var(--primary-light);
-  background: rgba(127, 62, 152, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.service-content pre code {
-  background: none;
-  padding: 0;
-  color: var(--text-dark);
-}
-
-/* Blockquotes */
-.service-content blockquote {
-  border-left: 4px solid var(--primary-color);
-  padding-left: var(--spacing-lg);
-  margin: var(--spacing-xl) 0;
-  font-style: italic;
-  color: var(--text-muted);
-}
-
-/* Service Features Section */
 .service-features-section {
   background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-3xl);
   margin: var(--spacing-3xl) 0;
-  border: 1px solid rgba(127, 62, 152, 0.1);
 }
 
 .service-features-section h2 {
   color: var(--text-light);
+  font-size: 1.8rem;
   margin-bottom: var(--spacing-xl);
   text-align: center;
+  position: relative;
+  padding-left: 0;
+  padding-bottom: var(--spacing-md);
+}
+
+.service-features-section h2::before {
+  display: none;
+}
+
+.service-features-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-gradient);
+  border-radius: 2px;
 }
 
 .service-features-list {
@@ -201,7 +130,7 @@
 .service-features-list li {
   position: relative;
   padding-left: var(--spacing-xl);
-  color: var(--text-dark);
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -219,51 +148,48 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  font-size: 14px;
 }
 
-/* Service CTA */
-.service-cta {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  margin: var(--spacing-3xl) 0;
-  background: linear-gradient(
-    135deg,
-    rgba(127, 62, 152, 0.05) 0%,
-    rgba(163, 102, 196, 0.02) 100%
-  );
-  border-radius: var(--border-radius-lg);
-}
-
-.service-cta h2 {
-  color: var(--text-light);
-  margin-bottom: var(--spacing-md);
-}
-
-.service-cta p {
-  margin-bottom: var(--spacing-xl);
-  font-size: 1.1rem;
-}
-
-/* Service Navigation */
 .service-navigation {
   margin-top: var(--spacing-3xl);
-  margin-bottom: var(--spacing-3xl);
   padding-top: var(--spacing-xl);
   border-top: 1px solid rgba(127, 62, 152, 0.1);
   text-align: center;
 }
 
-/* Responsive */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-default);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  background: rgba(127, 62, 152, 0.05);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+}
+
+.back-link:hover {
+  gap: var(--spacing-md);
+  background: rgba(127, 62, 152, 0.1);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.back-link svg {
+  width: 20px;
+  height: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .service-features-list {
     grid-template-columns: 1fr;
   }
 
   .service-features-section {
-    padding: var(--spacing-xl);
-  }
-
-  .service-cta {
     padding: var(--spacing-xl);
   }
 }

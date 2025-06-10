@@ -10,17 +10,11 @@
 
     <div class="post-content">{{ blog_content | safe }}</div>
 
-    <div class="post-footer">
-      <div class="post-tags">
-        <span class="tag">#AI</span>
-        <span class="tag">#Innovation</span>
-        <span class="tag">#Technology</span>
-      </div>
-    </div>
 
     <div class="post-navigation">
       <a href="../blog.html" class="back-link">
-        {{ inject_svg('arrow-left', True) | safe }} Back to Insights
+        {{ inject_svg('arrow-left', True) | safe }}
+        <span>Back to Insights</span>
       </a>
     </div>
   </div>

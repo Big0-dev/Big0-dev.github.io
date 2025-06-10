@@ -14,7 +14,9 @@
       <h2>Industry Challenges</h2>
       <p>{{ challenge }}</p>
     </div>
-    {% endif %} {% if solutions %}
+    {% endif %}
+
+    {% if solutions %}
     <div class="industry-solutions-section">
       <h2>Our Solutions</h2>
       <ul class="industry-solutions-list">
@@ -23,7 +25,9 @@
         {% endfor %}
       </ul>
     </div>
-    {% endif %} {% if case_studies %}
+    {% endif %}
+
+    {% if case_studies %}
     <div class="industry-case-studies-section">
       <h2>Case Studies</h2>
       <ul class="case-studies-list">
@@ -35,7 +39,10 @@
     {% endif %}
 
     <div class="industry-navigation">
-      <a href="../industries.html" class="btn">← Back to Industries</a>
+      <a href="../industries.html" class="back-link">
+        {{ inject_svg('arrow-left', True) | safe }}
+        <span>Back to Industries</span>
+      </a>
     </div>
   </div>
 </section>

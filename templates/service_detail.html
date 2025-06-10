@@ -21,7 +21,10 @@
     {% endif %}
 
     <div class="service-navigation">
-      <a href="../services.html" class="btn">← Back to Services</a>
+      <a href="../services.html" class="back-link">
+        {{ inject_svg('arrow-left', True) | safe }}
+        <span>Back to Services</span>
+      </a>
     </div>
   </div>
 </section>

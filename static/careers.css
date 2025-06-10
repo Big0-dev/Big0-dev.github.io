@@ -1,4 +1,44 @@
 /* ==============================
+   SECTION HEADERS (CENTER ALIGNED)
+============================== */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.section-header h2 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 2.5rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==============================
+   PAGE HERO (CENTER ALIGNED)
+============================== */
+.page-hero-content {
+  text-align: center;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+}
+
+/* ==============================
    WHY BIG0 SECTION
 ============================== */
 .why-big0 {
@@ -9,7 +49,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
 }
 
 .benefit-card {
@@ -77,6 +116,58 @@
 .open-positions {
   padding: var(--spacing-3xl) 0;
   background: rgba(127, 62, 152, 0.02);
+}
+
+.positions-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.position-cta-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.position-cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(127, 62, 152, 0.05) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.position-cta-content,
+.position-cta-action {
+  position: relative;
+  z-index: 1;
+}
+
+.position-cta-content h3 {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.position-cta-content p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .positions-filters {
@@ -211,6 +302,14 @@
 
 .culture-content h2 {
   margin-bottom: var(--spacing-lg);
+  font-size: 2.5rem;
+  color: var(--text-light);
+}
+
+.culture-content .section-subtitle {
+  text-align: left;
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: none;
 }
 
 .culture-values {
@@ -223,7 +322,7 @@
   position: relative;
   padding-left: var(--spacing-xl);
   margin-bottom: var(--spacing-md);
-  color: var(--text-dark);
+  color: var(--text-muted);
 }
 
 .culture-values li::before {
@@ -260,6 +359,10 @@
   .culture-grid {
     grid-template-columns: 1fr;
   }
+
+  .culture-content .section-subtitle {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -283,5 +386,23 @@
 
   .culture-images {
     grid-template-columns: 1fr;
+  }
+
+  .position-cta-card {
+    padding: var(--spacing-xl);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .position-cta-card {
+    padding: var(--spacing-lg);
+  }
+
+  .position-cta-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .position-cta-content p {
+    font-size: 1rem;
   }
 }

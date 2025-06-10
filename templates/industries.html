@@ -3,31 +3,11 @@
   <div class="hero-bg-pattern"></div>
   <div class="container">
     <div class="page-hero-content">
-      <h1 class="page-title">
-        Industries We <span class="gradient-text">Serve</span>
-      </h1>
-      <p class="page-subtitle">
-        Delivering tailored AI and technology solutions across diverse sectors
-      </p>
+      <h1 class="page-title">Industries We <span class="gradient-text">Serve</span></h1>
+      <p class="page-subtitle">Delivering tailored AI and technology solutions that transform businesses across diverse sectors</p>
     </div>
   </div>
 </div>
-
-<!-- Industries Overview -->
-<section class="industries-overview">
-  <div class="container">
-    <div class="overview-content">
-      <h2 class="text-center">
-        Transforming Businesses Across
-        <span class="gradient-text">Every Sector</span>
-      </h2>
-      <p class="lead text-center">
-        We understand that each industry has unique challenges and requirements.
-        Our solutions are tailored to meet the specific needs of your sector.
-      </p>
-    </div>
-  </div>
-</section>
 
 <!-- All Industries Grid -->
 <section class="all-industries">
@@ -47,7 +27,8 @@
           <h4>Key Challenge</h4>
           <p>{{ industry.challenge }}</p>
         </div>
-        {% endif %} {% if industry.solutions %}
+        {% endif %}
+        {% if industry.solutions %}
         <ul class="industry-solutions">
           {% for solution in industry.solutions[:3] %}
           <li>{{ solution }}</li>
@@ -63,21 +44,130 @@
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="industries-cta">
+<!-- Industry Expertise Section -->
+<section class="industry-expertise">
   <div class="container">
-    <div class="cta-card">
-      <div class="cta-glow"></div>
-      <div class="cta-content">
-        <h2>Ready to Transform Your Industry?</h2>
-        <p>
-          Let's discuss how our solutions can address your industry-specific
-          challenges
-        </p>
-        <button class="primary-btn" popovertarget="modal">
-          <span>Get Industry Consultation</span>
-        </button>
+    <div class="section-header">
+      <h2 class="section-heading">Our <span class="gradient-text">Expertise</span></h2>
+      <p class="section-subtitle">Deep industry knowledge combined with cutting-edge technology solutions</p>
+    </div>
+    
+    <div class="expertise-timeline">
+      <div class="expertise-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Industry Analysis</h3>
+          <p>We conduct thorough research to understand your industry's unique challenges, regulations, and opportunities.</p>
+        </div>
+      </div>
+      
+      <div class="expertise-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Custom Strategy</h3>
+          <p>Develop tailored solutions that align with industry standards and best practices specific to your sector.</p>
+        </div>
+      </div>
+      
+      <div class="expertise-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Compliance Focus</h3>
+          <p>Ensure all solutions meet industry regulations and compliance requirements from day one.</p>
+        </div>
+      </div>
+      
+      <div class="expertise-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Ongoing Support</h3>
+          <p>Provide continuous support and updates to keep your solutions current with industry evolution.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Industry Focus Areas Section -->
+<section class="industry-focus">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-heading">Our <span class="gradient-text">Focus Areas</span></h2>
+      <p class="section-subtitle">Key technology solutions we deliver across industries</p>
+    </div>
+    
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+            <path d="M3 12v6a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6"/>
+          </svg>
+        </div>
+        <h3>Process Automation</h3>
+        <p>Streamline operations and reduce manual tasks through intelligent automation solutions tailored to your industry workflows.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Data Analytics</h3>
+        <p>Transform raw data into actionable insights with advanced analytics platforms designed for your sector's specific needs.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+          </svg>
+        </div>
+        <h3>AI Integration</h3>
+        <p>Implement machine learning and AI capabilities that enhance decision-making and operational efficiency in your industry.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3>Digital Transformation</h3>
+        <p>Guide your organization through comprehensive digital transformation initiatives aligned with industry best practices.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <circle cx="12" cy="16" r="1"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Security & Compliance</h3>
+        <p>Ensure your technology solutions meet industry regulations and security standards specific to your sector.</p>
+      </div>
+      
+      <div class="focus-card">
+        <div class="focus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3>Custom Development</h3>
+        <p>Build bespoke solutions that address unique challenges and requirements specific to your industry and business model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include standard CTA -->
+{% include 'cta.html' %}

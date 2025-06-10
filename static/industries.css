@@ -1,22 +1,54 @@
-/* Industries page styles - similar to services.css */
-.industries-overview {
-  padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
+/* ==============================
+   PAGE HERO (CENTER ALIGNED)
+============================== */
+.page-hero-content {
+  text-align: center;
 }
 
-.overview-content {
-  max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
+.page-title {
+  text-align: center;
 }
 
+.page-subtitle {
+  text-align: center;
+}
+
+/* ==============================
+   SECTION HEADERS (CENTER ALIGNED)
+============================== */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.section-heading {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 2.5rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==============================
+   ALL INDUSTRIES GRID
+============================== */
 .all-industries {
-  padding: var(--spacing-xl) 0 var(--spacing-3xl) 0;
+  padding: var(--spacing-3xl) 0;
 }
 
 .industries-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
 }
 
 .industry-card {
@@ -28,11 +60,31 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.industry-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-gradient);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-default);
+}
+
+.industry-card:hover::before {
+  transform: scaleX(1);
 }
 
 .industry-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(127, 62, 152, 0.15);
+  border-color: rgba(127, 62, 152, 0.3);
 }
 
 .industry-icon {
@@ -44,6 +96,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: var(--spacing-lg);
+  flex-shrink: 0;
 }
 
 .industry-icon svg {
@@ -52,16 +105,42 @@
   color: var(--text-light);
 }
 
+.industry-card h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.industry-card > p {
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.industry-challenge {
+  margin-bottom: var(--spacing-lg);
+}
+
 .industry-challenge h4 {
   color: var(--primary-color);
   font-size: 1rem;
-  margin-bottom: var(--spacing-sm);
+  margin: 0 0 var(--spacing-sm) 0;
+  font-weight: 600;
+}
+
+.industry-challenge p {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .industry-solutions {
   list-style: none;
   padding: 0;
   margin: 0 0 var(--spacing-lg) 0;
+  flex-grow: 1;
 }
 
 .industry-solutions li {
@@ -69,6 +148,7 @@
   padding-left: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
   color: var(--text-dark);
+  font-size: 0.9rem;
 }
 
 .industry-solutions li::before {
@@ -86,14 +166,284 @@
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  transition: gap var(--transition-default);
+  transition: all var(--transition-default);
   margin-top: auto;
 }
 
 .industry-link:hover {
   gap: var(--spacing-md);
+  color: var(--secondary-color);
 }
 
-.industries-cta {
+.industry-link span {
+  transition: transform var(--transition-default);
+}
+
+.industry-link:hover span {
+  transform: translateX(3px);
+}
+
+/* ==============================
+   INDUSTRY EXPERTISE SECTION
+============================== */
+.industry-expertise {
   padding: var(--spacing-3xl) 0;
+  background: var(--bg-darker);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-expertise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(127, 62, 152, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(163, 102, 196, 0.03) 0%,
+      transparent 50%
+    );
+  z-index: 0;
+}
+
+.industry-expertise .container {
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .expertise-timeline::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--primary-color) 20%,
+      var(--primary-color) 80%,
+      transparent 100%
+    );
+    z-index: 0;
+  }
+}
+
+.expertise-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  background: var(--bg-dark);
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  position: relative;
+  transition: all var(--transition-default);
+}
+
+.expertise-step:hover .step-number {
+  background: var(--primary-color);
+  color: var(--text-light);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(127, 62, 152, 0.5);
+}
+
+.step-content h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.step-content p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==============================
+   INDUSTRY FOCUS SECTION
+============================== */
+.industry-focus {
+  padding: var(--spacing-3xl) 0;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.focus-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(127, 62, 152, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all var(--transition-default);
+  position: relative;
+  overflow: hidden;
+}
+
+.focus-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(127, 62, 152, 0.05) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-default);
+}
+
+.focus-card:hover::before {
+  opacity: 1;
+}
+
+.focus-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 35px rgba(127, 62, 152, 0.15);
+}
+
+.focus-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
+  background: var(--accent-gradient);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.focus-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--text-light);
+}
+
+.focus-card h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-align: center;
+}
+
+.focus-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media screen and (max-width: 1200px) {
+  .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .expertise-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-heading {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .expertise-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-card {
+    padding: var(--spacing-lg);
+  }
+
+  .expertise-step,
+  .focus-card {
+    padding: var(--spacing-lg);
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .all-industries {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .industry-expertise,
+  .industry-focus {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .industries-grid {
+    gap: var(--spacing-md);
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
 }

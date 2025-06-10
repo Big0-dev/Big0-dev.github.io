@@ -1,176 +1,69 @@
-/* services.css - Services Page Specific Styles */
-
 /* ==============================
-   SERVICES OVERVIEW
+   PAGE HERO (CENTER ALIGNED)
 ============================== */
-.services-overview {
-  padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
-}
-
-.overview-content {
-  max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
-}
-
-.all-services {
-  padding: var(--spacing-xl) 0 var(--spacing-3xl) 0;
-}
-
-.overview-content h2 {
-  margin-bottom: var(--spacing-lg);
-}
-
-.services-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-3xl);
-}
-
-.category-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(127, 62, 152, 0.1);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xl);
+.page-hero-content {
   text-align: center;
-  text-decoration: none;
-  color: inherit;
-  transition: all var(--transition-default);
-  position: relative;
-  overflow: hidden;
 }
 
-.category-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(127, 62, 152, 0.1) 0%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity var(--transition-default);
+.page-title {
+  text-align: center;
 }
 
-.category-card:hover::before {
-  opacity: 1;
-}
-
-.category-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
-}
-
-.category-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto var(--spacing-lg);
-  background: var(--accent-gradient);
-  border-radius: var(--border-radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.category-icon svg {
-  width: 40px;
-  height: 40px;
-  color: var(--text-light);
-}
-
-.category-card h3 {
-  margin: 0;
-  font-size: 1.4rem;
-  color: var(--text-light);
+.page-subtitle {
+  text-align: center;
 }
 
 /* ==============================
-   SERVICE SECTIONS
+   SECTION HEADERS (CENTER ALIGNED)
 ============================== */
-.service-section {
-  padding: var(--spacing-3xl) 0;
-  scroll-margin-top: var(--top-margin);
-}
-
-.service-section.alt-bg {
-  background: rgba(127, 62, 152, 0.02);
-}
-
-.service-header {
+.section-header {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
 }
 
-.service-icon-large {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto var(--spacing-lg);
-  background: var(--accent-gradient);
-  border-radius: var(--border-radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.3);
-}
-
-.service-icon-large::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: radial-gradient(
-    circle,
-    rgba(127, 62, 152, 0.2) 0%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  z-index: -1;
-}
-
-.service-icon-large svg {
-  width: 50px;
-  height: 50px;
-  color: var(--text-light);
-}
-
-.service-header h2 {
-  margin-bottom: var(--spacing-md);
+.section-heading {
+  margin: 0 0 var(--spacing-md) 0;
   font-size: 2.5rem;
+  color: var(--text-light);
+  text-align: center;
 }
 
-.service-description {
+.section-subtitle {
+  margin: 0;
   font-size: 1.2rem;
   color: var(--text-muted);
   max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
 }
 
-/* Service Features Grid */
-.service-features-grid {
+/* ==============================
+   ALL SERVICES GRID
+============================== */
+.all-services {
+  padding: var(--spacing-3xl) 0;
+}
+
+.services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
 }
 
-.service-feature {
+.service-card {
   background: var(--bg-card);
   border: 1px solid rgba(127, 62, 152, 0.1);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   transition: all var(--transition-default);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.service-feature::before {
+.service-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -184,40 +77,63 @@
   transition: transform var(--transition-default);
 }
 
-.service-feature:hover::before {
+.service-card:hover::before {
   transform: scaleX(1);
 }
 
-.service-feature:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(127, 62, 152, 0.15);
+  border-color: rgba(127, 62, 152, 0.3);
 }
 
-.service-feature h3 {
-  margin-bottom: var(--spacing-md);
-  font-size: 1.4rem;
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--accent-gradient);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  flex-shrink: 0;
+}
+
+.service-icon svg {
+  width: 30px;
+  height: 30px;
   color: var(--text-light);
 }
 
-.service-feature > p {
-  margin-bottom: var(--spacing-lg);
-  color: var(--text-muted);
+.service-card h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: 1.4rem;
+  color: var(--text-light);
+  font-weight: 600;
 }
 
-.feature-list {
+.service-card > p {
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--text-muted);
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.service-features {
   list-style: none;
   padding: 0;
   margin: 0 0 var(--spacing-lg) 0;
 }
 
-.feature-list li {
+.service-features li {
   position: relative;
   padding-left: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
   color: var(--text-dark);
+  font-size: 0.9rem;
 }
 
-.feature-list li::before {
+.service-features li::before {
   content: "→";
   position: absolute;
   left: 0;
@@ -225,17 +141,35 @@
   font-weight: bold;
 }
 
-.feature-link {
+.service-price {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.service-link {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  transition: gap var(--transition-default);
+  gap: var(--spacing-sm);
+  transition: all var(--transition-default);
+  margin-top: auto;
 }
 
-.feature-link:hover {
-  gap: var(--spacing-sm);
+.service-link:hover {
+  gap: var(--spacing-md);
+  color: var(--secondary-color);
+}
+
+.service-link span {
+  transition: transform var(--transition-default);
+}
+
+.service-link:hover span {
+  transform: translateX(3px);
 }
 
 /* ==============================
@@ -287,8 +221,8 @@
     content: "";
     position: absolute;
     top: 40px;
-    left: 120px;
-    right: 120px;
+    left: 10%;
+    right: 10%;
     height: 2px;
     background: linear-gradient(
       90deg,
@@ -332,172 +266,173 @@
 }
 
 .step-content h3 {
-  margin-bottom: var(--spacing-sm);
+  margin: 0 0 var(--spacing-sm) 0;
   font-size: 1.4rem;
+  color: var(--text-light);
+  text-align: center;
 }
 
 .step-content p {
   margin: 0;
   color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* ==============================
-   ALL SERVICES GRID
+   WHY CHOOSE US SECTION
 ============================== */
-.services-grid {
+.why-choose-us {
+  padding: var(--spacing-3xl) 0;
+}
+
+.benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
   margin-top: var(--spacing-3xl);
 }
 
-.service-card {
+.benefit-card {
   background: var(--bg-card);
   border: 1px solid rgba(127, 62, 152, 0.1);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
+  text-align: center;
   transition: all var(--transition-default);
   position: relative;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
 }
 
-.service-card::before {
+.benefit-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--accent-gradient);
-  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-default);
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(127, 62, 152, 0.05) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-default);
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+.benefit-card:hover::before {
+  opacity: 1;
 }
 
-.service-card:hover {
+.benefit-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.2);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 35px rgba(127, 62, 152, 0.15);
 }
 
-.service-icon {
-  width: 60px;
-  height: 60px;
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-lg);
   background: var(--accent-gradient);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--spacing-lg);
+  position: relative;
 }
 
-.service-icon svg {
-  width: 30px;
-  height: 30px;
+.benefit-icon svg {
+  width: 40px;
+  height: 40px;
   color: var(--text-light);
 }
 
-.service-card h3 {
-  margin-bottom: var(--spacing-md);
+.benefit-card h3 {
+  margin: 0 0 var(--spacing-md) 0;
   font-size: 1.4rem;
   color: var(--text-light);
+  font-weight: 600;
+  text-align: center;
 }
 
-.service-card > p {
-  margin-bottom: var(--spacing-lg);
+.benefit-card p {
+  margin: 0;
   color: var(--text-muted);
-  flex-grow: 1;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--spacing-lg) 0;
-}
-
-.service-features li {
-  position: relative;
-  padding-left: var(--spacing-lg);
-  margin-bottom: var(--spacing-sm);
-  color: var(--text-dark);
-}
-
-.service-features li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-.service-price {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-}
-
-.service-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  transition: gap var(--transition-default);
-  margin-top: auto;
-}
-
-.service-link:hover {
-  gap: var(--spacing-md);
-}
-
-.service-link span {
-  transition: transform var(--transition-default);
-}
-
-.service-link:hover span {
-  transform: translateX(3px);
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* ==============================
-   RESPONSIVE
+   RESPONSIVE DESIGN
 ============================== */
+@media screen and (max-width: 1200px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 992px) {
-  .service-features-grid {
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-heading {
+    font-size: 2.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
 
   .process-timeline {
     grid-template-columns: 1fr;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .services-categories {
-    grid-template-columns: repeat(2, 1fr);
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
 
-  .service-header h2 {
+  .service-card {
+    padding: var(--spacing-lg);
+  }
+
+  .process-step,
+  .benefit-card {
+    padding: var(--spacing-lg);
+  }
+
+  .section-heading {
     font-size: 2rem;
   }
 
-  .service-description {
-    font-size: 1.1rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
+  .section-subtitle {
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .services-categories {
-    grid-template-columns: 1fr;
+  .all-services {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .our-process,
+  .why-choose-us {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .services-grid {
+    gap: var(--spacing-md);
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
   }
 }

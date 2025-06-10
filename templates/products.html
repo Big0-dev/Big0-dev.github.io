@@ -1,175 +1,283 @@
-<!-- products.html - Complete Template -->
-<section class="products-hero">
-  <div class="hero-background">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-  </div>
+<!-- products.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
   <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        Building Tomorrow's <span class="gradient-text">Solutions</span>
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        Our <span class="gradient-text">Products</span>
       </h1>
-      <p class="hero-description">
-        We combine cutting-edge technology with proven methodologies to create
-        products that transform businesses
+      <p class="page-subtitle">
+        Innovative solutions built with purpose, designed for impact, and
+        crafted to transform how businesses operate
       </p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Our Approach -->
-<section class="approach-section">
+<!-- Development Philosophy Section -->
+<section class="development-philosophy">
   <div class="container">
     <div class="section-header">
-      <h2>Our <span class="gradient-text">Approach</span></h2>
-      <p class="lead">
-        Every great product starts with understanding the problem. We focus on
-        creating solutions that are not just technically excellent, but
-        genuinely useful.
+      <h2 class="section-heading">
+        Development <span class="gradient-text">Philosophy</span>
+      </h2>
+      <p class="section-subtitle">
+        Our approach to building products that make a real difference
       </p>
     </div>
 
-    <div class="approach-grid">
-      <div class="approach-card">
-        <div class="approach-icon">
-          <span>01</span>
+    <div class="philosophy-grid">
+      <div class="philosophy-card">
+        <div class="philosophy-icon">
+          {{ inject_svg('settings', True) | safe }}
         </div>
-        <h3>Research & Discovery</h3>
+        <h3>Purpose-Driven Design</h3>
         <p>
-          We start by deeply understanding the problem space, user needs, and
-          market dynamics.
+          Every product we build starts with a clear purpose - solving real
+          business problems with elegant, user-centered solutions.
         </p>
       </div>
 
-      <div class="approach-card">
-        <div class="approach-icon">
-          <span>02</span>
+      <div class="philosophy-card">
+        <div class="philosophy-icon">
+          {{ inject_svg('layers', True) | safe }}
         </div>
-        <h3>Design & Prototype</h3>
+        <h3>Scalable Architecture</h3>
         <p>
-          Creating elegant solutions that balance user experience with technical
-          feasibility.
+          Built from the ground up with scalability in mind, ensuring our
+          products grow seamlessly with your business needs.
         </p>
       </div>
 
-      <div class="approach-card">
-        <div class="approach-icon">
-          <span>03</span>
-        </div>
-        <h3>Build & Test</h3>
+      <div class="philosophy-card">
+        <div class="philosophy-icon">{{ inject_svg('lock', True) | safe }}</div>
+        <h3>Security First</h3>
         <p>
-          Developing robust products with continuous testing and quality
-          assurance.
+          Security and privacy are built into every layer of our products, not
+          added as an afterthought.
         </p>
       </div>
 
-      <div class="approach-card">
-        <div class="approach-icon">
-          <span>04</span>
+      <div class="philosophy-card">
+        <div class="philosophy-icon">
+          {{ inject_svg('smile', True) | safe }}
         </div>
-        <h3>Launch & Iterate</h3>
+        <h3>User Experience Focus</h3>
         <p>
-          Deploying solutions and continuously improving based on real-world
-          feedback.
+          Intuitive interfaces and seamless user experiences are at the heart of
+          everything we create.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Innovation Preview -->
-<section class="innovation-section">
+<!-- Product Development Process -->
+<section class="development-process">
   <div class="container">
-    <div class="innovation-card">
-      <div class="innovation-badge">Coming Soon</div>
-      <h2>
-        Something <span class="gradient-text">Revolutionary</span> is Coming
+    <div class="section-header">
+      <h2 class="section-heading">
+        Our <span class="gradient-text">Process</span>
       </h2>
-      <p>
-        We're working on groundbreaking solutions that will redefine how
-        businesses operate in the digital age. While we can't reveal all the
-        details yet, here's what you can expect:
+      <p class="section-subtitle">
+        How we transform ideas into powerful, market-ready products
       </p>
+    </div>
 
-      <div class="feature-grid">
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <h4>AI-Powered Intelligence</h4>
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Research & Validation</h3>
           <p>
-            Leveraging advanced AI to create smarter, more intuitive solutions
+            Deep market research, user interviews, and problem validation to
+            ensure we're building the right solution.
           </p>
         </div>
+      </div>
 
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <h4>Enterprise-Ready</h4>
-          <p>Built for scale with security and reliability at the core</p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">✓</div>
-          <h4>Seamless Integration</h4>
-          <p>Designed to work perfectly with existing technology stacks</p>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Design & Prototyping</h3>
+          <p>
+            User-centered design process with rapid prototyping and iterative
+            feedback loops.
+          </p>
         </div>
       </div>
 
-      <button class="primary-btn" popovertarget="modal">
-        <span>Get Early Access</span>
-      </button>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Agile Development</h3>
+          <p>
+            Iterative development with continuous testing, integration, and
+            quality assurance.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Launch & Iterate</h3>
+          <p>
+            Strategic launch with continuous monitoring, user feedback
+            integration, and product evolution.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Tech Stack -->
-<section class="tech-section">
+<!-- Technology Foundation -->
+<section class="technology-foundation">
   <div class="container">
-    <h2 class="section-title">
-      Powered by <span class="gradient-text">Modern Technology</span>
-    </h2>
+    <div class="section-header">
+      <h2 class="section-heading">
+        Technology <span class="gradient-text">Foundation</span>
+      </h2>
+      <p class="section-subtitle">
+        Built on modern, proven technologies that ensure reliability,
+        performance, and scalability
+      </p>
+    </div>
 
     <div class="tech-grid">
       <div class="tech-category">
-        <h3>Frontend</h3>
-        <div class="tech-tags">
-          <span>React</span>
-          <span>Vue.js</span>
-          <span>TypeScript</span>
-          <span>Next.js</span>
+        <div class="tech-icon">{{ inject_svg('monitor', True) | safe }}</div>
+        <h3>Modern Frontend</h3>
+        <div class="tech-description">
+          <p>
+            Progressive web technologies that deliver fast, responsive, and
+            intuitive user experiences across all devices and platforms.
+          </p>
         </div>
       </div>
 
       <div class="tech-category">
-        <h3>Backend</h3>
-        <div class="tech-tags">
-          <span>Python</span>
-          <span>Node.js</span>
-          <span>Go</span>
-          <span>PostgreSQL</span>
+        <div class="tech-icon">{{ inject_svg('server', True) | safe }}</div>
+        <h3>Robust Backend</h3>
+        <div class="tech-description">
+          <p>
+            Scalable server architecture with enterprise-grade databases and
+            caching systems for optimal performance and reliability.
+          </p>
         </div>
       </div>
 
       <div class="tech-category">
-        <h3>Cloud & AI</h3>
-        <div class="tech-tags">
-          <span>AWS</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-          <span>TensorFlow</span>
+        <div class="tech-icon">{{ inject_svg('cloud', True) | safe }}</div>
+        <h3>Cloud Infrastructure</h3>
+        <div class="tech-description">
+          <p>
+            Containerized applications on leading cloud platforms with automated
+            deployment and intelligent scaling capabilities.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <div class="tech-icon">{{ inject_svg('ai', True) | safe }}</div>
+        <h3>AI & Machine Learning</h3>
+        <div class="tech-description">
+          <p>
+            Advanced artificial intelligence frameworks and machine learning
+            models that power intelligent automation and decision-making.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <div class="tech-icon">{{ inject_svg('shield', True) | safe }}</div>
+        <h3>Security & Compliance</h3>
+        <div class="tech-description">
+          <p>
+            Enterprise-grade security protocols, encryption standards, and
+            compliance frameworks to protect data and ensure regulatory
+            adherence.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <div class="tech-icon">{{ inject_svg('package', True) | safe }}</div>
+        <h3>Integration Platform</h3>
+        <div class="tech-description">
+          <p>
+            Flexible APIs and integration tools that seamlessly connect with
+            existing systems and third-party services for maximum compatibility.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="products-cta">
+<!-- Product Vision -->
+<section class="product-vision">
   <div class="container">
-    <div class="cta-wrapper">
-      <h2>Ready to Transform Your Business?</h2>
-      <p>Let's discuss how our expertise can help bring your vision to life</p>
-      <button class="primary-btn" popovertarget="modal">
-        <span>Start a Conversation</span>
-      </button>
+    <div class="vision-card">
+      <div class="vision-badge">In Development</div>
+      <div class="vision-content">
+        <h2>The Future is <span class="gradient-text">Being Built</span></h2>
+        <p>
+          We're working on revolutionary products that will transform how
+          businesses leverage AI and technology. Our upcoming solutions will
+          combine cutting-edge innovation with practical business value.
+        </p>
+
+        <div class="vision-features">
+          <div class="vision-feature">
+            <div class="feature-check">
+              {{ inject_svg('check', True) | safe }}
+            </div>
+            <span>AI-powered automation that actually works</span>
+          </div>
+
+          <div class="vision-feature">
+            <div class="feature-check">
+              {{ inject_svg('check', True) | safe }}
+            </div>
+            <span>Enterprise-grade security and compliance</span>
+          </div>
+
+          <div class="vision-feature">
+            <div class="feature-check">
+              {{ inject_svg('check', True) | safe }}
+            </div>
+            <span>Seamless integration with existing systems</span>
+          </div>
+
+          <div class="vision-feature">
+            <div class="feature-check">
+              {{ inject_svg('check', True) | safe }}
+            </div>
+            <span
+              >Intuitive user experiences that require minimal training</span
+            >
+          </div>
+
+          <div class="vision-feature">
+            <div class="feature-check">
+              {{ inject_svg('check', True) | safe }}
+            </div>
+            <span>Real-time analytics and intelligent insights</span>
+          </div>
+
+          <div class="vision-feature">
+            <div class="feature-check">
+              {{ inject_svg('check', True) | safe }}
+            </div>
+            <span>Scalable solutions that grow with your business</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Include standard CTA -->
+{% include 'cta.html' %}

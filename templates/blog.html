@@ -1,31 +1,56 @@
-<!-- blog.html - Big0 Version -->
+<!-- blog.html -->
 <div class="page-hero">
   <div class="hero-bg-pattern"></div>
   <div class="container">
     <div class="page-hero-content">
       <h1 class="page-title">Tech <span class="gradient-text">Insights</span></h1>
-      <p class="page-subtitle">
-        Industry trends, technical deep-dives, and innovation stories from the frontlines of AI
-      </p>
+      <p class="page-subtitle">Industry trends, technical deep-dives, and innovation stories from the frontlines of AI and technology</p>
     </div>
   </div>
 </div>
 
+<!-- Featured Article Section -->
+{% if blog_posts and blog_posts|length > 0 %}
+<section class="featured-article">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-heading">Featured <span class="gradient-text">Article</span></h2>
+    </div>
+    
+    <article class="featured-post">
+      <div class="featured-image">
+        <img src="{{ blog_posts[0].image_url }}" alt="{{ blog_posts[0].title }}" loading="lazy" />
+        <div class="featured-category">{{ blog_posts[0].category }}</div>
+      </div>
+      <div class="featured-content">
+        <h3><a href="{{ blog_posts[0].filename }}">{{ blog_posts[0].title }}</a></h3>
+        <p>{{ blog_posts[0].meta_des | truncate(200) }}</p>
+        <div class="featured-footer">
+          <span class="featured-date">{{ blog_posts[0].date }}</span>
+          <a href="{{ blog_posts[0].filename }}" class="featured-cta">
+            Read Full Article
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %}
+
+<!-- All Articles Section -->
 <section class="blog-section">
   <div class="container">
-    <!-- Category Filter -->
-    <div class="blog-filters">
-      <button class="filter-btn active" data-category="all">All Posts</button>
-      <button class="filter-btn" data-category="ai-ml">AI & ML</button>
-      <button class="filter-btn" data-category="cloud">Cloud</button>
-      <button class="filter-btn" data-category="iot">IoT</button>
-      <button class="filter-btn" data-category="data">Data</button>
-      <button class="filter-btn" data-category="industry">Industry</button>
+    <div class="section-header">
+      <h2 class="section-heading">All <span class="gradient-text">Articles</span></h2>
+      <p class="section-subtitle">Stay updated with the latest in AI, technology, and industry innovations</p>
     </div>
     
     <div class="blog-grid">
       {% for post in blog_posts %}
-      <article class="blog-card" data-category="{{ post.category | lower | replace(' ', '-') }}">
+      <article class="blog-card">
         <div class="blog-card-image">
           <img src="{{ post.image_url }}" alt="{{ post.title }}" loading="lazy" />
           <div class="blog-card-category">{{ post.category }}</div>
@@ -33,7 +58,7 @@
         
         <div class="blog-card-content">
           <h3><a href="{{ post.filename }}">{{ post.title }}</a></h3>
-          <p>{{ post.meta_des | truncate(150) }}</p>
+          <p>{{ post.meta_des | truncate(120) }}</p>
           
           <div class="blog-card-footer">
             <span class="blog-date">{{ post.date }}</span>
@@ -91,62 +116,32 @@
   </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const blogCards = document.querySelectorAll('.blog-card');
-    
-    // Add disclaimer about pagination
-    const filtersContainer = document.querySelector('.blog-filters');
-    if (filtersContainer && document.querySelector('.pagination')) {
-        const disclaimer = document.createElement('p');
-        disclaimer.className = 'filter-disclaimer';
-        disclaimer.style.cssText = 'font-size: 0.9em; color: #666; margin-top: 0.5rem; font-style: italic;';
-        disclaimer.textContent = 'Filters apply only to posts on this page';
-        filtersContainer.appendChild(disclaimer);
-    }
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const category = this.dataset.category;
-            
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Filter blog cards
-            blogCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                
-                if (category === 'all' || cardCategory === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Check if any posts are visible
-            const visibleCards = Array.from(blogCards).filter(card => 
-                card.style.display !== 'none'
-            );
-            
-            // Show/hide "no posts" message
-            let noPostsMsg = document.querySelector('.no-posts-message');
-            if (visibleCards.length === 0) {
-                if (!noPostsMsg) {
-                    noPostsMsg = document.createElement('div');
-                    noPostsMsg.className = 'no-posts-message';
-                    noPostsMsg.style.cssText = 'text-align: center; padding: 2rem; color: #666;';
-                    noPostsMsg.innerHTML = '<p>No posts found in this category on this page.</p>';
-                    document.querySelector('.blog-grid').appendChild(noPostsMsg);
-                }
-                noPostsMsg.style.display = 'block';
-            } else {
-                if (noPostsMsg) {
-                    noPostsMsg.style.display = 'none';
-                }
-            }
-        });
-    });
-});
-</script>
+<!-- Newsletter Signup Section -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-card">
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <h3>Stay Updated</h3>
+        <p>Get the latest tech insights and industry trends delivered directly to your inbox</p>
+        
+        <div class="form-container">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeB7al7OIUvyIKtUZ_HJd9B-l9ejxq9OuKTGbbGvm8aLvdP3w/viewform?embedded=true" 
+            class="newsletter-form-embed" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            title="Newsletter Subscription Form">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,106 @@
+<!-- case_studies.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        <span class="gradient-text">Case Studies</span>
+      </h1>
+      <p class="page-subtitle">
+        Real-world success stories and transformative solutions that drive
+        business growth
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Case Studies Section -->
+<section class="case-studies-section">
+  <div class="container">
+    <div class="case-studies-grid">
+      {% for case_study in case_studies %}
+      <article class="case-study-card">
+        <div class="case-study-header">
+          <div class="case-study-meta">
+            <span class="case-study-industry">{{ case_study.industry }}</span>
+            <span class="case-study-type">{{ case_study.type }}</span>
+          </div>
+          <div class="case-study-icon">
+            {{ inject_svg(case_study.icon, True) | safe }}
+          </div>
+        </div>
+
+        <div class="case-study-content">
+          <h3 class="case-study-title">{{ case_study.title }}</h3>
+          <p class="case-study-excerpt">{{ case_study.excerpt }}</p>
+
+          <div class="case-study-metrics">
+            {% for metric in case_study.metrics %}
+            <div class="metric-item">
+              <span class="metric-value">{{ metric.value }}</span>
+              <span class="metric-label">{{ metric.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="case-study-footer">
+          <a
+            href="./case-studies/{{ case_study.slug }}.html"
+            class="case-study-link"
+          >
+            <span>Read Full Case Study</span>
+            {{ inject_svg('arrow-right', True) | safe }}
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if pagination %}
+    <div class="pagination">
+      <div class="pagination-controls">
+        {% if pagination.has_prev %}
+        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
+          {{ inject_svg('arrow-left', True) | safe }}
+          <span>Previous</span>
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          {{ inject_svg('arrow-left', True) | safe }}
+          <span>Previous</span>
+        </span>
+        {% endif %}
+
+        <div class="pagination-numbers">
+          {% for page in range(1, pagination.total_pages + 1) %} {% if page ==
+          pagination.current_page %}
+          <span class="page-number active">{{ page }}</span>
+          {% else %}
+          <a
+            href="./case-studies{% if page > 1 %}-{{ page }}{% endif %}.html"
+            class="page-number"
+            >{{ page }}</a
+          >
+          {% endif %} {% endfor %}
+        </div>
+
+        {% if pagination.has_next %}
+        <a href="{{ pagination.next_url }}" class="pagination-link next">
+          <span>Next</span>
+          {{ inject_svg('arrow-right', True) | safe }}
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          <span>Next</span>
+          {{ inject_svg('arrow-right', True) | safe }}
+        </span>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Include standard CTA -->
+{% include 'cta.html' %}

@@ -1,0 +1,61 @@
+<section class="case-study-detail">
+  <div class="container">
+    <div class="case-study-header">
+      <div class="case-study-meta">
+        <span class="case-study-industry">{{ industry }}</span>
+        <span class="case-study-type">{{ type }}</span>
+      </div>
+      <h1>{{ title }}</h1>
+      {% if icon %}
+      <div class="case-study-icon-large">
+        {{ inject_svg(icon, True) | safe }}
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="case-study-content">{{ case_study_content | safe }}</div>
+
+    {% if challenge %}
+    <div class="case-study-challenge-section">
+      <h2>The Challenge</h2>
+      <p>{{ challenge }}</p>
+    </div>
+    {% endif %} {% if solution %}
+    <div class="case-study-solution-section">
+      <h2>Our Solution</h2>
+      <p>{{ solution }}</p>
+    </div>
+    {% endif %} {% if results %}
+    <div class="case-study-results-section">
+      <h2>Results & Impact</h2>
+      <div class="results-grid">
+        {% for result in results %}
+        <div class="result-item">
+          <div class="result-value">{{ result.value }}</div>
+          <div class="result-label">{{ result.label }}</div>
+          {% if result.description %}
+          <div class="result-description">{{ result.description }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %} {% if technologies %}
+    <div class="case-study-tech-section">
+      <h2>Technologies Used</h2>
+      <ul class="tech-list">
+        {% for tech in technologies %}
+        <li>{{ tech }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="case-study-navigation">
+      <a href="../case-studies.html" class="back-link">
+        {{ inject_svg('arrow-left', True) | safe }}
+        <span>Back to Case Studies</span>
+      </a>
+    </div>
+  </div>
+</section>

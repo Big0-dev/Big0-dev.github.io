@@ -1,4 +1,4 @@
-# content.py - Optimized version
+# content.py - Complete corrected version
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Type, TypeVar
 from datetime import datetime
@@ -119,6 +119,124 @@ class Industry(ContentItem):
             challenge=metadata.get("challenge", ""),
             solutions=solutions,
             case_studies=case_studies,
+            order=int(metadata.get("order", 999)),
+        )
+
+
+@dataclass
+class CaseStudy(ContentItem):
+    industry: str = ""
+    case_study_type: str = ""
+    challenge: str = ""
+    solution: str = ""
+    results: List[Dict[str, str]] = field(default_factory=list)
+    technologies: List[str] = field(default_factory=list)
+    metrics: List[Dict[str, str]] = field(default_factory=list)
+
+    @classmethod
+    def from_metadata(
+        cls, slug: str, metadata: Dict[str, Any], html_content: str
+    ) -> "CaseStudy":
+        # Parse results
+        results = []
+        if metadata.get("results"):
+            result_values = [r.strip() for r in metadata["results"].split(",")]
+            result_descriptions = []
+            if metadata.get("result_descriptions"):
+                result_descriptions = [
+                    r.strip() for r in metadata["result_descriptions"].split(",")
+                ]
+
+            for i, value in enumerate(result_values):
+                # Parse "98% Order Accuracy" format
+                parts = value.split(" ", 1)
+                if len(parts) == 2:
+                    results.append(
+                        {
+                            "value": parts[0],
+                            "label": parts[1],
+                            "description": result_descriptions[i]
+                            if i < len(result_descriptions)
+                            else "",
+                        }
+                    )
+
+        # Parse technologies
+        technologies = []
+        if metadata.get("technologies"):
+            technologies = [t.strip() for t in metadata["technologies"].split(",")]
+
+        # Create metrics from results for card display
+        metrics = []
+        for result in results[:4]:  # Limit to 4 for card display
+            metrics.append({"value": result["value"], "label": result["label"]})
+
+        return cls(
+            slug=slug,
+            title=metadata.get("title", "Untitled Case Study"),
+            content_html=html_content,
+            meta_description=metadata.get("description", "")[:160],
+            industry=metadata.get("industry", ""),
+            case_study_type=metadata.get("type", ""),
+            challenge=metadata.get("challenge", ""),
+            solution=metadata.get("solution", ""),
+            results=results,
+            technologies=technologies,
+            metrics=metrics,
+            icon=metadata.get("icon"),
+            order=int(metadata.get("order", 999)),
+        )
+
+
+@dataclass
+class NewsArticle(ContentItem):
+    category: str = "News"
+    date: datetime = field(default_factory=datetime.now)
+    tags: List[str] = field(default_factory=list)
+    external_link: str = None
+    excerpt: str = ""
+
+    @classmethod
+    def from_metadata(
+        cls, slug: str, metadata: Dict[str, Any], html_content: str
+    ) -> "NewsArticle":
+        # Parse tags
+        tags = []
+        if metadata.get("tags"):
+            tags = [t.strip() for t in metadata["tags"].split(",")]
+
+        # Parse date
+        date_obj = datetime.now()
+        if metadata.get("date"):
+            date_str = str(metadata.get("date", ""))
+            if date_str:
+                formats = ["%Y-%m-%d", "%B %d, %Y", "%d %B %Y", "%d/%m/%Y", "%m/%d/%Y"]
+                for fmt in formats:
+                    try:
+                        date_obj = datetime.strptime(date_str, fmt)
+                        break
+                    except ValueError:
+                        continue
+
+        # Create excerpt from description or first paragraph of content
+        excerpt = metadata.get("description", "")
+        if not excerpt and html_content:
+            # Extract first paragraph as excerpt
+            soup = BeautifulSoup(html_content, "html.parser")
+            first_p = soup.find("p")
+            if first_p:
+                excerpt = first_p.get_text()[:200] + "..."
+
+        return cls(
+            slug=slug,
+            title=metadata.get("title", "Untitled Article"),
+            content_html=html_content,
+            meta_description=metadata.get("description", "")[:160],
+            category=metadata.get("category", "News"),
+            date=date_obj,
+            tags=tags,
+            external_link=metadata.get("external_link"),
+            excerpt=excerpt,
             order=int(metadata.get("order", 999)),
         )
 
@@ -309,6 +427,18 @@ class ContentLoader:
         """Load industries"""
         return self.load_content(
             Path(self.config.industries_dir), Industry, use_frontmatter=True
+        )
+
+    def load_case_studies(self) -> List[CaseStudy]:
+        """Load case studies"""
+        return self.load_content(
+            Path(self.config.case_studies_dir), CaseStudy, use_frontmatter=True
+        )
+
+    def load_news_articles(self) -> List[NewsArticle]:
+        """Load news articles"""
+        return self.load_content(
+            Path(self.config.news_dir), NewsArticle, use_frontmatter=True
         )
 
     def load_gallery_images(self) -> List["GalleryImage"]:

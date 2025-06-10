@@ -15,6 +15,8 @@ class Config:
     blog_dir: str = "./content/blogs"
     services_dir: str = "./content/services"
     industries_dir: str = "./content/industries"
+    case_studies_dir: str = "./content/case_studies"
+    news_dir: str = "./content/news"
 
     # Site info
     domain: str = "https://big0.dev"

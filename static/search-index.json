@@ -136,6 +136,30 @@
     "type": "page"
   },
   {
+    "id": "page-case_study-global-logistics-dashboard",
+    "url": "case-studies/global-logistics-dashboard.html",
+    "title": "Global Logistics Operations Dashboard",
+    "content": "",
+    "description": "How we transformed a global rental company's operations with a custom real-time dashboard, reducing missed orders and improving visibility across 50+ countries.",
+    "type": "page"
+  },
+  {
+    "id": "page-case-studies",
+    "url": "case-studies.html",
+    "title": "Case Studies",
+    "content": "",
+    "description": "Real-world success stories and transformative solutions that drive business growth.",
+    "type": "page"
+  },
+  {
+    "id": "page-news",
+    "url": "news.html",
+    "title": "Latest News",
+    "content": "",
+    "description": "Stay updated with our latest announcements, achievements, and industry insights.",
+    "type": "page"
+  },
+  {
     "id": "blog-cloud-migration-best-practices",
     "url": "blogs/cloud-migration-best-practices.html",
     "title": "Cloud Migration Strategies: A Comprehensive Guide for 2024",

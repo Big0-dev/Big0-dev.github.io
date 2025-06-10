@@ -74,7 +74,7 @@ class SiteGenerator:
 
     def _clean_output(self):
         """Clean output directories"""
-        directories = ["./blogs", "./services", "./industries"]
+        directories = ["./blogs", "./services", "./industries", "./case-studies"]
 
         for directory in directories:
             if os.path.exists(directory):
@@ -88,6 +88,8 @@ class SiteGenerator:
             ("services", self.content_loader.load_services),
             ("gallery_images", self.content_loader.load_gallery_images),
             ("industries", self.content_loader.load_industries),
+            ("case_studies", self.content_loader.load_case_studies),
+            ("news_articles", self.content_loader.load_news_articles),
         ]
 
         for content_type, loader_func in loaders:
@@ -109,6 +111,8 @@ class SiteGenerator:
             (self.content["services"], self._create_service_pages),
             (self.content["industries"], self._create_industry_pages),
             (self.content["gallery_images"], self._create_gallery_pages),
+            (self.content["case_studies"], self._create_case_study_pages),
+            (self.content["news_articles"], self._create_news_pages),
         ]
 
         for content_list, creator_func in page_creators:
@@ -205,6 +209,25 @@ class SiteGenerator:
         # Paginated listings
         self._create_paginated_pages(
             self.content["blog_posts"], BlogListingPage, self.config.posts_per_page
+        )
+
+    def _create_case_study_pages(self):
+        """Create case study pages"""
+        # Individual case studies
+        for case_study in self.content["case_studies"]:
+            self.pages.append(CaseStudyPage(self.renderer, case_study))
+
+        # Paginated listings
+        self._create_paginated_pages(
+            self.content["case_studies"],
+            CaseStudyListingPage,
+            self.config.posts_per_page,
+        )
+
+    def _create_news_pages(self):
+        """Create news pages (listing only, no detail pages)"""
+        self._create_paginated_pages(
+            self.content["news_articles"], NewsListingPage, self.config.posts_per_page
         )
 
     def _create_service_pages(self):

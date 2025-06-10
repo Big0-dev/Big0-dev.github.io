@@ -199,6 +199,8 @@ def get_urls(depth=0):
         "industries": f"{prefix}industries.html",
         "products": f"{prefix}products.html",
         "gallery": f"{prefix}gallery.html",
+        "case_studies": f"{prefix}case-studies.html",
+        "news": f"{prefix}news.html",
     }
 
 

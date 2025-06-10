@@ -1,9 +1,17 @@
-# pages.py - Complete version with all page classes
+# pages.py - Update the imports at the top
 from typing import Dict, Any, List, Optional
 from pathlib import Path
 from abc import abstractmethod
 from .core import Page, TemplateRenderer
-from .content import ContentItem, BlogPost, Service, Industry, GalleryImage
+from .content import (
+    ContentItem,
+    BlogPost,
+    Service,
+    Industry,
+    GalleryImage,
+    CaseStudy,
+    NewsArticle,
+)
 
 
 class SimplePage(Page):
@@ -470,5 +478,103 @@ class GalleryListingPage(PaginatedListingPage):
             "images": self.items,
             "gallery_url": f"{self.renderer.config.gallery_dir}",
         }
+        context.update(self.get_pagination_context())
+        return context
+
+
+class CaseStudyPage(ContentPage):
+    """Individual case study page"""
+
+    def __init__(self, renderer: TemplateRenderer, case_study: CaseStudy):
+        super().__init__(renderer, case_study)
+        self.case_study = case_study
+
+    @property
+    def content_type(self) -> str:
+        return "case_study"
+
+    @property
+    def output_path(self) -> Path:
+        return Path(f"case-studies/{self.content_item.slug}.html")
+
+    @property
+    def template(self) -> str:
+        return "case_study_detail.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "case_study_details"
+
+    def get_context(self) -> Dict[str, Any]:
+        context = super().get_context()
+        context.update(
+            {
+                "industry": self.case_study.industry,
+                "type": self.case_study.case_study_type,
+                "challenge": self.case_study.challenge,
+                "solution": self.case_study.solution,
+                "results": self.case_study.results,
+                "technologies": self.case_study.technologies,
+                "icon": self.case_study.icon,
+                "case_study_content": self.case_study.content_html,
+            }
+        )
+        return context
+
+
+class CaseStudyListingPage(PaginatedListingPage):
+    """Case studies listing page with pagination"""
+
+    @property
+    def base_slug(self) -> str:
+        return "case-studies"
+
+    @property
+    def base_title(self) -> str:
+        return "Case Studies"
+
+    @property
+    def template(self) -> str:
+        return "case_studies.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "case_studies"
+
+    @property
+    def meta_description(self) -> str:
+        return "Real-world success stories and transformative solutions that drive business growth."
+
+    def get_context(self) -> Dict[str, Any]:
+        context = {"case_studies": self.items}
+        context.update(self.get_pagination_context())
+        return context
+
+
+class NewsListingPage(PaginatedListingPage):
+    """News listing page with pagination"""
+
+    @property
+    def base_slug(self) -> str:
+        return "news"
+
+    @property
+    def base_title(self) -> str:
+        return "Latest News"
+
+    @property
+    def template(self) -> str:
+        return "news.html"
+
+    @property
+    def custom_css(self) -> str:
+        return "news"
+
+    @property
+    def meta_description(self) -> str:
+        return "Stay updated with our latest announcements, achievements, and industry insights."
+
+    def get_context(self) -> Dict[str, Any]:
+        context = {"news_articles": self.items}
         context.update(self.get_pagination_context())
         return context

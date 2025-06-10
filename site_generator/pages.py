@@ -107,6 +107,7 @@ class HomePage(Page):
             "about": "./about.html",
             "blog": "./blog.html",
             "industries_page": "./industries.html",
+            "careers": "./careers.html",
         }
 
 

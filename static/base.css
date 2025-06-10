@@ -1081,8 +1081,20 @@ mark {
   box-shadow: var(--glow-shadow);
 }
 
+.secondary-btn {
+  background: transparent;
+  color: var(--text-light);
+  border: 2px solid rgba(127, 62, 152, 0.5);
+}
+
+.secondary-btn:hover {
+  border-color: var(--primary-color);
+  background: rgba(127, 62, 152, 0.1);
+  color: var(--text-light);
+}
+
 /* ==============================
-   CARDS
+  CARDS
 ============================== */
 .card {
   background: var(--bg-card);
@@ -1148,7 +1160,7 @@ mark {
 }
 
 /* ==============================
-   VIDEO SECTION
+  VIDEO SECTION
 ============================== */
 .video-section {
   padding: var(--spacing-3xl) 0;
@@ -1237,21 +1249,23 @@ mark {
 }
 
 /* ==============================
-   CTA SECTION (Unified)
+   CTA SECTION (Unified & Properly Contained with Animation)
 ============================== */
 .cta-section,
-.service-cta-section,
-.partner-cta,
-.products-cta,
-.careers-cta,
-.industries-cta {
+.service-cta-section {
   padding: var(--spacing-3xl) 0;
 }
 
+.cta-container {
+  width: var(--content-width);
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--spacing-md);
+}
+
 .cta-card,
-.service-cta-card,
-.position-cta-card,
-.cta-wrapper {
+.service-cta-card {
   position: relative;
   background: linear-gradient(
     135deg,
@@ -1263,8 +1277,17 @@ mark {
   text-align: center;
   overflow: hidden;
   border: 1px solid rgba(127, 62, 152, 0.2);
+  transition: all var(--transition-default);
 }
 
+.cta-card:hover,
+.service-cta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-shadow);
+  border-color: rgba(127, 62, 152, 0.4);
+}
+
+/* Animated Background Effect */
 .cta-glow-effect,
 .cta-glow {
   position: absolute;
@@ -1274,36 +1297,54 @@ mark {
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(127, 62, 152, 0.1) 0%,
-    transparent 50%
+    rgba(127, 62, 152, 0.15) 0%,
+    rgba(163, 102, 196, 0.08) 30%,
+    transparent 60%
   );
   animation: rotate 20s linear infinite;
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Additional animated layer for more depth */
+.cta-card::before,
+.service-cta-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 70%,
+    rgba(127, 62, 152, 0.1) 0%,
+    transparent 40%
+  );
+  animation: rotate-reverse 25s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .cta-content,
-.service-cta-content,
-.position-cta-content {
+.service-cta-content {
   position: relative;
   z-index: 1;
 }
 
 .cta-content h2,
 .cta-content h3,
-.service-cta-content h3,
-.position-cta-content h3,
-.cta-wrapper h2 {
+.service-cta-content h3 {
   color: var(--text-light);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: var(--spacing-md);
+  font-weight: 600;
 }
 
 .cta-content p,
-.service-cta-content p,
-.position-cta-content p,
-.cta-wrapper p {
+.service-cta-content p {
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
   margin-bottom: var(--spacing-xl);
   max-width: 600px;
   margin-left: auto;
@@ -1316,10 +1357,58 @@ mark {
   gap: var(--spacing-lg);
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Enhanced button styles for CTA */
+.cta-buttons .primary-btn,
+.cta-actions .primary-btn {
+  padding: var(--spacing-md) var(--spacing-xxl);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-default);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-buttons .secondary-btn,
+.cta-actions .secondary-btn {
+  padding: var(--spacing-md) var(--spacing-xxl);
+  font-size: 1.1rem;
+  border: 2px solid rgba(127, 62, 152, 0.5);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-default);
+}
+
+.cta-buttons .secondary-btn:hover,
+.cta-actions .secondary-btn:hover {
+  border-color: var(--primary-color);
+  background: rgba(127, 62, 152, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Animation keyframes */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* ==============================
-   FOOTER
+  FOOTER
 ============================== */
 .siteFooter {
   margin-top: auto;
@@ -1456,7 +1545,7 @@ mark {
 }
 
 /* ==============================
-   CUSTOM SCROLLBAR
+  CUSTOM SCROLLBAR
 ============================== */
 ::-webkit-scrollbar {
   width: 12px;
@@ -1484,7 +1573,45 @@ mark {
 }
 
 /* ==============================
-   MEDIA QUERIES
+   JAMAPUNJI LOGO (SECP Compliance)
+============================== */
+.jamapunji-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.jamapunji-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-default);
+  opacity: 0.7;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+}
+
+.jamapunji-logo a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  background: rgba(127, 62, 152, 0.05);
+}
+
+.jamapunji-logo svg {
+  width: 60px;
+  height: auto;
+  max-height: 32px;
+  color: var(--text-muted);
+  transition: color var(--transition-default);
+}
+
+.jamapunji-logo a:hover svg {
+  color: var(--primary-color);
+}
+
+/* ==============================
+  MEDIA QUERIES
 ============================== */
 @media screen and (max-width: 992px) {
   .hamburger-btn {
@@ -1599,16 +1726,15 @@ mark {
   }
 
   .cta-card,
-  .service-cta-card,
-  .position-cta-card,
-  .cta-wrapper {
-    padding: 2rem 1.5rem;
+  .service-cta-card {
+    padding: var(--spacing-xl) var(--spacing-lg);
   }
 
   .cta-buttons,
   .cta-actions {
     flex-direction: column;
     width: 100%;
+    gap: var(--spacing-md);
   }
 
   .cta-buttons .btn,
@@ -1616,6 +1742,14 @@ mark {
   .cta-actions .btn,
   .cta-actions .primary-btn {
     width: 100%;
+    max-width: 300px;
+  }
+
+  .cta-glow-effect,
+  .cta-glow,
+  .cta-card::before,
+  .service-cta-card::before {
+    animation-duration: 30s;
   }
 
   .search-results-container {
@@ -1635,6 +1769,10 @@ mark {
   .result-section h3 {
     padding: var(--spacing-md);
     font-size: 12px;
+  }
+  .jamapunji-logo svg {
+    width: 50px;
+    max-height: 28px;
   }
 }
 
@@ -1709,9 +1847,25 @@ mark {
 
   .cta-content h2,
   .cta-content h3,
-  .service-cta-content h3,
-  .position-cta-content h3,
-  .cta-wrapper h2 {
+  .service-cta-content h3 {
     font-size: 1.5rem;
+  }
+
+  .cta-content p,
+  .service-cta-content p {
+    font-size: 1rem;
+  }
+  .jamapunji-logo svg {
+    width: 45px;
+    max-height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow-effect,
+  .cta-glow,
+  .cta-card::before,
+  .service-cta-card::before {
+    animation: none;
   }
 }

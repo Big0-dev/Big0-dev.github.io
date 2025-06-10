@@ -1,4 +1,9 @@
-/* about.css - About Us Page Styles */
+/* ==============================
+   Global
+============================== */
+.section-subtitle {
+  text-align: center;
+}
 
 /* ==============================
    PAGE HERO
@@ -163,7 +168,6 @@
   color: var(--text-muted);
 }
 
-/* Timeline */
 .timeline {
   position: relative;
   padding-left: var(--spacing-xl);

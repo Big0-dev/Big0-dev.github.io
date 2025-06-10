@@ -199,7 +199,6 @@ def get_urls(depth=0):
         "industries": f"{prefix}industries.html",
         "products": f"{prefix}products.html",
         "gallery": f"{prefix}gallery.html",
-        "industries": f"{prefix}industries.html",
     }
 
 
@@ -276,6 +275,9 @@ class Page(ABC):
         context = self.get_context()
         context["inject_svg"] = self.renderer.inject_svg
         context["static"] = static_path  # 👈 Add static path to content context
+        context["config"] = self.config
+
+        context.update(page_urls)
 
         # Render content template first with full context including static
         content = content_template.render(**context)
@@ -305,9 +307,9 @@ class Page(ABC):
             "about": page_urls.get("about"),
             "sitemap": page_urls.get("sitemap"),
             "image_sitemap": page_urls.get("image_sitemap"),
+            "careers": page_urls.get("careers"),
             "privacy": page_urls.get("privacy"),
             "terms": page_urls.get("terms"),
-            "resume": page_urls.get("resume"),
             "contact": page_urls.get("contact"),
             "services_page": page_urls.get("services_page"),
             "gallery": page_urls.get("gallery"),

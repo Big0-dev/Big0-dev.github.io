@@ -353,6 +353,56 @@
 }
 
 /* ==============================
+   EXTERNAL LINK ICONS FIX
+============================== */
+
+/* General SVG constraint for links */
+a svg {
+  max-width: 18px;
+  max-height: 18px;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Specific styling for external links */
+.external-link svg,
+a[href^="http"]:not([class*="btn"]) svg,
+a[href^="https"]:not([class*="btn"]) svg,
+a[target="_blank"]:not([class*="btn"]) svg {
+  width: 14px !important;
+  height: 14px !important;
+  opacity: 0.7;
+  transition: opacity var(--transition-default);
+  margin-left: 4px;
+}
+
+/* Hover state for external link icons */
+.external-link:hover svg,
+a[href^="http"]:not([class*="btn"]):hover svg,
+a[href^="https"]:not([class*="btn"]):hover svg,
+a[target="_blank"]:not([class*="btn"]):hover svg {
+  opacity: 1;
+}
+
+/* Ensure button SVGs maintain their intended size */
+.primary-btn svg,
+.secondary-btn svg,
+[class*="btn"] svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Specific fix for position note links */
+.position-note a svg {
+  width: 14px !important;
+  height: 14px !important;
+  margin-left: 4px;
+  vertical-align: baseline;
+}
+
+/* ==============================
    RESPONSIVE
 ============================== */
 @media screen and (max-width: 992px) {

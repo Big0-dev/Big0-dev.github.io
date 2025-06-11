@@ -264,6 +264,14 @@
     "type": "service"
   },
   {
+    "id": "service-professional-technology-training",
+    "url": "services/professional-technology-training.html",
+    "title": "Professional Technology Training",
+    "content": "Accelerate your team's growth with hands-on training programs in AI, cloud computing, DevOps, and modern software development",
+    "description": "Accelerate your team's growth with hands-on training programs in AI, cloud computing, DevOps, and modern software development",
+    "type": "service"
+  },
+  {
     "id": "service-python-automation",
     "url": "services/python-automation.html",
     "title": "Python Automation & Scripting",

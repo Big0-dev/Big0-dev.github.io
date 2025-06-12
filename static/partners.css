@@ -206,6 +206,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #7f3e98 0%, #a366c4 100%);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm);
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(127, 62, 152, 0.2);
+}
+
+.partner-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .logo-placeholder {
@@ -440,6 +455,11 @@
   .section-subtitle {
     font-size: 1rem;
   }
+
+  .partner-logo {
+    width: 100px;
+    height: 70px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -455,5 +475,10 @@
 
   .section-heading {
     font-size: 1.8rem;
+  }
+
+  .partner-logo {
+    width: 80px;
+    height: 60px;
   }
 }

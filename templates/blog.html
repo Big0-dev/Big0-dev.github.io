@@ -1,103 +1,163 @@
-<!-- Newsletter Signup Section -->
-<section class="newsletter-section">
+<!-- blog.html -->
+<div class="page-hero">
+  <div class="hero-bg-pattern"></div>
   <div class="container">
-    <div class="newsletter-card">
-      <div class="newsletter-content">
-        <div class="newsletter-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <h3>Stay Updated</h3>
-        <p>Get the latest tech insights and industry trends delivered directly to your inbox</p>
-        
-        <form id="newsletter-form" class="custom-newsletter-form">
-          <div class="form-group">
-            <input 
-              type="email" 
-              id="email-input" 
-              class="form-input" 
-              placeholder="Enter your email address"
-              required
-            />
-            <button type="submit" class="form-submit">
-              Subscribe
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </button>
-          </div>
-          <div id="form-message" class="form-message"></div>
-        </form>
-        
-        <!-- Hidden Google Form iframe -->
-        <iframe 
-          id="hidden-google-form"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSeB7al7OIUvyIKtUZ_HJd9B-l9ejxq9OuKTGbbGvm8aLvdP3w/viewform?embedded=true" 
-          style="display: none;"
-          onload="this.contentWindow.postMessage('init', '*')">
-        </iframe>
-      </div>
+    <div class="page-hero-content">
+      <h1 class="page-title">
+        Tech <span class="gradient-text">Insights</span>
+      </h1>
+      <p class="page-subtitle">
+        Industry trends, technical deep-dives, and innovation stories from the
+        frontlines of AI and technology
+      </p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Newsletter Script -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('newsletter-form');
-  const emailInput = document.getElementById('email-input');
-  const formMessage = document.getElementById('form-message');
-  
-  // Google Form configuration
-  // You'll need to update these values based on your actual form
-  const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeB7al7OIUvyIKtUZ_HJd9B-l9ejxq9OuKTGbbGvm8aLvdP3w/formResponse';
-  const EMAIL_FIELD_NAME = 'entry.YOUR_FIELD_ID'; // Replace with your actual field ID
-  
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const email = emailInput.value.trim();
-    if (!email) return;
-    
-    // Show loading state
-    const submitButton = form.querySelector('.form-submit');
-    const originalButtonText = submitButton.innerHTML;
-    submitButton.innerHTML = 'Subscribing...';
-    submitButton.disabled = true;
-    
-    // Create form data
-    const formData = new FormData();
-    formData.append(EMAIL_FIELD_NAME, email);
-    
-    try {
-      // Submit to Google Forms
-      await fetch(GOOGLE_FORM_ACTION, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-      });
-      
-      // Show success message
-      formMessage.innerHTML = '<span class="success">✓ Thank you for subscribing!</span>';
-      formMessage.classList.add('show');
-      emailInput.value = '';
-      
-      // Hide message after 5 seconds
-      setTimeout(() => {
-        formMessage.classList.remove('show');
-      }, 5000);
-      
-    } catch (error) {
-      // Show error message
-      formMessage.innerHTML = '<span class="error">Something went wrong. Please try again.</span>';
-      formMessage.classList.add('show');
-    } finally {
-      // Reset button
-      submitButton.innerHTML = originalButtonText;
-      submitButton.disabled = false;
-    }
-  });
-});
-</script>
+<!-- Featured Article Section -->
+{% if blog_posts and blog_posts|length > 0 %}
+<section class="featured-article">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-heading">
+        Featured <span class="gradient-text">Article</span>
+      </h2>
+    </div>
+
+    <article class="featured-post">
+      <div class="featured-image">
+        <img
+          src="{{ blog_posts[0].image_url }}"
+          alt="{{ blog_posts[0].title }}"
+          loading="lazy"
+        />
+        <div class="featured-category">{{ blog_posts[0].category }}</div>
+      </div>
+      <div class="featured-content">
+        <h3>
+          <a href="{{ blog_posts[0].filename }}">{{ blog_posts[0].title }}</a>
+        </h3>
+        <p>{{ blog_posts[0].meta_des | truncate(200) }}</p>
+        <div class="featured-footer">
+          <span class="featured-date">{{ blog_posts[0].date }}</span>
+          <a href="{{ blog_posts[0].filename }}" class="featured-cta">
+            Read Full Article
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %} {% include 'cta.html' %}
+
+<!-- All Articles Section -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-heading">
+        All <span class="gradient-text">Articles</span>
+      </h2>
+      <p class="section-subtitle">
+        Stay updated with the latest in AI, technology, and industry innovations
+      </p>
+    </div>
+
+    <div class="blog-grid">
+      {% for post in blog_posts %}
+      <article class="blog-card">
+        <div class="blog-card-image">
+          <img
+            src="{{ post.image_url }}"
+            alt="{{ post.title }}"
+            loading="lazy"
+          />
+          <div class="blog-card-category">{{ post.category }}</div>
+        </div>
+
+        <div class="blog-card-content">
+          <h3><a href="{{ post.filename }}">{{ post.title }}</a></h3>
+          <p>{{ post.meta_des | truncate(120) }}</p>
+
+          <div class="blog-card-footer">
+            <span class="blog-date">{{ post.date }}</span>
+            <a href="{{ post.filename }}" class="read-more">
+              Read More
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if pagination %}
+    <div class="pagination">
+      <div class="pagination-controls">
+        {% if pagination.has_prev %}
+        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
+          <span class="pagination-icon"
+            >{{ inject_svg('arrow-left', True) | safe }}</span
+          >
+          Previous
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          <span class="pagination-icon"
+            >{{ inject_svg('arrow-left', True) | safe }}</span
+          >
+          Previous
+        </span>
+        {% endif %}
+
+        <div class="pagination-numbers">
+          {% for page in range(1, pagination.total_pages + 1) %} {% if page ==
+          pagination.current_page %}
+          <span class="page-number active">{{ page }}</span>
+          {% else %}
+          <a
+            href="./blog{% if page > 1 %}-{{ page }}{% endif %}.html"
+            class="page-number"
+            >{{ page }}</a
+          >
+          {% endif %} {% endfor %}
+        </div>
+
+        {% if pagination.has_next %}
+        <a href="{{ pagination.next_url }}" class="pagination-link next">
+          Next
+          <span class="pagination-icon"
+            >{{ inject_svg('arrow-right', True) | safe }}</span
+          >
+        </a>
+        {% else %}
+        <span class="pagination-link disabled">
+          Next
+          <span class="pagination-icon"
+            >{{ inject_svg('arrow-right', True) | safe }}</span
+          >
+        </span>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>

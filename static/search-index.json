@@ -144,6 +144,30 @@
     "type": "page"
   },
   {
+    "id": "page-case_study-premium-finance-management-platform",
+    "url": "case-studies/premium-finance-management-platform.html",
+    "title": "Premium Finance Management Platform",
+    "content": "",
+    "description": "How we built a comprehensive fintech platform that automated premium financing operations, integrated credit assessment workflows, and provided real-time busine",
+    "type": "page"
+  },
+  {
+    "id": "page-case_study-veriswap-sports-card-trading-marketplace",
+    "url": "case-studies/veriswap-sports-card-trading-marketplace.html",
+    "title": "Veriswap Sports Card Trading Marketplace",
+    "content": "",
+    "description": "How we created a secure sports card trading marketplace with professional authentication, escrow services, and support for complex multi-item exchanges.",
+    "type": "page"
+  },
+  {
+    "id": "page-case_study-firstclass-healthcare-document-management",
+    "url": "case-studies/firstclass-healthcare-document-management.html",
+    "title": "FirstClass Healthcare Document Management",
+    "content": "",
+    "description": "How we built a HIPAA-compliant healthcare document management system that secured patient data while streamlining clinical workflows.",
+    "type": "page"
+  },
+  {
     "id": "page-case-studies",
     "url": "case-studies.html",
     "title": "Case Studies",
@@ -216,11 +240,51 @@
     "type": "service"
   },
   {
+    "id": "service-ar_vr_development",
+    "url": "services/ar_vr_development.html",
+    "title": "AR/VR Development",
+    "content": "Immersive augmented and virtual reality applications for training, education, marketing, and entertainment across multiple platforms and devices",
+    "description": "Immersive augmented and virtual reality applications for training, education, marketing, and entertainment across multiple platforms and devices",
+    "type": "service"
+  },
+  {
+    "id": "service-blockchain_development",
+    "url": "services/blockchain_development.html",
+    "title": "Blockchain Development",
+    "content": "Decentralized applications, smart contracts, and blockchain solutions that enable secure, transparent, and trustless business processes",
+    "description": "Decentralized applications, smart contracts, and blockchain solutions that enable secure, transparent, and trustless business processes",
+    "type": "service"
+  },
+  {
+    "id": "service-brand_and_digital_design",
+    "url": "services/brand_and_digital_design.html",
+    "title": "Brand & Digital Design",
+    "content": "Complete brand identity and digital design services including logo design, brand guidelines, marketing materials, and digital asset creation",
+    "description": "Complete brand identity and digital design services including logo design, brand guidelines, marketing materials, and digital asset creation",
+    "type": "service"
+  },
+  {
+    "id": "service-bpo",
+    "url": "services/bpo.html",
+    "title": "Business Process Outsourcing",
+    "content": "Comprehensive BPO services including customer support, data processing, accounting, HR operations, and back-office functions with 24/7 availability",
+    "description": "Comprehensive BPO services including customer support, data processing, accounting, HR operations, and back-office functions with 24/7 availability",
+    "type": "service"
+  },
+  {
     "id": "service-cloud-managment",
     "url": "services/cloud-managment.html",
     "title": "Cloud Infrastructure Management",
     "content": "Enterprise-grade cloud solutions with 24/7 monitoring, optimization, and support for AWS, Azure, and Google Cloud Platform",
     "description": "Enterprise-grade cloud solutions with 24/7 monitoring, optimization, and support for AWS, Azure, and Google Cloud Platform",
+    "type": "service"
+  },
+  {
+    "id": "service-computer_vision_service",
+    "url": "services/computer_vision_service.html",
+    "title": "Computer Vision",
+    "content": "Advanced computer vision solutions including image recognition, video analytics, OCR, and real-time object detection for automation and intelligence",
+    "description": "Advanced computer vision solutions including image recognition, video analytics, OCR, and real-time object detection for automation and intelligence",
     "type": "service"
   },
   {
@@ -240,11 +304,83 @@
     "type": "service"
   },
   {
+    "id": "service-devops_consulting",
+    "url": "services/devops_consulting.html",
+    "title": "DevOps Consulting",
+    "content": "Streamline your development and deployment processes with automated CI/CD pipelines, infrastructure as code, and cloud-native DevOps practices",
+    "description": "Streamline your development and deployment processes with automated CI/CD pipelines, infrastructure as code, and cloud-native DevOps practices",
+    "type": "service"
+  },
+  {
+    "id": "service-digital_marketing_services",
+    "url": "services/digital_marketing_services.html",
+    "title": "Digital Marketing Services",
+    "content": "Data-driven digital marketing strategies including SEO, PPC, social media marketing, and conversion optimization to drive growth and ROI",
+    "description": "Data-driven digital marketing strategies including SEO, PPC, social media marketing, and conversion optimization to drive growth and ROI",
+    "type": "service"
+  },
+  {
+    "id": "service-e_commerce_solutions",
+    "url": "services/e_commerce_solutions.html",
+    "title": "E-commerce Solutions",
+    "content": "Complete e-commerce platforms and marketplace solutions that drive sales, enhance customer experience, and scale with your business growth",
+    "description": "Complete e-commerce platforms and marketplace solutions that drive sales, enhance customer experience, and scale with your business growth",
+    "type": "service"
+  },
+  {
+    "id": "service-erp_implementation",
+    "url": "services/erp_implementation.html",
+    "title": "ERP Implementation",
+    "content": "Complete enterprise resource planning solutions including Odoo, SAP, and custom ERP systems that streamline operations and integrate business processes",
+    "description": "Complete enterprise resource planning solutions including Odoo, SAP, and custom ERP systems that streamline operations and integrate business processes",
+    "type": "service"
+  },
+  {
+    "id": "service-embedded_systems_development",
+    "url": "services/embedded_systems_development.html",
+    "title": "Embedded Systems Development",
+    "content": "Custom embedded software and firmware development for microcontrollers, real-time systems, and IoT devices with optimized performance and reliability",
+    "description": "Custom embedded software and firmware development for microcontrollers, real-time systems, and IoT devices with optimized performance and reliability",
+    "type": "service"
+  },
+  {
     "id": "service-cybersecurity-solutions",
     "url": "services/cybersecurity-solutions.html",
     "title": "Enterprise Cybersecurity Solutions",
     "content": "Protect your business with comprehensive security services including threat monitoring, vulnerability assessment, and incident response",
     "description": "Protect your business with comprehensive security services including threat monitoring, vulnerability assessment, and incident response",
+    "type": "service"
+  },
+  {
+    "id": "service-fintech_development",
+    "url": "services/fintech_development.html",
+    "title": "Fintech Development",
+    "content": "Secure financial technology solutions including digital banking, payment systems, cryptocurrency platforms, and regulatory-compliant financial applications",
+    "description": "Secure financial technology solutions including digital banking, payment systems, cryptocurrency platforms, and regulatory-compliant financial applications",
+    "type": "service"
+  },
+  {
+    "id": "service-game_development",
+    "url": "services/game_development.html",
+    "title": "Game Development",
+    "content": "Custom game development for mobile, web, and desktop platforms including 2D/3D games, multiplayer systems, and monetization strategies",
+    "description": "Custom game development for mobile, web, and desktop platforms including 2D/3D games, multiplayer systems, and monetization strategies",
+    "type": "service"
+  },
+  {
+    "id": "service-hardware_cad",
+    "url": "services/hardware_cad.html",
+    "title": "Hardware CAD Design",
+    "content": "Professional 3D mechanical design, product enclosures, and prototyping services from concept sketches to manufacturing-ready CAD models",
+    "description": "Professional 3D mechanical design, product enclosures, and prototyping services from concept sketches to manufacturing-ready CAD models",
+    "type": "service"
+  },
+  {
+    "id": "service-healthcare_it_solutions",
+    "url": "services/healthcare_it_solutions.html",
+    "title": "Healthcare IT Solutions",
+    "content": "HIPAA-compliant healthcare technology including electronic health records, telemedicine platforms, medical device integration, and patient management systems",
+    "description": "HIPAA-compliant healthcare technology including electronic health records, telemedicine platforms, medical device integration, and patient management systems",
     "type": "service"
   },
   {
@@ -256,11 +392,43 @@
     "type": "service"
   },
   {
+    "id": "service-iot_device_development",
+    "url": "services/iot_device_development.html",
+    "title": "IoT Device Development",
+    "content": "End-to-end IoT solutions combining hardware design, embedded programming, cloud connectivity, and mobile applications for smart connected devices",
+    "description": "End-to-end IoT solutions combining hardware design, embedded programming, cloud connectivity, and mobile applications for smart connected devices",
+    "type": "service"
+  },
+  {
+    "id": "service-mobile_app.development",
+    "url": "services/mobile_app.development.html",
+    "title": "Mobile App Development",
+    "content": "Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android platforms",
+    "description": "Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android platforms",
+    "type": "service"
+  },
+  {
     "id": "service-web-development",
     "url": "services/web-development.html",
     "title": "Modern Web Development",
     "content": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
     "description": "Create stunning, high-performance web applications with cutting-edge technologies and responsive design",
+    "type": "service"
+  },
+  {
+    "id": "service-natural_language_processing",
+    "url": "services/natural_language_processing.html",
+    "title": "Natural Language Processing",
+    "content": "Advanced NLP solutions including chatbots, document processing, sentiment analysis, and language translation for intelligent text automation",
+    "description": "Advanced NLP solutions including chatbots, document processing, sentiment analysis, and language translation for intelligent text automation",
+    "type": "service"
+  },
+  {
+    "id": "service-pcb_design_and_layout",
+    "url": "services/pcb_design_and_layout.html",
+    "title": "PCB Design & Layout",
+    "content": "Professional PCB design and layout services for electronic products, from simple single-layer boards to complex multi-layer high-speed digital designs",
+    "description": "Professional PCB design and layout services for electronic products, from simple single-layer boards to complex multi-layer high-speed digital designs",
     "type": "service"
   },
   {
@@ -277,6 +445,22 @@
     "title": "Python Automation & Scripting",
     "content": "Automate repetitive tasks and streamline workflows with custom Python solutions",
     "description": "Automate repetitive tasks and streamline workflows with custom Python solutions",
+    "type": "service"
+  },
+  {
+    "id": "service-software_testing",
+    "url": "services/software_testing.html",
+    "title": "Software Testing Services",
+    "content": "Comprehensive quality assurance and testing solutions ensuring your software delivers flawless user experiences and meets the highest quality standards",
+    "description": "Comprehensive quality assurance and testing solutions ensuring your software delivers flawless user experiences and meets the highest quality standards",
+    "type": "service"
+  },
+  {
+    "id": "service-ui_ux_design_services",
+    "url": "services/ui_ux_design_services.html",
+    "title": "UI/UX Design Services",
+    "content": "User-centered design solutions that create intuitive, engaging, and conversion-focused digital experiences across all platforms",
+    "description": "User-centered design solutions that create intuitive, engaging, and conversion-focused digital experiences across all platforms",
     "type": "service"
   },
   {

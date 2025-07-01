@@ -291,6 +291,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://big0.dev/case-studies/static-site.html</loc>
+    <lastmod>2025-07-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://big0.dev/case-studies.html</loc>
     <lastmod>2025-07-01</lastmod>
     <priority>0.8</priority>

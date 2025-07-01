@@ -176,6 +176,14 @@
     "type": "page"
   },
   {
+    "id": "page-case_study-static-site",
+    "url": "case-studies/static-site.html",
+    "title": "Zero-Maintenance Static Website with Modern Web Standards",
+    "content": "",
+    "description": "How we built a zero-maintenance, ultra-fast portfolio website using a custom Python static site generator, modern CSS features, and strategic minimal JavaScript",
+    "type": "page"
+  },
+  {
     "id": "page-case-studies",
     "url": "case-studies.html",
     "title": "Case Studies",

@@ -5,7 +5,9 @@
   padding: var(--spacing-3xl) 0;
 }
 
-.contact-grid {
+/* Use a more specific class name for the main contact page grid */
+.contact-main .contact-grid,
+.contact-page-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3xl);
@@ -78,7 +80,8 @@
   margin-bottom: var(--spacing-xl);
 }
 
-.info-item {
+/* Make sure main page info-item doesn't conflict with modal contact-item */
+.contact-info .info-item {
   display: flex;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
@@ -88,7 +91,7 @@
   transition: all var(--transition-default);
 }
 
-.info-item:hover {
+.contact-info .info-item:hover {
   border-color: rgba(127, 62, 152, 0.3);
   transform: translateX(5px);
 }
@@ -314,7 +317,9 @@
    RESPONSIVE
 ============================== */
 @media screen and (max-width: 992px) {
-  .contact-grid {
+  /* Scope the responsive rules to the main contact page */
+  .contact-main .contact-grid,
+  .contact-page-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
   }
@@ -348,7 +353,7 @@
 }
 
 @media screen and (max-width: 480px) {
-  .info-item {
+  .contact-info .info-item {
     flex-direction: column;
     text-align: center;
   }

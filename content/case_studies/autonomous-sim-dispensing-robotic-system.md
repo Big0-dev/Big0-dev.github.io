@@ -27,7 +27,7 @@ SIM card dispensing required extreme precision due to the small size and delicat
 
 Developed a purpose-built robotic arm specifically engineered for precision handling of small retail items. The design featured modular construction allowing flexible configuration for different kiosk layouts and requirements. Industrial-grade components ensured reliable operation under continuous use while maintaining the precision necessary for handling SIM cards.
 
-![Modular Components](../static/robotic-arm-4.avif)
+![Modular Components](../static/robotic-arm-3.avif)
 _Modular design components for flexible configuration_
 
 ## Integrated Gimbal Camera System

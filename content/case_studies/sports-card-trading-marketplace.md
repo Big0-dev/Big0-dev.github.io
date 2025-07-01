@@ -1,5 +1,5 @@
 ---
-title: Veriswap Sports Card Trading Marketplace
+title: Sports Card Trading Marketplace
 industry: E-commerce/Collectibles
 type: Full-Stack Marketplace Platform
 icon: refresh-cw
@@ -58,7 +58,7 @@ Deployed on Firebase's scalable backend infrastructure supporting growing user b
 
 ## Transformative Outcomes
 
-Veriswap successfully addressed critical pain points in the collectibles trading market by providing a secure, transparent, and efficient platform. The professional authentication service eliminated counterfeit concerns, while the escrow system built unprecedented trust between collectors worldwide.
+The card trading platform successfully addressed critical pain points in the collectibles trading market by providing a secure, transparent, and efficient platform. The professional authentication service eliminated counterfeit concerns, while the escrow system built unprecedented trust between collectors worldwide.
 
 ## Long-term Impact
 

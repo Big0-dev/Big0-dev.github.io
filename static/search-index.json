@@ -152,9 +152,9 @@
     "type": "page"
   },
   {
-    "id": "page-case_study-veriswap-sports-card-trading-marketplace",
-    "url": "case-studies/veriswap-sports-card-trading-marketplace.html",
-    "title": "Veriswap Sports Card Trading Marketplace",
+    "id": "page-case_study-sports-card-trading-marketplace",
+    "url": "case-studies/sports-card-trading-marketplace.html",
+    "title": "Sports Card Trading Marketplace",
     "content": "",
     "description": "How we created a secure sports card trading marketplace with professional authentication, escrow services, and support for complex multi-item exchanges.",
     "type": "page"
@@ -165,6 +165,14 @@
     "title": "FirstClass Healthcare Document Management",
     "content": "",
     "description": "How we built a HIPAA-compliant healthcare document management system that secured patient data while streamlining clinical workflows.",
+    "type": "page"
+  },
+  {
+    "id": "page-case_study-autonomous-sim-dispensing-robotic-system",
+    "url": "case-studies/autonomous-sim-dispensing-robotic-system.html",
+    "title": "Autonomous SIM Dispensing Robotic System",
+    "content": "",
+    "description": "How we developed a precision robotic arm with integrated gimbal camera for autonomous SIM dispensing kiosks, achieving sub-millimeter accuracy and continuous op",
     "type": "page"
   },
   {

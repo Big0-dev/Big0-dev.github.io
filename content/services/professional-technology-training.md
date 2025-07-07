@@ -2,7 +2,7 @@
 title: Professional Technology Training
 description: Accelerate your team's growth with hands-on training programs in AI, cloud computing, DevOps, and modern software development
 icon: growth
-price: Starting at $1,200/day
+price: Starting at $1,500/day
 features: Custom curriculum, Hands-on labs, Industry certifications, Flexible delivery, Expert instructors, Post-training support
 ---
 

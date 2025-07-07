@@ -2,7 +2,7 @@
 title: IoT Device Development
 description: End-to-end IoT solutions combining hardware design, embedded programming, cloud connectivity, and mobile applications for smart connected devices
 icon: wifi
-price: Starting at $15,000/project
+price: Custom pricing based on scope
 features: Hardware prototyping, Embedded programming, Cloud connectivity, Mobile app integration, Sensor integration, Data analytics
 ---
 

@@ -2,7 +2,7 @@
 title: Business Process Outsourcing
 description: Comprehensive BPO services including customer support, data processing, accounting, HR operations, and back-office functions with 24/7 availability
 icon: headphones
-price: Starting at $8/hour per resource
+price: Starting at $2/hour per resource
 features: Customer service, Data entry & processing, Accounting & bookkeeping, HR & payroll, Lead generation, Content moderation, Virtual assistance, Quality assurance
 ---
 

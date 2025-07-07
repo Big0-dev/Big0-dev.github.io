@@ -2,7 +2,7 @@
 title: Mobile App Development
 description: Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android platforms
 icon: smartphone
-price: Starting at $8,000/project
+price: Starting at $1,500/project
 features: Native iOS/Android development, Cross-platform solutions, App Store optimization, Performance optimization, Offline functionality, Push notifications
 ---
 

@@ -2,7 +2,7 @@
 title: Custom Software Development
 description: Build robust, scalable software solutions tailored to your unique business requirements
 icon: code
-price: Custom pricing
+price: Custom pricing based on scope
 features: Full-stack development, Mobile apps, Desktop applications, API development, Microservices, DevOps integration
 ---
 

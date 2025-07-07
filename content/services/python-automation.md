@@ -2,7 +2,7 @@
 title: Python Automation & Scripting
 description: Automate repetitive tasks and streamline workflows with custom Python solutions
 icon: python
-price: Starting at $150/hour
+price: Custom pricing based on scope
 features: Task automation, Web scraping, Data processing, API integration, Testing automation, DevOps scripts
 ---
 

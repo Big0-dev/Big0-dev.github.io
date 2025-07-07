@@ -2,7 +2,7 @@
 title: Brand & Digital Design
 description: Complete brand identity and digital design services including logo design, brand guidelines, marketing materials, and digital asset creation
 icon: palette
-price: Starting at $2,500/project
+price: Starting at $1,500/project
 features: Logo & brand identity, Brand guidelines, Marketing collateral, Social media graphics, Website design, Print design
 ---
 

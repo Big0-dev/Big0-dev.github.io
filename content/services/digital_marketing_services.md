@@ -2,7 +2,7 @@
 title: Digital Marketing Services
 description: Data-driven digital marketing strategies including SEO, PPC, social media marketing, and conversion optimization to drive growth and ROI
 icon: trending-up
-price: Starting at $3,000/month
+price: Starting at $1,500/month
 features: Search engine optimization, Pay-per-click advertising, Social media marketing, Content marketing, Email marketing, Analytics & reporting
 ---
 

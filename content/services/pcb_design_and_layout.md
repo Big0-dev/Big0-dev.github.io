@@ -2,7 +2,7 @@
 title: PCB Design & Layout
 description: Professional PCB design and layout services for electronic products, from simple single-layer boards to complex multi-layer high-speed digital designs
 icon: pcb
-price: Starting at $1,500/board
+price: Custom pricing based on scope
 features: Schematic design, Multi-layer PCB layout, High-speed digital design, RF/microwave design, DFM optimization, Gerber file generation
 ---
 

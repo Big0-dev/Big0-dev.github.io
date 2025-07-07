@@ -2,7 +2,7 @@
 title: Blockchain Development
 description: Decentralized applications, smart contracts, and blockchain solutions that enable secure, transparent, and trustless business processes
 icon: link
-price: Starting at $20,000/project
+price: Custom pricing based on scope
 features: Smart contract development, DeFi applications, NFT marketplaces, Cryptocurrency solutions, Blockchain consulting, Token development
 ---
 

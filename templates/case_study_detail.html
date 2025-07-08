@@ -13,7 +13,6 @@
       {% endif %}
     </div>
 
-    <div class="case-study-content">{{ case_study_content | safe }}</div>
 
     {% if challenge %}
     <div class="case-study-challenge-section">
@@ -51,6 +50,10 @@
     </div>
     {% endif %}
 
+    <div class="case-study-content">{{ case_study_content | safe }}</div>
+
+
+  {% include 'cta.html' %}
     <div class="case-study-navigation">
       <a href="../case-studies.html" class="back-link">
         {{ inject_svg('arrow-left', True) | safe }}

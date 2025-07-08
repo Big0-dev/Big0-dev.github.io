@@ -296,8 +296,7 @@ class ContentLoader:
                 if self.renderer:
                     markdown_content = self._process_template_includes(
                         markdown_content,
-                        is_blog=isinstance(content_class, type)
-                        and issubclass(content_class, BlogPost),
+                        content_class=content_class,
                     )
 
                 html_content = self.md.convert(markdown_content)
@@ -376,7 +375,7 @@ class ContentLoader:
         return datetime.now()
 
     def _process_template_includes(
-        self, markdown_content: str, is_blog: bool = True
+        self, markdown_content: str, content_class=None
     ) -> str:
         """Process template includes with proper error handling"""
         import re
@@ -390,11 +389,32 @@ class ContentLoader:
             try:
                 if tag_type == "template":
                     template_name = value + ".html"
+
+                    # Determine if content goes in subdirectory
+                    is_subdirectory = content_class and content_class in [
+                        BlogPost,
+                        Service,
+                        Industry,
+                        CaseStudy,
+                        NewsArticle,
+                    ]
+
                     context = {
                         "inject_svg": self.renderer.inject_svg,
-                        "static": "../static" if is_blog else "./static",
+                        "static": "../static" if is_subdirectory else "./static",
                         "config": self.config,
+                        # Add navigation URLs with proper relative paths
+                        "contact": "../contact.html"
+                        if is_subdirectory
+                        else "./contact.html",
+                        "services_page": "../services.html"
+                        if is_subdirectory
+                        else "./services.html",
+                        "about": "../about.html" if is_subdirectory else "./about.html",
+                        "blog": "../blog.html" if is_subdirectory else "./blog.html",
+                        "home": "../index.html" if is_subdirectory else "./index.html",
                     }
+
                     template = self.renderer.env.get_template(template_name)
                     return template.render(**context)
 

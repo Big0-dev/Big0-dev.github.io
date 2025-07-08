@@ -164,7 +164,7 @@
     "url": "case-studies/firstclass-healthcare-document-management.html",
     "title": "FirstClass Healthcare Document Management",
     "content": "",
-    "description": "How we built a HIPAA-compliant healthcare document management system that secured patient data while streamlining clinical workflows.",
+    "description": "HIPAA-compliant healthcare document management system that secured patient data while streamlining clinical workflows.",
     "type": "page"
   },
   {
@@ -172,15 +172,15 @@
     "url": "case-studies/autonomous-sim-dispensing-robotic-system.html",
     "title": "Autonomous SIM Dispensing Robotic System",
     "content": "",
-    "description": "How we developed a precision robotic arm with integrated gimbal camera for autonomous SIM dispensing kiosks, achieving sub-millimeter accuracy and continuous op",
+    "description": "Precision robotic arm with integrated gimbal camera for autonomous SIM dispensing, achieving sub-millimeter accuracy and continuous operation.",
     "type": "page"
   },
   {
     "id": "page-case_study-static-site",
     "url": "case-studies/static-site.html",
-    "title": "Zero-Maintenance Static Website with Modern Web Standards",
+    "title": "Big0 Company Website - Zero-Maintenance Static Platform",
     "content": "",
-    "description": "How we built a zero-maintenance, ultra-fast portfolio website using a custom Python static site generator, modern CSS features, and strategic minimal JavaScript",
+    "description": "Big0's own company website built with zero-maintenance principles using custom Python static site generator and modern web standards.",
     "type": "page"
   },
   {
@@ -188,7 +188,31 @@
     "url": "case-studies/real_estate_analytics_case_study.html",
     "title": "Real Estate Analytics Platform",
     "content": "",
-    "description": "How we built a comprehensive real estate analytics platform that democratizes institutional-grade investment intelligence through advanced data aggregation, geo",
+    "description": "Comprehensive real estate analytics platform democratizing institutional-grade investment intelligence through advanced data aggregation and geospatial visualiz",
+    "type": "page"
+  },
+  {
+    "id": "page-case_study-fedgan",
+    "url": "case-studies/fedgan.html",
+    "title": "FedGAN - Privacy-Preserving Medical Image Generation",
+    "content": "",
+    "description": "Revolutionary federated learning framework enabling privacy-preserving synthetic medical image generation for collaborative healthcare AI research.",
+    "type": "page"
+  },
+  {
+    "id": "page-case_study-dental_scanner",
+    "url": "case-studies/dental_scanner.html",
+    "title": "AI-Powered Dental Scanner Platform",
+    "content": "",
+    "description": "Comprehensive AI-powered dental analysis platform combining mobile applications, cloud infrastructure, and advanced machine learning for complete practice manag",
+    "type": "page"
+  },
+  {
+    "id": "page-case_study-bct_earpiece",
+    "url": "case-studies/bct_earpiece.html",
+    "title": "BCT Professional Earpiece - Revolutionary Audio Design",
+    "content": "",
+    "description": "Revolutionary bone conduction earpiece that transforms professional communication through innovative design and superior audio technology.",
     "type": "page"
   },
   {

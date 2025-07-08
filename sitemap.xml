@@ -301,6 +301,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://big0.dev/case-studies/fedgan.html</loc>
+    <lastmod>2025-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/case-studies/dental_scanner.html</loc>
+    <lastmod>2025-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/case-studies/bct_earpiece.html</loc>
+    <lastmod>2025-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://big0.dev/case-studies.html</loc>
     <lastmod>2025-07-08</lastmod>
     <priority>0.8</priority>

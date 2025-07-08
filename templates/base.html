@@ -85,7 +85,7 @@
               <li><a href="{{ about }}" aria-label="About Us">About Us</a></li>
               <li><a href="{{ services_page }}" aria-label="Services">Services</a></li>
               <li><a href="{{ blog }}" aria-label="Insights">Insights</a></li>
-              <li><a href="{{ case_studies }}" aria-label="Insights">Case Studies</a></li>
+              <li><a href="{{ case_studies }}" aria-label="Case Studies">Case Studies</a></li>
               <li><a href="{{ careers }}" aria-label="Careers">Careers</a></li>
               <li>
                 <button class="popover-button" popovertarget="modal">
@@ -106,7 +106,7 @@
             <li><a href="{{ about }}" aria-label="About Us">About Us</a></li>
             <li><a href="{{ services_page }}" aria-label="Services">Services</a></li>
             <li><a href="{{ blog }}" aria-label="Insights">Insights</a></li>
-            <li><a href="{{ case_studies }}" aria-label="Insights">Case Studies</a></li>
+            <li><a href="{{ case_studies }}" aria-label="Case Studies">Case Studies</a></li>
             <li><a href="{{ careers }}" aria-label="Careers">Careers</a></li>
           </ul>
         </div>
@@ -153,8 +153,7 @@
                 class="search-submit"
                 aria-label="Submit search"
               >
-                {{ inject_svg('search_icon', True, 'search-submit-icon') | safe
-                }}
+                {{ inject_svg('search_icon', True, 'search-submit-icon') | safe }}
               </button>
             </div>
           </form>
@@ -168,7 +167,7 @@
       <div class="modal" id="modal" popover="manual">
         <div class="modal-content">
           <div class="modal-header">
-            <button class="close-btn" popovertarget="modal">
+            <button class="close-btn" popovertarget="modal" aria-label="Close modal">
               <span class="close-line"></span>
               <span class="close-line"></span>
             </button>
@@ -180,63 +179,67 @@
             <div class="contact-grid">
               <div class="contact-item">
                 {{ inject_svg('mail', True) | safe }}
-                <div>
-                  <ul>
-                    <li>
-                        <a aria-label="Email"
-                        href="mailto:contact@big0.dev"
-                        >contact@big0.dev</a>
-                    </li>
-                  </ul>
+                <div class="contact-info">
+                  <a 
+                    aria-label="Send us an email" 
+                    href="mailto:contact@big0.dev"
+                    class="contact-link"
+                  >
+                    contact@big0.dev
+                  </a>
                 </div>
               </div>
               <div class="contact-item">
                 {{ inject_svg('phone', True) | safe }}
-                <ul>
-                  <li>
-                    <a aria-label="Phone Number" href="tel:+923039441945"
-                      >+923039441945</a
-                    >
-                  </li>
-                </ul>
+                <div class="contact-info">
+                  <a 
+                    aria-label="Call us" 
+                    href="tel:+923039441945"
+                    class="contact-link"
+                  >
+                    +92 303 944 1945
+                  </a>
+                </div>
               </div>
               <div class="contact-item">
                 {{ inject_svg('location', True) | safe }}
-                <div>
-                  <ul>
-                    <li>
-                      <a href="#" aria-label="Address">
-                          BIG0, CalmKaaj, Ali Plaza, Blue Area <br />Islamabad, Pakistan
-
-                      </a>
-                    </li>
-                  </ul>
+                <div class="contact-info">
+                  <a 
+                    href="https://www.google.com/maps/place/CalmKaaj/@33.7273362,73.0849416,17z/data=!3m1!4b1!4m6!3m5!1s0x38dfbf474ab02c45:0x538f627b8760d3af!8m2!3d33.7273362!4d73.0875165!16s%2Fg%2F11jybqr_vd?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" 
+                    aria-label="View our location on Google Maps"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                  >
+                    BIG0, CalmKaaj, Ali Plaza, Blue Area<br />
+                    Islamabad, Pakistan
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="social-links">
-              <a
-            
+            <a
               href="https://www.linkedin.com/company/big0/"
               target="_blank"
-              aria-label="LinkedIn"
+              rel="noopener noreferrer"
+              aria-label="Follow us on LinkedIn"
             >
               {{ inject_svg('linkedin', True) | safe }}
             </a>
             <a
-            
               href="https://github.com/Big0-dev"
               target="_blank"
-              aria-label="Github"
+              rel="noopener noreferrer"
+              aria-label="Visit our GitHub"
             >
               {{ inject_svg('github', True) | safe }}
             </a>
             <a
-            
               href="https://www.youtube.com/@big0_dev"
               target="_blank"
-              aria-label="Youtube"
+              rel="noopener noreferrer"
+              aria-label="Subscribe to our YouTube channel"
             >
               {{ inject_svg('youtube', True) | safe }}
             </a>
@@ -244,6 +247,7 @@
         </div>
       </div>
     </header>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -267,69 +271,117 @@
             {{ inject_svg('big0_logo', True, 'footer-logo') | safe }}
             <p class="tagline">Next Level Innovation<br>Powered by Intelligence</p>
           </div>
-<div class="footerColumns">
-  <div class="footerColumn">
-    <h3>Company</h3>
-    <ul>
-      <li><a href="{{ about }}">About Us</a></li>
-      <li><a href="{{ careers }}">Careers</a></li>
-      <li><a href="{{ contact }}">Contact</a></li>
-    </ul>
-  </div>
-  <div class="footerColumn">
-    <h3>Services</h3>
-    <ul>
-      <li><a href="{{ services_page }}">Our Services</a></li>
-      <li><a href="{{ industries }}">Industries</a></li>
-      <li><a href="{{ partners }}">Partners</a></li>
-    </ul>
-  </div>
-  <div class="footerColumn">
-    <h3>Resources</h3>
-    <ul>
-      <li><a href="{{ blog }}">Insights</a></li>
-      <li><a href="{{ case_studies }}">Case Studies</a></li>
-      <li><a href="{{ products }}">Products</a></li>
-    </ul>
-  </div>
-  <div class="footerColumn">
-    <h3>Support</h3>
-    <ul>
-      <li><a href="{{ gallery }}">Gallery</a></li>
-      <li><a href="{{ news }}">News</a></li>
-      <li><a href="{{ sitemap }}">Sitemap</a></li>
-    </ul>
-  </div>
-  <div class="footerColumn">
-    <h3>Legal</h3>
-    <ul>
-      <li><a href="{{ privacy }}">Privacy Policy</a></li>
-      <li><a href="{{ terms }}">Terms of Service</a></li>
-      <li><a href="{{ image_sitemap }}">Image Sitemap</a></li>
-    </ul>
-  </div>
-</div>
+          <div class="footerColumns">
+            <div class="footerColumn">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="{{ about }}">About Us</a></li>
+                <li><a href="{{ careers }}">Careers</a></li>
+                <li><a href="{{ contact }}">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="{{ services_page }}">Our Services</a></li>
+                <li><a href="{{ industries }}">Industries</a></li>
+                <li><a href="{{ partners }}">Partners</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="{{ blog }}">Insights</a></li>
+                <li><a href="{{ case_studies }}">Case Studies</a></li>
+                <li><a href="{{ products }}">Products</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Support</h3>
+              <ul>
+                <li><a href="{{ gallery }}">Gallery</a></li>
+                <li><a href="{{ news }}">News</a></li>
+                <li><a href="{{ sitemap }}">Sitemap</a></li>
+              </ul>
+            </div>
+            <div class="footerColumn">
+              <h3>Legal</h3>
+              <ul>
+                <li><a href="{{ privacy }}">Privacy Policy</a></li>
+                <li><a href="{{ terms }}">Terms of Service</a></li>
+                <li><a href="{{ image_sitemap }}">Image Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="footerBottom">
           <div class="footerCopyright">
             <p>&#169; {{ copyright }} Big0. All rights reserved.</p>
           </div>
           <div class="footerSocial">
-            <a href="https://linkedin.com/company/big0" aria-label="LinkedIn" target="_blank" >
+            <a 
+              href="https://linkedin.com/company/big0" 
+              aria-label="Follow us on LinkedIn" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {{ inject_svg('linkedin', True) | safe }}
             </a>
-            <a href="https://github.com/Big0-dev" aria-label="GitHub" 
-                                                  target="_blank">
+            <a 
+              href="https://github.com/Big0-dev" 
+              aria-label="Visit our GitHub" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {{ inject_svg('github', True) | safe }}
             </a>
-
-            <a href="https://www.youtube.com/@big0_dev" aria-label="Youtube" 
-                                                        target="_blank">
+            <a 
+              href="https://www.youtube.com/@big0_dev" 
+              aria-label="Subscribe to our YouTube channel" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {{ inject_svg('youtube', True) | safe }}
             </a>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Additional mobile optimization script -->
+    <script>
+      // Ensure proper mobile behavior for contact links
+      document.addEventListener('DOMContentLoaded', function() {
+        // Force proper handling of tel: and mailto: links on mobile
+        const contactLinks = document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]');
+        contactLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            // Let the browser handle the default behavior
+            // This ensures compatibility across different mobile browsers
+            setTimeout(() => {
+              if (window.location.href === this.href) {
+                // If the link didn't work, show a fallback
+                if (this.href.startsWith('tel:')) {
+                  alert('Please call: ' + this.textContent.trim());
+                } else if (this.href.startsWith('mailto:')) {
+                  alert('Please email: ' + this.textContent.trim());
+                }
+              }
+            }, 100);
+          });
+        });
+
+        // Ensure external links open properly
+        const externalLinks = document.querySelectorAll('a[target="_blank"]');
+        externalLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            // Fallback for older mobile browsers
+            if (!window.open(this.href, '_blank')) {
+              window.location.href = this.href;
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

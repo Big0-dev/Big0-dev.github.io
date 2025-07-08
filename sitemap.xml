@@ -296,7 +296,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://big0.dev/case-studies/real_estate_analytics_case_study.html</loc>
+    <lastmod>2025-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://big0.dev/case-studies.html</loc>
+    <lastmod>2025-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://big0.dev/case-studies-2.html</loc>
     <lastmod>2025-07-08</lastmod>
     <priority>0.8</priority>
   </url>

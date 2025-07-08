@@ -184,9 +184,25 @@
     "type": "page"
   },
   {
+    "id": "page-case_study-real_estate_analytics_case_study",
+    "url": "case-studies/real_estate_analytics_case_study.html",
+    "title": "Real Estate Analytics Platform",
+    "content": "",
+    "description": "How we built a comprehensive real estate analytics platform that democratizes institutional-grade investment intelligence through advanced data aggregation, geo",
+    "type": "page"
+  },
+  {
     "id": "page-case-studies",
     "url": "case-studies.html",
     "title": "Case Studies",
+    "content": "",
+    "description": "Real-world success stories and transformative solutions that drive business growth.",
+    "type": "page"
+  },
+  {
+    "id": "page-case-studies-2",
+    "url": "case-studies-2.html",
+    "title": "Case Studies - Page 2",
     "content": "",
     "description": "Real-world success stories and transformative solutions that drive business growth.",
     "type": "page"

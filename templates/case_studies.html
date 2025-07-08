@@ -18,7 +18,7 @@
 <section class="case-studies-section">
   <div class="container">
     <div class="case-studies-grid">
-      {% for case_study in case_studies %}
+        {% for case_study in case_study_items %}
       <article class="case-study-card">
         <div class="case-study-header">
           <div class="case-study-meta">
@@ -34,6 +34,7 @@
           <h3 class="case-study-title">{{ case_study.title }}</h3>
           <p class="case-study-excerpt">{{ case_study.excerpt }}</p>
 
+          {% if case_study.metrics %}
           <div class="case-study-metrics">
             {% for metric in case_study.metrics %}
             <div class="metric-item">
@@ -42,12 +43,14 @@
             </div>
             {% endfor %}
           </div>
+          {% endif %}
         </div>
 
         <div class="case-study-footer">
           <a
             href="./case-studies/{{ case_study.slug }}.html"
             class="case-study-link"
+            aria-label="Read full case study: {{ case_study.title }}"
           >
             <span>Read Full Case Study</span>
             {{ inject_svg('arrow-right', True) | safe }}
@@ -58,46 +61,63 @@
     </div>
 
     {% if pagination %}
-    <div class="pagination">
+    <nav class="pagination" aria-label="Case studies pagination">
       <div class="pagination-controls">
         {% if pagination.has_prev %}
-        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
+        <a 
+          href="{{ pagination.prev_url }}" 
+          class="pagination-link prev"
+          aria-label="Go to previous page"
+        >
           {{ inject_svg('arrow-left', True) | safe }}
           <span>Previous</span>
         </a>
         {% else %}
-        <span class="pagination-link disabled">
+        <span class="pagination-link disabled" aria-hidden="true">
           {{ inject_svg('arrow-left', True) | safe }}
           <span>Previous</span>
         </span>
         {% endif %}
 
-        <div class="pagination-numbers">
-          {% for page in range(1, pagination.total_pages + 1) %} {% if page ==
-          pagination.current_page %}
-          <span class="page-number active">{{ page }}</span>
-          {% else %}
-          <a
-            href="./case-studies{% if page > 1 %}-{{ page }}{% endif %}.html"
-            class="page-number"
-            >{{ page }}</a
-          >
-          {% endif %} {% endfor %}
+        <div class="pagination-numbers" role="list">
+          {% for page in range(1, pagination.total_pages + 1) %}
+            {% if page == pagination.current_page %}
+            <span 
+              class="page-number active" 
+              aria-current="page"
+              aria-label="Current page, page {{ page }}"
+            >
+              <span>{{ page }}</span>
+            </span>
+            {% else %}
+            <a
+              href="./case-studies{% if page > 1 %}-{{ page }}{% endif %}.html"
+              class="page-number"
+              aria-label="Go to page {{ page }}"
+            >
+              <span>{{ page }}</span>
+            </a>
+            {% endif %}
+          {% endfor %}
         </div>
 
         {% if pagination.has_next %}
-        <a href="{{ pagination.next_url }}" class="pagination-link next">
+        <a 
+          href="{{ pagination.next_url }}" 
+          class="pagination-link next"
+          aria-label="Go to next page"
+        >
           <span>Next</span>
           {{ inject_svg('arrow-right', True) | safe }}
         </a>
         {% else %}
-        <span class="pagination-link disabled">
+        <span class="pagination-link disabled" aria-hidden="true">
           <span>Next</span>
           {{ inject_svg('arrow-right', True) | safe }}
         </span>
         {% endif %}
       </div>
-    </div>
+    </nav>
     {% endif %}
   </div>
 </section>

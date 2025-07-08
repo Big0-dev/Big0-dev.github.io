@@ -546,7 +546,7 @@ class CaseStudyListingPage(PaginatedListingPage):
         return "Real-world success stories and transformative solutions that drive business growth."
 
     def get_context(self) -> Dict[str, Any]:
-        context = {"case_studies": self.items}
+        context = {"case_study_items": self.items}
         context.update(self.get_pagination_context())
         return context
 

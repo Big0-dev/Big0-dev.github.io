@@ -200,6 +200,14 @@
     "type": "page"
   },
   {
+    "id": "page-case_study-agridrone",
+    "url": "case-studies/agridrone.html",
+    "title": "Agricultural Sprayer Drone Development",
+    "content": "",
+    "description": "Cost-effective agricultural drone platform that democratizes precision spraying technology for resource-constrained farming operations.",
+    "type": "page"
+  },
+  {
     "id": "page-case_study-dental_scanner",
     "url": "case-studies/dental_scanner.html",
     "title": "AI-Powered Dental Scanner Platform",

@@ -31,6 +31,7 @@ class SiteGenerator:
             "services": [],
             "gallery_images": [],
             "industries": [],
+            "case_studies": [],  # Make sure this is initialized
         }
 
         # Setup Jinja2
@@ -121,12 +122,13 @@ class SiteGenerator:
 
     def _create_static_pages(self):
         """Create static pages"""
-        # Home page with content
+        # Home page with content - FIXED: Pass case_studies
         home_page = HomePage(
             self.renderer,
             self.content["services"],
             self.content["blog_posts"],
             self.content["industries"],
+            self.content["case_studies"],  # Add case_studies parameter
         )
         self.pages.append(home_page)
 

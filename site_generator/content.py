@@ -133,6 +133,20 @@ class CaseStudy(ContentItem):
     technologies: List[str] = field(default_factory=list)
     metrics: List[Dict[str, str]] = field(default_factory=list)
 
+    @property
+    def key_metric(self) -> str:
+        """Get the key metric for display in cards"""
+        if self.results:
+            # Return the first result as the key metric
+            result = self.results[0]
+            return f"{result.get('value', '')} {result.get('label', '')}"
+        return ""
+
+    @property
+    def type(self) -> str:
+        """Alias for case_study_type for template compatibility"""
+        return self.case_study_type
+
     @classmethod
     def from_metadata(
         cls, slug: str, metadata: Dict[str, Any], html_content: str

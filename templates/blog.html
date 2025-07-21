@@ -58,7 +58,38 @@
     </article>
   </div>
 </section>
-{% endif %} {% include 'cta.html' %}
+{% endif %}
+
+<!-- Newsletter CTA Section -->
+<section class="newsletter-cta-section">
+  <div class="container">
+    <div class="newsletter-cta-card">
+      <div class="newsletter-cta-content">
+        <h3>
+          Stay Updated with <span class="gradient-text">Zero to One</span>
+        </h3>
+        <p>
+          Get weekly tech insights and AI breakthroughs delivered to your
+          LinkedIn feed.
+        </p>
+        <div class="newsletter-cta-actions">
+          <a
+            href="https://www.linkedin.com/newsletters/zero-to-one-tech-frontiers-7348601809155842050/"
+            class="primary-btn newsletter-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="btn-icon"
+              >{{ inject_svg('linkedin', True) | safe }}</span
+            >
+            Subscribe on LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- All Articles Section -->
 <section class="blog-section">
@@ -108,6 +139,9 @@
       </article>
       {% endfor %}
     </div>
+
+
+{% include 'cta.html' %}
 
     {% if pagination %}
     <div class="pagination">

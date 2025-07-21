@@ -46,7 +46,6 @@
     <script src="{{ static | safe }}/minisearch@7.1.2.min.js"></script>
     <script src="{{ static | safe }}/search.js" defer></script>
 
-
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-5BCYEF9S7N"
@@ -109,9 +108,7 @@
               <li><a href="{{ case_studies }}" aria-label="Case Studies">Case Studies</a></li>
               <li><a href="{{ careers }}" aria-label="Careers">Careers</a></li>
               <li>
-                <button class="popover-button" popovertarget="modal">
-                  Contact
-                </button>
+                <a href="{{ contact }}" aria-label="Contact">Contact</a>
               </li>
               <li>
                 <button class="search-button" popovertarget="search-box">
@@ -132,9 +129,9 @@
           </ul>
         </div>
         <div class="siteHeaderRight desktop-menu">
-          <button class="cta-button" popovertarget="modal">
-            Get Started
-          </button>
+          <a href="{{ contact }}" class="cta-button" aria-label="Get in Touch">
+            Get in Touch
+          </a>
           <button
             aria-label="Search"
             class="search-button"
@@ -181,89 +178,6 @@
 
           <div id="search-results-container" class="search-results-container">
             <div id="search-results" class="search-results"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal" id="modal" popover="manual">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close-btn" popovertarget="modal" aria-label="Close modal">
-              <span class="close-line"></span>
-              <span class="close-line"></span>
-            </button>
-            <h2>Let's Build Something Amazing</h2>
-            <p>Transform your business with cutting-edge AI solutions</p>
-          </div>
-          <div class="contact-section">
-            <h2>Get In Touch</h2>
-            <div class="contact-grid">
-              <div class="contact-item">
-                {{ inject_svg('mail', True) | safe }}
-                <div class="contact-info">
-                  <a 
-                    aria-label="Send us an email" 
-                    href="mailto:contact@big0.dev"
-                    class="contact-link"
-                  >
-                    contact@big0.dev
-                  </a>
-                </div>
-              </div>
-              <div class="contact-item">
-                {{ inject_svg('phone', True) | safe }}
-                <div class="contact-info">
-                  <a 
-                    aria-label="Call us" 
-                    href="tel:+923039441945"
-                    class="contact-link"
-                  >
-                    +92 303 944 1945
-                  </a>
-                </div>
-              </div>
-              <div class="contact-item">
-                {{ inject_svg('location', True) | safe }}
-                <div class="contact-info">
-                  <a 
-                    href="https://www.google.com/maps/place/CalmKaaj/@33.7273362,73.0849416,17z/data=!3m1!4b1!4m6!3m5!1s0x38dfbf474ab02c45:0x538f627b8760d3af!8m2!3d33.7273362!4d73.0875165!16s%2Fg%2F11jybqr_vd?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" 
-                    aria-label="View our location on Google Maps"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-link"
-                  >
-                    BIG0, CalmKaaj, Ali Plaza, Blue Area<br />
-                    Islamabad, Pakistan
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="social-links">
-            <a
-              href="https://www.linkedin.com/company/big0/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow us on LinkedIn"
-            >
-              {{ inject_svg('linkedin', True) | safe }}
-            </a>
-            <a
-              href="https://github.com/Big0-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit our GitHub"
-            >
-              {{ inject_svg('github', True) | safe }}
-            </a>
-            <a
-              href="https://www.youtube.com/@big0_dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Subscribe to our YouTube channel"
-            >
-              {{ inject_svg('youtube', True) | safe }}
-            </a>
           </div>
         </div>
       </div>
@@ -355,19 +269,152 @@
       </div>
     </footer>
 
-    <!-- Additional mobile optimization script -->
     <script>
-      // Ensure proper mobile behavior for contact links
+      // Enhanced popover management with click-outside functionality
       document.addEventListener('DOMContentLoaded', function() {
-        // Force proper handling of tel: and mailto: links on mobile
+        // Get popover elements
+        const searchPopover = document.getElementById('search-box');
+        const sideMenuPopover = document.getElementById('sideMenuPopover');
+        const searchButtons = document.querySelectorAll('button[popovertarget="search-box"]');
+        const menuButtons = document.querySelectorAll('button[popovertarget="sideMenuPopover"]');
+
+        // Track popover states manually since :popover-open might not be supported everywhere
+        let isSearchOpen = false;
+        let isSideMenuOpen = false;
+
+        // Function to close popover safely
+        function closePopover(popover, stateVar) {
+          try {
+            if (popover && typeof popover.hidePopover === 'function') {
+              popover.hidePopover();
+            }
+          } catch (e) {
+            // Fallback: remove open attribute or hide with CSS
+            if (popover) {
+              popover.style.display = 'none';
+            }
+          }
+        }
+
+        // Listen for popover events to track state
+        if (searchPopover) {
+          searchPopover.addEventListener('toggle', function(e) {
+            isSearchOpen = e.newState === 'open';
+          });
+        }
+
+        if (sideMenuPopover) {
+          sideMenuPopover.addEventListener('toggle', function(e) {
+            isSideMenuOpen = e.newState === 'open';
+          });
+        }
+
+        // Main click handler for outside clicks - using multiple event types
+        function handleOutsideClick(event) {
+          // Handle search popover
+          if (isSearchOpen && searchPopover) {
+            const clickedInsideSearch = searchPopover.contains(event.target);
+            const clickedSearchButton = Array.from(searchButtons).some(btn => 
+              btn.contains(event.target) || btn === event.target
+            );
+            
+            // Also check if clicked on the popover backdrop
+            const isBackdropClick = event.target === searchPopover;
+            
+            if ((!clickedInsideSearch && !clickedSearchButton) || isBackdropClick) {
+              closePopover(searchPopover);
+              isSearchOpen = false;
+            }
+          }
+
+          // Handle side menu popover
+          if (isSideMenuOpen && sideMenuPopover) {
+            const clickedInsideMenu = sideMenuPopover.contains(event.target);
+            const clickedMenuButton = Array.from(menuButtons).some(btn => 
+              btn.contains(event.target) || btn === event.target
+            );
+            
+            // Also check if clicked on the popover backdrop
+            const isBackdropClick = event.target === sideMenuPopover;
+            
+            if ((!clickedInsideMenu && !clickedMenuButton) || isBackdropClick) {
+              closePopover(sideMenuPopover);
+              isSideMenuOpen = false;
+            }
+          }
+        }
+
+        // Listen for both click and mousedown events
+        document.addEventListener('click', handleOutsideClick, true);
+        document.addEventListener('mousedown', handleOutsideClick, true);
+        
+        // Also listen for clicks directly on the popovers (backdrop)
+        if (searchPopover) {
+          searchPopover.addEventListener('click', function(event) {
+            if (event.target === searchPopover) {
+              closePopover(searchPopover);
+              isSearchOpen = false;
+            }
+          });
+        }
+        
+        if (sideMenuPopover) {
+          sideMenuPopover.addEventListener('click', function(event) {
+            if (event.target === sideMenuPopover) {
+              closePopover(sideMenuPopover);
+              isSideMenuOpen = false;
+            }
+          });
+        }
+
+        // Handle escape key
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            if (isSearchOpen) {
+              closePopover(searchPopover);
+              isSearchOpen = false;
+            }
+            if (isSideMenuOpen) {
+              closePopover(sideMenuPopover);
+              isSideMenuOpen = false;
+            }
+          }
+        });
+
+        // Close sidebar when clicking on navigation links
+        if (sideMenuPopover) {
+          const sideMenuLinks = sideMenuPopover.querySelectorAll('a[href]');
+          sideMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              setTimeout(() => {
+                closePopover(sideMenuPopover);
+                isSideMenuOpen = false;
+              }, 100);
+            });
+          });
+        }
+
+        // Auto-focus search input when search opens
+        searchButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            setTimeout(() => {
+              if (isSearchOpen) {
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                  searchInput.focus();
+                }
+              }
+            }, 100);
+          });
+        });
+
+        // Ensure proper mobile behavior for contact links
         const contactLinks = document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]');
         contactLinks.forEach(link => {
           link.addEventListener('click', function(e) {
             // Let the browser handle the default behavior
-            // This ensures compatibility across different mobile browsers
             setTimeout(() => {
               if (window.location.href === this.href) {
-                // If the link didn't work, show a fallback
                 if (this.href.startsWith('tel:')) {
                   alert('Please call: ' + this.textContent.trim());
                 } else if (this.href.startsWith('mailto:')) {
@@ -382,7 +429,6 @@
         const externalLinks = document.querySelectorAll('a[target="_blank"]');
         externalLinks.forEach(link => {
           link.addEventListener('click', function(e) {
-            // Fallback for older mobile browsers
             if (!window.open(this.href, '_blank')) {
               window.location.href = this.href;
             }

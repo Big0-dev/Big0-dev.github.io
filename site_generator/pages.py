@@ -1,4 +1,4 @@
-# pages.py - Update the imports at the top
+# pages.py - Update the HomePage class
 from typing import Dict, Any, List, Optional
 from pathlib import Path
 from abc import abstractmethod
@@ -65,11 +65,13 @@ class HomePage(Page):
         services: List = None,
         blog_posts: List = None,
         industries: List = None,
+        case_studies: List = None,  # Add case_studies parameter
     ):
         super().__init__(renderer)
         self._services = services or []
         self._blog_posts = blog_posts or []
         self._industries = industries or []
+        self._case_studies = case_studies or []  # Store case_studies
 
     @property
     def slug(self) -> str:
@@ -111,6 +113,7 @@ class HomePage(Page):
             "total_services": len(self._services),
             "recent_posts": recent_posts,
             "industries": self._industries,
+            "case_studies": self._case_studies,  # Add case_studies to context
             "services_page": "./services.html",
             "about": "./about.html",
             "blog": "./blog.html",

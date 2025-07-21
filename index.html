@@ -2256,6 +2256,7 @@
           turnstileCompleted = true;
           const turnstileError = document.getElementById("turnstile-error");
           turnstileError.classList.remove("show");
+          // Don't store the token - we only need the completion status
         },
         "error-callback": function () {
           turnstileCompleted = false;
@@ -2346,7 +2347,7 @@
       formMessage.style.display = "none";
     }
 
-    // Form submission - simplified back to working fetch method
+    // Form submission - Clean form data before sending
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
       hideMessage();
@@ -2359,7 +2360,7 @@
         }
       });
 
-      // Check Turnstile
+      // Check Turnstile (client-side only)
       if (!turnstileCompleted) {
         showTurnstileError("Please complete the security verification.");
         isFormValid = false;
@@ -2376,7 +2377,19 @@
       buttonLoading.style.display = "flex";
 
       try {
-        const formData = new FormData(form);
+        // Create clean FormData without Turnstile token
+        const formData = new FormData();
+
+        // Only add the fields we want to send to Web3Forms
+        formData.append("access_key", "4995bef8-9b68-4453-ae2b-6618d35c4278");
+        formData.append("name", document.getElementById("name").value);
+        formData.append("email", document.getElementById("email").value);
+        formData.append("phone", document.getElementById("phone").value);
+        formData.append("company", document.getElementById("company").value);
+        formData.append("message", document.getElementById("message").value);
+
+        // Add honeypot (empty should be empty)
+        formData.append("botcheck", "");
 
         const response = await fetch(form.action, {
           method: "POST",

@@ -2027,6 +2027,13 @@
     <!-- Honeypot for spam protection -->
     <input type="checkbox" name="botcheck" id="" style="display: none" />
 
+    <!-- Optional: Redirect after submission -->
+    <input
+      type="hidden"
+      name="redirect"
+      value="https://yourdomain.com/thank-you"
+    />
+
     <!-- Form Fields Grid -->
     <div class="form-grid">
       <!-- Name Field -->
@@ -2185,14 +2192,6 @@
       <div class="form-error" id="message-error"></div>
     </div>
 
-    <!-- Turnstile CAPTCHA -->
-    <div class="form-group">
-      <div class="turnstile-wrapper">
-        <div id="turnstile-widget"></div>
-        <div class="form-error" id="turnstile-error"></div>
-      </div>
-    </div>
-
     <!-- Submit Button -->
     <div class="form-submit">
       <button type="submit" class="form-button" id="submitBtn">
@@ -2244,13 +2243,6 @@
   </form>
 </div>
 
-<!-- Load Turnstile Script -->
-<script
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer
-></script>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
@@ -2260,48 +2252,6 @@
     const formMessage = document.getElementById("formMessage");
     const messageIcon = document.getElementById("messageIcon");
     const messageText = document.getElementById("messageText");
-
-    let turnstileToken = null;
-    let turnstileWidgetId = null;
-
-    // Initialize Turnstile when the script loads
-    window.onTurnstileLoad = function () {
-      turnstileWidgetId = turnstile.render("#turnstile-widget", {
-        sitekey: "0x4AAAAAABl4WbetUFp_lWdh",
-        callback: function (token) {
-          turnstileToken = token;
-          document.getElementById("turnstile-token").value = token;
-          // Clear any previous error
-          const turnstileError = document.getElementById("turnstile-error");
-          turnstileError.classList.remove("show");
-        },
-        "error-callback": function () {
-          turnstileToken = null;
-          document.getElementById("turnstile-token").value = "";
-          showTurnstileError(
-            "Turnstile verification failed. Please try again.",
-          );
-        },
-        "expired-callback": function () {
-          turnstileToken = null;
-          document.getElementById("turnstile-token").value = "";
-          showTurnstileError(
-            "Turnstile verification expired. Please verify again.",
-          );
-        },
-      });
-    };
-
-    // If Turnstile is already loaded, initialize immediately
-    if (typeof turnstile !== "undefined") {
-      window.onTurnstileLoad();
-    }
-
-    function showTurnstileError(message) {
-      const turnstileError = document.getElementById("turnstile-error");
-      turnstileError.textContent = message;
-      turnstileError.classList.add("show");
-    }
 
     // Form validation
     function validateField(field) {
@@ -2370,7 +2320,7 @@
       formMessage.style.display = "none";
     }
 
-    // Form submission - Simple CORS fix with Turnstile
+    // Form submission - Simple CORS fix
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
       hideMessage();
@@ -2382,12 +2332,6 @@
           isFormValid = false;
         }
       });
-
-      // Validate Turnstile
-      if (!turnstileToken) {
-        showTurnstileError("Please complete the security verification.");
-        isFormValid = false;
-      }
 
       if (!isFormValid) {
         showMessage("error", "Please fix the errors above and try again.");
@@ -2416,14 +2360,6 @@
                   "Thank you! Your message has been sent successfully. We'll get back to you soon.",
                 );
                 form.reset();
-                // Reset Turnstile
-                if (
-                  turnstileWidgetId !== null &&
-                  typeof turnstile !== "undefined"
-                ) {
-                  turnstile.reset(turnstileWidgetId);
-                }
-                turnstileToken = null;
               } else {
                 throw new Error(response.message || "Form submission failed");
               }

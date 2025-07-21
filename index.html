@@ -2192,6 +2192,14 @@
       <div class="form-error" id="message-error"></div>
     </div>
 
+    <!-- Turnstile CAPTCHA (Client-side spam prevention) -->
+    <div class="form-group">
+      <div class="turnstile-wrapper">
+        <div id="turnstile-widget"></div>
+        <div class="form-error" id="turnstile-error"></div>
+      </div>
+    </div>
+
     <!-- Submit Button -->
     <div class="form-submit">
       <button type="submit" class="form-button" id="submitBtn">
@@ -2243,6 +2251,13 @@
   </form>
 </div>
 
+<!-- Load Turnstile Script -->
+<script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+></script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
@@ -2252,6 +2267,42 @@
     const formMessage = document.getElementById("formMessage");
     const messageIcon = document.getElementById("messageIcon");
     const messageText = document.getElementById("messageText");
+
+    let turnstileCompleted = false;
+
+    // Initialize Turnstile when the script loads
+    window.onTurnstileLoad = function () {
+      turnstile.render("#turnstile-widget", {
+        sitekey: "0x4AAAAAABl4a9NJHqF0wjyU",
+        callback: function (token) {
+          turnstileCompleted = true;
+          // Clear any previous error
+          const turnstileError = document.getElementById("turnstile-error");
+          turnstileError.classList.remove("show");
+        },
+        "error-callback": function () {
+          turnstileCompleted = false;
+          showTurnstileError("Security verification failed. Please try again.");
+        },
+        "expired-callback": function () {
+          turnstileCompleted = false;
+          showTurnstileError(
+            "Security verification expired. Please verify again.",
+          );
+        },
+      });
+    };
+
+    // If Turnstile is already loaded, initialize immediately
+    if (typeof turnstile !== "undefined") {
+      window.onTurnstileLoad();
+    }
+
+    function showTurnstileError(message) {
+      const turnstileError = document.getElementById("turnstile-error");
+      turnstileError.textContent = message;
+      turnstileError.classList.add("show");
+    }
 
     // Form validation
     function validateField(field) {
@@ -2320,7 +2371,7 @@
       formMessage.style.display = "none";
     }
 
-    // Form submission - Simple CORS fix
+    // Form submission with client-side Turnstile verification
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
       hideMessage();
@@ -2332,6 +2383,14 @@
           isFormValid = false;
         }
       });
+
+      // Check if Turnstile is completed (client-side spam prevention)
+      if (!turnstileCompleted) {
+        showTurnstileError(
+          "Please complete the security verification to prove you're human.",
+        );
+        isFormValid = false;
+      }
 
       if (!isFormValid) {
         showMessage("error", "Please fix the errors above and try again.");
@@ -2360,6 +2419,7 @@
                   "Thank you! Your message has been sent successfully. We'll get back to you soon.",
                 );
                 form.reset();
+                turnstileCompleted = false; // Reset for next submission
               } else {
                 throw new Error(response.message || "Form submission failed");
               }

@@ -37,29 +37,49 @@
   overflow: hidden;
   position: relative;
 }
-
-.google-form-container iframe {
-  width: 100%;
-  min-height: 1125px;
-  border: none;
-  background: var(--bg-dark);
+/* ==============================
+   CONTACT MAIN SECTION
+============================== */
+.contact-main {
+  padding: var(--spacing-3xl) 0;
 }
 
-/* Loading state for iframe */
-.google-form-container::before {
-  content: "Loading form...";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* Use a more specific class name for the main contact page grid */
+.contact-main .contact-grid,
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  order: 1;
+}
+
+.section-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.section-description {
   color: var(--text-muted);
   font-size: 1.1rem;
-  z-index: -1;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Contact Info */
 .contact-info {
   padding: var(--spacing-xl);
+  order: 2;
 }
 
 .contact-info h2 {
@@ -314,6 +334,62 @@
 }
 
 /* ==============================
+   PAGE HERO (Contact Page Specific)
+============================== */
+.page-hero {
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(127, 62, 152, 0.1) 0%,
+    rgba(163, 102, 196, 0.05) 100%
+  );
+  border-bottom: 1px solid rgba(127, 62, 152, 0.1);
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(127, 62, 152, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(163, 102, 196, 0.08) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.page-hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==============================
    RESPONSIVE
 ============================== */
 @media screen and (max-width: 992px) {
@@ -324,17 +400,24 @@
     gap: var(--spacing-xl);
   }
 
+  .contact-form-section {
+    order: 1;
+  }
+
   .contact-info {
-    order: -1;
+    order: 2;
   }
 
   .map-container {
     margin: var(--spacing-lg) 0;
   }
+
+  .page-hero {
+    padding: var(--spacing-xxl) 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .contact-form-wrapper,
   .contact-info {
     padding: var(--spacing-lg);
   }
@@ -343,12 +426,28 @@
     grid-template-columns: 1fr;
   }
 
-  .google-form-container iframe {
-    min-height: 1200px;
-  }
-
   .google-map {
     height: 250px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .page-hero {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
   }
 }
 
@@ -358,15 +457,60 @@
     text-align: center;
   }
 
-  .google-form-container iframe {
-    min-height: 1300px;
+  .google-map {
+    height: 200px;
   }
 
-  .contact-form-wrapper {
+  .section-header {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .page-hero {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-info {
     padding: var(--spacing-md);
   }
 
-  .google-map {
-    height: 200px;
+  .social-connect .social-links a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-connect .social-links svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .info-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .info-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .faq-item {
+    padding: var(--spacing-lg);
+  }
+
+  .map-container {
+    padding: var(--spacing-md);
   }
 }

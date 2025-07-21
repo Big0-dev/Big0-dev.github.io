@@ -97,10 +97,6 @@ class HomePage(Page):
     def meta_description(self) -> str:
         return "Big0 - Transforming businesses with cutting-edge AI, machine learning, and data-driven solutions. Next level innovation powered by intelligence."
 
-    @property
-    def preload(self) -> str:
-        return "hero"
-
     def get_context(self) -> Dict[str, Any]:
         recent_services = self._services[:3] if self._services else []
         recent_posts = self._blog_posts[:3] if self._blog_posts else []

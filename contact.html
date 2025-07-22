@@ -204,8 +204,16 @@
             Fill out the form below and we'll get back to you within 24 hours.
           </p>
         </div>
-<!-- contact-form.html -->
-<div class="contact-form-container contact-form-wide">
+<!-- BANT Contact Form - Jinja2 Template -->
+<div class="contact-form-container">
+  <div class="form-header">
+    <h2>Let's Discuss Your Project</h2>
+    <p>
+      Tell us about your requirements and we'll provide a tailored solution for
+      your business needs.
+    </p>
+  </div>
+
   <form
     id="contactForm"
     class="contact-form"
@@ -220,171 +228,430 @@
     />
 
     <!-- Honeypot for spam protection -->
-    <input type="checkbox" name="botcheck" id="" style="display: none" />
+    <input type="checkbox" name="botcheck" style="display: none" />
 
-    <!-- Form Fields Grid -->
-    <div class="form-grid">
-      <!-- Name Field -->
-      <div class="form-group">
-        <label for="name" class="form-label">
-          <span class="label-text">Full Name</span>
-          <span class="required">*</span>
-        </label>
-        <div class="input-wrapper">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            class="form-input"
-            placeholder="Enter your full name"
-            required
-            autocomplete="name"
-          />
-          <div class="input-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+    <!-- Contact Information Section -->
+    <div class="form-section">
+      <h3 class="section-title">Contact Information</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name" class="form-label">
+            Full Name <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="Enter your full name"
+              required
+              autocomplete="name"
+            />
+            <div class="input-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
           </div>
+          <div class="form-error" id="name-error"></div>
         </div>
-        <div class="form-error" id="name-error"></div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Email Address <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="your.email@company.com"
+              required
+              autocomplete="email"
+            />
+            <div class="input-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="form-error" id="email-error"></div>
+        </div>
       </div>
 
-      <!-- Email Field -->
-      <div class="form-group">
-        <label for="email" class="form-label">
-          <span class="label-text">Email Address</span>
-          <span class="required">*</span>
-        </label>
-        <div class="input-wrapper">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="form-input"
-            placeholder="Enter your email address"
-            required
-            autocomplete="email"
-          />
-          <div class="input-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              ></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone" class="form-label">
+            Phone Number <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="+1 (555) 123-4567"
+              required
+              autocomplete="tel"
+            />
+            <div class="input-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+            </div>
           </div>
+          <div class="form-error" id="phone-error"></div>
         </div>
-        <div class="form-error" id="email-error"></div>
+
+        <div class="form-group">
+          <label for="company" class="form-label">
+            Company Name <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-input"
+              placeholder="Your Company Ltd."
+              required
+              autocomplete="organization"
+            />
+            <div class="input-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 21h18"></path>
+                <path d="M5 21V7l8-4v18"></path>
+                <path d="M19 21V11l-6-4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="form-error" id="company-error"></div>
+        </div>
       </div>
 
-      <!-- Phone Field -->
-      <div class="form-group">
-        <label for="phone" class="form-label">
-          <span class="label-text">Phone Number</span>
-        </label>
-        <div class="input-wrapper">
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            class="form-input"
-            placeholder="Enter your phone number (with country code)"
-            autocomplete="tel"
-          />
-          <div class="input-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-              ></path>
-            </svg>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="job_title" class="form-label">
+            Job Title <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="job_title"
+              name="job_title"
+              class="form-input"
+              placeholder="CEO, CTO, Product Manager, etc."
+              required
+            />
+            <div class="input-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
           </div>
+          <div class="form-error" id="job_title-error"></div>
         </div>
-        <div class="form-error" id="phone-error"></div>
-      </div>
 
-      <!-- Company Field -->
-      <div class="form-group">
-        <label for="company" class="form-label">
-          <span class="label-text">Company</span>
-        </label>
-        <div class="input-wrapper">
-          <input
-            type="text"
-            id="company"
-            name="company"
-            class="form-input"
-            placeholder="Enter your company name"
-            autocomplete="organization"
-          />
-          <div class="input-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+        <div class="form-group">
+          <label for="company_size" class="form-label">
+            Company Size <span class="required">*</span>
+          </label>
+          <div class="select-wrapper">
+            <select
+              id="company_size"
+              name="company_size"
+              class="form-select"
+              required
             >
-              <path d="M3 21h18"></path>
-              <path d="M5 21V7l8-4v18"></path>
-              <path d="M19 21V11l-6-4"></path>
-            </svg>
+              <option value="">Select company size</option>
+              <option value="1-10">1-10 employees</option>
+              <option value="11-50">11-50 employees</option>
+              <option value="51-200">51-200 employees</option>
+              <option value="201-1000">201-1,000 employees</option>
+              <option value="1000+">1,000+ employees</option>
+            </select>
+            <div class="select-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </div>
           </div>
+          <div class="form-error" id="company_size-error"></div>
         </div>
-        <div class="form-error" id="company-error"></div>
       </div>
     </div>
 
-    <!-- Message Field (Full Width) -->
-    <div class="form-group">
-      <label for="message" class="form-label">
-        <span class="label-text">Message</span>
-        <span class="required">*</span>
-      </label>
-      <div class="textarea-wrapper">
-        <textarea
-          id="message"
-          name="message"
-          class="form-textarea"
-          placeholder="Tell us about your project or how we can help you..."
-          rows="5"
-          required
-        ></textarea>
-        <div class="textarea-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
+    <!-- Project Details Section (BANT) -->
+    <div class="form-section">
+      <h3 class="section-title">Project Requirements</h3>
+
+      <!-- Need & Technical Fit -->
+      <div class="form-group">
+        <label for="project_type" class="form-label">
+          Service Needed <span class="required">*</span>
+        </label>
+        <div class="select-wrapper">
+          <select
+            id="project_type"
+            name="project_type"
+            class="form-select"
+            required
           >
-            <path
-              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-            ></path>
-          </svg>
+            <option value="">Select the service you need</option>
+            <option value="staff-augmentation">Staff Augmentation</option>
+            <option value="ai-ml-integration">
+              AI & Machine Learning Integration
+            </option>
+            <option value="ar-vr-development">AR/VR Development</option>
+            <option value="blockchain-development">
+              Blockchain Development
+            </option>
+            <option value="brand-digital-design">Brand & Digital Design</option>
+            <option value="business-process-outsourcing">
+              Business Process Outsourcing
+            </option>
+            <option value="cloud-infrastructure-management">
+              Cloud Infrastructure Management
+            </option>
+            <option value="computer-vision">Computer Vision</option>
+            <option value="custom-software-development">
+              Custom Software Development
+            </option>
+            <option value="data-analytics-bi">
+              Data Analytics & Business Intelligence
+            </option>
+            <option value="devops-consulting">DevOps Consulting</option>
+            <option value="digital-marketing">
+              Digital Marketing Services
+            </option>
+            <option value="ecommerce-solutions">E-commerce Solutions</option>
+            <option value="erp-implementation">ERP Implementation</option>
+            <option value="embedded-systems">
+              Embedded Systems Development
+            </option>
+            <option value="cybersecurity">
+              Enterprise Cybersecurity Solutions
+            </option>
+            <option value="fintech-development">Fintech Development</option>
+            <option value="game-development">Game Development</option>
+            <option value="hardware-cad-design">Hardware CAD Design</option>
+            <option value="healthcare-it">Healthcare IT Solutions</option>
+            <option value="interactive-dashboards">
+              Interactive Dashboard Development
+            </option>
+            <option value="iot-development">IoT Device Development</option>
+            <option value="mobile-app-development">
+              Mobile App Development
+            </option>
+            <option value="web-development">Modern Web Development</option>
+            <option value="natural-language-processing">
+              Natural Language Processing
+            </option>
+            <option value="pcb-design">PCB Design & Layout</option>
+            <option value="technology-training">
+              Professional Technology Training
+            </option>
+            <option value="python-automation">
+              Python Automation & Scripting
+            </option>
+            <option value="software-testing">Software Testing Services</option>
+            <option value="ui-ux-design">UI/UX Design Services</option>
+            <option value="multiple-services">Multiple Services</option>
+            <option value="not-sure">Not Sure / Need Consultation</option>
+          </select>
+          <div class="select-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="form-error" id="project_type-error"></div>
+      </div>
+
+      <!-- Budget -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="budget_range" class="form-label">
+            Budget Range <span class="required">*</span>
+          </label>
+          <div class="select-wrapper">
+            <select
+              id="budget_range"
+              name="budget_range"
+              class="form-select"
+              required
+            >
+              <option value="">Select budget range</option>
+              <option value="under-10k">Under $10,000</option>
+              <option value="10k-25k">$10,000 - $25,000</option>
+              <option value="25k-50k">$25,000 - $50,000</option>
+              <option value="50k-100k">$50,000 - $100,000</option>
+              <option value="100k-250k">$100,000 - $250,000</option>
+              <option value="250k+">$250,000+</option>
+              <option value="discuss">Prefer to discuss</option>
+            </select>
+            <div class="select-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="form-error" id="budget_range-error"></div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="form-group">
+          <label for="timeline" class="form-label">
+            Timeline <span class="required">*</span>
+          </label>
+          <div class="select-wrapper">
+            <select id="timeline" name="timeline" class="form-select" required>
+              <option value="">Select timeline</option>
+              <option value="asap">ASAP (within 1 month)</option>
+              <option value="1-3-months">1-3 months</option>
+              <option value="3-6-months">3-6 months</option>
+              <option value="6-12-months">6-12 months</option>
+              <option value="12-months+">12+ months</option>
+              <option value="flexible">Flexible timeline</option>
+            </select>
+            <div class="select-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="form-error" id="timeline-error"></div>
         </div>
       </div>
-      <div class="form-error" id="message-error"></div>
+
+      <!-- Authority -->
+      <div class="form-group">
+        <label for="decision_maker" class="form-label">
+          Decision Making Authority <span class="required">*</span>
+        </label>
+        <div class="select-wrapper">
+          <select
+            id="decision_maker"
+            name="decision_maker"
+            class="form-select"
+            required
+          >
+            <option value="">Select your role in decision making</option>
+            <option value="final-decision">I make the final decision</option>
+            <option value="recommend">I recommend, others decide</option>
+            <option value="influence">I influence the decision</option>
+            <option value="gather-info">I'm gathering information</option>
+          </select>
+          <div class="select-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="form-error" id="decision_maker-error"></div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message" class="form-label">
+          Project Details <span class="required">*</span>
+        </label>
+        <div class="textarea-wrapper">
+          <textarea
+            id="message"
+            name="message"
+            class="form-textarea"
+            placeholder="Please describe your project requirements, technical challenges, and specific goals..."
+            rows="5"
+            required
+          ></textarea>
+          <div class="textarea-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="form-error" id="message-error"></div>
+      </div>
     </div>
 
     <!-- Turnstile CAPTCHA -->
-    <div class="form-group">
-      <div class="turnstile-wrapper">
-        <div id="turnstile-widget"></div>
-        <div class="form-error" id="turnstile-error"></div>
+    <div class="form-section">
+      <div class="form-group">
+        <label class="form-label">
+          Security Verification <span class="required">*</span>
+        </label>
+        <div class="turnstile-wrapper">
+          <div id="turnstile-widget"></div>
+          <div class="form-error" id="turnstile-error"></div>
+        </div>
       </div>
     </div>
 
@@ -436,15 +703,35 @@
         <div class="message-text" id="messageText"></div>
       </div>
     </div>
+
+    <!-- BANT Score Display -->
+    <div class="bant-score" id="bantScore" style="display: none">
+      <h4>Lead Qualification Score</h4>
+      <div class="score-display">
+        <span class="score-value" id="scoreValue">0</span>
+        <span class="score-label">/ 100</span>
+      </div>
+      <div class="score-breakdown">
+        <div class="score-item">
+          <span class="score-item-label">Budget</span>
+          <span class="score-item-value" id="budgetScore">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-item-label">Authority</span>
+          <span class="score-item-value" id="authorityScore">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-item-label">Need</span>
+          <span class="score-item-value" id="needScore">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-item-label">Timeline</span>
+          <span class="score-item-value" id="timelineScore">0</span>
+        </div>
+      </div>
+    </div>
   </form>
 </div>
-
-<!-- Load Turnstile Script -->
-<script
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer
-></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -465,7 +752,6 @@
           turnstileCompleted = true;
           const turnstileError = document.getElementById("turnstile-error");
           turnstileError.classList.remove("show");
-          // Don't store the token - we only need the completion status
         },
         "error-callback": function () {
           turnstileCompleted = false;
@@ -504,7 +790,7 @@
 
       if (field.hasAttribute("required") && !value) {
         isValid = false;
-        errorMessage = `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} is required.`;
+        errorMessage = `This field is required.`;
       } else if (fieldName === "email" && value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
@@ -517,9 +803,9 @@
           isValid = false;
           errorMessage = "Please enter a valid phone number.";
         }
-      } else if (fieldName === "message" && value && value.length < 10) {
+      } else if (fieldName === "message" && value && value.length < 20) {
         isValid = false;
-        errorMessage = "Message must be at least 10 characters long.";
+        errorMessage = "Please provide more details (minimum 20 characters).";
       }
 
       if (!isValid) {
@@ -533,7 +819,9 @@
     }
 
     // Real-time validation
-    const formFields = form.querySelectorAll(".form-input, .form-textarea");
+    const formFields = form.querySelectorAll(
+      ".form-input, .form-textarea, .form-select",
+    );
     formFields.forEach((field) => {
       field.addEventListener("blur", () => validateField(field));
       field.addEventListener("input", () => {
@@ -556,7 +844,7 @@
       formMessage.style.display = "none";
     }
 
-    // Form submission - Clean form data before sending
+    // Form submission
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
       hideMessage();
@@ -569,7 +857,7 @@
         }
       });
 
-      // Check Turnstile (client-side only)
+      // Check Turnstile
       if (!turnstileCompleted) {
         showTurnstileError("Please complete the security verification.");
         isFormValid = false;
@@ -586,18 +874,37 @@
       buttonLoading.style.display = "flex";
 
       try {
-        // Create clean FormData without Turnstile token
+        // Create clean FormData
         const formData = new FormData();
 
-        // Only add the fields we want to send to Web3Forms
+        // Add all form fields
         formData.append("access_key", "4995bef8-9b68-4453-ae2b-6618d35c4278");
         formData.append("name", document.getElementById("name").value);
         formData.append("email", document.getElementById("email").value);
         formData.append("phone", document.getElementById("phone").value);
         formData.append("company", document.getElementById("company").value);
+        formData.append(
+          "job_title",
+          document.getElementById("job_title").value,
+        );
+        formData.append(
+          "company_size",
+          document.getElementById("company_size").value,
+        );
+        formData.append(
+          "project_type",
+          document.getElementById("project_type").value,
+        );
+        formData.append(
+          "budget_range",
+          document.getElementById("budget_range").value,
+        );
+        formData.append("timeline", document.getElementById("timeline").value);
+        formData.append(
+          "decision_maker",
+          document.getElementById("decision_maker").value,
+        );
         formData.append("message", document.getElementById("message").value);
-
-        // Add honeypot (empty should be empty)
         formData.append("botcheck", "");
 
         const response = await fetch(form.action, {
@@ -610,7 +917,7 @@
         if (data.success) {
           showMessage(
             "success",
-            "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+            "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.",
           );
           form.reset();
           turnstileCompleted = false;
@@ -641,7 +948,550 @@
       this.style.height = Math.max(this.scrollHeight, 120) + "px";
     });
   });
-</script>      </div>
+</script>
+
+<style>
+  /* Contact Form Styles - Enhanced for Mobile and BANT */
+
+  .contact-form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .form-header h2 {
+    color: var(--text-light);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+  }
+
+  .form-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    background: var(--bg-card);
+    border: 1px solid rgba(127, 62, 152, 0.15);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xxl);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+
+  .contact-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent-gradient);
+    opacity: 0.8;
+  }
+
+  .form-section {
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .section-title {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid rgba(127, 62, 152, 0.2);
+    position: relative;
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--accent-gradient);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  @media screen and (min-width: 768px) {
+    .form-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .form-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-light);
+    letter-spacing: 0.2px;
+  }
+
+  .required {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .input-wrapper,
+  .textarea-wrapper,
+  .select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    padding-right: 50px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid rgba(127, 62, 152, 0.15);
+    border-radius: var(--border-radius);
+    background: rgba(10, 10, 13, 0.8);
+    color: var(--text-light);
+    transition: all var(--transition-default);
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+  }
+
+  .form-select {
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+    font-weight: 400;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus,
+  .form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(127, 62, 152, 0.15);
+    background: rgba(127, 62, 152, 0.05);
+  }
+
+  .form-input:hover,
+  .form-textarea:hover,
+  .form-select:hover {
+    border-color: rgba(127, 62, 152, 0.3);
+  }
+
+  .input-icon,
+  .textarea-icon,
+  .select-icon {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted);
+    transition: color var(--transition-default);
+    pointer-events: none;
+  }
+
+  .input-wrapper:focus-within .input-icon,
+  .textarea-wrapper:focus-within .textarea-icon,
+  .select-wrapper:focus-within .select-icon {
+    color: var(--primary-color);
+  }
+
+  .input-icon svg,
+  .textarea-icon svg,
+  .select-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+    padding-top: var(--spacing-md);
+  }
+
+  .textarea-wrapper .textarea-icon {
+    top: var(--spacing-md);
+    transform: none;
+  }
+
+  .captcha-container {
+    background: rgba(127, 62, 152, 0.05);
+    border: 1px solid rgba(127, 62, 152, 0.2);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .captcha-question {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    padding: var(--spacing-sm);
+    background: rgba(127, 62, 152, 0.1);
+    border-radius: var(--border-radius);
+  }
+
+  .form-error {
+    color: #ff6b6b;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: var(--spacing-sm);
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .form-error::before {
+    content: "⚠";
+    font-size: 12px;
+  }
+
+  .form-error.show {
+    opacity: 1;
+    height: auto;
+  }
+
+  .input-wrapper.error .form-input,
+  .textarea-wrapper.error .form-textarea,
+  .select-wrapper.error .form-select {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+    background: rgba(255, 107, 107, 0.05);
+  }
+
+  .input-wrapper.error .input-icon,
+  .textarea-wrapper.error .textarea-icon,
+  .select-wrapper.error .select-icon {
+    color: #ff6b6b;
+  }
+
+  .form-submit {
+    margin-top: var(--spacing-xl);
+  }
+
+  .form-button {
+    width: 100%;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--accent-gradient);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all var(--transition-default);
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    box-shadow: 0 4px 16px rgba(127, 62, 152, 0.2);
+  }
+
+  .form-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.6s ease;
+  }
+
+  .form-button:hover::before {
+    left: 100%;
+  }
+
+  .form-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--glow-shadow);
+  }
+
+  .form-button:active {
+    transform: translateY(-1px);
+  }
+
+  .form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .form-button:disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 16px rgba(127, 62, 152, 0.2);
+  }
+
+  .form-button:disabled::before {
+    left: -100%;
+  }
+
+  .button-content,
+  .button-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+  }
+
+  .button-icon svg {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-default);
+  }
+
+  .form-button:hover .button-icon svg {
+    transform: translateX(3px);
+  }
+
+  .loading-spinner {
+    width: 22px;
+    height: 22px;
+    animation: spin 1s linear infinite;
+  }
+
+  .form-message {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 2px solid;
+    animation: slideIn 0.4s ease-out;
+    backdrop-filter: blur(10px);
+  }
+
+  .form-message.success {
+    background: rgba(72, 187, 120, 0.1);
+    border-color: #48bb78;
+    color: #48bb78;
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.1);
+  }
+
+  .form-message.error {
+    background: rgba(255, 107, 107, 0.1);
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.1);
+  }
+
+  .message-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .message-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .message-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  .form-message.success .message-icon::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  }
+
+  .form-message.error .message-icon::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+  }
+
+  .message-text {
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+
+  .bant-score {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(
+      135deg,
+      rgba(127, 62, 152, 0.1),
+      rgba(163, 102, 196, 0.05)
+    );
+    border: 1px solid rgba(127, 62, 152, 0.2);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    animation: slideIn 0.4s ease-out;
+  }
+
+  .bant-score h4 {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.2rem;
+  }
+
+  .score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .score-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(127, 62, 152, 0.3);
+  }
+
+  .score-label {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+  }
+
+  .score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    text-align: left;
+  }
+
+  .score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(127, 62, 152, 0.05);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(127, 62, 152, 0.1);
+  }
+
+  .score-item-label {
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .score-item-value {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact-form {
+      padding: var(--spacing-xl);
+    }
+
+    .form-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+    }
+
+    .score-breakdown {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .score-value {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .contact-form {
+      padding: var(--spacing-lg);
+    }
+
+    .form-header {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .form-section {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      font-size: 16px;
+    }
+
+    .score-value {
+      font-size: 2rem;
+    }
+
+    .captcha-question {
+      font-size: 1rem;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>      </div>
 
       <!-- Contact Information -->
       <div class="contact-info">

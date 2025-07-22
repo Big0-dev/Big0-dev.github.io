@@ -2494,33 +2494,6 @@
         <div class="message-text" id="messageText"></div>
       </div>
     </div>
-
-    <!-- BANT Score Display -->
-    <div class="bant-score" id="bantScore" style="display: none">
-      <h4>Lead Qualification Score</h4>
-      <div class="score-display">
-        <span class="score-value" id="scoreValue">0</span>
-        <span class="score-label">/ 100</span>
-      </div>
-      <div class="score-breakdown">
-        <div class="score-item">
-          <span class="score-item-label">Budget</span>
-          <span class="score-item-value" id="budgetScore">0</span>
-        </div>
-        <div class="score-item">
-          <span class="score-item-label">Authority</span>
-          <span class="score-item-value" id="authorityScore">0</span>
-        </div>
-        <div class="score-item">
-          <span class="score-item-label">Need</span>
-          <span class="score-item-value" id="needScore">0</span>
-        </div>
-        <div class="score-item">
-          <span class="score-item-label">Timeline</span>
-          <span class="score-item-value" id="timelineScore">0</span>
-        </div>
-      </div>
-    </div>
   </form>
 </div>
 
@@ -2534,32 +2507,58 @@
     const messageText = document.getElementById("messageText");
 
     let turnstileCompleted = false;
+    let turnstileToken = null;
 
-    // Initialize Turnstile
-    window.onTurnstileLoad = function () {
-      turnstile.render("#turnstile-widget", {
-        sitekey: "0x4AAAAAABl4a9NJHqF0wjyU",
-        callback: function (token) {
-          turnstileCompleted = true;
-          const turnstileError = document.getElementById("turnstile-error");
-          turnstileError.classList.remove("show");
-        },
-        "error-callback": function () {
-          turnstileCompleted = false;
-          showTurnstileError("Security verification failed. Please try again.");
-        },
-        "expired-callback": function () {
-          turnstileCompleted = false;
+    // Initialize Turnstile when the script loads
+    function initTurnstile() {
+      if (typeof turnstile !== "undefined") {
+        try {
+          turnstile.render("#turnstile-widget", {
+            sitekey: "0x4AAAAAABl4a9NJHqF0wjyU",
+            callback: function (token) {
+              turnstileCompleted = true;
+              turnstileToken = token;
+              console.log("Turnstile completed successfully");
+              const turnstileError = document.getElementById("turnstile-error");
+              turnstileError.classList.remove("show");
+            },
+            "error-callback": function () {
+              turnstileCompleted = false;
+              turnstileToken = null;
+              console.log("Turnstile error");
+              showTurnstileError(
+                "Security verification failed. Please try again.",
+              );
+            },
+            "expired-callback": function () {
+              turnstileCompleted = false;
+              turnstileToken = null;
+              console.log("Turnstile expired");
+              showTurnstileError(
+                "Security verification expired. Please verify again.",
+              );
+            },
+          });
+        } catch (error) {
+          console.error("Error initializing Turnstile:", error);
           showTurnstileError(
-            "Security verification expired. Please verify again.",
+            "Failed to load security verification. Please refresh the page.",
           );
-        },
-      });
-    };
-
-    if (typeof turnstile !== "undefined") {
-      window.onTurnstileLoad();
+        }
+      } else {
+        console.log("Turnstile not loaded yet, retrying in 1 second...");
+        setTimeout(initTurnstile, 1000);
+      }
     }
+
+    // Wait a bit for Turnstile script to load, then initialize
+    setTimeout(initTurnstile, 500);
+
+    // Also try to initialize when the Turnstile script calls the global callback
+    window.onTurnstileLoad = function () {
+      console.log("Turnstile script loaded via callback");
+      initTurnstile();
+    };
 
     function showTurnstileError(message) {
       const turnstileError = document.getElementById("turnstile-error");
@@ -2649,7 +2648,7 @@
       });
 
       // Check Turnstile
-      if (!turnstileCompleted) {
+      if (!turnstileCompleted || !turnstileToken) {
         showTurnstileError("Please complete the security verification.");
         isFormValid = false;
       }
@@ -2665,7 +2664,7 @@
       buttonLoading.style.display = "flex";
 
       try {
-        // Create clean FormData
+        // Create FormData with Turnstile token
         const formData = new FormData();
 
         // Add all form fields
@@ -2696,6 +2695,7 @@
           document.getElementById("decision_maker").value,
         );
         formData.append("message", document.getElementById("message").value);
+        formData.append("cf-turnstile-response", turnstileToken);
         formData.append("botcheck", "");
 
         const response = await fetch(form.action, {
@@ -2712,6 +2712,11 @@
           );
           form.reset();
           turnstileCompleted = false;
+          turnstileToken = null;
+          // Reset Turnstile widget
+          if (typeof turnstile !== "undefined") {
+            turnstile.reset("#turnstile-widget");
+          }
         } else {
           showMessage(
             "error",
@@ -2720,6 +2725,7 @@
           );
         }
       } catch (error) {
+        console.error("Form submission error:", error);
         showMessage(
           "error",
           "There was an error sending your message. Please try again or contact us directly at contact@big0.dev",
@@ -2739,550 +2745,7 @@
       this.style.height = Math.max(this.scrollHeight, 120) + "px";
     });
   });
-</script>
-
-<style>
-  /* Contact Form Styles - Enhanced for Mobile and BANT */
-
-  .contact-form-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .form-header {
-    text-align: center;
-    margin-bottom: var(--spacing-xxl);
-  }
-
-  .form-header h2 {
-    color: var(--text-light);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: var(--spacing-md);
-    font-weight: 600;
-  }
-
-  .form-header p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .contact-form {
-    background: var(--bg-card);
-    border: 1px solid rgba(127, 62, 152, 0.15);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xxl);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-  }
-
-  .contact-form::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--accent-gradient);
-    opacity: 0.8;
-  }
-
-  .form-section {
-    margin-bottom: var(--spacing-xxl);
-  }
-
-  .section-title {
-    color: var(--text-light);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 2px solid rgba(127, 62, 152, 0.2);
-    position: relative;
-  }
-
-  .section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background: var(--accent-gradient);
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  @media screen and (min-width: 768px) {
-    .form-row {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .form-label {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: var(--spacing-sm);
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--text-light);
-    letter-spacing: 0.2px;
-  }
-
-  .required {
-    color: #ff6b6b;
-    font-weight: bold;
-    font-size: 14px;
-  }
-
-  .input-wrapper,
-  .textarea-wrapper,
-  .select-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  .form-input,
-  .form-textarea,
-  .form-select {
-    width: 100%;
-    padding: var(--spacing-md) var(--spacing-lg);
-    padding-right: 50px;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 400;
-    border: 2px solid rgba(127, 62, 152, 0.15);
-    border-radius: var(--border-radius);
-    background: rgba(10, 10, 13, 0.8);
-    color: var(--text-light);
-    transition: all var(--transition-default);
-    box-sizing: border-box;
-    backdrop-filter: blur(10px);
-  }
-
-  .form-select {
-    appearance: none;
-    cursor: pointer;
-  }
-
-  .form-input::placeholder,
-  .form-textarea::placeholder {
-    color: var(--text-muted);
-    opacity: 0.7;
-    font-weight: 400;
-  }
-
-  .form-input:focus,
-  .form-textarea:focus,
-  .form-select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(127, 62, 152, 0.15);
-    background: rgba(127, 62, 152, 0.05);
-  }
-
-  .form-input:hover,
-  .form-textarea:hover,
-  .form-select:hover {
-    border-color: rgba(127, 62, 152, 0.3);
-  }
-
-  .input-icon,
-  .textarea-icon,
-  .select-icon {
-    position: absolute;
-    right: var(--spacing-md);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    color: var(--text-muted);
-    transition: color var(--transition-default);
-    pointer-events: none;
-  }
-
-  .input-wrapper:focus-within .input-icon,
-  .textarea-wrapper:focus-within .textarea-icon,
-  .select-wrapper:focus-within .select-icon {
-    color: var(--primary-color);
-  }
-
-  .input-icon svg,
-  .textarea-icon svg,
-  .select-icon svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .form-textarea {
-    resize: vertical;
-    min-height: 120px;
-    line-height: 1.6;
-    padding-top: var(--spacing-md);
-  }
-
-  .textarea-wrapper .textarea-icon {
-    top: var(--spacing-md);
-    transform: none;
-  }
-
-  .captcha-container {
-    background: rgba(127, 62, 152, 0.05);
-    border: 1px solid rgba(127, 62, 152, 0.2);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .captcha-question {
-    color: var(--text-light);
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-    padding: var(--spacing-sm);
-    background: rgba(127, 62, 152, 0.1);
-    border-radius: var(--border-radius);
-  }
-
-  .form-error {
-    color: #ff6b6b;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: var(--spacing-sm);
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .form-error::before {
-    content: "⚠";
-    font-size: 12px;
-  }
-
-  .form-error.show {
-    opacity: 1;
-    height: auto;
-  }
-
-  .input-wrapper.error .form-input,
-  .textarea-wrapper.error .form-textarea,
-  .select-wrapper.error .form-select {
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
-    background: rgba(255, 107, 107, 0.05);
-  }
-
-  .input-wrapper.error .input-icon,
-  .textarea-wrapper.error .textarea-icon,
-  .select-wrapper.error .select-icon {
-    color: #ff6b6b;
-  }
-
-  .form-submit {
-    margin-top: var(--spacing-xl);
-  }
-
-  .form-button {
-    width: 100%;
-    padding: var(--spacing-lg) var(--spacing-xl);
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: 600;
-    border: none;
-    border-radius: var(--border-radius);
-    background: var(--accent-gradient);
-    color: var(--text-light);
-    cursor: pointer;
-    transition: all var(--transition-default);
-    position: relative;
-    overflow: hidden;
-    min-height: 60px;
-    box-shadow: 0 4px 16px rgba(127, 62, 152, 0.2);
-  }
-
-  .form-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: left 0.6s ease;
-  }
-
-  .form-button:hover::before {
-    left: 100%;
-  }
-
-  .form-button:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--glow-shadow);
-  }
-
-  .form-button:active {
-    transform: translateY(-1px);
-  }
-
-  .form-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-  }
-
-  .form-button:disabled:hover {
-    transform: none;
-    box-shadow: 0 4px 16px rgba(127, 62, 152, 0.2);
-  }
-
-  .form-button:disabled::before {
-    left: -100%;
-  }
-
-  .button-content,
-  .button-loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    position: relative;
-    z-index: 1;
-  }
-
-  .button-icon svg {
-    width: 20px;
-    height: 20px;
-    transition: transform var(--transition-default);
-  }
-
-  .form-button:hover .button-icon svg {
-    transform: translateX(3px);
-  }
-
-  .loading-spinner {
-    width: 22px;
-    height: 22px;
-    animation: spin 1s linear infinite;
-  }
-
-  .form-message {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    border: 2px solid;
-    animation: slideIn 0.4s ease-out;
-    backdrop-filter: blur(10px);
-  }
-
-  .form-message.success {
-    background: rgba(72, 187, 120, 0.1);
-    border-color: #48bb78;
-    color: #48bb78;
-    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.1);
-  }
-
-  .form-message.error {
-    background: rgba(255, 107, 107, 0.1);
-    border-color: #ff6b6b;
-    color: #ff6b6b;
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.1);
-  }
-
-  .message-content {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-  }
-
-  .message-icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-  }
-
-  .message-icon::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: currentColor;
-    mask-repeat: no-repeat;
-    mask-position: center;
-  }
-
-  .form-message.success .message-icon::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-  }
-
-  .form-message.error .message-icon::before {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
-  }
-
-  .message-text {
-    font-weight: 500;
-    line-height: 1.5;
-    font-size: 15px;
-  }
-
-  .bant-score {
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-xl);
-    background: linear-gradient(
-      135deg,
-      rgba(127, 62, 152, 0.1),
-      rgba(163, 102, 196, 0.05)
-    );
-    border: 1px solid rgba(127, 62, 152, 0.2);
-    border-radius: var(--border-radius-lg);
-    text-align: center;
-    animation: slideIn 0.4s ease-out;
-  }
-
-  .bant-score h4 {
-    color: var(--text-light);
-    margin-bottom: var(--spacing-lg);
-    font-size: 1.2rem;
-  }
-
-  .score-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .score-value {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-shadow: 0 0 20px rgba(127, 62, 152, 0.3);
-  }
-
-  .score-label {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-  }
-
-  .score-breakdown {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-    text-align: left;
-  }
-
-  .score-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: rgba(127, 62, 152, 0.05);
-    border-radius: var(--border-radius);
-    border: 1px solid rgba(127, 62, 152, 0.1);
-  }
-
-  .score-item-label {
-    color: var(--text-light);
-    font-weight: 500;
-  }
-
-  .score-item-value {
-    color: var(--primary-color);
-    font-weight: 600;
-  }
-
-  @media screen and (max-width: 768px) {
-    .contact-form {
-      padding: var(--spacing-xl);
-    }
-
-    .form-header h2 {
-      font-size: 1.8rem;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-    }
-
-    .score-breakdown {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .score-value {
-      font-size: 2.5rem;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .contact-form {
-      padding: var(--spacing-lg);
-    }
-
-    .form-header {
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .form-section {
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .form-input,
-    .form-textarea,
-    .form-select {
-      font-size: 16px;
-    }
-
-    .score-value {
-      font-size: 2rem;
-    }
-
-    .captcha-question {
-      font-size: 1rem;
-    }
-  }
-
-  @keyframes slideIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>    </div>
+</script>    </div>
   </section>
 </section></main>
 

@@ -1838,18 +1838,6 @@ mark {
   transform: none;
 }
 
-/* Turnstile Wrapper */
-.turnstile-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-
-#turnstile-widget {
-  margin: 0 auto;
-}
-
 /* Error States */
 .form-error {
   color: #ff6b6b;

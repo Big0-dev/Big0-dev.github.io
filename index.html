@@ -2433,19 +2433,6 @@
       </div>
     </div>
 
-    <!-- Turnstile CAPTCHA -->
-    <div class="form-section">
-      <div class="form-group">
-        <label class="form-label">
-          Security Verification <span class="required">*</span>
-        </label>
-        <div class="turnstile-wrapper">
-          <div id="turnstile-widget"></div>
-          <div class="form-error" id="turnstile-error"></div>
-        </div>
-      </div>
-    </div>
-
     <!-- Submit Button -->
     <div class="form-submit">
       <button type="submit" class="form-button" id="submitBtn">
@@ -2505,66 +2492,6 @@
     const buttonLoading = submitBtn.querySelector(".button-loading");
     const formMessage = document.getElementById("formMessage");
     const messageText = document.getElementById("messageText");
-
-    let turnstileCompleted = false;
-    let turnstileToken = null;
-
-    // Initialize Turnstile when the script loads
-    function initTurnstile() {
-      if (typeof turnstile !== "undefined") {
-        try {
-          turnstile.render("#turnstile-widget", {
-            sitekey: "0x4AAAAAABl4a9NJHqF0wjyU",
-            callback: function (token) {
-              turnstileCompleted = true;
-              turnstileToken = token;
-              console.log("Turnstile completed successfully");
-              const turnstileError = document.getElementById("turnstile-error");
-              turnstileError.classList.remove("show");
-            },
-            "error-callback": function () {
-              turnstileCompleted = false;
-              turnstileToken = null;
-              console.log("Turnstile error");
-              showTurnstileError(
-                "Security verification failed. Please try again.",
-              );
-            },
-            "expired-callback": function () {
-              turnstileCompleted = false;
-              turnstileToken = null;
-              console.log("Turnstile expired");
-              showTurnstileError(
-                "Security verification expired. Please verify again.",
-              );
-            },
-          });
-        } catch (error) {
-          console.error("Error initializing Turnstile:", error);
-          showTurnstileError(
-            "Failed to load security verification. Please refresh the page.",
-          );
-        }
-      } else {
-        console.log("Turnstile not loaded yet, retrying in 1 second...");
-        setTimeout(initTurnstile, 1000);
-      }
-    }
-
-    // Wait a bit for Turnstile script to load, then initialize
-    setTimeout(initTurnstile, 500);
-
-    // Also try to initialize when the Turnstile script calls the global callback
-    window.onTurnstileLoad = function () {
-      console.log("Turnstile script loaded via callback");
-      initTurnstile();
-    };
-
-    function showTurnstileError(message) {
-      const turnstileError = document.getElementById("turnstile-error");
-      turnstileError.textContent = message;
-      turnstileError.classList.add("show");
-    }
 
     // Form validation
     function validateField(field) {
@@ -2647,12 +2574,6 @@
         }
       });
 
-      // Check Turnstile
-      if (!turnstileCompleted || !turnstileToken) {
-        showTurnstileError("Please complete the security verification.");
-        isFormValid = false;
-      }
-
       if (!isFormValid) {
         showMessage("error", "Please fix the errors above and try again.");
         return;
@@ -2664,7 +2585,7 @@
       buttonLoading.style.display = "flex";
 
       try {
-        // Create FormData with Turnstile token
+        // Create FormData
         const formData = new FormData();
 
         // Add all form fields
@@ -2695,7 +2616,6 @@
           document.getElementById("decision_maker").value,
         );
         formData.append("message", document.getElementById("message").value);
-        formData.append("cf-turnstile-response", turnstileToken);
         formData.append("botcheck", "");
 
         const response = await fetch(form.action, {
@@ -2711,12 +2631,6 @@
             "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.",
           );
           form.reset();
-          turnstileCompleted = false;
-          turnstileToken = null;
-          // Reset Turnstile widget
-          if (typeof turnstile !== "undefined") {
-            turnstile.reset("#turnstile-widget");
-          }
         } else {
           showMessage(
             "error",

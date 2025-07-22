@@ -49,7 +49,7 @@
 .contact-page-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3xl);
+  gap: var(--spacing-sm);
   max-width: 1200px;
   margin: 0 auto;
 }

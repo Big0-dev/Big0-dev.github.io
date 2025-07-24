@@ -109,7 +109,7 @@ class HomePage(Page):
             "total_services": len(self._services),
             "recent_posts": recent_posts,
             "industries": self._industries,
-            "case_studies": self._case_studies,  # Add case_studies to context
+            "case_studies_items": self._case_studies,  # Add case_studies to context
             "services_page": "./services.html",
             "about": "./about.html",
             "blog": "./blog.html",

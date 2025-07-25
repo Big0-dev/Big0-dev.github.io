@@ -896,7 +896,7 @@
 }
 
 .insight-link {
-  color: var(--primary-color);
+  color: var(--primary-light);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;

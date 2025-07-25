@@ -11,8 +11,8 @@
   --bg-light: #1a1a1f;
   --bg-card: #15151a;
   --text-light: #ffffff;
-  --text-dark: #e0e0e0;
-  --text-muted: #a0a0a0;
+  --text-dark: #f0f0f0;
+  --text-muted: #c0c0c0;
   --accent-gradient: linear-gradient(135deg, #7f3e98 0%, #a366c4 100%);
   --dark-gradient: linear-gradient(180deg, #0a0a0d 0%, #15151a 100%);
 
@@ -1840,7 +1840,7 @@ mark {
 
 /* Error States */
 .form-error {
-  color: #ff6b6b;
+  color: #ff4d4d;
   font-size: 14px;
   font-weight: 500;
   margin-top: var(--spacing-sm);

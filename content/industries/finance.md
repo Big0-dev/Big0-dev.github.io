@@ -1,5 +1,6 @@
 ---
 title: Financial Services Technology Solutions
+icon: dollar-sign
 meta_description: Transform your financial institution with AI-powered solutions. Reduce fraud by 90%, automate compliance, and deliver exceptional digital banking experiences.
 description: Transforming financial services with AI-powered solutions for risk management, fraud detection, and customer experience enhancement
 short_description: AI-powered solutions for modern banking, investment, and fintech companies to enhance security, compliance, and customer experience
@@ -23,12 +24,14 @@ Big0 empowers financial institutions with cutting-edge technology solutions that
 Transform your banking operations with modern, secure technology that puts customers first while reducing costs and improving efficiency.
 
 ### Core Banking Modernization
+
 - **Cloud-Native Architecture**: Reduce infrastructure costs by 60% while improving scalability
 - **API-First Platform**: Enable open banking and third-party integrations seamlessly
 - **Microservices Design**: Deploy updates 10x faster with zero downtime
 - **Real-time Processing**: Handle millions of transactions per second
 
 ### Mobile & Digital Banking
+
 - **Award-Winning Mobile Apps**: Increase customer engagement by 250%
 - **Biometric Authentication**: Reduce fraud while improving user experience
 - **Personal Financial Management**: AI-powered insights and recommendations
@@ -41,15 +44,18 @@ Transform your banking operations with modern, secure technology that puts custo
 Protect your institution and customers with multi-layered security powered by machine learning and behavioral analytics.
 
 ### Real-Time Fraud Detection
+
 Our AI-powered fraud detection system analyzes millions of transactions per second, identifying suspicious patterns with 90% accuracy while maintaining a false positive rate under 0.5%.
 
 **Key Features:**
+
 - Machine learning models trained on billions of transactions
 - Behavioral biometrics and device fingerprinting
 - Real-time transaction scoring and decisioning
 - Automated case management and investigation tools
 
 ### Cybersecurity Solutions
+
 - **Zero Trust Architecture**: Protect against internal and external threats
 - **AI-Powered Threat Detection**: Identify and respond to threats in milliseconds
 - **Continuous Security Monitoring**: 24/7 SOC services with expert analysts
@@ -60,12 +66,14 @@ Our AI-powered fraud detection system analyzes millions of transactions per seco
 Navigate complex regulations with confidence using our automated compliance solutions that reduce costs and eliminate human error.
 
 ### Automated Compliance Platform
+
 - **Regulatory Reporting**: Generate accurate reports 10x faster
 - **AML/BSA Compliance**: Advanced transaction monitoring and suspicious activity detection
 - **KYC/CDD Solutions**: Streamline customer due diligence with AI-powered verification
 - **GDPR/CCPA Management**: Ensure data privacy compliance across all systems
 
 ### Risk Analytics & Management
+
 - **Credit Risk Modeling**: Improve loan decision accuracy by 35%
 - **Market Risk Analytics**: Real-time portfolio risk assessment
 - **Operational Risk Management**: Identify and mitigate process risks
@@ -78,12 +86,14 @@ Navigate complex regulations with confidence using our automated compliance solu
 Deliver the personalized, seamless experiences that modern banking customers expect across all channels.
 
 ### AI-Powered Customer Service
+
 - **Intelligent Virtual Assistants**: Handle 70% of customer inquiries automatically
 - **Sentiment Analysis**: Identify and prioritize at-risk customers
 - **Predictive Support**: Anticipate customer needs before they contact you
 - **Omnichannel Integration**: Seamless experience across all touchpoints
 
 ### Personalization & Analytics
+
 - **360° Customer View**: Unified data platform for complete customer insights
 - **Next Best Action**: AI-driven product recommendations
 - **Customer Journey Analytics**: Optimize every interaction
@@ -94,12 +104,14 @@ Deliver the personalized, seamless experiences that modern banking customers exp
 Stay ahead of disruption with cutting-edge fintech solutions that drive new revenue streams and competitive advantages.
 
 ### Digital Payment Solutions
+
 - **Instant Payments**: Real-time payment processing and settlement
 - **Cryptocurrency Integration**: Secure digital asset management
 - **Mobile Wallets**: White-label wallet solutions
 - **Cross-Border Payments**: Reduce international transfer costs by 70%
 
 ### Open Banking & BaaS
+
 - **Banking-as-a-Service Platform**: Launch new products in weeks, not months
 - **API Marketplace**: Monetize your data and services
 - **Third-Party Integration**: Connect with fintech ecosystem

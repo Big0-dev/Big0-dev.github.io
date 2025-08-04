@@ -1,5 +1,5 @@
 ---
-title: Financial Services Technology Solutions
+title: Finance
 icon: dollar-sign
 meta_description: Transform your financial institution with AI-powered solutions. Reduce fraud by 90%, automate compliance, and deliver exceptional digital banking experiences.
 description: Transforming financial services with AI-powered solutions for risk management, fraud detection, and customer experience enhancement

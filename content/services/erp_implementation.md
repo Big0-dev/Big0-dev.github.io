@@ -2,7 +2,6 @@
 title: ERP Implementation
 description: Complete enterprise resource planning solutions including Odoo, SAP, and custom ERP systems that streamline operations and integrate business processes
 icon: database
-price: Custom pricing based on scope
 features: ERP consulting, System implementation, Data migration, Process automation, Training & support, Custom module development
 ---
 

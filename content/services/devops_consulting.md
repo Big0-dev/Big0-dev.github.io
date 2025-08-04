@@ -2,7 +2,6 @@
 title: DevOps Consulting
 description: Streamline your development and deployment processes with automated CI/CD pipelines, infrastructure as code, and cloud-native DevOps practices
 icon: settings
-price: Custom pricing based on scope
 features: CI/CD automation, Infrastructure as Code, Container orchestration, Monitoring & logging, Security integration, Performance optimization
 ---
 

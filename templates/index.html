@@ -1,0 +1,434 @@
+{% extends "base.html" %}
+
+{% block title %}AI-Powered Digital Transformation{% endblock %}
+{% block meta_description %}Big0 delivers cutting-edge AI solutions, cloud services, and digital transformation. Transform your business with responsible AI innovation.{% endblock %}
+{% block canonical_path %}/{% endblock %}
+{% block custom_css %}<link rel="stylesheet" href="{{ static }}/home.css">
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">{% endblock %}
+
+{% block content %}
+<!-- Hero Section - Simplified and Centered -->
+<section class="hero relative min-h-[85vh] flex items-center justify-center">
+  <div class="hero-background">
+    <div class="hero-gradient"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+  
+  <div class="hero-content text-center">
+    <h1 class="text-4xl md:text-6xl font-normal mb-md leading-tight">
+      <span class="text-gradient">Next Level Innovation</span><br>
+      <span class="text-white text-2xl md:text-4xl">Powered by Intelligence</span>
+    </h1>
+    
+    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto mb-lg">
+      Gain the clarity and predictive insights needed to make<br>
+      faster, smarter strategic choices that drive growth.
+    </p>
+    
+    <div class="hero-cta">
+      <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
+        Get Started
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories Section -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Success Stories</h2>
+      <p class="section-subtitle">
+        Real results from <span class="text-gradient">real clients</span>
+      </p>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel-track">
+        {% for case_study in all_case_studies[:6] %}
+        <article class="card card-hover carousel-item">
+          <a href="./case-studies/{{ case_study.slug }}.html" class="case-study-card">
+            <div class="case-study-header">
+              {% if case_study.icon %}
+              <div class="case-study-icon">
+                {{ inject_svg(case_study.icon, True) | safe }}
+              </div>
+              {% endif %}
+              
+              <div class="case-study-meta">
+                <span class="badge">{{ case_study.frontmatter.industry | default('Technology') }}</span>
+              </div>
+            </div>
+            
+            <div class="case-study-content">
+              <h3>{{ case_study.title }}</h3>
+              <p class="line-clamp-4">{{ case_study.short_description }}</p>
+              <span class="text-primary font-medium">Read more →</span>
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="text-center mt-xl">
+      <a href="{{ case_studies }}" class="btn btn-primary btn-md">
+        View All Case Studies
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        Comprehensive solutions for <span class="text-gradient">digital transformation</span>
+      </p>
+    </div>
+
+    <div class="grid grid-auto-md gap-2xl mb-2xl">
+      {% for service in all_services[:6] %}
+      <div class="service-preview-card hover-lift">
+        {% if service.icon %}
+        <div class="icon-container icon-lg icon-rounded mb-lg">
+          {{ inject_svg(service.icon, True) | safe }}
+        </div>
+        {% endif %}
+        
+        <h3 class="text-base font-semibold mb-sm">{{ service.title }}</h3>
+        <p class="text-tertiary text-sm mb-md line-clamp-3">{{ service.short_description }}</p>
+        
+        <a href="./services/{{ service.slug }}.html" class="btn btn-secondary btn-sm w-full mt-auto">
+          Learn More
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center">
+      <a href="{{ services_page }}" class="btn btn-primary btn-md">
+        View All Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+{% include 'cta.html' %}
+
+<!-- Industries Section -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Industries We Serve</h2>
+      <p class="section-subtitle">
+        Tailored solutions for <span class="text-gradient">diverse sectors</span>
+      </p>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel-track">
+        {% for industry in all_industries %}
+        <div class="card card-hover carousel-item text-center">
+          <div class="p-sm">
+            {% if industry.icon %}
+            <div class="icon-container icon-lg icon-rounded mb-sm">
+              {{ inject_svg(industry.icon, True) | safe }}
+            </div>
+            {% endif %}
+            <h3 class="text-base font-semibold mb-xs">{{ industry.title }}</h3>
+            <p class="text-tertiary text-sm mb-sm line-clamp-3">{{ industry.excerpt }}</p>
+            <a href="./industries/{{ industry.slug }}.html" class="btn btn-secondary btn-sm">
+              Learn More
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="text-center mt-xl">
+      <a href="{{ industries }}" class="btn btn-primary btn-md">
+        View All Industries
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Insights Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Insights</h2>
+      <p class="section-subtitle">
+        Stay updated with <span class="text-gradient">industry trends</span> and innovations
+      </p>
+    </div>
+
+    <div class="grid grid-3 gap-2xl grid-mobile-1">
+      {% for post in all_blog[:3] %}
+      <article class="card card-hover">
+        <a href="./blog/{{ post.slug }}.html" class="insights-card">
+          {% if post.frontmatter.image_url %}
+          <div class="insights-image">
+            <img
+              src="{{ static }}/{{ post.frontmatter.image_url }}"
+              alt="{{ post.title }}"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          {% endif %}
+          
+          <div class="insights-content">
+            <div class="insights-meta">
+              <span class="text-xs text-muted">{{ post.frontmatter.date | default('') }}</span>
+            </div>
+            <span class="badge mb-md">{{ post.frontmatter.category | default('Technology') }}</span>
+            
+            <h3>{{ post.title }}</h3>
+            <p class="line-clamp-3">{{ post.meta_description }}</p>
+            <span class="text-primary font-medium">Read More →</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    
+    <div class="text-center mt-xl">
+      <a href="{{ blog }}" class="btn btn-primary btn-md">
+        View All Insights
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- News Section -->
+{% if news_articles and news_articles|length > 0 %}
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Company News</h2>
+      <p class="section-subtitle">
+        Latest <span class="text-gradient">updates and announcements</span>
+      </p>
+    </div>
+
+    <div class="grid grid-2 gap-2xl grid-mobile-1">
+      {% for article in news_articles[:2] %}
+      <article class="card card-hover">
+        {% if article.frontmatter.external_link or article.external_link %}
+        <a href="{{ article.frontmatter.external_link | default(article.external_link) }}" class="news-card-link" target="_blank" rel="noopener noreferrer">
+        {% else %}
+        <a href="./news/{{ article.slug }}.html" class="news-card-link">
+        {% endif %}
+          <div class="p-md">
+            <div class="news-meta mb-sm">
+              <span class="text-sm text-muted">{{ article.frontmatter.date | default(article.date) | default('') }}</span>
+            </div>
+            <span class="badge">{{ article.frontmatter.category | default(article.category) | default('Announcement') }}</span>
+            
+            <h3 class="text-base font-semibold mb-xs mt-sm">{{ article.title }}</h3>
+            <p class="text-tertiary text-sm mb-sm line-clamp-2">{{ article.frontmatter.description | default(article.description) | default(article.excerpt) }}</p>
+            
+            <span class="text-primary font-medium">Read More →</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    
+    <div class="text-center mt-xl">
+      <a href="{{ news }}" class="btn btn-primary btn-md">
+        View All News
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+{% include 'cta.html' %}
+
+<!-- Process Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Process</h2>
+      <p class="section-subtitle">
+        How we deliver <span class="text-gradient">exceptional results</span>
+      </p>
+    </div>
+    
+    <div class="process-timeline">
+      <div class="timeline-connector"></div>
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-number">01</span>
+        </div>
+        <div class="timeline-content">
+          <h3 class="text-lg font-semibold mb-sm">Discovery</h3>
+          <p class="text-tertiary text-sm">We analyze your business needs, challenges, and goals to design the perfect solution</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-number">02</span>
+        </div>
+        <div class="timeline-content">
+          <h3 class="text-lg font-semibold mb-sm">Strategy</h3>
+          <p class="text-tertiary text-sm">Develop a comprehensive roadmap aligned with your business objectives</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-number">03</span>
+        </div>
+        <div class="timeline-content">
+          <h3 class="text-lg font-semibold mb-sm">Implementation</h3>
+          <p class="text-tertiary text-sm">Execute the solution with agile methodologies ensuring quality and flexibility</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-number">04</span>
+        </div>
+        <div class="timeline-content">
+          <h3 class="text-lg font-semibold mb-sm">Optimization</h3>
+          <p class="text-tertiary text-sm">Continuously monitor, improve, and scale your solution for maximum impact</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose Us</h2>
+      <p class="section-subtitle">
+        What sets us apart in <span class="text-gradient">delivering value</span>
+      </p>
+    </div>
+    
+    <div class="grid grid-3 gap-lg grid-mobile-1">
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12l2 2 4-4"/>
+            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+            <path d="M3 12v6a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Proven Expertise</h3>
+        <p class="text-tertiary text-sm">Years of experience delivering successful AI and technology solutions across industries.</p>
+      </div>
+      
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Scalable Solutions</h3>
+        <p class="text-tertiary text-sm">Built to grow with your business, from startup to enterprise-level implementations.</p>
+      </div>
+      
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">24/7 Support</h3>
+        <p class="text-tertiary text-sm">Dedicated support team ensuring your solutions run smoothly around the clock.</p>
+      </div>
+      
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Fast Delivery</h3>
+        <p class="text-tertiary text-sm">Agile development process ensuring rapid deployment without compromising quality.</p>
+      </div>
+      
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <path d="M9 9h.01"/>
+            <path d="M15 9h.01"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Client Satisfaction</h3>
+        <p class="text-tertiary text-sm">High client satisfaction rate with long-term partnerships built on trust and results.</p>
+      </div>
+      
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Industry Knowledge</h3>
+        <p class="text-tertiary text-sm">Deep understanding of industry trends and best practices to keep you ahead of the competition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">
+        Let's discuss how we can help <span class="text-gradient">transform your business</span>
+      </p>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      {% include 'contact-form-bant.html' %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+// Simple carousel functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const carousels = document.querySelectorAll('.carousel-container');
+  
+  carousels.forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const items = track.querySelectorAll('.carousel-item');
+    
+    if (items.length > 3) {
+      // Clone items for infinite scroll effect
+      items.forEach(item => {
+        track.appendChild(item.cloneNode(true));
+      });
+    }
+  });
+});
+
+</script>
+{% endblock %}

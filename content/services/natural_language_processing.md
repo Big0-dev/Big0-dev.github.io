@@ -2,7 +2,6 @@
 title: Natural Language Processing
 description: Advanced NLP solutions including chatbots, document processing, sentiment analysis, and language translation for intelligent text automation
 icon: message-circle
-price: Custom pricing based on scope
 features: Chatbot development, Document processing, Sentiment analysis, Language translation, Text summarization, Voice recognition
 ---
 

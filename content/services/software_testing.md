@@ -2,7 +2,6 @@
 title: Software Testing Services
 description: Comprehensive quality assurance and testing solutions ensuring your software delivers flawless user experiences and meets the highest quality standards
 icon: check-circle
-price: Custom pricing based on scope
 features: Manual & automated testing, Performance testing, Security testing, Mobile app testing, API testing, Compliance testing
 ---
 

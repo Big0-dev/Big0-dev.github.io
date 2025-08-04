@@ -1,145 +1,159 @@
-<!-- careers.html -->
-<div class="page-hero">
-  <div class="hero-bg-pattern"></div>
+{% extends "base.html" %}
+
+{% block title %}Careers{% endblock %}
+{% block meta_description %}Join Big0 and shape the future of technology. Explore career opportunities in AI, cloud computing, and digital transformation.{% endblock %}
+{% block canonical_path %}/careers.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
   <div class="container">
-    <div class="page-hero-content">
-      <h1 class="page-title">
-        Why Work at <span class="gradient-text">Big0</span>?
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-lg">
+        Join <span class="text-gradient">Big0</span>
       </h1>
-      <p class="page-subtitle">
-        We're not just building technology – we're shaping the future of how
-        businesses operate and grow.
+      <p class="text-xl text-secondary">
+        Shape the future of AI and technology with a team that values innovation, growth, and impact
       </p>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Why Big0 Section -->
-<section class="why-big0">
+<!-- Why Join Us Section -->
+<section class="section">
   <div class="container">
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          {{ inject_svg('innovation', True) | safe }}
+    <div class="section-header">
+      <h2 class="section-title">Why Join Us</h2>
+      <p class="section-subtitle">
+        Be part of a team that's <span class="text-gradient">transforming businesses</span> through technology
+      </p>
+    </div>
+
+    <div class="grid grid-3 gap-lg grid-mobile-1">
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
         </div>
-        <h3>Cutting-edge Projects</h3>
-        <p>Work on the latest AI, ML, and cloud technologies</p>
+        <h3 class="text-lg font-semibold mb-sm">Innovation First</h3>
+        <p class="text-tertiary text-sm">Work on cutting-edge AI, ML, and cloud technologies that define the future</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">{{ inject_svg('growth', True) | safe }}</div>
-        <h3>Career Growth</h3>
-        <p>Continuous learning and advancement opportunities</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="benefit-icon">{{ inject_svg('balance', True) | safe }}</div>
-        <h3>Work-Life Balance</h3>
-        <p>Flexible schedules and remote work options</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="benefit-icon">{{ inject_svg('team', True) | safe }}</div>
-        <h3>Amazing Team</h3>
-        <p>Collaborate with talented professionals worldwide</p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          {{ inject_svg('benefits', True) | safe }}
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
         </div>
-        <h3>Great Benefits</h3>
-        <p>Competitive salary, health insurance, and more</p>
+        <h3 class="text-lg font-semibold mb-sm">Global Team</h3>
+        <p class="text-tertiary text-sm">Collaborate with talented professionals from around the world</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">{{ inject_svg('impact', True) | safe }}</div>
-        <h3>Make an Impact</h3>
-        <p>Work on solutions that transform businesses</p>
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Real Impact</h3>
+        <p class="text-tertiary text-sm">Your work directly transforms how businesses operate and grow</p>
+      </div>
+
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Work-Life Balance</h3>
+        <p class="text-tertiary text-sm">Flexible schedules and remote work options for optimal productivity</p>
+      </div>
+
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="3" x2="6" y2="15"/>
+            <circle cx="18" cy="6" r="3"/>
+            <circle cx="6" cy="18" r="3"/>
+            <path d="M18 9a9 9 0 0 1-9 9"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Continuous Growth</h3>
+        <p class="text-tertiary text-sm">Learning opportunities and clear career advancement paths</p>
+      </div>
+
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/>
+            <line x1="9" y1="15" x2="15" y2="15"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Great Benefits</h3>
+        <p class="text-tertiary text-sm">Competitive compensation, health insurance, and comprehensive perks</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Open Positions Section -->
-<section class="open-positions">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
-      <h2>Open <span class="gradient-text">Positions</span></h2>
+      <h2 class="section-title">Open Positions</h2>
       <p class="section-subtitle">
-        We're always looking for talented individuals to join our growing team.
+        Explore current opportunities on our <span class="text-gradient">LinkedIn page</span>
       </p>
     </div>
 
-    <div class="positions-container">
-      <div class="position-cta-card">
-        <div class="position-cta-content">
-          <div class="position-cta-icon">
-            {{ inject_svg('linkedin', True) | safe }}
-          </div>
-          <h3>Explore Opportunities on LinkedIn</h3>
-          <p>
-            Discover our current openings and apply directly through our
-            LinkedIn page. We regularly update positions across engineering,
-            research, and operations.
-          </p>
-          <div class="position-benefits">
-            <div class="benefit-item">
-              {{ inject_svg('check', True) | safe }}
-              <span>Real-time job updates</span>
-            </div>
-            <div class="benefit-item">
-              {{ inject_svg('check', True) | safe }}
-              <span>Easy application process</span>
-            </div>
-            <div class="benefit-item">
-              {{ inject_svg('check', True) | safe }}
-              <span>Direct connection with our team</span>
-            </div>
-          </div>
-        </div>
-        <div class="position-cta-action">
-          <a
-            href="https://www.linkedin.com/company/big0/jobs/"
-            target="_blank"
-            class="primary-btn"
-          >
-            <span>View Jobs on LinkedIn</span>
-            {{ inject_svg('external-link', True) | safe }}
-          </a>
-          <p class="position-note">
-            All applications are processed through LinkedIn. You can get in
-            touch
-            <a aria-label="Email" href="mailto:hr@big0.dev">hr@big0.dev</a>
-          </p>
-        </div>
+    <div class="card card-primary max-w-2xl mx-auto p-2xl text-center">
+      <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
       </div>
+      
+      <h3 class="text-xl font-semibold mb-md">View Jobs on LinkedIn</h3>
+      <p class="text-secondary mb-lg">
+        All our current openings are posted on LinkedIn for easy application and real-time updates
+      </p>
+      
+      <a href="https://www.linkedin.com/company/big0/jobs/" target="_blank" rel="noopener noreferrer" class="btn btn-primary mb-md">
+        Explore Opportunities
+        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+      
+      <p class="text-sm text-tertiary">
+        Questions? Contact us at <a href="mailto:hr@big0.dev" class="text-primary">hr@big0.dev</a>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Culture Section -->
-<section class="careers-culture">
-  <div class="container">
-    <div class="culture-grid">
-      <div class="culture-content">
-        <h2>Our <span class="gradient-text">Culture</span></h2>
-        <p class="section-subtitle">
-          At Big0, we foster an environment where innovation thrives, ideas are
-          valued, and everyone has the opportunity to make a real impact.
-        </p>
-        <ul class="culture-values">
-          <li>Collaborative and inclusive workplace</li>
-          <li>Continuous learning and development</li>
-          <li>Innovation and creative problem-solving</li>
-          <li>Work-life balance and flexibility</li>
-          <li>Recognition and rewards for excellence</li>
-        </ul>
-      </div>
-      <div class="culture-images">
-        <img src="{{ static }}/culture-1.avif" alt="Team collaboration" />
-        <img src="{{ static }}/culture-2.avif" alt="Office environment" />
-      </div>
-    </div>
-  </div>
-</section>
+<!-- CTA Section -->
+{% include 'cta.html' %}
+{% endblock %}

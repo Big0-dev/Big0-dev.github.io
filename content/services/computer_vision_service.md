@@ -2,7 +2,6 @@
 title: Computer Vision
 description: Advanced computer vision solutions including image recognition, video analytics, OCR, and real-time object detection for automation and intelligence
 icon: camera
-price: Custom pricing based on scope
 features: Image recognition, Video analytics, OCR solutions, Facial recognition, Object detection, Real-time processing
 ---
 

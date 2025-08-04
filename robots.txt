@@ -1,6 +1,0 @@
-# robots.txt for https://big0.dev
-User-agent: *
-Allow: /
-
-Sitemap: https://big0.dev/sitemap.xml
-Sitemap: https://big0.dev/sitemap-images.xml

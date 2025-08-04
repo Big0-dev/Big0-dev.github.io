@@ -1,283 +1,191 @@
-<!-- partners.html -->
-<div class="page-hero">
-  <div class="hero-bg-pattern"></div>
+{% extends "base.html" %}
+
+{% block title %}Partners{% endblock %}
+{% block meta_description %}Explore Big0's strategic partnerships that drive innovation and deliver exceptional value to our clients.{% endblock %}
+{% block canonical_path %}/partners.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
   <div class="container">
-    <div class="page-hero-content">
-      <h1 class="page-title">
-        Our <span class="gradient-text">Partners</span>
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-lg">
+        Our <span class="text-gradient">Partners</span>
       </h1>
-      <p class="page-subtitle">
-        Building strategic alliances that drive innovation and deliver
-        exceptional value to our clients
+      <p class="text-xl text-secondary">
+        Building strategic alliances that drive innovation and deliver exceptional value to our clients
       </p>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Partnership Approach Section -->
-<section class="partnership-approach">
+<!-- Partnership Philosophy Section -->
+<section class="section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-heading">
-        Partnership <span class="gradient-text">Philosophy</span>
-      </h2>
+      <h2 class="section-title">Partnership Philosophy</h2>
       <p class="section-subtitle">
-        We believe in building long-term strategic relationships that create
-        mutual value and drive innovation
+        Building strategic relationships that create <span class="text-gradient">mutual value</span>
       </p>
     </div>
 
-    <div class="approach-grid">
-      <div class="approach-card">
-        <div class="approach-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    <div class="grid grid-auto-md gap-lg">
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
         </div>
-        <h3>Strategic Collaboration</h3>
-        <p>
-          We form deep, strategic partnerships that go beyond simple vendor
-          relationships to create genuine business value.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Strategic Collaboration</h3>
+        <p class="text-tertiary text-sm">Form deep partnerships that go beyond vendor relationships to create genuine business value.</p>
       </div>
 
-      <div class="approach-card">
-        <div class="approach-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
           </svg>
         </div>
-        <h3>Shared Innovation</h3>
-        <p>
-          Together we develop cutting-edge solutions that neither organization
-          could achieve independently.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Shared Innovation</h3>
+        <p class="text-tertiary text-sm">Develop cutting-edge solutions that neither organization could achieve independently.</p>
       </div>
 
-      <div class="approach-card">
-        <div class="approach-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="12" r="3" />
-            <path
-              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2 2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
-            />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
           </svg>
         </div>
-        <h3>Seamless Integration</h3>
-        <p>
-          Our partnerships ensure smooth integration of technologies and
-          services for optimal client experiences.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Seamless Integration</h3>
+        <p class="text-tertiary text-sm">Ensure smooth integration of technologies and services for optimal client experiences.</p>
       </div>
 
-      <div class="approach-card">
-        <div class="approach-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
           </svg>
         </div>
-        <h3>Accelerated Growth</h3>
-        <p>
-          We leverage combined expertise and resources to accelerate
-          time-to-market and business growth for all parties.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Accelerated Growth</h3>
+        <p class="text-tertiary text-sm">Leverage combined expertise to accelerate time-to-market and business growth.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Current Partners Section -->
-<section class="current-partners">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-heading">
-        Strategic <span class="gradient-text">Partners</span>
-      </h2>
+      <h2 class="section-title">Strategic Partners</h2>
       <p class="section-subtitle">
-        Meet the organizations we collaborate with to deliver exceptional
-        solutions
+        Organizations we collaborate with to deliver <span class="text-gradient">exceptional solutions</span>
       </p>
     </div>
 
-    <div class="partners-grid">
-      <!-- Placeholder for future partners -->
-      <div class="partner-placeholder">
-        <div class="placeholder-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <line x1="12" y1="8" x2="12" y2="16" />
-            <line x1="8" y1="12" x2="16" y2="12" />
-          </svg>
-        </div>
-        <h3>More Partners Coming Soon</h3>
-        <p>
-          We're actively building strategic partnerships to expand our
-          capabilities and service offerings.
-        </p>
+    <div class="card card-primary max-w-2xl mx-auto p-2xl text-center">
+      <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="16"/>
+          <line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
       </div>
+      <h3 class="text-xl font-semibold mb-md">More Partners Coming Soon</h3>
+      <p class="text-secondary">
+        We're actively building strategic partnerships to expand our capabilities and service offerings.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- Partnership Benefits Section -->
-<section class="partnership-benefits">
+<section class="section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-heading">
-        Partnership <span class="gradient-text">Benefits</span>
-      </h2>
+      <h2 class="section-title">Partnership Benefits</h2>
       <p class="section-subtitle">
-        What makes partnering with us valuable for your organization
+        What makes partnering with us <span class="text-gradient">valuable for your organization</span>
       </p>
     </div>
 
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-            />
+    <div class="grid grid-3 gap-lg grid-mobile-1">
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
           </svg>
         </div>
-        <h3>Market Expansion</h3>
-        <p>
-          Access new markets and customer segments through our established
-          client network and industry relationships.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Market Expansion</h3>
+        <p class="text-tertiary text-sm">Access new markets and customer segments through our established client network.</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M9 11H3v10h6V11zM21 3h-6v18h6V3zM15 7h-6v14h6V7z" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
         </div>
-        <h3>Revenue Growth</h3>
-        <p>
-          Generate new revenue streams through joint solution development and
-          collaborative go-to-market strategies.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Revenue Growth</h3>
+        <p class="text-tertiary text-sm">Generate new revenue streams through joint solution development and go-to-market strategies.</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
           </svg>
         </div>
-        <h3>Knowledge Sharing</h3>
-        <p>
-          Benefit from shared expertise, best practices, and collaborative
-          learning across different domains and industries.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Knowledge Sharing</h3>
+        <p class="text-tertiary text-sm">Benefit from shared expertise and collaborative learning across different domains.</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 6v6l4 2" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
           </svg>
         </div>
-        <h3>Faster Innovation</h3>
-        <p>
-          Accelerate product development and innovation cycles through combined
-          resources and complementary capabilities.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Faster Innovation</h3>
+        <p class="text-tertiary text-sm">Accelerate product development through combined resources and complementary capabilities.</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-            <circle cx="12" cy="16" r="1" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <circle cx="12" cy="16" r="1"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
           </svg>
         </div>
-        <h3>Risk Mitigation</h3>
-        <p>
-          Share risks and reduce individual exposure while maintaining high
-          quality standards and delivery commitments.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Risk Mitigation</h3>
+        <p class="text-tertiary text-sm">Share risks while maintaining high quality standards and delivery commitments.</p>
       </div>
 
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-            />
-            <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
-            <line x1="12" y1="22.08" x2="12" y2="12" />
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
           </svg>
         </div>
-        <h3>Competitive Advantage</h3>
-        <p>
-          Gain competitive edge through exclusive partnerships and access to
-          cutting-edge technologies and methodologies.
-        </p>
+        <h3 class="text-lg font-semibold mb-sm">Competitive Advantage</h3>
+        <p class="text-tertiary text-sm">Gain competitive edge through exclusive partnerships and cutting-edge technologies.</p>
       </div>
     </div>
   </div>
@@ -285,3 +193,4 @@
 
 <!-- Include standard CTA -->
 {% include 'cta.html' %}
+{% endblock %}

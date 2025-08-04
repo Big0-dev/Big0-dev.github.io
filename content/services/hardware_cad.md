@@ -2,7 +2,6 @@
 title: Hardware CAD Design
 description: Professional 3D mechanical design, product enclosures, and prototyping services from concept sketches to manufacturing-ready CAD models
 icon: box
-price: Custom pricing based on scope
 features: 3D mechanical design, Product enclosures, Prototyping support, DFM analysis, 3D printing preparation, Technical drawings
 ---
 

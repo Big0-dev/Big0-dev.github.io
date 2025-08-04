@@ -2,7 +2,6 @@
 title: AR/VR Development
 description: Immersive augmented and virtual reality applications for training, education, marketing, and entertainment across multiple platforms and devices
 icon: eye
-price: Custom pricing based on scope
 features: VR applications, AR mobile apps, 3D visualization, Training simulations, Virtual showrooms, Cross-platform development
 ---
 

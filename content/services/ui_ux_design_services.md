@@ -2,7 +2,6 @@
 title: UI/UX Design Services
 description: User-centered design solutions that create intuitive, engaging, and conversion-focused digital experiences across all platforms
 icon: palette
-price: Starting at $1,500/project
 features: User research, Wireframing & prototyping, Visual design, Usability testing, Design systems, Responsive design
 ---
 

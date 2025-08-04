@@ -2,7 +2,6 @@
 title: Healthcare IT Solutions
 description: HIPAA-compliant healthcare technology including electronic health records, telemedicine platforms, medical device integration, and patient management systems
 icon: heart
-price: Custom pricing based on scope
 features: Electronic health records, Telemedicine platforms, Medical device integration, Patient portals, HIPAA compliance, Healthcare analytics
 ---
 

@@ -1,40 +1,66 @@
-<!-- gallery.html - Simplified and Enhanced -->
-<div class="page-hero">
-  <div class="hero-bg-pattern"></div>
+{% extends "base.html" %}
+
+{% block title %}Gallery{% endblock %}
+{% block meta_description %}Explore Big0's project gallery showcasing our work in AI, cloud computing, and digital transformation.{% endblock %}
+{% block canonical_path %}/gallery.html{% endblock %}
+
+{% block custom_css %}
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
   <div class="container">
-    <div class="page-hero-content">
-      <h1 class="page-title">Project <span class="gradient-text">Gallery</span></h1>
-      <p class="page-subtitle">Showcasing our innovations and client success stories</p>
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-lg">
+        Project <span class="text-gradient">Gallery</span>
+      </h1>
+      <p class="text-xl text-secondary">
+        Showcasing our innovations and client success stories
+      </p>
     </div>
   </div>
-</div>
+</section>
 
-<section class="gallery-section">
+<section class="section">
   <div class="container">
-    <div class="gallery-grid">
+    <div class="section-header">
+      <h2 class="section-title">Event Highlights</h2>
+      <p class="section-subtitle">
+        Moments captured from our <span class="text-gradient">journey of innovation</span>
+      </p>
+    </div>
+    
+    <div class="grid grid-auto-md gap-lg">
       {% for image in images %}
-      <div class="gallery-item">
+      <div class="card p-0 overflow-hidden position-relative gallery-item">
         <button 
-          class="gallery-link" 
+          class="w-full h-full border-0 bg-transparent cursor-pointer p-0" 
           popovertarget="gallery-lightbox-{{ loop.index }}"
           popovertargetaction="toggle"
+          style="aspect-ratio: 16/9;"
         >
           <img 
             src="{{ gallery_url }}/{{ image.filename }}" 
             alt="{{ image.title }}"
             loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover;"
           />
-          <div class="gallery-overlay">
-            <div class="overlay-content">
-              <div class="overlay-text">
-                <h3>{{ image.title }}</h3>
-                <p class="gallery-category">{{ image.category }}</p>
-                {% if image.date %}
-                <p class="gallery-date">{{ image.date.strftime('%B %Y') }}</p>
-                {% endif %}
-              </div>
-              <div class="view-icon">
-                {{ inject_svg('external-link', True) | safe }}
+          <div class="position-absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-xl">
+            <div class="text-white w-full">
+              <h3 class="text-lg font-semibold mb-xs">{{ image.title }}</h3>
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="badge badge-primary">{{ image.category }}</span>
+                  {% if image.date %}
+                  <span class="text-sm text-white/70 ml-sm">{{ image.date.strftime('%B %Y') }}</span>
+                  {% endif %}
+                </div>
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
               </div>
             </div>
           </div>
@@ -46,14 +72,16 @@
           popover="manual"
           class="gallery-lightbox-popover"
         >
-          <div class="lightbox-content">
+          <div class="lightbox-content" onclick="if(event.target === this) document.getElementById('gallery-lightbox-{{ loop.index }}').hidePopover()">
             <button 
               class="lightbox-close" 
-              popovertarget="gallery-lightbox-{{ loop.index }}"
-              popovertargetaction="hide"
+              onclick="document.getElementById('gallery-lightbox-{{ loop.index }}').hidePopover()"
               aria-label="Close"
             >
-              {{ inject_svg('close', True) | safe }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
             </button>
             
             <!-- Navigation -->
@@ -65,7 +93,9 @@
               onclick="setTimeout(() => document.getElementById('gallery-lightbox-{{ loop.index - 1 }}').showPopover(), 50)"
               aria-label="Previous image"
             >
-              {{ inject_svg('arrow-left', True) | safe }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
             </button>
             {% endif %}
             
@@ -77,7 +107,9 @@
               onclick="setTimeout(() => document.getElementById('gallery-lightbox-{{ loop.index + 1 }}').showPopover(), 50)"
               aria-label="Next image"
             >
-              {{ inject_svg('arrow-right', True) | safe }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
             </button>
             {% endif %}
             
@@ -109,43 +141,43 @@
       {% endfor %}
     </div>
 
-    {% if pagination %}
+    {% if page_num and total_pages and total_pages > 1 %}
     <div class="pagination">
-      <div class="pagination-controls">
-        {% if pagination.has_prev %}
-        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
-          {{ inject_svg('arrow-left', True) | safe }}
-          <span>Previous</span>
-        </a>
-        {% else %}
-        <span class="pagination-link disabled">
-          {{ inject_svg('arrow-left', True) | safe }}
-          <span>Previous</span>
-        </span>
-        {% endif %}
-
-        <div class="pagination-numbers">
-          {% for page in range(1, pagination.total_pages + 1) %}
-            {% if page == pagination.current_page %}
-              <span class="page-number active">{{ page }}</span>
-            {% else %}
-              <a href="./gallery{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-number">{{ page }}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
-
-        {% if pagination.has_next %}
-        <a href="{{ pagination.next_url }}" class="pagination-link next">
-          <span>Next</span>
-          {{ inject_svg('arrow-right', True) | safe }}
-        </a>
-        {% else %}
-        <span class="pagination-link disabled">
-          <span>Next</span>
-          {{ inject_svg('arrow-right', True) | safe }}
-        </span>
-        {% endif %}
-      </div>
+      {% if page_num > 1 %}
+      <a href="./gallery{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="page-link disabled" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </span>
+      {% endif %}
+      
+      {% for page in range(1, total_pages + 1) %}
+      {% if page == page_num %}
+      <span class="page-link active" aria-current="page">{{ page }}</span>
+      {% else %}
+      <a href="./gallery{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
+      {% endif %}
+      {% endfor %}
+      
+      {% if page_num < total_pages %}
+      <a href="./gallery-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="page-link disabled" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </span>
+      {% endif %}
     </div>
     {% endif %}
   </div>
@@ -154,6 +186,29 @@
 <script>
 // Gallery functionality
 document.addEventListener('DOMContentLoaded', function() {
+  const lightboxes = document.querySelectorAll('.gallery-lightbox-popover');
+  
+  // Function to close all lightboxes
+  function closeAllLightboxes() {
+    lightboxes.forEach(lb => {
+      if (lb.matches(':popover-open')) {
+        lb.hidePopover();
+      }
+    });
+  }
+  
+  // Ensure all lightboxes start closed
+  closeAllLightboxes();
+
+  // Add click handlers to gallery buttons to close other lightboxes first
+  const galleryButtons = document.querySelectorAll('.gallery-item button');
+  galleryButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      // Close any open lightbox before opening new one
+      closeAllLightboxes();
+    });
+  });
+
   // Keyboard navigation for lightbox
   document.addEventListener('keydown', function(event) {
     const openPopover = document.querySelector('.gallery-lightbox-popover:popover-open');
@@ -175,12 +230,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Prevent body scroll when lightbox is open
-  const lightboxes = document.querySelectorAll('.gallery-lightbox-popover');
+  // Prevent body scroll when lightbox is open and ensure only one is open
   lightboxes.forEach(lightbox => {
     lightbox.addEventListener('toggle', function(event) {
       if (event.newState === 'open') {
+        // Close any other open lightboxes
+        lightboxes.forEach(otherLightbox => {
+          if (otherLightbox !== lightbox && otherLightbox.matches(':popover-open')) {
+            otherLightbox.hidePopover();
+          }
+        });
+        
         document.body.style.overflow = 'hidden';
+        // Force center position
+        lightbox.style.margin = 'auto';
       } else {
         document.body.style.overflow = '';
       }
@@ -188,3 +251,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+{% endblock %}

@@ -1,0 +1,131 @@
+# Site Configuration
+domain: https://big0.dev
+title: Big0 - AI-Powered Digital Transformation
+
+# Static Pages - These templates contain their own content
+static_pages:
+  - template: index.html
+    output: index.html
+    title: AI-Powered Digital Transformation
+    description: Big0 delivers cutting-edge AI solutions, cloud services, and digital transformation. Transform your business with responsible AI innovation.
+    
+  - template: about.html
+    output: about.html
+    title: About Us
+    description: Learn about Big0's mission to transform businesses through responsible AI innovation, our values, and commitment to excellence.
+    
+  - template: contact.html
+    output: contact.html
+    title: Contact Us
+    description: Get in touch with Big0 for AI consulting, cloud solutions, and digital transformation services. Let's discuss how we can help transform your business.
+    
+  - template: careers.html
+    output: careers.html
+    title: Careers
+    description: Join the Big0 team. Explore career opportunities in AI, machine learning, cloud computing, and data analytics.
+    
+  - template: privacy.html
+    output: privacy.html
+    title: Privacy Policy
+    description: Big0's privacy policy. Learn how we collect, use, and protect your personal information.
+    
+  - template: terms.html
+    output: terms.html
+    title: Terms of Service
+    description: Terms of Service for Big0. Understand the legal agreements that govern the use of our services.
+    
+  - template: 404.html
+    output: 404.html
+    title: Page Not Found
+    description: The page you're looking for could not be found. Return to our homepage to explore our AI and digital transformation services.
+    
+  - template: partners.html
+    output: partners.html
+    title: Our Partners
+    description: Explore Big0's strategic partnerships and collaborations that help us deliver comprehensive digital transformation solutions.
+    
+  - template: products.html
+    output: products.html
+    title: Our Products
+    description: Discover Big0's innovative products and solutions designed to accelerate digital transformation and business growth.
+    
+  - template: gallery.html
+    output: gallery.html
+    title: Gallery
+    description: Browse through our collection of photos from events, team activities, and project showcases.
+    
+  - template: news.html
+    output: news.html
+    title: News & Updates
+    description: Stay updated with the latest news, announcements, and insights from Big0.
+    
+  - template: compliance.html
+    output: compliance.html
+    title: Compliance & Certifications
+    description: Big0's compliance and regulatory certifications. Registered with SECP, FBR, PSEB, PEC and member of PASHA and Islamabad Chamber of Commerce.
+
+# Dynamic Pages - Generated from content files
+content_types:
+  blog:
+    content_dir: ./content/blogs
+    template: blog_post.html
+    listing_template: blog.html
+    output_dir: blog
+    per_page: 6
+    
+  services:
+    content_dir: ./content/services
+    template: service_detail.html
+    listing_template: services.html
+    output_dir: services
+    
+  industries:
+    content_dir: ./content/industries
+    template: industry_detail.html
+    listing_template: industries.html
+    output_dir: industries
+    
+  case_studies:
+    content_dir: ./content/case_studies
+    template: case_study_detail.html
+    listing_template: case_studies.html
+    output_dir: case-studies
+    per_page: 6
+    
+  news:
+    content_dir: ./content/news
+    template: news_detail.html
+    listing_template: news.html
+    output_dir: news
+    per_page: 10
+
+# Navigation URLs
+navigation:
+  home: index.html
+  about: about.html
+  services: services.html
+  services_page: services.html  # Alias for compatibility
+  blog: blog.html
+  blog_page: blog.html  # Alias for compatibility
+  case_studies: case-studies.html
+  careers: careers.html
+  contact: contact.html
+  industries: industries.html
+  partners: partners.html
+  products: products.html
+  gallery: gallery.html
+  news: news.html
+  privacy: privacy.html
+  terms: terms.html
+  compliance: compliance.html
+  sitemap: sitemap.xml
+  image_sitemap: sitemap-images.xml
+
+# Assets
+assets:
+  static_dir: ./static
+  gallery_dir: ./content/gallery
+  output_dir: ./build
+  root_assets:
+    - robots.txt
+    - linkedin_banner.png

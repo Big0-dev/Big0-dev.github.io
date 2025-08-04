@@ -1,74 +1,114 @@
-<section class="case-study-detail">
+{% extends "base.html" %}
+
+{% block title %}{{ current_case_studie.title }}{% endblock %}
+{% block meta_description %}{{ current_case_studie.meta_description }}{% endblock %}
+{% block canonical_path %}/case-studies/{{ current_case_studie.slug }}.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/detail-pages.css">
+{% endblock %}
+
+{% block content %}
+<!-- Case Study Hero -->
+<section class="page-hero">
   <div class="container">
-    <div class="case-study-header">
-      <div class="case-study-meta">
-        <span class="case-study-industry">{{ industry }}</span>
-        <span class="case-study-type">{{ type }}</span>
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <div class="flex items-center justify-center gap-md mb-md">
+        <span class="badge">{{ current_case_studie.frontmatter.industry | default('Technology') }}</span>
+        <span class="badge badge-secondary">{{ current_case_studie.frontmatter.type | default('Case Study') }}</span>
       </div>
-      <h1>{{ title }}</h1>
-      {% if icon %}
-      <div class="case-study-icon-large">
-        {{ inject_svg(icon, True) | safe }}
-      </div>
-      {% endif %}
+      <h1 class="text-4xl font-bold">{{ current_case_studie.title }}</h1>
     </div>
+  </div>
+</section>
 
-    <!-- Challenge and Solution in Grid Layout -->
-    {% if challenge or solution %}
-    <div class="case-study-summary-grid">
-      {% if challenge %}
-      <div class="case-study-challenge-section">
-        <h2>The Challenge</h2>
-        <p>{{ challenge }}</p>
-      </div>
-      {% endif %}
+<!-- Case Study Content -->
+<section class="section">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
       
-      {% if solution %}
-      <div class="case-study-solution-section">
-        <h2>Our Solution</h2>
-        <p>{{ solution }}</p>
+      <!-- Challenge and Solution -->
+      {% if current_case_studie.frontmatter.challenge or current_case_studie.frontmatter.solution %}
+      <div class="grid grid-2 gap-xl mb-3xl grid-mobile-1">
+        {% if current_case_studie.frontmatter.challenge %}
+        <div class="card p-xl">
+          <div class="icon-container icon-lg icon-gradient mb-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-md">The Challenge</h3>
+          <p class="text-tertiary">{{ current_case_studie.frontmatter.challenge }}</p>
+        </div>
+        {% endif %}
+        
+        {% if current_case_studie.frontmatter.solution %}
+        <div class="card p-xl">
+          <div class="icon-container icon-lg icon-gradient mb-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 11 12 14 22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-md">Our Solution</h3>
+          <p class="text-tertiary">{{ current_case_studie.frontmatter.solution }}</p>
+        </div>
+        {% endif %}
       </div>
       {% endif %}
-    </div>
-    {% endif %}
 
-    {% if results %}
-    <div class="case-study-results-section">
-      <h2>Results & Impact</h2>
-      <div class="results-grid">
+      <!-- Results & Impact -->
+      {% if current_case_studie.frontmatter.results %}
+      <div class="section-header mb-xl">
+        <h2 class="section-title">Results & Impact</h2>
+      </div>
+      <div class="grid grid-2 gap-xl mb-3xl grid-mobile-1">
+        {% set results = current_case_studie.frontmatter.results.split(',') %}
+        {% set descriptions = current_case_studie.frontmatter.result_descriptions.split(',') if current_case_studie.frontmatter.result_descriptions else [] %}
         {% for result in results %}
-        <div class="result-item">
-          <div class="result-value">{{ result.value }}</div>
-          <div class="result-label">{{ result.label }}</div>
-          {% if result.description %}
-          <div class="result-description">{{ result.description }}</div>
+        <div class="card p-lg text-center">
+          <div class="text-3xl font-bold text-gradient mb-sm">{{ result.strip() }}</div>
+          {% if descriptions[loop.index0] %}
+          <p class="text-tertiary text-sm">{{ descriptions[loop.index0].strip() }}</p>
           {% endif %}
         </div>
         {% endfor %}
       </div>
-    </div>
-    {% endif %}
+      {% endif %}
 
-    {% if technologies %}
-    <div class="case-study-tech-section">
-      <h2>Technologies Used</h2>
-      <ul class="tech-list">
-        {% for tech in technologies %}
-        <li>{{ tech }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
+      <!-- Main Content -->
+      <div class="detail-content mb-3xl">
+        {{ current_case_studie.content_html | safe }}
+      </div>
 
-    <div class="case-study-content">{{ case_study_content | safe }}</div>
+      <!-- Technologies Used -->
+      {% if current_case_studie.frontmatter.technologies %}
+      <div class="mb-3xl">
+        <h3 class="text-lg font-semibold mb-lg">Technologies Used</h3>
+        <div class="flex flex-wrap gap-sm">
+          {% for tech in current_case_studie.frontmatter.technologies.split(',') %}
+          <span class="badge badge-secondary">{{ tech.strip() }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
 
-    {% include 'cta.html' %}
-    
-    <div class="case-study-navigation">
-      <a href="../case-studies.html" class="back-link">
-        {{ inject_svg('arrow-left', True) | safe }}
-        <span>Back to Case Studies</span>
-      </a>
+      <!-- Navigation -->
+      <div class="text-center">
+        <a href="../case-studies.html" class="btn btn-secondary">
+          <svg class="mr-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Back to Case Studies
+        </a>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- CTA Section -->
+{% include 'cta.html' %}
+{% endblock %}

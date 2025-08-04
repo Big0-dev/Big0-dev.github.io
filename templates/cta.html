@@ -1,19 +1,16 @@
-<div class="service-cta-section">
-  <div class="cta-container">
-    <div class="service-cta-card">
-      <div class="cta-glow-effect"></div>
-      <div class="service-cta-content">
-        <h3>Ready to Get Started?</h3>
-        <p>
-          Let's discuss how we can help transform your business with this
-          solution.
-        </p>
-        <div class="cta-buttons">
-          <a href="{{ config.domain }}/contact.html" class="primary-btn">
-            <span>Contact Our Team</span>
-          </a>
-        </div>
-      </div>
-    </div>
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-background">
+    <div class="cta-pattern"></div>
   </div>
-</div>
+  
+  <div class="cta-content text-center">
+    <h2 class="cta-title">{{ cta_title | default('Ready to Transform Your Business?') }}</h2>
+    <p class="cta-description">
+      {{ cta_description | default("Let's discuss how our AI-powered solutions can drive your growth") }}
+    </p>
+    <a href="{{ contact }}" class="btn btn-primary btn-lg hover-scale">
+      Start Your Journey
+    </a>
+  </div>
+</section>

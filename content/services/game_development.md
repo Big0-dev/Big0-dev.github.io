@@ -2,7 +2,6 @@
 title: Game Development
 description: Custom game development for mobile, web, and desktop platforms including 2D/3D games, multiplayer systems, and monetization strategies
 icon: gamepad
-price: Custom pricing based on scope
 features: Mobile game development, Multiplayer systems, 2D/3D graphics, In-app purchases, Analytics integration, Cross-platform deployment
 ---
 

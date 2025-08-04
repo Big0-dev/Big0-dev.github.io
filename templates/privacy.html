@@ -1,147 +1,185 @@
-<section class="info-section">
-  <div class="info-container">
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: March 2, 2025</p>
+{% extends "base.html" %}
 
-    <div class="info-content">
-      <div class="intro-text">
-        <p>
-          We are committed to protecting your privacy. This Privacy Policy
-          explains how we collect, use, and safeguard your information when you
-          visit our website and use our services.
-        </p>
-      </div>
+{% block title %}Privacy Policy{% endblock %}
+{% block meta_description %}Big0's Privacy Policy - Learn how we collect, use, and protect your personal information.{% endblock %}
+{% block canonical_path %}/privacy.html{% endblock %}
 
-      <h2>1. Information We Collect</h2>
-      <p>
-        We may collect information about you in a variety of ways. The
-        information we may collect on the website includes:
+{% block custom_css %}
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-lg">
+        Privacy <span class="text-gradient">Policy</span>
+      </h1>
+      <p class="text-xl text-secondary">
+        Your privacy is important to us. Learn how we protect your data.
       </p>
-      <ul class="privacy-list">
-        <li>
-          <strong>Personal Data:</strong> Personally identifiable information
-          that you provide to us when you register, make a purchase, or contact
-          us
-        </li>
-        <li>
-          <strong>Usage Data:</strong> Information automatically collected when
-          you visit our website, including your IP address, browser type, and
-          pages visited
-        </li>
-        <li>
-          <strong>Cookies:</strong> Small data files stored on your device to
-          enhance your browsing experience
-        </li>
-      </ul>
+    </div>
+  </div>
+</section>
 
-      <h2>2. How We Use Your Information</h2>
-      <p>
-        Having accurate information about you permits us to provide you with a
-        smooth, efficient, and customized experience. Specifically, we may use
-        information collected about you via the website to:
-      </p>
-      <ul class="privacy-list">
-        <li>Create and manage your account</li>
-        <li>Process your transactions and send you related information</li>
-        <li>Email you regarding your account or order</li>
-        <li>
-          Fulfill and manage purchases, orders, payments, and other transactions
-        </li>
-        <li>
-          Generate a personal profile about you to make future visits to the
-          website more personalized
-        </li>
-        <li>Increase the efficiency and operation of the website</li>
-        <li>Monitor and analyze usage and trends to improve your experience</li>
-        <li>Notify you of updates to the website</li>
-        <li>Resolve disputes and troubleshoot problems</li>
-        <li>Respond to product and customer service requests</li>
-      </ul>
+<!-- Privacy Content -->
+<section class="section">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
+      <div class="card p-2xl">
+        <p class="text-sm text-muted mb-xl">Last updated: March 2, 2025</p>
+        
+        <div class="mb-2xl">
+          <p class="text-lg text-secondary leading-relaxed">
+            We are committed to protecting your privacy. This Privacy Policy
+            explains how we collect, use, and safeguard your information when you
+            visit our website and use our services.
+          </p>
+        </div>
 
-      <h2>3. Disclosure of Your Information</h2>
-      <p>
-        We may share information we have collected about you in certain
-        situations. Your information may be disclosed as follows:
-      </p>
-      <ul class="privacy-list">
-        <li>
-          <strong>By Law or to Protect Rights:</strong> If we believe the
-          release of information about you is necessary to respond to legal
-          process, to investigate or remedy potential violations of our
-          policies, or to protect the rights, property, and safety of others
-        </li>
-        <li>
-          <strong>Business Transfers:</strong> We may share or transfer your
-          information in connection with, or during negotiations of, any merger,
-          sale of company assets, financing, or acquisition of all or a portion
-          of our business to another company
-        </li>
-        <li>
-          <strong>Third-Party Service Providers:</strong> We may share your
-          information with third parties that perform services for us or on our
-          behalf
-        </li>
-      </ul>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">1. Information We Collect</h2>
+          <p class="text-secondary mb-md">
+            We may collect information about you in a variety of ways. The
+            information we may collect on the website includes:
+          </p>
+          <ul class="list-disc list-inside space-y-sm text-secondary">
+            <li>
+              <strong class="text-primary">Personal Data:</strong> Personally identifiable information
+              that you provide to us when you register, make a purchase, or contact
+              us
+            </li>
+            <li>
+              <strong class="text-primary">Usage Data:</strong> Information automatically collected when
+              you visit our website, including your IP address, browser type, and
+              pages visited
+            </li>
+            <li>
+              <strong class="text-primary">Cookies:</strong> Small data files stored on your device to
+              enhance your browsing experience
+            </li>
+          </ul>
+        </div>
 
-      <h2>4. Security of Your Information</h2>
-      <p>
-        We use administrative, technical, and physical security measures to help
-        protect your personal information. While we have taken reasonable steps
-        to secure the personal information you provide to us, please be aware
-        that despite our efforts, no security measures are perfect or
-        impenetrable.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">2. How We Use Your Information</h2>
+          <p class="text-secondary mb-md">
+            Having accurate information about you permits us to provide you with a
+            smooth, efficient, and customized experience. Specifically, we may use
+            information collected about you via the website to:
+          </p>
+          <ul class="list-disc list-inside space-y-sm text-secondary">
+            <li>Create and manage your account</li>
+            <li>Process your transactions and send you related information</li>
+            <li>Email you regarding your account or order</li>
+            <li>Fulfill and manage purchases, orders, payments, and other transactions</li>
+            <li>Generate a personal profile about you to make future visits more personalized</li>
+            <li>Increase the efficiency and operation of the website</li>
+            <li>Monitor and analyze usage and trends to improve your experience</li>
+            <li>Notify you of updates to the website</li>
+            <li>Resolve disputes and troubleshoot problems</li>
+            <li>Respond to product and customer service requests</li>
+          </ul>
+        </div>
 
-      <h2>5. Policy for Children</h2>
-      <p>
-        We do not knowingly solicit information from or market to children under
-        the age of 13. If we learn that we have collected personal information
-        from a child under age 13 without verification of parental consent, we
-        will delete that information as quickly as possible.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">3. Disclosure of Your Information</h2>
+          <p class="text-secondary mb-md">
+            We may share information we have collected about you in certain
+            situations. Your information may be disclosed as follows:
+          </p>
+          <ul class="list-disc list-inside space-y-sm text-secondary">
+            <li>
+              <strong class="text-primary">By Law or to Protect Rights:</strong> If we believe the
+              release of information about you is necessary to respond to legal
+              process, to investigate or remedy potential violations of our
+              policies, or to protect the rights, property, and safety of others
+            </li>
+            <li>
+              <strong class="text-primary">Business Transfers:</strong> We may share or transfer your
+              information in connection with, or during negotiations of, any merger,
+              sale of company assets, financing, or acquisition of all or a portion
+              of our business to another company
+            </li>
+            <li>
+              <strong class="text-primary">Third-Party Service Providers:</strong> We may share your
+              information with third parties that perform services for us or on our
+              behalf
+            </li>
+          </ul>
+        </div>
 
-      <h2>6. Controls for Do-Not-Track Features</h2>
-      <p>
-        Most web browsers and some mobile operating systems include a
-        Do-Not-Track ("DNT") feature or setting you can activate to signal your
-        privacy preference not to have data about your online browsing
-        activities monitored and collected.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">4. Security of Your Information</h2>
+          <p class="text-secondary">
+            We use administrative, technical, and physical security measures to help
+            protect your personal information. While we have taken reasonable steps
+            to secure the personal information you provide to us, please be aware
+            that despite our efforts, no security measures are perfect or
+            impenetrable.
+          </p>
+        </div>
 
-      <h2>7. Options Regarding Your Information</h2>
-      <p>
-        You may at any time review or change the information in your account or
-        terminate your account by:
-      </p>
-      <ul class="privacy-list">
-        <li>Logging into your account settings and updating your account</li>
-        <li>Contacting us using the contact information provided below</li>
-      </ul>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">5. Policy for Children</h2>
+          <p class="text-secondary">
+            We do not knowingly solicit information from or market to children under
+            the age of 13. If we learn that we have collected personal information
+            from a child under age 13 without verification of parental consent, we
+            will delete that information as quickly as possible.
+          </p>
+        </div>
 
-      <h2>8. California Privacy Rights</h2>
-      <p>
-        California Civil Code Section 1798.83, also known as the "Shine The
-        Light" law, permits our users who are California residents to request
-        and obtain from us, once a year and free of charge, information about
-        categories of personal information disclosed to third parties for direct
-        marketing purposes.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">6. Controls for Do-Not-Track Features</h2>
+          <p class="text-secondary">
+            Most web browsers and some mobile operating systems include a
+            Do-Not-Track ("DNT") feature or setting you can activate to signal your
+            privacy preference not to have data about your online browsing
+            activities monitored and collected.
+          </p>
+        </div>
 
-      <h2>9. Contact Us</h2>
-      <p>
-        If you have questions or comments about this Privacy Policy, please
-        contact us through our website's contact form or email.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">7. Options Regarding Your Information</h2>
+          <p class="text-secondary mb-md">
+            You may at any time review or change the information in your account or
+            terminate your account by:
+          </p>
+          <ul class="list-disc list-inside space-y-sm text-secondary">
+            <li>Logging into your account settings and updating your account</li>
+            <li>Contacting us using the contact information provided below</li>
+          </ul>
+        </div>
 
-      <div class="effective-notice">
-        <p>
-          <strong
-            >This privacy policy is effective as of the date stated at the top
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">8. California Privacy Rights</h2>
+          <p class="text-secondary">
+            California Civil Code Section 1798.83, also known as the "Shine The
+            Light" law, permits our users who are California residents to request
+            and obtain from us, once a year and free of charge, information about
+            categories of personal information disclosed to third parties for direct
+            marketing purposes.
+          </p>
+        </div>
+
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">9. Contact Us</h2>
+          <p class="text-secondary">
+            If you have questions or comments about this Privacy Policy, please
+            contact us through our website's contact form or email.
+          </p>
+        </div>
+
+        <div class="bg-light p-lg rounded-lg">
+          <p class="text-sm text-secondary font-medium">
+            This privacy policy is effective as of the date stated at the top
             of this Privacy Policy. We may change this Privacy Policy from time
-            to time.</strong
-          >
-        </p>
+            to time.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+{% endblock %}

@@ -2,7 +2,6 @@
 title: Fintech Development
 description: Secure financial technology solutions including digital banking, payment systems, cryptocurrency platforms, and regulatory-compliant financial applications
 icon: dollar-sign
-price: Custom pricing based on scope
 features: Digital banking platforms, Payment gateways, Cryptocurrency solutions, Trading platforms, Regulatory compliance, Security & encryption
 ---
 

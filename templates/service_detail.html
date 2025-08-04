@@ -1,30 +1,73 @@
-<section class="service-detail">
+{% extends "base.html" %}
+
+{% block title %}{{ current_service.title }}{% endblock %}
+{% block meta_description %}{{ current_service.meta_description }}{% endblock %}
+{% block canonical_path %}/services/{{ current_service.slug }}.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/detail-pages.css">
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
+{% endblock %}
+
+{% block content %}
+<!-- Service Detail Hero -->
+<section class="page-hero">
   <div class="container">
-    <div class="service-header">
-      <h1>{{ title }}</h1>
-      {% if price %}
-      <div class="service-price-badge">{{ price }}</div>
-      {% endif %}
-    </div>
-
-    <div class="service-content">{{ service_content | safe }}</div>
-
-    {% if features %}
-    <div class="service-features-section">
-      <h2>Key Features</h2>
-      <ul class="service-features-list">
-        {% for feature in features %}
-        <li>{{ feature }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    <div class="service-navigation">
-      <a href="../services.html" class="back-link">
-        {{ inject_svg('arrow-left', True) | safe }}
-        <span>Back to Services</span>
-      </a>
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold">{{ current_service.title }}</h1>
+      <p class="text-xl text-secondary mt-lg">
+        {{ current_service.frontmatter.tagline | default('Transform your business with our expert solutions') }}
+      </p>
     </div>
   </div>
 </section>
+
+<!-- Service Content -->
+<section class="section">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
+      <!-- Main Content -->
+      <div class="detail-content">
+        {{ current_service.content_html | safe }}
+      </div>
+
+      {% if current_service.features %}
+      <!-- Key Features -->
+      <div class="key-features-section">
+        <h3 class="text-lg font-semibold mb-lg text-gradient">Key Features</h3>
+        <div class="features-grid">
+          {% for feature in current_service.features %}
+          <div class="feature-item">
+            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{{ feature }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Navigation -->
+      <div class="text-center mt-3xl">
+        <a href="../services.html" class="btn btn-secondary">
+          <svg class="mr-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Back to Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="max-w-2xl mx-auto">
+      {% include 'contact-form-bant.html' %}
+    </div>
+  </div>
+</section>
+{% endblock %}

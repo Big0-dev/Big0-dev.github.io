@@ -2,7 +2,6 @@
 title: E-commerce Solutions
 description: Complete e-commerce platforms and marketplace solutions that drive sales, enhance customer experience, and scale with your business growth
 icon: shopping-cart
-price: Starting at $1,500/project
 features: Custom e-commerce development, Multi-vendor marketplaces, Payment gateway integration, Inventory management, Mobile commerce, Analytics & reporting
 ---
 

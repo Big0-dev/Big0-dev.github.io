@@ -1,197 +1,142 @@
-<!-- blog.html -->
-<div class="page-hero">
-  <div class="hero-bg-pattern"></div>
+{% extends "base.html" %}
+
+{% block title %}Blog & Insights{% endblock %}
+{% block meta_description %}Stay updated with Big0's latest insights on AI, cloud computing, digital transformation, and technology trends.{% endblock %}
+{% block canonical_path %}/blog.html{% endblock %}
+
+{% block custom_css %}
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
   <div class="container">
-    <div class="page-hero-content">
-      <h1 class="page-title">
-        Tech <span class="gradient-text">Insights</span>
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-lg">
+        Tech <span class="text-gradient">Insights</span>
       </h1>
-      <p class="page-subtitle">
-        Industry trends, technical deep-dives, and innovation stories from the
-        frontlines of AI and technology
+      <p class="text-xl text-secondary">
+        Industry trends, technical deep-dives, and innovation stories from the frontlines of AI and technology
       </p>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Featured Article Section -->
-{% if blog_posts and blog_posts|length > 0 %}
-<section class="featured-article">
+<!-- Newsletter Section -->
+<section class="section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-heading">
-        Featured <span class="gradient-text">Article</span>
-      </h2>
+      <h2 class="section-title">Stay Updated</h2>
+      <p class="section-subtitle">
+        Subscribe to our <span class="text-gradient">LinkedIn newsletter</span> for exclusive insights
+      </p>
     </div>
-
-    <article class="featured-post">
-      <div class="featured-image">
-        <img
-          src="{{ blog_posts[0].image_url }}"
-          alt="{{ blog_posts[0].title }}"
-          loading="lazy"
-        />
-        <div class="featured-category">{{ blog_posts[0].category }}</div>
+    
+    <div class="card card-primary text-center max-w-2xl mx-auto p-2xl">
+      <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
       </div>
-      <div class="featured-content">
-        <h3>
-          <a href="{{ blog_posts[0].filename }}">{{ blog_posts[0].title }}</a>
-        </h3>
-        <p>{{ blog_posts[0].meta_des | truncate(200) }}</p>
-        <div class="featured-footer">
-          <span class="featured-date">{{ blog_posts[0].date }}</span>
-          <a href="{{ blog_posts[0].filename }}" class="featured-cta">
-            Read Full Article
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-{% endif %}
-
-<!-- Newsletter CTA Section -->
-<section class="newsletter-cta-section">
-  <div class="container">
-    <div class="newsletter-cta-card">
-      <div class="newsletter-cta-content">
-        <h3>
-          Stay Updated with <span class="gradient-text">Zero to One</span>
-        </h3>
-        <p>
-          Get weekly tech insights and AI breakthroughs delivered to your
-          LinkedIn feed.
-        </p>
-        <div class="newsletter-cta-actions">
-          <a
-            href="https://www.linkedin.com/newsletters/zero-to-one-tech-frontiers-7348601809155842050/"
-            class="primary-btn newsletter-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="btn-icon"
-              >{{ inject_svg('linkedin', True) | safe }}</span
-            >
-            Subscribe on LinkedIn
-          </a>
-        </div>
-      </div>
+      <p class="text-secondary mb-lg">
+        Subscribe to our LinkedIn newsletter for the latest insights on AI, technology trends, and industry innovations delivered directly to your feed.
+      </p>
+      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7348601809155842050" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Subscribe on LinkedIn
+        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
-
 
 <!-- All Articles Section -->
-<section class="blog-section">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-heading">
-        All <span class="gradient-text">Articles</span>
-      </h2>
+      <h2 class="section-title">All Articles</h2>
       <p class="section-subtitle">
-        Stay updated with the latest in AI, technology, and industry innovations
+        Explore our complete library of <span class="text-gradient">insights and analysis</span>
       </p>
     </div>
 
-    <div class="blog-grid">
-      {% for post in blog_posts %}
-      <article class="blog-card">
-        <div class="blog-card-image">
-          <img
-            src="{{ post.image_url }}"
-            alt="{{ post.title }}"
-            loading="lazy"
-          />
-          <div class="blog-card-category">{{ post.category }}</div>
-        </div>
-
-        <div class="blog-card-content">
-          <h3><a href="{{ post.filename }}">{{ post.title }}</a></h3>
-          <p>{{ post.meta_des | truncate(120) }}</p>
-
-          <div class="blog-card-footer">
-            <span class="blog-date">{{ post.date }}</span>
-            <a href="{{ post.filename }}" class="read-more">
-              Read More
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+    <div class="grid grid-3 gap-2xl grid-mobile-1">
+      {% for post in all_blog %}
+      <article class="card card-hover">
+        <a href="./blog/{{ post.slug }}.html" class="insights-card">
+          {% if post.frontmatter.image_url %}
+          <div class="insights-image">
+            <img
+              src="{{ static }}/{{ post.frontmatter.image_url }}"
+              alt="{{ post.title }}"
+              class="w-full h-full object-cover"
+            />
           </div>
-        </div>
+          {% endif %}
+          
+          <div class="insights-content">
+            <div class="insights-meta">
+              <span class="text-xs text-muted">{{ post.frontmatter.date | default('') }}</span>
+            </div>
+            <span class="badge mb-md">{{ post.frontmatter.category | default('Technology') }}</span>
+            
+            <h3>{{ post.title }}</h3>
+            <p class="line-clamp-3">{{ post.meta_description }}</p>
+            <span class="text-primary font-medium">Read More →</span>
+          </div>
+        </a>
       </article>
       {% endfor %}
     </div>
 
 
-{% include 'cta.html' %}
-
-    {% if pagination %}
+    {% if total_pages > 1 %}
     <div class="pagination">
-      <div class="pagination-controls">
-        {% if pagination.has_prev %}
-        <a href="{{ pagination.prev_url }}" class="pagination-link prev">
-          <span class="pagination-icon"
-            >{{ inject_svg('arrow-left', True) | safe }}</span
-          >
-          Previous
-        </a>
-        {% else %}
-        <span class="pagination-link disabled">
-          <span class="pagination-icon"
-            >{{ inject_svg('arrow-left', True) | safe }}</span
-          >
-          Previous
-        </span>
-        {% endif %}
-
-        <div class="pagination-numbers">
-          {% for page in range(1, pagination.total_pages + 1) %} {% if page ==
-          pagination.current_page %}
-          <span class="page-number active">{{ page }}</span>
-          {% else %}
-          <a
-            href="./blog{% if page > 1 %}-{{ page }}{% endif %}.html"
-            class="page-number"
-            >{{ page }}</a
-          >
-          {% endif %} {% endfor %}
-        </div>
-
-        {% if pagination.has_next %}
-        <a href="{{ pagination.next_url }}" class="pagination-link next">
-          Next
-          <span class="pagination-icon"
-            >{{ inject_svg('arrow-right', True) | safe }}</span
-          >
-        </a>
-        {% else %}
-        <span class="pagination-link disabled">
-          Next
-          <span class="pagination-icon"
-            >{{ inject_svg('arrow-right', True) | safe }}</span
-          >
-        </span>
-        {% endif %}
-      </div>
+      {% if page_num > 1 %}
+      <a href="./blog{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="page-link disabled" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </span>
+      {% endif %}
+      
+      {% for page in range(1, total_pages + 1) %}
+      {% if page == page_num %}
+      <span class="page-link active" aria-current="page">{{ page }}</span>
+      {% else %}
+      <a href="./blog{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
+      {% endif %}
+      {% endfor %}
+      
+      {% if page_num < total_pages %}
+      <a href="./blog-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="page-link disabled" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </span>
+      {% endif %}
     </div>
     {% endif %}
   </div>
 </section>
+
+<!-- CTA Section -->
+{% include 'cta.html' %}
+{% endblock %}

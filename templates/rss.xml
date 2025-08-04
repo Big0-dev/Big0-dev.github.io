@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>{{ 'Big0 - News, Insights & Case Studies' | xmlescape }}</title>
+        <link>{{ domain }}</link>
+        <description>{{ 'Latest news, insights, case studies, and thought leadership from Big0 - AI-Powered Digital Transformation' | xmlescape }}</description>
+        <language>en-us</language>
+        <lastBuildDate>{{ build_date }}</lastBuildDate>
+        <atom:link href="{{ domain }}/rss.xml" rel="self" type="application/rss+xml"/>
+        <generator>Big0 Static Site Generator</generator>
+        <webMaster>noreply@big0.dev (Big0 Dev Team)</webMaster>
+        <managingEditor>noreply@big0.dev (Big0 Editorial Team)</managingEditor>
+        <copyright>Copyright © {{ current_year }} Big0 Dev Private Limited. All rights reserved.</copyright>
+        <ttl>1440</ttl>
+        <image>
+            <url>{{ domain }}/static/big0-banner.png</url>
+            <title>Big0 - AI-Powered Digital Transformation</title>
+            <link>{{ domain }}</link>
+        </image>
+        
+        {% for item in feed_items %}
+        <item>
+            <title>{{ item.title | xmlescape }}</title>
+            <link>{{ domain }}/{{ item.url }}</link>
+            <guid isPermaLink="true">{{ domain }}/{{ item.url }}</guid>
+            <description>{{ item.description | xmlescape }}</description>
+            <content:encoded><![CDATA[
+                {{ item.content_html | safe }}
+            ]]></content:encoded>
+            <dc:creator>Big0 Team</dc:creator>
+            <pubDate>{{ item.pub_date }}</pubDate>
+            <category>{{ item.category | xmlescape }}</category>
+            {% for tag in item.tags %}
+            <category>{{ tag | xmlescape }}</category>
+            {% endfor %}
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

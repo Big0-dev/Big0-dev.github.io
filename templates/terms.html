@@ -1,99 +1,134 @@
-<section class="info-section">
-  <div class="info-container">
-    <h1>Terms of Service</h1>
-    <p class="last-updated">Last Updated: March 2, 2025</p>
+{% extends "base.html" %}
 
-    <div class="info-content">
-      <div class="intro-text">
-        <p>
-          Welcome to our website. These Terms of Service ("Terms") govern your
-          use of our website and services. By accessing or using our services,
-          you agree to be bound by these Terms.
-        </p>
-      </div>
+{% block title %}Terms of Service{% endblock %}
+{% block meta_description %}Big0's Terms of Service - Read our terms and conditions for using our services.{% endblock %}
+{% block canonical_path %}/terms.html{% endblock %}
 
-      <h2>1. Acceptance of Terms</h2>
-      <p>
-        By accessing and using this website, you accept and agree to be bound by
-        the terms and provision of this agreement. If you do not agree to abide
-        by the above, please do not use this service.
+{% block custom_css %}
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold mb-lg">
+        Terms of <span class="text-gradient">Service</span>
+      </h1>
+      <p class="text-xl text-secondary">
+        Please read these terms carefully before using our services
       </p>
+    </div>
+  </div>
+</section>
 
-      <h2>2. Use License</h2>
-      <p>
-        Permission is granted to temporarily download one copy of the materials
-        on our website for personal, non-commercial transitory viewing only.
-        This is the grant of a license, not a transfer of title, and under this
-        license you may not:
-      </p>
-      <ul class="terms-list">
-        <li>Modify or copy the materials</li>
-        <li>
-          Use the materials for any commercial purpose or for any public display
-        </li>
-        <li>
-          Attempt to reverse engineer any software contained on the website
-        </li>
-        <li>
-          Remove any copyright or other proprietary notations from the materials
-        </li>
-      </ul>
+<!-- Terms Content -->
+<section class="section">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
+      <div class="card p-2xl">
+        <p class="text-sm text-muted mb-xl">Last updated: March 2, 2025</p>
+        
+        <div class="mb-2xl">
+          <p class="text-lg text-secondary leading-relaxed">
+            Welcome to our website. These Terms of Service ("Terms") govern your
+            use of our website and services. By accessing or using our services,
+            you agree to be bound by these Terms.
+          </p>
+        </div>
 
-      <h2>3. Disclaimer</h2>
-      <p>
-        The materials on our website are provided on an 'as is' basis. We make
-        no warranties, expressed or implied, and hereby disclaim and negate all
-        other warranties including without limitation, implied warranties or
-        conditions of merchantability, fitness for a particular purpose, or
-        non-infringement of intellectual property or other violation of rights.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">1. Acceptance of Terms</h2>
+          <p class="text-secondary">
+            By accessing and using this website, you accept and agree to be bound by
+            the terms and provision of this agreement. If you do not agree to abide
+            by the above, please do not use this service.
+          </p>
+        </div>
 
-      <h2>4. Limitations</h2>
-      <p>
-        In no event shall our company or its suppliers be liable for any damages
-        (including, without limitation, damages for loss of data or profit, or
-        due to business interruption) arising out of the use or inability to use
-        the materials on our website, even if we or our authorized
-        representative has been notified orally or in writing of the possibility
-        of such damage.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">2. Use License</h2>
+          <p class="text-secondary mb-md">
+            Permission is granted to temporarily download one copy of the materials
+            on our website for personal, non-commercial transitory viewing only.
+            This is the grant of a license, not a transfer of title, and under this
+            license you may not:
+          </p>
+          <ul class="list-disc list-inside space-y-sm text-secondary">
+            <li>Modify or copy the materials</li>
+            <li>Use the materials for any commercial purpose or for any public display</li>
+            <li>Attempt to reverse engineer any software contained on the website</li>
+            <li>Remove any copyright or other proprietary notations from the materials</li>
+          </ul>
+        </div>
 
-      <h2>5. Privacy Policy</h2>
-      <p>
-        Your privacy is important to us. Please review our Privacy Policy, which
-        also governs your use of the website, to understand our practices.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">3. Disclaimer</h2>
+          <p class="text-secondary">
+            The materials on our website are provided on an 'as is' basis. We make
+            no warranties, expressed or implied, and hereby disclaim and negate all
+            other warranties including without limitation, implied warranties or
+            conditions of merchantability, fitness for a particular purpose, or
+            non-infringement of intellectual property or other violation of rights.
+          </p>
+        </div>
 
-      <h2>6. Governing Law</h2>
-      <p>
-        These terms and conditions are governed by and construed in accordance
-        with the laws of the jurisdiction in which our company operates, and you
-        irrevocably submit to the exclusive jurisdiction of the courts in that
-        state or location.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">4. Limitations</h2>
+          <p class="text-secondary">
+            In no event shall our company or its suppliers be liable for any damages
+            (including, without limitation, damages for loss of data or profit, or
+            due to business interruption) arising out of the use or inability to use
+            the materials on our website, even if we or our authorized
+            representative has been notified orally or in writing of the possibility
+            of such damage.
+          </p>
+        </div>
 
-      <h2>7. Changes to Terms</h2>
-      <p>
-        We reserve the right to revise these terms of service at any time
-        without notice. By using this website, you are agreeing to be bound by
-        the then current version of these terms of service.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">5. Privacy Policy</h2>
+          <p class="text-secondary">
+            Your privacy is important to us. Please review our Privacy Policy, which
+            also governs your use of the website, to understand our practices.
+          </p>
+        </div>
 
-      <h2>8. Contact Information</h2>
-      <p>
-        If you have any questions about these Terms of Service, please contact
-        us through our website's contact form or email.
-      </p>
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">6. Governing Law</h2>
+          <p class="text-secondary">
+            These terms and conditions are governed by and construed in accordance
+            with the laws of the jurisdiction in which our company operates, and you
+            irrevocably submit to the exclusive jurisdiction of the courts in that
+            state or location.
+          </p>
+        </div>
 
-      <div class="effective-notice">
-        <p>
-          <strong
-            >These terms are effective as of the date listed above and will
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">7. Changes to Terms</h2>
+          <p class="text-secondary">
+            We reserve the right to revise these terms of service at any time
+            without notice. By using this website, you are agreeing to be bound by
+            the then current version of these terms of service.
+          </p>
+        </div>
+
+        <div class="mb-xl">
+          <h2 class="text-2xl font-bold mb-md">8. Contact Information</h2>
+          <p class="text-secondary">
+            If you have any questions about these Terms of Service, please contact
+            us through our website's contact form or email.
+          </p>
+        </div>
+
+        <div class="bg-light p-lg rounded-lg">
+          <p class="text-sm text-secondary font-medium">
+            These terms are effective as of the date listed above and will
             remain in effect except with respect to any changes in their
-            provisions in the future.</strong
-          >
-        </p>
+            provisions in the future.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+{% endblock %}

@@ -2,7 +2,6 @@
 title: Enterprise Cybersecurity Solutions
 description: Protect your business with comprehensive security services including threat monitoring, vulnerability assessment, and incident response
 icon: shield
-price: Custom pricing based on scope
 features: Threat monitoring, Vulnerability assessment, Incident response, Security compliance, Penetration testing, Security awareness training
 ---
 

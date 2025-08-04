@@ -2,7 +2,6 @@
 title: Embedded Systems Development
 description: Custom embedded software and firmware development for microcontrollers, real-time systems, and IoT devices with optimized performance and reliability
 icon: microchip
-price: Custom pricing based on scope
 features: Firmware development, Real-time systems, Device drivers, Bootloader development, Hardware abstraction layers, Power optimization
 ---
 

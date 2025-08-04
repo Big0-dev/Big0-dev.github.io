@@ -2,7 +2,6 @@
 title: Interactive Dashboard Development
 description: Build powerful, real-time dashboards that visualize your key metrics and drive data-driven decisions
 icon: dashboard
-price: Starting at $2,000 per dashboards
 features: Real-time updates, Custom visualizations, Mobile responsive, White-label options, API integration, Export capabilities
 ---
 

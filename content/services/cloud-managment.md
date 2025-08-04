@@ -2,7 +2,6 @@
 title: Cloud Infrastructure Management
 description: Enterprise-grade cloud solutions with 24/7 monitoring, optimization, and support for AWS, Azure, and Google Cloud Platform
 icon: cloud
-price: Custom pricing based on scope
 features: Multi-cloud support, Cost optimization, Security compliance, Auto-scaling, 24/7 monitoring, Disaster recovery
 ---
 

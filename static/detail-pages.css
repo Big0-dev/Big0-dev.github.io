@@ -339,7 +339,7 @@
 }
 
 .detail-cta-box .btn:hover {
-  background: var(--bg-white);
+  background: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }

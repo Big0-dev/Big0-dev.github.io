@@ -1005,7 +1005,7 @@
 }
 
 .timeline-item:hover .timeline-number {
-  color: var(--bg-white);
+  color: #ffffff;
 }
 
 .timeline-number {
@@ -1402,12 +1402,7 @@
    SHARED BUTTON STYLES
    ======================================== */
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, #b17cc8 0%, #d4a9e8 100%);
-  color: var(--bg-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.3);
-}
+/* Button hover styles are defined in design-system.css */
 
 /* ========================================
    SHARED SECTION STYLES

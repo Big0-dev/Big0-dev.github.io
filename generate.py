@@ -14,6 +14,9 @@ from datetime import datetime
 from typing import Dict, Any
 import markdown
 from bs4 import BeautifulSoup
+import minify_html
+import rcssmin
+import jsmin
 
 # Setup logging
 logging.basicConfig(
@@ -69,6 +72,9 @@ class SiteGenerator:
         
         # Generate search index
         self._generate_search_index()
+        
+        # Post-generation optimization
+        self._optimize_output()
         
         logger.info("Website generation complete!")
         
@@ -902,6 +908,154 @@ class SiteGenerator:
             
         except Exception as e:
             logger.error(f"Error generating search index: {e}")
+    
+    def _optimize_output(self):
+        """Optimize all generated files for performance"""
+        logger.info("Starting post-generation optimization...")
+        
+        # Track optimization stats
+        stats = {
+            'html_files': 0,
+            'html_saved': 0,
+            'css_files': 0,
+            'css_saved': 0,
+            'total_saved': 0
+        }
+        
+        # Optimize HTML files
+        self._optimize_html_files(stats)
+        
+        # Optimize CSS files
+        self._optimize_css_files(stats)
+        
+        # Log optimization results
+        total_saved_kb = stats['total_saved'] / 1024
+        logger.info(f"Optimization complete! Saved {total_saved_kb:.2f} KB total")
+        logger.info(f"  - HTML: {stats['html_files']} files, saved {stats['html_saved']/1024:.2f} KB")
+        logger.info(f"  - CSS: {stats['css_files']} files, saved {stats['css_saved']/1024:.2f} KB")
+    
+    def _optimize_html_files(self, stats):
+        """Minify all HTML files in the output directory"""
+        output_path = Path(self.output_dir)
+        
+        for html_file in output_path.rglob('*.html'):
+            try:
+                # Read original content
+                original_content = html_file.read_text(encoding='utf-8')
+                original_size = len(original_content.encode('utf-8'))
+                
+                # Extract and minify inline scripts
+                soup = BeautifulSoup(original_content, 'html.parser')
+                
+                # Minify inline JavaScript
+                for script in soup.find_all('script'):
+                    if script.string and not script.get('src'):
+                        try:
+                            minified_js = jsmin.jsmin(script.string)
+                            script.string = minified_js
+                        except Exception as e:
+                            logger.warning(f"Failed to minify inline JS in {html_file}: {e}")
+                
+                # Minify inline CSS
+                for style in soup.find_all('style'):
+                    if style.string:
+                        try:
+                            minified_css = rcssmin.cssmin(style.string)
+                            style.string = minified_css
+                        except Exception as e:
+                            logger.warning(f"Failed to minify inline CSS in {html_file}: {e}")
+                
+                # Convert back to string
+                modified_html = str(soup)
+                
+                # Minify the entire HTML
+                # Start with the safest options and gradually enable more
+                minified_html = None
+                try:
+                    # Try without JS/CSS minification first (safer)
+                    minified_html = minify_html.minify(
+                        modified_html,
+                        minify_js=False,
+                        minify_css=False,
+                        remove_processing_instructions=True,
+                        allow_removing_spaces_between_attributes=True,
+                        keep_html_and_head_opening_tags=True,
+                        minify_doctype=True
+                    )
+                except:
+                    # If that fails, use a simple regex-based approach
+                    logger.debug(f"minify_html failed for {html_file.name}, using fallback")
+                    minified_html = self._simple_html_minify(modified_html)
+                
+                # Write minified content
+                html_file.write_text(minified_html, encoding='utf-8')
+                
+                # Calculate savings
+                minified_size = len(minified_html.encode('utf-8'))
+                saved = original_size - minified_size
+                
+                stats['html_files'] += 1
+                stats['html_saved'] += saved
+                stats['total_saved'] += saved
+                
+                if saved > 0:
+                    percent_saved = (saved / original_size) * 100
+                    logger.debug(f"Minified {html_file.relative_to(output_path)}: {percent_saved:.1f}% smaller")
+                    
+            except Exception as e:
+                logger.error(f"Error optimizing {html_file}: {e}")
+    
+    def _optimize_css_files(self, stats):
+        """Minify all CSS files in the static directory"""
+        static_dir = Path(self.output_dir) / 'static'
+        
+        if not static_dir.exists():
+            return
+        
+        for css_file in static_dir.rglob('*.css'):
+            try:
+                # Read original content
+                original_content = css_file.read_text(encoding='utf-8')
+                original_size = len(original_content.encode('utf-8'))
+                
+                # Minify CSS
+                minified_css = rcssmin.cssmin(original_content, keep_bang_comments=True)
+                
+                # Write minified content
+                css_file.write_text(minified_css, encoding='utf-8')
+                
+                # Calculate savings
+                minified_size = len(minified_css.encode('utf-8'))
+                saved = original_size - minified_size
+                
+                stats['css_files'] += 1
+                stats['css_saved'] += saved
+                stats['total_saved'] += saved
+                
+                if saved > 0:
+                    percent_saved = (saved / original_size) * 100
+                    logger.debug(f"Minified {css_file.relative_to(static_dir)}: {percent_saved:.1f}% smaller")
+                    
+            except Exception as e:
+                logger.error(f"Error optimizing {css_file}: {e}")
+    
+    def _simple_html_minify(self, html):
+        """Simple regex-based HTML minification fallback"""
+        import re
+        
+        # Remove HTML comments (but keep IE conditional comments)
+        html = re.sub(r'<!--(?!\[if).*?-->', '', html, flags=re.DOTALL)
+        
+        # Remove whitespace between tags
+        html = re.sub(r'>\s+<', '><', html)
+        
+        # Remove leading/trailing whitespace
+        html = html.strip()
+        
+        # Collapse multiple spaces to single space
+        html = re.sub(r'\s+', ' ', html)
+        
+        return html
 
 
 def main():

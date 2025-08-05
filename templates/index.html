@@ -3,8 +3,16 @@
 {% block title %}AI-Powered Digital Transformation{% endblock %}
 {% block meta_description %}Big0 delivers cutting-edge AI solutions, cloud services, and digital transformation. Transform your business with responsible AI innovation.{% endblock %}
 {% block canonical_path %}/{% endblock %}
-{% block custom_css %}<link rel="stylesheet" href="{{ static }}/home.css">
-<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">{% endblock %}
+{% block custom_css %}
+<style>
+/* Critical home.css styles */
+.hero-content{text-align:center;max-width:56rem;z-index:2;padding:0 var(--space-md)}.hero-cta{display:inline-flex;gap:var(--space-md)}.shape{position:absolute;background:var(--gradient-mesh);opacity:0.1;filter:blur(40px);border-radius:50%}.shape-1{width:600px;height:600px;top:-200px;right:-200px}.shape-2{width:400px;height:400px;bottom:-100px;left:-100px}.text-gradient{background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+</style>
+<link rel="stylesheet" href="{{ static }}/home.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ static }}/home.css"></noscript>
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ static }}/contact-form-bant.css"></noscript>
+{% endblock %}
 
 {% block content %}
 <!-- Hero Section - Simplified and Centered -->

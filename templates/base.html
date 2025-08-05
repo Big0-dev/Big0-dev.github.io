@@ -36,14 +36,31 @@
       crossorigin="anonymous"
     />
 
-    <!-- Design System CSS -->
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.clarity.ms">
+    <link rel="preconnect" href="https://static.cloudflareinsights.com">
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="{{ static }}/design-system.css" as="style">
+    <link rel="preload" href="{{ static }}/base.css" as="style">
+    
+    <!-- Critical inline CSS for initial render -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      :root{--primary-color:#7f3e98;--secondary-color:#5a2a6e;--accent-color:#a366c4;--bg-dark:#0a0a0d;--bg-light:#12121a;--bg-card:#15151a;--text-primary:#ffffff;--text-secondary:#e0e0e0;--text-tertiary:#a0a0a0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Exo 2',sans-serif;background:var(--bg-dark);color:var(--text-primary);line-height:1.6;overflow-x:hidden}.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}@media(max-width:768px){.container{padding:0 1rem}}
+    </style>
+    
+    <!-- Load CSS with media attribute for non-critical styles -->
     <link rel="stylesheet" href="{{ static }}/design-system.css" />
     <link rel="stylesheet" href="{{ static }}/base.css" />
-    <link rel="stylesheet" href="{{ static }}/components.css" />
+    <link rel="stylesheet" href="{{ static }}/components.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ static }}/components.css"></noscript>
 
     {% block custom_css %}
     {% if custom_css %}
-        <link rel="stylesheet" href="{{ static }}/{{ custom_css }}.css"/>
+        <link rel="stylesheet" href="{{ static }}/{{ custom_css }}.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="{{ static }}/{{ custom_css }}.css"></noscript>
     {% endif %}
     {% endblock %}
 
@@ -53,7 +70,7 @@
     
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Big0 - News & Insights RSS Feed" href="{{ path_prefix }}rss.xml">
-    <script src="{{ static }}/minisearch@7.1.2.min.js"></script>
+    <script src="{{ static }}/minisearch@7.1.2.min.js" defer></script>
     <script src="{{ static }}/search.js" defer></script>
 
     <script

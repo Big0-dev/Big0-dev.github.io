@@ -424,17 +424,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Update CSS variables on root to fix missing colors
-  const root = document.documentElement;
-  if (!getComputedStyle(root).getPropertyValue("--background-color")) {
-    root.style.setProperty("--background-color", "#ffffff");
-    root.style.setProperty("--text-color", "#1c1c1c");
-    root.style.setProperty("--border-color", "#e0e0e0");
-    root.style.setProperty("--hover-color", "rgba(127, 62, 152, 0.1)");
-    root.style.setProperty("--accent-color", "#7f3e98");
-    root.style.setProperty("--text-color-light", "#4a4a4a");
-    root.style.setProperty("--primary-color-rgb", "127, 62, 152");
-    root.style.setProperty("--primary-color-dark", "#662d80");
-  }
+  // Use requestAnimationFrame to batch DOM reads and writes
+  requestAnimationFrame(() => {
+    const root = document.documentElement;
+    const hasBackgroundColor = getComputedStyle(root).getPropertyValue("--background-color");
+    
+    if (!hasBackgroundColor) {
+      // Batch all style changes together
+      requestAnimationFrame(() => {
+        root.style.setProperty("--background-color", "#ffffff");
+        root.style.setProperty("--text-color", "#1c1c1c");
+        root.style.setProperty("--border-color", "#e0e0e0");
+        root.style.setProperty("--hover-color", "rgba(127, 62, 152, 0.1)");
+        root.style.setProperty("--accent-color", "#7f3e98");
+        root.style.setProperty("--text-color-light", "#4a4a4a");
+        root.style.setProperty("--primary-color-rgb", "127, 62, 152");
+        root.style.setProperty("--primary-color-dark", "#662d80");
+      });
+    }
+  });
 });
 
 // ==========================

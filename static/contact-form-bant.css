@@ -50,6 +50,13 @@
   margin-bottom: var(--space-md);
 }
 
+.form-section-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
 
 /* Form Layout */
 .form-row {

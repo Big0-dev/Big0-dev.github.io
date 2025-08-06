@@ -5,9 +5,13 @@
 {% block canonical_path %}/{% endblock %}
 {% block custom_css %}
 <style>
-/* Page-specific hero styles */
-.hero-background{position:absolute;inset:0;z-index:-1}
-.hero-gradient{position:absolute;width:150%;height:150%;top:-25%;left:-25%;background:radial-gradient(circle at 50% 50%,rgba(127,62,152,0.15) 0%,transparent 70%);opacity:0.3}
+/* Page-specific animation styles only */
+.hero-gradient{position:absolute;width:150%;height:150%;top:-25%;left:-25%;background:radial-gradient(circle at 50% 50%,rgba(127,62,152,0.15) 0%,transparent 70%);opacity:0.3;animation:float 20s ease-in-out infinite}
+.shape{position:absolute;border:2px solid rgba(224,224,224,0.1);border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;opacity:0.1}
+.shape-1{width:300px;height:300px;top:10%;right:10%;animation:rotate 30s linear infinite}
+.shape-2{width:200px;height:200px;bottom:10%;left:10%;border-radius:70% 30% 30% 70% / 70% 70% 30% 30%;animation:rotate 25s linear infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.1)}66%{transform:translate(-20px,20px) scale(0.9)}}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 </style>
 <link rel="stylesheet" href="{{ static }}/home.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{{ static }}/home.css"></noscript>
@@ -35,7 +39,7 @@
       faster, smarter strategic choices that drive growth.
     </p>
     
-    <div class="hero-cta">
+    <div class="hero-cta" style="display: flex; justify-content: center;">
       <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
         Start Your AI Transformation
       </a>

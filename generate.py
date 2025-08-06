@@ -436,8 +436,15 @@ class SiteGenerator:
             text = str(text_node)
             modified = False
             
-            # Check for industry mentions (only link if we're on a service page)
-            if 'services/' in str(file_path):
+            # Determine what to link based on page type
+            is_service_page = 'services/' in str(file_path)
+            is_industry_page = 'industries/' in str(file_path)
+            is_blog_page = 'blogs/' in str(file_path)
+            is_case_study_page = 'case_studies/' in str(file_path)
+            
+            # Check for industry mentions
+            # Link on service pages, blog pages, and case study pages
+            if is_service_page or is_blog_page or is_case_study_page:
                 for term, industry_slug in industry_links.items():
                     # Case-insensitive search with word boundaries
                     pattern = r'\b(' + re.escape(term) + r')\b'
@@ -450,19 +457,21 @@ class SiteGenerator:
                         modified = True
                         break  # Only link one term per text node
             
-            # Check for service mentions (only link if we're on an industry page)
-            if 'industries/' in str(file_path):
-                for term, service_slug in service_links.items():
-                    if service_slug != current_slug:  # Don't link to self
-                        pattern = r'\b(' + re.escape(term) + r')\b'
-                        match = re.search(pattern, text, re.IGNORECASE)
-                        if match:
-                            # Replace with link (preserving original case)
-                            matched_text = match.group(1)
-                            replacement = f'<a href="../services/{service_slug}.html" class="auto-link">{matched_text}</a>'
-                            text = text[:match.start()] + replacement + text[match.end():]
-                            modified = True
-                            break
+            # Check for service mentions
+            # Link on industry pages, blog pages, and case study pages
+            if is_industry_page or is_blog_page or is_case_study_page:
+                if not modified:  # Only check if we haven't already modified the text
+                    for term, service_slug in service_links.items():
+                        if service_slug != current_slug:  # Don't link to self
+                            pattern = r'\b(' + re.escape(term) + r')\b'
+                            match = re.search(pattern, text, re.IGNORECASE)
+                            if match:
+                                # Replace with link (preserving original case)
+                                matched_text = match.group(1)
+                                replacement = f'<a href="../services/{service_slug}.html" class="auto-link">{matched_text}</a>'
+                                text = text[:match.start()] + replacement + text[match.end():]
+                                modified = True
+                                break
             
             # Replace the text node with new HTML if modified
             if modified:
@@ -798,8 +807,8 @@ class SiteGenerator:
         # Also process any remaining directives that might have been wrapped in HTML tags
         html_content = self._process_template_directives_in_html(html_content)
         
-        # Auto-link industry and service mentions (only for service and industry pages)
-        if 'services/' in str(file_path) or 'industries/' in str(file_path):
+        # Auto-link industry and service mentions (for service, industry, blog, and case study pages)
+        if any(path in str(file_path) for path in ['services/', 'industries/', 'blogs/', 'case_studies/']):
             html_content = self._add_automatic_interlinking(html_content, file_path)
         
         # Extract first paragraph as excerpt

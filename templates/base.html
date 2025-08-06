@@ -54,6 +54,8 @@
       .page-wrapper{min-height:100vh}
       .main-content{min-height:calc(100vh - 80px);margin-top:80px}
       .navbar{position:fixed;top:0;left:0;right:0;height:80px;background:var(--bg-dark);z-index:1000}
+      .nav-logo-wrapper{width:206px;height:80px;display:block}
+      .nav-actions{min-width:150px}
       /* Hero section - prevent shifts */
       .hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
       .hero-content{position:relative;z-index:2;text-align:center;max-width:56rem;margin:0 auto;padding:var(--space-2xl)}
@@ -115,7 +117,7 @@
       <!-- Navigation -->
       <nav class="navbar" id="navbar">
         <div class="container nav-container">
-          <a href="{{ home }}" class="nav-logo" aria-label="Home">
+          <a href="{{ home }}" class="nav-logo" aria-label="Home" style="display: block; width: 206px; height: 80px;">
             <div class="nav-logo-wrapper">
               {{ inject_svg('big0_logo', False) | safe }}
             </div>

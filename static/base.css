@@ -14,13 +14,8 @@
   font-family: 'Exo 2';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional; /* Use optional to prevent layout shift */
   src: url('./Exo2-Regular.woff2') format('woff2');
-  /* Font metric overrides to prevent layout shift */
-  ascent-override: 92%;
-  descent-override: 24%;
-  line-gap-override: 0%;
-  size-adjust: 100%;
 }
 
 /* ========================================

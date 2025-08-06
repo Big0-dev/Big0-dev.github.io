@@ -9,13 +9,11 @@
 
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 80vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Prevent layout shift during load */
-  contain: layout style paint;
 }
 
 /* Background Effects */
@@ -79,10 +77,9 @@
   position: relative;
   z-index: 1;
   padding: var(--space-2xl);
-  /* Stable minimum dimensions to prevent CLS */
-  min-height: 300px;
-  /* Remove flex to maintain text-center alignment */
   text-align: center;
+  max-width: 56rem;
+  margin: 0 auto;
 }
 
 /* Pulsating Button */
@@ -137,8 +134,6 @@
 .carousel-item {
   flex: 0 0 300px;
   min-width: 300px;
-  /* Prevent layout shifts in carousel */
-  contain: layout style;
 }
 
 @keyframes scroll {

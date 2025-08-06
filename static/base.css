@@ -14,7 +14,7 @@
   font-family: 'Exo 2';
   font-style: normal;
   font-weight: 400;
-  font-display: optional; /* Use optional to prevent layout shift */
+  font-display: swap;
   src: url('./Exo2-Regular.woff2') format('woff2');
 }
 
@@ -133,8 +133,7 @@ main {
 }
 
 .main-content {
-  min-height: calc(100vh - 80px);
-  margin-top: 80px;
+  flex: 1;
 }
 
 /* ========================================

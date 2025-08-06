@@ -4,14 +4,6 @@
 {% block meta_description %}Big0 delivers cutting-edge AI solutions, cloud services, and digital transformation. Transform your business with responsible AI innovation.{% endblock %}
 {% block canonical_path %}/{% endblock %}
 {% block custom_css %}
-<style>
-/* Animation-only styles - no layout properties */
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.1)}66%{transform:translate(-20px,20px) scale(0.9)}}
-@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.hero-gradient{animation:float 20s ease-in-out infinite}
-.shape-1{animation:rotate 30s linear infinite}
-.shape-2{animation:rotate 25s linear infinite reverse}
-</style>
 <link rel="stylesheet" href="{{ static }}/home.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{{ static }}/home.css"></noscript>
 <link rel="stylesheet" href="{{ static }}/contact-form-bant.css" media="print" onload="this.media='all'">
@@ -38,7 +30,7 @@
       faster, smarter strategic choices that drive growth.
     </p>
     
-    <div class="hero-cta" style="display: flex; justify-content: center;">
+    <div class="hero-cta">
       <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
         Start Your AI Transformation
       </a>

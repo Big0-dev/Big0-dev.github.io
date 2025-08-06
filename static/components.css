@@ -1006,7 +1006,7 @@
 .timeline-item:hover .timeline-marker {
   transform: scale(1.1);
   background: var(--primary-color);
-  box-shadow: 0 6px 20px rgba(127, 62, 152, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-item:hover .timeline-number {
@@ -1434,7 +1434,7 @@
 
 .service-preview-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(127, 62, 152, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   border-color: var(--border-hover);
 }
 

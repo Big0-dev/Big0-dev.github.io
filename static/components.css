@@ -512,11 +512,15 @@
   gap: var(--space-sm);
   font-size: var(--font-sm);
   margin-bottom: var(--space-lg);
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .breadcrumb-link {
   color: var(--text-tertiary);
   transition: color var(--transition-base);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .breadcrumb-link:hover {
@@ -525,11 +529,43 @@
 
 .breadcrumb-separator {
   color: var(--text-muted);
+  flex-shrink: 0;
 }
 
 .breadcrumb-current {
   color: var(--text-primary);
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Mobile breadcrumb truncation */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    max-width: 100%;
+  }
+  
+  .breadcrumb-link:not(:first-child) {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .breadcrumb-current {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb-current {
+    max-width: 120px;
+  }
+  
+  .breadcrumb-link:not(:first-child) {
+    max-width: 60px;
+  }
 }
 
 /* ========================================

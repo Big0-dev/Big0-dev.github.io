@@ -325,6 +325,13 @@
       </footer>
     </div>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
+
     {% block scripts %}
     <script>
       // Enhanced popover management with click-outside functionality
@@ -481,8 +488,9 @@
         }
       });
 
-      // Navbar scroll effect
+      // Navbar scroll effect and Back to Top button
       const navbar = document.getElementById('navbar');
+      const backToTopBtn = document.getElementById('back-to-top');
       let lastScroll = 0;
 
       window.addEventListener('scroll', () => {
@@ -494,7 +502,22 @@
           navbar.classList.remove('scrolled');
         }
         
+        // Show/hide back to top button
+        if (currentScroll > 300) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+        
         lastScroll = currentScroll;
+      });
+
+      // Back to top functionality
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
 
       // Add active state to current page

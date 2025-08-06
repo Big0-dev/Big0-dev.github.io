@@ -13,6 +13,15 @@
 <!-- Service Detail Hero -->
 <section class="page-hero">
   <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs mb-lg">
+      <a href="{{ home }}" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="{{ services_page }}" class="breadcrumb-link">Services</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ current_service.title }}</span>
+    </nav>
+    
     <div class="hero-content text-center max-w-3xl mx-auto">
       <h1 class="text-4xl font-bold">{{ current_service.title }}</h1>
       <p class="text-xl text-secondary mt-lg">

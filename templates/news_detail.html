@@ -12,6 +12,15 @@
 <!-- News Article Hero -->
 <section class="page-hero">
   <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs mb-lg">
+      <a href="{{ home }}" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="{{ news }}" class="breadcrumb-link">News</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ item.title }}</span>
+    </nav>
+    
     <div class="hero-content text-center max-w-3xl mx-auto">
       <h1 class="text-4xl font-bold">{{ item.title }}</h1>
     </div>

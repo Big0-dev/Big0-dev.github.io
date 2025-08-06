@@ -13,6 +13,15 @@
 <!-- Industry Detail Hero -->
 <section class="page-hero">
   <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs mb-lg">
+      <a href="{{ home }}" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="{{ industries }}" class="breadcrumb-link">Industries</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ current_industry.title }}</span>
+    </nav>
+    
     <div class="hero-content text-center max-w-3xl mx-auto">
       <h1 class="text-4xl font-bold">{{ current_industry.title }}</h1>
       <p class="text-xl text-secondary mt-lg">

@@ -12,6 +12,15 @@
 <!-- Blog Post Hero -->
 <section class="page-hero">
   <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs mb-lg">
+      <a href="{{ home }}" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="{{ blog }}" class="breadcrumb-link">Blog</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ current_blog.title }}</span>
+    </nav>
+    
     <div class="hero-content text-center max-w-3xl mx-auto">
       <div class="flex items-center justify-center gap-md mb-md">
         <span class="badge">{{ current_blog.frontmatter.category | default('Technology') }}</span>

@@ -12,6 +12,15 @@
 <!-- Case Study Hero -->
 <section class="page-hero">
   <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs mb-lg">
+      <a href="{{ home }}" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="{{ case_studies }}" class="breadcrumb-link">Case Studies</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ current_case_studie.title }}</span>
+    </nav>
+    
     <div class="hero-content text-center max-w-3xl mx-auto">
       <div class="flex items-center justify-center gap-md mb-md">
         <span class="badge">{{ current_case_studie.frontmatter.industry | default('Technology') }}</span>

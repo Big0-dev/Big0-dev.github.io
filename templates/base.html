@@ -58,7 +58,11 @@
       .nav-actions{min-width:150px}
       /* Hero section - comprehensive styles to prevent ALL shifts */
       .hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
-      .hero-background{position:absolute;inset:0;z-index:-1}
+      .hero-background{position:absolute;inset:0;z-index:-1;pointer-events:none}
+      .hero-gradient{position:absolute;width:150%;height:150%;top:-25%;left:-25%;background:radial-gradient(circle at 50% 50%,rgba(127,62,152,0.15) 0%,transparent 70%);opacity:0.3;pointer-events:none;will-change:transform}
+      .shape{position:absolute;border:2px solid rgba(224,224,224,0.1);border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;opacity:0.1;pointer-events:none}
+      .shape-1{width:300px;height:300px;top:10%;right:10%;will-change:transform}
+      .shape-2{width:200px;height:200px;bottom:10%;left:10%;border-radius:70% 30% 30% 70% / 70% 70% 30% 30%;will-change:transform}
       .hero-content{position:relative;z-index:1;text-align:center;max-width:56rem;margin:0 auto;padding:3rem;width:100%}
       .hero-content h1{font-size:2.25rem;line-height:1.2;margin:0 0 1rem 0;font-weight:400}
       .hero-content h1 .text-gradient{font-size:2.25rem;display:inline-block}

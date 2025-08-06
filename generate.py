@@ -11,12 +11,13 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 import logging
 import os
 from datetime import datetime
-from typing import Dict, Any
+from typing import Dict, Any, List
 import markdown
 from bs4 import BeautifulSoup
 import minify_html
 import rcssmin
 import jsmin
+from functools import lru_cache
 
 # Setup logging
 logging.basicConfig(
@@ -85,12 +86,17 @@ class SiteGenerator:
             
         os.makedirs(self.output_dir, exist_ok=True)
         
-        # Create subdirectories
+        # Create all subdirectories at once
+        dirs_to_create = [
+            os.path.join(self.output_dir, "static"),
+            os.path.join(self.output_dir, "content/gallery")
+        ]
+        
         for content_type in self.config['content_types'].values():
-            os.makedirs(os.path.join(self.output_dir, content_type['output_dir']), exist_ok=True)
-            
-        os.makedirs(os.path.join(self.output_dir, "static"), exist_ok=True)
-        os.makedirs(os.path.join(self.output_dir, "content/gallery"), exist_ok=True)
+            dirs_to_create.append(os.path.join(self.output_dir, content_type['output_dir']))
+        
+        for dir_path in dirs_to_create:
+            os.makedirs(dir_path, exist_ok=True)
         
     def _copy_assets(self):
         """Copy all assets according to config"""
@@ -137,22 +143,36 @@ class SiteGenerator:
                 shutil.copy2(src, dest)
                 
     def _inject_svg(self, filename: str, wrap: bool = False, css_class: str = "") -> str:
-        """Inject SVG content directly into HTML"""
+        """Inject SVG content directly into HTML with caching"""
+        # Use instance cache for SVG content
+        if not hasattr(self, '_svg_cache'):
+            self._svg_cache = {}
+            
+        cache_key = f"{filename}_{wrap}_{css_class}"
+        
+        # Return cached content if available
+        if cache_key in self._svg_cache:
+            return self._svg_cache[cache_key]
+            
         svg_path = Path(self.static_dir) / f"{filename}.svg"
         
         if not svg_path.exists():
             return f"<!-- SVG {filename} not found -->"
             
         try:
-            svg_content = svg_path.read_text()
+            svg_content = svg_path.read_text(encoding='utf-8')
             
             if css_class:
                 svg_content = svg_content.replace('<svg', f'<svg class="{css_class}"', 1)
                 
             if wrap:
-                return f'<span class="svg-wrapper">{svg_content}</span>'
+                result = f'<span class="svg-wrapper">{svg_content}</span>'
+            else:
+                result = svg_content
                 
-            return svg_content
+            # Cache the result
+            self._svg_cache[cache_key] = result
+            return result
         except Exception as e:
             logger.error(f"Error injecting SVG {filename}: {e}")
             return f"<!-- Error loading SVG {filename} -->"
@@ -224,9 +244,15 @@ class SiteGenerator:
         """Generate static pages from templates"""
         context = self._get_base_context()
         
+        # Pre-load templates for better performance
+        templates_cache = {}
+        
         for page in self.config['static_pages']:
             try:
-                template = self.env.get_template(page['template'])
+                # Use cached template if available
+                if page['template'] not in templates_cache:
+                    templates_cache[page['template']] = self.env.get_template(page['template'])
+                template = templates_cache[page['template']]
                 output_path = Path(self.output_dir) / page['output']
                 
                 # Special handling for different pages
@@ -309,8 +335,9 @@ class SiteGenerator:
         except Exception as e:
             logger.error(f"Error generating gallery pages: {e}")
                 
+    @lru_cache(maxsize=128)
     def _parse_date(self, date_value):
-        """Parse date from various formats"""
+        """Parse date from various formats with caching"""
         if not date_value:
             return None
             
@@ -477,7 +504,7 @@ class SiteGenerator:
     
     def _load_markdown_content(self, file_path: Path) -> Dict[str, Any]:
         """Load and parse markdown content"""
-        content = file_path.read_text()
+        content = file_path.read_text(encoding='utf-8')
         
         # Extract frontmatter
         if content.startswith('---'):
@@ -508,9 +535,12 @@ class SiteGenerator:
         # Process template directives before converting to HTML
         markdown_content = self._process_template_directives(markdown_content)
         
-        # Convert markdown to HTML
-        md = markdown.Markdown(extensions=['extra', 'codehilite', 'toc'])
-        html_content = md.convert(markdown_content)
+        # Convert markdown to HTML - reuse single markdown instance for performance
+        if not hasattr(self, '_md_converter'):
+            self._md_converter = markdown.Markdown(extensions=['extra', 'codehilite', 'toc'])
+        else:
+            self._md_converter.reset()
+        html_content = self._md_converter.convert(markdown_content)
         
         # Also process any remaining directives that might have been wrapped in HTML tags
         html_content = self._process_template_directives_in_html(html_content)
@@ -556,9 +586,9 @@ class SiteGenerator:
             if not content_dir.exists():
                 continue
                 
-            # Load all content
+            # Load all content - use sorted for consistent ordering
             items = []
-            for file_path in content_dir.glob('*.md'):
+            for file_path in sorted(content_dir.glob('*.md')):
                 item = self._load_markdown_content(file_path)
                 items.append(item)
                 

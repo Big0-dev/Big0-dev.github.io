@@ -66,8 +66,22 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // Load the search index
-    fetch("/static/search-index.json")
+    // Load the search index with proper path handling
+    const basePath = window.location.pathname.includes('.html') 
+      ? window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) 
+      : window.location.pathname;
+    const indexPath = basePath === '/' || basePath === '' 
+      ? '/static/search-index.json' 
+      : `${basePath}/static/search-index.json`;
+      
+    fetch(indexPath)
+      .then((response) => {
+        if (!response.ok) {
+          // Fallback to root path if not found
+          return fetch('/static/search-index.json');
+        }
+        return response;
+      })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -382,10 +396,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle input changes for live search
   if (searchInput) {
+    let searchTimeout;
     searchInput.addEventListener("input", () => {
       // Debounced search for better performance
-      clearTimeout(searchInput.searchTimeout);
-      searchInput.searchTimeout = setTimeout(() => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
         performSearch(searchInput.value);
       }, 300);
     });
@@ -430,17 +445,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const hasBackgroundColor = getComputedStyle(root).getPropertyValue("--background-color");
     
     if (!hasBackgroundColor) {
-      // Batch all style changes together
-      requestAnimationFrame(() => {
-        root.style.setProperty("--background-color", "#ffffff");
-        root.style.setProperty("--text-color", "#1c1c1c");
-        root.style.setProperty("--border-color", "#e0e0e0");
-        root.style.setProperty("--hover-color", "rgba(127, 62, 152, 0.1)");
-        root.style.setProperty("--accent-color", "#7f3e98");
-        root.style.setProperty("--text-color-light", "#4a4a4a");
-        root.style.setProperty("--primary-color-rgb", "127, 62, 152");
-        root.style.setProperty("--primary-color-dark", "#662d80");
-      });
+      // Batch all style changes together in a single operation
+      root.style.cssText += `
+        --background-color: #ffffff;
+        --text-color: #1c1c1c;
+        --border-color: #e0e0e0;
+        --hover-color: rgba(127, 62, 152, 0.1);
+        --accent-color: #7f3e98;
+        --text-color-light: #4a4a4a;
+        --primary-color-rgb: 127, 62, 152;
+        --primary-color-dark: #662d80;
+      `;
     }
   });
 });
@@ -475,8 +490,8 @@ const recentSearches = {
   },
 };
 
-// Add CSS for snippet separators
-document.addEventListener("DOMContentLoaded", () => {
+// Add CSS for snippet separators - moved outside DOMContentLoaded for faster injection
+(function() {
   const style = document.createElement("style");
   style.textContent = `
         .snippet-separator {
@@ -502,4 +517,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     `;
   document.head.appendChild(style);
-});
+})();

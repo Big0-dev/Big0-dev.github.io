@@ -16,10 +16,11 @@
   font-weight: 400;
   font-display: swap;
   src: url('./Exo2-Regular.woff2') format('woff2');
-  /* Font metric overrides to reduce layout shift */
-  ascent-override: 95%;
-  descent-override: 25%;
+  /* Font metric overrides to prevent layout shift */
+  ascent-override: 92%;
+  descent-override: 24%;
   line-gap-override: 0%;
+  size-adjust: 100%;
 }
 
 /* ========================================

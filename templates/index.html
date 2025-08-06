@@ -5,8 +5,17 @@
 {% block canonical_path %}/{% endblock %}
 {% block custom_css %}
 <style>
-/* Critical home.css styles */
-.hero-content{text-align:center;max-width:56rem;z-index:2;padding:0 var(--space-md)}.hero-cta{display:inline-flex;gap:var(--space-md)}.shape{position:absolute;background:var(--gradient-mesh);opacity:0.1;filter:blur(40px);border-radius:50%}.shape-1{width:600px;height:600px;top:-200px;right:-200px}.shape-2{width:400px;height:400px;bottom:-100px;left:-100px}.text-gradient{background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* Critical home.css styles with CLS fixes */
+.hero{position:relative;min-height:85vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-content{text-align:center;max-width:56rem;z-index:2;padding:0 var(--space-md);min-height:300px}
+.hero-content h1{min-height:120px;display:flex;flex-direction:column;justify-content:center}
+.hero-cta{display:inline-flex;gap:var(--space-md);min-height:48px}
+.shape{position:absolute;background:var(--gradient-mesh);opacity:0.1;filter:blur(40px);border-radius:50%}
+.shape-1{width:600px;height:600px;top:-200px;right:-200px}
+.shape-2{width:400px;height:400px;bottom:-100px;left:-100px}
+.text-gradient{background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* Prevent font loading shifts */
+.text-4xl,.text-6xl,.text-2xl,.text-base,.text-lg{line-height:1.2!important}
 </style>
 <link rel="stylesheet" href="{{ static }}/home.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{{ static }}/home.css"></noscript>
@@ -24,12 +33,12 @@
   </div>
   
   <div class="hero-content text-center">
-    <h1 class="text-4xl md:text-6xl font-normal mb-md leading-tight">
+    <h1 class="text-4xl md:text-6xl font-normal mb-md leading-tight" style="min-height: 120px;">
       <span class="text-gradient">Next Level Innovation</span><br>
       <span class="text-white text-2xl md:text-4xl">Powered by Intelligence</span>
     </h1>
     
-    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto mb-lg">
+    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto mb-lg" style="min-height: 60px;">
       Gain the clarity and predictive insights needed to make<br>
       faster, smarter strategic choices that drive growth.
     </p>
@@ -182,12 +191,14 @@
       <article class="card card-hover">
         <a href="./blog/{{ post.slug }}.html" class="insights-card">
           {% if post.frontmatter.image_url %}
-          <div class="insights-image">
+          <div class="insights-image" style="aspect-ratio: 16/9; overflow: hidden;">
             <img
               src="{{ static }}/{{ post.frontmatter.image_url }}"
               alt="{{ post.title }}"
               class="w-full h-full object-cover"
               loading="lazy"
+              width="400"
+              height="225"
             />
           </div>
           {% endif %}

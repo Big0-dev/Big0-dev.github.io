@@ -366,6 +366,121 @@ class SiteGenerator:
         logger.warning(f"Could not parse date: {date_str}")
         return None
     
+    def _add_automatic_interlinking(self, html_content: str, file_path: Path) -> str:
+        """Add automatic links to industry and service mentions in the content"""
+        import re
+        from bs4 import BeautifulSoup, NavigableString
+        
+        
+        # Define industry mappings
+        industry_links = {
+            'financial services': 'finance',
+            'fintech': 'finance',
+            'healthcare': 'healthcare',
+            'life sciences': 'healthcare',
+            'e-commerce': 'retail',
+            'retail': 'retail',
+            'media': 'telecom',
+            'entertainment': 'telecom',
+            'logistics': 'manufacturing',
+            'supply chain': 'manufacturing',
+            'education technology': 'telecom',
+            'edtech': 'telecom',
+            'manufacturing': 'manufacturing',
+            'energy': 'energy',
+            'telecommunications': 'telecom',
+            'telecom': 'telecom'
+        }
+        
+        # Define service mappings (common terms to service pages)
+        service_links = {
+            'ai integration': 'ai-integration',
+            'artificial intelligence': 'ai-integration',
+            'machine learning': 'ai-integration',
+            'staff augmentation': 'staff-augmentation',
+            'team scaling': 'staff-augmentation',
+            'blockchain': 'blockchain_development',
+            'cloud services': 'cloud-managment',
+            'cloud management': 'cloud-managment',
+            'data analytics': 'data-analytics',
+            'computer vision': 'computer_vision_service',
+            'natural language processing': 'natural_language_processing',
+            'nlp': 'natural_language_processing',
+            'mobile app': 'mobile_app.development',
+            'web development': 'web-development',
+            'ui/ux': 'ui_ux_design_services',
+            'devops': 'devops_consulting',
+            'cybersecurity': 'cybersecurity-solutions'
+        }
+        
+        # Parse HTML
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        # Get current page slug to avoid self-linking
+        current_slug = file_path.stem
+        
+        # Function to check if text is already inside a link
+        def is_inside_link(element):
+            for parent in element.parents:
+                if parent.name == 'a':
+                    return True
+            return False
+        
+        # Process text nodes for auto-linking
+        for text_node in soup.find_all(string=True):
+            # Skip if already inside a link, script, style, code or pre tag
+            # Allow text inside formatting tags like strong, em, b, i
+            if is_inside_link(text_node) or text_node.parent.name in ['a', 'script', 'style', 'code', 'pre']:
+                continue
+            
+            text = str(text_node)
+            modified = False
+            
+            # Check for industry mentions (only link if we're on a service page)
+            if 'services/' in str(file_path):
+                for term, industry_slug in industry_links.items():
+                    # Case-insensitive search with word boundaries
+                    pattern = r'\b(' + re.escape(term) + r')\b'
+                    match = re.search(pattern, text, re.IGNORECASE)
+                    if match:
+                        # Replace with link (preserving original case)
+                        matched_text = match.group(1)
+                        replacement = f'<a href="../industries/{industry_slug}.html" class="auto-link">{matched_text}</a>'
+                        text = text[:match.start()] + replacement + text[match.end():]
+                        modified = True
+                        break  # Only link one term per text node
+            
+            # Check for service mentions (only link if we're on an industry page)
+            if 'industries/' in str(file_path):
+                for term, service_slug in service_links.items():
+                    if service_slug != current_slug:  # Don't link to self
+                        pattern = r'\b(' + re.escape(term) + r')\b'
+                        match = re.search(pattern, text, re.IGNORECASE)
+                        if match:
+                            # Replace with link (preserving original case)
+                            matched_text = match.group(1)
+                            replacement = f'<a href="../services/{service_slug}.html" class="auto-link">{matched_text}</a>'
+                            text = text[:match.start()] + replacement + text[match.end():]
+                            modified = True
+                            break
+            
+            # Replace the text node with new HTML if modified
+            if modified:
+                # Parse the modified text and extract all children
+                new_soup = BeautifulSoup(text, 'html.parser')
+                # Get all the parsed elements (could be text and links mixed)
+                new_elements = list(new_soup.children)
+                if new_elements:
+                    # Replace the original text node with the first element
+                    first_element = new_elements[0]
+                    text_node.replace_with(first_element)
+                    # Insert any remaining elements after the first one
+                    for element in new_elements[1:]:
+                        first_element.insert_after(element)
+                        first_element = element
+        
+        return str(soup)
+    
     def _process_template_directives(self, content: str) -> str:
         """Process template directives like {{template:cta}} in markdown content"""
         import re
@@ -468,11 +583,149 @@ class SiteGenerator:
         
         return content
     
+    def _process_faq_sections(self, html_content: str) -> str:
+        """Convert FAQ sections to interactive accordion format"""
+        from bs4 import BeautifulSoup
+        
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        # Find FAQ sections (h2 with "Frequently Asked Questions" or "FAQ")
+        for h2 in soup.find_all('h2'):
+            if h2.text and ('frequently asked questions' in h2.text.lower() or 'faq' in h2.text.lower()):
+                # Create FAQ container
+                faq_container = soup.new_tag('div', attrs={'class': 'faq-section'})
+                faq_header = soup.new_tag('div', attrs={'class': 'faq-header'})
+                faq_title = soup.new_tag('h2')
+                faq_title.string = h2.text
+                faq_header.append(faq_title)
+                
+                # Add intro paragraph if exists
+                next_elem = h2.find_next_sibling()
+                if next_elem and next_elem.name == 'p' and not next_elem.find_next_sibling('h3'):
+                    intro = soup.new_tag('p', attrs={'class': 'faq-intro'})
+                    if next_elem.string:
+                        intro.string = next_elem.string
+                    else:
+                        # Preserve inner HTML
+                        for child in list(next_elem.children):
+                            intro.append(child.extract())
+                    faq_header.append(intro)
+                    next_elem.decompose()
+                
+                faq_container.append(faq_header)
+                
+                # Create FAQ items container
+                faq_items = soup.new_tag('div', attrs={'class': 'faq-items'})
+                
+                # Process FAQ items (h3 questions followed by answers)
+                current_elem = h2.find_next_sibling()
+                item_index = 0
+                while current_elem:
+                    if current_elem.name == 'h2':
+                        # Stop if we hit another h2
+                        break
+                    elif current_elem.name == 'h3':
+                        item_index += 1
+                        # This is a question
+                        faq_item = soup.new_tag('div', attrs={'class': 'faq-item', 'data-faq-index': str(item_index)})
+                        
+                        # Create question button
+                        question = soup.new_tag('button', attrs={
+                            'class': 'faq-question',
+                            'aria-expanded': 'false',
+                            'aria-controls': f'faq-answer-{item_index}'
+                        })
+                        question_text = soup.new_tag('span', attrs={'class': 'faq-question-text'})
+                        question_text.string = current_elem.text
+                        question.append(question_text)
+                        
+                        # Add chevron icon
+                        icon = soup.new_tag('span', attrs={'class': 'faq-icon'})
+                        icon.string = '▼'  # Will be styled with CSS
+                        question.append(icon)
+                        
+                        faq_item.append(question)
+                        
+                        # Create answer container
+                        answer_container = soup.new_tag('div', attrs={
+                            'class': 'faq-answer',
+                            'id': f'faq-answer-{item_index}'
+                        })
+                        answer_content = soup.new_tag('div', attrs={'class': 'faq-answer-content'})
+                        
+                        # Get the answer (next paragraph(s) until next h3 or h2)
+                        to_remove = current_elem
+                        answer_elem = current_elem.find_next_sibling()
+                        while answer_elem and answer_elem.name not in ['h2', 'h3']:
+                            if answer_elem.name in ['p', 'ul', 'ol', 'blockquote']:
+                                # Clone the element to preserve its content
+                                cloned = soup.new_tag(answer_elem.name)
+                                if answer_elem.attrs:
+                                    cloned.attrs = answer_elem.attrs.copy()
+                                if answer_elem.string:
+                                    cloned.string = answer_elem.string
+                                else:
+                                    for child in list(answer_elem.children):
+                                        cloned.append(child.extract())
+                                answer_content.append(cloned)
+                            next_answer = answer_elem.find_next_sibling()
+                            answer_elem.decompose()
+                            answer_elem = next_answer
+                        
+                        answer_container.append(answer_content)
+                        faq_item.append(answer_container)
+                        faq_items.append(faq_item)
+                        
+                        # Move to next element
+                        current_elem = answer_elem
+                        to_remove.decompose()
+                    else:
+                        # Skip any other elements between FAQs
+                        next_elem = current_elem.find_next_sibling()
+                        current_elem.decompose()
+                        current_elem = next_elem
+                
+                faq_container.append(faq_items)
+                
+                # Add FAQ schema script for SEO
+                schema_script = soup.new_tag('script', attrs={'type': 'application/ld+json'})
+                faq_data = []
+                for item in faq_items.find_all('div', class_='faq-item'):
+                    q = item.find('span', class_='faq-question-text')
+                    a = item.find('div', class_='faq-answer-content')
+                    if q and a:
+                        faq_data.append({
+                            "@type": "Question",
+                            "name": q.text,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": a.get_text(strip=True)
+                            }
+                        })
+                
+                if faq_data:
+                    import json
+                    schema = {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": faq_data
+                    }
+                    schema_script.string = json.dumps(schema, indent=2)
+                    faq_container.append(schema_script)
+                
+                # Replace the original h2 with the new FAQ structure
+                h2.replace_with(faq_container)
+        
+        return str(soup)
+    
     def _process_template_directives_in_html(self, html_content: str) -> str:
         """Process template directives that may be wrapped in HTML tags"""
         import re
         
-        # First process any directives that are already in the markdown
+        # First process FAQ sections
+        html_content = self._process_faq_sections(html_content)
+        
+        # Then process any directives that are already in the markdown
         html_content = self._process_template_directives(html_content)
         
         # Also handle directives that got wrapped in <p> tags
@@ -544,6 +797,10 @@ class SiteGenerator:
         
         # Also process any remaining directives that might have been wrapped in HTML tags
         html_content = self._process_template_directives_in_html(html_content)
+        
+        # Auto-link industry and service mentions (only for service and industry pages)
+        if 'services/' in str(file_path) or 'industries/' in str(file_path):
+            html_content = self._add_automatic_interlinking(html_content, file_path)
         
         # Extract first paragraph as excerpt
         soup = BeautifulSoup(html_content, 'html.parser')

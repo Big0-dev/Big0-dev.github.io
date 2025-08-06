@@ -44,6 +44,13 @@
         </div>
         <div class="meta-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span class="reading-time">Calculating...</span>
+        </div>
+        <div class="meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
             <line x1="7" y1="7" x2="7.01" y2="7"/>
           </svg>
@@ -71,4 +78,28 @@
 </article>
 
 
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+// Calculate reading time
+document.addEventListener('DOMContentLoaded', function() {
+  const content = document.querySelector('.detail-content');
+  const readingTimeElement = document.querySelector('.reading-time');
+  
+  if (content && readingTimeElement) {
+    // Get text content and count words
+    const text = content.textContent || content.innerText;
+    const words = text.trim().split(/\s+/).length;
+    
+    // Calculate reading time (200 words per minute average)
+    const wordsPerMinute = 200;
+    const readingTime = Math.ceil(words / wordsPerMinute);
+    
+    // Update the display
+    readingTimeElement.textContent = `${readingTime} min read`;
+  }
+});
+</script>
 {% endblock %}

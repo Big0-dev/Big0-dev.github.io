@@ -27,6 +27,13 @@
       <p class="text-xl text-secondary mt-lg">
         {{ current_service.frontmatter.tagline | default('Transform your business with our expert solutions') }}
       </p>
+      <div class="text-sm text-tertiary mt-md">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle;">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span class="reading-time">Calculating...</span>
+      </div>
     </div>
   </div>
 </section>
@@ -79,4 +86,59 @@
     </div>
   </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+// Calculate reading time
+document.addEventListener('DOMContentLoaded', function() {
+  const content = document.querySelector('.detail-content');
+  const readingTimeElement = document.querySelector('.reading-time');
+  
+  if (content && readingTimeElement) {
+    // Get text content and count words
+    const text = content.textContent || content.innerText;
+    const words = text.trim().split(/\s+/).length;
+    
+    // Calculate reading time (200 words per minute average)
+    const wordsPerMinute = 200;
+    const readingTime = Math.ceil(words / wordsPerMinute);
+    
+    // Update the display
+    readingTimeElement.textContent = `${readingTime} min read`;
+  }
+});
+
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', function() {
+      // Toggle current item
+      const isActive = item.classList.contains('active');
+      
+      // Close all other items (optional - remove this block for multi-open)
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Toggle current item
+      if (isActive) {
+        item.classList.remove('active');
+        question.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+</script>
 {% endblock %}

@@ -8,8 +8,7 @@
 /* Critical home.css styles with CLS fixes */
 .hero{position:relative;min-height:85vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .hero-content{text-align:center;max-width:56rem;z-index:2;padding:0 var(--space-md);min-height:300px}
-.hero-content h1{min-height:120px;display:flex;flex-direction:column;justify-content:center}
-.hero-cta{display:inline-flex;gap:var(--space-md);min-height:48px}
+.hero-cta{display:inline-flex;gap:var(--space-md);min-height:48px;justify-content:center}
 .shape{position:absolute;background:var(--gradient-mesh);opacity:0.1;filter:blur(40px);border-radius:50%}
 .shape-1{width:600px;height:600px;top:-200px;right:-200px}
 .shape-2{width:400px;height:400px;bottom:-100px;left:-100px}
@@ -43,7 +42,7 @@
       faster, smarter strategic choices that drive growth.
     </p>
     
-    <div class="hero-cta">
+    <div class="hero-cta" style="display: flex; justify-content: center;">
       <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
         Start Your AI Transformation
       </a>

@@ -81,9 +81,8 @@
   padding: var(--space-2xl);
   /* Stable minimum dimensions to prevent CLS */
   min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* Remove flex to maintain text-center alignment */
+  text-align: center;
 }
 
 /* Pulsating Button */

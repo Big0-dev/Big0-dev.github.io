@@ -373,44 +373,416 @@ class SiteGenerator:
         
         
         # Define industry mappings
+        # Define industry mappings (expanded)
         industry_links = {
+            # Finance Industry
             'financial services': 'finance',
             'fintech': 'finance',
+            'banking': 'finance',
+            'investment': 'finance',
+            'trading': 'finance',
+            'insurance': 'finance',
+            'wealth management': 'finance',
+            'payment processing': 'finance',
+            'digital banking': 'finance',
+            'financial institution': 'finance',
+            
+            # Healthcare Industry
             'healthcare': 'healthcare',
+            'health tech': 'healthcare',
+            'medical': 'healthcare',
             'life sciences': 'healthcare',
-            'e-commerce': 'retail',
+            'pharmaceutical': 'healthcare',
+            'biotech': 'healthcare',
+            'hospital': 'healthcare',
+            'clinical': 'healthcare',
+            'patient care': 'healthcare',
+            'medical device': 'healthcare',
+            'health information': 'healthcare',
+            
+            # Retail Industry
             'retail': 'retail',
-            'media': 'telecom',
-            'entertainment': 'telecom',
+            'e-commerce': 'retail',
+            'ecommerce': 'retail',
+            'online shopping': 'retail',
+            'marketplace': 'retail',
+            'consumer goods': 'retail',
+            'fashion': 'retail',
+            'grocery': 'retail',
+            'wholesale': 'retail',
+            
+            # Manufacturing Industry
+            'manufacturing': 'manufacturing',
             'logistics': 'manufacturing',
             'supply chain': 'manufacturing',
+            'warehouse': 'manufacturing',
+            'inventory': 'manufacturing',
+            'production': 'manufacturing',
+            'factory': 'manufacturing',
+            'industrial': 'manufacturing',
+            'automotive': 'manufacturing',
+            'aerospace': 'manufacturing',
+            'agriculture': 'manufacturing',
+            'agricultural': 'manufacturing',
+            'farming': 'manufacturing',
+            
+            # Telecom & Media Industry
+            'telecommunications': 'telecom',
+            'telecom': 'telecom',
+            'media': 'telecom',
+            'entertainment': 'telecom',
+            'broadcasting': 'telecom',
+            'streaming': 'telecom',
+            'gaming': 'telecom',
             'education technology': 'telecom',
             'edtech': 'telecom',
-            'manufacturing': 'manufacturing',
+            'e-learning': 'telecom',
+            'online education': 'telecom',
+            
+            # Energy Industry
             'energy': 'energy',
-            'telecommunications': 'telecom',
-            'telecom': 'telecom'
+            'oil and gas': 'energy',
+            'renewable energy': 'energy',
+            'solar': 'energy',
+            'wind energy': 'energy',
+            'utilities': 'energy',
+            'power generation': 'energy',
+            'electric': 'energy',
+            'sustainability': 'energy'
         }
         
-        # Define service mappings (common terms to service pages)
+        # Define service mappings (comprehensive keyword dictionary)
         service_links = {
+            # AI & Machine Learning
             'ai integration': 'ai-integration',
             'artificial intelligence': 'ai-integration',
             'machine learning': 'ai-integration',
-            'staff augmentation': 'staff-augmentation',
-            'team scaling': 'staff-augmentation',
-            'blockchain': 'blockchain_development',
-            'cloud services': 'cloud-managment',
-            'cloud management': 'cloud-managment',
-            'data analytics': 'data-analytics',
+            'deep learning': 'ai-integration',
+            'neural network': 'ai-integration',
+            'ai model': 'ai-integration',
+            'ml model': 'ai-integration',
+            'predictive analytics': 'ai-integration',
+            'ai solution': 'ai-integration',
+            
+            # Computer Vision
             'computer vision': 'computer_vision_service',
+            'image recognition': 'computer_vision_service',
+            'object detection': 'computer_vision_service',
+            'facial recognition': 'computer_vision_service',
+            'image processing': 'computer_vision_service',
+            'opencv': 'computer_vision_service',
+            
+            # Natural Language Processing
             'natural language processing': 'natural_language_processing',
             'nlp': 'natural_language_processing',
-            'mobile app': 'mobile_app.development',
+            'text analysis': 'natural_language_processing',
+            'sentiment analysis': 'natural_language_processing',
+            'chatbot': 'natural_language_processing',
+            'language model': 'natural_language_processing',
+            
+            # Software Development
+            'custom software': 'software-development',
+            'software development': 'software-development',
+            'software solution': 'software-development',
+            'application development': 'software-development',
+            'software engineering': 'software-development',
+            'ros': 'software-development',
+            'ROS': 'software-development',
+            'gazebo': 'software-development',
+            'Gazebo': 'software-development',
+            'simulation': 'software-development',
+            'simulator': 'software-development',
+            
+            # Web Development
             'web development': 'web-development',
-            'ui/ux': 'ui_ux_design_services',
+            'web application': 'web-development',
+            'web app': 'web-development',
+            'website development': 'web-development',
+            'react': 'web-development',
+            'angular': 'web-development',
+            'vue': 'web-development',
+            'javascript': 'web-development',
+            'typescript': 'web-development',
+            'frontend': 'web-development',
+            'backend': 'web-development',
+            'full stack': 'web-development',
+            'node.js': 'web-development',
+            'nodejs': 'web-development',
+            
+            # Mobile Development
+            'mobile app': 'mobile_app.development',
+            'mobile application': 'mobile_app.development',
+            'ios app': 'mobile_app.development',
+            'android app': 'mobile_app.development',
+            'flutter': 'mobile_app.development',
+            'react native': 'mobile_app.development',
+            'swift': 'mobile_app.development',
+            'kotlin': 'mobile_app.development',
+            
+            # Hardware & CAD
+            'cad': 'hardware_cad',
+            'cad model': 'hardware_cad',
+            'hardware design': 'hardware_cad',
+            'mechanical design': 'hardware_cad',
+            '3d modeling': 'hardware_cad',
+            '3d design': 'hardware_cad',
+            'solidworks': 'hardware_cad',
+            'autocad': 'hardware_cad',
+            'fusion 360': 'hardware_cad',
+            'carbon fiber': 'hardware_cad',
+            'carbon fiber construction': 'hardware_cad',
+            'prototype': 'hardware_cad',
+            'prototyping': 'hardware_cad',
+            'wheelbase': 'hardware_cad',
+            'modular design': 'hardware_cad',
+            
+            # Embedded Systems
+            'embedded system': 'embedded_systems_development',
+            'embedded software': 'embedded_systems_development',
+            'embedded': 'embedded_systems_development',
+            'arduino': 'embedded_systems_development',
+            'Arduino': 'embedded_systems_development',
+            'raspberry pi': 'embedded_systems_development',
+            'microcontroller': 'embedded_systems_development',
+            'firmware': 'embedded_systems_development',
+            'px4': 'embedded_systems_development',
+            'PX4': 'embedded_systems_development',
+            'px4 autopilot': 'embedded_systems_development',
+            'PX4 Autopilot': 'embedded_systems_development',
+            'flight controller': 'embedded_systems_development',
+            'dji n3': 'embedded_systems_development',
+            'DJI N3': 'embedded_systems_development',
+            'stm32': 'embedded_systems_development',
+            'STM32': 'embedded_systems_development',
+            'esp32': 'embedded_systems_development',
+            'ESP32': 'embedded_systems_development',
+            'bldc': 'embedded_systems_development',
+            'BLDC': 'embedded_systems_development',
+            'bldc motor': 'embedded_systems_development',
+            'BLDC motor': 'embedded_systems_development',
+            'motor control': 'embedded_systems_development',
+            'autopilot': 'embedded_systems_development',
+            
+            # IoT Development
+            'iot': 'iot_device_development',
+            'internet of things': 'iot_device_development',
+            'iot device': 'iot_device_development',
+            'smart device': 'iot_device_development',
+            'sensor': 'iot_device_development',
+            'sensing layer': 'iot_device_development',
+            'environmental sensor': 'iot_device_development',
+            'smart meter': 'iot_device_development',
+            'drone': 'iot_device_development',
+            'octocopter': 'iot_device_development',
+            'uav': 'iot_device_development',
+            'spray system': 'iot_device_development',
+            'precision spraying': 'iot_device_development',
+            'agricultural drone': 'iot_device_development',
+            'sprayer drone': 'iot_device_development',
+            'telemetry': 'iot_device_development',
+            'mqtt': 'iot_device_development',
+            'lorawan': 'iot_device_development',
+            'edge computing': 'iot_device_development',
+            'smart city': 'iot_device_development',
+            'smart cities': 'iot_device_development',
+            
+            # PCB Design
+            'pcb': 'pcb_design_and_layout',
+            'circuit board': 'pcb_design_and_layout',
+            'circuit design': 'pcb_design_and_layout',
+            'electronics design': 'pcb_design_and_layout',
+            'altium': 'pcb_design_and_layout',
+            'eagle': 'pcb_design_and_layout',
+            'kicad': 'pcb_design_and_layout',
+            
+            # Cloud & DevOps
+            'cloud service': 'cloud-managment',
+            'cloud management': 'cloud-managment',
+            'cloud solution': 'cloud-managment',
+            'aws': 'cloud-managment',
+            'azure': 'cloud-managment',
+            'google cloud': 'cloud-managment',
+            'gcp': 'cloud-managment',
+            'cloud infrastructure': 'cloud-managment',
+            '5g network': 'cloud-managment',
+            '5g': 'cloud-managment',
+            'cloud platform': 'cloud-managment',
+            
+            # DevOps
             'devops': 'devops_consulting',
-            'cybersecurity': 'cybersecurity-solutions'
+            'ci/cd': 'devops_consulting',
+            'docker': 'devops_consulting',
+            'kubernetes': 'devops_consulting',
+            'jenkins': 'devops_consulting',
+            'terraform': 'devops_consulting',
+            'ansible': 'devops_consulting',
+            'infrastructure as code': 'devops_consulting',
+            
+            # Database & Analytics
+            'data analytics': 'data-analytics',
+            'data analysis': 'data-analytics',
+            'business intelligence': 'data-analytics',
+            'bi solution': 'data-analytics',
+            'data visualization': 'data-analytics',
+            'big data': 'data-analytics',
+            'data science': 'data-analytics',
+            'sql': 'data-analytics',
+            'database': 'data-analytics',
+            'data warehouse': 'data-analytics',
+            'real-time analytics': 'data-analytics',
+            'predictive modeling': 'data-analytics',
+            'data processing': 'data-analytics',
+            
+            # Dashboard Development
+            'dashboard': 'dashboards',
+            'analytics dashboard': 'dashboards',
+            'reporting dashboard': 'dashboards',
+            'real-time dashboard': 'dashboards',
+            'kpi dashboard': 'dashboards',
+            'management dashboard': 'dashboards',
+            'city management dashboard': 'dashboards',
+            'tableau': 'dashboards',
+            'power bi': 'dashboards',
+            'digital twin': 'dashboards',
+            
+            # Python Automation
+            'python': 'python-automation',
+            'python script': 'python-automation',
+            'automation': 'python-automation',
+            'web scraping': 'python-automation',
+            'pandas': 'python-automation',
+            'numpy': 'python-automation',
+            
+            # UI/UX Design
+            'ui design': 'ui_ux_design_services',
+            'ux design': 'ui_ux_design_services',
+            'ui/ux': 'ui_ux_design_services',
+            'user interface': 'ui_ux_design_services',
+            'user experience': 'ui_ux_design_services',
+            'figma': 'ui_ux_design_services',
+            'sketch': 'ui_ux_design_services',
+            'adobe xd': 'ui_ux_design_services',
+            'wireframe': 'ui_ux_design_services',
+            'mockup': 'ui_ux_design_services',
+            
+            # Brand & Digital Design
+            'brand design': 'brand_and_digital_design',
+            'branding': 'brand_and_digital_design',
+            'logo design': 'brand_and_digital_design',
+            'graphic design': 'brand_and_digital_design',
+            'visual identity': 'brand_and_digital_design',
+            'brand identity': 'brand_and_digital_design',
+            
+            # Blockchain
+            'blockchain': 'blockchain_development',
+            'smart contract': 'blockchain_development',
+            'ethereum': 'blockchain_development',
+            'solidity': 'blockchain_development',
+            'web3': 'blockchain_development',
+            'cryptocurrency': 'blockchain_development',
+            'defi': 'blockchain_development',
+            'nft': 'blockchain_development',
+            
+            # AR/VR Development
+            'ar development': 'ar_vr_development',
+            'vr development': 'ar_vr_development',
+            'augmented reality': 'ar_vr_development',
+            'virtual reality': 'ar_vr_development',
+            'mixed reality': 'ar_vr_development',
+            'unity': 'ar_vr_development',
+            'unreal engine': 'ar_vr_development',
+            'oculus': 'ar_vr_development',
+            'metaverse': 'ar_vr_development',
+            
+            # E-commerce
+            'e-commerce': 'e_commerce_solutions',
+            'ecommerce': 'e_commerce_solutions',
+            'online store': 'e_commerce_solutions',
+            'shopping cart': 'e_commerce_solutions',
+            'payment integration': 'e_commerce_solutions',
+            'shopify': 'e_commerce_solutions',
+            'woocommerce': 'e_commerce_solutions',
+            'magento': 'e_commerce_solutions',
+            
+            # ERP Implementation
+            'erp': 'erp_implementation',
+            'enterprise resource planning': 'erp_implementation',
+            'sap': 'erp_implementation',
+            'oracle erp': 'erp_implementation',
+            'microsoft dynamics': 'erp_implementation',
+            'odoo': 'erp_implementation',
+            
+            # Software Testing
+            'software testing': 'software_testing',
+            'qa testing': 'software_testing',
+            'quality assurance': 'software_testing',
+            'test automation': 'software_testing',
+            'selenium': 'software_testing',
+            'unit testing': 'software_testing',
+            'integration testing': 'software_testing',
+            'performance testing': 'software_testing',
+            
+            # Cybersecurity
+            'cybersecurity': 'cybersecurity-solutions',
+            'security solution': 'cybersecurity-solutions',
+            'penetration testing': 'cybersecurity-solutions',
+            'security audit': 'cybersecurity-solutions',
+            'vulnerability assessment': 'cybersecurity-solutions',
+            'data security': 'cybersecurity-solutions',
+            
+            # FinTech
+            'fintech': 'fintech_development',
+            'financial technology': 'fintech_development',
+            'payment system': 'fintech_development',
+            'banking solution': 'fintech_development',
+            'trading platform': 'fintech_development',
+            'digital wallet': 'fintech_development',
+            
+            # Healthcare IT
+            'healthcare it': 'healthcare_it_solutions',
+            'health tech': 'healthcare_it_solutions',
+            'medical software': 'healthcare_it_solutions',
+            'ehr system': 'healthcare_it_solutions',
+            'telemedicine': 'healthcare_it_solutions',
+            'hipaa compliant': 'healthcare_it_solutions',
+            
+            # Game Development
+            'game development': 'game_development',
+            'game design': 'game_development',
+            'unity game': 'game_development',
+            'unreal game': 'game_development',
+            'mobile game': 'game_development',
+            'gamedev': 'game_development',
+            
+            # Digital Marketing
+            'digital marketing': 'digital_marketing_services',
+            'seo': 'digital_marketing_services',
+            'search engine optimization': 'digital_marketing_services',
+            'ppc': 'digital_marketing_services',
+            'social media marketing': 'digital_marketing_services',
+            'content marketing': 'digital_marketing_services',
+            
+            # Staff Augmentation
+            'staff augmentation': 'staff-augmentation',
+            'team scaling': 'staff-augmentation',
+            'dedicated developer': 'staff-augmentation',
+            'remote developer': 'staff-augmentation',
+            'offshore development': 'staff-augmentation',
+            'nearshore development': 'staff-augmentation',
+            
+            # BPO Services
+            'bpo': 'bpo',
+            'business process outsourcing': 'bpo',
+            'outsourcing service': 'bpo',
+            'back office': 'bpo',
+            'customer support': 'bpo',
+            
+            # Professional Training
+            'training': 'professional-technology-training',
+            'professional development': 'professional-technology-training',
+            'tech training': 'professional-technology-training',
+            'certification': 'professional-technology-training',
+            'workshop': 'professional-technology-training'
         }
         
         # Parse HTML

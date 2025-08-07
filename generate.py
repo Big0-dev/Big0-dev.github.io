@@ -466,10 +466,14 @@ class SiteGenerator:
             
             # Computer Vision
             'computer vision': 'computer_vision_service',
+            'computer vision applications': 'computer_vision_service',
+            'computer vision services': 'computer_vision_service',
             'image recognition': 'computer_vision_service',
+            'image recognition systems': 'computer_vision_service',
             'object detection': 'computer_vision_service',
             'facial recognition': 'computer_vision_service',
             'image processing': 'computer_vision_service',
+            'visual data': 'computer_vision_service',
             'opencv': 'computer_vision_service',
             
             # Natural Language Processing
@@ -699,9 +703,18 @@ class SiteGenerator:
             # AR/VR Development
             'ar development': 'ar_vr_development',
             'vr development': 'ar_vr_development',
+            'ar vr development': 'ar_vr_development',
+            'ar vr app development': 'ar_vr_development',
+            'ar vr application development': 'ar_vr_development',
             'augmented reality': 'ar_vr_development',
             'virtual reality': 'ar_vr_development',
+            'ar/vr': 'ar_vr_development',
+            'ar vr': 'ar_vr_development',
             'mixed reality': 'ar_vr_development',
+            'xr development': 'ar_vr_development',
+            'xr content': 'ar_vr_development',
+            'immersive experiences': 'ar_vr_development',
+            'virtual simulations': 'ar_vr_development',
             'unity': 'ar_vr_development',
             'unreal engine': 'ar_vr_development',
             'oculus': 'ar_vr_development',
@@ -777,8 +790,14 @@ class SiteGenerator:
             
             # Staff Augmentation
             'staff augmentation': 'staff-augmentation',
+            'it staff augmentation': 'staff-augmentation',
+            'offshore staff augmentation': 'staff-augmentation',
+            'nearshore staff augmentation': 'staff-augmentation',
+            'remote developer staffing': 'staff-augmentation',
             'team scaling': 'staff-augmentation',
+            'team augmentation': 'staff-augmentation',
             'dedicated developer': 'staff-augmentation',
+            'resource augmentation': 'staff-augmentation',
             'remote developer': 'staff-augmentation',
             'offshore development': 'staff-augmentation',
             'nearshore development': 'staff-augmentation',

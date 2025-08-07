@@ -1,6 +1,6 @@
 ---
-title: Scalable AR VR Application Development Services
-meta_description: Build immersive AR VR applications with BigO. Get expert-built solutions for training, marketing, and interactive brand experiences.
+title: AR VR Application Development Services | Immersive Solutions
+meta_description: Build immersive AR VR applications with BigO's expert development team. Get custom solutions for training, marketing, and interactive brand experiences. Deploy in days.
 description: Build powerful AR and VR experiences that bring ideas to life with expert solutions for training, marketing, and interactive brand experiences
 short_description: Expert AR VR development services that deliver immersive solutions for training, marketing, and interactive brand experiences.
 icon: eye

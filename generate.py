@@ -813,10 +813,11 @@ class SiteGenerator:
             is_industry_page = 'industries/' in str(file_path)
             is_blog_page = 'blogs/' in str(file_path)
             is_case_study_page = 'case_studies/' in str(file_path)
+            is_news_page = 'news/' in str(file_path)
             
             # Check for industry mentions
-            # Link on service pages, blog pages, and case study pages
-            if is_service_page or is_blog_page or is_case_study_page:
+            # Link on service pages, blog pages, case study pages, and news pages
+            if is_service_page or is_blog_page or is_case_study_page or is_news_page:
                 for term, industry_slug in industry_links.items():
                     # Case-insensitive search with word boundaries
                     pattern = r'\b(' + re.escape(term) + r')\b'
@@ -830,8 +831,8 @@ class SiteGenerator:
                         break  # Only link one term per text node
             
             # Check for service mentions
-            # Link on industry pages, blog pages, and case study pages
-            if is_industry_page or is_blog_page or is_case_study_page:
+            # Link on industry pages, blog pages, case study pages, and news pages
+            if is_industry_page or is_blog_page or is_case_study_page or is_news_page:
                 if not modified:  # Only check if we haven't already modified the text
                     for term, service_slug in service_links.items():
                         if service_slug != current_slug:  # Don't link to self
@@ -1179,8 +1180,8 @@ class SiteGenerator:
         # Also process any remaining directives that might have been wrapped in HTML tags
         html_content = self._process_template_directives_in_html(html_content)
         
-        # Auto-link industry and service mentions (for service, industry, blog, and case study pages)
-        if any(path in str(file_path) for path in ['services/', 'industries/', 'blogs/', 'case_studies/']):
+        # Auto-link industry and service mentions (for service, industry, blog, case study, and news pages)
+        if any(path in str(file_path) for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'news/']):
             html_content = self._add_automatic_interlinking(html_content, file_path)
         
         # Extract first paragraph as excerpt

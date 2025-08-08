@@ -1743,12 +1743,38 @@ class SiteGenerator:
                 if content_type == 'services':
                     locations_dir = content_dir / 'locations'
                     if locations_dir.exists():
+                        # Add country-level location pages
                         for location_dir in locations_dir.iterdir():
                             if location_dir.is_dir():
+                                # Country pages
                                 for location_file in location_dir.glob('*.md'):
                                     location_slug = location_file.stem
                                     location_key = location_dir.name
                                     urls.append(f"{self.config['domain']}/services/locations/{location_key}/{location_slug}.html")
+                                
+                                # City pages
+                                cities_dir = location_dir / 'cities'
+                                if cities_dir.exists():
+                                    for city_dir in cities_dir.iterdir():
+                                        if city_dir.is_dir():
+                                            for city_file in city_dir.glob('*.md'):
+                                                city_slug = city_file.stem
+                                                city_key = city_dir.name
+                                                urls.append(f"{self.config['domain']}/services/locations/{location_key}/cities/{city_key}/{city_slug}.html")
+        
+        # Add listing/index pages that are auto-generated
+        listing_pages = [
+            'services.html',  # Main services listing page
+            'blog.html',
+            'industries.html',
+            'case-studies.html',
+            'case-studies-2.html',  # Pagination page
+            'gallery-2.html'  # Pagination page
+        ]
+        for page in listing_pages:
+            # Check if the page actually exists in build directory
+            if (Path(self.output_dir) / page).exists():
+                urls.append(f"{self.config['domain']}/{page}")
                     
         # Generate sitemap XML with lastmod, changefreq, and priority
         from datetime import datetime

@@ -1,5 +1,6 @@
 ---
 title: DevOps Consulting
+meta_description: "DevOps consulting: CI/CD automation, infrastructure as code. Reduce deployments 90%, achieve 99.9% uptime. Accelerate your delivery today!"
 description: Streamline your development and deployment processes with automated CI/CD pipelines, infrastructure as code, and cloud-native DevOps practices
 icon: settings
 features: CI/CD automation, Infrastructure as Code, Container orchestration, Monitoring & logging, Security integration, Performance optimization
@@ -35,6 +36,13 @@ Our DevOps expertise helps organizations achieve continuous delivery, improve co
 - Prometheus, Grafana & ELK Stack
 - Ansible & Chef
 - AWS, Azure & Google Cloud DevOps Tools
+
+### Related Services
+Enhance your DevOps transformation with our complementary services:
+- [Cloud Infrastructure Management](cloud-managment.html) - Optimize your cloud infrastructure with expert management and monitoring
+- [Software Testing](software_testing.html) - Implement automated testing frameworks for continuous quality assurance
+- [Cybersecurity Solutions](cybersecurity-solutions.html) - Integrate security practices into your DevOps pipeline with DevSecOps
+- [Custom Software Development](software-development.html) - Build applications optimized for modern DevOps practices
 
 {{template:cta}}
 

@@ -1,5 +1,6 @@
 ---
 title: Natural Language Processing
+meta_description: "Advanced NLP solutions: AI chatbots, document automation, sentiment analysis. 50+ languages supported. Transform text data into insights today!"
 description: Advanced NLP solutions including chatbots, document processing, sentiment analysis, and language translation for intelligent text automation
 icon: message-circle
 features: Chatbot development, Document processing, Sentiment analysis, Language translation, Text summarization, Voice recognition

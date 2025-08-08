@@ -1,5 +1,6 @@
 ---
 title: Software Testing Services
+meta_description: Professional software testing & QA services. Manual, automated, performance & security testing to ensure bug-free releases. Reduce defects by 90% with expert QA.
 description: Comprehensive quality assurance and testing solutions ensuring your software delivers flawless user experiences and meets the highest quality standards
 icon: check-circle
 features: Manual & automated testing, Performance testing, Security testing, Mobile app testing, API testing, Compliance testing

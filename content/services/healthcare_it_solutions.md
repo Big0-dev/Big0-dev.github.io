@@ -1,5 +1,6 @@
 ---
 title: Healthcare IT Solutions
+meta_description: "HIPAA-compliant healthcare IT: EHR, telemedicine, patient portals. Reduce errors 60%, improve outcomes. Transform healthcare delivery today!"
 description: HIPAA-compliant healthcare technology including electronic health records, telemedicine platforms, medical device integration, and patient management systems
 icon: heart
 features: Electronic health records, Telemedicine platforms, Medical device integration, Patient portals, HIPAA compliance, Healthcare analytics

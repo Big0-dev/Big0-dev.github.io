@@ -1,5 +1,6 @@
 ---
 title: Brand & Digital Design
+meta_description: "Brand identity & digital design services: logos, guidelines, marketing materials. 80% brand recall increase, 3x engagement. Build your brand today!"
 description: Complete brand identity and digital design services including logo design, brand guidelines, marketing materials, and digital asset creation
 icon: palette
 features: Logo & brand identity, Brand guidelines, Marketing collateral, Social media graphics, Website design, Print design

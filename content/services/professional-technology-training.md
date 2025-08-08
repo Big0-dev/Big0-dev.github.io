@@ -1,5 +1,6 @@
 ---
-title: Professional Technology Training
+title: Professional Technology Training Services
+meta_description: Upskill your team with expert-led technology training programs. Custom courses in cloud computing, AI/ML, cybersecurity, and modern development practices. Boost productivity by 40%.
 description: Accelerate your team's growth with hands-on training programs in AI, cloud computing, DevOps, and modern software development
 icon: growth
 features: Custom curriculum, Hands-on labs, Industry certifications, Flexible delivery, Expert instructors, Post-training support

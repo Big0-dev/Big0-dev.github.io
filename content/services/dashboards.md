@@ -1,5 +1,6 @@
 ---
 title: Interactive Dashboard Development
+meta_description: Real-time dashboard development with custom visualizations & live data streaming. Transform data into insights. Build your dashboard today!
 description: Build powerful, real-time dashboards that visualize your key metrics and drive data-driven decisions
 icon: dashboard
 features: Real-time updates, Custom visualizations, Mobile responsive, White-label options, API integration, Export capabilities

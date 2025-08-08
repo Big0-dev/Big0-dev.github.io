@@ -1,5 +1,6 @@
 ---
 title: IoT Device Development
+meta_description: "Complete IoT development: hardware, firmware, cloud, mobile apps. ESP32, AWS IoT expertise. 4-6 week prototypes. Connect your devices today!"
 description: End-to-end IoT solutions combining hardware design, embedded programming, cloud connectivity, and mobile applications for smart connected devices
 icon: wifi
 features: Hardware prototyping, Embedded programming, Cloud connectivity, Mobile app integration, Sensor integration, Data analytics

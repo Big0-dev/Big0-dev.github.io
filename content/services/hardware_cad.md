@@ -1,5 +1,6 @@
 ---
 title: Hardware CAD Design
+meta_description: Professional 3D CAD design & mechanical engineering services. From concept to manufacturing-ready models. Get prototypes in 48hrs. Start your project today!
 description: Professional 3D mechanical design, product enclosures, and prototyping services from concept sketches to manufacturing-ready CAD models
 icon: box
 features: 3D mechanical design, Product enclosures, Prototyping support, DFM analysis, 3D printing preparation, Technical drawings

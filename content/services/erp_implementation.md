@@ -1,5 +1,6 @@
 ---
 title: ERP Implementation
+meta_description: "ERP implementation services: Odoo, SAP, custom systems. Reduce costs 30%, boost efficiency 70%. Transform your business operations today!"
 description: Complete enterprise resource planning solutions including Odoo, SAP, and custom ERP systems that streamline operations and integrate business processes
 icon: database
 features: ERP consulting, System implementation, Data migration, Process automation, Training & support, Custom module development

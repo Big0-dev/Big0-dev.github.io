@@ -2,7 +2,7 @@
 
 {% block title %}{{ current_service.title }}{% endblock %}
 {% block meta_description %}{{ current_service.meta_description }}{% endblock %}
-{% block canonical_path %}/services/{{ current_service.slug }}.html{% endblock %}
+{% block canonical_path %}{% if current_service.frontmatter.canonical %}{{ current_service.frontmatter.canonical }}{% else %}/services/{{ current_service.slug }}.html{% endif %}{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/detail-pages.css">
@@ -66,7 +66,7 @@
 
       <!-- Navigation -->
       <div class="text-center mt-3xl">
-        <a href="../services.html" class="btn btn-secondary">
+        <a href="{{ services_page }}" class="btn btn-secondary">
           <svg class="mr-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5"/>
             <polyline points="12 19 5 12 12 5"/>

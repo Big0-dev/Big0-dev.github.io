@@ -1,6 +1,6 @@
 # Big0 Website - Static Site Generator
 
-A modern, high-performance static website built with Python, Jinja2, and a custom design system.
+A modern, high-performance static website built with Python, Jinja2, and a custom design system with advanced SEO capabilities including location-based pages.
 
 ## 🚀 Quick Start
 
@@ -29,19 +29,26 @@ python3 generate.py
 ```
 Big0-dev.github.io/
 ├── build/                  # Generated site output
+│   └── services/
+│       └── locations/     # Location-specific pages
 ├── content/               # Markdown content files
 │   ├── blogs/            # Blog posts
 │   ├── case_studies/     # Case study content
 │   ├── industries/       # Industry pages
 │   ├── news/            # News articles
 │   └── services/        # Service pages
+│       └── locations/   # Location-specific service pages
+│           ├── usa/
+│           ├── uk/
+│           ├── canada/
+│           └── australia/
 ├── static/               # CSS, JS, and assets
 │   ├── base.css         # Base styles
 │   ├── components.css   # Reusable components
 │   ├── design-system.css # Design tokens
 │   └── ...              # Page-specific CSS
 ├── templates/            # Jinja2 templates
-├── generate.py          # Static site generator
+├── generate.py          # Static site generator (includes location page generation)
 ├── site_config.yaml     # Site configuration
 └── requirements.txt     # Python dependencies
 ```
@@ -67,7 +74,37 @@ features: Feature 1, Feature 2, Feature 3
 Write your service description using markdown...
 ```
 
-#### 2. **Industries**
+#### 2. **Location-Based Pages**
+
+The system automatically generates location-specific versions of service pages for better local SEO.
+
+**Structure:**
+- **Generic pages** (canonical): `/services/service-name.html`
+- **Location pages**: `/services/locations/usa/service-name-usa.html`
+
+**How it works:**
+1. Generic service pages serve as the canonical version for global searches
+2. Location pages target specific geographic markets (USA, UK, Canada, Australia)
+3. Location pages include canonical tags pointing to generic versions to avoid duplicate content penalties
+4. Google treats canonical as a "hint" allowing location pages to rank for local searches
+
+**Adding a new location:**
+Edit the `_generate_location_pages` method in `generate.py`:
+
+```python
+locations = {
+    'new-york': {
+        'name': 'New York',
+        'full_name': 'New York City',
+        'slug': 'new-york',
+        'meta_suffix': 'in New York',
+        'content_suffix': 'in New York City'
+    },
+    # Add more locations...
+}
+```
+
+#### 3. **Industries**
 Create a new markdown file in `content/industries/`:
 
 ```markdown
@@ -83,7 +120,7 @@ solutions: Solution 1, Solution 2, Solution 3
 # Industry Content Here
 ```
 
-#### 3. **Blog Posts**
+#### 4. **Blog Posts**
 Create a new markdown file in `content/blogs/`:
 
 ```markdown
@@ -98,7 +135,7 @@ tags: ai, technology, innovation
 # Blog Content Here
 ```
 
-#### 4. **Case Studies**
+#### 5. **Case Studies**
 Create a new markdown file in `content/case_studies/`:
 
 ```markdown
@@ -122,9 +159,13 @@ The site supports special template directives that can be used in markdown conte
 ### Call-to-Action Templates
 
 ```markdown
-{{template:cta}}                 # General CTA
-{{template:cta-service}}         # Service-specific CTA  
-{{template:cta-case-study}}      # Case study CTA
+{{template:cta}}                    # General CTA
+{{template:cta-service}}           # Service-specific CTA  
+{{template:cta-case-study}}        # Case study CTA
+{{template:cta-location-usa}}      # USA-specific CTA
+{{template:cta-location-uk}}       # UK-specific CTA
+{{template:cta-location-canada}}   # Canada-specific CTA
+{{template:cta-location-australia}} # Australia-specific CTA
 ```
 
 ### Related Content Links
@@ -145,26 +186,6 @@ The site supports special template directives that can be used in markdown conte
 
 # Display solutions with descriptions
 {{industry-solutions:Solution Title|Description,Another Solution|Its description}}
-```
-
-### Example Usage
-
-```markdown
----
-title: AI Integration Services
----
-
-# Our AI Solutions
-
-We provide cutting-edge AI integration services...
-
-{{related-industries:finance,healthcare,retail}}
-
-## Why Choose Us
-
-Our expert team delivers...
-
-{{template:cta-service}}
 ```
 
 ## 🛠️ Configuration
@@ -191,30 +212,39 @@ content_types:
     output_dir: services
 ```
 
-### Adding Navigation Items
-
-Edit `site_config.yaml`:
-```yaml
-navigation:
-  home: index.html
-  about: about.html
-  services: services.html
-  # Add new items here
-```
-
 ## 🎯 SEO Optimization
+
+### Location-Based SEO Strategy
+
+1. **Canonical URLs**
+   - Generic pages: Self-referencing canonical (primary ranking page)
+   - Location pages: Canonical points to generic version
+   - Benefit: Consolidates page authority while allowing local ranking
+
+2. **Why This Works**
+   - Google understands canonical as a "hint" not a directive
+   - Location pages can still rank for location-specific queries
+   - Example: "AI development services USA" → location page ranks
+   - Example: "AI development services" → generic page ranks
+
+3. **Internal Linking Strategy**
+   - Main navigation → Generic pages only
+   - Footer → Popular location pages (USA, UK)
+   - Service pages → Link to relevant location variations
+   - Location pages → Link back to generic version
 
 ### Best Practices
 
 1. **Meta Descriptions**: Keep between 150-160 characters
 2. **Title Tags**: Use descriptive, keyword-rich titles
 3. **URL Structure**: Use kebab-case for file names
-4. **Internal Linking**: Use template directives for cross-linking
+4. **Internal Linking**: Auto-linking system handles cross-references
+5. **Location Pages**: Automatically generated with proper canonical tags
 
 ### Sitemap Generation
 
 The generator automatically creates:
-- `sitemap.xml` - Main sitemap
+- `sitemap.xml` - Main sitemap (includes location pages)
 - `sitemap-images.xml` - Image sitemap
 - `rss.xml` - RSS feed for blogs and news
 
@@ -260,12 +290,14 @@ The CSS follows a modular architecture:
 - `components.css` - Reusable UI components
 - `[page].css` - Page-specific styles
 
-### Adding New Templates
+### Auto-Linking System
 
-1. Create template in `templates/`
-2. Add to `site_config.yaml`
-3. Use Jinja2 syntax for dynamic content
-4. Extend `base.html` for consistent layout
+The site includes an intelligent auto-linking system that:
+- Automatically links service mentions on industry pages
+- Automatically links industry mentions on service pages
+- Maintains contextual accuracy (e.g., "production" only links to manufacturing in relevant contexts)
+- Supports over 200 service keywords and 70+ industry keywords
+- Works on blogs, case studies, and news pages
 
 ## 📊 Analytics & Tracking
 
@@ -291,6 +323,11 @@ Configuration in `templates/base.html`.
 - Include specific metrics and results
 - Optimize for SEO without keyword stuffing
 
+### Location-Specific Content
+- Place US-targeted content in `/services/locations/usa/`
+- Keep generic/global content in main `/services/` directory
+- Use location-specific CTAs for better conversion
+
 ### Image Guidelines
 - Use AVIF format for best performance
 - Optimize images before uploading
@@ -314,6 +351,11 @@ pip install -r requirements.txt --upgrade
 - Ensure markdown files have proper frontmatter
 - Check file names match URL expectations
 - Verify content directory paths in config
+
+**Location Pages Not Generating**
+- Check that location directories exist in `content/services/locations/`
+- Verify frontmatter includes proper location metadata
+- Ensure `is_location_page: true` is set for location pages
 
 **CSS Not Loading**
 - Check template includes correct CSS files

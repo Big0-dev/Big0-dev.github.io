@@ -1,5 +1,6 @@
 ---
 title: Game Development
+meta_description: "Custom game development: mobile, web, desktop. Unity, Unreal Engine expertise. 40% retention rates, proven monetization. Create your game today!"
 description: Custom game development for mobile, web, and desktop platforms including 2D/3D games, multiplayer systems, and monetization strategies
 icon: gamepad
 features: Mobile game development, Multiplayer systems, 2D/3D graphics, In-app purchases, Analytics integration, Cross-platform deployment

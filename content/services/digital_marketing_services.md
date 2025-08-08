@@ -1,5 +1,6 @@
 ---
 title: Digital Marketing Services
+meta_description: "Data-driven digital marketing: SEO, PPC, social media. 400% ROI, 150% traffic increase. Accelerate your business growth today!"
 description: Data-driven digital marketing strategies including SEO, PPC, social media marketing, and conversion optimization to drive growth and ROI
 icon: trending-up
 features: Search engine optimization, Pay-per-click advertising, Social media marketing, Content marketing, Email marketing, Analytics & reporting

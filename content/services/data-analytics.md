@@ -1,5 +1,6 @@
 ---
 title: Data Analytics & Business Intelligence
+meta_description: Advanced data analytics & BI solutions. Transform raw data into insights with ML, dashboards, predictive modeling. Unlock your data's power today!
 description: Turn your data into actionable insights with advanced analytics, visualization, and reporting solutions
 icon: data
 features: Data warehousing, ETL pipelines, Real-time analytics, Predictive modeling, Data visualization, Custom reporting
@@ -49,6 +50,13 @@ We help businesses harness the full potential of their data through advanced ana
 - **Processing**: Apache Spark, Databricks, Apache Flink
 - **Visualization**: Tableau, Power BI, Looker, Custom D3.js
 - **Languages**: Python, R, SQL, Scala
+
+### Related Services
+Enhance your data analytics with our complementary services:
+- [Interactive Dashboards](dashboards.html) - Visualize your data insights with powerful, real-time dashboard solutions
+- [AI Integration](ai-integration.html) - Add machine learning capabilities to your analytics for predictive insights
+- [Cloud Infrastructure Management](cloud-managment.html) - Scale your data processing with cloud-native analytics platforms
+- [Natural Language Processing](natural_language_processing.html) - Extract insights from unstructured text data and documents
 
 {{template:cta}}
 

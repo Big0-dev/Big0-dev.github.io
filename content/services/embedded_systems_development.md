@@ -1,5 +1,6 @@
 ---
 title: Embedded Systems Development
+meta_description: Custom embedded firmware & real-time systems development. ARM, STM32, ESP32 expertise. Extend battery life 300%. Get intelligent hardware solutions!
 description: Custom embedded software and firmware development for microcontrollers, real-time systems, and IoT devices with optimized performance and reliability
 icon: microchip
 features: Firmware development, Real-time systems, Device drivers, Bootloader development, Hardware abstraction layers, Power optimization

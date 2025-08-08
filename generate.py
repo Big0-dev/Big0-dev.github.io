@@ -68,7 +68,7 @@ class SiteGenerator:
         self._generate_gallery_pages()
         self._generate_content_pages()
         
-        # Generate sitemaps
+        # Generate sitemaps (includes location pages)
         self._generate_sitemaps()
         
         # Generate search index
@@ -371,6 +371,10 @@ class SiteGenerator:
         import re
         from bs4 import BeautifulSoup, NavigableString
         
+        # Calculate the relative path prefix based on file depth
+        # file_path is like "services/locations/usa/ai-integration-usa.html"
+        depth = len(file_path.parts) - 1 if file_path.parts else 0
+        path_prefix = "../" * depth
         
         # Define industry mappings
         # Define industry mappings (expanded)
@@ -857,7 +861,7 @@ class SiteGenerator:
                     if match:
                         # Replace with link (preserving original case)
                         matched_text = match.group(1)
-                        replacement = f'<a href="../industries/{industry_slug}.html" class="auto-link">{matched_text}</a>'
+                        replacement = f'<a href="{path_prefix}industries/{industry_slug}.html" class="auto-link">{matched_text}</a>'
                         text = text[:match.start()] + replacement + text[match.end():]
                         modified = True
                         break  # Only link one term per text node
@@ -873,7 +877,7 @@ class SiteGenerator:
                             if match:
                                 # Replace with link (preserving original case)
                                 matched_text = match.group(1)
-                                replacement = f'<a href="../services/{service_slug}.html" class="auto-link">{matched_text}</a>'
+                                replacement = f'<a href="{path_prefix}services/{service_slug}.html" class="auto-link">{matched_text}</a>'
                                 text = text[:match.start()] + replacement + text[match.end():]
                                 modified = True
                                 break
@@ -895,31 +899,67 @@ class SiteGenerator:
         
         return str(soup)
     
-    def _process_template_directives(self, content: str) -> str:
+    def _process_template_directives(self, content: str, file_path: Path = None) -> str:
         """Process template directives like {{template:cta}} in markdown content"""
         import re
         
+        # Calculate the relative path prefix based on file depth
+        if file_path:
+            depth = len(file_path.parts) - 1 if file_path.parts else 0
+            path_prefix = "../" * depth
+        else:
+            path_prefix = "../"  # Default for single-level pages
+        
         # Define template replacements
         templates = {
-            'cta': '''
+            'cta': f'''
 <div class="inline-cta">
   <h3>Ready to Transform Your Business?</h3>
   <p>Let's discuss how we can help you achieve your goals with our innovative solutions.</p>
-  <a href="../contact.html" class="btn btn-primary">Get Started Today</a>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started Today</a>
 </div>
 ''',
-            'cta-service': '''
+            'cta-service': f'''
 <div class="inline-cta">
   <h3>Ready to Get Started?</h3>
   <p>Our experts are ready to help you implement these solutions for your business.</p>
-  <a href="../contact.html" class="btn btn-primary">Schedule a Consultation</a>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Schedule a Consultation</a>
 </div>
 ''',
-            'cta-case-study': '''
+            'cta-case-study': f'''
 <div class="inline-cta">
   <h3>Want Similar Results?</h3>
   <p>Let's discuss how we can deliver transformative solutions for your organization.</p>
-  <a href="../contact.html" class="btn btn-primary">Contact Our Team</a>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Contact Our Team</a>
+</div>
+''',
+            # Location-specific CTAs
+            'cta-location-usa': f'''
+<div class="inline-cta">
+  <h3>Ready to Transform Your Business in the USA?</h3>
+  <p>Connect with our US-based team to discuss your requirements and get started.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in the USA</a>
+</div>
+''',
+            'cta-location-uk': f'''
+<div class="inline-cta">
+  <h3>Ready to Transform Your Business in the UK?</h3>
+  <p>Connect with our UK team to discuss your requirements and get started.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in the UK</a>
+</div>
+''',
+            'cta-location-canada': f'''
+<div class="inline-cta">
+  <h3>Ready to Transform Your Business in Canada?</h3>
+  <p>Connect with our Canadian team to discuss your requirements and get started.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in Canada</a>
+</div>
+''',
+            'cta-location-australia': f'''
+<div class="inline-cta">
+  <h3>Ready to Transform Your Business in Australia?</h3>
+  <p>Connect with our Australian team to discuss your requirements and get started.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in Australia</a>
 </div>
 '''
         }
@@ -927,6 +967,30 @@ class SiteGenerator:
         # Find and replace all template directives
         def replace_template(match):
             template_name = match.group(1)
+            
+            # Handle city-specific CTAs dynamically
+            if template_name.startswith('cta-location-'):
+                location = template_name.replace('cta-location-', '')
+                # Check if it's a city name
+                city_names = {
+                    'new-york': 'New York', 'san-francisco': 'San Francisco', 
+                    'los-angeles': 'Los Angeles', 'chicago': 'Chicago',
+                    'austin': 'Austin', 'seattle': 'Seattle',
+                    'london': 'London', 'manchester': 'Manchester', 'birmingham': 'Birmingham',
+                    'toronto': 'Toronto', 'vancouver': 'Vancouver', 'montreal': 'Montreal',
+                    'sydney': 'Sydney', 'melbourne': 'Melbourne', 'brisbane': 'Brisbane'
+                }
+                
+                if location in city_names:
+                    city_display = city_names[location]
+                    return f'''
+<div class="inline-cta">
+  <h3>Ready to Transform Your Business in {city_display}?</h3>
+  <p>Connect with our {city_display} team to discuss your requirements and get started.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in {city_display}</a>
+</div>
+'''
+            
             return templates.get(template_name, match.group(0))
         
         # Process {{template:name}} directives (updated to handle hyphens in template names)
@@ -937,7 +1001,7 @@ class SiteGenerator:
             services = [s.strip() for s in match.group(1).split(',')]
             html = '<div class="related-services-inline">\n<h3>Related Services</h3>\n<div class="related-services-grid">\n'
             for service in services:
-                html += f'  <a href="../services/{service}.html" class="related-service-link">\n'
+                html += f'  <a href="{path_prefix}services/{service}.html" class="related-service-link">\n'
                 html += f'    <span class="link-icon">→</span>\n'
                 html += f'    <span>{service.replace("-", " ").replace("_", " ").title()}</span>\n'
                 html += f'  </a>\n'
@@ -951,7 +1015,7 @@ class SiteGenerator:
             industries = [i.strip() for i in match.group(1).split(',')]
             html = '<div class="related-industries-inline">\n<h3>Industries We Serve</h3>\n<div class="related-industries-grid">\n'
             for industry in industries:
-                html += f'  <a href="../industries/{industry}.html" class="related-industry-link">\n'
+                html += f'  <a href="{path_prefix}industries/{industry}.html" class="related-industry-link">\n'
                 html += f'    <span class="link-icon">→</span>\n'
                 html += f'    <span>{industry.replace("-", " ").title()}</span>\n'
                 html += f'  </a>\n'
@@ -1169,7 +1233,7 @@ class SiteGenerator:
         
         return html_content
     
-    def _load_markdown_content(self, file_path: Path) -> Dict[str, Any]:
+    def _load_markdown_content(self, file_path: Path, output_path: Path = None) -> Dict[str, Any]:
         """Load and parse markdown content"""
         content = file_path.read_text(encoding='utf-8')
         
@@ -1200,7 +1264,9 @@ class SiteGenerator:
                 markdown_content = content
             
         # Process template directives before converting to HTML
-        markdown_content = self._process_template_directives(markdown_content)
+        # Use output_path if provided for correct depth calculation, otherwise use file_path
+        template_path = output_path if output_path else file_path
+        markdown_content = self._process_template_directives(markdown_content, template_path)
         
         # Convert markdown to HTML - reuse single markdown instance for performance
         if not hasattr(self, '_md_converter'):
@@ -1213,8 +1279,10 @@ class SiteGenerator:
         html_content = self._process_template_directives_in_html(html_content)
         
         # Auto-link industry and service mentions (for service, industry, blog, case study, and news pages)
+        # Use output_path if provided (for correct depth calculation), otherwise use file_path
+        link_path = output_path if output_path else file_path
         if any(path in str(file_path) for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'news/']):
-            html_content = self._add_automatic_interlinking(html_content, file_path)
+            html_content = self._add_automatic_interlinking(html_content, link_path)
         
         # Extract first paragraph as excerpt
         soup = BeautifulSoup(html_content, 'html.parser')
@@ -1260,11 +1328,20 @@ class SiteGenerator:
             # Load all content - use sorted for consistent ordering
             items = []
             for file_path in sorted(content_dir.glob('*.md')):
-                item = self._load_markdown_content(file_path)
-                items.append(item)
-                
-                # Generate detail page
-                if 'template' in config:
+                # Calculate the output path for correct link depth
+                output_path = Path(config['output_dir']) / f"{file_path.stem}.html"
+                item = self._load_markdown_content(file_path, output_path)
+                # Skip location pages from main listing
+                if not item.get('frontmatter', {}).get('is_location_page', False):
+                    items.append(item)
+            
+            # Generate location pages for services
+            if content_type == 'services':
+                self._generate_location_pages(content_dir, config)
+            
+            # Generate detail pages for all items
+            if 'template' in config:
+                for item in items:
                     try:
                         template = self.env.get_template(config['template'])
                         output_path = Path(self.output_dir) / config['output_dir'] / f"{item['slug']}.html"
@@ -1339,6 +1416,309 @@ class SiteGenerator:
                         logger.info(f"Generated: {output_name}")
                 except Exception as e:
                     logger.error(f"Error generating {content_type} listing: {e}")
+    
+    def _generate_location_pages(self, content_dir: Path, config: dict):
+        """Generate location-specific versions of service pages"""
+        # Define locations - countries
+        locations = {
+            'usa': {
+                'name': 'USA',
+                'full_name': 'United States',
+                'slug': 'usa',
+                'meta_suffix': 'in the USA',
+                'content_suffix': 'across the United States',
+                'type': 'country'
+            },
+            'uk': {
+                'name': 'UK', 
+                'full_name': 'United Kingdom',
+                'slug': 'uk',
+                'meta_suffix': 'in the UK',
+                'content_suffix': 'across the United Kingdom',
+                'type': 'country'
+            },
+            'canada': {
+                'name': 'Canada',
+                'full_name': 'Canada',
+                'slug': 'canada',
+                'meta_suffix': 'in Canada',
+                'content_suffix': 'across Canada',
+                'type': 'country'
+            },
+            'australia': {
+                'name': 'Australia',
+                'full_name': 'Australia',
+                'slug': 'australia',
+                'meta_suffix': 'in Australia',
+                'content_suffix': 'across Australia',
+                'type': 'country'
+            }
+        }
+        
+        # Define cities (nested under countries)
+        cities = {
+            'usa': {
+                'new-york': {
+                    'name': 'New York',
+                    'full_name': 'New York City',
+                    'slug': 'new-york',
+                    'meta_suffix': 'in New York',
+                    'content_suffix': 'in New York City',
+                    'parent_country': 'usa',
+                    'type': 'city'
+                },
+                'san-francisco': {
+                    'name': 'San Francisco',
+                    'full_name': 'San Francisco',
+                    'slug': 'san-francisco',
+                    'meta_suffix': 'in San Francisco',
+                    'content_suffix': 'in the San Francisco Bay Area',
+                    'parent_country': 'usa',
+                    'type': 'city'
+                },
+                'los-angeles': {
+                    'name': 'Los Angeles',
+                    'full_name': 'Los Angeles',
+                    'slug': 'los-angeles',
+                    'meta_suffix': 'in Los Angeles',
+                    'content_suffix': 'in Los Angeles',
+                    'parent_country': 'usa',
+                    'type': 'city'
+                },
+                'chicago': {
+                    'name': 'Chicago',
+                    'full_name': 'Chicago',
+                    'slug': 'chicago',
+                    'meta_suffix': 'in Chicago',
+                    'content_suffix': 'in Chicago',
+                    'parent_country': 'usa',
+                    'type': 'city'
+                },
+                'austin': {
+                    'name': 'Austin',
+                    'full_name': 'Austin',
+                    'slug': 'austin',
+                    'meta_suffix': 'in Austin',
+                    'content_suffix': 'in Austin, Texas',
+                    'parent_country': 'usa',
+                    'type': 'city'
+                },
+                'seattle': {
+                    'name': 'Seattle',
+                    'full_name': 'Seattle',
+                    'slug': 'seattle',
+                    'meta_suffix': 'in Seattle',
+                    'content_suffix': 'in Seattle, Washington',
+                    'parent_country': 'usa',
+                    'type': 'city'
+                }
+            },
+            'uk': {
+                'london': {
+                    'name': 'London',
+                    'full_name': 'London',
+                    'slug': 'london',
+                    'meta_suffix': 'in London',
+                    'content_suffix': 'in London',
+                    'parent_country': 'uk',
+                    'type': 'city'
+                },
+                'manchester': {
+                    'name': 'Manchester',
+                    'full_name': 'Manchester',
+                    'slug': 'manchester',
+                    'meta_suffix': 'in Manchester',
+                    'content_suffix': 'in Manchester',
+                    'parent_country': 'uk',
+                    'type': 'city'
+                },
+                'birmingham': {
+                    'name': 'Birmingham',
+                    'full_name': 'Birmingham',
+                    'slug': 'birmingham',
+                    'meta_suffix': 'in Birmingham',
+                    'content_suffix': 'in Birmingham',
+                    'parent_country': 'uk',
+                    'type': 'city'
+                }
+            },
+            'canada': {
+                'toronto': {
+                    'name': 'Toronto',
+                    'full_name': 'Toronto',
+                    'slug': 'toronto',
+                    'meta_suffix': 'in Toronto',
+                    'content_suffix': 'in Toronto, Ontario',
+                    'parent_country': 'canada',
+                    'type': 'city'
+                },
+                'vancouver': {
+                    'name': 'Vancouver',
+                    'full_name': 'Vancouver',
+                    'slug': 'vancouver',
+                    'meta_suffix': 'in Vancouver',
+                    'content_suffix': 'in Vancouver, BC',
+                    'parent_country': 'canada',
+                    'type': 'city'
+                },
+                'montreal': {
+                    'name': 'Montreal',
+                    'full_name': 'Montreal',
+                    'slug': 'montreal',
+                    'meta_suffix': 'in Montreal',
+                    'content_suffix': 'in Montreal, Quebec',
+                    'parent_country': 'canada',
+                    'type': 'city'
+                }
+            },
+            'australia': {
+                'sydney': {
+                    'name': 'Sydney',
+                    'full_name': 'Sydney',
+                    'slug': 'sydney',
+                    'meta_suffix': 'in Sydney',
+                    'content_suffix': 'in Sydney, NSW',
+                    'parent_country': 'australia',
+                    'type': 'city'
+                },
+                'melbourne': {
+                    'name': 'Melbourne',
+                    'full_name': 'Melbourne',
+                    'slug': 'melbourne',
+                    'meta_suffix': 'in Melbourne',
+                    'content_suffix': 'in Melbourne, Victoria',
+                    'parent_country': 'australia',
+                    'type': 'city'
+                },
+                'brisbane': {
+                    'name': 'Brisbane',
+                    'full_name': 'Brisbane',
+                    'slug': 'brisbane',
+                    'meta_suffix': 'in Brisbane',
+                    'content_suffix': 'in Brisbane, Queensland',
+                    'parent_country': 'australia',
+                    'type': 'city'
+                }
+            }
+        }
+        
+        # No services are skipped from location pages anymore
+        
+        locations_dir = content_dir / 'locations'
+        
+        # Process each service file
+        for service_file in sorted(content_dir.glob('*.md')):
+            
+            # Load the service content
+            service_item = self._load_markdown_content(service_file)
+            
+            # Skip if already a location page
+            if service_item.get('frontmatter', {}).get('is_location_page'):
+                continue
+                
+            # Generate country pages
+            for location_key, location in locations.items():
+                location_dir = locations_dir / location_key
+                
+                # Check if location-specific markdown exists
+                location_md_path = location_dir / f"{service_file.stem}-{location_key}.md"
+                
+                if location_md_path.exists():
+                    # Load and generate the location page with correct output path for auto-linking
+                    output_path = Path(f"services/locations/{location_key}/{service_file.stem}-{location_key}.html")
+                    location_item = self._load_markdown_content(location_md_path, output_path)
+                    
+                    # Fix hardcoded service links in content (e.g., href="computer_vision_service.html")
+                    # These should point to ../../../services/computer_vision_service.html
+                    import re
+                    def fix_service_link(match):
+                        service_name = match.group(1)
+                        return f'href="../../../services/{service_name}.html"'
+                    
+                    # Fix links that are relative to current directory (no path prefix)
+                    location_item['content_html'] = re.sub(
+                        r'href="([a-zA-Z_\-]+)\.html"',
+                        fix_service_link,
+                        location_item['content_html']
+                    )
+                    
+                    # Generate the HTML page
+                    try:
+                        template = self.env.get_template(config.get('template', 'service_detail.html'))
+                        
+                        # Create output directory
+                        output_dir = Path(self.output_dir) / 'services' / 'locations' / location_key
+                        output_dir.mkdir(parents=True, exist_ok=True)
+                        
+                        output_path = output_dir / f"{service_file.stem}-{location_key}.html"
+                        
+                        # Get context with appropriate depth for nested directory
+                        base_context = self._get_base_context(depth=3)
+                        
+                        location_context = {
+                            **base_context,
+                            'current_service': location_item,
+                            'item': location_item
+                        }
+                        
+                        html_content = template.render(**location_context)
+                        output_path.write_text(html_content)
+                        
+                        logger.info(f"Generated location page: {output_path.relative_to(self.output_dir)}")
+                        
+                    except Exception as e:
+                        logger.error(f"Error generating location page {location_md_path}: {e}")
+            
+            # Generate city pages
+            for country_key, country_cities in cities.items():
+                for city_key, city in country_cities.items():
+                    city_dir = locations_dir / country_key / 'cities' / city_key
+                    
+                    # Check if city-specific markdown exists
+                    city_md_path = city_dir / f"{service_file.stem}-{city_key}.md"
+                    
+                    if city_md_path.exists():
+                        # Load and generate the city page with correct output path for auto-linking
+                        output_path = Path(f"services/locations/{country_key}/cities/{city_key}/{service_file.stem}-{city_key}.html")
+                        city_item = self._load_markdown_content(city_md_path, output_path)
+                        
+                        # Fix hardcoded service links in content
+                        def fix_city_service_link(match):
+                            service_name = match.group(1)
+                            return f'href="../../../../../services/{service_name}.html"'
+                        
+                        city_item['content_html'] = re.sub(
+                            r'href="([a-zA-Z_\-]+)\.html"',
+                            fix_city_service_link,
+                            city_item['content_html']
+                        )
+                        
+                        # Generate the HTML page
+                        try:
+                            template = self.env.get_template(config.get('template', 'service_detail.html'))
+                            
+                            # Create output directory for city
+                            output_dir = Path(self.output_dir) / 'services' / 'locations' / country_key / 'cities' / city_key
+                            output_dir.mkdir(parents=True, exist_ok=True)
+                            
+                            output_path = output_dir / f"{service_file.stem}-{city_key}.html"
+                            
+                            # Get context with appropriate depth for deeply nested directory
+                            base_context = self._get_base_context(depth=5)
+                            
+                            city_context = {
+                                **base_context,
+                                'current_service': city_item,
+                                'item': city_item
+                            }
+                            
+                            html_content = template.render(**city_context)
+                            output_path.write_text(html_content)
+                            
+                            logger.info(f"Generated city page: {output_path.relative_to(self.output_dir)}")
+                            
+                        except Exception as e:
+                            logger.error(f"Error generating city page {city_md_path}: {e}")
                     
     def _generate_sitemaps(self):
         """Generate XML sitemaps"""
@@ -1358,13 +1738,52 @@ class SiteGenerator:
                 for file_path in content_dir.glob('*.md'):
                     slug = file_path.stem
                     urls.append(f"{self.config['domain']}/{config['output_dir']}/{slug}.html")
+                
+                # Add location pages for services
+                if content_type == 'services':
+                    locations_dir = content_dir / 'locations'
+                    if locations_dir.exists():
+                        for location_dir in locations_dir.iterdir():
+                            if location_dir.is_dir():
+                                for location_file in location_dir.glob('*.md'):
+                                    location_slug = location_file.stem
+                                    location_key = location_dir.name
+                                    urls.append(f"{self.config['domain']}/services/locations/{location_key}/{location_slug}.html")
                     
-        # Generate sitemap XML
+        # Generate sitemap XML with lastmod, changefreq, and priority
+        from datetime import datetime
+        current_date = datetime.now().strftime('%Y-%m-%d')
+        
         sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
         sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         
         for url in urls:
-            sitemap_xml += f'  <url>\n    <loc>{url}</loc>\n  </url>\n'
+            # Determine priority and changefreq based on URL type
+            if url.endswith('/index.html'):
+                priority = '1.0'
+                changefreq = 'daily'
+            elif '/services/' in url and '/locations/' not in url:
+                priority = '0.9'
+                changefreq = 'weekly'
+            elif '/blog/' in url or '/news/' in url:
+                priority = '0.7'
+                changefreq = 'weekly'
+            elif '/case-studies/' in url:
+                priority = '0.6'
+                changefreq = 'monthly'
+            elif '/locations/' in url:
+                priority = '0.5'
+                changefreq = 'monthly'
+            else:
+                priority = '0.5'
+                changefreq = 'monthly'
+                
+            sitemap_xml += f'  <url>\n'
+            sitemap_xml += f'    <loc>{url}</loc>\n'
+            sitemap_xml += f'    <lastmod>{current_date}</lastmod>\n'
+            sitemap_xml += f'    <changefreq>{changefreq}</changefreq>\n'
+            sitemap_xml += f'    <priority>{priority}</priority>\n'
+            sitemap_xml += f'  </url>\n'
             
         sitemap_xml += '</urlset>'
         
@@ -1678,10 +2097,10 @@ class SiteGenerator:
                         modified_html,
                         minify_js=False,
                         minify_css=False,
-                        remove_processing_instructions=True,
-                        allow_removing_spaces_between_attributes=True,
+                        remove_processing_instructions=False,
                         keep_html_and_head_opening_tags=True,
-                        minify_doctype=True
+                        keep_closing_tags=True,
+                        minify_doctype=False
                     )
                 except:
                     # If that fails, use a simple regex-based approach

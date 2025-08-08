@@ -1,5 +1,6 @@
 ---
 title: Business Process Outsourcing
+meta_description: "Expert BPO services: customer support, accounting, HR & data processing. 24/7 operations with 60% cost reduction. Scale your business operations now!"
 description: Comprehensive BPO services including customer support, data processing, accounting, HR operations, and back-office functions with 24/7 availability
 icon: headphones
 features: Customer service, Data entry & processing, Accounting & bookkeeping, HR & payroll, Lead generation, Content moderation, Virtual assistance, Quality assurance

@@ -1,5 +1,6 @@
 ---
 title: PCB Design & Layout
+meta_description: "Professional PCB design services: multi-layer boards, high-speed digital, RF design. 50% faster delivery, 30% cost reduction. Start your PCB project!"
 description: Professional PCB design and layout services for electronic products, from simple single-layer boards to complex multi-layer high-speed digital designs
 icon: pcb
 features: Schematic design, Multi-layer PCB layout, High-speed digital design, RF/microwave design, DFM optimization, Gerber file generation

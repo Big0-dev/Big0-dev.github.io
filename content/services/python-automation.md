@@ -1,5 +1,6 @@
 ---
 title: Python Automation & Scripting
+meta_description: Python automation & scripting services. Eliminate manual tasks, web scraping, data processing. 300% ROI in first year. Automate your workflow today!
 description: Automate repetitive tasks and streamline workflows with custom Python solutions
 icon: python
 features: Task automation, Web scraping, Data processing, API integration, Testing automation, DevOps scripts

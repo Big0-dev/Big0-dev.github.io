@@ -1,5 +1,6 @@
 ---
 title: Computer Vision
+meta_description: "Advanced computer vision AI: image recognition, OCR, video analytics. 99.5% accuracy, real-time processing. Automate visual tasks today!"
 description: Advanced computer vision solutions including image recognition, video analytics, OCR, and real-time object detection for automation and intelligence
 icon: camera
 features: Image recognition, Video analytics, OCR solutions, Facial recognition, Object detection, Real-time processing

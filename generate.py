@@ -1823,42 +1823,92 @@ class SiteGenerator:
         self._generate_rss_feed()
     
     def _generate_image_sitemap(self):
-        """Generate image sitemap"""
+        """Generate comprehensive image sitemap for all pages"""
         image_sitemap_path = Path(self.output_dir) / "sitemap-images.xml"
+        
+        # Dictionary to store images by page URL
+        pages_with_images = {}
         
         # Get gallery images
         gallery_data = self._load_gallery_data()
         images = gallery_data.get('images', [])
+        
+        # Add gallery images - split between gallery.html and gallery-2.html if needed
+        if images:
+            # First 12 images for gallery.html
+            gallery1_images = images[:12]
+            pages_with_images[f'{self.config["domain"]}/gallery.html'] = []
+            for image in gallery1_images:
+                pages_with_images[f'{self.config["domain"]}/gallery.html'].append({
+                    'loc': f'{self.config["domain"]}/content/gallery/{image["filename"]}',
+                    'title': image.get('title'),
+                    'caption': image.get('description')
+                })
+            
+            # Remaining images for gallery-2.html if exists
+            if len(images) > 12:
+                gallery2_images = images[12:]
+                pages_with_images[f'{self.config["domain"]}/gallery-2.html'] = []
+                for image in gallery2_images:
+                    pages_with_images[f'{self.config["domain"]}/gallery-2.html'].append({
+                        'loc': f'{self.config["domain"]}/content/gallery/{image["filename"]}',
+                        'title': image.get('title'),
+                        'caption': image.get('description')
+                    })
+        
+        # Add favicon for homepage
+        pages_with_images[f'{self.config["domain"]}/index.html'] = [{
+            'loc': f'{self.config["domain"]}/favicon.png',
+            'title': 'Big0 Logo',
+            'caption': 'Big0 - AI-Powered Digital Transformation'
+        }]
+        
+        # Check for images in blog posts
+        blog_dir = Path('content/blogs')
+        if blog_dir.exists():
+            for blog_file in blog_dir.glob('*.md'):
+                # For now, just check if blog posts reference images
+                # This can be expanded to parse actual image references
+                pass
+        
+        # Check for images in case studies  
+        case_dir = Path('content/case_studies')
+        if case_dir.exists():
+            for case_file in case_dir.glob('*.md'):
+                # For now, just check if case studies reference images
+                # This can be expanded to parse actual image references
+                pass
         
         # Generate image sitemap XML
         sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
         sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
         sitemap_xml += '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
         
-        # Add gallery page with all images
-        if images:
-            sitemap_xml += '  <url>\n'
-            sitemap_xml += f'    <loc>{self.config["domain"]}/gallery.html</loc>\n'
-            
-            for image in images:
-                sitemap_xml += '    <image:image>\n'
-                sitemap_xml += f'      <image:loc>{self.config["domain"]}/content/gallery/{image["filename"]}</image:loc>\n'
-                if 'title' in image:
-                    # Escape XML special characters
-                    title = image["title"].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&apos;')
-                    sitemap_xml += f'      <image:title>{title}</image:title>\n'
-                if 'description' in image:
-                    # Escape XML special characters
-                    description = image["description"].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&apos;')
-                    sitemap_xml += f'      <image:caption>{description}</image:caption>\n'
-                sitemap_xml += '    </image:image>\n'
-            
-            sitemap_xml += '  </url>\n'
+        # Add all pages with images
+        for page_url, page_images in pages_with_images.items():
+            if page_images:
+                sitemap_xml += '  <url>\n'
+                sitemap_xml += f'    <loc>{page_url}</loc>\n'
+                
+                for image in page_images:
+                    sitemap_xml += '    <image:image>\n'
+                    sitemap_xml += f'      <image:loc>{image["loc"]}</image:loc>\n'
+                    if image.get('title'):
+                        # Escape XML special characters
+                        title = str(image["title"]).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&apos;')
+                        sitemap_xml += f'      <image:title>{title}</image:title>\n'
+                    if image.get('caption'):
+                        # Escape XML special characters
+                        caption = str(image["caption"]).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace("'", '&apos;')
+                        sitemap_xml += f'      <image:caption>{caption}</image:caption>\n'
+                    sitemap_xml += '    </image:image>\n'
+                
+                sitemap_xml += '  </url>\n'
         
         sitemap_xml += '</urlset>'
         
         image_sitemap_path.write_text(sitemap_xml)
-        logger.info("Generated sitemap-images.xml")
+        logger.info(f"Generated sitemap-images.xml with {len(pages_with_images)} pages and {sum(len(imgs) for imgs in pages_with_images.values())} images")
     
     def _escape_xml(self, text):
         """Escape special characters for XML"""

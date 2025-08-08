@@ -2054,9 +2054,13 @@ class SiteGenerator:
                     search_documents.append(doc)
                     doc_id += 1
                 
-                # Add individual content pages
+                # Add individual content pages (excluding location pages)
                 for file_path in content_dir.glob('*.md'):
                     item = self._load_markdown_content(file_path)
+                    
+                    # Skip location pages from search index
+                    if item.get('frontmatter', {}).get('is_location_page', False):
+                        continue
                     
                     # Clean content for search - remove HTML tags
                     clean_content = ''

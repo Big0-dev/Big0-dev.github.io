@@ -28,7 +28,6 @@ Hassan Kamran brings a unique blend of technical expertise and strategic vision 
 - Led Big0 to become a premier technology solutions provider
 - Published influential works on technology innovation and digital transformation
 - Guided numerous enterprises through successful digital journeys
-- Pioneered innovative solutions in AI, blockchain, and cloud technologies
 
 ## What You'll Learn
 
@@ -37,7 +36,7 @@ Hassan Kamran brings a unique blend of technical expertise and strategic vision 
 1. **Emerging Technology Trends**: Understanding the technologies shaping tomorrow's business landscape
 2. **Strategic Innovation Framework**: Building a culture of innovation within your organization
 3. **Digital Transformation Roadmap**: Practical steps for implementing digital initiatives
-4. **AI & Automation Strategies**: Leveraging artificial intelligence for competitive advantage
+4. **Automation Strategies**: Leveraging automation for competitive advantage
 5. **Future-Proofing Your Business**: Preparing for technological disruptions
 
 ## Who Should Attend

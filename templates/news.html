@@ -5,6 +5,14 @@
 {% block canonical_path %}/news.html{% endblock %}
 
 {% block custom_css %}
+<style>
+  /* News grid: 2 columns on desktop, 1 on mobile */
+  @media (min-width: 768px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -32,7 +40,7 @@
       </p>
     </div>
 
-    <div class="grid grid-auto-md gap-2xl">
+    <div class="grid grid-auto-md gap-2xl news-grid">
       {% for article in news_articles %}
       <article class="card card-hover">
         {% if article.external_link %}

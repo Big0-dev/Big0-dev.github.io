@@ -1,9 +1,9 @@
 ---
-title: "Enterprise Security Solutions | Best Cybersecurity Protection for Business 2025"
-meta_description: "Comprehensive enterprise security solutions including endpoint protection, SIEM, password management & DLP. Protect against ransomware with industry-leading cybersecurity platforms. Get expert consultation."
-canonical: "/enterprise-security-solutions"
-schema_type: "Service"
-keywords: ["enterprise security solutions", "endpoint protection for small business", "enterprise password management", "best endpoint protection 2025"]
+title: Enterprise Security Solutions
+meta_description: Comprehensive enterprise security solutions including endpoint protection, SIEM, password management & DLP. Protect against ransomware with industry-leading cybersecurity platforms.
+description: Advanced cybersecurity solutions that protect your enterprise from modern threats through AI-powered detection, automated response, and comprehensive compliance
+icon: shield
+features: Endpoint protection, SIEM solutions, Password management, Data loss prevention, Threat intelligence, Compliance management
 ---
 
 # Enterprise Security Solutions: Comprehensive Cybersecurity Protection for Modern Businesses

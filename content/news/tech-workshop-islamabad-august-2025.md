@@ -1,5 +1,5 @@
 ---
-title: Big0 Tech Workshop: Innovation & Strategy Session with CEO Hassan Kamran
+title: "Big0 Tech Workshop: Innovation & Strategy Session with CEO Hassan Kamran"
 category: Workshop
 date: 2025-08-20
 tags: workshop,technology,innovation,islamabad,training,leadership

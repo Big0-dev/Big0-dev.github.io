@@ -2,7 +2,7 @@
 title: Business Process Outsourcing (BPO)
 meta_description: Professional BPO services including customer support, data management, and back-office operations. Save 40-60% on operational costs with expert outsourcing solutions.
 description: Streamline operations with professional BPO services including customer support, data management, and back-office operations
-icon: briefcase
+icon: headphones
 features: Customer support, Data entry services, Back office operations, Technical support, HR outsourcing, Finance and accounting
 ---
 

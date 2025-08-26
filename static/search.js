@@ -67,21 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Load the search index with proper path handling
-    const basePath = window.location.pathname.includes('.html') 
-      ? window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')) 
-      : window.location.pathname;
-    const indexPath = basePath === '/' || basePath === '' 
-      ? '/static/search-index.json' 
-      : `${basePath}/static/search-index.json`;
+    // Always use the root path for search index
+    const indexPath = '/static/search-index.json';
       
     fetch(indexPath)
-      .then((response) => {
-        if (!response.ok) {
-          // Fallback to root path if not found
-          return fetch('/static/search-index.json');
-        }
-        return response;
-      })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

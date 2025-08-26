@@ -50,69 +50,25 @@ Ready to accelerate your digital growth? Let's discuss how we can create marketi
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long before we see results from digital marketing campaigns?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>SEO results typically show improvement in 3-6 months, while PPC and social media advertising can generate leads within days. We provide monthly reports showing progress across all metrics and continuous optimization to accelerate results.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What's included in your digital marketing packages?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Our packages include comprehensive strategy development, campaign setup and management, content creation, landing page optimization, analytics tracking, monthly reporting, and ongoing optimization. We customize services based on your specific goals and budget.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you measure marketing ROI and success?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We track comprehensive metrics including lead generation, conversion rates, cost per acquisition, return on ad spend, organic traffic growth, keyword rankings, and ultimately revenue attribution. All campaigns are optimized for maximum ROI.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you provide content creation for marketing campaigns?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, our team includes experienced copywriters, graphic designers, and video producers who create high-converting content including blog posts, social media content, ad copy, landing pages, email campaigns, and video content.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can you integrate with our existing CRM and analytics tools?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. We integrate with popular platforms like Salesforce, HubSpot, Google Analytics, Facebook Pixel, and many others to ensure seamless lead tracking and attribution across your entire marketing funnel.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### How long before we see results from digital marketing campaigns?
+
+SEO results typically show improvement in 3-6 months, while PPC and social media advertising can generate leads within days. We provide monthly reports showing progress across all metrics and continuous optimization to accelerate results.
+
+### What's included in your digital marketing packages?
+
+Our packages include comprehensive strategy development, campaign setup and management, content creation, landing page optimization, analytics tracking, monthly reporting, and ongoing optimization. We customize services based on your specific goals and budget.
+
+### How do you measure marketing ROI and success?
+
+We track comprehensive metrics including lead generation, conversion rates, cost per acquisition, return on ad spend, organic traffic growth, keyword rankings, and ultimately revenue attribution. All campaigns are optimized for maximum ROI.
+
+### Do you provide content creation for marketing campaigns?
+
+Yes, our team includes experienced copywriters, graphic designers, and video producers who create high-converting content including blog posts, social media content, ad copy, landing pages, email campaigns, and video content.
+
+### Can you integrate with our existing CRM and analytics tools?
+
+Absolutely. We integrate with popular platforms like Salesforce, HubSpot, Google Analytics, Facebook Pixel, and many others to ensure seamless lead tracking and attribution across your entire marketing funnel.
 
 ## Related Services & Industries
 

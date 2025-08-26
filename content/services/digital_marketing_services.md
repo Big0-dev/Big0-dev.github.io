@@ -48,6 +48,14 @@ We helped a B2B SaaS startup grow from 500 to 5,000 monthly visitors and increas
 
 Ready to accelerate your digital growth? Let's discuss how we can create marketing strategies that drive real business results and sustainable growth.
 
+## Related Services
+
+{{related-services:design-services,web-development,data-analytics-services,e_commerce_solutions}}
+
+## Industries We Serve
+
+{{related-industries:retail,finance,healthcare,education}}
+
 ## Frequently Asked Questions
 
 ### How long before we see results from digital marketing campaigns?
@@ -70,66 +78,3 @@ Yes, our team includes experienced copywriters, graphic designers, and video pro
 
 Absolutely. We integrate with popular platforms like Salesforce, HubSpot, Google Analytics, Facebook Pixel, and many others to ensure seamless lead tracking and attribution across your entire marketing funnel.
 
-## Related Services & Industries
-
-<div class="grid grid-2 gap-3xl">
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
-    <div class="related-list">
-      <a href="design-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Design Services</span>
-      </a>
-      <a href="web-development.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Web Development</span>
-      </a>
-      <a href="data-analytics-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Data Analytics Services</span>
-      </a>
-      <a href="e_commerce_solutions.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>E Commerce Solutions</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
-    <div class="related-list">
-      <a href="../industries/retail.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Retail</span>
-      </a>
-      <a href="../industries/finance.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Finance</span>
-      </a>
-      <a href="../industries/healthcare.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Healthcare</span>
-      </a>
-      <a href="../industries/education.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Education</span>
-      </a>
-    </div>
-  </div>
-</div>

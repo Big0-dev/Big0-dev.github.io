@@ -78,6 +78,14 @@ The ROI? 300% in the first year with 99.8% accuracy rate.
 
 Let's discuss how Python automation can transform your business operations.
 
+## Related Services
+
+{{related-services:ai-ml-services,data-analytics-services,devops-quality-services,software-development}}
+
+## Industries We Serve
+
+{{related-industries:finance,retail,manufacturing,healthcare}}
+
 ## Frequently Asked Questions
 
 ### What types of tasks can be automated with Python?
@@ -100,66 +108,3 @@ Most organizations see 300-500% ROI within the first year through time savings, 
 
 Absolutely. We provide comprehensive documentation, training sessions for your team, and ongoing maintenance packages. We ensure your staff can understand, modify, and extend the automation solutions as your needs evolve.
 
-## Related Services & Industries
-
-<div class="grid grid-2 gap-3xl">
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
-    <div class="related-list">
-      <a href="ai-ml-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Ai ML Services</span>
-      </a>
-      <a href="data-analytics-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Data Analytics Services</span>
-      </a>
-      <a href="devops-quality-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Devops Quality Services</span>
-      </a>
-      <a href="software-development.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Software Development</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
-    <div class="related-list">
-      <a href="../industries/finance.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Finance</span>
-      </a>
-      <a href="../industries/retail.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Retail</span>
-      </a>
-      <a href="../industries/manufacturing.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Manufacturing</span>
-      </a>
-      <a href="../industries/healthcare.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Healthcare</span>
-      </a>
-    </div>
-  </div>
-</div>

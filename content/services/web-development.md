@@ -103,69 +103,25 @@ We developed a comprehensive e-learning platform that serves 100,000+ students d
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What web technologies and frameworks do you use?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We specialize in modern frameworks including React, Vue.js, Angular, Next.js, and Node.js. For backend development, we use Python (Django/Flask), PHP (Laravel), .NET, and Java, selecting the best technology stack based on your project requirements.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does web development typically take?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Simple websites can be delivered in 3-4 weeks, while complex web applications require 3-6 months. Timeline depends on features, integrations, and design complexity. We provide detailed project schedules with milestone deliveries.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you provide responsive design for mobile compatibility?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. All our websites are built mobile-first with responsive design ensuring optimal performance across all devices. We test extensively on various screen sizes and browsers to guarantee consistent user experience.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What ongoing maintenance and support do you offer?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We provide comprehensive maintenance including security updates, content management, performance optimization, backup services, hosting support, and feature enhancements. Our support packages ensure your website stays secure and current.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you optimize websites for search engines and performance?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We implement technical SEO best practices, optimize page speed, use clean code structures, implement proper meta tags, and ensure accessibility compliance. Our performance optimization typically achieves 90+ Google PageSpeed scores.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### What web technologies and frameworks do you use?
+
+We specialize in modern frameworks including React, Vue.js, Angular, Next.js, and Node.js. For backend development, we use Python (Django/Flask), PHP (Laravel), .NET, and Java, selecting the best technology stack based on your project requirements.
+
+### How long does web development typically take?
+
+Simple websites can be delivered in 3-4 weeks, while complex web applications require 3-6 months. Timeline depends on features, integrations, and design complexity. We provide detailed project schedules with milestone deliveries.
+
+### Do you provide responsive design for mobile compatibility?
+
+Absolutely. All our websites are built mobile-first with responsive design ensuring optimal performance across all devices. We test extensively on various screen sizes and browsers to guarantee consistent user experience.
+
+### What ongoing maintenance and support do you offer?
+
+We provide comprehensive maintenance including security updates, content management, performance optimization, backup services, hosting support, and feature enhancements. Our support packages ensure your website stays secure and current.
+
+### How do you optimize websites for search engines and performance?
+
+We implement technical SEO best practices, optimize page speed, use clean code structures, implement proper meta tags, and ensure accessibility compliance. Our performance optimization typically achieves 90+ Google PageSpeed scores.
 
 ## Related Services & Industries
 

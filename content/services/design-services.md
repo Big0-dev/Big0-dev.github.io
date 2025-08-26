@@ -148,69 +148,25 @@ Ready to transform your brand and user experience? Let's discuss how we can crea
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does a complete brand identity project take?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Complete brand identity projects typically take 4-8 weeks, including discovery, concept development, refinement, and delivery of brand guidelines. Rush projects can be accommodated within 2-3 weeks for an additional fee.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What's included in a brand identity package?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Our brand identity packages include logo design, color palette, typography selections, brand guidelines, business card design, letterhead, and basic marketing templates. We also provide all files in various formats for print and digital use.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you conduct user research for UX design projects?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, we conduct comprehensive user research including user interviews, surveys, competitor analysis, and usability testing to ensure our designs are based on real user needs and behaviors, not assumptions.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can you redesign our existing website while maintaining our brand?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. We specialize in website redesigns that enhance user experience while strengthening brand consistency. We can work within your existing brand guidelines or help evolve your brand as part of the redesign process.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you measure design success and ROI?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We establish baseline metrics before design implementation and track improvements in key areas like user engagement, conversion rates, bounce rates, task completion rates, and brand perception through A/B testing and analytics.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### How long does a complete brand identity project take?
+
+Complete brand identity projects typically take 4-8 weeks, including discovery, concept development, refinement, and delivery of brand guidelines. Rush projects can be accommodated within 2-3 weeks for an additional fee.
+
+### What's included in a brand identity package?
+
+Our brand identity packages include logo design, color palette, typography selections, brand guidelines, business card design, letterhead, and basic marketing templates. We also provide all files in various formats for print and digital use.
+
+### Do you conduct user research for UX design projects?
+
+Yes, we conduct comprehensive user research including user interviews, surveys, competitor analysis, and usability testing to ensure our designs are based on real user needs and behaviors, not assumptions.
+
+### Can you redesign our existing website while maintaining our brand?
+
+Absolutely. We specialize in website redesigns that enhance user experience while strengthening brand consistency. We can work within your existing brand guidelines or help evolve your brand as part of the redesign process.
+
+### How do you measure design success and ROI?
+
+We establish baseline metrics before design implementation and track improvements in key areas like user engagement, conversion rates, bounce rates, task completion rates, and brand perception through A/B testing and analytics.
 
 ## Related Services & Industries
 

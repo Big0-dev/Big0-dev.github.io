@@ -57,69 +57,25 @@ Ready to bring your mobile app idea to life? Let's discuss how we can create a m
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Should I choose native or cross-platform development for my app?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Native development offers maximum performance and platform-specific features, ideal for complex apps. Cross-platform (React Native/Flutter) is cost-effective for simpler apps. We'll recommend the best approach based on your requirements, budget, and timeline.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does mobile app development typically take?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Simple apps can be completed in 2-3 months, while complex apps with advanced features require 4-8 months. Timeline depends on features, platforms, integrations, and design complexity. We provide detailed project schedules upfront.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you handle app store submission and approval?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, we manage the complete app store submission process including metadata optimization, screenshot creation, compliance review, and addressing any rejection issues. We have a 95% first-time approval rate.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What ongoing maintenance and updates do you provide?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We offer comprehensive maintenance packages including bug fixes, OS updates, security patches, performance optimization, feature enhancements, and analytics monitoring to keep your app current and competitive.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can you integrate mobile apps with existing backend systems?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. We specialize in API integration with CRM systems, databases, payment gateways, authentication systems, and third-party services. We ensure secure, real-time data synchronization across all platforms.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### Should I choose native or cross-platform development for my app?
+
+Native development offers maximum performance and platform-specific features, ideal for complex apps. Cross-platform (React Native/Flutter) is cost-effective for simpler apps. We'll recommend the best approach based on your requirements, budget, and timeline.
+
+### How long does mobile app development typically take?
+
+Simple apps can be completed in 2-3 months, while complex apps with advanced features require 4-8 months. Timeline depends on features, platforms, integrations, and design complexity. We provide detailed project schedules upfront.
+
+### Do you handle app store submission and approval?
+
+Yes, we manage the complete app store submission process including metadata optimization, screenshot creation, compliance review, and addressing any rejection issues. We have a 95% first-time approval rate.
+
+### What ongoing maintenance and updates do you provide?
+
+We offer comprehensive maintenance packages including bug fixes, OS updates, security patches, performance optimization, feature enhancements, and analytics monitoring to keep your app current and competitive.
+
+### Can you integrate mobile apps with existing backend systems?
+
+Absolutely. We specialize in API integration with CRM systems, databases, payment gateways, authentication systems, and third-party services. We ensure secure, real-time data synchronization across all platforms.
 
 ## Related Services & Industries
 

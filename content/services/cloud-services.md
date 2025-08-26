@@ -170,69 +170,25 @@ Contact our cloud experts to begin your cloud journey today.
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does cloud migration typically take?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Migration timelines vary based on complexity. Simple workloads migrate within 2-4 weeks, while comprehensive enterprise transformations require 6-18 months. Our phased approach minimizes disruption and ensures business continuity throughout the process.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What cost reduction can we expect from cloud optimization?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Most organizations achieve 20-40% cost reduction through resource optimization, automated scaling, and reserved instance management. We provide detailed cost analysis and optimization recommendations to maximize your cloud investment ROI.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can you manage multiple cloud providers simultaneously?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, we specialize in multi-cloud management across AWS, Azure, Google Cloud, and Oracle platforms, providing unified visibility and control through centralized monitoring and management tools.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you ensure security during cloud migration?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We implement parallel environments, encrypted data transfer protocols, comprehensive testing procedures, and detailed rollback plans to ensure secure migrations. All security controls are validated before production cutover.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What compliance certifications and standards do you support?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We support major compliance frameworks including SOC 2, HIPAA, PCI DSS, FedRAMP, GDPR, and industry-specific regulations. We provide automated compliance reporting and continuous monitoring to maintain certification requirements.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### How long does cloud migration typically take?
+
+Migration timelines vary based on complexity. Simple workloads migrate within 2-4 weeks, while comprehensive enterprise transformations require 6-18 months. Our phased approach minimizes disruption and ensures business continuity throughout the process.
+
+### What cost reduction can we expect from cloud optimization?
+
+Most organizations achieve 20-40% cost reduction through resource optimization, automated scaling, and reserved instance management. We provide detailed cost analysis and optimization recommendations to maximize your cloud investment ROI.
+
+### Can you manage multiple cloud providers simultaneously?
+
+Yes, we specialize in multi-cloud management across AWS, Azure, Google Cloud, and Oracle platforms, providing unified visibility and control through centralized monitoring and management tools.
+
+### How do you ensure security during cloud migration?
+
+We implement parallel environments, encrypted data transfer protocols, comprehensive testing procedures, and detailed rollback plans to ensure secure migrations. All security controls are validated before production cutover.
+
+### What compliance certifications and standards do you support?
+
+We support major compliance frameworks including SOC 2, HIPAA, PCI DSS, FedRAMP, GDPR, and industry-specific regulations. We provide automated compliance reporting and continuous monitoring to maintain certification requirements.
 
 ## Related Services & Industries
 

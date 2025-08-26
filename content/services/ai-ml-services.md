@@ -307,66 +307,22 @@ Ready to transform your business with artificial intelligence? Let's discuss how
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What types of AI solutions do you develop?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We develop a wide range of AI solutions including predictive analytics models, computer vision systems, natural language processing applications, recommendation engines, anomaly detection systems, and intelligent process automation. Our solutions are tailored to specific business needs across various industries.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does it take to develop a custom AI model?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Development time varies based on complexity and data availability. Simple models can be deployed in 4-6 weeks, while complex enterprise solutions typically take 3-6 months. We follow an agile approach with iterative improvements and regular deliverables throughout the project.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you provide ongoing support for AI systems?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, we offer comprehensive MLOps services including model monitoring, performance optimization, retraining, and continuous improvement. Our support packages ensure your AI systems remain accurate and effective as your business evolves.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What data is required to start an AI project?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>The data requirements depend on your specific use case. Generally, we need historical data relevant to the problem you're solving. We can work with structured or unstructured data, and our team can help with data collection, cleaning, and preparation strategies.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you ensure AI model accuracy and reliability?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We follow industry best practices including rigorous testing, validation with real-world data, A/B testing, and continuous monitoring. We also implement explainable AI techniques to ensure transparency and build trust in the model's decisions.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### What types of AI solutions do you develop?
+
+We develop a wide range of AI solutions including predictive analytics models, computer vision systems, natural language processing applications, recommendation engines, anomaly detection systems, and intelligent process automation. Our solutions are tailored to specific business needs across various industries.
+
+### How long does it take to develop a custom AI model?
+
+Development time varies based on complexity and data availability. Simple models can be deployed in 4-6 weeks, while complex enterprise solutions typically take 3-6 months. We follow an agile approach with iterative improvements and regular deliverables throughout the project.
+
+### Do you provide ongoing support for AI systems?
+
+Yes, we offer comprehensive MLOps services including model monitoring, performance optimization, retraining, and continuous improvement. Our support packages ensure your AI systems remain accurate and effective as your business evolves.
+
+### What data is required to start an AI project?
+
+The data requirements depend on your specific use case. Generally, we need historical data relevant to the problem you're solving. We can work with structured or unstructured data, and our team can help with data collection, cleaning, and preparation strategies.
+
+### How do you ensure AI model accuracy and reliability?
+
+We follow industry best practices including rigorous testing, validation with real-world data, A/B testing, and continuous monitoring. We also implement explainable AI techniques to ensure transparency and build trust in the model's decisions.

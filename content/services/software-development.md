@@ -90,69 +90,25 @@ We developed a comprehensive supply chain management system that reduced operati
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What programming languages and technologies do you specialize in?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We specialize in Python, Java, JavaScript/TypeScript, React, Angular, Vue.js, Node.js, .NET, PHP, and mobile development frameworks. We select the optimal technology stack based on your project requirements and scalability needs.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does custom software development typically take?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Simple applications can be delivered in 2-3 months, while enterprise-level software typically requires 6-12 months. We provide detailed project timelines with milestones and use agile methodology for iterative delivery and feedback.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you follow specific development methodologies?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We primarily use Agile/Scrum methodology with 2-week sprints, daily standups, and regular client reviews. We also adapt to clients' existing processes and can work with waterfall or hybrid approaches as needed.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What kind of post-development support do you provide?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We offer comprehensive support including bug fixes, feature enhancements, security updates, performance optimization, scaling assistance, and technical documentation. Our support packages range from basic maintenance to full DevOps management.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you ensure software quality and security?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We implement comprehensive testing strategies including unit tests, integration tests, and security scanning. Our code review processes, automated CI/CD pipelines, and security best practices ensure high-quality, secure software delivery.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### What programming languages and technologies do you specialize in?
+
+We specialize in Python, Java, JavaScript/TypeScript, React, Angular, Vue.js, Node.js, .NET, PHP, and mobile development frameworks. We select the optimal technology stack based on your project requirements and scalability needs.
+
+### How long does custom software development typically take?
+
+Simple applications can be delivered in 2-3 months, while enterprise-level software typically requires 6-12 months. We provide detailed project timelines with milestones and use agile methodology for iterative delivery and feedback.
+
+### Do you follow specific development methodologies?
+
+We primarily use Agile/Scrum methodology with 2-week sprints, daily standups, and regular client reviews. We also adapt to clients' existing processes and can work with waterfall or hybrid approaches as needed.
+
+### What kind of post-development support do you provide?
+
+We offer comprehensive support including bug fixes, feature enhancements, security updates, performance optimization, scaling assistance, and technical documentation. Our support packages range from basic maintenance to full DevOps management.
+
+### How do you ensure software quality and security?
+
+We implement comprehensive testing strategies including unit tests, integration tests, and security scanning. Our code review processes, automated CI/CD pipelines, and security best practices ensure high-quality, secure software delivery.
 
 ## Related Services & Industries
 

@@ -94,6 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Open search popover
   function openSearch() {
+    if (!searchPopover) return;
+    
     if (typeof searchPopover.showPopover === "function") {
       searchPopover.showPopover();
     } else {
@@ -102,12 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Focus on search input after a brief delay
     setTimeout(() => {
-      searchInput.focus();
+      if (searchInput) searchInput.focus();
     }, 100);
   }
 
   // Close search popover
   function closeSearch() {
+    if (!searchPopover) return;
+    
     if (typeof searchPopover.hidePopover === "function") {
       searchPopover.hidePopover();
     } else {
@@ -115,14 +119,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Clear search input and results
-    searchInput.value = "";
+    if (searchInput) searchInput.value = "";
     clearSearchResults();
   }
 
   // Clear search results
   function clearSearchResults() {
-    searchResultsContainer.classList.remove("visible");
-    searchResults.innerHTML = "";
+    if (searchResultsContainer) searchResultsContainer.classList.remove("visible");
+    if (searchResults) searchResults.innerHTML = "";
   }
 
   // Format type name for display
@@ -406,9 +410,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === "k") {
       e.preventDefault();
-      if (searchPopover.hasAttribute("popover-open")) {
+      if (searchPopover && searchPopover.hasAttribute("popover-open")) {
         closeSearch();
-      } else {
+      } else if (searchPopover) {
         openSearch();
       }
     }
@@ -417,6 +421,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Close search on click outside
   document.addEventListener("click", (e) => {
     if (
+      searchPopover &&
       searchPopover.hasAttribute("popover-open") &&
       !searchPopover.contains(e.target) &&
       !Array.from(document.querySelectorAll(".search-button")).some((btn) =>

@@ -202,69 +202,25 @@ Ready to unlock the power of your data? Let's discuss how we can transform your 
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does it take to implement a data analytics solution?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Implementation timelines vary based on complexity. Basic dashboards can be delivered in 2-4 weeks, while comprehensive data warehouses and advanced analytics platforms typically require 3-6 months. We provide detailed project timelines during initial consultation.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What data sources can you integrate and analyze?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We work with all major data sources including databases (SQL Server, Oracle, MySQL, PostgreSQL), cloud platforms (AWS, Azure, GCP), APIs, flat files, CRM systems, ERP systems, and real-time streaming data sources.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you provide real-time analytics capabilities?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, we implement real-time streaming analytics using technologies like Apache Kafka, Apache Storm, and cloud-native solutions. This enables live dashboards, instant alerts, and immediate insights from your data streams.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How do you ensure data security and compliance?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We implement enterprise-grade security including data encryption at rest and in transit, role-based access controls, audit logging, and compliance with regulations like GDPR, HIPAA, and SOX. All solutions follow industry security best practices.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can you migrate our existing reports and dashboards?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. We specialize in migrating legacy reporting systems to modern platforms like Power BI, Tableau, and custom solutions while improving performance and adding new capabilities. We ensure continuity throughout the migration process.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### How long does it take to implement a data analytics solution?
+
+Implementation timelines vary based on complexity. Basic dashboards can be delivered in 2-4 weeks, while comprehensive data warehouses and advanced analytics platforms typically require 3-6 months. We provide detailed project timelines during initial consultation.
+
+### What data sources can you integrate and analyze?
+
+We work with all major data sources including databases (SQL Server, Oracle, MySQL, PostgreSQL), cloud platforms (AWS, Azure, GCP), APIs, flat files, CRM systems, ERP systems, and real-time streaming data sources.
+
+### Do you provide real-time analytics capabilities?
+
+Yes, we implement real-time streaming analytics using technologies like Apache Kafka, Apache Storm, and cloud-native solutions. This enables live dashboards, instant alerts, and immediate insights from your data streams.
+
+### How do you ensure data security and compliance?
+
+We implement enterprise-grade security including data encryption at rest and in transit, role-based access controls, audit logging, and compliance with regulations like GDPR, HIPAA, and SOX. All solutions follow industry security best practices.
+
+### Can you migrate our existing reports and dashboards?
+
+Absolutely. We specialize in migrating legacy reporting systems to modern platforms like Power BI, Tableau, and custom solutions while improving performance and adding new capabilities. We ensure continuity throughout the migration process.
 
 ## Related Services & Industries
 

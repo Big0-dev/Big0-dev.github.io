@@ -80,69 +80,25 @@ Let's discuss how Python automation can transform your business operations.
 
 ## Frequently Asked Questions
 
-<div class="faq-section">
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What types of tasks can be automated with Python?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>We automate data processing, web scraping, file management, report generation, API integrations, testing procedures, deployment processes, database operations, email marketing, and repetitive business workflows. Almost any repetitive task can be automated.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>How long does it take to develop Python automation solutions?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Simple automation scripts can be delivered in 1-2 weeks, while complex workflow automation systems typically require 4-8 weeks. Timeline depends on integration complexity and the number of systems involved.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Can Python automation integrate with our existing software systems?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, Python excels at integration. We can connect with databases, APIs, web services, desktop applications, cloud platforms, and virtually any system that provides programmatic access or data export capabilities.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>What kind of ROI can we expect from Python automation?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Most organizations see 300-500% ROI within the first year through time savings, reduced errors, and improved efficiency. Tasks that took hours can often be completed in minutes, freeing staff for higher-value work.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">
-        <span>Do you provide training on managing and maintaining automation scripts?</span>
-        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. We provide comprehensive documentation, training sessions for your team, and ongoing maintenance packages. We ensure your staff can understand, modify, and extend the automation solutions as your needs evolve.</p>
-      </div>
-    </div>
-  </div>
-</div>
+### What types of tasks can be automated with Python?
+
+We automate data processing, web scraping, file management, report generation, API integrations, testing procedures, deployment processes, database operations, email marketing, and repetitive business workflows. Almost any repetitive task can be automated.
+
+### How long does it take to develop Python automation solutions?
+
+Simple automation scripts can be delivered in 1-2 weeks, while complex workflow automation systems typically require 4-8 weeks. Timeline depends on integration complexity and the number of systems involved.
+
+### Can Python automation integrate with our existing software systems?
+
+Yes, Python excels at integration. We can connect with databases, APIs, web services, desktop applications, cloud platforms, and virtually any system that provides programmatic access or data export capabilities.
+
+### What kind of ROI can we expect from Python automation?
+
+Most organizations see 300-500% ROI within the first year through time savings, reduced errors, and improved efficiency. Tasks that took hours can often be completed in minutes, freeing staff for higher-value work.
+
+### Do you provide training on managing and maintaining automation scripts?
+
+Absolutely. We provide comprehensive documentation, training sessions for your team, and ongoing maintenance packages. We ensure your staff can understand, modify, and extend the automation solutions as your needs evolve.
 
 ## Related Services & Industries
 

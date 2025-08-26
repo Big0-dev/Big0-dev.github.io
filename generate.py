@@ -258,7 +258,16 @@ class SiteGenerator:
                 # Special handling for different pages
                 page_context = context.copy()
                 
-                if page['template'] == 'gallery.html':
+                # Special handling for 404 page - use absolute paths
+                if page['template'] == '404.html':
+                    # Override static paths to use absolute URLs for 404 page
+                    page_context['static'] = '/static'
+                    # Override navigation URLs to use absolute paths
+                    for key, value in self.config['navigation'].items():
+                        page_context[key] = f'/{value}'
+                    page_context['path_prefix'] = '/'
+                    page_context['image_sitemap'] = '/sitemap-images.xml'
+                elif page['template'] == 'gallery.html':
                     # Skip generating the base gallery.html here, it will be handled with pagination
                     continue
                 elif page['template'] == 'index.html':
@@ -1419,188 +1428,57 @@ class SiteGenerator:
     
     def _generate_location_pages(self, content_dir: Path, config: dict):
         """Generate location-specific versions of service pages"""
-        # Define locations - countries
-        locations = {
-            'usa': {
-                'name': 'USA',
-                'full_name': 'United States',
-                'slug': 'usa',
-                'meta_suffix': 'in the USA',
-                'content_suffix': 'across the United States',
-                'type': 'country'
-            },
-            'uk': {
-                'name': 'UK', 
-                'full_name': 'United Kingdom',
-                'slug': 'uk',
-                'meta_suffix': 'in the UK',
-                'content_suffix': 'across the United Kingdom',
-                'type': 'country'
-            },
-            'canada': {
-                'name': 'Canada',
-                'full_name': 'Canada',
-                'slug': 'canada',
-                'meta_suffix': 'in Canada',
-                'content_suffix': 'across Canada',
-                'type': 'country'
-            },
-            'australia': {
-                'name': 'Australia',
-                'full_name': 'Australia',
-                'slug': 'australia',
-                'meta_suffix': 'in Australia',
-                'content_suffix': 'across Australia',
-                'type': 'country'
-            }
-        }
+        # Dynamically discover locations from directory structure
+        locations_dir = content_dir / 'locations'
+        locations = {}
         
-        # Define cities (nested under countries)
-        cities = {
-            'usa': {
-                'new-york': {
-                    'name': 'New York',
-                    'full_name': 'New York City',
-                    'slug': 'new-york',
-                    'meta_suffix': 'in New York',
-                    'content_suffix': 'in New York City',
-                    'parent_country': 'usa',
-                    'type': 'city'
-                },
-                'san-francisco': {
-                    'name': 'San Francisco',
-                    'full_name': 'San Francisco',
-                    'slug': 'san-francisco',
-                    'meta_suffix': 'in San Francisco',
-                    'content_suffix': 'in the San Francisco Bay Area',
-                    'parent_country': 'usa',
-                    'type': 'city'
-                },
-                'los-angeles': {
-                    'name': 'Los Angeles',
-                    'full_name': 'Los Angeles',
-                    'slug': 'los-angeles',
-                    'meta_suffix': 'in Los Angeles',
-                    'content_suffix': 'in Los Angeles',
-                    'parent_country': 'usa',
-                    'type': 'city'
-                },
-                'chicago': {
-                    'name': 'Chicago',
-                    'full_name': 'Chicago',
-                    'slug': 'chicago',
-                    'meta_suffix': 'in Chicago',
-                    'content_suffix': 'in Chicago',
-                    'parent_country': 'usa',
-                    'type': 'city'
-                },
-                'austin': {
-                    'name': 'Austin',
-                    'full_name': 'Austin',
-                    'slug': 'austin',
-                    'meta_suffix': 'in Austin',
-                    'content_suffix': 'in Austin, Texas',
-                    'parent_country': 'usa',
-                    'type': 'city'
-                },
-                'seattle': {
-                    'name': 'Seattle',
-                    'full_name': 'Seattle',
-                    'slug': 'seattle',
-                    'meta_suffix': 'in Seattle',
-                    'content_suffix': 'in Seattle, Washington',
-                    'parent_country': 'usa',
-                    'type': 'city'
-                }
-            },
-            'uk': {
-                'london': {
-                    'name': 'London',
-                    'full_name': 'London',
-                    'slug': 'london',
-                    'meta_suffix': 'in London',
-                    'content_suffix': 'in London',
-                    'parent_country': 'uk',
-                    'type': 'city'
-                },
-                'manchester': {
-                    'name': 'Manchester',
-                    'full_name': 'Manchester',
-                    'slug': 'manchester',
-                    'meta_suffix': 'in Manchester',
-                    'content_suffix': 'in Manchester',
-                    'parent_country': 'uk',
-                    'type': 'city'
-                },
-                'birmingham': {
-                    'name': 'Birmingham',
-                    'full_name': 'Birmingham',
-                    'slug': 'birmingham',
-                    'meta_suffix': 'in Birmingham',
-                    'content_suffix': 'in Birmingham',
-                    'parent_country': 'uk',
-                    'type': 'city'
-                }
-            },
-            'canada': {
-                'toronto': {
-                    'name': 'Toronto',
-                    'full_name': 'Toronto',
-                    'slug': 'toronto',
-                    'meta_suffix': 'in Toronto',
-                    'content_suffix': 'in Toronto, Ontario',
-                    'parent_country': 'canada',
-                    'type': 'city'
-                },
-                'vancouver': {
-                    'name': 'Vancouver',
-                    'full_name': 'Vancouver',
-                    'slug': 'vancouver',
-                    'meta_suffix': 'in Vancouver',
-                    'content_suffix': 'in Vancouver, BC',
-                    'parent_country': 'canada',
-                    'type': 'city'
-                },
-                'montreal': {
-                    'name': 'Montreal',
-                    'full_name': 'Montreal',
-                    'slug': 'montreal',
-                    'meta_suffix': 'in Montreal',
-                    'content_suffix': 'in Montreal, Quebec',
-                    'parent_country': 'canada',
-                    'type': 'city'
-                }
-            },
-            'australia': {
-                'sydney': {
-                    'name': 'Sydney',
-                    'full_name': 'Sydney',
-                    'slug': 'sydney',
-                    'meta_suffix': 'in Sydney',
-                    'content_suffix': 'in Sydney, NSW',
-                    'parent_country': 'australia',
-                    'type': 'city'
-                },
-                'melbourne': {
-                    'name': 'Melbourne',
-                    'full_name': 'Melbourne',
-                    'slug': 'melbourne',
-                    'meta_suffix': 'in Melbourne',
-                    'content_suffix': 'in Melbourne, Victoria',
-                    'parent_country': 'australia',
-                    'type': 'city'
-                },
-                'brisbane': {
-                    'name': 'Brisbane',
-                    'full_name': 'Brisbane',
-                    'slug': 'brisbane',
-                    'meta_suffix': 'in Brisbane',
-                    'content_suffix': 'in Brisbane, Queensland',
-                    'parent_country': 'australia',
-                    'type': 'city'
-                }
-            }
-        }
+        if locations_dir.exists():
+            for location_dir in locations_dir.iterdir():
+                if location_dir.is_dir():
+                    location_name = location_dir.name
+                    # Convert directory name to proper display name
+                    display_name = location_name.replace('-', ' ').title()
+                    
+                    # Special cases for country names
+                    name_mappings = {
+                        'usa': 'USA',
+                        'uk': 'UK',
+                        'uae': 'UAE'
+                    }
+                    
+                    display_name = name_mappings.get(location_name, display_name)
+                    
+                    locations[location_name] = {
+                        'name': display_name,
+                        'full_name': display_name if display_name != 'USA' else 'United States',
+                        'slug': location_name,
+                        'meta_suffix': f'in {display_name}' if display_name != 'USA' else 'in the USA',
+                        'content_suffix': f'across {display_name}' if display_name != 'USA' else 'across the United States',
+                        'type': 'country'
+                    }
+        
+        # Dynamically discover cities from directory structure
+        cities = {}
+        for country_name, country_data in locations.items():
+            cities[country_name] = {}
+            country_cities_dir = locations_dir / country_name / 'cities'
+            
+            if country_cities_dir.exists():
+                for city_dir in country_cities_dir.iterdir():
+                    if city_dir.is_dir():
+                        city_name = city_dir.name
+                        # Convert directory name to proper display name
+                        display_name = city_name.replace('-', ' ').title()
+                        
+                        cities[country_name][city_name] = {
+                            'name': display_name,
+                            'full_name': display_name,
+                            'slug': city_name,
+                            'meta_suffix': f'in {display_name}',
+                            'content_suffix': f'in {display_name}',
+                            'parent_country': country_name,
+                            'type': 'city'
+                        }
         
         # No services are skipped from location pages anymore
         
@@ -1620,7 +1498,7 @@ class SiteGenerator:
             for location_key, location in locations.items():
                 location_dir = locations_dir / location_key
                 
-                # Check if location-specific markdown exists
+                # Check if location-specific markdown exists (exact match)
                 location_md_path = location_dir / f"{service_file.stem}-{location_key}.md"
                 
                 if location_md_path.exists():
@@ -1719,6 +1597,62 @@ class SiteGenerator:
                             
                         except Exception as e:
                             logger.error(f"Error generating city page {city_md_path}: {e}")
+        
+        # Process ALL remaining markdown files in location directories that don't match service patterns
+        # This handles files like engineering-consultancy-pakistan.md that don't follow the service-location pattern
+        services_dir = content_dir  # Define services_dir for checking existing services
+        for location_key in locations:
+            location_dir = locations_dir / location_key
+            if location_dir.exists():
+                # Process all .md files in this location directory
+                for md_file in location_dir.glob('*.md'):
+                    # Skip if already processed (matches service-location pattern)
+                    if any(md_file.stem == f"{service.stem}-{location_key}" 
+                           for service in services_dir.glob('*.md')):
+                        continue
+                    
+                    # Generate this standalone location page
+                    try:
+                        output_path = Path(f"services/locations/{location_key}/{md_file.stem}.html")
+                        location_item = self._load_markdown_content(md_file, output_path)
+                        
+                        # Fix service links to point to correct relative path
+                        import re
+                        def fix_service_link(match):
+                            service_name = match.group(1)
+                            return f'href="../../../services/{service_name}.html"'
+                        
+                        location_item['content_html'] = re.sub(
+                            r'href="([a-zA-Z_\-]+)\.html"',
+                            fix_service_link,
+                            location_item['content_html']
+                        )
+                        
+                        # Generate the HTML page
+                        template = self.env.get_template('service_detail.html')
+                        
+                        # Create output directory
+                        output_dir = Path(self.output_dir) / 'services' / 'locations' / location_key
+                        output_dir.mkdir(parents=True, exist_ok=True)
+                        
+                        output_path = output_dir / f"{md_file.stem}.html"
+                        
+                        # Get context with appropriate depth for nested directory
+                        base_context = self._get_base_context(depth=3)
+                        
+                        location_context = {
+                            **base_context,
+                            'current_service': location_item,
+                            'item': location_item
+                        }
+                        
+                        html_content = template.render(**location_context)
+                        output_path.write_text(html_content)
+                        
+                        logger.info(f"Generated standalone location page: {output_path.relative_to(self.output_dir)}")
+                        
+                    except Exception as e:
+                        logger.error(f"Error generating standalone location page {md_file}: {e}")
                     
     def _generate_sitemaps(self):
         """Generate XML sitemaps"""

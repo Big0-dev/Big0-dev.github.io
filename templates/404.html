@@ -1,20 +1,113 @@
-<section class="info-section error-section">
-  <div class="info-container">
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found{% endblock %}
+{% block meta_description %}The page you're looking for could not be found. Return to our homepage to explore our AI and digital transformation services.{% endblock %}
+{% block canonical_path %}/404.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+<style>
+  .error-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl) var(--space-lg);
+  }
+  
+  .error-visual {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+  
+  .error-number {
+    font-size: 120px;
+    font-weight: bold;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .error-icon {
+    font-size: 48px;
+    color: var(--primary-color);
+  }
+  
+  .error-subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .suggestion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+  
+  .suggestion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+  
+  .suggestion-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+  }
+  
+  .suggestion-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+  }
+  
+  .suggestion-content h3 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .suggestion-content p {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+  }
+  
+  .error-help {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="error-section">
+  <div class="container">
     <div class="error-visual">
       <div class="error-number">404</div>
-      <div class="error-icon">
-        {{ inject_svg('alert-triangle', True) | safe }}
-      </div>
     </div>
 
-    <h1>Page Not Found</h1>
-    <p class="error-subtitle">
-      Oops! The page you're looking for seems to have wandered off into the
-      digital void.
+    <h1 class="text-center">Page Not Found</h1>
+    <p class="error-subtitle text-center">
+      Oops! The page you're looking for seems to have wandered off into the digital void.
     </p>
 
-    <div class="info-content error-content">
-      <div class="error-explanation">
+    <div class="error-content">
+      <div class="error-explanation text-center mb-3xl">
         <h2>What happened?</h2>
         <p>
           The page you requested might have been moved, deleted, or you may have
@@ -24,7 +117,7 @@
       </div>
 
       <div class="error-suggestions">
-        <h2>Here's what you can do:</h2>
+        <h2 class="text-center mb-xl">Here's what you can do:</h2>
         <div class="suggestion-grid">
           <div class="suggestion-item">
             <div class="suggestion-icon">
@@ -33,7 +126,7 @@
             <div class="suggestion-content">
               <h3>Go Home</h3>
               <p>
-                Start fresh from our homepage and explore our latest content.
+                Start fresh from our <a href="/">homepage</a> and explore our latest content.
               </p>
             </div>
           </div>
@@ -43,9 +136,9 @@
               {{ inject_svg('search_icon', True) | safe }}
             </div>
             <div class="suggestion-content">
-              <h3>Search</h3>
+              <h3>Browse Services</h3>
               <p>
-                Use our search functionality to find what you're looking for.
+                Check out our <a href="/services.html">services page</a> to see what we offer.
               </p>
             </div>
           </div>
@@ -69,7 +162,7 @@
             <div class="suggestion-content">
               <h3>Contact Us</h3>
               <p>
-                Let us know about the broken link and we'll fix it right away.
+                <a href="/contact.html">Let us know</a> about the broken link and we'll fix it right away.
               </p>
             </div>
           </div>
@@ -79,10 +172,11 @@
       <div class="error-help">
         <p>
           <strong>Still having trouble?</strong> If you continue to experience
-          issues, please don't hesitate to reach out to our support team. We're
+          issues, please don't hesitate to <a href="/contact.html">reach out to our support team</a>. We're
           always happy to help!
         </p>
       </div>
     </div>
   </div>
 </section>
+{% endblock %}

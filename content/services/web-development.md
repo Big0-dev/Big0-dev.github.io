@@ -1,30 +1,13 @@
 ---
-title: Modern Web Development
-meta_description: Modern web development services for custom websites & web apps. React, Vue, Node.js experts. Build fast, responsive sites that convert 40% more visitors.
-description: Create stunning, high-performance web applications with cutting-edge technologies and responsive design
+description: Create stunning, high-performance web applications with cutting-edge
+  technologies and responsive design
+features: Responsive design, Progressive web apps, SEO optimization, Performance optimization,
+  API integration, CMS development
 icon: web
-features: Responsive design, Progressive web apps, SEO optimization, Performance optimization, API integration, CMS development
-related_services: 
-  - design-services
-  - mobile_app.development
-  - digital_marketing_services
-  - e_commerce_solutions
-related_industries:
-  - retail
-  - education
-  - healthcare
-  - finance
-faq:
-  - question: What web technologies and frameworks do you use?
-    answer: We specialize in modern frameworks including React, Vue.js, Angular, Next.js, and Node.js. For backend development, we use Python (Django/Flask), PHP (Laravel), .NET, and Java, selecting the best technology stack based on your project requirements.
-  - question: How long does web development typically take?
-    answer: Simple websites can be delivered in 3-4 weeks, while complex web applications require 3-6 months. Timeline depends on features, integrations, and design complexity. We provide detailed project schedules with milestone deliveries.
-  - question: Do you provide responsive design for mobile compatibility?
-    answer: Absolutely. All our websites are built mobile-first with responsive design ensuring optimal performance across all devices. We test extensively on various screen sizes and browsers to guarantee consistent user experience.
-  - question: What ongoing maintenance and support do you offer?
-    answer: We provide comprehensive maintenance including security updates, content management, performance optimization, backup services, hosting support, and feature enhancements. Our support packages ensure your website stays secure and current.
-  - question: How do you optimize websites for search engines and performance?
-    answer: We implement technical SEO best practices, optimize page speed, use clean code structures, implement proper meta tags, and ensure accessibility compliance. Our performance optimization typically achieves 90+ Google PageSpeed scores.
+meta_description: Modern web development services for custom websites & web apps.
+  React, Vue, Node.js experts. Build fast, responsive sites that convert 40% more
+  visitors.
+title: Modern Web Development
 ---
 
 # Build Your Digital Presence
@@ -117,3 +100,133 @@ Absolutely. All our websites are mobile-first responsive, optimized for Core Web
 ## Featured Project: E-Learning Platform
 
 We developed a comprehensive e-learning platform that serves 100,000+ students daily. The platform features live streaming, interactive assessments, and personalized learning paths, resulting in a 40% improvement in student engagement.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What web technologies and frameworks do you use?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We specialize in modern frameworks including React, Vue.js, Angular, Next.js, and Node.js. For backend development, we use Python (Django/Flask), PHP (Laravel), .NET, and Java, selecting the best technology stack based on your project requirements.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does web development typically take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple websites can be delivered in 3-4 weeks, while complex web applications require 3-6 months. Timeline depends on features, integrations, and design complexity. We provide detailed project schedules with milestone deliveries.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide responsive design for mobile compatibility?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. All our websites are built mobile-first with responsive design ensuring optimal performance across all devices. We test extensively on various screen sizes and browsers to guarantee consistent user experience.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What ongoing maintenance and support do you offer?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We provide comprehensive maintenance including security updates, content management, performance optimization, backup services, hosting support, and feature enhancements. Our support packages ensure your website stays secure and current.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you optimize websites for search engines and performance?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement technical SEO best practices, optimize page speed, use clean code structures, implement proper meta tags, and ensure accessibility compliance. Our performance optimization typically achieves 90+ Google PageSpeed scores.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="design-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Design Services</span>
+      </a>
+      <a href="mobile_app.development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Mobile App.Development</span>
+      </a>
+      <a href="digital_marketing_services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Digital Marketing Services</span>
+      </a>
+      <a href="e_commerce_solutions.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>E Commerce Solutions</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+    </div>
+  </div>
+</div>

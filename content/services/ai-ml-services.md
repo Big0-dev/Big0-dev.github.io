@@ -4,27 +4,6 @@ meta_description: "Enterprise AI & ML solutions: custom models, computer vision,
 description: Comprehensive AI and machine learning services including custom model development, computer vision, natural language processing, and intelligent automation
 icon: ai
 features: Custom AI models, Machine learning, Computer vision, Natural language processing, Process automation, Predictive analytics, MLOps deployment, AI consulting
-related_services: 
-  - data-analytics-services
-  - cloud-services
-  - software-development
-  - python-automation
-related_industries:
-  - healthcare
-  - finance
-  - retail
-  - manufacturing
-faq:
-  - question: What types of AI solutions do you develop?
-    answer: We develop a wide range of AI solutions including predictive analytics models, computer vision systems, natural language processing applications, recommendation engines, anomaly detection systems, and intelligent process automation. Our solutions are tailored to specific business needs across various industries.
-  - question: How long does it take to develop a custom AI model?
-    answer: Development time varies based on complexity and data availability. Simple models can be deployed in 4-6 weeks, while complex enterprise solutions typically take 3-6 months. We follow an agile approach with iterative improvements and regular deliverables throughout the project.
-  - question: Do you provide ongoing support for AI systems?
-    answer: Yes, we offer comprehensive MLOps services including model monitoring, performance optimization, retraining, and continuous improvement. Our support packages ensure your AI systems remain accurate and effective as your business evolves.
-  - question: What data is required to start an AI project?
-    answer: The data requirements depend on your specific use case. Generally, we need historical data relevant to the problem you're solving. We can work with structured or unstructured data, and our team can help with data collection, cleaning, and preparation strategies.
-  - question: How do you ensure AI model accuracy and reliability?
-    answer: We follow industry best practices including rigorous testing, validation with real-world data, A/B testing, and continuous monitoring. We also implement explainable AI techniques to ensure transparency and build trust in the model's decisions.
 ---
 
 # Transform Your Business with Artificial Intelligence
@@ -261,3 +240,133 @@ Whether you need a complete AI transformation or targeted solutions for specific
 We stay current with the latest AI research and technologies while maintaining focus on practical applications that deliver business value.
 
 Ready to transform your business with artificial intelligence? Let's discuss how we can develop AI solutions that automate processes, generate insights, and create competitive advantages for your organization.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What types of AI solutions do you develop?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We develop a wide range of AI solutions including predictive analytics models, computer vision systems, natural language processing applications, recommendation engines, anomaly detection systems, and intelligent process automation. Our solutions are tailored to specific business needs across various industries.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does it take to develop a custom AI model?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Development time varies based on complexity and data availability. Simple models can be deployed in 4-6 weeks, while complex enterprise solutions typically take 3-6 months. We follow an agile approach with iterative improvements and regular deliverables throughout the project.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide ongoing support for AI systems?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we offer comprehensive MLOps services including model monitoring, performance optimization, retraining, and continuous improvement. Our support packages ensure your AI systems remain accurate and effective as your business evolves.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What data is required to start an AI project?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>The data requirements depend on your specific use case. Generally, we need historical data relevant to the problem you're solving. We can work with structured or unstructured data, and our team can help with data collection, cleaning, and preparation strategies.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure AI model accuracy and reliability?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We follow industry best practices including rigorous testing, validation with real-world data, A/B testing, and continuous monitoring. We also implement explainable AI techniques to ensure transparency and build trust in the model's decisions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="data-analytics-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Data Analytics Services</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+      <a href="software-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Software Development</span>
+      </a>
+      <a href="python-automation.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Python Automation</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+    </div>
+  </div>
+</div>

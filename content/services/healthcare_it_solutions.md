@@ -1,30 +1,12 @@
 ---
-title: Healthcare IT Solutions
-meta_description: "HIPAA-compliant healthcare IT: EHR, telemedicine, patient portals. Reduce errors 60%, improve outcomes. Transform healthcare delivery today!"
-description: HIPAA-compliant healthcare technology including electronic health records, telemedicine platforms, medical device integration, and patient management systems
+description: HIPAA-compliant healthcare technology including electronic health records,
+  telemedicine platforms, medical device integration, and patient management systems
+features: Electronic health records, Telemedicine platforms, Medical device integration,
+  Patient portals, HIPAA compliance, Healthcare analytics
 icon: heart
-features: Electronic health records, Telemedicine platforms, Medical device integration, Patient portals, HIPAA compliance, Healthcare analytics
-related_services: 
-  - software-development
-  - mobile_app.development
-  - cloud-services
-  - ai-ml-services
-related_industries:
-  - healthcare
-  - government
-  - education
-  - finance
-faq:
-  - question: How do you ensure HIPAA compliance in healthcare applications?
-    answer: We implement comprehensive HIPAA safeguards including data encryption, access controls, audit logging, risk assessments, and staff training. All our healthcare solutions undergo rigorous security testing and compliance validation.
-  - question: What types of healthcare IT solutions do you develop?
-    answer: We develop EHR/EMR systems, telemedicine platforms, patient portals, medical device integration, healthcare analytics, appointment scheduling, billing systems, and clinical decision support tools.
-  - question: Can you integrate with existing healthcare systems and devices?
-    answer: Yes, we specialize in healthcare interoperability using HL7 FHIR, DICOM, and other healthcare standards. We can integrate with existing EHRs, medical devices, lab systems, and pharmacy management systems.
-  - question: How long does healthcare IT implementation take?
-    answer: Simple patient portals can be delivered in 2-3 months, while comprehensive EHR systems require 6-12 months. Implementation includes compliance validation, staff training, and gradual rollout to ensure minimal disruption.
-  - question: Do you provide ongoing support and maintenance for healthcare systems?
-    answer: Absolutely. We offer 24/7 support, regular security updates, compliance monitoring, system optimization, and help desk services to ensure your healthcare systems remain secure, compliant, and operational.
+meta_description: 'HIPAA-compliant healthcare IT: EHR, telemedicine, patient portals.
+  Reduce errors 60%, improve outcomes. Transform healthcare delivery today!'
+title: Healthcare IT Solutions
 ---
 
 # Digitize Healthcare for Better Patient Outcomes
@@ -65,3 +47,133 @@ Our healthcare technology expertise combines medical industry knowledge with adv
 We developed a comprehensive telehealth platform serving 50+ healthcare providers and 25,000+ patients. The system includes video consultations, e-prescriptions, integrated EHR, and mobile apps, achieving 98% patient satisfaction and reducing no-show rates by 40% while maintaining full HIPAA compliance.
 
 Ready to transform healthcare delivery? Let's discuss how we can build healthcare IT solutions that improve patient outcomes while ensuring security and regulatory compliance.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure HIPAA compliance in healthcare applications?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement comprehensive HIPAA safeguards including data encryption, access controls, audit logging, risk assessments, and staff training. All our healthcare solutions undergo rigorous security testing and compliance validation.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What types of healthcare IT solutions do you develop?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We develop EHR/EMR systems, telemedicine platforms, patient portals, medical device integration, healthcare analytics, appointment scheduling, billing systems, and clinical decision support tools.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you integrate with existing healthcare systems and devices?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we specialize in healthcare interoperability using HL7 FHIR, DICOM, and other healthcare standards. We can integrate with existing EHRs, medical devices, lab systems, and pharmacy management systems.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does healthcare IT implementation take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple patient portals can be delivered in 2-3 months, while comprehensive EHR systems require 6-12 months. Implementation includes compliance validation, staff training, and gradual rollout to ensure minimal disruption.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide ongoing support and maintenance for healthcare systems?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We offer 24/7 support, regular security updates, compliance monitoring, system optimization, and help desk services to ensure your healthcare systems remain secure, compliant, and operational.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="software-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Software Development</span>
+      </a>
+      <a href="mobile_app.development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Mobile App.Development</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+      <a href="ai-ml-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ai ML Services</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/government.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Government</span>
+      </a>
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+    </div>
+  </div>
+</div>

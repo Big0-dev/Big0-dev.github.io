@@ -1,30 +1,13 @@
 ---
-title: Hardware & IoT Engineering Solutions
-meta_description: Complete hardware and IoT engineering services. PCB design, embedded systems, 3D CAD, connected devices. ESP32, AWS IoT expertise. Prototype to production in 4-6 weeks.
-description: End-to-end hardware and IoT engineering from mechanical design and PCB development to embedded systems, cloud connectivity, and smart device solutions
+description: End-to-end hardware and IoT engineering from mechanical design and PCB
+  development to embedded systems, cloud connectivity, and smart device solutions
+features: 3D CAD design, PCB layout, Embedded firmware, IoT connectivity, Cloud integration,
+  Manufacturing support, Sensor networks, Real-time analytics
 icon: microchip
-features: 3D CAD design, PCB layout, Embedded firmware, IoT connectivity, Cloud integration, Manufacturing support, Sensor networks, Real-time analytics
-related_services: 
-  - engineering-services
-  - cloud-services
-  - ai-ml-services
-  - software-development
-related_industries:
-  - manufacturing
-  - healthcare
-  - energy
-  - government
-faq:
-  - question: What types of hardware and IoT projects do you handle?
-    answer: We develop custom PCBs, embedded systems, sensor networks, industrial controllers, consumer electronics, medical devices, agricultural monitoring systems, and smart building solutions from prototyping through production.
-  - question: How long does hardware development take from concept to prototype?
-    answer: Simple prototypes can be delivered in 4-6 weeks, while complex systems require 3-6 months. Manufacturing preparation adds another 2-4 weeks. We provide detailed timelines based on project complexity and component availability.
-  - question: Do you provide manufacturing and production support?
-    answer: Yes, we offer complete manufacturing support including vendor selection, supply chain management, quality assurance, production testing, and scaling from prototype quantities to mass production volumes.
-  - question: What IoT platforms and connectivity options do you work with?
-    answer: We work with AWS IoT, Azure IoT, Google Cloud IoT, and custom solutions. Connectivity options include WiFi, Bluetooth, LoRaWAN, cellular (4G/5G), Zigbee, and satellite communication based on your application requirements.
-  - question: How do you ensure hardware reliability and compliance?
-    answer: We follow industry standards for design, testing, and validation. Our process includes environmental testing, EMC compliance, safety certifications (FCC, CE, UL), and rigorous quality assurance protocols throughout development and production.
+meta_description: Complete hardware and IoT engineering services. PCB design, embedded
+  systems, 3D CAD, connected devices. ESP32, AWS IoT expertise. Prototype to production
+  in 4-6 weeks.
+title: Hardware & IoT Engineering Solutions
 ---
 
 # Transform Ideas Into Intelligent Connected Products
@@ -240,3 +223,133 @@ Ready to bring your hardware and IoT vision to life?
 4. **Full Development**: Complete product development and launch
 
 Contact our engineering team to start transforming your ideas into intelligent connected products.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What types of hardware and IoT projects do you handle?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We develop custom PCBs, embedded systems, sensor networks, industrial controllers, consumer electronics, medical devices, agricultural monitoring systems, and smart building solutions from prototyping through production.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does hardware development take from concept to prototype?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple prototypes can be delivered in 4-6 weeks, while complex systems require 3-6 months. Manufacturing preparation adds another 2-4 weeks. We provide detailed timelines based on project complexity and component availability.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide manufacturing and production support?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we offer complete manufacturing support including vendor selection, supply chain management, quality assurance, production testing, and scaling from prototype quantities to mass production volumes.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What IoT platforms and connectivity options do you work with?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We work with AWS IoT, Azure IoT, Google Cloud IoT, and custom solutions. Connectivity options include WiFi, Bluetooth, LoRaWAN, cellular (4G/5G), Zigbee, and satellite communication based on your application requirements.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure hardware reliability and compliance?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We follow industry standards for design, testing, and validation. Our process includes environmental testing, EMC compliance, safety certifications (FCC, CE, UL), and rigorous quality assurance protocols throughout development and production.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="engineering-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Engineering Services</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+      <a href="ai-ml-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ai ML Services</span>
+      </a>
+      <a href="software-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Software Development</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/energy.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Energy</span>
+      </a>
+      <a href="../industries/government.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Government</span>
+      </a>
+    </div>
+  </div>
+</div>

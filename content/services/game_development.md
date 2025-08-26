@@ -1,30 +1,12 @@
 ---
-title: Game Development
-meta_description: "Custom game development: mobile, web, desktop. Unity, Unreal Engine expertise. 40% retention rates, proven monetization. Create your game today!"
-description: Custom game development for mobile, web, and desktop platforms including 2D/3D games, multiplayer systems, and monetization strategies
+description: Custom game development for mobile, web, and desktop platforms including
+  2D/3D games, multiplayer systems, and monetization strategies
+features: Mobile game development, Multiplayer systems, 2D/3D graphics, In-app purchases,
+  Analytics integration, Cross-platform deployment
 icon: gamepad
-features: Mobile game development, Multiplayer systems, 2D/3D graphics, In-app purchases, Analytics integration, Cross-platform deployment
-related_services: 
-  - mobile_app.development
-  - ar_vr_development
-  - design-services
-  - ai-ml-services
-related_industries:
-  - education
-  - entertainment
-  - retail
-  - healthcare
-faq:
-  - question: What platforms do you develop games for?
-    answer: We develop for iOS, Android, web browsers, Windows, macOS, Linux, and gaming consoles. We specialize in cross-platform development using Unity and Unreal Engine to maximize reach while minimizing development costs.
-  - question: How long does game development typically take?
-    answer: Simple mobile games can be completed in 3-6 months, while complex multiplayer games require 12-18 months. Timeline depends on features, platform complexity, art requirements, and multiplayer functionality.
-  - question: Do you handle game publishing and marketing?
-    answer: Yes, we provide end-to-end services including App Store optimization, marketing materials, trailer creation, social media campaigns, influencer outreach, and post-launch analytics to maximize visibility and downloads.
-  - question: What monetization strategies do you implement?
-    answer: We implement various models including in-app purchases, subscriptions, advertising integration, premium downloads, and freemium models. Our approach is based on your target audience and game genre for optimal revenue generation.
-  - question: Can you add multiplayer functionality to existing games?
-    answer: Absolutely. We can retrofit existing games with multiplayer capabilities including real-time PvP, co-op modes, leaderboards, tournaments, and social features using proven networking solutions and backend infrastructure.
+meta_description: 'Custom game development: mobile, web, desktop. Unity, Unreal Engine
+  expertise. 40% retention rates, proven monetization. Create your game today!'
+title: Game Development
 ---
 
 # Create Games That Players Can't Put Down
@@ -65,3 +47,133 @@ Our game development expertise spans mobile, web, and desktop platforms with a f
 We developed a hyper-casual mobile game that achieved 2M+ downloads within 6 months, generating $150K+ in ad revenue. The game features simple one-tap mechanics, progressive difficulty, and optimized monetization that achieved 45% Day-1 retention and $1.50 ARPU through strategic ad placement and rewarded video integration.
 
 Ready to create the next gaming sensation? Let's discuss how we can develop games that combine engaging gameplay with proven monetization strategies to build a successful gaming business.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What platforms do you develop games for?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We develop for iOS, Android, web browsers, Windows, macOS, Linux, and gaming consoles. We specialize in cross-platform development using Unity and Unreal Engine to maximize reach while minimizing development costs.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does game development typically take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple mobile games can be completed in 3-6 months, while complex multiplayer games require 12-18 months. Timeline depends on features, platform complexity, art requirements, and multiplayer functionality.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you handle game publishing and marketing?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we provide end-to-end services including App Store optimization, marketing materials, trailer creation, social media campaigns, influencer outreach, and post-launch analytics to maximize visibility and downloads.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What monetization strategies do you implement?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement various models including in-app purchases, subscriptions, advertising integration, premium downloads, and freemium models. Our approach is based on your target audience and game genre for optimal revenue generation.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you add multiplayer functionality to existing games?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We can retrofit existing games with multiplayer capabilities including real-time PvP, co-op modes, leaderboards, tournaments, and social features using proven networking solutions and backend infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="mobile_app.development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Mobile App.Development</span>
+      </a>
+      <a href="ar_vr_development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ar VR Development</span>
+      </a>
+      <a href="design-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Design Services</span>
+      </a>
+      <a href="ai-ml-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ai ML Services</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+      <a href="../industries/entertainment.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Entertainment</span>
+      </a>
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+    </div>
+  </div>
+</div>

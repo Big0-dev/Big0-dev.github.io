@@ -1,30 +1,12 @@
 ---
-title: Digital Marketing Services
-meta_description: "Data-driven digital marketing: SEO, PPC, social media. 400% ROI, 150% traffic increase. Accelerate your business growth today!"
-description: Data-driven digital marketing strategies including SEO, PPC, social media marketing, and conversion optimization to drive growth and ROI
+description: Data-driven digital marketing strategies including SEO, PPC, social media
+  marketing, and conversion optimization to drive growth and ROI
+features: Search engine optimization, Pay-per-click advertising, Social media marketing,
+  Content marketing, Email marketing, Analytics & reporting
 icon: trending-up
-features: Search engine optimization, Pay-per-click advertising, Social media marketing, Content marketing, Email marketing, Analytics & reporting
-related_services: 
-  - design-services
-  - web-development
-  - data-analytics-services
-  - e_commerce_solutions
-related_industries:
-  - retail
-  - finance
-  - healthcare
-  - education
-faq:
-  - question: How long before we see results from digital marketing campaigns?
-    answer: SEO results typically show improvement in 3-6 months, while PPC and social media advertising can generate leads within days. We provide monthly reports showing progress across all metrics and continuous optimization to accelerate results.
-  - question: What's included in your digital marketing packages?
-    answer: Our packages include comprehensive strategy development, campaign setup and management, content creation, landing page optimization, analytics tracking, monthly reporting, and ongoing optimization. We customize services based on your specific goals and budget.
-  - question: How do you measure marketing ROI and success?
-    answer: We track comprehensive metrics including lead generation, conversion rates, cost per acquisition, return on ad spend, organic traffic growth, keyword rankings, and ultimately revenue attribution. All campaigns are optimized for maximum ROI.
-  - question: Do you provide content creation for marketing campaigns?
-    answer: Yes, our team includes experienced copywriters, graphic designers, and video producers who create high-converting content including blog posts, social media content, ad copy, landing pages, email campaigns, and video content.
-  - question: Can you integrate with our existing CRM and analytics tools?
-    answer: Absolutely. We integrate with popular platforms like Salesforce, HubSpot, Google Analytics, Facebook Pixel, and many others to ensure seamless lead tracking and attribution across your entire marketing funnel.
+meta_description: 'Data-driven digital marketing: SEO, PPC, social media. 400% ROI,
+  150% traffic increase. Accelerate your business growth today!'
+title: Digital Marketing Services
 ---
 
 # Drive Growth with Data-Driven Marketing
@@ -65,3 +47,133 @@ Our digital marketing approach combines technical expertise with creative strate
 We helped a B2B SaaS startup grow from 500 to 5,000 monthly visitors and increase trial sign-ups by 320% within 6 months. Our integrated SEO, content marketing, and PPC strategy generated 150+ qualified leads monthly at 40% lower cost-per-acquisition than their previous agency.
 
 Ready to accelerate your digital growth? Let's discuss how we can create marketing strategies that drive real business results and sustainable growth.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long before we see results from digital marketing campaigns?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>SEO results typically show improvement in 3-6 months, while PPC and social media advertising can generate leads within days. We provide monthly reports showing progress across all metrics and continuous optimization to accelerate results.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What's included in your digital marketing packages?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Our packages include comprehensive strategy development, campaign setup and management, content creation, landing page optimization, analytics tracking, monthly reporting, and ongoing optimization. We customize services based on your specific goals and budget.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you measure marketing ROI and success?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We track comprehensive metrics including lead generation, conversion rates, cost per acquisition, return on ad spend, organic traffic growth, keyword rankings, and ultimately revenue attribution. All campaigns are optimized for maximum ROI.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide content creation for marketing campaigns?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, our team includes experienced copywriters, graphic designers, and video producers who create high-converting content including blog posts, social media content, ad copy, landing pages, email campaigns, and video content.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you integrate with our existing CRM and analytics tools?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We integrate with popular platforms like Salesforce, HubSpot, Google Analytics, Facebook Pixel, and many others to ensure seamless lead tracking and attribution across your entire marketing funnel.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="design-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Design Services</span>
+      </a>
+      <a href="web-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Web Development</span>
+      </a>
+      <a href="data-analytics-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Data Analytics Services</span>
+      </a>
+      <a href="e_commerce_solutions.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>E Commerce Solutions</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+    </div>
+  </div>
+</div>

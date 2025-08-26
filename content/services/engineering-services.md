@@ -1,30 +1,13 @@
 ---
-title: Engineering Consultancy Services
-meta_description: Professional engineering consultancy services. Civil, mechanical, electrical engineering. Structural design, MEP systems, project management. PEC registered consultants.
-description: Comprehensive engineering consultancy covering civil, mechanical, electrical, and structural engineering with project management and technical feasibility studies
+description: Comprehensive engineering consultancy covering civil, mechanical, electrical,
+  and structural engineering with project management and technical feasibility studies
+features: Structural design, MEP systems, Project management, Feasibility studies,
+  Construction supervision, Quality assurance, CAD/BIM services, Engineering analysis
 icon: engineering
-features: Structural design, MEP systems, Project management, Feasibility studies, Construction supervision, Quality assurance, CAD/BIM services, Engineering analysis
-related_services: 
-  - hardware-iot-engineering
-  - software-development
-  - data-analytics-services
-  - cloud-services
-related_industries:
-  - manufacturing
-  - energy
-  - government
-  - healthcare
-faq:
-  - question: What engineering disciplines do you cover?
-    answer: We provide comprehensive consulting across civil, structural, mechanical, electrical, and environmental engineering disciplines. Our team includes PEC registered engineers with expertise in building design, infrastructure, MEP systems, and industrial projects.
-  - question: Do you provide BIM and 3D modeling services?
-    answer: Yes, we use advanced CAD/BIM software including AutoCAD, Revit, Tekla, and ETABS for 3D modeling, structural analysis, clash detection, and collaborative design processes. We deliver comprehensive drawing packages and digital models.
-  - question: What types of projects do you handle?
-    answer: We handle residential buildings, commercial complexes, industrial facilities, infrastructure projects, hospitals, educational institutions, and specialized structures. Projects range from small renovations to large-scale developments.
-  - question: Do you provide construction supervision and project management?
-    answer: Absolutely. We offer comprehensive project management services including planning, scheduling, cost control, quality assurance, construction supervision, and progress reporting throughout the project lifecycle.
-  - question: What approvals and certifications do your engineers hold?
-    answer: Our engineers are registered with Pakistan Engineering Council (PEC) and hold relevant professional certifications. We ensure all designs comply with local building codes, international standards, and regulatory requirements.
+meta_description: Professional engineering consultancy services. Civil, mechanical,
+  electrical engineering. Structural design, MEP systems, project management. PEC
+  registered consultants.
+title: Engineering Consultancy Services
 ---
 
 # Professional Engineering Consultancy Services
@@ -305,3 +288,133 @@ Transform your vision into reality with professional engineering excellence:
 4. **Project Delivery**: Complete documentation and construction support
 
 Contact our engineering team to start your project today.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What engineering disciplines do you cover?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We provide comprehensive consulting across civil, structural, mechanical, electrical, and environmental engineering disciplines. Our team includes PEC registered engineers with expertise in building design, infrastructure, MEP systems, and industrial projects.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide BIM and 3D modeling services?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we use advanced CAD/BIM software including AutoCAD, Revit, Tekla, and ETABS for 3D modeling, structural analysis, clash detection, and collaborative design processes. We deliver comprehensive drawing packages and digital models.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What types of projects do you handle?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We handle residential buildings, commercial complexes, industrial facilities, infrastructure projects, hospitals, educational institutions, and specialized structures. Projects range from small renovations to large-scale developments.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide construction supervision and project management?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We offer comprehensive project management services including planning, scheduling, cost control, quality assurance, construction supervision, and progress reporting throughout the project lifecycle.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What approvals and certifications do your engineers hold?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Our engineers are registered with Pakistan Engineering Council (PEC) and hold relevant professional certifications. We ensure all designs comply with local building codes, international standards, and regulatory requirements.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="hardware-iot-engineering.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Hardware IoT Engineering</span>
+      </a>
+      <a href="software-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Software Development</span>
+      </a>
+      <a href="data-analytics-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Data Analytics Services</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+      <a href="../industries/energy.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Energy</span>
+      </a>
+      <a href="../industries/government.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Government</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+    </div>
+  </div>
+</div>

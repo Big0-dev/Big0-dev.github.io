@@ -1,31 +1,14 @@
 ---
-title: Augmented & Virtual Reality Development | Enterprise XR Solutions
-meta_description: Enterprise AR/VR development and XR solutions worldwide. Build immersive training simulations, virtual showrooms, and interactive 3D experiences.
-description: Build powerful AR and VR experiences that bring ideas to life with expert solutions for training, marketing, and interactive brand experiences
-short_description: Expert AR VR development services that deliver immersive solutions for training, marketing, and interactive brand experiences.
+description: Build powerful AR and VR experiences that bring ideas to life with expert
+  solutions for training, marketing, and interactive brand experiences
+features: VR applications, AR mobile apps, 3D visualization, Training simulations,
+  Virtual showrooms, Cross-platform development
 icon: eye
-features: VR applications, AR mobile apps, 3D visualization, Training simulations, Virtual showrooms, Cross-platform development
-related_services: 
-  - mobile_app.development
-  - ai-ml-services
-  - design-services
-  - game_development
-related_industries:
-  - retail
-  - education
-  - healthcare
-  - manufacturing
-faq:
-  - question: What platforms do your AR/VR services support?
-    answer: We develop for all major platforms including Oculus, HTC Vive, PlayStation VR, HoloLens, Magic Leap, ARCore, ARKit, and WebXR. Our solutions ensure cross-device compatibility and smooth performance across different devices and operating systems.
-  - question: How long does AR VR application development take?
-    answer: Simple AR experiences can be delivered in 2-4 weeks, while complex VR training simulations or enterprise applications typically require 2-4 months depending on scope, integrations, and content complexity. We provide detailed timelines after initial requirements analysis.
-  - question: Can you help with both prototypes and full deployment?
-    answer: Yes, we offer flexible engagement models from quick prototypes to validate concepts through to full-scale production deployments. We support rapid prototyping, iterative development, ongoing maintenance, and feature enhancements.
-  - question: Do you provide content creation services?
-    answer: Absolutely. Our team includes experienced 3D artists, animators, and sound designers who create all assets needed for immersive experiences, including 3D environments, interactive objects, animations, and spatial audio design.
-  - question: How do you ensure user comfort and prevent motion sickness in VR?
-    answer: We follow industry best practices including maintaining optimized frame rates (90+ FPS), implementing natural locomotion options, designing comfortable UI elements, and conducting extensive user testing to minimize motion sickness and maximize comfort.
+meta_description: Enterprise AR/VR development and XR solutions worldwide. Build immersive
+  training simulations, virtual showrooms, and interactive 3D experiences.
+short_description: Expert AR VR development services that deliver immersive solutions
+  for training, marketing, and interactive brand experiences.
+title: Augmented & Virtual Reality Development | Enterprise XR Solutions
 ---
 
 # AR VR Development Services
@@ -204,3 +187,133 @@ Reduce your AR VR development costs by up to 60% with our efficient processes an
 
 
 {{template:cta-service}}
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What platforms do your AR/VR services support?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We develop for all major platforms including Oculus, HTC Vive, PlayStation VR, HoloLens, Magic Leap, ARCore, ARKit, and WebXR. Our solutions ensure cross-device compatibility and smooth performance across different devices and operating systems.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does AR VR application development take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple AR experiences can be delivered in 2-4 weeks, while complex VR training simulations or enterprise applications typically require 2-4 months depending on scope, integrations, and content complexity. We provide detailed timelines after initial requirements analysis.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you help with both prototypes and full deployment?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we offer flexible engagement models from quick prototypes to validate concepts through to full-scale production deployments. We support rapid prototyping, iterative development, ongoing maintenance, and feature enhancements.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide content creation services?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. Our team includes experienced 3D artists, animators, and sound designers who create all assets needed for immersive experiences, including 3D environments, interactive objects, animations, and spatial audio design.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure user comfort and prevent motion sickness in VR?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We follow industry best practices including maintaining optimized frame rates (90+ FPS), implementing natural locomotion options, designing comfortable UI elements, and conducting extensive user testing to minimize motion sickness and maximize comfort.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="mobile_app.development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Mobile App.Development</span>
+      </a>
+      <a href="ai-ml-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ai ML Services</span>
+      </a>
+      <a href="design-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Design Services</span>
+      </a>
+      <a href="game_development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Game Development</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+    </div>
+  </div>
+</div>

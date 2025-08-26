@@ -1,30 +1,12 @@
 ---
-title: Data Analytics Services
-meta_description: "Complete data analytics & BI solutions: real-time dashboards, predictive modeling, data warehousing. Transform data into actionable insights today!"
-description: Transform raw data into actionable insights with advanced analytics, visualization, interactive dashboards, and business intelligence solutions
+description: Transform raw data into actionable insights with advanced analytics,
+  visualization, interactive dashboards, and business intelligence solutions
+features: Data warehousing, ETL pipelines, Real-time analytics, Predictive modeling,
+  Interactive dashboards, Custom reporting, Data visualization, Business intelligence
 icon: data
-features: Data warehousing, ETL pipelines, Real-time analytics, Predictive modeling, Interactive dashboards, Custom reporting, Data visualization, Business intelligence
-related_services: 
-  - ai-ml-services
-  - cloud-services
-  - software-development
-  - python-automation
-related_industries:
-  - finance
-  - retail
-  - healthcare
-  - manufacturing
-faq:
-  - question: How long does it take to implement a data analytics solution?
-    answer: Implementation timelines vary based on complexity. Basic dashboards can be delivered in 2-4 weeks, while comprehensive data warehouses and advanced analytics platforms typically require 3-6 months. We provide detailed project timelines during initial consultation.
-  - question: What data sources can you integrate and analyze?
-    answer: We work with all major data sources including databases (SQL Server, Oracle, MySQL, PostgreSQL), cloud platforms (AWS, Azure, GCP), APIs, flat files, CRM systems, ERP systems, and real-time streaming data sources.
-  - question: Do you provide real-time analytics capabilities?
-    answer: Yes, we implement real-time streaming analytics using technologies like Apache Kafka, Apache Storm, and cloud-native solutions. This enables live dashboards, instant alerts, and immediate insights from your data streams.
-  - question: How do you ensure data security and compliance?
-    answer: We implement enterprise-grade security including data encryption at rest and in transit, role-based access controls, audit logging, and compliance with regulations like GDPR, HIPAA, and SOX. All solutions follow industry security best practices.
-  - question: Can you migrate our existing reports and dashboards?
-    answer: Absolutely. We specialize in migrating legacy reporting systems to modern platforms like Power BI, Tableau, and custom solutions while improving performance and adding new capabilities. We ensure continuity throughout the migration process.
+meta_description: 'Complete data analytics & BI solutions: real-time dashboards, predictive
+  modeling, data warehousing. Transform data into actionable insights today!'
+title: Data Analytics Services
 ---
 
 # Transform Data Into Strategic Advantage
@@ -217,3 +199,133 @@ Our clients consistently achieve measurable returns through improved decision-ma
 We provide continuous optimization, model enhancement, and strategic consulting to ensure your analytics capabilities evolve with your business needs.
 
 Ready to unlock the power of your data? Let's discuss how we can transform your data into strategic insights that drive business growth and competitive advantage.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does it take to implement a data analytics solution?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Implementation timelines vary based on complexity. Basic dashboards can be delivered in 2-4 weeks, while comprehensive data warehouses and advanced analytics platforms typically require 3-6 months. We provide detailed project timelines during initial consultation.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What data sources can you integrate and analyze?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We work with all major data sources including databases (SQL Server, Oracle, MySQL, PostgreSQL), cloud platforms (AWS, Azure, GCP), APIs, flat files, CRM systems, ERP systems, and real-time streaming data sources.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you provide real-time analytics capabilities?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we implement real-time streaming analytics using technologies like Apache Kafka, Apache Storm, and cloud-native solutions. This enables live dashboards, instant alerts, and immediate insights from your data streams.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure data security and compliance?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement enterprise-grade security including data encryption at rest and in transit, role-based access controls, audit logging, and compliance with regulations like GDPR, HIPAA, and SOX. All solutions follow industry security best practices.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you migrate our existing reports and dashboards?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We specialize in migrating legacy reporting systems to modern platforms like Power BI, Tableau, and custom solutions while improving performance and adding new capabilities. We ensure continuity throughout the migration process.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="ai-ml-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ai ML Services</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+      <a href="software-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Software Development</span>
+      </a>
+      <a href="python-automation.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Python Automation</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+    </div>
+  </div>
+</div>

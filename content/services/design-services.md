@@ -1,30 +1,12 @@
 ---
-title: Design Services
-meta_description: "Complete design solutions: brand identity, UI/UX design, digital assets. Boost engagement 300%, increase conversions 200%. Transform your brand today!"
-description: Complete brand identity and user experience design services including logo design, brand guidelines, UI/UX design, and digital asset creation
+description: Complete brand identity and user experience design services including
+  logo design, brand guidelines, UI/UX design, and digital asset creation
+features: Brand identity design, UI/UX design, User research, Brand guidelines, Marketing
+  collateral, Design systems, Responsive design, Usability testing
 icon: palette
-features: Brand identity design, UI/UX design, User research, Brand guidelines, Marketing collateral, Design systems, Responsive design, Usability testing
-related_services: 
-  - web-development
-  - digital_marketing_services
-  - mobile_app.development
-  - e_commerce_solutions
-related_industries:
-  - retail
-  - healthcare
-  - finance
-  - education
-faq:
-  - question: How long does a complete brand identity project take?
-    answer: Complete brand identity projects typically take 4-8 weeks, including discovery, concept development, refinement, and delivery of brand guidelines. Rush projects can be accommodated within 2-3 weeks for an additional fee.
-  - question: What's included in a brand identity package?
-    answer: Our brand identity packages include logo design, color palette, typography selections, brand guidelines, business card design, letterhead, and basic marketing templates. We also provide all files in various formats for print and digital use.
-  - question: Do you conduct user research for UX design projects?
-    answer: Yes, we conduct comprehensive user research including user interviews, surveys, competitor analysis, and usability testing to ensure our designs are based on real user needs and behaviors, not assumptions.
-  - question: Can you redesign our existing website while maintaining our brand?
-    answer: Absolutely. We specialize in website redesigns that enhance user experience while strengthening brand consistency. We can work within your existing brand guidelines or help evolve your brand as part of the redesign process.
-  - question: How do you measure design success and ROI?
-    answer: We establish baseline metrics before design implementation and track improvements in key areas like user engagement, conversion rates, bounce rates, task completion rates, and brand perception through A/B testing and analytics.
+meta_description: 'Complete design solutions: brand identity, UI/UX design, digital
+  assets. Boost engagement 300%, increase conversions 200%. Transform your brand today!'
+title: Design Services
 ---
 
 # Design That Drives Results
@@ -163,3 +145,133 @@ We create design systems and brand guidelines that grow with your business, ensu
 From web and mobile interfaces to print and packaging design, we ensure your brand looks exceptional across all mediums and touchpoints.
 
 Ready to transform your brand and user experience? Let's discuss how we can create design solutions that capture attention, engage users, and drive business growth.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does a complete brand identity project take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Complete brand identity projects typically take 4-8 weeks, including discovery, concept development, refinement, and delivery of brand guidelines. Rush projects can be accommodated within 2-3 weeks for an additional fee.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What's included in a brand identity package?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Our brand identity packages include logo design, color palette, typography selections, brand guidelines, business card design, letterhead, and basic marketing templates. We also provide all files in various formats for print and digital use.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you conduct user research for UX design projects?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we conduct comprehensive user research including user interviews, surveys, competitor analysis, and usability testing to ensure our designs are based on real user needs and behaviors, not assumptions.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you redesign our existing website while maintaining our brand?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We specialize in website redesigns that enhance user experience while strengthening brand consistency. We can work within your existing brand guidelines or help evolve your brand as part of the redesign process.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you measure design success and ROI?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We establish baseline metrics before design implementation and track improvements in key areas like user engagement, conversion rates, bounce rates, task completion rates, and brand perception through A/B testing and analytics.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="web-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Web Development</span>
+      </a>
+      <a href="digital_marketing_services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Digital Marketing Services</span>
+      </a>
+      <a href="mobile_app.development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Mobile App.Development</span>
+      </a>
+      <a href="e_commerce_solutions.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>E Commerce Solutions</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+    </div>
+  </div>
+</div>

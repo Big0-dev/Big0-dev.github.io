@@ -1,30 +1,15 @@
 ---
-title: DevOps & Quality Engineering Services
-meta_description: DevOps consulting and QA services. CI/CD automation, infrastructure as code, automated testing. Reduce deployments 90%, catch bugs early. Accelerate delivery with quality.
-description: Streamline development with DevOps automation and comprehensive quality assurance. CI/CD pipelines, infrastructure as code, and automated testing for reliable software delivery
+description: Streamline development with DevOps automation and comprehensive quality
+  assurance. CI/CD pipelines, infrastructure as code, and automated testing for reliable
+  software delivery
+features: CI/CD automation, Automated testing, Infrastructure as Code, Performance
+  testing, Security scanning, Monitoring & logging, Container orchestration, Quality
+  assurance
 icon: settings
-features: CI/CD automation, Automated testing, Infrastructure as Code, Performance testing, Security scanning, Monitoring & logging, Container orchestration, Quality assurance
-related_services: 
-  - software-development
-  - cloud-services
-  - security-services
-  - python-automation
-related_industries:
-  - finance
-  - healthcare
-  - retail
-  - manufacturing
-faq:
-  - question: How long does DevOps implementation typically take?
-    answer: DevOps transformation timelines vary by complexity. Basic CI/CD pipelines can be implemented in 2-4 weeks, while comprehensive DevOps transformation including culture change typically requires 3-6 months. We provide phased implementation for immediate value.
-  - question: What testing automation do you implement?
-    answer: We implement comprehensive test automation including unit tests, integration tests, API tests, UI tests, performance tests, and security tests. Our automation frameworks support multiple technologies and integrate seamlessly with CI/CD pipelines.
-  - question: How do you ensure security in DevOps processes?
-    answer: We implement DevSecOps practices with security scanning built into pipelines, automated vulnerability assessments, compliance checks, container security, infrastructure security validation, and secrets management throughout the development lifecycle.
-  - question: Can you work with our existing tools and technologies?
-    answer: Absolutely. We work with popular tools like Jenkins, GitLab, Azure DevOps, AWS CodePipeline, Docker, Kubernetes, Terraform, and many others. We can integrate with your existing toolchain or recommend optimal solutions based on your needs.
-  - question: How do you measure DevOps success and improvement?
-    answer: We track key metrics including deployment frequency, lead time for changes, mean time to recovery, change failure rate, code coverage, test execution time, and infrastructure provisioning time. Regular reporting shows continuous improvement trends.
+meta_description: DevOps consulting and QA services. CI/CD automation, infrastructure
+  as code, automated testing. Reduce deployments 90%, catch bugs early. Accelerate
+  delivery with quality.
+title: DevOps & Quality Engineering Services
 ---
 
 # Accelerate Delivery With Built-In Quality
@@ -237,3 +222,133 @@ Ready to accelerate delivery with quality built-in?
 4. **Full Implementation**: Scale across entire organization
 
 Contact our DevOps and quality engineering experts to transform your software delivery today.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does DevOps implementation typically take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>DevOps transformation timelines vary by complexity. Basic CI/CD pipelines can be implemented in 2-4 weeks, while comprehensive DevOps transformation including culture change typically requires 3-6 months. We provide phased implementation for immediate value.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What testing automation do you implement?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement comprehensive test automation including unit tests, integration tests, API tests, UI tests, performance tests, and security tests. Our automation frameworks support multiple technologies and integrate seamlessly with CI/CD pipelines.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure security in DevOps processes?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement DevSecOps practices with security scanning built into pipelines, automated vulnerability assessments, compliance checks, container security, infrastructure security validation, and secrets management throughout the development lifecycle.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you work with our existing tools and technologies?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We work with popular tools like Jenkins, GitLab, Azure DevOps, AWS CodePipeline, Docker, Kubernetes, Terraform, and many others. We can integrate with your existing toolchain or recommend optimal solutions based on your needs.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you measure DevOps success and improvement?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We track key metrics including deployment frequency, lead time for changes, mean time to recovery, change failure rate, code coverage, test execution time, and infrastructure provisioning time. Regular reporting shows continuous improvement trends.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="software-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Software Development</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+      <a href="security-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Security Services</span>
+      </a>
+      <a href="python-automation.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Python Automation</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+    </div>
+  </div>
+</div>

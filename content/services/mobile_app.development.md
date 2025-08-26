@@ -1,30 +1,12 @@
 ---
-title: Mobile App Development
-meta_description: Native & cross-platform mobile app development. iOS, Android, React Native, Flutter expertise. 95% app store approval rate. Build your app today!
-description: Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android platforms
+description: Native and cross-platform mobile applications that deliver exceptional
+  user experiences on iOS and Android platforms
+features: Native iOS/Android development, Cross-platform solutions, App Store optimization,
+  Performance optimization, Offline functionality, Push notifications
 icon: smartphone
-features: Native iOS/Android development, Cross-platform solutions, App Store optimization, Performance optimization, Offline functionality, Push notifications
-related_services: 
-  - web-development
-  - design-services
-  - ar_vr_development
-  - ai-ml-services
-related_industries:
-  - retail
-  - healthcare
-  - finance
-  - education
-faq:
-  - question: Should I choose native or cross-platform development for my app?
-    answer: Native development offers maximum performance and platform-specific features, ideal for complex apps. Cross-platform (React Native/Flutter) is cost-effective for simpler apps. We'll recommend the best approach based on your requirements, budget, and timeline.
-  - question: How long does mobile app development typically take?
-    answer: Simple apps can be completed in 2-3 months, while complex apps with advanced features require 4-8 months. Timeline depends on features, platforms, integrations, and design complexity. We provide detailed project schedules upfront.
-  - question: Do you handle app store submission and approval?
-    answer: Yes, we manage the complete app store submission process including metadata optimization, screenshot creation, compliance review, and addressing any rejection issues. We have a 95% first-time approval rate.
-  - question: What ongoing maintenance and updates do you provide?
-    answer: We offer comprehensive maintenance packages including bug fixes, OS updates, security patches, performance optimization, feature enhancements, and analytics monitoring to keep your app current and competitive.
-  - question: Can you integrate mobile apps with existing backend systems?
-    answer: Absolutely. We specialize in API integration with CRM systems, databases, payment gateways, authentication systems, and third-party services. We ensure secure, real-time data synchronization across all platforms.
+meta_description: Native & cross-platform mobile app development. iOS, Android, React
+  Native, Flutter expertise. 95% app store approval rate. Build your app today!
+title: Mobile App Development
 ---
 
 # Build Mobile Apps That Users Love
@@ -72,3 +54,133 @@ Enhance your mobile app development with our complementary services:
 We developed a multi-vendor marketplace app that achieved 100K+ downloads in the first 3 months. The app features real-time inventory management, secure payments, and personalized recommendations, resulting in 65% user retention and $2M+ in transactions within the first year.
 
 Ready to bring your mobile app idea to life? Let's discuss how we can create a mobile experience that drives real business results.
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Should I choose native or cross-platform development for my app?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Native development offers maximum performance and platform-specific features, ideal for complex apps. Cross-platform (React Native/Flutter) is cost-effective for simpler apps. We'll recommend the best approach based on your requirements, budget, and timeline.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does mobile app development typically take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple apps can be completed in 2-3 months, while complex apps with advanced features require 4-8 months. Timeline depends on features, platforms, integrations, and design complexity. We provide detailed project schedules upfront.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you handle app store submission and approval?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we manage the complete app store submission process including metadata optimization, screenshot creation, compliance review, and addressing any rejection issues. We have a 95% first-time approval rate.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What ongoing maintenance and updates do you provide?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We offer comprehensive maintenance packages including bug fixes, OS updates, security patches, performance optimization, feature enhancements, and analytics monitoring to keep your app current and competitive.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can you integrate mobile apps with existing backend systems?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Absolutely. We specialize in API integration with CRM systems, databases, payment gateways, authentication systems, and third-party services. We ensure secure, real-time data synchronization across all platforms.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="web-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Web Development</span>
+      </a>
+      <a href="design-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Design Services</span>
+      </a>
+      <a href="ar_vr_development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ar VR Development</span>
+      </a>
+      <a href="ai-ml-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Ai ML Services</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/education.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Education</span>
+      </a>
+    </div>
+  </div>
+</div>

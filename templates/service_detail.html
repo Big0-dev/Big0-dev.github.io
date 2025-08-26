@@ -64,28 +64,6 @@
       </div>
       {% endif %}
 
-      <!-- FAQ Section -->
-      {% if current_service.frontmatter.faq %}
-      <div class="faq-section mt-3xl">
-        <h2 class="text-2xl font-bold mb-xl">Frequently Asked Questions</h2>
-        <div class="faq-list">
-          {% for faq_item in current_service.frontmatter.faq %}
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>{{ faq_item.question }}</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>{{ faq_item.answer }}</p>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-
       <!-- Navigation -->
       <div class="text-center mt-3xl">
         <a href="{{ services_page }}" class="btn btn-secondary">
@@ -96,47 +74,6 @@
           Back to Services
         </a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Related Services & Industries -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="grid grid-2 gap-3xl">
-      <!-- Related Services -->
-      {% if current_service.frontmatter.related_services %}
-      <div class="related-widget">
-        <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
-        <div class="related-list">
-          {% for service_slug in current_service.frontmatter.related_services %}
-          <a href="{{ path_prefix }}services/{{ service_slug }}.html" class="related-item">
-            <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
-            <span>{{ service_slug | replace('-', ' ') | replace('_', ' ') | title }}</span>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-      
-      <!-- Related Industries -->
-      {% if current_service.frontmatter.related_industries %}
-      <div class="related-widget">
-        <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
-        <div class="related-list">
-          {% for industry_slug in current_service.frontmatter.related_industries %}
-          <a href="{{ path_prefix }}industries/{{ industry_slug }}.html" class="related-item">
-            <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
-            <span>{{ industry_slug | replace('-', ' ') | title }}</span>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
     </div>
   </div>
 </section>

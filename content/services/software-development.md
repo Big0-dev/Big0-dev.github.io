@@ -1,30 +1,12 @@
 ---
-title: Custom Software Development
-meta_description: "Custom software development: web, mobile, enterprise apps. Python, Java, React expertise. Agile process, 99.9% uptime. Build your software today!"
-description: Build robust, scalable software solutions tailored to your unique business requirements
+description: Build robust, scalable software solutions tailored to your unique business
+  requirements
+features: Full-stack development, Mobile apps, Desktop applications, API development,
+  Microservices, DevOps integration
 icon: code
-features: Full-stack development, Mobile apps, Desktop applications, API development, Microservices, DevOps integration
-related_services: 
-  - web-development
-  - mobile_app.development
-  - cloud-services
-  - devops-quality-services
-related_industries:
-  - finance
-  - healthcare
-  - retail
-  - manufacturing
-faq:
-  - question: What programming languages and technologies do you specialize in?
-    answer: We specialize in Python, Java, JavaScript/TypeScript, React, Angular, Vue.js, Node.js, .NET, PHP, and mobile development frameworks. We select the optimal technology stack based on your project requirements and scalability needs.
-  - question: How long does custom software development typically take?
-    answer: Simple applications can be delivered in 2-3 months, while enterprise-level software typically requires 6-12 months. We provide detailed project timelines with milestones and use agile methodology for iterative delivery and feedback.
-  - question: Do you follow specific development methodologies?
-    answer: We primarily use Agile/Scrum methodology with 2-week sprints, daily standups, and regular client reviews. We also adapt to clients' existing processes and can work with waterfall or hybrid approaches as needed.
-  - question: What kind of post-development support do you provide?
-    answer: We offer comprehensive support including bug fixes, feature enhancements, security updates, performance optimization, scaling assistance, and technical documentation. Our support packages range from basic maintenance to full DevOps management.
-  - question: How do you ensure software quality and security?
-    answer: We implement comprehensive testing strategies including unit tests, integration tests, and security scanning. Our code review processes, automated CI/CD pipelines, and security best practices ensure high-quality, secure software delivery.
+meta_description: 'Custom software development: web, mobile, enterprise apps. Python,
+  Java, React expertise. Agile process, 99.9% uptime. Build your software today!'
+title: Custom Software Development
 ---
 
 # Software That Powers Your Business
@@ -105,3 +87,133 @@ We developed a comprehensive supply chain management system that reduced operati
 - Predictive demand forecasting
 - Multi-currency support
 - Advanced analytics dashboard
+
+## Frequently Asked Questions
+
+<div class="faq-section">
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What programming languages and technologies do you specialize in?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We specialize in Python, Java, JavaScript/TypeScript, React, Angular, Vue.js, Node.js, .NET, PHP, and mobile development frameworks. We select the optimal technology stack based on your project requirements and scalability needs.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How long does custom software development typically take?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Simple applications can be delivered in 2-3 months, while enterprise-level software typically requires 6-12 months. We provide detailed project timelines with milestones and use agile methodology for iterative delivery and feedback.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you follow specific development methodologies?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We primarily use Agile/Scrum methodology with 2-week sprints, daily standups, and regular client reviews. We also adapt to clients' existing processes and can work with waterfall or hybrid approaches as needed.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What kind of post-development support do you provide?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We offer comprehensive support including bug fixes, feature enhancements, security updates, performance optimization, scaling assistance, and technical documentation. Our support packages range from basic maintenance to full DevOps management.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How do you ensure software quality and security?</span>
+        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>We implement comprehensive testing strategies including unit tests, integration tests, and security scanning. Our code review processes, automated CI/CD pipelines, and security best practices ensure high-quality, secure software delivery.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Related Services & Industries
+
+<div class="grid grid-2 gap-3xl">
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
+    <div class="related-list">
+      <a href="web-development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Web Development</span>
+      </a>
+      <a href="mobile_app.development.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Mobile App.Development</span>
+      </a>
+      <a href="cloud-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Cloud Services</span>
+      </a>
+      <a href="devops-quality-services.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Devops Quality Services</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="related-widget">
+    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
+    <div class="related-list">
+      <a href="../industries/finance.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Finance</span>
+      </a>
+      <a href="../industries/healthcare.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Healthcare</span>
+      </a>
+      <a href="../industries/retail.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Retail</span>
+      </a>
+      <a href="../industries/manufacturing.html" class="related-item">
+        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+        <span>Manufacturing</span>
+      </a>
+    </div>
+  </div>
+</div>

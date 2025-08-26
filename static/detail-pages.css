@@ -1099,6 +1099,14 @@ a.auto-link:hover {
   transition: max-height 0.3s ease-out;
 }
 
+.faq-answer p {
+  padding: 0 var(--space-xl) var(--space-lg);
+  color: var(--text-secondary);
+  font-size: var(--font-base);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
 .faq-item.active .faq-answer {
   max-height: 1000px;
   transition: max-height 0.5s ease-in;

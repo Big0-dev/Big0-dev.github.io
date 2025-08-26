@@ -56,6 +56,38 @@ Real-time sentiment analysis across multiple channels to monitor brand perceptio
 **Language Translation & Processing**
 Multi-language processing capabilities including real-time translation, cross-language search, and content localization for global business operations.
 
+## Industries We Serve
+
+<div class="related-widget">
+  <h3 class="text-xl font-semibold mb-lg">AI Solutions Across Industries</h3>
+  <div class="related-list">
+    <a href="../industries/healthcare.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Healthcare - Medical imaging, diagnosis assistance, patient analytics</span>
+    </a>
+    <a href="../industries/finance.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Finance - Fraud detection, risk assessment, algorithmic trading</span>
+    </a>
+    <a href="../industries/retail.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Retail - Demand forecasting, personalization, inventory optimization</span>
+    </a>
+    <a href="../industries/manufacturing.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Manufacturing - Predictive maintenance, quality control, supply chain</span>
+    </a>
+  </div>
+</div>
+
 ## Key Benefits
 
 - **Operational Efficiency**: Automate processes and reduce manual effort by up to 80% while improving accuracy and consistency
@@ -241,6 +273,38 @@ We stay current with the latest AI research and technologies while maintaining f
 
 Ready to transform your business with artificial intelligence? Let's discuss how we can develop AI solutions that automate processes, generate insights, and create competitive advantages for your organization.
 
+## Related Services
+
+<div class="related-widget">
+  <h3 class="text-xl font-semibold mb-lg">Explore Related Solutions</h3>
+  <div class="related-list">
+    <a href="data-analytics-services.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Data Analytics Services</span>
+    </a>
+    <a href="cloud-services.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Cloud Services</span>
+    </a>
+    <a href="software-development.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Software Development</span>
+    </a>
+    <a href="python-automation.html" class="related-item">
+      <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span>Python Automation</span>
+    </a>
+  </div>
+</div>
+
 ## Frequently Asked Questions
 
 <div class="faq-section">
@@ -303,70 +367,6 @@ Ready to transform your business with artificial intelligence? Let's discuss how
       <div class="faq-answer">
         <p>We follow industry best practices including rigorous testing, validation with real-world data, A/B testing, and continuous monitoring. We also implement explainable AI techniques to ensure transparency and build trust in the model's decisions.</p>
       </div>
-    </div>
-  </div>
-</div>
-
-## Related Services & Industries
-
-<div class="grid grid-2 gap-3xl">
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
-    <div class="related-list">
-      <a href="data-analytics-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Data Analytics Services</span>
-      </a>
-      <a href="cloud-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Cloud Services</span>
-      </a>
-      <a href="software-development.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Software Development</span>
-      </a>
-      <a href="python-automation.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Python Automation</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
-    <div class="related-list">
-      <a href="../industries/healthcare.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Healthcare</span>
-      </a>
-      <a href="../industries/finance.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Finance</span>
-      </a>
-      <a href="../industries/retail.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Retail</span>
-      </a>
-      <a href="../industries/manufacturing.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Manufacturing</span>
-      </a>
     </div>
   </div>
 </div>

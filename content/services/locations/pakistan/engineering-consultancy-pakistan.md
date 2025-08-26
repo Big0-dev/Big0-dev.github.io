@@ -232,7 +232,6 @@ Pre-qualified with:
 - Association of Consulting Engineers Pakistan (ACEP)
 - International Federation of Consulting Engineers (FIDIC)
 
-{{template:cta-location-pakistan}}
 
 ## Success Stories in Pakistan
 
@@ -264,4 +263,3 @@ Partner with PEC registered engineering excellence:
 
 Contact us for engineering consultancy services anywhere in Pakistan.
 
-{{template:cta-service}}

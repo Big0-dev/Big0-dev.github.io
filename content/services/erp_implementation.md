@@ -4,6 +4,27 @@ meta_description: "ERP implementation services: Odoo, SAP, custom systems. Reduc
 description: Complete enterprise resource planning solutions including Odoo, SAP, and custom ERP systems that streamline operations and integrate business processes
 icon: database
 features: ERP consulting, System implementation, Data migration, Process automation, Training & support, Custom module development
+related_services: 
+  - software-development
+  - data-analytics-services
+  - cloud-services
+  - bpo
+related_industries:
+  - manufacturing
+  - retail
+  - healthcare
+  - finance
+faq:
+  - question: How long does ERP implementation typically take?
+    answer: Implementation timelines vary by system complexity and organization size. Small businesses can go live in 3-6 months, while enterprise implementations typically require 12-18 months. We provide detailed project schedules during initial planning.
+  - question: Which ERP systems do you specialize in?
+    answer: We specialize in Odoo, SAP, Microsoft Dynamics 365, Oracle ERP Cloud, and custom ERP solutions. Our team has certified consultants for each platform and can recommend the best fit based on your business requirements and budget.
+  - question: How do you handle data migration from existing systems?
+    answer: We use proven data migration methodologies including data mapping, cleansing, validation, and parallel testing. Our process ensures data integrity while minimizing downtime during cutover to the new ERP system.
+  - question: What training and support do you provide post-implementation?
+    answer: We provide comprehensive user training, administrator training, documentation, and ongoing support packages. Our support includes system maintenance, troubleshooting, optimization, and assistance with new feature rollouts.
+  - question: Can you customize ERP systems to fit our specific business processes?
+    answer: Absolutely. We develop custom modules, workflows, reports, and integrations to match your unique business processes. We balance customization with best practices to ensure maintainability and future upgrade compatibility.
 ---
 
 # Unify Your Business Operations

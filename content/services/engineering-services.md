@@ -4,6 +4,27 @@ meta_description: Professional engineering consultancy services. Civil, mechanic
 description: Comprehensive engineering consultancy covering civil, mechanical, electrical, and structural engineering with project management and technical feasibility studies
 icon: engineering
 features: Structural design, MEP systems, Project management, Feasibility studies, Construction supervision, Quality assurance, CAD/BIM services, Engineering analysis
+related_services: 
+  - hardware-iot-engineering
+  - software-development
+  - data-analytics-services
+  - cloud-services
+related_industries:
+  - manufacturing
+  - energy
+  - government
+  - healthcare
+faq:
+  - question: What engineering disciplines do you cover?
+    answer: We provide comprehensive consulting across civil, structural, mechanical, electrical, and environmental engineering disciplines. Our team includes PEC registered engineers with expertise in building design, infrastructure, MEP systems, and industrial projects.
+  - question: Do you provide BIM and 3D modeling services?
+    answer: Yes, we use advanced CAD/BIM software including AutoCAD, Revit, Tekla, and ETABS for 3D modeling, structural analysis, clash detection, and collaborative design processes. We deliver comprehensive drawing packages and digital models.
+  - question: What types of projects do you handle?
+    answer: We handle residential buildings, commercial complexes, industrial facilities, infrastructure projects, hospitals, educational institutions, and specialized structures. Projects range from small renovations to large-scale developments.
+  - question: Do you provide construction supervision and project management?
+    answer: Absolutely. We offer comprehensive project management services including planning, scheduling, cost control, quality assurance, construction supervision, and progress reporting throughout the project lifecycle.
+  - question: What approvals and certifications do your engineers hold?
+    answer: Our engineers are registered with Pakistan Engineering Council (PEC) and hold relevant professional certifications. We ensure all designs comply with local building codes, international standards, and regulatory requirements.
 ---
 
 # Professional Engineering Consultancy Services

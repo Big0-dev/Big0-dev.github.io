@@ -4,6 +4,27 @@ meta_description: Complete hardware and IoT engineering services. PCB design, em
 description: End-to-end hardware and IoT engineering from mechanical design and PCB development to embedded systems, cloud connectivity, and smart device solutions
 icon: microchip
 features: 3D CAD design, PCB layout, Embedded firmware, IoT connectivity, Cloud integration, Manufacturing support, Sensor networks, Real-time analytics
+related_services: 
+  - engineering-services
+  - cloud-services
+  - ai-ml-services
+  - software-development
+related_industries:
+  - manufacturing
+  - healthcare
+  - energy
+  - government
+faq:
+  - question: What types of hardware and IoT projects do you handle?
+    answer: We develop custom PCBs, embedded systems, sensor networks, industrial controllers, consumer electronics, medical devices, agricultural monitoring systems, and smart building solutions from prototyping through production.
+  - question: How long does hardware development take from concept to prototype?
+    answer: Simple prototypes can be delivered in 4-6 weeks, while complex systems require 3-6 months. Manufacturing preparation adds another 2-4 weeks. We provide detailed timelines based on project complexity and component availability.
+  - question: Do you provide manufacturing and production support?
+    answer: Yes, we offer complete manufacturing support including vendor selection, supply chain management, quality assurance, production testing, and scaling from prototype quantities to mass production volumes.
+  - question: What IoT platforms and connectivity options do you work with?
+    answer: We work with AWS IoT, Azure IoT, Google Cloud IoT, and custom solutions. Connectivity options include WiFi, Bluetooth, LoRaWAN, cellular (4G/5G), Zigbee, and satellite communication based on your application requirements.
+  - question: How do you ensure hardware reliability and compliance?
+    answer: We follow industry standards for design, testing, and validation. Our process includes environmental testing, EMC compliance, safety certifications (FCC, CE, UL), and rigorous quality assurance protocols throughout development and production.
 ---
 
 # Transform Ideas Into Intelligent Connected Products

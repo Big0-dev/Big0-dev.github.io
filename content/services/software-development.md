@@ -4,6 +4,27 @@ meta_description: "Custom software development: web, mobile, enterprise apps. Py
 description: Build robust, scalable software solutions tailored to your unique business requirements
 icon: code
 features: Full-stack development, Mobile apps, Desktop applications, API development, Microservices, DevOps integration
+related_services: 
+  - web-development
+  - mobile_app.development
+  - cloud-services
+  - devops-quality-services
+related_industries:
+  - finance
+  - healthcare
+  - retail
+  - manufacturing
+faq:
+  - question: What programming languages and technologies do you specialize in?
+    answer: We specialize in Python, Java, JavaScript/TypeScript, React, Angular, Vue.js, Node.js, .NET, PHP, and mobile development frameworks. We select the optimal technology stack based on your project requirements and scalability needs.
+  - question: How long does custom software development typically take?
+    answer: Simple applications can be delivered in 2-3 months, while enterprise-level software typically requires 6-12 months. We provide detailed project timelines with milestones and use agile methodology for iterative delivery and feedback.
+  - question: Do you follow specific development methodologies?
+    answer: We primarily use Agile/Scrum methodology with 2-week sprints, daily standups, and regular client reviews. We also adapt to clients' existing processes and can work with waterfall or hybrid approaches as needed.
+  - question: What kind of post-development support do you provide?
+    answer: We offer comprehensive support including bug fixes, feature enhancements, security updates, performance optimization, scaling assistance, and technical documentation. Our support packages range from basic maintenance to full DevOps management.
+  - question: How do you ensure software quality and security?
+    answer: We implement comprehensive testing strategies including unit tests, integration tests, and security scanning. Our code review processes, automated CI/CD pipelines, and security best practices ensure high-quality, secure software delivery.
 ---
 
 # Software That Powers Your Business

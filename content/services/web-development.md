@@ -4,6 +4,27 @@ meta_description: Modern web development services for custom websites & web apps
 description: Create stunning, high-performance web applications with cutting-edge technologies and responsive design
 icon: web
 features: Responsive design, Progressive web apps, SEO optimization, Performance optimization, API integration, CMS development
+related_services: 
+  - design-services
+  - mobile_app.development
+  - digital_marketing_services
+  - e_commerce_solutions
+related_industries:
+  - retail
+  - education
+  - healthcare
+  - finance
+faq:
+  - question: What web technologies and frameworks do you use?
+    answer: We specialize in modern frameworks including React, Vue.js, Angular, Next.js, and Node.js. For backend development, we use Python (Django/Flask), PHP (Laravel), .NET, and Java, selecting the best technology stack based on your project requirements.
+  - question: How long does web development typically take?
+    answer: Simple websites can be delivered in 3-4 weeks, while complex web applications require 3-6 months. Timeline depends on features, integrations, and design complexity. We provide detailed project schedules with milestone deliveries.
+  - question: Do you provide responsive design for mobile compatibility?
+    answer: Absolutely. All our websites are built mobile-first with responsive design ensuring optimal performance across all devices. We test extensively on various screen sizes and browsers to guarantee consistent user experience.
+  - question: What ongoing maintenance and support do you offer?
+    answer: We provide comprehensive maintenance including security updates, content management, performance optimization, backup services, hosting support, and feature enhancements. Our support packages ensure your website stays secure and current.
+  - question: How do you optimize websites for search engines and performance?
+    answer: We implement technical SEO best practices, optimize page speed, use clean code structures, implement proper meta tags, and ensure accessibility compliance. Our performance optimization typically achieves 90+ Google PageSpeed scores.
 ---
 
 # Build Your Digital Presence

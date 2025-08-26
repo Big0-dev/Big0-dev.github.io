@@ -110,7 +110,7 @@
         <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
         <div class="related-list">
           {% for service_slug in current_service.frontmatter.related_services %}
-          <a href="{{ services_page[:-14] }}{{ service_slug }}.html" class="related-item">
+          <a href="{{ path_prefix }}services/{{ service_slug }}.html" class="related-item">
             <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="9 18 15 12 9 6"/>
             </svg>
@@ -127,7 +127,7 @@
         <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
         <div class="related-list">
           {% for industry_slug in current_service.frontmatter.related_industries %}
-          <a href="{{ industries_page[:-16] }}{{ industry_slug }}.html" class="related-item">
+          <a href="{{ path_prefix }}industries/{{ industry_slug }}.html" class="related-item">
             <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="9 18 15 12 9 6"/>
             </svg>

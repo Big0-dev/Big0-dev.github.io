@@ -271,3 +271,25 @@ Partner with PEC registered engineering excellence:
 
 Contact us for engineering consultancy services anywhere in Pakistan.
 
+## Frequently Asked Questions
+
+### What are the requirements for PEC registration?
+
+Engineering firms in Pakistan must maintain valid PEC registration with qualified engineers on their panel. We ensure full compliance with PEC requirements including maintaining registered engineers in relevant categories, following PEC code of conduct, and completing continuous professional development (CPD) requirements for all engineers.
+
+### How long do government approvals take in Pakistan?
+
+Approval timelines vary by authority and project type. CDA/LDA approvals typically take 4-8 weeks, environmental clearances 6-12 weeks, and building permits 2-4 weeks. We expedite the process through our established relationships with authorities and proper documentation preparation.
+
+### Do you provide services for CPEC projects?
+
+Yes, we actively support CPEC-related infrastructure projects with specialized engineering services. Our team has experience with Chinese standards and specifications, bilingual documentation capabilities, and understanding of CPEC project requirements and approval processes.
+
+### What is your fee structure for engineering consultancy?
+
+Our fees comply with PEC prescribed rates which vary based on project type and complexity. Design services are typically 3-5% of project cost, supervision services 1.5-3%, and consultation on hourly/daily rates as per PEC guidelines. We provide detailed fee proposals based on specific project requirements.
+
+### Can you handle projects in remote areas of Pakistan?
+
+Absolutely. We have successfully delivered projects across Pakistan including Gilgit-Baltistan, AJK, rural Sindh, and Balochistan. Our team is equipped to handle logistical challenges, understand local conditions, and work with regional authorities and communities effectively.
+

@@ -50,6 +50,14 @@ We follow agile practices with:
 - Test-driven development
 - Code reviews and pair programming
 
+## Related Services
+
+{{related-services:software_testing,devops_consulting,cloud-managment,mobile_app.development}}
+
+## Industries We Serve
+
+{{related-industries:finance,healthcare,retail,manufacturing}}
+
 ### Related Services
 Enhance your software development with our complementary services:
 - [Software Testing](software_testing.html) - Ensure flawless quality with comprehensive QA and testing solutions
@@ -110,66 +118,3 @@ We offer comprehensive support including bug fixes, feature enhancements, securi
 
 We implement comprehensive testing strategies including unit tests, integration tests, and security scanning. Our code review processes, automated CI/CD pipelines, and security best practices ensure high-quality, secure software delivery.
 
-## Related Services & Industries
-
-<div class="grid grid-2 gap-3xl">
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
-    <div class="related-list">
-      <a href="web-development.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Web Development</span>
-      </a>
-      <a href="mobile_app.development.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Mobile App.Development</span>
-      </a>
-      <a href="cloud-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Cloud Services</span>
-      </a>
-      <a href="devops-quality-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Devops Quality Services</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
-    <div class="related-list">
-      <a href="../industries/finance.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Finance</span>
-      </a>
-      <a href="../industries/healthcare.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Healthcare</span>
-      </a>
-      <a href="../industries/retail.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Retail</span>
-      </a>
-      <a href="../industries/manufacturing.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Manufacturing</span>
-      </a>
-    </div>
-  </div>
-</div>

@@ -51,6 +51,14 @@ Custom CMS solutions or implementations of WordPress, Drupal, and headless CMS p
 4. **Testing & Optimization**: Ensuring performance, security, and compatibility
 5. **Launch & Support**: Deployment and ongoing maintenance
 
+## Related Services
+
+{{related-services:mobile_app.development,ui_ux_design_services,e_commerce_solutions,cloud-managment}}
+
+## Industries We Serve
+
+{{related-industries:retail,education,healthcare,finance}}
+
 ## Why Choose Our Web Development Services?
 
 ### Proven Track Record
@@ -123,66 +131,3 @@ We provide comprehensive maintenance including security updates, content managem
 
 We implement technical SEO best practices, optimize page speed, use clean code structures, implement proper meta tags, and ensure accessibility compliance. Our performance optimization typically achieves 90+ Google PageSpeed scores.
 
-## Related Services & Industries
-
-<div class="grid grid-2 gap-3xl">
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Related Services</h3>
-    <div class="related-list">
-      <a href="design-services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Design Services</span>
-      </a>
-      <a href="mobile_app.development.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Mobile App.Development</span>
-      </a>
-      <a href="digital_marketing_services.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Digital Marketing Services</span>
-      </a>
-      <a href="e_commerce_solutions.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>E Commerce Solutions</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="related-widget">
-    <h3 class="text-xl font-semibold mb-lg">Industries We Serve</h3>
-    <div class="related-list">
-      <a href="../industries/retail.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Retail</span>
-      </a>
-      <a href="../industries/education.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Education</span>
-      </a>
-      <a href="../industries/healthcare.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Healthcare</span>
-      </a>
-      <a href="../industries/finance.html" class="related-item">
-        <svg class="related-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span>Finance</span>
-      </a>
-    </div>
-  </div>
-</div>

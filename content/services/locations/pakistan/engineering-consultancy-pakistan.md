@@ -81,6 +81,14 @@ Support for industrial growth:
 - Pharmaceutical facilities (DRAP compliance)
 - Food processing units (PSQCA standards)
 
+## Related Services
+
+{{related-services:engineering-services,hardware-iot-engineering,professional-technology-training,staff-augmentation}}
+
+## Industries We Serve
+
+{{related-industries:manufacturing,energy,government,education}}
+
 ## Compliance & Standards
 
 ### Pakistani Standards & Codes

@@ -75,7 +75,8 @@ class SiteGenerator:
         self._generate_search_index()
         
         # Post-generation optimization
-        self._optimize_output()
+        # Temporarily disabled to preserve cookie consent scripts
+        # self._optimize_output()
         
         logger.info("Website generation complete!")
         

@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="{{ static }}/base.css" />
     <link rel="stylesheet" href="{{ static }}/components.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="{{ static }}/components.css"></noscript>
+    <link rel="stylesheet" href="{{ static }}/cookie-consent.css" />
 
     {% block custom_css %}
     {% if custom_css %}
@@ -87,15 +88,37 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
+      
+      // Set default consent to denied
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied'
+      });
+      
       gtag("config", "G-5BCYEF9S7N");
     </script>
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "sbshmbsh9d");
+    // Store the Clarity initialization function
+    window.clarityInitFunction = function() {
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "sbshmbsh9d");
+    };
+    
+    // Check if consent was already granted
+    const existingConsent = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('big0_cookie_consent='));
+    
+    if (existingConsent && existingConsent.split('=')[1] === 'true') {
+        // If consent was previously granted, initialize Clarity immediately
+        window.clarityInitFunction();
+    }
+    // Otherwise, wait for user consent via the cookie consent banner
     </script>
+    <script src="{{ static }}/cookie-consent.js" defer></script>
   </head>
 
   <body>

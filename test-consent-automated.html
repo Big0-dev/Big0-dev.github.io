@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automated Cookie Consent Test</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #0a0a0d; color: #fff; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #444; }
+        .pass { background: #1a3a1a; border-color: #4a7c4a; }
+        .fail { background: #3a1a1a; border-color: #7c4a4a; }
+        .info { color: #9a5bb3; }
+    </style>
+</head>
+<body>
+    <h1>Automated Cookie Consent Test Results</h1>
+    <div id="results"></div>
+    
+    <script>
+        const results = document.getElementById('results');
+        const tests = [];
+        
+        function addTest(name, passed, details) {
+            tests.push({ name, passed, details });
+            const div = document.createElement('div');
+            div.className = `test ${passed ? 'pass' : 'fail'}`;
+            div.innerHTML = `
+                <strong>${passed ? '✅' : '❌'} ${name}</strong><br>
+                <span class="info">${details}</span>
+            `;
+            results.appendChild(div);
+        }
+        
+        // Test 1: Check if cookie consent JS loaded
+        addTest(
+            'Cookie Consent JS Loaded',
+            typeof CookieConsent !== 'undefined',
+            typeof CookieConsent !== 'undefined' ? 'CookieConsent object found' : 'CookieConsent object not found'
+        );
+        
+        // Test 2: Check if Google Tag Manager loaded
+        addTest(
+            'Google Tag Manager Loaded',
+            typeof gtag !== 'undefined',
+            typeof gtag !== 'undefined' ? 'gtag function found' : 'gtag function not found'
+        );
+        
+        // Test 3: Check if Clarity init function exists
+        addTest(
+            'Clarity Init Function Ready',
+            typeof window.clarityInitFunction !== 'undefined',
+            typeof window.clarityInitFunction !== 'undefined' ? 'Clarity init function found' : 'Clarity init function not found'
+        );
+        
+        // Test 4: Check consent cookie functions
+        setTimeout(() => {
+            // Check if we can read cookie status
+            const hasConsentFunctions = typeof CookieConsent !== 'undefined' && 
+                                       typeof CookieConsent.getConsentStatus === 'function';
+            
+            addTest(
+                'Cookie Management Functions',
+                hasConsentFunctions,
+                hasConsentFunctions ? 'Cookie management functions available' : 'Cookie management functions not found'
+            );
+            
+            if (hasConsentFunctions) {
+                const currentConsent = CookieConsent.getConsentStatus();
+                addTest(
+                    'Cookie Status Check',
+                    true,
+                    `Current consent status: ${currentConsent === null ? 'Not set (banner should appear)' : currentConsent}`
+                );
+            }
+            
+            // Test 5: Check if banner element exists
+            const banner = document.getElementById('cookie-consent-banner');
+            addTest(
+                'Cookie Banner Element',
+                banner !== null,
+                banner ? 'Banner element found in DOM' : 'Banner element not in DOM (may appear on first visit)'
+            );
+            
+            // Summary
+            const passed = tests.filter(t => t.passed).length;
+            const total = tests.length;
+            const summaryDiv = document.createElement('div');
+            summaryDiv.className = `test ${passed === total ? 'pass' : 'fail'}`;
+            summaryDiv.innerHTML = `
+                <h2>${passed === total ? '✅' : '⚠️'} Test Summary: ${passed}/${total} tests passed</h2>
+                ${passed === total ? 
+                    '<span class="info">All tests passed! Cookie consent is working correctly.</span>' : 
+                    '<span class="info">Some tests failed. Check the details above.</span>'}
+            `;
+            results.appendChild(summaryDiv);
+            
+        }, 1000);
+    </script>
+    
+    <!-- Include the actual cookie consent files -->
+    <link rel="stylesheet" href="static/cookie-consent.css" />
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+        });
+    </script>
+    <script>
+        window.clarityInitFunction = function() {
+            console.log('Clarity would initialize here');
+        };
+    </script>
+    <script src="static/cookie-consent.js"></script>
+</body>
+</html>

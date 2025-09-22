@@ -250,19 +250,26 @@ The generator automatically creates:
 
 ## 🚀 Deployment
 
-The site is configured for GitHub Pages deployment:
+The site is deployed via **Cloudflare Pages**:
 
 1. Push changes to the main branch
-2. GitHub Actions will automatically build and deploy
+2. Cloudflare Pages will automatically detect changes and deploy
 3. Site will be live at https://big0.dev
+
+### Cloudflare Pages Configuration
+- **Platform**: Cloudflare Pages
+- **Build output directory**: `/build`
+- **Production branch**: `main`
+- **Custom domain**: big0.dev
+- **Auto-deploy**: Enabled
 
 ### Manual Deployment
 
 ```bash
-# Build the site
+# Build the site locally
 python3 generate.py
 
-# Commit and push
+# Commit and push (including build folder)
 git add .
 git commit -m "Update content"
 git push origin main

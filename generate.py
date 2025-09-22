@@ -258,9 +258,16 @@ class SiteGenerator:
         # Generate RSS feed
         feed_items = self._collect_feed_items()
         if feed_items:
+            # Create a wrapper object for template rendering
+            class TemplateRenderer:
+                def __init__(self, env):
+                    self.env = env
+                def render(self, template, **kwargs):
+                    return self.env.get_template(template).render(**kwargs)
+
             self.seo_utilities.generate_rss_feed(
                 feed_items,
-                lambda template, **kwargs: self.env.get_template(template).render(**kwargs)
+                TemplateRenderer(self.env)
             )
             logger.info("Generated RSS feed")
 
@@ -384,10 +391,10 @@ class SiteGenerator:
         if content_path.exists():
             for file_path in content_path.glob("*.md"):
                 try:
-                    # Convert to Path object for content processor
+                    # file_path is already a Path object from glob
                     result = self.content_processor.load_markdown_content(
-                        Path(file_path),
-                        file_path.stem + ".html"
+                        file_path,
+                        Path(file_path.stem + ".html")
                     )
                     if result:
                         items.append(result)

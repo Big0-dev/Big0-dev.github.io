@@ -270,6 +270,7 @@ class SEOUtilities:
 
             # Generate RSS using template
             rss_content = template_renderer.render(
+                'rss.xml',  # Template name
                 domain=self.config['domain'],
                 build_date=formatdate(time.time()),
                 current_year=datetime.now().year,
@@ -292,86 +293,93 @@ class SEOUtilities:
         """
         try:
             search_documents = []
-            doc_id = 1
 
-            # Index static pages
-            for page in self.config['static_pages']:
-                # Skip sitemap pages
-                if page['output'].endswith('.xml'):
-                    continue
+            # If content_items are already in the correct format, use them directly
+            if content_items and all('id' in item and 'url' in item for item in content_items):
+                # Use the passed content_items directly as they're already formatted
+                search_documents = content_items
+            else:
+                # Fall back to old logic if needed
+                doc_id = 1
 
-                doc = {
-                    'id': doc_id,
-                    'url': page['output'],
-                    'title': page.get('title', page['output'].replace('.html', '').title()),
-                    'content': '',  # Could extract content from template if needed
-                    'description': page.get('description', ''),
-                    'type': 'page'
-                }
-                search_documents.append(doc)
-                doc_id += 1
+                # Index static pages
+                for page in self.config['static_pages']:
+                    # Skip sitemap pages
+                    if page['output'].endswith('.xml'):
+                        continue
 
-            # Index all content pages
-            for content_type, config in self.config['content_types'].items():
-                content_dir = Path(config['content_dir'])
-                if not content_dir.exists():
-                    continue
-
-                # Add listing page
-                if 'listing_template' in config:
                     doc = {
                         'id': doc_id,
-                        'url': f"{content_type.replace('_', '-')}.html",
-                        'title': content_type.replace('_', ' ').title(),
-                        'content': '',
-                        'description': f"Browse all {content_type.replace('_', ' ')}",
-                        'type': 'listing'
+                        'url': page['output'],
+                        'title': page.get('title', page['output'].replace('.html', '').title()),
+                        'content': '',  # Could extract content from template if needed
+                        'description': page.get('description', ''),
+                        'type': 'page'
                     }
                     search_documents.append(doc)
                     doc_id += 1
 
-                # Add individual content pages from content_items
-                for item in content_items:
-                    # Skip location pages from search index
-                    if item.get('frontmatter', {}).get('is_location_page', False):
+                # Index all content pages
+                for content_type, config in self.config['content_types'].items():
+                    content_dir = Path(config['content_dir'])
+                    if not content_dir.exists():
                         continue
 
-                    # Check if this item belongs to current content type
-                    item_type = item.get('content_type', '')
-                    if item_type != content_type:
-                        continue
+                    # Add listing page
+                    if 'listing_template' in config:
+                        doc = {
+                            'id': doc_id,
+                            'url': f"{content_type.replace('_', '-')}.html",
+                            'title': content_type.replace('_', ' ').title(),
+                            'content': '',
+                            'description': f"Browse all {content_type.replace('_', ' ')}",
+                            'type': 'listing'
+                        }
+                        search_documents.append(doc)
+                        doc_id += 1
 
-                    # Clean content for search - remove HTML tags
-                    clean_content = ''
-                    if item.get('content_html'):
-                        try:
-                            from bs4 import BeautifulSoup
-                            soup = BeautifulSoup(item['content_html'], 'html.parser')
-                            clean_content = soup.get_text(' ', strip=True)
-                        except ImportError:
-                            # Fallback if BeautifulSoup is not available
-                            import re
-                            clean_content = re.sub(r'<[^>]+>', '', item.get('content_html', ''))
+                    # Add individual content pages from content_items
+                    for item in content_items:
+                        # Skip location pages from search index
+                        if item.get('frontmatter', {}).get('is_location_page', False):
+                            continue
 
-                    # Fix type for news articles and industries
-                    doc_type = content_type.rstrip('s')  # Remove plural
-                    if content_type == 'news':
-                        doc_type = 'news'  # Keep 'news' as is, don't change to 'new'
-                    elif content_type == 'industries':
-                        doc_type = 'industry'  # Change 'industries' to 'industry', not 'industrie'
+                        # Check if this item belongs to current content type
+                        item_type = item.get('content_type', '')
+                        if item_type != content_type:
+                            continue
 
-                    doc = {
-                        'id': doc_id,
-                        'url': f"{config['output_dir']}/{item['slug']}.html",
-                        'title': item['title'],
-                        'content': clean_content[:1000],  # Limit content length
-                        'description': item.get('short_description', item.get('excerpt', '')),
-                        'type': doc_type,
-                        'category': item.get('category', ''),
-                        'date': item['date'].strftime('%Y-%m-%d') if item.get('date') else ''
-                    }
-                    search_documents.append(doc)
-                    doc_id += 1
+                        # Clean content for search - remove HTML tags
+                        clean_content = ''
+                        if item.get('content_html'):
+                            try:
+                                from bs4 import BeautifulSoup
+                                soup = BeautifulSoup(item['content_html'], 'html.parser')
+                                clean_content = soup.get_text(' ', strip=True)
+                            except ImportError:
+                                # Fallback if BeautifulSoup is not available
+                                import re
+                                clean_content = re.sub(r'<[^>]+>', '', item.get('content_html', ''))
+
+                        # Fix type for news articles and industries
+                        doc_type = content_type.rstrip('s')  # Remove plural
+                        if content_type == 'news':
+                            doc_type = 'news'  # Keep 'news' as is, don't change to 'new'
+                        elif content_type == 'industries':
+                            doc_type = 'industry'  # Change 'industries' to 'industry', not 'industrie'
+
+                        doc = {
+                            'id': doc_id,
+                            'url': f"{config['output_dir']}/{item['slug']}.html",
+                            'title': item['title'],
+                            'content': clean_content[:1000],  # Limit content length
+                            'description': item.get('short_description', item.get('excerpt', '')),
+                            'type': doc_type,
+                            'category': item.get('category', ''),
+                            'date': item['date'].strftime('%Y-%m-%d') if item.get('date') else ''
+                        }
+                        search_documents.append(doc)
+                        doc_id += 1
 
             # Add gallery page if it exists
             gallery_doc = {

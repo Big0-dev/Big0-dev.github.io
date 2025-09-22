@@ -3,7 +3,7 @@ title: "Big0 Tech Workshop: Innovation & Strategy Session with CEO Hassan Kamran
 category: Workshop
 date: 2025-08-20
 tags: workshop,technology,innovation,islamabad,training,leadership
-description: Join Big0 CEO Hassan Kamran, tech visionary and published author, for an exclusive workshop on technology innovation and strategic implementation at Calm Kaaj Blue Area, Islamabad.
+description: Join Big0 CEO Hassan Kamran, tech visionary and published author, for an exclusive workshop on technology innovation and strategic implementation in Islamabad.
 external_link:
 order: 1
 ---
@@ -18,7 +18,7 @@ Join us for an immersive half-day workshop where Hassan Kamran will share his ex
 
 - **Date**: August 31, 2025
 - **Time**: 10:00 AM - 3:00 PM (5 hours)
-- **Venue**: Calm Kaaj, Blue Area, Islamabad
+- **Venue**: Islamabad
 - **Workshop Leader**: Hassan Kamran, CEO Big0
 
 ## About Hassan Kamran
@@ -70,10 +70,6 @@ For registration and inquiries, please contact us through our [contact page](/co
 - **Networking**: Connect with like-minded professionals and industry leaders
 - **Expert Guidance**: Get your technology questions answered by an industry expert
 - **Certificate**: Receive a participation certificate from Big0
-
-## About the Venue
-
-Calm Kaaj in Blue Area provides the perfect environment for focused learning and professional networking, with state-of-the-art facilities and a conducive atmosphere for knowledge sharing.
 
 ---
 

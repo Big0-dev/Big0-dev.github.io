@@ -28,32 +28,37 @@ uv add package-name
 
 ## Build and Development Commands
 
-### Primary Build Command
+### Primary Build Command (Local Testing)
 ```bash
-# Always use uv to run the generator
+# For local testing only - use uv to run the generator
 uv run python generate.py
 ```
-This generates the entire static website in the `build/` directory.
+This generates the static website in the `build/` directory for local testing.
 
 ### Local Development Server
 ```bash
+# After generating locally for testing
 cd build && python3 -m http.server 8000
 # View at http://localhost:8000
 ```
 
 ### Deployment
-The site is deployed to **Cloudflare Pages**. Push to main branch triggers automatic deployment to https://big0.dev
+The site is deployed to **Cloudflare Pages**. Simply push source code to main branch - Cloudflare handles the build automatically
 
 #### Cloudflare Pages Configuration
 - **Platform**: Cloudflare Pages (not GitHub Pages)
-- **Build command**: Not needed (we build locally and push the build folder)
+- **Build command**: `uv run python generate.py`
 - **Build output directory**: `/build`
 - **Production branch**: `main`
 - **Custom domain**: big0.dev
 - **Auto-deploy**: Enabled for pushes to main branch
 - **GitHub repo name**: Big0-dev.github.io (kept for compatibility, but hosted on Cloudflare)
 
-**Important**: The repository is still named `Big0-dev.github.io` on GitHub for historical reasons, but the actual hosting is done through Cloudflare Pages, not GitHub Pages
+**Important**:
+- The repository is still named `Big0-dev.github.io` on GitHub for historical reasons, but the actual hosting is done through Cloudflare Pages, not GitHub Pages
+- Cloudflare Pages runs the build command automatically when you push to main
+- The `/build` folder is for local testing only and should be in `.gitignore`
+- Never commit the build folder - only push source code
 
 ## How This Project Works - Complete Workflow
 

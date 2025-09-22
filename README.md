@@ -252,27 +252,33 @@ The generator automatically creates:
 
 The site is deployed via **Cloudflare Pages**:
 
-1. Push changes to the main branch
-2. Cloudflare Pages will automatically detect changes and deploy
-3. Site will be live at https://big0.dev
+1. Push source code changes to the main branch (never push build folder)
+2. Cloudflare Pages automatically runs the build command
+3. Site will be live at https://big0.dev within minutes
 
 ### Cloudflare Pages Configuration
 - **Platform**: Cloudflare Pages
+- **Build command**: `uv run python generate.py` (runs on Cloudflare)
 - **Build output directory**: `/build`
 - **Production branch**: `main`
 - **Custom domain**: big0.dev
 - **Auto-deploy**: Enabled
 
-### Manual Deployment
+### Deployment Workflow
 
 ```bash
-# Build the site locally
-python3 generate.py
+# Make your changes to content/templates
 
-# Commit and push (including build folder)
-git add .
+# Test locally (optional)
+uv run python generate.py
+cd build && python3 -m http.server 8000
+
+# Commit and push source code only
+git add . # Do NOT add build folder
 git commit -m "Update content"
 git push origin main
+
+# Cloudflare automatically builds and deploys
 ```
 
 ## 🔧 Development

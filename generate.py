@@ -436,9 +436,9 @@ class SiteGenerator:
         return search_items
 
     def _optimize_output(self):
-        """Optionally optimize all output files."""
-        # Check if optimization is enabled (currently disabled to preserve cookie consent)
-        optimize = os.environ.get('OPTIMIZE_OUTPUT', 'false').lower() == 'true'
+        """Optimize all output files while preserving functionality."""
+        # Check if optimization is enabled (default: true, can be disabled via env var)
+        optimize = os.environ.get('OPTIMIZE_OUTPUT', 'true').lower() == 'true'
 
         if optimize:
             try:
@@ -447,7 +447,7 @@ class SiteGenerator:
             except Exception as e:
                 logger.warning(f"Optimization failed (non-critical): {e}")
         else:
-            logger.info("Output optimization skipped (preserving cookie consent scripts)")
+            logger.info("Output optimization skipped (disabled via OPTIMIZE_OUTPUT=false)")
 
 
 def main():

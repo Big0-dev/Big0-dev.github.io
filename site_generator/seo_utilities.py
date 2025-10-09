@@ -293,14 +293,16 @@ class SEOUtilities:
         """
         try:
             search_documents = []
+            doc_id = 1  # Initialize doc_id before conditional
 
             # If content_items are already in the correct format, use them directly
             if content_items and all('id' in item and 'url' in item for item in content_items):
                 # Use the passed content_items directly as they're already formatted
                 search_documents = content_items
+                # Set doc_id to continue from where content_items left off
+                doc_id = len(content_items) + 1
             else:
                 # Fall back to old logic if needed
-                doc_id = 1
 
                 # Index static pages
                 for page in self.config['static_pages']:

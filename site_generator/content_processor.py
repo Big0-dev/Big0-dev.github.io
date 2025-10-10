@@ -238,35 +238,35 @@ class ContentProcessor:
         # Define service mappings (comprehensive keyword dictionary)
         service_links = {
             # AI & Machine Learning
-            'ai integration': 'ai-integration',
-            'artificial intelligence': 'ai-integration',
-            'machine learning': 'ai-integration',
-            'deep learning': 'ai-integration',
-            'neural network': 'ai-integration',
-            'ai model': 'ai-integration',
-            'ml model': 'ai-integration',
-            'predictive analytics': 'ai-integration',
-            'ai solution': 'ai-integration',
+            'ai integration': 'ai-ml-services',
+            'artificial intelligence': 'ai-ml-services',
+            'machine learning': 'ai-ml-services',
+            'deep learning': 'ai-ml-services',
+            'neural network': 'ai-ml-services',
+            'ai model': 'ai-ml-services',
+            'ml model': 'ai-ml-services',
+            'predictive analytics': 'ai-ml-services',
+            'ai solution': 'ai-ml-services',
 
-            # Computer Vision
-            'computer vision': 'computer_vision_service',
-            'computer vision applications': 'computer_vision_service',
-            'computer vision services': 'computer_vision_service',
-            'image recognition': 'computer_vision_service',
-            'image recognition systems': 'computer_vision_service',
-            'object detection': 'computer_vision_service',
-            'facial recognition': 'computer_vision_service',
-            'image processing': 'computer_vision_service',
-            'visual data': 'computer_vision_service',
-            'opencv': 'computer_vision_service',
+            # Computer Vision (part of AI/ML services)
+            'computer vision': 'ai-ml-services',
+            'computer vision applications': 'ai-ml-services',
+            'computer vision services': 'ai-ml-services',
+            'image recognition': 'ai-ml-services',
+            'image recognition systems': 'ai-ml-services',
+            'object detection': 'ai-ml-services',
+            'facial recognition': 'ai-ml-services',
+            'image processing': 'ai-ml-services',
+            'visual data': 'ai-ml-services',
+            'opencv': 'ai-ml-services',
 
-            # Natural Language Processing
-            'natural language processing': 'natural_language_processing',
-            'nlp': 'natural_language_processing',
-            'text analysis': 'natural_language_processing',
-            'sentiment analysis': 'natural_language_processing',
-            'chatbot': 'natural_language_processing',
-            'language model': 'natural_language_processing',
+            # Natural Language Processing (part of AI/ML services)
+            'natural language processing': 'ai-ml-services',
+            'nlp': 'ai-ml-services',
+            'text analysis': 'ai-ml-services',
+            'sentiment analysis': 'ai-ml-services',
+            'chatbot': 'ai-ml-services',
+            'language model': 'ai-ml-services',
 
             # Software Development
             'custom software': 'software-development',
@@ -307,144 +307,144 @@ class ContentProcessor:
             'swift': 'mobile_app.development',
             'kotlin': 'mobile_app.development',
 
-            # Hardware & CAD
-            'cad': 'hardware_cad',
-            'cad model': 'hardware_cad',
-            'hardware design': 'hardware_cad',
-            'mechanical design': 'hardware_cad',
-            '3d modeling': 'hardware_cad',
-            '3d design': 'hardware_cad',
-            '3d scanning': 'hardware_cad',
-            '3d ear scanning': 'hardware_cad',
-            'ergonomic design': 'hardware_cad',
-            'ergonomic 3d design': 'hardware_cad',
-            'product design': 'hardware_cad',
-            'industrial design': 'hardware_cad',
-            'mechanical construction': 'hardware_cad',
-            'modular construction': 'hardware_cad',
-            'modular mechanical design': 'hardware_cad',
-            'precision mechanical design': 'hardware_cad',
-            '3-axis gimbal': 'hardware_cad',
-            'gimbal': 'hardware_cad',
-            'biomechanical': 'hardware_cad',
-            'solidworks': 'hardware_cad',
-            'autocad': 'hardware_cad',
-            'fusion 360': 'hardware_cad',
-            'carbon fiber': 'hardware_cad',
-            'carbon fiber construction': 'hardware_cad',
-            'prototype': 'hardware_cad',
-            'prototyping': 'hardware_cad',
-            'wheelbase': 'hardware_cad',
-            'modular design': 'hardware_cad',
+            # Hardware & IoT Engineering (consolidated service)
+            'cad': 'hardware-iot-engineering',
+            'cad model': 'hardware-iot-engineering',
+            'hardware design': 'hardware-iot-engineering',
+            'mechanical design': 'hardware-iot-engineering',
+            '3d modeling': 'hardware-iot-engineering',
+            '3d design': 'hardware-iot-engineering',
+            '3d scanning': 'hardware-iot-engineering',
+            '3d ear scanning': 'hardware-iot-engineering',
+            'ergonomic design': 'hardware-iot-engineering',
+            'ergonomic 3d design': 'hardware-iot-engineering',
+            'product design': 'hardware-iot-engineering',
+            'industrial design': 'hardware-iot-engineering',
+            'mechanical construction': 'hardware-iot-engineering',
+            'modular construction': 'hardware-iot-engineering',
+            'modular mechanical design': 'hardware-iot-engineering',
+            'precision mechanical design': 'hardware-iot-engineering',
+            '3-axis gimbal': 'hardware-iot-engineering',
+            'gimbal': 'hardware-iot-engineering',
+            'biomechanical': 'hardware-iot-engineering',
+            'solidworks': 'hardware-iot-engineering',
+            'autocad': 'hardware-iot-engineering',
+            'fusion 360': 'hardware-iot-engineering',
+            'carbon fiber': 'hardware-iot-engineering',
+            'carbon fiber construction': 'hardware-iot-engineering',
+            'prototype': 'hardware-iot-engineering',
+            'prototyping': 'hardware-iot-engineering',
+            'wheelbase': 'hardware-iot-engineering',
+            'modular design': 'hardware-iot-engineering',
 
-            # Embedded Systems
-            'embedded system': 'embedded_systems_development',
-            'embedded software': 'embedded_systems_development',
-            'embedded': 'embedded_systems_development',
-            'arduino': 'embedded_systems_development',
-            'Arduino': 'embedded_systems_development',
-            'raspberry pi': 'embedded_systems_development',
-            'microcontroller': 'embedded_systems_development',
-            'firmware': 'embedded_systems_development',
-            'px4': 'embedded_systems_development',
-            'PX4': 'embedded_systems_development',
-            'px4 autopilot': 'embedded_systems_development',
-            'PX4 Autopilot': 'embedded_systems_development',
-            'flight controller': 'embedded_systems_development',
-            'dji n3': 'embedded_systems_development',
-            'DJI N3': 'embedded_systems_development',
-            'stm32': 'embedded_systems_development',
-            'STM32': 'embedded_systems_development',
-            'esp32': 'embedded_systems_development',
-            'ESP32': 'embedded_systems_development',
-            'bldc': 'embedded_systems_development',
-            'BLDC': 'embedded_systems_development',
-            'bldc motor': 'embedded_systems_development',
-            'BLDC motor': 'embedded_systems_development',
-            'motor control': 'embedded_systems_development',
-            'autopilot': 'embedded_systems_development',
+            # Embedded Systems (part of Hardware & IoT Engineering)
+            'embedded system': 'hardware-iot-engineering',
+            'embedded software': 'hardware-iot-engineering',
+            'embedded': 'hardware-iot-engineering',
+            'arduino': 'hardware-iot-engineering',
+            'Arduino': 'hardware-iot-engineering',
+            'raspberry pi': 'hardware-iot-engineering',
+            'microcontroller': 'hardware-iot-engineering',
+            'firmware': 'hardware-iot-engineering',
+            'px4': 'hardware-iot-engineering',
+            'PX4': 'hardware-iot-engineering',
+            'px4 autopilot': 'hardware-iot-engineering',
+            'PX4 Autopilot': 'hardware-iot-engineering',
+            'flight controller': 'hardware-iot-engineering',
+            'dji n3': 'hardware-iot-engineering',
+            'DJI N3': 'hardware-iot-engineering',
+            'stm32': 'hardware-iot-engineering',
+            'STM32': 'hardware-iot-engineering',
+            'esp32': 'hardware-iot-engineering',
+            'ESP32': 'hardware-iot-engineering',
+            'bldc': 'hardware-iot-engineering',
+            'BLDC': 'hardware-iot-engineering',
+            'bldc motor': 'hardware-iot-engineering',
+            'BLDC motor': 'hardware-iot-engineering',
+            'motor control': 'hardware-iot-engineering',
+            'autopilot': 'hardware-iot-engineering',
 
-            # IoT Development
-            'iot': 'iot_device_development',
-            'internet of things': 'iot_device_development',
-            'iot device': 'iot_device_development',
-            'smart device': 'iot_device_development',
-            'sensor': 'iot_device_development',
-            'sensing layer': 'iot_device_development',
-            'environmental sensor': 'iot_device_development',
-            'smart meter': 'iot_device_development',
-            'drone': 'iot_device_development',
-            'octocopter': 'iot_device_development',
-            'uav': 'iot_device_development',
-            'spray system': 'iot_device_development',
-            'precision spraying': 'iot_device_development',
-            'agricultural drone': 'iot_device_development',
-            'sprayer drone': 'iot_device_development',
-            'telemetry': 'iot_device_development',
-            'mqtt': 'iot_device_development',
-            'lorawan': 'iot_device_development',
-            'edge computing': 'iot_device_development',
-            'smart city': 'iot_device_development',
-            'smart cities': 'iot_device_development',
+            # IoT Development (part of Hardware & IoT Engineering)
+            'iot': 'hardware-iot-engineering',
+            'internet of things': 'hardware-iot-engineering',
+            'iot device': 'hardware-iot-engineering',
+            'smart device': 'hardware-iot-engineering',
+            'sensor': 'hardware-iot-engineering',
+            'sensing layer': 'hardware-iot-engineering',
+            'environmental sensor': 'hardware-iot-engineering',
+            'smart meter': 'hardware-iot-engineering',
+            'drone': 'hardware-iot-engineering',
+            'octocopter': 'hardware-iot-engineering',
+            'uav': 'hardware-iot-engineering',
+            'spray system': 'hardware-iot-engineering',
+            'precision spraying': 'hardware-iot-engineering',
+            'agricultural drone': 'hardware-iot-engineering',
+            'sprayer drone': 'hardware-iot-engineering',
+            'telemetry': 'hardware-iot-engineering',
+            'mqtt': 'hardware-iot-engineering',
+            'lorawan': 'hardware-iot-engineering',
+            'edge computing': 'hardware-iot-engineering',
+            'smart city': 'hardware-iot-engineering',
+            'smart cities': 'hardware-iot-engineering',
 
-            # PCB Design
-            'pcb': 'pcb_design_and_layout',
-            'circuit board': 'pcb_design_and_layout',
-            'circuit design': 'pcb_design_and_layout',
-            'electronics design': 'pcb_design_and_layout',
-            'altium': 'pcb_design_and_layout',
-            'eagle': 'pcb_design_and_layout',
-            'kicad': 'pcb_design_and_layout',
+            # PCB Design (part of Hardware & IoT Engineering)
+            'pcb': 'hardware-iot-engineering',
+            'circuit board': 'hardware-iot-engineering',
+            'circuit design': 'hardware-iot-engineering',
+            'electronics design': 'hardware-iot-engineering',
+            'altium': 'hardware-iot-engineering',
+            'eagle': 'hardware-iot-engineering',
+            'kicad': 'hardware-iot-engineering',
 
-            # Cloud & DevOps
-            'cloud service': 'cloud-managment',
-            'cloud management': 'cloud-managment',
-            'cloud solution': 'cloud-managment',
-            'aws': 'cloud-managment',
-            'azure': 'cloud-managment',
-            'google cloud': 'cloud-managment',
-            'gcp': 'cloud-managment',
-            'cloud infrastructure': 'cloud-managment',
-            '5g network': 'cloud-managment',
-            '5g': 'cloud-managment',
-            'cloud platform': 'cloud-managment',
+            # Cloud Services
+            'cloud service': 'cloud-services',
+            'cloud management': 'cloud-services',
+            'cloud solution': 'cloud-services',
+            'aws': 'cloud-services',
+            'azure': 'cloud-services',
+            'google cloud': 'cloud-services',
+            'gcp': 'cloud-services',
+            'cloud infrastructure': 'cloud-services',
+            '5g network': 'cloud-services',
+            '5g': 'cloud-services',
+            'cloud platform': 'cloud-services',
 
-            # DevOps
-            'devops': 'devops_consulting',
-            'ci/cd': 'devops_consulting',
-            'docker': 'devops_consulting',
-            'kubernetes': 'devops_consulting',
-            'jenkins': 'devops_consulting',
-            'terraform': 'devops_consulting',
-            'ansible': 'devops_consulting',
-            'infrastructure as code': 'devops_consulting',
+            # DevOps & Quality Services
+            'devops': 'devops-quality-services',
+            'ci/cd': 'devops-quality-services',
+            'docker': 'devops-quality-services',
+            'kubernetes': 'devops-quality-services',
+            'jenkins': 'devops-quality-services',
+            'terraform': 'devops-quality-services',
+            'ansible': 'devops-quality-services',
+            'infrastructure as code': 'devops-quality-services',
 
             # Database & Analytics
-            'data analytics': 'data-analytics',
-            'data analysis': 'data-analytics',
-            'business intelligence': 'data-analytics',
-            'bi solution': 'data-analytics',
-            'data visualization': 'data-analytics',
-            'big data': 'data-analytics',
-            'data science': 'data-analytics',
-            'sql': 'data-analytics',
-            'database': 'data-analytics',
-            'data warehouse': 'data-analytics',
-            'real-time analytics': 'data-analytics',
-            'predictive modeling': 'data-analytics',
-            'data processing': 'data-analytics',
+            'data analytics': 'data-analytics-services',
+            'data analysis': 'data-analytics-services',
+            'business intelligence': 'data-analytics-services',
+            'bi solution': 'data-analytics-services',
+            'data visualization': 'data-analytics-services',
+            'big data': 'data-analytics-services',
+            'data science': 'data-analytics-services',
+            'sql': 'data-analytics-services',
+            'database': 'data-analytics-services',
+            'data warehouse': 'data-analytics-services',
+            'real-time analytics': 'data-analytics-services',
+            'predictive modeling': 'data-analytics-services',
+            'data processing': 'data-analytics-services',
 
-            # Dashboard Development
-            'dashboard': 'dashboards',
-            'analytics dashboard': 'dashboards',
-            'reporting dashboard': 'dashboards',
-            'real-time dashboard': 'dashboards',
-            'kpi dashboard': 'dashboards',
-            'management dashboard': 'dashboards',
-            'city management dashboard': 'dashboards',
-            'tableau': 'dashboards',
-            'power bi': 'dashboards',
-            'digital twin': 'dashboards',
+            # Dashboard Development (part of Data Analytics)
+            'dashboard': 'data-analytics-services',
+            'analytics dashboard': 'data-analytics-services',
+            'reporting dashboard': 'data-analytics-services',
+            'real-time dashboard': 'data-analytics-services',
+            'kpi dashboard': 'data-analytics-services',
+            'management dashboard': 'data-analytics-services',
+            'city management dashboard': 'data-analytics-services',
+            'tableau': 'data-analytics-services',
+            'power bi': 'data-analytics-services',
+            'digital twin': 'data-analytics-services',
 
             # Python Automation
             'python': 'python-automation',
@@ -454,25 +454,25 @@ class ContentProcessor:
             'pandas': 'python-automation',
             'numpy': 'python-automation',
 
-            # UI/UX Design
-            'ui design': 'ui_ux_design_services',
-            'ux design': 'ui_ux_design_services',
-            'ui/ux': 'ui_ux_design_services',
-            'user interface': 'ui_ux_design_services',
-            'user experience': 'ui_ux_design_services',
-            'figma': 'ui_ux_design_services',
-            'sketch': 'ui_ux_design_services',
-            'adobe xd': 'ui_ux_design_services',
-            'wireframe': 'ui_ux_design_services',
-            'mockup': 'ui_ux_design_services',
+            # UI/UX & Design Services
+            'ui design': 'design-services',
+            'ux design': 'design-services',
+            'ui/ux': 'design-services',
+            'user interface': 'design-services',
+            'user experience': 'design-services',
+            'figma': 'design-services',
+            'sketch': 'design-services',
+            'adobe xd': 'design-services',
+            'wireframe': 'design-services',
+            'mockup': 'design-services',
 
-            # Brand & Digital Design
-            'brand design': 'brand_and_digital_design',
-            'branding': 'brand_and_digital_design',
-            'logo design': 'brand_and_digital_design',
-            'graphic design': 'brand_and_digital_design',
-            'visual identity': 'brand_and_digital_design',
-            'brand identity': 'brand_and_digital_design',
+            # Brand & Digital Design (part of Design Services)
+            'brand design': 'design-services',
+            'branding': 'design-services',
+            'logo design': 'design-services',
+            'graphic design': 'design-services',
+            'visual identity': 'design-services',
+            'brand identity': 'design-services',
 
             # Blockchain
             'blockchain': 'blockchain_development',
@@ -505,6 +505,12 @@ class ContentProcessor:
             'metaverse': 'ar_vr_development',
 
             # E-commerce
+            'e-commerce development services': 'e_commerce_solutions',
+            'ecommerce development services': 'e_commerce_solutions',
+            'e-commerce development': 'e_commerce_solutions',
+            'ecommerce development': 'e_commerce_solutions',
+            'e-commerce solutions': 'e_commerce_solutions',
+            'ecommerce solutions': 'e_commerce_solutions',
             'e-commerce': 'e_commerce_solutions',
             'ecommerce': 'e_commerce_solutions',
             'online store': 'e_commerce_solutions',
@@ -522,23 +528,23 @@ class ContentProcessor:
             'microsoft dynamics': 'erp_implementation',
             'odoo': 'erp_implementation',
 
-            # Software Testing
-            'software testing': 'software_testing',
-            'qa testing': 'software_testing',
-            'quality assurance': 'software_testing',
-            'test automation': 'software_testing',
-            'selenium': 'software_testing',
-            'unit testing': 'software_testing',
-            'integration testing': 'software_testing',
-            'performance testing': 'software_testing',
+            # Software Testing (part of DevOps & Quality Services)
+            'software testing': 'devops-quality-services',
+            'qa testing': 'devops-quality-services',
+            'quality assurance': 'devops-quality-services',
+            'test automation': 'devops-quality-services',
+            'selenium': 'devops-quality-services',
+            'unit testing': 'devops-quality-services',
+            'integration testing': 'devops-quality-services',
+            'performance testing': 'devops-quality-services',
 
-            # Cybersecurity
-            'cybersecurity': 'cybersecurity-solutions',
-            'security solution': 'cybersecurity-solutions',
-            'penetration testing': 'cybersecurity-solutions',
-            'security audit': 'cybersecurity-solutions',
-            'vulnerability assessment': 'cybersecurity-solutions',
-            'data security': 'cybersecurity-solutions',
+            # Cybersecurity & Security Services
+            'cybersecurity': 'security-services',
+            'security solution': 'security-services',
+            'penetration testing': 'security-services',
+            'security audit': 'security-services',
+            'vulnerability assessment': 'security-services',
+            'data security': 'security-services',
 
             # FinTech
             'fintech': 'fintech_development',
@@ -594,11 +600,19 @@ class ContentProcessor:
             'customer support': 'bpo',
 
             # Professional Training
-            'training': 'professional-technology-training',
+            'professional technology training services': 'professional-technology-training',
+            'professional technology training': 'professional-technology-training',
+            'professional training services': 'professional-technology-training',
+            'professional training': 'professional-technology-training',
+            'technology training services': 'professional-technology-training',
+            'technology training': 'professional-technology-training',
+            'training services': 'professional-technology-training',
             'professional development': 'professional-technology-training',
             'tech training': 'professional-technology-training',
-            'certification': 'professional-technology-training',
-            'workshop': 'professional-technology-training'
+            'certification program': 'professional-technology-training',
+            'training program': 'professional-technology-training',
+            'workshop': 'professional-technology-training',
+            'educational partnership': 'professional-technology-training'
         }
 
         # Parse HTML
@@ -631,36 +645,50 @@ class ContentProcessor:
             is_case_study_page = 'case_studies/' in str(file_path)
             is_news_page = 'news/' in str(file_path)
 
-            # Check for industry mentions
-            # Link on service pages, blog pages, case study pages, and news pages
+            # Collect all candidate keywords (combine industries and services)
+            all_keywords = []
+
+            # Add industry keywords if applicable
             if is_service_page or is_blog_page or is_case_study_page or is_news_page:
                 for term, industry_slug in industry_links.items():
-                    # Case-insensitive search with word boundaries
-                    pattern = r'\b(' + re.escape(term) + r')\b'
-                    match = re.search(pattern, text, re.IGNORECASE)
-                    if match:
-                        # Replace with link (preserving original case)
-                        matched_text = match.group(1)
-                        replacement = f'<a href="{path_prefix}industries/{industry_slug}.html" class="auto-link">{matched_text}</a>'
-                        text = text[:match.start()] + replacement + text[match.end():]
-                        modified = True
-                        break  # Only link one term per text node
+                    all_keywords.append((term, 'industry', industry_slug))
 
-            # Check for service mentions
-            # Link on industry pages, blog pages, case study pages, and news pages
+            # Add service keywords if applicable
             if is_industry_page or is_blog_page or is_case_study_page or is_news_page:
-                if not modified:  # Only check if we haven't already modified the text
-                    for term, service_slug in service_links.items():
-                        if service_slug != current_slug:  # Don't link to self
-                            pattern = r'\b(' + re.escape(term) + r')\b'
-                            match = re.search(pattern, text, re.IGNORECASE)
-                            if match:
-                                # Replace with link (preserving original case)
-                                matched_text = match.group(1)
-                                replacement = f'<a href="{path_prefix}services/{service_slug}.html" class="auto-link">{matched_text}</a>'
-                                text = text[:match.start()] + replacement + text[match.end():]
-                                modified = True
-                                break
+                for term, service_slug in service_links.items():
+                    if service_slug != current_slug:  # Don't link to self
+                        all_keywords.append((term, 'service', service_slug))
+
+            # Sort ALL keywords by length (longest first) to match specific phrases before generic ones
+            # This ensures "E-Commerce Development Services" matches before just "E-Commerce"
+            all_keywords.sort(key=lambda x: len(x[0]), reverse=True)
+
+            # Collect all matches first (to avoid overlapping links)
+            matches_to_replace = []
+
+            for term, link_type, slug in all_keywords:
+                pattern = r'\b(' + re.escape(term) + r')\b'
+                for match in re.finditer(pattern, text, re.IGNORECASE):
+                    # Check if this match overlaps with any existing match
+                    overlaps = any(
+                        match.start() < existing_end and match.end() > existing_start
+                        for existing_start, existing_end, _, _, _ in matches_to_replace
+                    )
+                    if not overlaps:
+                        matched_text = match.group(1)
+                        if link_type == 'industry':
+                            replacement = f'<a href="{path_prefix}industries/{slug}.html" class="auto-link">{matched_text}</a>'
+                        else:  # service
+                            replacement = f'<a href="{path_prefix}services/{slug}.html" class="auto-link">{matched_text}</a>'
+                        matches_to_replace.append((match.start(), match.end(), matched_text, replacement, link_type))
+
+            # Apply all replacements from right to left (so positions don't shift)
+            if matches_to_replace:
+                modified = True
+                # Sort by start position (descending) to replace from right to left
+                matches_to_replace.sort(key=lambda x: x[0], reverse=True)
+                for start, end, matched_text, replacement, link_type in matches_to_replace:
+                    text = text[:start] + replacement + text[end:]
 
             # Replace the text node with new HTML if modified
             if modified:

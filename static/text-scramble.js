@@ -1,11 +1,11 @@
 /**
  * Text Scramble Effect
- * Creates a cyberpunk-style text scramble animation that cycles through phrases
+ * Creates a cyberpunk-style text scramble animation with glitches
  */
 class TextScramble {
   constructor(el) {
     this.el = el;
-    this.chars = '!<>-_\\/[]{}—=+*^?#________';
+    this.chars = '!<>-_\\/[]{}—=+*^?#@$%&アイウエオカキク01';
     this.update = this.update.bind(this);
   }
 
@@ -18,9 +18,9 @@ class TextScramble {
     for (let i = 0; i < length; i++) {
       const from = oldText[i] || '';
       const to = newText[i] || '';
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
-      this.queue.push({ from, to, start, end });
+      const start = Math.floor(Math.random() * 30);
+      const end = start + Math.floor(Math.random() * 50);
+      this.queue.push({ from, to, start, end, char: this.randomChar() });
     }
 
     cancelAnimationFrame(this.frameRequest);
@@ -38,22 +38,36 @@ class TextScramble {
 
       if (this.frame >= end) {
         complete++;
-        output += to;
+        // Even completed chars occasionally glitch
+        if (Math.random() < 0.03) {
+          output += `<span class="scramble-char glitch">${this.randomChar()}</span>`;
+        } else {
+          output += to;
+        }
       } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
+        // High frequency character changes for more glitchy effect
+        if (Math.random() < 0.5) {
           char = this.randomChar();
           this.queue[i].char = char;
         }
-        output += `<span class="scramble-char">${char}</span>`;
+        // Random glitch intensity
+        const glitchClass = Math.random() < 0.2 ? 'scramble-char glitch-intense' : 'scramble-char';
+        output += `<span class="${glitchClass}">${char}</span>`;
       } else {
-        output += from;
+        // Pre-start chars also occasionally glitch
+        if (Math.random() < 0.05) {
+          output += `<span class="scramble-char glitch">${this.randomChar()}</span>`;
+        } else {
+          output += from;
+        }
       }
     }
 
     this.el.innerHTML = output;
 
     if (complete === this.queue.length) {
-      this.resolve();
+      // Small delay then resolve to let final glitches settle
+      setTimeout(() => this.resolve(), 100);
     } else {
       this.frameRequest = requestAnimationFrame(this.update);
       this.frame++;

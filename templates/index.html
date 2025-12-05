@@ -39,27 +39,28 @@
 <!-- Hero Section - Simplified and Centered -->
 <section class="hero relative min-h-[85vh] flex items-center justify-center">
   <div class="hero-background">
+    <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
     <div class="hero-gradient"></div>
     <div class="shape shape-1"></div>
     <div class="shape shape-2"></div>
   </div>
   
   <div class="hero-content text-center">
-    <h1 class="text-4xl md:text-6xl font-normal mb-md leading-tight">
-      <span class="text-gradient hero-scramble-text">Next Level Innovation</span><br>
-      <span class="text-white text-2xl md:text-4xl">Powered by Intelligence</span>
-    </h1>
-    
-    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto mb-lg">
+    <div class="hero-scramble-wrapper">
+      <span class="text-gradient hero-scramble-text text-4xl md:text-6xl font-normal">Next Level Innovation</span>
+    </div>
+    <h1 class="text-2xl md:text-4xl font-normal mb-md text-white">Powered by Intelligence</h1>
+
+    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto">
       Gain the clarity and predictive insights needed to make<br>
       faster, smarter strategic choices that drive growth.
     </p>
-    
-    <div class="hero-cta">
-      <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
-        Start Your AI Transformation
-      </a>
-    </div>
+  </div>
+
+  <div class="hero-cta">
+    <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
+      Start Your AI Transformation
+    </a>
   </div>
 </section>
 
@@ -446,6 +447,7 @@
 {% block scripts %}
 {{ super() }}
 <script src="{{ static }}/text-scramble.js" defer></script>
+<script src="{{ static }}/matrix-rain.js" defer></script>
 <script>
 // Simple carousel functionality
 document.addEventListener('DOMContentLoaded', function() {

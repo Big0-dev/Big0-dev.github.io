@@ -20,7 +20,6 @@
   padding: 2rem;
   text-align: center;
   max-width: 56rem;
-  margin: 0 auto;
   width: 100%;
 }
 .hero-background {
@@ -49,18 +48,17 @@
     <div class="hero-scramble-wrapper">
       <span class="text-gradient hero-scramble-text text-4xl md:text-6xl font-normal">Next Level Innovation</span>
     </div>
-    <h1 class="text-2xl md:text-4xl font-normal mb-md text-white">Powered by Intelligence</h1>
+    <h1 class="text-2xl md:text-4xl font-normal mb-md gradient-text-animated">Powered by Intelligence</h1>
 
-    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto">
-      Gain the clarity and predictive insights needed to make<br>
-      faster, smarter strategic choices that drive growth.
+    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto" data-split-reveal>
+      Gain the clarity and predictive insights needed to make faster, smarter strategic choices that drive growth.
     </p>
-  </div>
 
-  <div class="hero-cta">
-    <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
-      Start Your AI Transformation
-    </a>
+    <div class="hero-cta">
+      <a href="{{ contact }}" class="btn btn-primary btn-md btn-pulse">
+        Start Your AI Transformation
+      </a>
+    </div>
   </div>
 </section>
 
@@ -449,14 +447,33 @@
 <script src="{{ static }}/text-scramble.js" defer></script>
 <script src="{{ static }}/matrix-rain.js" defer></script>
 <script>
+// Split text reveal animation
+document.querySelectorAll('[data-split-reveal]').forEach(el => {
+  const text = el.textContent;
+  const words = text.split(' ');
+  el.innerHTML = words.map((word, i) =>
+    `<span class="word-reveal" style="--word-index: ${i}">${word}</span>`
+  ).join(' ');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        el.classList.add('text-revealed');
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  observer.observe(el);
+});
+
 // Simple carousel functionality
 document.addEventListener('DOMContentLoaded', function() {
   const carousels = document.querySelectorAll('.carousel-container');
-  
+
   carousels.forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const items = track.querySelectorAll('.carousel-item');
-    
+
     if (items.length > 3) {
       // Clone items for infinite scroll effect
       items.forEach(item => {

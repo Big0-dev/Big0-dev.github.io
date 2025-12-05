@@ -166,6 +166,15 @@ class AssetManager:
         try:
             svg_content = svg_path.read_text(encoding='utf-8')
 
+            # Replace hardcoded dark colors with currentColor for theme compatibility
+            dark_colors = [
+                '#000000', '#000', '#0F0F0F', '#1C1C1C', '#1C274C',
+                '#212121', '#080341', '#292929'
+            ]
+            for color in dark_colors:
+                svg_content = svg_content.replace(f'fill="{color}"', 'fill="currentColor"')
+                svg_content = svg_content.replace(f'stroke="{color}"', 'stroke="currentColor"')
+
             if css_class:
                 svg_content = svg_content.replace('<svg', f'<svg class="{css_class}"', 1)
 

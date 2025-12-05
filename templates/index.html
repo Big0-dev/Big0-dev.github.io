@@ -46,7 +46,7 @@
   
   <div class="hero-content text-center">
     <h1 class="text-4xl md:text-6xl font-normal mb-md leading-tight">
-      <span class="text-gradient">Next Level Innovation</span><br>
+      <span class="text-gradient hero-scramble-text">Next Level Innovation</span><br>
       <span class="text-white text-2xl md:text-4xl">Powered by Intelligence</span>
     </h1>
     
@@ -445,6 +445,7 @@
 
 {% block scripts %}
 {{ super() }}
+<script src="{{ static }}/text-scramble.js" defer></script>
 <script>
 // Simple carousel functionality
 document.addEventListener('DOMContentLoaded', function() {

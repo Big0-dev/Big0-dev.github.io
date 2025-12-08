@@ -45,6 +45,7 @@
       
       <!-- Challenge and Solution -->
       {% if current_case_studie.frontmatter.challenge or current_case_studie.frontmatter.solution %}
+      <h2 class="sr-only">Overview</h2>
       <div class="grid grid-2 gap-xl mb-3xl grid-mobile-1">
         {% if current_case_studie.frontmatter.challenge %}
         <div class="card p-xl">
@@ -59,7 +60,7 @@
           <p class="text-tertiary">{{ current_case_studie.frontmatter.challenge }}</p>
         </div>
         {% endif %}
-        
+
         {% if current_case_studie.frontmatter.solution %}
         <div class="card p-xl">
           <div class="icon-container icon-lg icon-gradient mb-lg">

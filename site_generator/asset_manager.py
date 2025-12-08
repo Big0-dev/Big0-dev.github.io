@@ -358,11 +358,15 @@ class AssetManager:
         # Optimize CSS files
         self._optimize_css_files(target_dir, stats)
 
+        # Optimize JS files
+        self._optimize_js_files(target_dir, stats)
+
         # Log optimization results
         total_saved_kb = stats['total_saved'] / 1024
         logger.info(f"Optimization complete! Saved {total_saved_kb:.2f} KB total")
         logger.info(f"  - HTML: {stats['html_files']} files, saved {stats['html_saved']/1024:.2f} KB")
         logger.info(f"  - CSS: {stats['css_files']} files, saved {stats['css_saved']/1024:.2f} KB")
+        logger.info(f"  - JS: {stats.get('js_files', 0)} files, saved {stats.get('js_saved', 0)/1024:.2f} KB")
 
         return stats
 
@@ -430,6 +434,49 @@ class AssetManager:
 
             except Exception as e:
                 logger.error(f"Error optimizing {css_file}: {e}")
+
+    def _optimize_js_files(self, directory: str, stats: Dict[str, Any]) -> None:
+        """Minify all JS files in the static directory"""
+        static_dir = Path(directory) / 'static'
+
+        if not static_dir.exists():
+            return
+
+        # Initialize JS stats if not present
+        if 'js_files' not in stats:
+            stats['js_files'] = 0
+            stats['js_saved'] = 0
+
+        for js_file in static_dir.rglob('*.js'):
+            # Skip already minified files
+            if '.min.' in js_file.name:
+                continue
+
+            try:
+                # Read original content
+                original_content = js_file.read_text(encoding='utf-8')
+                original_size = len(original_content.encode('utf-8'))
+
+                # Optimize JS
+                minified_js = self.optimize_js(original_content)
+
+                # Write optimized content
+                js_file.write_text(minified_js, encoding='utf-8')
+
+                # Calculate savings
+                minified_size = len(minified_js.encode('utf-8'))
+                saved = original_size - minified_size
+
+                stats['js_files'] += 1
+                stats['js_saved'] += saved
+                stats['total_saved'] += saved
+
+                if saved > 0:
+                    percent_saved = (saved / original_size) * 100
+                    logger.debug(f"Minified {js_file.relative_to(static_dir)}: {percent_saved:.1f}% smaller")
+
+            except Exception as e:
+                logger.error(f"Error optimizing {js_file}: {e}")
 
     def _simple_html_minify(self, html: str) -> str:
         """

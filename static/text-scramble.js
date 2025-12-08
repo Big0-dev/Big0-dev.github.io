@@ -79,7 +79,7 @@ class TextScramble {
   }
 }
 
-// Initialize text scramble on hero section
+// Initialize text scramble on hero section - optimized to minimize CLS
 document.addEventListener('DOMContentLoaded', function() {
   const el = document.querySelector('.hero-scramble-text');
   if (!el) return;
@@ -102,6 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
     counter = (counter + 1) % phrases.length;
   };
 
-  // Start the animation
-  next();
+  // Wait for first paint to complete before starting animation
+  // This prevents the animation from contributing to CLS metrics
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => next(), { timeout: 1000 });
+  } else {
+    setTimeout(next, 500);
+  }
 });

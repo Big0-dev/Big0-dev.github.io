@@ -50,7 +50,7 @@
     </div>
     <h1 class="text-2xl md:text-4xl font-normal mb-md gradient-text-animated">Powered by Intelligence</h1>
 
-    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto" data-split-reveal>
+    <p class="text-base md:text-lg text-tertiary max-w-2xl mx-auto">
       Gain the clarity and predictive insights needed to make faster, smarter strategic choices that drive growth.
     </p>
 
@@ -207,10 +207,11 @@
               src="{{ static }}/{{ post.frontmatter.image_url }}"
               alt="{{ post.title }}"
               class="w-full h-full object-cover"
-              loading="lazy"
+              loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
               decoding="async"
               width="400"
               height="225"
+              {% if loop.first %}fetchpriority="high"{% endif %}
             />
           </div>
           {% endif %}
@@ -447,26 +448,7 @@
 <script src="{{ static }}/text-scramble.js" defer></script>
 <script src="{{ static }}/matrix-rain.js" defer></script>
 <script>
-// Split text reveal animation
-document.querySelectorAll('[data-split-reveal]').forEach(el => {
-  const text = el.textContent;
-  const words = text.split(' ');
-  el.innerHTML = words.map((word, i) =>
-    `<span class="word-reveal" style="--word-index: ${i}">${word}</span>`
-  ).join(' ');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        el.classList.add('text-revealed');
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  observer.observe(el);
-});
-
-// Simple carousel functionality
+// Simple carousel functionality - load after DOM ready to avoid CLS
 document.addEventListener('DOMContentLoaded', function() {
   const carousels = document.querySelectorAll('.carousel-container');
 
@@ -482,6 +464,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-
 </script>
 {% endblock %}

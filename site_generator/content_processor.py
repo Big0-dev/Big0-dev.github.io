@@ -65,7 +65,9 @@ class ContentProcessor:
 
         # Auto-link industry and service mentions for specific page types
         link_path = output_path if output_path else file_path
-        if any(path in str(file_path) for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'news/']):
+        # Check both file_path and output_path for path matching (output_path uses hyphens, content_dir uses underscores)
+        paths_to_check = [str(file_path), str(output_path) if output_path else '']
+        if any(path in p for p in paths_to_check for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'case-studies/', 'news/']):
             html_content = self.add_automatic_interlinking(html_content, link_path)
 
         # Extract first paragraph as excerpt
@@ -232,7 +234,20 @@ class ContentProcessor:
             'utilities': 'energy',
             'power generation': 'energy',
             'electric': 'energy',
-            'sustainability': 'energy'
+            'sustainability': 'energy',
+
+            # Non-Profit & NGO Industry
+            'non-profit': 'non-profit',
+            'nonprofit': 'non-profit',
+            'ngo': 'non-profit',
+            'charity': 'non-profit',
+            'foundation': 'non-profit',
+            'advocacy': 'non-profit',
+            'civic organization': 'non-profit',
+            'community organization': 'non-profit',
+            'grassroots': 'non-profit',
+            'social impact': 'non-profit',
+            'volunteer organization': 'non-profit'
         }
 
         # Define service mappings (comprehensive keyword dictionary)
@@ -639,11 +654,12 @@ class ContentProcessor:
             modified = False
 
             # Determine what to link based on page type
-            is_service_page = 'services/' in str(file_path)
-            is_industry_page = 'industries/' in str(file_path)
-            is_blog_page = 'blogs/' in str(file_path)
-            is_case_study_page = 'case_studies/' in str(file_path)
-            is_news_page = 'news/' in str(file_path)
+            file_path_str = str(file_path)
+            is_service_page = 'services/' in file_path_str
+            is_industry_page = 'industries/' in file_path_str
+            is_blog_page = 'blogs/' in file_path_str or 'blog/' in file_path_str
+            is_case_study_page = 'case_studies/' in file_path_str or 'case-studies/' in file_path_str
+            is_news_page = 'news/' in file_path_str
 
             # Collect all candidate keywords (combine industries and services)
             all_keywords = []

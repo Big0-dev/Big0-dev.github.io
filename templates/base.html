@@ -592,7 +592,16 @@
       });
     </script>
     {% endblock %}
-    
+
+    <!-- Hero Particles Animation (loaded on non-homepage pages with .page-hero) -->
+    <script>
+      if (document.querySelector('.page-hero')) {
+        var s = document.createElement('script');
+        s.src = '{{ static }}/hero-particles.js';
+        document.head.appendChild(s);
+      }
+    </script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
     {

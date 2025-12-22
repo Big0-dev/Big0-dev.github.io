@@ -62,8 +62,29 @@
   </div>
 </section>
 
-<!-- Success Stories Section -->
+<!-- Our Clients Section -->
 <section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Trusted By</h2>
+      <p class="section-subtitle">
+        Companies that trust us to deliver <span class="text-gradient">exceptional results</span>
+      </p>
+    </div>
+
+    <div class="clients-logo-grid clients-logo-grid-2">
+      <a href="https://awaampakistan.org/" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="Awaam Pakistan">
+        {{ inject_svg('clients/awaam-pakistan') | safe }}
+      </a>
+      <a href="https://www.auxiliouk.com/" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="Auxilio UK">
+        {{ inject_svg('clients/auxilio') | safe }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories Section -->
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Success Stories</h2>
@@ -109,7 +130,7 @@
 </section>
 
 <!-- Services Preview Section -->
-<section class="section">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Our Services</h2>
@@ -149,7 +170,7 @@
 {% include 'cta.html' %}
 
 <!-- Industries Section -->
-<section class="section bg-light">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Industries We Serve</h2>
@@ -188,7 +209,7 @@
 </section>
 
 <!-- Insights Section -->
-<section class="section">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Latest Insights</h2>
@@ -241,7 +262,7 @@
 
 <!-- News Section -->
 {% if news_articles and news_articles|length > 0 %}
-<section class="section bg-light">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Company News</h2>
@@ -425,8 +446,53 @@
   </div>
 </section>
 
-<!-- Contact Form Section -->
+<!-- Products Section -->
 <section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our Products</h2>
+      <p class="section-subtitle">
+        Innovative solutions <span class="text-gradient">in development</span>
+      </p>
+    </div>
+
+    {% if all_products %}
+    <div class="products-grid-home">
+      {% for product in all_products[:2] %}
+      <a href="./products/{{ product.slug }}.html" class="product-home-card">
+        <div class="product-home-icon">
+          {% if product.icon %}
+          {{ inject_svg(product.icon, False) | safe }}
+          {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          {% endif %}
+        </div>
+        <div class="product-home-content">
+          {% if product.frontmatter.status %}
+          <span class="product-home-status">{{ product.frontmatter.status }}</span>
+          {% endif %}
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="text-center mt-xl">
+      <a href="{{ products }}" class="btn btn-secondary btn-md">
+        View All Products
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Get In Touch</h2>

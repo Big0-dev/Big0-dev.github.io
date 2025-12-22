@@ -24,39 +24,6 @@
   </div>
 </section>
 
-<!-- Newsletter Section -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Stay Updated</h2>
-      <p class="section-subtitle">
-        Subscribe to our <span class="text-gradient">LinkedIn newsletter</span> for exclusive insights
-      </p>
-    </div>
-    
-    <div class="card card-primary text-center max-w-2xl mx-auto p-2xl">
-      <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-          <rect x="2" y="9" width="4" height="12"/>
-          <circle cx="4" cy="4" r="2"/>
-        </svg>
-      </div>
-      <p class="text-secondary mb-lg">
-        Subscribe to our LinkedIn newsletter for the latest insights on AI, technology trends, and industry innovations delivered directly to your feed.
-      </p>
-      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7348601809155842050" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Subscribe on LinkedIn
-        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- All Articles Section -->
 <section class="section bg-light">
   <div class="container">
@@ -84,13 +51,13 @@
             />
           </div>
           {% endif %}
-          
+
           <div class="insights-content">
             <div class="insights-meta">
               <span class="text-xs text-muted">{{ post.frontmatter.date | default('') }}</span>
             </div>
             <span class="badge mb-md">{{ post.frontmatter.category | default('Technology') }}</span>
-            
+
             <h3>{{ post.title }}</h3>
             <p class="line-clamp-3">{{ post.meta_description }}</p>
             <span class="text-primary font-medium">Read More →</span>
@@ -116,7 +83,7 @@
         </svg>
       </span>
       {% endif %}
-      
+
       {% for page in range(1, total_pages + 1) %}
       {% if page == page_num %}
       <span class="page-link active" aria-current="page">{{ page }}</span>
@@ -124,7 +91,7 @@
       <a href="./blog{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
       {% endif %}
       {% endfor %}
-      
+
       {% if page_num < total_pages %}
       <a href="./blog-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -145,4 +112,37 @@
 
 <!-- CTA Section -->
 {% include 'cta.html' %}
+
+<!-- Newsletter Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Stay Updated</h2>
+      <p class="section-subtitle">
+        Subscribe to our <span class="text-gradient">LinkedIn newsletter</span> for exclusive insights
+      </p>
+    </div>
+
+    <div class="card card-primary text-center max-w-2xl mx-auto p-2xl">
+      <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </div>
+      <p class="text-secondary mb-lg">
+        Subscribe to our LinkedIn newsletter for the latest insights on AI, technology trends, and industry innovations delivered directly to your feed.
+      </p>
+      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7348601809155842050" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        Subscribe on LinkedIn
+        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock %}

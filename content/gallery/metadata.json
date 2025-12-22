@@ -40,5 +40,12 @@
     "category": "Training",
     "date": "2025-02-15",
     "tags": ["graduation", "certification", "fintech", "achievement", "professionals"]
+  },
+  "odoo-event-islamabad.avif": {
+    "title": "Odoo Partner Event - Islamabad",
+    "description": "Big0 team attending the Odoo Partner Event in Islamabad. Connecting with the Odoo community, exploring new features, and strengthening our partnership for delivering world-class ERP solutions.",
+    "category": "Events",
+    "date": "2025-12-18",
+    "tags": ["Odoo", "ERP", "partnership", "Islamabad", "conference"]
   }
 }

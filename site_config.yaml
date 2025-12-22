@@ -99,6 +99,12 @@ content_types:
     output_dir: news
     per_page: 10
 
+  products:
+    content_dir: ./content/products
+    template: product_detail.html
+    listing_template: products.html
+    output_dir: products
+
 # Navigation URLs
 navigation:
   home: index.html

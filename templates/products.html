@@ -24,7 +24,7 @@
 </section>
 
 <!-- Development Philosophy Section -->
-<section class="section">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Development Philosophy</h2>
@@ -81,12 +81,35 @@
         <h3 class="text-lg font-semibold mb-sm">User Experience Focus</h3>
         <p class="text-tertiary text-sm">Intuitive interfaces and seamless experiences are at the heart of everything we create.</p>
       </div>
+
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Continuous Innovation</h3>
+        <p class="text-tertiary text-sm">Constantly evolving with emerging technologies to deliver cutting-edge solutions that stay ahead.</p>
+      </div>
+
+      <div class="card card-hover text-center p-xl">
+        <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-sm">Iterative Development</h3>
+        <p class="text-tertiary text-sm">Agile methodology with continuous feedback loops ensures products meet real user needs.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Products in Development Section -->
-<section class="section bg-light">
+<section class="section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Coming Soon</h2>
@@ -94,11 +117,73 @@
         Transformative products currently <span class="text-gradient">in development</span>
       </p>
     </div>
+
+    {% if all_products %}
+    <div class="products-grid">
+    {% for product in all_products %}
+    <div class="product-showcase">
+      <div class="product-showcase-header">
+        <div class="product-showcase-icon">
+          {% if product.icon %}
+          {{ inject_svg(product.icon, False) | safe }}
+          {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          {% endif %}
+        </div>
+        {% if product.frontmatter.status %}
+        <span class="product-showcase-status">{{ product.frontmatter.status }}</span>
+        {% endif %}
+      </div>
+
+      <div class="product-showcase-content">
+        <h3 class="product-showcase-title">{{ product.title }}</h3>
+        <p class="product-showcase-tagline">{{ product.frontmatter.tagline | default(product.description) }}</p>
+
+        {% if product.frontmatter.highlight %}
+        <p class="product-showcase-highlight">{{ product.frontmatter.highlight }}</p>
+        {% endif %}
+
+        {% if product.frontmatter.features %}
+        <div class="product-showcase-features">
+          {% for feature in product.frontmatter.features.split(', ') %}
+          <span class="product-showcase-feature">{{ feature }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if product.frontmatter.tech_stack %}
+        <div class="product-showcase-tech">
+          {% for tech in product.frontmatter.tech_stack.split(', ') %}
+          <span>{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="product-showcase-actions">
+        <a href="./products/{{ product.slug }}.html" class="btn btn-primary">Learn More</a>
+        <a href="{{ contact }}" class="btn btn-secondary">Get Early Access</a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% else %}
+    <div class="card card-primary max-w-2xl mx-auto p-2xl text-center">
+      <p class="text-secondary">New products are in development. Check back soon!</p>
+    </div>
+    {% endif %}
   </div>
 </section>
 
+<!-- CTA Section -->
+{% include 'cta.html' %}
+
 <!-- Technology Stack Section -->
-<section class="section">
+<section class="section bg-light">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Technology Foundation</h2>
@@ -187,6 +272,4 @@
   </div>
 </section>
 
-<!-- CTA Section -->
-{% include 'cta.html' %}
 {% endblock %}

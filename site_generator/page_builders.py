@@ -136,6 +136,9 @@ class GalleryPageBuilder(BasePageBuilder):
             images = gallery_data.get('images', [])
             gallery_url = gallery_data.get('gallery_url')
 
+            # Sort images by date descending (newest first)
+            images.sort(key=lambda x: x.get('date') or datetime.min, reverse=True)
+
             # Pagination settings
             per_page = 6
             total_images = len(images)

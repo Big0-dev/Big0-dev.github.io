@@ -1,11 +1,14 @@
 ---
-title: Blockchain Development Services USA | Enterprise Blockchain Solutions
-meta_description: "Leading blockchain development company in USA. Smart contracts, DeFi, NFTs. SEC compliant. Serving New York, San Francisco, Austin, Chicago."
 canonical: /services/locations/usa/blockchain_development-usa.html
-location: USA
-parent_service: blockchain-development
 is_location_page: true
+keywords:
+- Blockchain
+location: USA
+meta_description: Leading blockchain development company in USA. Smart contracts,
+  DeFi, NFTs. SEC compliant. Serving New York, San Francisco, Austin, Chicago.
 noindex: false
+parent_service: blockchain-development
+title: Hire Blockchain Developers in USA | Big0
 ---
 
 # Blockchain Development Services in USA

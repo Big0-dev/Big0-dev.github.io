@@ -1,11 +1,14 @@
 ---
-title: Fintech Development Services USA | Banking & Payment Solutions
-meta_description: "Fintech software development in USA. Digital banking, payments, lending platforms. SEC, FINRA, OCC compliant. Serving New York, San Francisco, Chicago."
 canonical: /services/locations/usa/fintech_development-usa.html
-location: USA
-parent_service: fintech-development
 is_location_page: true
+keywords:
+- Fintech
+location: USA
+meta_description: Fintech software development in USA. Digital banking, payments,
+  lending platforms. SEC, FINRA, OCC compliant. Serving New York, San Francisco, Chicago.
 noindex: false
+parent_service: fintech-development
+title: 'US Fintech Dev Services: Secure & Compliant | Big0'
 ---
 
 # Fintech Development Services in USA

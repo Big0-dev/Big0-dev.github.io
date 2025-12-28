@@ -1,15 +1,21 @@
 ---
-title: Custom Software Development Australia | Enterprise Solutions
-meta_description: Custom software development company in Australia. Web, mobile, enterprise apps. Agile development. ASIC/APRA compliant. Serving Sydney, Melbourne, Brisbane.
-description: Enterprise custom software development for Australian businesses with local teams, government compliance, and industry-specific expertise
-short_description: Australian software development specialists delivering web, mobile, and enterprise applications with ASIC/APRA compliance and local support
-icon: code
-features: Custom software, Web applications, Mobile apps, Enterprise systems, Agile development, Legacy modernization, API development, Microservices
 canonical: /services/locations/australia/software-development-australia.html
-location: Australia
-parent_service: software-development
+description: Enterprise custom software development for Australian businesses with
+  local teams, government compliance, and industry-specific expertise
+features: Custom software, Web applications, Mobile apps, Enterprise systems, Agile
+  development, Legacy modernization, API development, Microservices
+icon: code
 is_location_page: true
+keywords:
+- Custom
+location: Australia
+meta_description: Custom software development company in Australia. Web, mobile, enterprise
+  apps. Agile development. ASIC/APRA compliant. Serving Sydney, Melbourne, Brisbane.
 noindex: false
+parent_service: software-development
+short_description: Australian software development specialists delivering web, mobile,
+  and enterprise applications with ASIC/APRA compliance and local support
+title: Custom Software Development Australia - Big0 Enterprise Solutions
 ---
 
 # Custom Software Development Australia | Enterprise Solutions & Local Expertise

@@ -1,12 +1,21 @@
 ---
-title: Engineering Consultancy Services Australia | Professional Engineering Services
-meta_description: Expert engineering consultancy services in Australia. Structural, civil, mechanical, electrical engineering. Engineers Australia registered. CPEng chartered engineers. Sydney, Melbourne, Brisbane.
-description: Comprehensive engineering consultancy services across Australia with Engineers Australia registered professionals. Structural, civil, mechanical, electrical, fire safety engineering for commercial, residential, industrial, and infrastructure projects.
+description: Comprehensive engineering consultancy services across Australia with
+  Engineers Australia registered professionals. Structural, civil, mechanical, electrical,
+  fire safety engineering for commercial, residential, industrial, and infrastructure
+  projects.
+features: Structural Engineering, Civil Engineering, Mechanical Engineering, Electrical
+  Engineering, Fire Safety Engineering, Building Certification, Engineers Australia
+  CPEng, BIM Services
 icon: engineering
-location: Australia
-parent_service: engineering-services
 is_location_page: true
-features: Structural Engineering, Civil Engineering, Mechanical Engineering, Electrical Engineering, Fire Safety Engineering, Building Certification, Engineers Australia CPEng, BIM Services
+keywords:
+- Engineering
+location: Australia
+meta_description: Expert engineering consultancy services in Australia. Structural,
+  civil, mechanical, electrical engineering. Engineers Australia registered. CPEng
+  chartered engineers. Sydney, Melbourne, Brisbane.
+parent_service: engineering-services
+title: Hire Engineering Consultants Australia | Big0 - Get Quote
 ---
 
 # Engineering Consultancy Services Australia | Registered Professional Engineers

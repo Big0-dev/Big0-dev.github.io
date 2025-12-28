@@ -172,3 +172,14 @@ cython_debug/
 
 # macOS
 .DS_Store
+
+# SEO Engine
+seo_engine/.env
+seo_engine/cache/
+seo_engine/reports/
+*.service-account.json
+*-service-account.json
+seo_engine/big0-seo-*.json
+seo_engine/*.json
+seo_engine/cache/
+seo_engine/reports/

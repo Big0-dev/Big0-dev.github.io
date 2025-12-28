@@ -745,21 +745,21 @@ class ContentProcessor:
         templates = {
             'cta': f'''
 <div class="inline-cta">
-  <h3>Ready to Transform Your Business?</h3>
+  <p class="cta-title">Ready to Transform Your Business?</p>
   <p>Let's discuss how we can help you achieve your goals with our innovative solutions.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started Today</a>
 </div>
 ''',
             'cta-service': f'''
 <div class="inline-cta">
-  <h3>Ready to Get Started?</h3>
+  <p class="cta-title">Ready to Get Started?</p>
   <p>Our experts are ready to help you implement these solutions for your business.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Schedule a Consultation</a>
 </div>
 ''',
             'cta-case-study': f'''
 <div class="inline-cta">
-  <h3>Want Similar Results?</h3>
+  <p class="cta-title">Want Similar Results?</p>
   <p>Let's discuss how we can deliver transformative solutions for your organization.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Contact Our Team</a>
 </div>
@@ -767,28 +767,28 @@ class ContentProcessor:
             # Location-specific CTAs
             'cta-location-usa': f'''
 <div class="inline-cta">
-  <h3>Ready to Transform Your Business in the USA?</h3>
+  <p class="cta-title">Ready to Transform Your Business in the USA?</p>
   <p>Connect with our US-based team to discuss your requirements and get started.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in the USA</a>
 </div>
 ''',
             'cta-location-uk': f'''
 <div class="inline-cta">
-  <h3>Ready to Transform Your Business in the UK?</h3>
+  <p class="cta-title">Ready to Transform Your Business in the UK?</p>
   <p>Connect with our UK team to discuss your requirements and get started.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in the UK</a>
 </div>
 ''',
             'cta-location-canada': f'''
 <div class="inline-cta">
-  <h3>Ready to Transform Your Business in Canada?</h3>
+  <p class="cta-title">Ready to Transform Your Business in Canada?</p>
   <p>Connect with our Canadian team to discuss your requirements and get started.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in Canada</a>
 </div>
 ''',
             'cta-location-australia': f'''
 <div class="inline-cta">
-  <h3>Ready to Transform Your Business in Australia?</h3>
+  <p class="cta-title">Ready to Transform Your Business in Australia?</p>
   <p>Connect with our Australian team to discuss your requirements and get started.</p>
   <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in Australia</a>
 </div>
@@ -1055,17 +1055,17 @@ class ContentProcessor:
             directive = match.group(1)
             templates = {
                 'cta': '''<div class="inline-cta">
-  <h3>Ready to Transform Your Business?</h3>
+  <p class="cta-title">Ready to Transform Your Business?</p>
   <p>Let's discuss how we can help you achieve your goals with our innovative solutions.</p>
   <a href="../contact.html" class="btn btn-primary">Get Started Today</a>
 </div>''',
                 'cta-service': '''<div class="inline-cta">
-  <h3>Ready to Get Started?</h3>
+  <p class="cta-title">Ready to Get Started?</p>
   <p>Our experts are ready to help you implement these solutions for your business.</p>
   <a href="../contact.html" class="btn btn-primary">Schedule a Consultation</a>
 </div>''',
                 'cta-case-study': '''<div class="inline-cta">
-  <h3>Want Similar Results?</h3>
+  <p class="cta-title">Want Similar Results?</p>
   <p>Let's discuss how we can deliver transformative solutions for your organization.</p>
   <a href="../contact.html" class="btn btn-primary">Contact Our Team</a>
 </div>'''

@@ -1,12 +1,17 @@
 ---
-title: Web Development Services UK | Custom Websites London
-meta_description: Web development services in UK. Responsive websites, web apps, e-commerce. WCAG 2.1, GDPR compliant. Serving London, Manchester, Edinburgh businesses.
-description: Professional web development services across UK with expertise in responsive websites, web applications, e-commerce platforms, WCAG accessibility, and GDPR compliance for British markets.
 canonical: /services/locations/uk/web-development-uk.html
-location: UK
-parent_service: web-development
+description: Professional web development services across UK with expertise in responsive
+  websites, web applications, e-commerce platforms, WCAG accessibility, and GDPR compliance
+  for British markets.
 is_location_page: true
+keywords:
+- Web
+location: UK
+meta_description: Web development services in UK. Responsive websites, web apps, e-commerce.
+  WCAG 2.1, GDPR compliant. Serving London, Manchester, Edinburgh businesses.
 noindex: false
+parent_service: web-development
+title: Web Development Services UK | Custom Sites Big0
 ---
 
 # Web Development Services in the United Kingdom

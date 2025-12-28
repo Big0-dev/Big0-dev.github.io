@@ -1,12 +1,17 @@
 ---
-title: Custom Software Development UK | Enterprise Solutions London
-meta_description: Software development company in UK. Enterprise applications, SaaS platforms, business software. GDPR compliant solutions. London, Manchester, Edinburgh.
-description: Professional custom software development across UK with expertise in enterprise applications, SaaS platforms, GDPR compliance, and scalable solutions for British businesses.
 canonical: /services/locations/uk/software-development-uk.html
-location: UK
-parent_service: software-development
+description: Professional custom software development across UK with expertise in
+  enterprise applications, SaaS platforms, GDPR compliance, and scalable solutions
+  for British businesses.
 is_location_page: true
+keywords:
+- Custom
+location: UK
+meta_description: Software development company in UK. Enterprise applications, SaaS
+  platforms, business software. GDPR compliant solutions. London, Manchester, Edinburgh.
 noindex: false
+parent_service: software-development
+title: Custom Software Development UK | Big0 Enterprise Solutions
 ---
 
 # Custom Software Development Services in the United Kingdom

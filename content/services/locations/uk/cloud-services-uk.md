@@ -1,12 +1,18 @@
 ---
-title: Cloud Services UK | AWS, Azure, Google Cloud London
-meta_description: Enterprise cloud services in UK. AWS London, Azure UK, GCP London regions. GDPR compliant, Cyber Essentials certified. Serving London, Manchester, Edinburgh.
-description: Professional cloud services across UK with expertise in AWS, Azure, Google Cloud, UK data sovereignty, GDPR compliance, and Cyber Essentials certification for British enterprises.
 canonical: /services/locations/uk/cloud-services-uk.html
-location: UK
-parent_service: cloud-services
+description: Professional cloud services across UK with expertise in AWS, Azure, Google
+  Cloud, UK data sovereignty, GDPR compliance, and Cyber Essentials certification
+  for British enterprises.
 is_location_page: true
+keywords:
+- Cloud
+location: UK
+meta_description: Enterprise cloud services in UK. AWS London, Azure UK, GCP London
+  regions. GDPR compliant, Cyber Essentials certified. Serving London, Manchester,
+  Edinburgh.
 noindex: false
+parent_service: cloud-services
+title: 'UK Cloud Services: AWS, Azure, GCP London - Big0'
 ---
 
 # Cloud Services in the United Kingdom

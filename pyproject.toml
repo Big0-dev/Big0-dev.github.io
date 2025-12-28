@@ -13,4 +13,10 @@ dependencies = [
     "minify-html>=0.16.4",
     "pyyaml>=6.0.2",
     "rcssmin>=1.2.1",
+    # SEO Engine dependencies
+    "python-dotenv>=1.0.0",
+    "google-api-python-client>=2.100.0",
+    "google-auth>=2.23.0",
+    "google-analytics-data>=0.18.0",
+    "pytrends>=4.9.0",
 ]

@@ -1,15 +1,21 @@
 ---
-title: Cloud Services Australia | AWS, Azure, Google Cloud Solutions
-meta_description: Enterprise cloud services in Australia. AWS Sydney, Azure Australia, Google Cloud. Migration, DevOps, cloud-native development. IRAP, ISM compliant.
-description: Enterprise cloud consulting, migration, and managed services for Australian businesses with local data center expertise and government compliance
-short_description: Australian cloud specialists delivering AWS, Azure, and Google Cloud solutions with data sovereignty, IRAP compliance, and 24/7 support
-icon: cloud
-features: Cloud migration, AWS Sydney, Azure Australia, Google Cloud, DevOps, Cloud-native development, Multi-cloud, IRAP compliance
 canonical: /services/locations/australia/cloud-services-australia.html
-location: Australia
-parent_service: cloud-services
+description: Enterprise cloud consulting, migration, and managed services for Australian
+  businesses with local data center expertise and government compliance
+features: Cloud migration, AWS Sydney, Azure Australia, Google Cloud, DevOps, Cloud-native
+  development, Multi-cloud, IRAP compliance
+icon: cloud
 is_location_page: true
+keywords:
+- Cloud
+location: Australia
+meta_description: Enterprise cloud services in Australia. AWS Sydney, Azure Australia,
+  Google Cloud. Migration, DevOps, cloud-native development. IRAP, ISM compliant.
 noindex: false
+parent_service: cloud-services
+short_description: Australian cloud specialists delivering AWS, Azure, and Google
+  Cloud solutions with data sovereignty, IRAP compliance, and 24/7 support
+title: 'Australian Cloud Services: Secure Migration & DevOps | BigO'
 ---
 
 # Enterprise Cloud Services in Australia | Local Data Centers, Compliance & 24/7 Support

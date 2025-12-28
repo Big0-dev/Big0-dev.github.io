@@ -1,15 +1,23 @@
 ---
-title: Web Development Services Australia | Custom Websites & Apps
-meta_description: Professional web development in Australia. Responsive websites, web apps, PWAs. WCAG 2.2 accessible. E-commerce, enterprise portals. Sydney, Melbourne, Brisbane.
-description: Professional web development services for Australian businesses with responsive design, accessibility compliance, and local expertise
-short_description: Australian web development specialists delivering custom websites, web applications, and progressive web apps with WCAG 2.2 accessibility and government compliance
-icon: globe
-features: Responsive websites, Web applications, Progressive web apps, E-commerce, CMS development, Government websites, WCAG 2.2 accessibility, Performance optimization
 canonical: /services/locations/australia/web-development-australia.html
-location: Australia
-parent_service: web-development
+description: Professional web development services for Australian businesses with
+  responsive design, accessibility compliance, and local expertise
+features: Responsive websites, Web applications, Progressive web apps, E-commerce,
+  CMS development, Government websites, WCAG 2.2 accessibility, Performance optimization
+icon: globe
 is_location_page: true
+keywords:
+- Web
+location: Australia
+meta_description: Professional web development in Australia. Responsive websites,
+  web apps, PWAs. WCAG 2.2 accessible. E-commerce, enterprise portals. Sydney, Melbourne,
+  Brisbane.
 noindex: false
+parent_service: web-development
+short_description: Australian web development specialists delivering custom websites,
+  web applications, and progressive web apps with WCAG 2.2 accessibility and government
+  compliance
+title: Big0 Web Dev Services Australia - Get Quote Now
 ---
 
 # Professional Web Development Australia | Modern, Accessible & High-Performance

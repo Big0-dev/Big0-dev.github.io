@@ -1,15 +1,21 @@
 ---
-title: Data Analytics Services Australia | Business Intelligence & Analytics
-meta_description: Enterprise data analytics and BI services in Australia. Power BI, Tableau, Qlik. Data warehousing, predictive analytics. OAIC Privacy Act compliant.
-description: Enterprise data analytics, business intelligence, and data science services for Australian businesses with privacy compliance and local expertise
-short_description: Australian data analytics specialists delivering BI dashboards, data warehousing, predictive analytics, and data governance solutions
-icon: chart-bar
-features: Business intelligence, Data warehousing, Predictive analytics, Data visualization, ETL pipelines, Data governance, Power BI, Tableau
 canonical: /services/locations/australia/data-analytics-services-australia.html
-location: Australia
-parent_service: data-analytics-services
+description: Enterprise data analytics, business intelligence, and data science services
+  for Australian businesses with privacy compliance and local expertise
+features: Business intelligence, Data warehousing, Predictive analytics, Data visualization,
+  ETL pipelines, Data governance, Power BI, Tableau
+icon: chart-bar
 is_location_page: true
+keywords:
+- Data
+location: Australia
+meta_description: Enterprise data analytics and BI services in Australia. Power BI,
+  Tableau, Qlik. Data warehousing, predictive analytics. OAIC Privacy Act compliant.
 noindex: false
+parent_service: data-analytics-services
+short_description: Australian data analytics specialists delivering BI dashboards,
+  data warehousing, predictive analytics, and data governance solutions
+title: Data Analytics Services Australia | Big0 BI & AI
 ---
 
 # Data Analytics Services Australia | Transform Data into Strategic Business Advantage

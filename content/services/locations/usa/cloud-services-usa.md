@@ -1,11 +1,14 @@
 ---
-title: Cloud Services USA | AWS, Azure, Google Cloud Solutions
-meta_description: "Enterprise cloud services in USA. AWS US regions, Azure Gov, GCP. SOC 2, FedRAMP, HIPAA compliant. Serving Silicon Valley, Seattle, DC, NYC."
 canonical: /services/locations/usa/cloud-services-usa.html
-location: USA
-parent_service: cloud-services
 is_location_page: true
+keywords:
+- Cloud
+location: USA
+meta_description: Enterprise cloud services in USA. AWS US regions, Azure Gov, GCP.
+  SOC 2, FedRAMP, HIPAA compliant. Serving Silicon Valley, Seattle, DC, NYC.
 noindex: false
+parent_service: cloud-services
+title: 'Get US Cloud Services: AWS, Azure, GCP - Big0'
 ---
 
 # Cloud Services in USA

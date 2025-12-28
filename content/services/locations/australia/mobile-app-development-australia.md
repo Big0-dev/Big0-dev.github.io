@@ -1,15 +1,21 @@
 ---
-title: Mobile App Development Australia | iOS & Android Apps
-meta_description: Leading mobile app development in Australia. iOS, Android, React Native, Flutter. App Store & Play Store optimization. OAIC compliant. Sydney, Melbourne.
-description: Professional mobile app development for Australian businesses with native iOS, Android, and cross-platform solutions
-short_description: Australian mobile app specialists delivering iOS, Android, React Native, and Flutter apps with OAIC privacy compliance and local market expertise
-icon: mobile
-features: iOS development, Android development, React Native, Flutter, App Store optimization, Australian payment integration, OAIC compliance, Enterprise mobility
 canonical: /services/locations/australia/mobile-app-development-australia.html
-location: Australia
-parent_service: mobile-app-development
+description: Professional mobile app development for Australian businesses with native
+  iOS, Android, and cross-platform solutions
+features: iOS development, Android development, React Native, Flutter, App Store optimization,
+  Australian payment integration, OAIC compliance, Enterprise mobility
+icon: mobile
 is_location_page: true
+keywords:
+- Mobile
+location: Australia
+meta_description: Leading mobile app development in Australia. iOS, Android, React
+  Native, Flutter. App Store & Play Store optimization. OAIC compliant. Sydney, Melbourne.
 noindex: false
+parent_service: mobile-app-development
+short_description: Australian mobile app specialists delivering iOS, Android, React
+  Native, and Flutter apps with OAIC privacy compliance and local market expertise
+title: Mobile App Development Australia | Big0 AI Apps
 ---
 
 # Mobile App Development Australia | Native iOS, Android & Cross-Platform

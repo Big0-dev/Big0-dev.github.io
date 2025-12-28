@@ -321,6 +321,73 @@ The site includes:
 
 Configuration in `templates/base.html`.
 
+## 🤖 SEO Engine (AI-Powered Automation)
+
+The `seo_engine/` directory contains a complete AI-powered SEO automation system that:
+
+### Features
+- **Data Collection**: Pulls data from Google Search Console, GA4, and Microsoft Clarity
+- **Funnel Analysis**: Classifies content into TOFU (awareness), MOFU (consideration), BOFU (decision)
+- **AI Recommendations**: Uses OpenRouter AI to generate meta title/description optimizations
+- **Blog Generation**: Auto-generates TOFU blog posts based on keyword opportunities
+- **Rank Tracking**: Tracks keyword rankings over time with SQLite database
+- **Auto-Apply**: Automatically applies recommendations to markdown files
+
+### Quick Commands
+
+```bash
+# Run full SEO analysis with AI recommendations
+uv run python -m seo_engine.run --full
+
+# Apply all AI recommendations to content files
+uv run python -m seo_engine.run --apply-all
+
+# Generate new TOFU blog posts (default: 3)
+uv run python -m seo_engine.run --generate-blogs 5
+
+# Track keyword rankings from GSC
+uv run python -m seo_engine.run --track-report
+
+# Quick analysis without AI (faster, no API costs)
+uv run python -m seo_engine.run --quick
+
+# Show content writing guide
+uv run python -m seo_engine.run --help-content
+```
+
+### Configuration
+
+Create `seo_engine/.env` with your API keys:
+
+```env
+# Required for GSC and GA4
+GOOGLE_APPLICATION_CREDENTIALS=path/to/service-account.json
+GSC_SITE_URL=https://big0.dev
+
+# Required for AI recommendations
+OPENROUTER_API_KEY=your-openrouter-key
+
+# Optional
+GA4_PROPERTY_ID=your-ga4-property
+CLARITY_PROJECT_ID=your-clarity-id
+CLARITY_API_KEY=your-clarity-key
+```
+
+### Recommended Workflow
+
+| Timeframe | Action |
+|-----------|--------|
+| **Weekly** | `--track-report` to monitor ranking changes |
+| **Bi-weekly** | `--full` analysis + `--apply-all` recommendations |
+| **Monthly** | `--generate-blogs 5` for fresh TOFU content |
+
+### Funnel Health
+
+The engine calculates a "Funnel Health Score" (0-100) based on content balance:
+- **Ideal**: Wide top (TOFU), medium middle (MOFU), narrow bottom (BOFU)
+- **Current**: Score of 35/100 indicates too many BOFU pages vs TOFU/MOFU
+- **Goal**: Generate more awareness content to improve funnel balance
+
 ## 🤝 Contributing
 
 1. Create a feature branch

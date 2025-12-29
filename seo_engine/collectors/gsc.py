@@ -60,7 +60,7 @@ class GoogleSearchConsoleCollector:
 
             credentials = service_account.Credentials.from_service_account_file(
                 self.config.gsc_service_account_file,
-                scopes=['https://www.googleapis.com/auth/webmasters.readonly']
+                scopes=['https://www.googleapis.com/auth/webmasters']  # Full access for URL inspection
             )
 
             self.service = build('searchconsole', 'v1', credentials=credentials)
@@ -286,3 +286,58 @@ class GoogleSearchConsoleCollector:
             collector._cached_data = json.load(f)
 
         return collector
+
+    def inspect_url(self, url: str) -> dict:
+        """
+        Inspect a URL using the URL Inspection API.
+        Returns indexing status, crawl info, and any issues.
+
+        Note: Requires 'https://www.googleapis.com/auth/webmasters' scope (not readonly)
+        """
+        if not self._initialized:
+            if not self.initialize():
+                return {'error': 'Not initialized'}
+
+        try:
+            result = self.service.urlInspection().index().inspect(
+                body={
+                    'inspectionUrl': url,
+                    'siteUrl': self.config.gsc_property_url
+                }
+            ).execute()
+
+            inspection = result.get('inspectionResult', {})
+            index_status = inspection.get('indexStatusResult', {})
+
+            return {
+                'url': url,
+                'verdict': index_status.get('verdict', 'UNKNOWN'),
+                'coverage_state': index_status.get('coverageState', 'UNKNOWN'),
+                'indexing_state': index_status.get('indexingState', 'UNKNOWN'),
+                'page_fetch_state': index_status.get('pageFetchState', 'UNKNOWN'),
+                'robots_txt_state': index_status.get('robotsTxtState', 'UNKNOWN'),
+                'last_crawl_time': index_status.get('lastCrawlTime'),
+                'crawled_as': index_status.get('crawledAs'),
+                'referring_urls': index_status.get('referringUrls', []),
+            }
+
+        except Exception as e:
+            return {'url': url, 'error': str(e)}
+
+    def bulk_inspect_urls(self, urls: list[str], delay: float = 1.0) -> list[dict]:
+        """
+        Inspect multiple URLs (with rate limiting).
+        Note: API has quota limits, use sparingly.
+        """
+        import time
+        results = []
+
+        for i, url in enumerate(urls):
+            print(f"  [GSC] Inspecting {i+1}/{len(urls)}: {url}")
+            result = self.inspect_url(url)
+            results.append(result)
+
+            if i < len(urls) - 1:
+                time.sleep(delay)
+
+        return results

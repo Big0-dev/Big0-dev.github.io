@@ -1,14 +1,21 @@
 ---
-title: Technology Training Services Brisbane | Corporate IT Training
-meta_description: Professional IT training in Brisbane. AWS, Azure, Agile, DevOps, cyber security, data science. Corporate training. RTO partnerships. Sydney, Melbourne, Brisbane. AQF aligned.
 canonical: /services/locations/australia/cities/brisbane/professional-technology-training-brisbane.html
-location: Brisbane, Australia
-parent_service: professional-technology-training
-is_location_page: true
-noindex: false
-description: Comprehensive technology training services for Brisbanen enterprises with RTO partnerships, AQF alignment, government-approved cyber security training, and cloud certifications.
+description: Comprehensive technology training services for Brisbanen enterprises
+  with RTO partnerships, AQF alignment, government-approved cyber security training,
+  and cloud certifications.
+features: Cloud Certifications (AWS/Azure/GCP), Cyber Security Training, Agile & DevOps,
+  Data Science & AI
 icon: graduation-cap
-features: Cloud Certifications (AWS/Azure/GCP), Cyber Security Training, Agile & DevOps, Data Science & AI
+is_location_page: true
+keywords:
+- Technology
+location: Brisbane, Australia
+meta_description: Get tailored technology training services in Brisbane for your enterprise
+  team. Master AWS, Azure, DevOps & cyber security. Request your free consultation
+  today.
+noindex: false
+parent_service: professional-technology-training
+title: Urgent Technology Training Services Brisbane | Big0 AI
 ---
 
 # Professional Technology Training Services in Brisbane

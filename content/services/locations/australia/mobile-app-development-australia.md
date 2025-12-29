@@ -9,13 +9,13 @@ is_location_page: true
 keywords:
 - Mobile
 location: Australia
-meta_description: Leading mobile app development in Australia. iOS, Android, React
-  Native, Flutter. App Store & Play Store optimization. OAIC compliant. Sydney, Melbourne.
+meta_description: Get expert mobile app development in Australia from Big0 AI. Build
+  scalable iOS & Android apps that convert. Contact us for a free consultation today.
 noindex: false
 parent_service: mobile-app-development
 short_description: Australian mobile app specialists delivering iOS, Android, React
   Native, and Flutter apps with OAIC privacy compliance and local market expertise
-title: Mobile App Development Australia | Big0 AI Apps
+title: 'Mobile App Dev Australia: iOS, Android & React Native | Big0 AI'
 ---
 
 # Mobile App Development Australia | Native iOS, Android & Cross-Platform

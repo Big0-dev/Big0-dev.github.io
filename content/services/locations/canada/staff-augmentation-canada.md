@@ -1,11 +1,14 @@
 ---
-title: IT Staff Augmentation Canada | Tech Staffing Solutions
-meta_description: IT staffing and augmentation in Canada. Developers, testers, consultants. Work permits, bilingual tech talent. Toronto, Vancouver, Montreal, Calgary.
 canonical: /services/locations/canada/staff-augmentation-canada.html
-location: Canada
-parent_service: staff-augmentation
 is_location_page: true
+keywords:
+- IT
+location: Canada
+meta_description: Scale your IT projects with Big0’s staff augmentation. Hire vetted
+  Canadian developers, testers & consultants fast. Get your free consultation now.
 noindex: false
+parent_service: staff-augmentation
+title: Hire IT Staff Canada | Big0 Talent Solutions Now
 ---
 
 # IT Staff Augmentation Services in Canada

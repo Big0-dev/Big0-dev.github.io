@@ -1,14 +1,19 @@
 ---
-title: Digital Marketing Services Los Angeles | SEO, PPC, Social Media Marketing
-meta_description: Digital marketing agency in Los Angeles. SEO, Google Ads, social media marketing, content marketing. US market expertise. NYC, San Francisco, Austin, Miami, Chicago.
-description: Comprehensive digital marketing services for US businesses with expertise in local SEO, paid advertising, social media, and compliance with US marketing regulations.
 canonical: /services/locations/usa/cities/los-angeles/digital_marketing_services-los-angeles.html
-location: Los Angeles, USA
-parent_service: digital_marketing_services
-is_location_page: true
-noindex: false
+description: Comprehensive digital marketing services for US businesses with expertise
+  in local SEO, paid advertising, social media, and compliance with US marketing regulations.
+features: US SEO, Google Ads, Meta Advertising, TikTok Marketing, CAN-SPAM Compliance,
+  CCPA Marketing, Influencer Partnerships, Local SEO
 icon: bullhorn
-features: US SEO, Google Ads, Meta Advertising, TikTok Marketing, CAN-SPAM Compliance, CCPA Marketing, Influencer Partnerships, Local SEO
+is_location_page: true
+keywords:
+- Digital
+location: Los Angeles, USA
+meta_description: Get digital marketing services in Los Angeles from Big0. Drive ROI
+  with SEO, PPC, and social media. Contact us for a free consultation today.
+noindex: false
+parent_service: digital_marketing_services
+title: LA Digital Marketing Services - SEO, PPC, Social Media | Big0
 ---
 
 # Digital Marketing Services in Los Angeles | Drive Growth in the World's Largest Market

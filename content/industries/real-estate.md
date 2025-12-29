@@ -1,12 +1,23 @@
 ---
-title: Real Estate & PropTech Solutions
+case_studies: Smart building automation reducing energy costs 30%, Property tokenization
+  platform enabling fractional ownership, AI-powered property valuation achieving
+  95% accuracy
+challenge: Real estate faces digital transformation challenges including manual processes,
+  fragmented data, limited transparency, inefficient property management, and slow
+  transaction cycles
+description: Digital transformation solutions for real estate developers, property
+  managers, and PropTech innovators
 icon: building
-meta_description: Transform real estate operations with AI, blockchain, IoT, and cloud solutions. Property management, smart buildings, tokenization, virtual tours, and market analytics.
-description: Digital transformation solutions for real estate developers, property managers, and PropTech innovators
-short_description: Comprehensive technology solutions modernizing real estate operations from property development and management to transactions and tenant experiences
-challenge: Real estate faces digital transformation challenges including manual processes, fragmented data, limited transparency, inefficient property management, and slow transaction cycles
-solutions: Property management platforms, Smart building IoT, Blockchain tokenization, Virtual reality tours, AI property valuation, Cloud-based operations, Mobile tenant apps
-case_studies: Smart building automation reducing energy costs 30%, Property tokenization platform enabling fractional ownership, AI-powered property valuation achieving 95% accuracy
+keywords:
+- Real
+meta_description: Real estate operations optimized with AI, blockchain, and IoT. See
+  how Big0 delivers property management and smart building solutions.
+short_description: Comprehensive technology solutions modernizing real estate operations
+  from property development and management to transactions and tenant experiences
+solutions: Property management platforms, Smart building IoT, Blockchain tokenization,
+  Virtual reality tours, AI property valuation, Cloud-based operations, Mobile tenant
+  apps
+title: Top Real Estate & PropTech Solutions by Big0
 ---
 
 # Real Estate & PropTech: Digital Transformation for Property Excellence

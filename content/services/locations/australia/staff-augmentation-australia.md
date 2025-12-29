@@ -1,14 +1,20 @@
 ---
-title: Staff Augmentation Australia | IT Staffing & Consulting Services
-meta_description: Expert IT staff augmentation services in Australia. Developers, QA testers, DevOps, analysts. Contract & permanent. Sydney, Melbourne, Brisbane. Fair Work compliant. TSS 482 visa support.
 canonical: /services/locations/australia/staff-augmentation-australia.html
-location: Australia
-parent_service: staff-augmentation
-is_location_page: true
-noindex: false
-description: Professional IT staff augmentation and technology staffing services for Australian businesses with Fair Work compliance, security clearance candidates, and visa sponsorship support.
+description: Professional IT staff augmentation and technology staffing services for
+  Australian businesses with Fair Work compliance, security clearance candidates,
+  and visa sponsorship support.
+features: IT Developers & Engineers, QA & Testing Specialists, DevOps & Cloud Engineers,
+  Security Cleared Personnel
 icon: users
-features: IT Developers & Engineers, QA & Testing Specialists, DevOps & Cloud Engineers, Security Cleared Personnel
+is_location_page: true
+keywords:
+- Staff
+location: Australia
+meta_description: Scale your team with expert IT staff augmentation in Australia.
+  Big0 delivers compliant developers, QA & DevOps. Get a free consultation now.
+noindex: false
+parent_service: staff-augmentation
+title: Staff Augmentation Australia | Big0 IT Experts
 ---
 
 # IT Staff Augmentation Services in Australia

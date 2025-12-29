@@ -7,8 +7,8 @@ is_location_page: true
 keywords:
 - Web
 location: UK
-meta_description: Web development services in UK. Responsive websites, web apps, e-commerce.
-  WCAG 2.1, GDPR compliant. Serving London, Manchester, Edinburgh businesses.
+meta_description: Get custom web development services UK. Big0 builds secure, WCAG
+  2.1 & GDPR compliant sites. Get your free consultation and start your project.
 noindex: false
 parent_service: web-development
 title: Web Development Services UK | Custom Sites Big0

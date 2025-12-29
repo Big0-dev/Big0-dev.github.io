@@ -1,15 +1,24 @@
 ---
-title: AI & Machine Learning Services Australia | Enterprise AI Solutions
-meta_description: Leading AI & ML development company in Australia. Custom AI models, computer vision, NLP, predictive analytics. Serving Sydney, Melbourne, Brisbane with local data sovereignty.
-description: Enterprise AI and machine learning services for Australian businesses with data sovereignty compliance, OAIC privacy standards, and industry-specific solutions
-short_description: Australian AI/ML specialists delivering custom models, computer vision, natural language processing, and predictive analytics with local expertise and regulatory compliance
-icon: ai
-features: Custom AI models, Machine learning, Computer vision, Natural language processing, Predictive analytics, AI consulting, MLOps, Responsible AI
 canonical: /services/locations/australia/ai-ml-services-australia.html
-location: Australia
-parent_service: ai-ml-services
+description: Enterprise AI and machine learning services for Australian businesses
+  with data sovereignty compliance, OAIC privacy standards, and industry-specific
+  solutions
+features: Custom AI models, Machine learning, Computer vision, Natural language processing,
+  Predictive analytics, AI consulting, MLOps, Responsible AI
+icon: ai
 is_location_page: true
+keywords:
+- AI
+location: Australia
+meta_description: Get enterprise AI & machine learning solutions in Australia. Custom
+  models, NLP, computer vision with local data sovereignty. Book your free AI consultation
+  today.
 noindex: false
+parent_service: ai-ml-services
+short_description: Australian AI/ML specialists delivering custom models, computer
+  vision, natural language processing, and predictive analytics with local expertise
+  and regulatory compliance
+title: 'AI Solutions Australia: Custom ML & NLP Services | Big0'
 ---
 
 # AI & Machine Learning Services in Australia

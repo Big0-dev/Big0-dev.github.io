@@ -1,11 +1,14 @@
 ---
-title: IoT & Hardware Engineering Canada | Embedded Systems | Big0
-meta_description: IoT development in Canada. Embedded systems, industrial IoT, smart devices. ISED compliance. Serving Toronto, Vancouver, Waterloo, Montreal, Calgary.
 canonical: /services/locations/canada/hardware-iot-engineering-canada.html
-location: Canada
-parent_service: hardware-iot-engineering
 is_location_page: true
+keywords:
+- IoT
+location: Canada
+meta_description: Get IoT development in Canada from Big0. Embedded systems, industrial
+  IoT, smart devices. ISED compliant. Get your free consultation now!
 noindex: false
+parent_service: hardware-iot-engineering
+title: IoT Development Services Canada | Get Quote Big0
 ---
 
 # IoT & Hardware Engineering Services in Canada

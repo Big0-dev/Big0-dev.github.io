@@ -1,11 +1,14 @@
 ---
-title: IoT & Hardware Engineering Sydney | Embedded Systems & Industrial IoT
-meta_description: IoT development and hardware engineering services in Sydney. Embedded systems, PCB design, IoT platforms, industrial IoT for mining and agriculture. ACMA EMC compliance. Sydney, Melbourne.
 canonical: /services/locations/australia/cities/sydney/hardware-iot-engineering-sydney.html
-location: Sydney, Australia
-parent_service: hardware-iot-engineering
 is_location_page: true
+keywords:
+- IoT
+location: Sydney, Australia
+meta_description: Need IoT hardware engineering in Sydney? Get embedded systems, PCB
+  design & industrial IoT for mining & agriculture. Get started today.
 noindex: false
+parent_service: hardware-iot-engineering
+title: Sydney IoT Engineering Services | Big0 - Get Quote
 ---
 
 # IoT & Hardware Engineering Services in Sydney | Industrial IoT Excellence

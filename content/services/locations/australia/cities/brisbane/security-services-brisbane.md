@@ -1,15 +1,23 @@
 ---
-title: Cybersecurity Services Brisbane | Security Consulting & Testing
-meta_description: Enterprise cybersecurity services in Brisbane. Penetration testing, security audits, IRAP assessments, Essential Eight. ACSC aligned. Sydney, Melbourne.
-description: Comprehensive cybersecurity services for Brisbanen businesses with penetration testing, security audits, and compliance expertise
-short_description: Australian cybersecurity specialists delivering penetration testing, security assessments, IRAP compliance, and managed security services aligned with ACSC guidelines
-icon: shield
-features: Penetration testing, Security audits, IRAP assessments, Essential Eight, APRA CPS 234, Vulnerability management, SOC services, Incident response
 canonical: /services/locations/australia/cities/brisbane/security-services-brisbane.html
-location: Brisbane, Australia
-parent_service: security-services
+description: Comprehensive cybersecurity services for Brisbanen businesses with penetration
+  testing, security audits, and compliance expertise
+features: Penetration testing, Security audits, IRAP assessments, Essential Eight,
+  APRA CPS 234, Vulnerability management, SOC services, Incident response
+icon: shield
 is_location_page: true
+keywords:
+- Cybersecurity
+location: Brisbane, Australia
+meta_description: Get enterprise cybersecurity services in Brisbane from Big0. ACSC-aligned
+  penetration testing, audits, IRAP & Essential Eight. Request your free consultation
+  today.
 noindex: false
+parent_service: security-services
+short_description: Australian cybersecurity specialists delivering penetration testing,
+  security assessments, IRAP compliance, and managed security services aligned with
+  ACSC guidelines
+title: Brisbane Cybersecurity Services | Big0 Security Testing
 ---
 
 # Cybersecurity Services Brisbane | Enterprise Security & Compliance

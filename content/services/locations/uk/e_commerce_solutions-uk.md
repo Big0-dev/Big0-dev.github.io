@@ -1,11 +1,14 @@
 ---
-title: E-commerce Development UK | Online Store Solutions London
-meta_description: Expert e-commerce development in UK. Shopify, WooCommerce, Magento. VAT compliant, Making Tax Digital. London, Manchester, Birmingham, Edinburgh.
 canonical: /services/locations/uk/e_commerce_solutions-uk.html
-location: UK
-parent_service: e-commerce-solutions
 is_location_page: true
+keywords:
+- E-commerce
+location: UK
+meta_description: Expert e-commerce development UK. Custom Shopify, WooCommerce, Magento
+  stores with VAT compliance. Get your free consultation with Big0 now.
 noindex: false
+parent_service: e-commerce-solutions
+title: UK E-commerce Development Services | Big0 - Get Quote Now
 ---
 
 # E-commerce Development Services in the United Kingdom

@@ -1,11 +1,14 @@
 ---
-title: Game Development Montreal | Mobile & Console Game Development
-meta_description: Game development in Montreal. Unity, Unreal, mobile games. Montreal, Vancouver, Toronto game studios. Tax credits, SR&ED support. AAA to indie games.
 canonical: /services/locations/canada/cities/montreal/game_development-montreal.html
-location: Montreal, Canada
-parent_service: game-development
 is_location_page: true
+keywords:
+- Game
+location: Montreal, Canada
+meta_description: Partner with Big0 for expert game development services. Unity &
+  Unreal specialists. Get your free consultation to start your project.
 noindex: false
+parent_service: game-development
+title: 'Montreal Game Dev Services: AI & Unity | Big0'
 ---
 
 # Game Development Services in Montreal

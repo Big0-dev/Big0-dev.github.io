@@ -1,15 +1,22 @@
 ---
-title: Blockchain Development Services Australia | Enterprise Solutions
-meta_description: Leading blockchain development company in Australia. Smart contracts, DeFi, NFT platforms. ASIC compliant, ATO crypto guidance. Serving Sydney, Melbourne, Brisbane.
-description: Enterprise blockchain development services for Australian businesses with ASIC compliance, ATO crypto guidance, and local expertise
-short_description: Australian blockchain developers delivering smart contracts, DeFi applications, and Web3 solutions with regulatory compliance and local market knowledge
-icon: link
-features: Smart contracts, DeFi applications, NFT platforms, Blockchain consulting, ASIC compliance, ATO crypto guidance, Web3 integration, Tokenization
 canonical: /services/locations/australia/blockchain_development-australia.html
-location: Australia
-parent_service: blockchain_development
+description: Enterprise blockchain development services for Australian businesses
+  with ASIC compliance, ATO crypto guidance, and local expertise
+features: Smart contracts, DeFi applications, NFT platforms, Blockchain consulting,
+  ASIC compliance, ATO crypto guidance, Web3 integration, Tokenization
+icon: link
 is_location_page: true
+keywords:
+- Blockchain
+location: Australia
+meta_description: Partner with Big0 for enterprise blockchain development services
+  in Australia. Get smart contracts, DeFi, NFT platforms & ASIC compliance. Schedule
+  your free consultation today.
 noindex: false
+parent_service: blockchain_development
+short_description: Australian blockchain developers delivering smart contracts, DeFi
+  applications, and Web3 solutions with regulatory compliance and local market knowledge
+title: Blockchain Development Services Australia | Big0
 ---
 
 # Blockchain Development Services in Australia

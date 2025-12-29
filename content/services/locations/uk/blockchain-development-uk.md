@@ -1,12 +1,17 @@
 ---
-title: Blockchain Development UK | Crypto & DeFi Solutions London
-meta_description: Blockchain development services in UK. Smart contracts, DeFi, NFTs, crypto wallets. FCA compliant solutions. Serving London financial technology sector.
-description: Professional blockchain development services across UK with expertise in DeFi protocols, smart contracts, tokenization, and FCA-compliant crypto solutions for British markets.
 canonical: /services/locations/uk/blockchain-development-uk.html
-location: UK
-parent_service: blockchain-development
+description: Professional blockchain development services across UK with expertise
+  in DeFi protocols, smart contracts, tokenization, and FCA-compliant crypto solutions
+  for British markets.
 is_location_page: true
+keywords:
+- Blockchain
+location: UK
+meta_description: Get FCA-compliant blockchain development UK for DeFi, NFTs & crypto
+  wallets. Contact Big0 for your free consultation today.
 noindex: false
+parent_service: blockchain-development
+title: Hire Blockchain Developers UK - Big0 Urgent Solutions
 ---
 
 # Blockchain Development Services in the United Kingdom

@@ -1,12 +1,16 @@
 ---
-title: Technology Training London | Corporate IT Training London
-meta_description: Professional IT training in London. AWS, Azure, cybersecurity, data science courses. London, Manchester, Birmingham. NCSC, Cyber Essentials, Apprenticeship Levy funding.
 canonical: /services/locations/uk/cities/london/professional-technology-training-london.html
-location: London, UK
-parent_service: professional-technology-training
+description: Comprehensive technology training for London businesses with government-funded
+  options, NCSC certifications, and industry-recognized qualifications
 is_location_page: true
+keywords:
+- Technology
+location: London, UK
+meta_description: Get tailored technology training in London for AI, cloud & cybersecurity.
+  Upskill teams with Big0's expert-led courses. Request your free consultation today.
 noindex: false
-description: Comprehensive technology training for London businesses with government-funded options, NCSC certifications, and industry-recognized qualifications
+parent_service: professional-technology-training
+title: 'Technology Training London: Big0 IT Courses & Certifications'
 ---
 
 # Professional Technology Training London | Upskill Your Teams with Expert IT Training

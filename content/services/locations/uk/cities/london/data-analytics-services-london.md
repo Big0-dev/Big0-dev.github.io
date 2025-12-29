@@ -1,11 +1,14 @@
 ---
-title: Data Analytics Services London | Business Intelligence London
-meta_description: Expert data analytics and BI in London. Power BI, Tableau, data science. GDPR compliant analytics. Serving London, Manchester, Birmingham, Edinburgh.
 canonical: /services/locations/uk/cities/london/data-analytics-services-london.html
-location: London, UK
-parent_service: data-analytics-services
 is_location_page: true
+keywords:
+- Data
+location: London, UK
+meta_description: Ready to leverage data analytics for growth? Get started with Big0's
+  expert BI services in London. Free consultation available.
 noindex: false
+parent_service: data-analytics-services
+title: London Data Analytics Services - Get Expert BI Solutions Now
 ---
 
 # Data Analytics Services in the United Kingdom

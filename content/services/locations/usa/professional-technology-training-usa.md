@@ -1,12 +1,18 @@
 ---
-title: Technology Training Services USA | Corporate IT Training
-meta_description: Professional IT training in USA. AWS, Azure, cybersecurity, Agile. Corporate training. San Francisco, NYC, Chicago.
-description: Expert technology training services for USA companies with certified instructors, hands-on labs, and comprehensive curriculum across cloud, security, and emerging technologies
 canonical: /services/locations/usa/professional-technology-training-usa.html
-location: USA
-parent_service: professional-technology-training
+description: Expert technology training services for USA companies with certified
+  instructors, hands-on labs, and comprehensive curriculum across cloud, security,
+  and emerging technologies
 is_location_page: true
+keywords:
+- Technology
+location: USA
+meta_description: Get expert technology training services for your enterprise. Master
+  AWS, Azure, cybersecurity, and Agile with Big0. Schedule your free consultation
+  today.
 noindex: false
+parent_service: professional-technology-training
+title: 'Big0 Technology Training: Corporate IT Courses USA'
 ---
 
 # Professional Technology Training Services USA | Enterprise IT Training Excellence

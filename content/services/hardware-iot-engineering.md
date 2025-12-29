@@ -4,10 +4,11 @@ description: End-to-end hardware and IoT engineering from mechanical design and 
 features: 3D CAD design, PCB layout, Embedded firmware, IoT connectivity, Cloud integration,
   Manufacturing support, Sensor networks, Real-time analytics
 icon: microchip
-meta_description: Complete hardware and IoT engineering services. PCB design, embedded
-  systems, 3D CAD, connected devices. ESP32, AWS IoT expertise. Prototype to production
-  in 4-6 weeks.
-title: Hardware & IoT Engineering Solutions
+keywords:
+- Hardware
+meta_description: Hardware engineering solutions for enterprise IoT and embedded systems.
+  Prototype to production in 4-6 weeks. Get your free consultation today.
+title: Hardware Engineering Services | Big0 - Prototype to Production
 ---
 
 # Transform Ideas Into Intelligent Connected Products

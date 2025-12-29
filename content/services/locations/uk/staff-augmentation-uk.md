@@ -1,12 +1,17 @@
 ---
-title: IT Staff Augmentation UK | Tech Staffing London
-meta_description: IT staff augmentation and tech staffing in UK. Skilled developers, testers, consultants. IR35 compliant. London, Manchester, Edinburgh talent pool.
 canonical: /services/locations/uk/staff-augmentation-uk.html
-location: UK
-parent_service: staff-augmentation
+description: Expert IT staff augmentation for UK businesses with IR35 compliance,
+  security clearances, and access to top UK tech talent
 is_location_page: true
+keywords:
+- IT
+location: UK
+meta_description: Scale your IT projects with Big0's UK staff augmentation. IR35 compliant
+  developers, testers, consultants in London & Manchester. Get your free consultation
+  now.
 noindex: false
-description: Expert IT staff augmentation for UK businesses with IR35 compliance, security clearances, and access to top UK tech talent
+parent_service: staff-augmentation
+title: Hire IT Staff Augmentation UK | Big0 Talent
 ---
 
 # IT Staff Augmentation UK | Scale Your Tech Team with Top UK Talent

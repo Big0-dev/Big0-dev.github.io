@@ -1,15 +1,22 @@
 ---
-title: Web Development Services USA | Custom Websites & Web Apps
-meta_description: Professional web development in USA. Responsive websites, web apps, e-commerce. ADA/WCAG compliant. San Francisco, NYC, Austin. SEO optimized for US market.
-description: Expert web development services across USA. Custom websites, web applications, e-commerce platforms. ADA compliant, SEO optimized, high-performance solutions.
-short_description: Build powerful web experiences for the US market. From corporate websites to complex web applications, we deliver ADA-compliant, SEO-optimized solutions that drive American business growth.
-icon: globe
-features: Web Development, E-commerce, Progressive Web Apps, ADA Compliance, SEO Optimization, Web Performance, Responsive Design, CMS Development
 canonical: /services/locations/usa/web-development-usa.html
-location: USA
-parent_service: web-development
+description: Expert web development services across USA. Custom websites, web applications,
+  e-commerce platforms. ADA compliant, SEO optimized, high-performance solutions.
+features: Web Development, E-commerce, Progressive Web Apps, ADA Compliance, SEO Optimization,
+  Web Performance, Responsive Design, CMS Development
+icon: globe
 is_location_page: true
+keywords:
+- Web
+location: USA
+meta_description: Expert web development services USA. Custom responsive websites
+  & web apps. ADA compliant. Get your free consultation with Big0 now.
 noindex: false
+parent_service: web-development
+short_description: Build powerful web experiences for the US market. From corporate
+  websites to complex web applications, we deliver ADA-compliant, SEO-optimized solutions
+  that drive American business growth.
+title: Web Development Services | Custom Sites & Apps - Big0
 ---
 
 # Web Development Services USA | Custom Websites & Web Applications

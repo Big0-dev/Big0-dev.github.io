@@ -4,11 +4,11 @@ is_location_page: true
 keywords:
 - Fintech
 location: Austin, USA
-meta_description: Fintech software development in Austin. Digital banking, payments,
-  lending platforms. SEC, FINRA, OCC compliant. Serving New York, San Francisco, Chicago.
+meta_description: Get SEC, FINRA, OCC compliant fintech software development for banking,
+  payments, and lending. Get your free consultation with Big0 today.
 noindex: false
 parent_service: fintech-development
-title: 'US Fintech Dev Services: Secure & Compliant | Big0'
+title: Secure Fintech Dev Services in Austin & NY | Big0
 ---
 
 # Fintech Development Services in Austin

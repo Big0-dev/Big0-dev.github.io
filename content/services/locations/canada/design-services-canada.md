@@ -1,12 +1,17 @@
 ---
-title: UI/UX Design Services Canada | Digital Design Agency
-meta_description: Expert UI/UX design services in Canada. Web, mobile, product design. WCAG 2.0 accessible, bilingual design. Serving Toronto, Vancouver, Montreal.
-description: Professional UI/UX design services across Canada with bilingual capabilities and AODA compliance
 canonical: /services/locations/canada/design-services-canada.html
-location: Canada
-parent_service: design-services
+description: Professional UI/UX design services across Canada with bilingual capabilities
+  and AODA compliance
 is_location_page: true
+keywords:
+- UI/UX
+location: Canada
+meta_description: Get expert UI/UX design services in Canada. Big0 creates accessible,
+  high-conversion web & mobile experiences. Contact us for your free consultation
+  today.
 noindex: false
+parent_service: design-services
+title: Top UI/UX Design Services in Canada | Big0 Agency
 ---
 
 # Expert UI/UX Design Services in Canada | Bilingual Digital Design Agency

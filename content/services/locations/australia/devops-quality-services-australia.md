@@ -1,15 +1,22 @@
 ---
-title: Software Testing & QA Services Australia | Quality Assurance
-meta_description: Enterprise software testing and QA services in Australia. Test automation, performance testing, security testing. IRAP, ISO 25010 compliant.
-description: Comprehensive software testing, quality assurance, and DevOps services for Australian enterprises with regulatory compliance expertise
-short_description: Australian QA specialists delivering test automation, performance testing, security testing, and DevOps quality engineering
-icon: check-circle
-features: Test automation, Performance testing, Security testing, Manual testing, CI/CD, DevOps, Quality assurance, Compliance testing
 canonical: /services/locations/australia/devops-quality-services-australia.html
-location: Australia
-parent_service: devops-quality-services
+description: Comprehensive software testing, quality assurance, and DevOps services
+  for Australian enterprises with regulatory compliance expertise
+features: Test automation, Performance testing, Security testing, Manual testing,
+  CI/CD, DevOps, Quality assurance, Compliance testing
+icon: check-circle
 is_location_page: true
+keywords:
+- Software
+location: Australia
+meta_description: Get enterprise software testing & QA services in Australia. Big0
+  delivers IRAP, ISO 25010 compliant automation & security testing. Request your free
+  consultation today.
 noindex: false
+parent_service: devops-quality-services
+short_description: Australian QA specialists delivering test automation, performance
+  testing, security testing, and DevOps quality engineering
+title: Software Testing & QA Services Australia | Big0
 ---
 
 # Software Testing & QA Services Australia | Enterprise Quality Assurance

@@ -1,15 +1,22 @@
 ---
-title: Software Testing & QA Services Brisbane | Quality Assurance
-meta_description: Enterprise software testing and QA services in Brisbane. Test automation, performance testing, security testing. IRAP, ISO 25010 compliant.
-description: Comprehensive software testing, quality assurance, and DevOps services for Brisbanen enterprises with regulatory compliance expertise
-short_description: Australian QA specialists delivering test automation, performance testing, security testing, and DevOps quality engineering
-icon: check-circle
-features: Test automation, Performance testing, Security testing, Manual testing, CI/CD, DevOps, Quality assurance, Compliance testing
 canonical: /services/locations/australia/cities/brisbane/devops-quality-services-brisbane.html
-location: Brisbane, Australia
-parent_service: devops-quality-services
+description: Comprehensive software testing, quality assurance, and DevOps services
+  for Brisbanen enterprises with regulatory compliance expertise
+features: Test automation, Performance testing, Security testing, Manual testing,
+  CI/CD, DevOps, Quality assurance, Compliance testing
+icon: check-circle
 is_location_page: true
+keywords:
+- Software
+location: Brisbane, Australia
+meta_description: Get enterprise-grade software testing & QA services in Brisbane.
+  Achieve flawless performance, IRAP & ISO 25010 compliance. Contact us for a free
+  consultation today.
 noindex: false
+parent_service: devops-quality-services
+short_description: Australian QA specialists delivering test automation, performance
+  testing, security testing, and DevOps quality engineering
+title: Software Testing Services Brisbane | Big0 QA & Automation
 ---
 
 # Software Testing & QA Services Brisbane | Enterprise Quality Assurance

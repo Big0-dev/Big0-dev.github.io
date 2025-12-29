@@ -1,15 +1,22 @@
 ---
-title: UI/UX Design Services Melbourne | Digital Design Agency
-meta_description: Expert UI/UX design services in Melbourne. Web, mobile, product design. User research, prototyping, accessibility. WCAG 2.2 compliant. Sydney, Melbourne.
-description: Professional UI/UX design services for Melbournen businesses with user research, accessibility compliance, and industry expertise
-short_description: Australian design specialists delivering user-centered UI/UX design for web, mobile, and digital products with WCAG 2.2 accessibility and local market understanding
-icon: palette
-features: UI/UX design, User research, Prototyping, Design systems, Accessibility design, Mobile design, Web design, Branding
 canonical: /services/locations/australia/cities/melbourne/design-services-melbourne.html
-location: Melbourne, Australia
-parent_service: design-services
+description: Professional UI/UX design services for Melbournen businesses with user
+  research, accessibility compliance, and industry expertise
+features: UI/UX design, User research, Prototyping, Design systems, Accessibility
+  design, Mobile design, Web design, Branding
+icon: palette
 is_location_page: true
+keywords:
+- UI/UX
+location: Melbourne, Australia
+meta_description: Get expert UI/UX design services in Melbourne from Big0. Boost user
+  engagement and conversions. Book a free consultation to start your project today.
 noindex: false
+parent_service: design-services
+short_description: Australian design specialists delivering user-centered UI/UX design
+  for web, mobile, and digital products with WCAG 2.2 accessibility and local market
+  understanding
+title: Top UI/UX Design Services Melbourne | Big0 Agency
 ---
 
 # UI/UX Design Services Melbourne | User-Centered Digital Experiences

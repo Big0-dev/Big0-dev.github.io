@@ -1,11 +1,15 @@
 ---
-title: Engineering Consultancy Canada | Professional Engineering Services
-meta_description: Engineering services in Canada. Civil, structural, mechanical, electrical. P.Eng licensed. Toronto, Vancouver, Calgary, Montreal. Canadian building codes, CSA standards.
 canonical: /services/locations/canada/engineering-services-canada.html
-location: Canada
-parent_service: engineering-services
 is_location_page: true
+keywords:
+- Engineering
+location: Canada
+meta_description: Get expert engineering consultancy in Canada from Big0. P.Eng licensed
+  team delivers civil, structural, mechanical, electrical solutions. Contact us for
+  your free consultation today.
 noindex: false
+parent_service: engineering-services
+title: Engineering Services Canada | Big0 AI & Software
 ---
 
 # Engineering Consultancy Services in Canada

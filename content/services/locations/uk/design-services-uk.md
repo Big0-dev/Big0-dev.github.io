@@ -1,12 +1,16 @@
 ---
-title: UI/UX Design Services UK | Digital Design Agency London
-meta_description: Expert UI/UX design services in UK. Web, mobile, product design compliant with WCAG 2.1 and GDS standards. Serving London, Manchester, Edinburgh.
-description: Professional UI/UX design services across the UK with expertise in GOV.UK Design System, accessibility compliance, and fintech design for British markets.
 canonical: /services/locations/uk/design-services-uk.html
-location: UK
-parent_service: design-services
+description: Professional UI/UX design services across the UK with expertise in GOV.UK
+  Design System, accessibility compliance, and fintech design for British markets.
 is_location_page: true
+keywords:
+- UI/UX
+location: UK
+meta_description: Get expert UI/UX design services UK. We build accessible, WCAG 2.1
+  & GDS compliant web and mobile products. Book a free consultation with Big0 today.
 noindex: false
+parent_service: design-services
+title: Expert UI/UX Design Services UK - BigO Software Agency
 ---
 
 # UI/UX Design Services in the United Kingdom

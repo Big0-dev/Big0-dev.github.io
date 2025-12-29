@@ -1,14 +1,19 @@
 ---
-title: Healthcare IT Solutions USA | Medical Software Development & EHR Integration
-meta_description: Healthcare software in USA. EHR/EMR, telehealth, patient portals. HIPAA compliant, FDA regulated. Silicon Valley, Boston, NYC, Nashville, Cleveland.
-description: Comprehensive healthcare IT solutions for US medical providers with expertise in HIPAA compliance, EHR integration, and FDA medical device software regulations.
 canonical: /services/locations/usa/healthcare_it_solutions-usa.html
-location: USA
-parent_service: healthcare_it_solutions
-is_location_page: true
-noindex: false
+description: Comprehensive healthcare IT solutions for US medical providers with expertise
+  in HIPAA compliance, EHR integration, and FDA medical device software regulations.
+features: HIPAA Compliance, HL7 FHIR, Epic/Cerner Integration, Telehealth, FDA SaMD,
+  EHR/EMR, Patient Portals, 21st Century Cures Act
 icon: heartbeat
-features: HIPAA Compliance, HL7 FHIR, Epic/Cerner Integration, Telehealth, FDA SaMD, EHR/EMR, Patient Portals, 21st Century Cures Act
+is_location_page: true
+keywords:
+- Healthcare
+location: USA
+meta_description: Get HIPAA-compliant healthcare software from Big0. Custom EHR integration,
+  telehealth & patient portals. Request your free consultation now.
+noindex: false
+parent_service: healthcare_it_solutions
+title: US Healthcare IT Solutions | HIPAA Compliant EHR Integration
 ---
 
 # Healthcare IT Solutions in USA | HIPAA-Compliant Medical Software

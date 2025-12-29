@@ -1,12 +1,16 @@
 ---
-title: Web Development Services Canada | Bilingual Websites & Web Apps
-meta_description: Web development services in Canada. Bilingual websites (EN/FR), WCAG 2.0 accessible, e-commerce. Serving Toronto, Vancouver, Montreal.
-description: Professional web development services across Canada with bilingual capabilities and accessibility compliance
 canonical: /services/locations/canada/web-development-canada.html
-location: Canada
-parent_service: web-development
+description: Professional web development services across Canada with bilingual capabilities
+  and accessibility compliance
 is_location_page: true
+keywords:
+- Web
+location: Canada
+meta_description: Get expert web development services in Canada. Build bilingual (EN/FR),
+  WCAG 2.0 accessible e-commerce sites. Schedule your free consultation today.
 noindex: false
+parent_service: web-development
+title: Bilingual Web Development Services Canada | Big0
 ---
 
 # Web Development Services Canada | Bilingual, Accessible, High-Performance Websites

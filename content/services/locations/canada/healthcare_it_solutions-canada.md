@@ -1,11 +1,14 @@
 ---
-title: Healthcare IT Solutions Canada | Medical Software Development | Big0
-meta_description: Healthcare software in Canada. EMR/EHR, telehealth, patient portals. Provincial health systems. PHIPA, PIPA, PIPEDA compliant. Toronto, Vancouver, Montreal.
 canonical: /services/locations/canada/healthcare_it_solutions-canada.html
-location: Canada
-parent_service: healthcare-it-solutions
 is_location_page: true
+keywords:
+- Healthcare
+location: Canada
+meta_description: Partner with Big0 for compliant Canadian healthcare software solutions.
+  Get your free consultation for EMR, telehealth & patient portals today.
 noindex: false
+parent_service: healthcare-it-solutions
+title: Healthcare IT Solutions Canada | Big0 Medical Software
 ---
 
 # Healthcare IT Solutions in Canada

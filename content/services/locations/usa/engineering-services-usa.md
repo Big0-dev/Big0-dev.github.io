@@ -1,12 +1,16 @@
 ---
-title: Engineering Consultancy Services USA | Professional Engineers
-meta_description: Engineering services in USA. Civil, structural, mechanical, electrical. PE licensed. San Francisco, NYC, Chicago.
-description: Expert engineering consultancy services for USA projects with PE-licensed engineers, comprehensive design, and regulatory compliance
 canonical: /services/locations/usa/engineering-services-usa.html
-location: USA
-parent_service: engineering-services
+description: Expert engineering consultancy services for USA projects with PE-licensed
+  engineers, comprehensive design, and regulatory compliance
 is_location_page: true
+keywords:
+- Engineering
+location: USA
+meta_description: Need engineering expertise for your next project? Get a free consultation
+  with Big0's licensed PEs. Start building with confidence.
 noindex: false
+parent_service: engineering-services
+title: 'Engineering Services USA: Civil, Structural, Mechanical | Big0'
 ---
 
 # Engineering Consultancy Services USA | Licensed Professional Engineering Excellence

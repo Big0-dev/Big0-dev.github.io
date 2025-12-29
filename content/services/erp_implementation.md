@@ -4,9 +4,12 @@ description: Complete enterprise resource planning solutions including Odoo, SAP
 features: ERP consulting, System implementation, Data migration, Process automation,
   Training & support, Custom module development
 icon: database
-meta_description: 'ERP implementation services: Odoo, SAP, custom systems. Reduce
-  costs 30%, boost efficiency 70%. Transform your business operations today!'
-title: ERP Implementation
+keywords:
+- ERP
+meta_description: See how Big0's ERP implementation for Odoo, SAP, and custom systems
+  cuts costs by 30% and boosts efficiency. Compare our AI-driven approach to transform
+  your operations—find out more today!
+title: 'Best ERP Implementation Services: Cut Costs 30% & Boost Efficiency'
 ---
 
 # Unify Your Business Operations

@@ -1,11 +1,15 @@
 ---
-title: ERP Implementation Canada | SAP, Oracle, Microsoft Dynamics | Big0
-meta_description: ERP implementation in Canada. SAP, Oracle, Dynamics 365. Canadian accounting standards. HST/GST/PST. Serving Toronto, Vancouver, Calgary, Montreal.
 canonical: /services/locations/canada/erp_implementation-canada.html
-location: Canada
-parent_service: erp-implementation
 is_location_page: true
+keywords:
+- ERP
+location: Canada
+meta_description: Get expert ERP implementation in Canada for SAP, Oracle, and Dynamics
+  365. We ensure compliance with Canadian tax standards. Get your free consultation
+  today!
 noindex: false
+parent_service: erp-implementation
+title: 'ERP Implementation Canada: SAP, Oracle, Dynamics 365 - Big0'
 ---
 
 # ERP Implementation Services in Canada

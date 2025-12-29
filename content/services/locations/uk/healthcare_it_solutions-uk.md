@@ -1,11 +1,14 @@
 ---
-title: Healthcare IT Solutions UK | NHS Software Development London
-meta_description: Healthcare software in UK. NHS integration, EPR, digital health solutions. SNOMED CT, HL7 FHIR. GDPR compliant. London, Manchester, Birmingham.
 canonical: /services/locations/uk/healthcare_it_solutions-uk.html
-location: UK
-parent_service: healthcare-it-solutions
 is_location_page: true
+keywords:
+- Healthcare
+location: UK
+meta_description: Get compliant NHS software solutions UK. Big0 delivers EPR, HL7
+  FHIR & SNOMED CT integration. Schedule your free healthcare IT consultation today.
 noindex: false
+parent_service: healthcare-it-solutions
+title: UK Healthcare IT Solutions | Urgent NHS Software Development Big0
 ---
 
 # Healthcare IT Solutions in the United Kingdom

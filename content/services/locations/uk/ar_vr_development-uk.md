@@ -1,12 +1,16 @@
 ---
-title: AR/VR Development UK | Virtual Reality Solutions London
-meta_description: AR/VR development services in UK. Training simulations, VR apps, AR experiences. London, Manchester, Bristol. NHS VR therapy, industrial training, retail AR.
 canonical: /services/locations/uk/ar_vr_development-uk.html
-location: UK
-parent_service: ar-vr-development
+description: Cutting-edge AR/VR development for UK businesses with NHS healthcare
+  applications, industrial training, and immersive retail experiences
 is_location_page: true
+keywords:
+- AR/VR
+location: UK
+meta_description: Deploy custom AR/VR solutions for enterprise. Transform training,
+  retail, and healthcare with Big0's AI expertise. Get a free consultation today.
 noindex: false
-description: Cutting-edge AR/VR development for UK businesses with NHS healthcare applications, industrial training, and immersive retail experiences
+parent_service: ar-vr-development
+title: AR/VR Development Services UK - Big0
 ---
 
 # AR/VR Development UK | Transform Your Business with Immersive Technology

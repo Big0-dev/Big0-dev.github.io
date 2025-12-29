@@ -1,12 +1,18 @@
 ---
-title: IoT & Hardware Engineering Manchester | Embedded Systems London
-meta_description: IoT development and hardware engineering in Manchester. Embedded systems, industrial IoT, smart devices. CE/ManchesterCA marking. Serving London, Cambridge, Manchester.
-description: Professional IoT and hardware engineering services across UK with expertise in embedded systems, industrial IoT, UKCA compliance, and smart device development for British markets.
 canonical: /services/locations/uk/cities/manchester/hardware-iot-engineering-manchester.html
-location: Manchester, UK
-parent_service: hardware-iot-engineering
+description: Professional IoT and hardware engineering services across UK with expertise
+  in embedded systems, industrial IoT, UKCA compliance, and smart device development
+  for British markets.
 is_location_page: true
+keywords:
+- IoT
+location: Manchester, UK
+meta_description: Need expert IoT & hardware engineering in Manchester or London?
+  Get embedded systems development and CE marking. Schedule your free consultation
+  today.
 noindex: false
+parent_service: hardware-iot-engineering
+title: IoT Development Services Manchester & London | Big0
 ---
 
 # IoT & Hardware Engineering Services in the United Kingdom

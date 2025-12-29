@@ -1,15 +1,24 @@
 ---
-title: Web Development Services Seattle | Custom Websites & Web Apps
-meta_description: Professional web development in Seattle. Responsive websites, web apps, e-commerce. ADA/WCAG compliant. San Francisco, NYC, Austin. SEO optimized for US market.
-description: Expert web development services across Seattle. Custom websites, web applications, e-commerce platforms. ADA compliant, SEO optimized, high-performance solutions.
-short_description: Build powerful web experiences for the US market. From corporate websites to complex web applications, we deliver ADA-compliant, SEO-optimized solutions that drive American business growth.
-icon: globe
-features: Web Development, E-commerce, Progressive Web Apps, ADA Compliance, SEO Optimization, Web Performance, Responsive Design, CMS Development
 canonical: /services/locations/usa/cities/seattle/web-development-seattle.html
-location: Seattle, USA
-parent_service: web-development
+description: Expert web development services across Seattle. Custom websites, web
+  applications, e-commerce platforms. ADA compliant, SEO optimized, high-performance
+  solutions.
+features: Web Development, E-commerce, Progressive Web Apps, ADA Compliance, SEO Optimization,
+  Web Performance, Responsive Design, CMS Development
+icon: globe
 is_location_page: true
+keywords:
+- Web
+location: Seattle, USA
+meta_description: Get custom web development services in Seattle from Big0. Build
+  responsive websites, web apps, and e-commerce solutions. Contact us for your free
+  consultation.
 noindex: false
+parent_service: web-development
+short_description: Build powerful web experiences for the US market. From corporate
+  websites to complex web applications, we deliver ADA-compliant, SEO-optimized solutions
+  that drive American business growth.
+title: Seattle Custom Web Development Services | Big0 AI
 ---
 
 # Web Development Services Seattle | Custom Websites & Web Applications

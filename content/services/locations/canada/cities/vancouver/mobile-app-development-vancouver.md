@@ -1,11 +1,14 @@
 ---
-title: Mobile App Development Vancouver | iOS & Android Apps | Big0
-meta_description: Expert mobile app development in Vancouver. iOS, Android, bilingual apps. PIPEDA compliant. Serving Toronto, Vancouver, Montreal, Calgary, Ottawa.
 canonical: /services/locations/canada/cities/vancouver/mobile-app-development-vancouver.html
-location: Vancouver, Canada
-parent_service: mobile-app-development
 is_location_page: true
+keywords:
+- Mobile
+location: Vancouver, Canada
+meta_description: Get expert mobile app development in Vancouver from Big0. Build
+  iOS & Android apps that drive ROI. Contact us for a free consultation today.
 noindex: false
+parent_service: mobile-app-development
+title: Mobile App Development Vancouver - Get Quote Today | Big0
 ---
 
 # Mobile App Development Services in Vancouver

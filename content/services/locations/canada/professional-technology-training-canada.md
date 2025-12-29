@@ -1,11 +1,14 @@
 ---
-title: Technology Training Canada | Corporate IT Training Solutions
-meta_description: Professional IT training in Canada. AWS, Azure, cybersecurity, data science. Bilingual training delivery. Toronto, Vancouver, Montreal, Ottawa.
 canonical: /services/locations/canada/professional-technology-training-canada.html
-location: Canada
-parent_service: professional-technology-training
 is_location_page: true
+keywords:
+- Technology
+location: Canada
+meta_description: 'Technology training Canada: Big0 delivers corporate IT training
+  in AWS, Azure, cybersecurity & data science. Get your free consultation today.'
 noindex: false
+parent_service: professional-technology-training
+title: 'Technology Training Canada: Urgent Corporate IT Solutions | BigO'
 ---
 
 # Professional Technology Training Services in Canada

@@ -1,12 +1,18 @@
 ---
-title: Technology Training Services Austin | Corporate IT Training
-meta_description: Professional IT training in Austin. AWS, Azure, cybersecurity, Agile. Corporate training. San Francisco, NYC, Chicago.
-description: Expert technology training services for Austin companies with certified instructors, hands-on labs, and comprehensive curriculum across cloud, security, and emerging technologies
 canonical: /services/locations/usa/cities/austin/professional-technology-training-austin.html
-location: Austin, USA
-parent_service: professional-technology-training
+description: Expert technology training services for Austin companies with certified
+  instructors, hands-on labs, and comprehensive curriculum across cloud, security,
+  and emerging technologies
 is_location_page: true
+keywords:
+- Technology
+location: Austin, USA
+meta_description: Get technology training services in Austin to upskill your team.
+  Big0 delivers corporate IT training in AWS, Azure & cybersecurity. Contact us for
+  a free consultation.
 noindex: false
+parent_service: professional-technology-training
+title: Austin Technology Training Services | Big0 IT Courses Now
 ---
 
 # Professional Technology Training Services Austin | Enterprise IT Training Excellence

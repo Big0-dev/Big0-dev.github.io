@@ -1,15 +1,23 @@
 ---
-title: Engineering Consultancy Services Pakistan | PEC Registered
-meta_description: PEC registered engineering consultancy in Pakistan. Civil, mechanical, electrical engineering services. Structural design, MEP systems, construction supervision. Serving Islamabad, Karachi, Lahore.
-description: PEC registered engineering consultancy providing comprehensive civil, mechanical, electrical, and structural engineering services across Pakistan
-short_description: Pakistan Engineering Council registered consultancy delivering professional engineering services nationwide with expertise in infrastructure, buildings, and industrial projects
-icon: engineering
-features: PEC registered engineers, Structural design, MEP systems, Project management, Construction supervision, Local code compliance, Government approvals, Technical audits
 canonical: /services/locations/pakistan/engineering-consultancy-pakistan.html
-location: Pakistan
-parent_service: engineering-services
+description: PEC registered engineering consultancy providing comprehensive civil,
+  mechanical, electrical, and structural engineering services across Pakistan
+features: PEC registered engineers, Structural design, MEP systems, Project management,
+  Construction supervision, Local code compliance, Government approvals, Technical
+  audits
+icon: engineering
 is_location_page: true
+keywords:
+- Engineering
+location: Pakistan
+meta_description: Get expert Engineering Consultancy Services Pakistan for structural
+  design, MEP & construction. PEC registered. Contact us for a free consultation today.
 noindex: false
+parent_service: engineering-services
+short_description: Pakistan Engineering Council registered consultancy delivering
+  professional engineering services nationwide with expertise in infrastructure, buildings,
+  and industrial projects
+title: Top Engineering Consultancy Pakistan | Big0 BOFU Services
 ---
 
 # PEC Registered Engineering Consultancy Services in Pakistan

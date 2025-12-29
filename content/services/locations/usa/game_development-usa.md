@@ -1,12 +1,16 @@
 ---
-title: Game Development USA | Mobile & Console Games
-meta_description: Game development in USA. AAA games, mobile, indie. Unity, Unreal. Silicon Valley, Seattle, Austin, LA.
-description: Expert game development services for USA market with AAA quality, mobile games, indie titles, and immersive gaming experiences
 canonical: /services/locations/usa/game_development-usa.html
-location: USA
-parent_service: game_development
+description: Expert game development services for USA market with AAA quality, mobile
+  games, indie titles, and immersive gaming experiences
 is_location_page: true
+keywords:
+- Game
+location: USA
+meta_description: Partner with Big0 for expert game development services. Get a free
+  consultation to build your mobile or console game. Contact us today.
 noindex: false
+parent_service: game_development
+title: Hire Big0 Game Dev Services in USA - Get Quote
 ---
 
 # Game Development Services USA | AAA Quality Gaming Excellence

@@ -1,12 +1,16 @@
 ---
-title: IT Staff Augmentation USA | Technology Staffing Solutions
-meta_description: IT staff augmentation in USA. Developers, engineers, consultants. Contract & FTE. San Francisco, NYC, Austin, Seattle.
-description: Expert IT staff augmentation services for USA companies with skilled technology professionals, compliance expertise, and flexible engagement models
 canonical: /services/locations/usa/staff-augmentation-usa.html
-location: USA
-parent_service: staff-augmentation
+description: Expert IT staff augmentation services for USA companies with skilled
+  technology professionals, compliance expertise, and flexible engagement models
 is_location_page: true
+keywords:
+- IT
+location: USA
+meta_description: Scale your IT team with Big0's staff augmentation. Access vetted
+  developers and engineers in the USA. Get a free consultation to start today.
 noindex: false
+parent_service: staff-augmentation
+title: Hire IT Staff Augmentation USA - Big0 Tech Talent
 ---
 
 # IT Staff Augmentation Services USA | Expert Technology Staffing

@@ -1,14 +1,20 @@
 ---
-title: Business Process Outsourcing Melbourne | BPO Services
-meta_description: Expert BPO services for Melbournen businesses. Customer support, back office operations, finance & accounting. Melbournen teams with local expertise. Sydney, Melbourne, Brisbane.
 canonical: /services/locations/australia/cities/melbourne/bpo-melbourne.html
-location: Melbourne, Australia
-parent_service: bpo
-is_location_page: true
-noindex: false
-description: Comprehensive business process outsourcing services for Australian companies with local teams, Fair Work compliance, and Australian accent customer support.
+description: Comprehensive business process outsourcing services for Australian companies
+  with local teams, Fair Work compliance, and Australian accent customer support.
+features: Australian Customer Support, Finance & Accounting BPO, Data Processing &
+  Entry, Back Office Operations
 icon: headset
-features: Australian Customer Support, Finance & Accounting BPO, Data Processing & Entry, Back Office Operations
+is_location_page: true
+keywords:
+- Business
+location: Melbourne, Australia
+meta_description: Get expert Business Process Outsourcing in Melbourne with Big0's
+  AI-driven BPO services. Streamline operations and cut costs. Get your free consultation
+  now.
+noindex: false
+parent_service: bpo
+title: Top Business Process Outsourcing Melbourne | Big0 BPO
 ---
 
 # Business Process Outsourcing Services in Melbourne

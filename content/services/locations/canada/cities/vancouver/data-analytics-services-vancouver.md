@@ -1,12 +1,17 @@
 ---
-title: Data Analytics Services Vancouver | Business Intelligence Toronto
-meta_description: Data analytics and BI services in Vancouver. Power BI, Tableau, advanced analytics. PIPEDA compliant. Serving Toronto, Vancouver, Montreal.
-description: Enterprise data analytics and business intelligence services across Vancouver with PIPEDA compliance
 canonical: /services/locations/canada/cities/vancouver/data-analytics-services-vancouver.html
-location: Vancouver, Canada
-parent_service: data-analytics-services
+description: Enterprise data analytics and business intelligence services across Vancouver
+  with PIPEDA compliance
 is_location_page: true
+keywords:
+- Data
+location: Vancouver, Canada
+meta_description: Get expert data analytics services in Vancouver & Toronto. Unlock
+  actionable insights with Power BI & Tableau. Schedule your free consultation with
+  Big0 today.
 noindex: false
+parent_service: data-analytics-services
+title: Data Analytics Services Vancouver | Big0 AI
 ---
 
 # Data Analytics Services Vancouver | Enterprise Business Intelligence & Advanced Analytics

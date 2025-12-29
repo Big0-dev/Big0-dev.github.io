@@ -1,14 +1,20 @@
 ---
-title: Data Analytics Services New York | Business Intelligence & Advanced Analytics
-meta_description: Enterprise data analytics in New York. Power BI, Tableau, Snowflake, Databricks. HIPAA, SOC 2, CCPA compliant. San Francisco, NYC, Seattle, Chicago.
-description: Advanced data analytics and business intelligence services for US enterprises with expertise in modern data stack, compliance, and industry-specific analytics.
 canonical: /services/locations/usa/cities/new-york/data-analytics-services-new-york.html
-location: New York, USA
-parent_service: data-analytics-services
-is_location_page: true
-noindex: false
+description: Advanced data analytics and business intelligence services for US enterprises
+  with expertise in modern data stack, compliance, and industry-specific analytics.
+features: Modern Data Stack, CCPA Compliance, HIPAA Analytics, Snowflake, Databricks,
+  Power BI, Real-time Analytics, ML/AI Integration
 icon: chart-bar
-features: Modern Data Stack, CCPA Compliance, HIPAA Analytics, Snowflake, Databricks, Power BI, Real-time Analytics, ML/AI Integration
+is_location_page: true
+keywords:
+- Data
+location: New York, USA
+meta_description: Power your enterprise with Big0's expert data analytics services
+  in New York. Unlock actionable insights and drive growth. Schedule your free consultation
+  today.
+noindex: false
+parent_service: data-analytics-services
+title: NYC Data Analytics Services - Get Power BI & Tableau Solutions
 ---
 
 # Enterprise Data Analytics Services in New York | Modern Data Stack Experts

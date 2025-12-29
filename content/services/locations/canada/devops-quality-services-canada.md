@@ -1,11 +1,14 @@
 ---
-title: Software Testing & QA Canada | Quality Assurance Services | Big0
-meta_description: Expert software testing and QA in Canada. Test automation, performance testing, PIPEDA compliance. Serving Toronto, Vancouver, Montreal, Calgary, Ottawa.
 canonical: /services/locations/canada/devops-quality-services-canada.html
-location: Canada
-parent_service: devops-quality-services
 is_location_page: true
+keywords:
+- Software
+location: Canada
+meta_description: Get expert software testing & QA services in Canada. Achieve flawless
+  performance with PIPEDA compliance. Contact Big0 for your free consultation today.
 noindex: false
+parent_service: devops-quality-services
+title: 'Software Testing Canada: QA & Automation Services | Big0'
 ---
 
 # Software Testing & Quality Assurance Services in Canada

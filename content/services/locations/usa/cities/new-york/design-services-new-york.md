@@ -1,15 +1,22 @@
 ---
-title: UI/UX Design Services New York | Product Design Agency
-meta_description: Expert UI/UX design services in New York. Web, mobile, product design. ADA accessible. San Francisco, NYC, Austin, Seattle. Fortune 500 to startups.
-description: Comprehensive UI/UX design services across New York. Silicon Valley design excellence, ADA/WCAG 2.1 accessibility, enterprise SaaS, fintech, healthcare design.
-short_description: Transform your digital products with world-class UI/UX design services tailored for the US market. From startups to Fortune 500 enterprises, we deliver accessible, user-centered design solutions.
-icon: palette
-features: UI/UX Design, Product Design, Design Systems, ADA Compliance, User Research, Mobile Design, SaaS Design, Accessibility Audits
 canonical: /services/locations/usa/cities/new-york/design-services-new-york.html
-location: New York, USA
-parent_service: design-services
+description: Comprehensive UI/UX design services across New York. Silicon Valley design
+  excellence, ADA/WCAG 2.1 accessibility, enterprise SaaS, fintech, healthcare design.
+features: UI/UX Design, Product Design, Design Systems, ADA Compliance, User Research,
+  Mobile Design, SaaS Design, Accessibility Audits
+icon: palette
 is_location_page: true
+keywords:
+- UI/UX
+location: New York, USA
+meta_description: Partner with Big0 for expert UI/UX design services in New York.
+  Transform your product with a free consultation. Contact us to get started.
 noindex: false
+parent_service: design-services
+short_description: Transform your digital products with world-class UI/UX design services
+  tailored for the US market. From startups to Fortune 500 enterprises, we deliver
+  accessible, user-centered design solutions.
+title: Top UI/UX Design Services in NYC | Big0 Agency
 ---
 
 # UI/UX Design Services New York | Silicon Valley Design Excellence

@@ -4,10 +4,12 @@ description: Comprehensive engineering consultancy covering civil, mechanical, e
 features: Structural design, MEP systems, Project management, Feasibility studies,
   Construction supervision, Quality assurance, CAD/BIM services, Engineering analysis
 icon: engineering
-meta_description: Professional engineering consultancy services. Civil, mechanical,
-  electrical engineering. Structural design, MEP systems, project management. PEC
-  registered consultants.
-title: Engineering Consultancy Services
+keywords:
+- Engineering
+meta_description: Get expert engineering consultancy services from Big0. Solve complex
+  challenges with our AI-driven solutions and PEC-registered consultants. Request
+  your free consultation today.
+title: Engineering Consultancy Services | Big0 - Get Quote Now
 ---
 
 # Professional Engineering Consultancy Services

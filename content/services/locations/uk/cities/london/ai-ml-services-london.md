@@ -7,9 +7,8 @@ is_location_page: true
 keywords:
 - AI
 location: London, UK
-meta_description: AI/ML development services in London. Custom models, computer vision,
-  NLP, predictive analytics. GDPR compliant. Serving London, Cambridge, Edinburgh
-  technology sectors.
+meta_description: Get custom AI solutions for London enterprises. Big0 delivers GDPR-compliant
+  NLP, computer vision, and predictive models. Book your free AI consultation now.
 noindex: false
 parent_service: ai-ml-services
 title: 'Big0 AI Services London: Custom AI Solutions Now'

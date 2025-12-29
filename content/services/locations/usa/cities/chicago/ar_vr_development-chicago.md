@@ -1,12 +1,16 @@
 ---
-title: AR/VR Development Services Chicago | Virtual Reality Solutions
-meta_description: AR/VR development in Chicago. Training simulations, VR apps, AR experiences. San Francisco, Seattle, Austin.
-description: Expert AR/VR development services for Chicago businesses with immersive training, virtual experiences, and augmented reality applications
 canonical: /services/locations/usa/cities/chicago/ar_vr_development-chicago.html
-location: Chicago, USA
-parent_service: ar_vr_development
+description: Expert AR/VR development services for Chicago businesses with immersive
+  training, virtual experiences, and augmented reality applications
 is_location_page: true
+keywords:
+- AR/VR
+location: Chicago, USA
+meta_description: Partner with Big0 for AR/VR development in Chicago. Get custom VR
+  training simulations & AR experiences. Schedule your free consultation today!
 noindex: false
+parent_service: ar_vr_development
+title: Get AR/VR Development Services in Chicago - Big0
 ---
 
 # AR/VR Development Services Chicago | Immersive Reality Excellence

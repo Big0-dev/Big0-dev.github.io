@@ -1,11 +1,14 @@
 ---
-title: E-commerce Development Australia | Online Store Solutions & Payment Integration
-meta_description: E-commerce development services in Australia. Shopify, WooCommerce, custom platforms. Afterpay, Zip integration. GST compliance, ACCC regulations. Sydney, Melbourne.
 canonical: /services/locations/australia/e_commerce_solutions-australia.html
-location: Australia
-parent_service: e_commerce_solutions
 is_location_page: true
+keywords:
+- E-commerce
+location: Australia
+meta_description: Get expert e-commerce development in Australia with seamless payment
+  integration. Ensure GST & ACCC compliance. Contact us for a free consultation today.
 noindex: false
+parent_service: e_commerce_solutions
+title: E-commerce Development Australia | Big0 Custom Solutions
 ---
 
 # E-commerce Development Services Australia | Australian Online Retail Excellence

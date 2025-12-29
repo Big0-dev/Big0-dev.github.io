@@ -4,11 +4,11 @@ is_location_page: true
 keywords:
 - Cloud
 location: USA
-meta_description: Enterprise cloud services in USA. AWS US regions, Azure Gov, GCP.
-  SOC 2, FedRAMP, HIPAA compliant. Serving Silicon Valley, Seattle, DC, NYC.
+meta_description: 'Get US cloud services for enterprise: AWS, Azure, GCP with SOC
+  2, FedRAMP compliance. Get your free consultation with Big0 today.'
 noindex: false
 parent_service: cloud-services
-title: 'Get US Cloud Services: AWS, Azure, GCP - Big0'
+title: 'US Cloud Services: AWS Azure GCP - Big0'
 ---
 
 # Cloud Services in USA

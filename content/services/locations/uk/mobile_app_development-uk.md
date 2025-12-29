@@ -1,11 +1,14 @@
 ---
-title: Mobile App Development UK | iOS & Android Apps London
-meta_description: Expert mobile app development in UK. iOS, Android, Flutter, React Native. GDPR compliant apps. Serving London, Manchester, Birmingham, Cambridge, Edinburgh.
 canonical: /services/locations/uk/mobile_app_development-uk.html
-location: UK
-parent_service: mobile-app-development
 is_location_page: true
+keywords:
+- Mobile
+location: UK
+meta_description: 'Expert mobile app development UK: iOS, Android, Flutter, React
+  Native. GDPR compliant. Build your enterprise app now. Get a free consultation.'
 noindex: false
+parent_service: mobile-app-development
+title: Hire Mobile App Developers UK | Big0 AI Apps London
 ---
 
 # Mobile App Development Services in the United Kingdom

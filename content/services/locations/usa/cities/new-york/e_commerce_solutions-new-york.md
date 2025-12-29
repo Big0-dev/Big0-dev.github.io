@@ -1,14 +1,19 @@
 ---
-title: E-commerce Development New York | Online Store Solutions & Platforms
-meta_description: E-commerce development in New York. Shopify Plus, Magento, BigCommerce, custom platforms. PCI DSS compliant. San Francisco, NYC, Austin, Miami, Chicago.
-description: Comprehensive e-commerce development services for US retailers with expertise in leading platforms, payment processing, and multi-state compliance.
 canonical: /services/locations/usa/cities/new-york/e_commerce_solutions-new-york.html
-location: New York, USA
-parent_service: e_commerce_solutions
-is_location_page: true
-noindex: false
+description: Comprehensive e-commerce development services for US retailers with expertise
+  in leading platforms, payment processing, and multi-state compliance.
+features: Shopify Plus, Magento Commerce, BigCommerce, Headless Commerce, PCI DSS,
+  Multi-state Tax, US Payments, Amazon Integration
 icon: shopping-cart
-features: Shopify Plus, Magento Commerce, BigCommerce, Headless Commerce, PCI DSS, Multi-state Tax, US Payments, Amazon Integration
+is_location_page: true
+keywords:
+- E-commerce
+location: New York, USA
+meta_description: NYC e-commerce development for enterprise brands. Build scalable
+  Shopify Plus, Magento, or custom platforms. Get your free consultation with Big0.
+noindex: false
+parent_service: e_commerce_solutions
+title: 'NYC E-commerce Dev: AI Platforms & Store Solutions | Big0'
 ---
 
 # E-commerce Development Services in New York | Leading the $1 Trillion Market

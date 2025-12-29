@@ -9,8 +9,8 @@ is_location_page: true
 keywords:
 - Custom
 location: Australia
-meta_description: Custom software development company in Australia. Web, mobile, enterprise
-  apps. Agile development. ASIC/APRA compliant. Serving Sydney, Melbourne, Brisbane.
+meta_description: Custom software development in Australia by Big0. Build scalable
+  enterprise solutions with AI. Get a free consultation to start your project.
 noindex: false
 parent_service: software-development
 short_description: Australian software development specialists delivering web, mobile,

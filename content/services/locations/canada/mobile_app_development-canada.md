@@ -1,11 +1,14 @@
 ---
-title: Mobile App Development Canada | iOS & Android Apps | Big0
-meta_description: Expert mobile app development in Canada. iOS, Android, bilingual apps. PIPEDA compliant. Serving Toronto, Vancouver, Montreal, Calgary, Ottawa.
 canonical: /services/locations/canada/mobile_app_development-canada.html
-location: Canada
-parent_service: mobile-app-development
 is_location_page: true
+keywords:
+- Mobile
+location: Canada
+meta_description: Get expert mobile app development in Canada for iOS & Android. AI-powered,
+  PIPEDA compliant. Schedule your free consultation today!
 noindex: false
+parent_service: mobile-app-development
+title: Hire Mobile App Developers Canada | iOS & Android | Big0
 ---
 
 # Mobile App Development Services in Canada

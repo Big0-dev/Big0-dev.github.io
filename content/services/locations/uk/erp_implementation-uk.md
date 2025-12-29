@@ -1,11 +1,14 @@
 ---
-title: ERP Implementation UK | SAP, Oracle, Microsoft Dynamics London
-meta_description: Expert ERP implementation in UK. SAP, Oracle, Microsoft Dynamics 365. UK GAAP, VAT, Making Tax Digital. London, Manchester, Birmingham, Edinburgh.
 canonical: /services/locations/uk/erp_implementation-uk.html
-location: UK
-parent_service: erp-implementation
 is_location_page: true
+keywords:
+- ERP
+location: UK
+meta_description: Get expert ERP implementation UK for SAP, Oracle, Dynamics. UK GAAP,
+  VAT, Making Tax Digital compliant. Get your free consultation today!
 noindex: false
+parent_service: erp-implementation
+title: Expert UK ERP Implementation - SAP Oracle Dynamics London
 ---
 
 # ERP Implementation Services in the United Kingdom

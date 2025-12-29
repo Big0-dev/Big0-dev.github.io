@@ -1,12 +1,16 @@
 ---
-title: Web Development Services Montreal | Bilingual Websites & Web Apps
-meta_description: Web development services in Montreal. Bilingual websites (EN/FR), WCAG 2.0 accessible, e-commerce. Serving Toronto, Vancouver, Montreal.
-description: Professional web development services across Montreal with bilingual capabilities and accessibility compliance
 canonical: /services/locations/canada/cities/montreal/web-development-montreal.html
-location: Montreal, Canada
-parent_service: web-development
+description: Professional web development services across Montreal with bilingual
+  capabilities and accessibility compliance
 is_location_page: true
+keywords:
+- Web
+location: Montreal, Canada
+meta_description: Get expert web development services in Montreal. Build bilingual
+  (EN/FR), WCAG 2.0 accessible websites & apps. Schedule your free consultation today.
 noindex: false
+parent_service: web-development
+title: Montreal Web Development Services | Big0 AI & Apps
 ---
 
 # Web Development Services Montreal | Bilingual, Accessible, High-Performance Websites

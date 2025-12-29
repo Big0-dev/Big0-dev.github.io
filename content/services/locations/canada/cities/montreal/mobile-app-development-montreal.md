@@ -1,11 +1,14 @@
 ---
-title: Mobile App Development Montreal | iOS & Android Apps | Big0
-meta_description: Expert mobile app development in Montreal. iOS, Android, bilingual apps. PIPEDA compliant. Serving Toronto, Vancouver, Montreal, Calgary, Ottawa.
 canonical: /services/locations/canada/cities/montreal/mobile-app-development-montreal.html
-location: Montreal, Canada
-parent_service: mobile-app-development
 is_location_page: true
+keywords:
+- Mobile
+location: Montreal, Canada
+meta_description: Get expert mobile app development in Montreal for iOS & Android.
+  Big0 builds secure, scalable apps. Book your free consultation today.
 noindex: false
+parent_service: mobile-app-development
+title: Mobile App Development Montreal | iOS Android Apps Big0
 ---
 
 # Mobile App Development Services in Montreal

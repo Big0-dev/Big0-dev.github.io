@@ -1,11 +1,14 @@
 ---
-title: Digital Marketing Canada | SEO, PPC, Social Media Marketing | Big0
-meta_description: Digital marketing in Canada. SEO, Google Ads, social media. Bilingual campaigns. CASL compliance. Serving Toronto, Vancouver, Montreal, Calgary, Ottawa.
 canonical: /services/locations/canada/digital_marketing_services-canada.html
-location: Canada
-parent_service: digital-marketing-services
 is_location_page: true
+keywords:
+- Digital
+location: Canada
+meta_description: Drive revenue with AI-powered digital marketing in Canada. Get a
+  free consultation on SEO, PPC, and social media campaigns. Contact Big0 to start.
 noindex: false
+parent_service: digital-marketing-services
+title: 'Digital Marketing Canada: SEO, PPC & Social Media | Big0'
 ---
 
 # Digital Marketing Services in Canada

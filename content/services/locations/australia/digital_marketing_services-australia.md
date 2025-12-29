@@ -1,11 +1,14 @@
 ---
-title: Digital Marketing Services Australia | SEO, PPC, Social Media Marketing
-meta_description: Digital marketing agency in Australia. SEO for Google.com.au, Google Ads, social media marketing, content strategy. Australian market expertise. Sydney, Melbourne.
 canonical: /services/locations/australia/digital_marketing_services-australia.html
-location: Australia
-parent_service: digital_marketing_services
 is_location_page: true
+keywords:
+- Digital
+location: Australia
+meta_description: Maximize ROI with Big0's AI-driven digital marketing services Australia.
+  Get expert SEO, PPC & social strategies. Request your free consultation today.
 noindex: false
+parent_service: digital_marketing_services
+title: Digital Marketing Services Australia | Big0 AI Agency
 ---
 
 # Digital Marketing Services Australia | Australian Market Expertise

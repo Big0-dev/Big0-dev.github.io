@@ -1,12 +1,16 @@
 ---
-title: Game Development London | Mobile & Console Games London
-meta_description: Game development services in London. Unity, Unreal, mobile games. London, Guildford, Cambridge. PEGI ratings, VGTR tax relief, BAFTA quality standards.
 canonical: /services/locations/uk/cities/london/game_development-london.html
-location: London, UK
-parent_service: game-development
+description: Premium game development for London market with Video Games Tax Relief
+  expertise, PEGI compliance, and access to Britain's legendary game development talent
 is_location_page: true
+keywords:
+- Game
+location: London, UK
+meta_description: London game development for mobile and console. BAFTA standards,
+  VGTR tax relief. Get your free game development consultation today.
 noindex: false
-description: Premium game development for London market with Video Games Tax Relief expertise, PEGI compliance, and access to Britain's legendary game development talent
+parent_service: game-development
+title: 'London Game Dev Services: Unity, Unreal & Mobile Games'
 ---
 
 # Game Development London | Create World-Class Games with Britain's Gaming Expertise

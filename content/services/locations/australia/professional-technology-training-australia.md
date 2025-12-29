@@ -1,14 +1,20 @@
 ---
-title: Technology Training Services Australia | Corporate IT Training
-meta_description: Professional IT training in Australia. AWS, Azure, Agile, DevOps, cyber security, data science. Corporate training. RTO partnerships. Sydney, Melbourne, Brisbane. AQF aligned.
 canonical: /services/locations/australia/professional-technology-training-australia.html
-location: Australia
-parent_service: professional-technology-training
-is_location_page: true
-noindex: false
-description: Comprehensive technology training services for Australian enterprises with RTO partnerships, AQF alignment, government-approved cyber security training, and cloud certifications.
+description: Comprehensive technology training services for Australian enterprises
+  with RTO partnerships, AQF alignment, government-approved cyber security training,
+  and cloud certifications.
+features: Cloud Certifications (AWS/Azure/GCP), Cyber Security Training, Agile & DevOps,
+  Data Science & AI
 icon: graduation-cap
-features: Cloud Certifications (AWS/Azure/GCP), Cyber Security Training, Agile & DevOps, Data Science & AI
+is_location_page: true
+keywords:
+- Technology
+location: Australia
+meta_description: Get technology training services Australia for enterprise teams.
+  Upskill in AWS, Azure, DevOps & cyber security. Contact us for a free consultation.
+noindex: false
+parent_service: professional-technology-training
+title: Australia Tech Training Services | Expert AWS, Azure & DevOps
 ---
 
 # Professional Technology Training Services in Australia

@@ -1,14 +1,20 @@
 ---
-title: Game Development Australia | Mobile, PC & Console Game Studio
-meta_description: Professional game development studio in Australia. Mobile games, PC, console, Unity, Unreal Engine. Melbourne, Sydney game dev hub. IGEA member. Australian market expertise.
 canonical: /services/locations/australia/game_development-australia.html
-location: Australia
-parent_service: game-development
-is_location_page: true
-noindex: false
-description: Full-service game development studio in Australia specializing in mobile games, PC, console, and serious games with deep understanding of Australian market and gaming culture.
+description: Full-service game development studio in Australia specializing in mobile
+  games, PC, console, and serious games with deep understanding of Australian market
+  and gaming culture.
+features: Mobile Game Development, PC & Console Games, Unity & Unreal Engine, Serious
+  Games & Gamification
 icon: gamepad
-features: Mobile Game Development, PC & Console Games, Unity & Unreal Engine, Serious Games & Gamification
+is_location_page: true
+keywords:
+- Game
+location: Australia
+meta_description: Australian game development studio Big0 delivers mobile, PC & console
+  games. Get your free consultation and start building today.
+noindex: false
+parent_service: game-development
+title: Australian Game Development Services | Big0 - Get Quote
 ---
 
 # Game Development Services in Australia

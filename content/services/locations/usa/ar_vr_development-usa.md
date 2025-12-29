@@ -1,12 +1,16 @@
 ---
-title: AR/VR Development Services USA | Virtual Reality Solutions
-meta_description: AR/VR development in USA. Training simulations, VR apps, AR experiences. San Francisco, Seattle, Austin.
-description: Expert AR/VR development services for USA businesses with immersive training, virtual experiences, and augmented reality applications
 canonical: /services/locations/usa/ar_vr_development-usa.html
-location: USA
-parent_service: ar_vr_development
+description: Expert AR/VR development services for USA businesses with immersive training,
+  virtual experiences, and augmented reality applications
 is_location_page: true
+keywords:
+- AR/VR
+location: USA
+meta_description: Transform your business with custom AR/VR development from Big0.
+  Get immersive training, apps, and experiences. Schedule your free consultation now.
 noindex: false
+parent_service: ar_vr_development
+title: Get AR/VR Development Services in USA - Big0
 ---
 
 # AR/VR Development Services USA | Immersive Reality Excellence

@@ -1,12 +1,18 @@
 ---
-title: AR/VR Development Australia | Augmented & Virtual Reality Solutions
-meta_description: Expert AR/VR development services in Australia. Virtual reality, augmented reality, mixed reality solutions. Unity, Unreal Engine expertise. Serving Sydney, Melbourne, Brisbane, Perth.
-description: Cutting-edge AR/VR development services across Australia with expertise in Unity, Unreal Engine, and immersive technologies for mining, real estate, tourism, healthcare, and education sectors.
+description: Cutting-edge AR/VR development services across Australia with expertise
+  in Unity, Unreal Engine, and immersive technologies for mining, real estate, tourism,
+  healthcare, and education sectors.
+features: Virtual Reality Apps, Augmented Reality, Mixed Reality, 360° Experiences,
+  VR Training Simulations, Unity Development, Unreal Engine
 icon: vr
-location: Australia
-parent_service: ar-vr-development
 is_location_page: true
-features: Virtual Reality Apps, Augmented Reality, Mixed Reality, 360° Experiences, VR Training Simulations, Unity Development, Unreal Engine
+keywords:
+- AR/VR
+location: Australia
+meta_description: Get custom AR/VR development solutions for enterprise. Big0 delivers
+  high-impact immersive applications. Schedule your free consultation today.
+parent_service: ar-vr-development
+title: AR/VR Development Services Australia | Big0 - Get Quote Now
 ---
 
 # AR/VR Development Services Australia | Immersive Technology Solutions

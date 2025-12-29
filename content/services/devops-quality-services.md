@@ -6,10 +6,11 @@ features: CI/CD automation, Automated testing, Infrastructure as Code, Performan
   testing, Security scanning, Monitoring & logging, Container orchestration, Quality
   assurance
 icon: settings
-meta_description: DevOps consulting and QA services. CI/CD automation, infrastructure
-  as code, automated testing. Reduce deployments 90%, catch bugs early. Accelerate
-  delivery with quality.
-title: DevOps & Quality Engineering Services
+keywords:
+- DevOps
+meta_description: Accelerate delivery with Big0's DevOps & Quality Engineering services.
+  CI/CD automation, infrastructure as code, automated testing. Schedule a free consultation.
+title: DevOps Services & Consulting | Accelerate Releases Big0
 ---
 
 # Accelerate Delivery With Built-In Quality

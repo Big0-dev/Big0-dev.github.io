@@ -7,11 +7,12 @@ is_location_page: true
 keywords:
 - Fintech
 location: Manchester, UK
-meta_description: Fintech development services in UK. Digital banking, payments, Open
-  Banking, FCA regulated solutions. Serving London financial technology sector.
+meta_description: Get Fintech solutions in London and Manchester? Big0 builds AI-powered
+  digital banking, payments, and Open Banking platforms. Book your free consultation
+  now.
 noindex: false
 parent_service: fintech-development
-title: AI Fintech Services Manchester | Get Regulated Solutions Now Big0 London
+title: AI Fintech Services Manchester & London | Regulated Solutions Now
 ---
 
 # Fintech Development Services in the United Kingdom

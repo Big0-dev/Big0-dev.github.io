@@ -1,11 +1,15 @@
 ---
-title: IoT & Hardware Engineering Montreal | Embedded Systems | Big0
-meta_description: IoT development in Montreal. Embedded systems, industrial IoT, smart devices. ISED compliance. Serving Toronto, Vancouver, Waterloo, Montreal, Calgary.
 canonical: /services/locations/canada/cities/montreal/hardware-iot-engineering-montreal.html
-location: Montreal, Canada
-parent_service: hardware-iot-engineering
 is_location_page: true
+keywords:
+- IoT
+location: Montreal, Canada
+meta_description: Get expert IoT development in Montreal for embedded systems and
+  industrial IoT. Ensure ISED compliance across Canada. Schedule your free consultation
+  today.
 noindex: false
+parent_service: hardware-iot-engineering
+title: Hire IoT Developers in Montreal - Big0 Embedded Systems
 ---
 
 # IoT & Hardware Engineering Services in Montreal

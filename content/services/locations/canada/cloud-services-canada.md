@@ -1,12 +1,17 @@
 ---
-title: Cloud Services Canada | AWS, Azure, Google Cloud Solutions
-meta_description: Enterprise cloud services in Canada. AWS Canada, Azure Canada, GCP Montreal. PIPEDA compliant, data residency. Toronto, Montreal, Vancouver.
-description: Enterprise cloud infrastructure and migration services across Canada with Canadian data residency and PIPEDA compliance
 canonical: /services/locations/canada/cloud-services-canada.html
-location: Canada
-parent_service: cloud-services
+description: Enterprise cloud infrastructure and migration services across Canada
+  with Canadian data residency and PIPEDA compliance
 is_location_page: true
+keywords:
+- Cloud
+location: Canada
+meta_description: Get enterprise cloud services in Canada from Big0. AWS, Azure, GCP
+  solutions with PIPEDA compliance and local data residency. Contact us for a free
+  consultation to get started.
 noindex: false
+parent_service: cloud-services
+title: 'Big0 Cloud Services Canada: AWS Azure GCP Solutions Now'
 ---
 
 # Cloud Services Canada | Enterprise Cloud Infrastructure & Migration

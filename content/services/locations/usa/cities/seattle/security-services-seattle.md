@@ -1,14 +1,20 @@
 ---
-title: Cybersecurity Services Seattle | Security Consulting & Penetration Testing
-meta_description: Enterprise cybersecurity services in Seattle. Penetration testing, security audits, compliance. SOC 2, FedRAMP, NIST compliant. Washington DC, NYC, San Francisco.
-description: Comprehensive cybersecurity services for US enterprises with expertise in NIST, FedRAMP, SOC 2, and state-level compliance requirements.
 canonical: /services/locations/usa/cities/seattle/security-services-seattle.html
-location: Seattle, USA
-parent_service: security-services
-is_location_page: true
-noindex: false
+description: Comprehensive cybersecurity services for US enterprises with expertise
+  in NIST, FedRAMP, SOC 2, and state-level compliance requirements.
+features: NIST Framework, FedRAMP Compliance, SOC 2 Type II, Penetration Testing,
+  CISA Guidance, CMMC for Defense
 icon: shield
-features: NIST Framework, FedRAMP Compliance, SOC 2 Type II, Penetration Testing, CISA Guidance, CMMC for Defense
+is_location_page: true
+keywords:
+- Cybersecurity
+location: Seattle, USA
+meta_description: Get expert cybersecurity services in Seattle. Big0 offers penetration
+  testing, SOC 2 compliance & security audits. Schedule your free security consultation
+  today.
+noindex: false
+parent_service: security-services
+title: Seattle Cybersecurity Services - Immediate Pen Testing & SOC 2
 ---
 
 # Enterprise Cybersecurity Services in Seattle | NIST & FedRAMP Compliant

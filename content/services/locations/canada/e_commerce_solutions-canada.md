@@ -1,11 +1,15 @@
 ---
-title: E-commerce Development Canada | Online Store Solutions | Big0
-meta_description: E-commerce development in Canada. Shopify, bilingual stores, Canadian payments, shipping. HST/GST/PST compliance. Toronto, Vancouver, Montreal, Calgary.
 canonical: /services/locations/canada/e_commerce_solutions-canada.html
-location: Canada
-parent_service: e-commerce-solutions
 is_location_page: true
+keywords:
+- E-commerce
+location: Canada
+meta_description: Get expert e-commerce development in Canada from Big0. Build compliant
+  Shopify stores with bilingual support and Canadian payments. Get your free consultation
+  today.
 noindex: false
+parent_service: e-commerce-solutions
+title: Top E-commerce Development Canada | Big0 | Get Quote
 ---
 
 # E-commerce Development Services in Canada

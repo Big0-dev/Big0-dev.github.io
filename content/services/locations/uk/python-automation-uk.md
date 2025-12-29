@@ -1,12 +1,17 @@
 ---
-title: Python Automation UK | RPA & Workflow Automation
-meta_description: Python automation and RPA in UK. Business process automation, workflow optimization, HMRC integration. GDPR compliant. London, Manchester, Birmingham.
 canonical: /services/locations/uk/python-automation-uk.html
-location: UK
-parent_service: python-automation-services
+description: Enterprise Python automation solutions for UK businesses with HMRC integration,
+  UK software compatibility, and full GDPR compliance
 is_location_page: true
+keywords:
+- Python
+location: UK
+meta_description: Leverage Python automation to streamline UK business workflows.
+  Book a free consultation with Big0 for GDPR-compliant RPA solutions and HMRC integration.
+  Get started today.
 noindex: false
-description: Enterprise Python automation solutions for UK businesses with HMRC integration, UK software compatibility, and full GDPR compliance
+parent_service: python-automation-services
+title: Python Automation Services UK - Get Quote Now
 ---
 
 # Python Automation UK | Transform Your Business with Intelligent Automation

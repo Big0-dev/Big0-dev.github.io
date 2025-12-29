@@ -1,11 +1,14 @@
 ---
-title: AR/VR Development Canada | Virtual & Augmented Reality Solutions
-meta_description: AR/VR development in Canada. Training simulations, virtual reality apps, augmented reality. Toronto, Vancouver, Montreal. VR for healthcare, resources, manufacturing.
 canonical: /services/locations/canada/ar_vr_development-canada.html
-location: Canada
-parent_service: ar-vr-development
 is_location_page: true
+keywords:
+- AR/VR
+location: Canada
+meta_description: Partner with Big0 for expert AR/VR development in Canada. We build
+  custom training simulations and enterprise apps. Get your free consultation today!
 noindex: false
+parent_service: ar-vr-development
+title: AR/VR Development Services | Big0 Canada
 ---
 
 # AR/VR Development Services in Canada

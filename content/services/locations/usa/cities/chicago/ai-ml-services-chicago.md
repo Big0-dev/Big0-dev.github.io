@@ -4,11 +4,11 @@ is_location_page: true
 keywords:
 - AI
 location: Chicago, USA
-meta_description: Enterprise AI/ML development in Chicago. Custom models, computer vision,
-  NLP. SOC 2, HIPAA compliant. Serving Silicon Valley, NYC, Seattle, Austin.
+meta_description: Get custom AI solutions in Chicago from Big0. Enterprise AI/ML development,
+  computer vision, NLP. SOC 2, HIPAA compliant. Contact us for a free consultation.
 noindex: false
 parent_service: ai-ml-services
-title: Get Custom AI Solutions Chicago - Big0 Enterprise AI Services
+title: Custom AI Solutions Chicago - Big0 Enterprise AI Services
 ---
 
 # AI & Machine Learning Services in Chicago

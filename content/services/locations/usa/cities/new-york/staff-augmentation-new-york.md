@@ -1,12 +1,17 @@
 ---
-title: IT Staff Augmentation New York | Technology Staffing Solutions
-meta_description: IT staff augmentation in New York. Developers, engineers, consultants. Contract & FTE. San Francisco, NYC, Austin, Seattle.
-description: Expert IT staff augmentation services for New York companies with skilled technology professionals, compliance expertise, and flexible engagement models
 canonical: /services/locations/usa/cities/new-york/staff-augmentation-new-york.html
-location: New York, USA
-parent_service: staff-augmentation
+description: Expert IT staff augmentation services for New York companies with skilled
+  technology professionals, compliance expertise, and flexible engagement models
 is_location_page: true
+keywords:
+- IT
+location: New York, USA
+meta_description: Scale your IT projects with Big0's staff augmentation. Hire vetted
+  developers, engineers & consultants in NYC, SF, Austin & Seattle. Get a free consultation
+  now.
 noindex: false
+parent_service: staff-augmentation
+title: Hire IT Staff in NYC | Big0 Augmentation Services
 ---
 
 # IT Staff Augmentation Services New York | Expert Technology Staffing

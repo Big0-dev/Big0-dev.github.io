@@ -1,12 +1,16 @@
 ---
-title: Data Analytics Services Toronto | Business Intelligence Toronto
-meta_description: Data analytics and BI services in Toronto. Power BI, Tableau, advanced analytics. PIPEDA compliant. Serving Toronto, Vancouver, Montreal.
-description: Enterprise data analytics and business intelligence services across Toronto with PIPEDA compliance
 canonical: /services/locations/canada/cities/toronto/data-analytics-services-toronto.html
-location: Toronto, Canada
-parent_service: data-analytics-services
+description: Enterprise data analytics and business intelligence services across Toronto
+  with PIPEDA compliance
 is_location_page: true
+keywords:
+- Data
+location: Toronto, Canada
+meta_description: Get data analytics services in Toronto from Big0. Unlock insights
+  with Power BI, Tableau. PIPEDA compliant. Book your free consultation today.
 noindex: false
+parent_service: data-analytics-services
+title: Data Analytics Services Toronto | Big0 BI Solutions
 ---
 
 # Data Analytics Services Toronto | Enterprise Business Intelligence & Advanced Analytics

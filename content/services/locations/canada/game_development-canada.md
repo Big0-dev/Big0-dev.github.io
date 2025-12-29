@@ -1,11 +1,14 @@
 ---
-title: Game Development Canada | Mobile & Console Game Development
-meta_description: Game development in Canada. Unity, Unreal, mobile games. Montreal, Vancouver, Toronto game studios. Tax credits, SR&ED support. AAA to indie games.
 canonical: /services/locations/canada/game_development-canada.html
-location: Canada
-parent_service: game-development
 is_location_page: true
+keywords:
+- Game
+location: Canada
+meta_description: Partner with Big0 for expert game development in Canada. Leverage
+  Unity, Unreal & tax credits. Get your free consultation.
 noindex: false
+parent_service: game-development
+title: Hire Canadian Game Developers Now | Big0 Game Dev Services
 ---
 
 # Game Development Services in Canada

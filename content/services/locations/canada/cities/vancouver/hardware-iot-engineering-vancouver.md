@@ -1,11 +1,14 @@
 ---
-title: IoT & Hardware Engineering Vancouver | Embedded Systems | Big0
-meta_description: IoT development in Vancouver. Embedded systems, industrial IoT, smart devices. ISED compliance. Serving Toronto, Vancouver, Waterloo, Montreal, Calgary.
 canonical: /services/locations/canada/cities/vancouver/hardware-iot-engineering-vancouver.html
-location: Vancouver, Canada
-parent_service: hardware-iot-engineering
 is_location_page: true
+keywords:
+- IoT
+location: Vancouver, Canada
+meta_description: Get expert IoT development in Vancouver. Big0 delivers embedded
+  systems & industrial IoT solutions. Contact us for a free consultation today.
 noindex: false
+parent_service: hardware-iot-engineering
+title: Hire IoT Engineers in Vancouver | Embedded Systems | Big0
 ---
 
 # IoT & Hardware Engineering Services in Vancouver

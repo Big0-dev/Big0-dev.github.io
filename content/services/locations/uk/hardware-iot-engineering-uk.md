@@ -1,12 +1,17 @@
 ---
-title: IoT & Hardware Engineering UK | Embedded Systems London
-meta_description: IoT development and hardware engineering in UK. Embedded systems, industrial IoT, smart devices. CE/UKCA marking. Serving London, Cambridge, Manchester.
-description: Professional IoT and hardware engineering services across UK with expertise in embedded systems, industrial IoT, UKCA compliance, and smart device development for British markets.
 canonical: /services/locations/uk/hardware-iot-engineering-uk.html
-location: UK
-parent_service: hardware-iot-engineering
+description: Professional IoT and hardware engineering services across UK with expertise
+  in embedded systems, industrial IoT, UKCA compliance, and smart device development
+  for British markets.
 is_location_page: true
+keywords:
+- IoT
+location: UK
+meta_description: Get expert IoT development and hardware engineering in UK. Big0
+  delivers industrial IoT solutions with CE/UKCA marking. Contact us for a free consultation.
 noindex: false
+parent_service: hardware-iot-engineering
+title: IoT Development Services UK | Big0 London
 ---
 
 # IoT & Hardware Engineering Services in the United Kingdom

@@ -1,12 +1,16 @@
 ---
-title: Blockchain Development Canada | Crypto & DeFi Solutions
-meta_description: Blockchain development services in Canada. Smart contracts, DeFi, NFTs, crypto. CSA compliant. Serving Toronto, Vancouver, Montreal.
-description: Enterprise blockchain development services across Canada with CSA compliance and regulatory expertise
 canonical: /services/locations/canada/blockchain_development-canada.html
-location: Canada
-parent_service: blockchain-development
+description: Enterprise blockchain development services across Canada with CSA compliance
+  and regulatory expertise
 is_location_page: true
+keywords:
+- Blockchain
+location: Canada
+meta_description: Get blockchain development in Canada from Big0. CSA compliant DeFi,
+  NFT & smart contract solutions. Book your free consultation today.
 noindex: false
+parent_service: blockchain-development
+title: 'Blockchain Development Canada: Fast Smart Contract & DeFi Solutions'
 ---
 
 # Blockchain Development Services Canada | Crypto, DeFi & Enterprise Blockchain Solutions

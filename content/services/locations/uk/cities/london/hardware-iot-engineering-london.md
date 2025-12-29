@@ -1,15 +1,23 @@
 ---
-title: IoT Development London | Hardware Engineering Services London UK
-meta_description: Leading IoT development company in London. Embedded systems, industrial IoT, smart city solutions. FCC/UKCA certified. Shoreditch, Tech City, Canary Wharf.
-description: Expert IoT development and hardware engineering services in London with UKCA compliance, industrial IoT expertise, and smart city solutions
-short_description: London-based IoT specialists delivering embedded systems, industrial IoT, and smart city solutions with local expertise in UK regulations and London's tech ecosystem
-icon: microchip
-features: Industrial IoT, Smart city solutions, Embedded systems, PCB design, Cellular IoT, LoRaWAN, Edge computing, UKCA certification
 canonical: /services/locations/uk/cities/london/hardware-iot-engineering-london.html
-location: London, UK
-parent_service: hardware-iot-engineering
+description: Expert IoT development and hardware engineering services in London with
+  UKCA compliance, industrial IoT expertise, and smart city solutions
+features: Industrial IoT, Smart city solutions, Embedded systems, PCB design, Cellular
+  IoT, LoRaWAN, Edge computing, UKCA certification
+icon: microchip
 is_location_page: true
+keywords:
+- IoT
+location: London, UK
+meta_description: Get IoT development services in London from Big0. Our AI-driven
+  embedded systems deliver industrial IoT solutions. Contact us for a free consultation
+  today.
 noindex: false
+parent_service: hardware-iot-engineering
+short_description: London-based IoT specialists delivering embedded systems, industrial
+  IoT, and smart city solutions with local expertise in UK regulations and London's
+  tech ecosystem
+title: IoT Development Services London UK - Big0 Hardware Engineering
 ---
 
 # IoT Development & Hardware Engineering Services in London

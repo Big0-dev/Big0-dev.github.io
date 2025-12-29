@@ -1,15 +1,22 @@
 ---
-title: UI/UX Design Services Sydney | Digital Design Agency
-meta_description: Expert UI/UX design services in Sydney. Web, mobile, product design. User research, prototyping, accessibility. WCAG 2.2 compliant. Sydney, Melbourne.
-description: Professional UI/UX design services for Sydneyn businesses with user research, accessibility compliance, and industry expertise
-short_description: Australian design specialists delivering user-centered UI/UX design for web, mobile, and digital products with WCAG 2.2 accessibility and local market understanding
-icon: palette
-features: UI/UX design, User research, Prototyping, Design systems, Accessibility design, Mobile design, Web design, Branding
 canonical: /services/locations/australia/cities/sydney/design-services-sydney.html
-location: Sydney, Australia
-parent_service: design-services
+description: Professional UI/UX design services for Sydneyn businesses with user research,
+  accessibility compliance, and industry expertise
+features: UI/UX design, User research, Prototyping, Design systems, Accessibility
+  design, Mobile design, Web design, Branding
+icon: palette
 is_location_page: true
+keywords:
+- UI/UX
+location: Sydney, Australia
+meta_description: Get expert UI/UX design services in Sydney from Big0. Convert more
+  users with data-driven design. Book your free consultation today!
 noindex: false
+parent_service: design-services
+short_description: Australian design specialists delivering user-centered UI/UX design
+  for web, mobile, and digital products with WCAG 2.2 accessibility and local market
+  understanding
+title: Sydney UI/UX Design Services | Big0
 ---
 
 # UI/UX Design Services Sydney | User-Centered Digital Experiences

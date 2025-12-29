@@ -1,14 +1,20 @@
 ---
-title: IoT & Hardware Engineering Seattle | Embedded Systems & PCB Design
-meta_description: IoT development and hardware engineering in Seattle. Embedded systems, PCB design, firmware development. FCC certified. Silicon Valley, Austin, Boston, Seattle.
-description: Comprehensive IoT and hardware engineering services for US manufacturers with expertise in FCC certification, embedded systems, and industrial IoT applications.
 canonical: /services/locations/usa/cities/seattle/hardware-iot-engineering-seattle.html
-location: Seattle, USA
-parent_service: hardware-iot-engineering
-is_location_page: true
-noindex: false
+description: Comprehensive IoT and hardware engineering services for US manufacturers
+  with expertise in FCC certification, embedded systems, and industrial IoT applications.
+features: FCC Certification, UL Safety, Embedded Systems, PCB Design, Industrial IoT,
+  Cellular IoT, Edge Computing, Smart Manufacturing
 icon: microchip
-features: FCC Certification, UL Safety, Embedded Systems, PCB Design, Industrial IoT, Cellular IoT, Edge Computing, Smart Manufacturing
+is_location_page: true
+keywords:
+- IoT
+location: Seattle, USA
+meta_description: Get expert IoT hardware engineering & embedded systems design in
+  Seattle. FCC certified. Partner with Big0 for your next project. Contact us for
+  a free consultation.
+noindex: false
+parent_service: hardware-iot-engineering
+title: IoT Hardware Engineering Services | Big0 Seattle & Austin
 ---
 
 # IoT & Hardware Engineering Services in Seattle | FCC Certified Development

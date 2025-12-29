@@ -1,15 +1,23 @@
 ---
-title: Fintech Software Development Services Australia | ASIC Compliant
-meta_description: Leading fintech development company in Australia. Banking apps, payment platforms, wealth management, ASIC & APRA compliant. Sydney, Melbourne, Brisbane.
-description: Enterprise fintech software development for Australian financial services with ASIC and APRA compliance, NPP integration, and regulatory expertise
-short_description: Australian fintech developers building banking platforms, payment solutions, wealth management, and lending platforms with full regulatory compliance and local market expertise
-icon: dollar-sign
-features: Banking platforms, Payment systems, Wealth management, Lending platforms, Open Banking, ASIC compliance, APRA standards, NPP integration
 canonical: /services/locations/australia/fintech_development-australia.html
-location: Australia
-parent_service: fintech_development
+description: Enterprise fintech software development for Australian financial services
+  with ASIC and APRA compliance, NPP integration, and regulatory expertise
+features: Banking platforms, Payment systems, Wealth management, Lending platforms,
+  Open Banking, ASIC compliance, APRA standards, NPP integration
+icon: dollar-sign
 is_location_page: true
+keywords:
+- Fintech
+location: Australia
+meta_description: Get ASIC & APRA compliant fintech software development in Australia.
+  Partner with Big0 for secure banking & payment platforms. Contact us for a free
+  consultation.
 noindex: false
+parent_service: fintech_development
+short_description: Australian fintech developers building banking platforms, payment
+  solutions, wealth management, and lending platforms with full regulatory compliance
+  and local market expertise
+title: Australian Fintech Software Development Services | Big0
 ---
 
 # Fintech Software Development Services in Australia

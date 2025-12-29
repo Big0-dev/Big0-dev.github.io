@@ -11,11 +11,11 @@ is_location_page: true
 keywords:
 - Engineering
 location: Australia
-meta_description: Expert engineering consultancy services in Australia. Structural,
-  civil, mechanical, electrical engineering. Engineers Australia registered. CPEng
-  chartered engineers. Sydney, Melbourne, Brisbane.
+meta_description: Need expert engineering consultants in Australia? Get a free consultation
+  with CPEng chartered engineers. Fast quote for structural, civil, mechanical & electrical
+  projects.
 parent_service: engineering-services
-title: Hire Engineering Consultants Australia | Big0 - Get Quote
+title: Hire Engineering Consultants Australia - Get Quote Today
 ---
 
 # Engineering Consultancy Services Australia | Registered Professional Engineers

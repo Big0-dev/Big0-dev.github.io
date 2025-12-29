@@ -1,12 +1,18 @@
 ---
-title: AR/VR Development Brisbane | Augmented & Virtual Reality Solutions
-meta_description: Expert AR/VR development services in Brisbane. Virtual reality, augmented reality, mixed reality solutions. Unity, Unreal Engine expertise. Serving Sydney, Melbourne, Brisbane, Perth.
-description: Cutting-edge AR/VR development services across Brisbane with expertise in Unity, Unreal Engine, and immersive technologies for mining, real estate, tourism, healthcare, and education sectors.
+description: Cutting-edge AR/VR development services across Brisbane with expertise
+  in Unity, Unreal Engine, and immersive technologies for mining, real estate, tourism,
+  healthcare, and education sectors.
+features: Virtual Reality Apps, Augmented Reality, Mixed Reality, 360° Experiences,
+  VR Training Simulations, Unity Development, Unreal Engine
 icon: vr
-location: Brisbane, Australia
-parent_service: ar-vr-development
 is_location_page: true
-features: Virtual Reality Apps, Augmented Reality, Mixed Reality, 360° Experiences, VR Training Simulations, Unity Development, Unreal Engine
+keywords:
+- AR/VR
+location: Brisbane, Australia
+meta_description: Ready to build immersive AR/VR solutions? Get your free consultation
+  with Big0's Brisbane experts. Contact us to get started.
+parent_service: ar-vr-development
+title: Top AR/VR Development Brisbane | Big0 Services
 ---
 
 # AR/VR Development Services Brisbane | Immersive Technology Solutions

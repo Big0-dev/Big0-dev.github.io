@@ -1,11 +1,14 @@
 ---
-title: Data Analytics Services Manchester | Business Intelligence London
-meta_description: Expert data analytics and BI in Manchester. Power BI, Tableau, data science. GDPR compliant analytics. Serving London, Manchester, Birmingham, Edinburgh.
 canonical: /services/locations/uk/cities/manchester/data-analytics-services-manchester.html
-location: Manchester, UK
-parent_service: data-analytics-services
 is_location_page: true
+keywords:
+- Data
+location: Manchester, UK
+meta_description: Ready to transform data into revenue? Get a free consultation on
+  AI-driven analytics from Big0. Unlock insights today.
 noindex: false
+parent_service: data-analytics-services
+title: Manchester Data Analytics Services | Big0 BI & AI Solutions
 ---
 
 # Data Analytics Services in the United Kingdom

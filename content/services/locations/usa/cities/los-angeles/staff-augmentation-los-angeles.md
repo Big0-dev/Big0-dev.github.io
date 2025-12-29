@@ -1,12 +1,17 @@
 ---
-title: IT Staff Augmentation Los Angeles | Technology Staffing Solutions
-meta_description: IT staff augmentation in Los Angeles. Developers, engineers, consultants. Contract & FTE. San Francisco, NYC, Austin, Seattle.
-description: Expert IT staff augmentation services for Los Angeles companies with skilled technology professionals, compliance expertise, and flexible engagement models
 canonical: /services/locations/usa/cities/los-angeles/staff-augmentation-los-angeles.html
-location: Los Angeles, USA
-parent_service: staff-augmentation
+description: Expert IT staff augmentation services for Los Angeles companies with
+  skilled technology professionals, compliance expertise, and flexible engagement
+  models
 is_location_page: true
+keywords:
+- IT
+location: Los Angeles, USA
+meta_description: Need IT staff augmentation in Los Angeles? Big0 delivers expert
+  developers & engineers fast. Scale your tech team today. Contact us for a free consultation.
 noindex: false
+parent_service: staff-augmentation
+title: IT Staff Augmentation LA | BigO Contract & FTE Developers
 ---
 
 # IT Staff Augmentation Services Los Angeles | Expert Technology Staffing

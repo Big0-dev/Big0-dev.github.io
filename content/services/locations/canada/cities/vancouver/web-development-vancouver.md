@@ -1,12 +1,17 @@
 ---
-title: Web Development Services Vancouver | Bilingual Websites & Web Apps
-meta_description: Web development services in Vancouver. Bilingual websites (EN/FR), WCAG 2.0 accessible, e-commerce. Serving Toronto, Vancouver, Montreal.
-description: Professional web development services across Vancouver with bilingual capabilities and accessibility compliance
 canonical: /services/locations/canada/cities/vancouver/web-development-vancouver.html
-location: Vancouver, Canada
-parent_service: web-development
+description: Professional web development services across Vancouver with bilingual
+  capabilities and accessibility compliance
 is_location_page: true
+keywords:
+- Web
+location: Vancouver, Canada
+meta_description: Get expert web development services in Vancouver. Build bilingual
+  (EN/FR), WCAG 2.0 accessible e-commerce sites that convert. Contact Big0 for a free
+  consultation.
 noindex: false
+parent_service: web-development
+title: Web Development Services Vancouver | Big0 AI & Software
 ---
 
 # Web Development Services Vancouver | Bilingual, Accessible, High-Performance Websites

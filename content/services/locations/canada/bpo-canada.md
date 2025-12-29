@@ -1,11 +1,15 @@
 ---
-title: Business Process Outsourcing Canada | BPO Services
-meta_description: BPO services for Canadian businesses. Bilingual customer support, back office operations, finance BPO. PIPEDA compliant. Toronto, Montreal, Vancouver.
 canonical: /services/locations/canada/bpo-canada.html
-location: Canada
-parent_service: bpo-services
 is_location_page: true
+keywords:
+- Business
+location: Canada
+meta_description: Get expert Business Process Outsourcing Canada services from Big0.
+  Bilingual support, finance BPO & back office operations. PIPEDA compliant. Get your
+  free consultation now.
 noindex: false
+parent_service: bpo-services
+title: Canadian Business Process Outsourcing Services | Big0
 ---
 
 # Business Process Outsourcing Services in Canada

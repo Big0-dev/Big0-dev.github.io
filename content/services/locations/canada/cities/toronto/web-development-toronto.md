@@ -1,12 +1,16 @@
 ---
-title: Web Development Services Toronto | Bilingual Websites & Web Apps
-meta_description: Web development services in Toronto. Bilingual websites (EN/FR), WCAG 2.0 accessible, e-commerce. Serving Toronto, Vancouver, Montreal.
-description: Professional web development services across Toronto with bilingual capabilities and accessibility compliance
 canonical: /services/locations/canada/cities/toronto/web-development-toronto.html
-location: Toronto, Canada
-parent_service: web-development
+description: Professional web development services across Toronto with bilingual capabilities
+  and accessibility compliance
 is_location_page: true
+keywords:
+- Web
+location: Toronto, Canada
+meta_description: Get expert web development services in Toronto. Big0 builds WCAG
+  2.0 accessible, bilingual websites & apps. Contact us for a free consultation.
 noindex: false
+parent_service: web-development
+title: Top Toronto Web Development Services | Big0 AI
 ---
 
 # Web Development Services Toronto | Bilingual, Accessible, High-Performance Websites

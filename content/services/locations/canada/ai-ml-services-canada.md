@@ -1,12 +1,17 @@
 ---
-title: AI & Machine Learning Services Canada | Enterprise AI Solutions
-meta_description: AI and machine learning services in Canada. Custom models, computer vision, NLP. PIPEDA compliant. Serving Toronto, Montreal, Vancouver.
-description: Enterprise AI and ML development services across Canada with PIPEDA compliance and bilingual NLP capabilities
 canonical: /services/locations/canada/ai-ml-services-canada.html
-location: Canada
-parent_service: ai-ml-services
+description: Enterprise AI and ML development services across Canada with PIPEDA compliance
+  and bilingual NLP capabilities
 is_location_page: true
+keywords:
+- AI
+location: Canada
+meta_description: Get started with Big0's AI & machine learning services in Canada.
+  Custom enterprise solutions, computer vision, NLP. PIPEDA compliant. Request your
+  free consultation.
 noindex: false
+parent_service: ai-ml-services
+title: 'AI Services Canada: Custom AI Solutions | BigO'
 ---
 
 # AI & Machine Learning Services Canada | Enterprise AI Solutions & Research

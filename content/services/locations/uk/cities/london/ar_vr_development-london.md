@@ -1,12 +1,17 @@
 ---
-title: AR/VR Development London | Virtual Reality Solutions London
-meta_description: AR/VR development services in London. Training simulations, VR apps, AR experiences. London, Manchester, Bristol. NHS VR therapy, industrial training, retail AR.
 canonical: /services/locations/uk/cities/london/ar_vr_development-london.html
-location: London, UK
-parent_service: ar-vr-development
+description: Cutting-edge AR/VR development for London businesses with NHS healthcare
+  applications, industrial training, and immersive retail experiences
 is_location_page: true
+keywords:
+- AR/VR
+location: London, UK
+meta_description: Leading London AR/VR development company for enterprise solutions.
+  Transform training, retail, and therapy with custom VR/AR apps. Get your free consultation
+  today.
 noindex: false
-description: Cutting-edge AR/VR development for London businesses with NHS healthcare applications, industrial training, and immersive retail experiences
+parent_service: ar-vr-development
+title: Hire AR/VR Developers London - Big0 VR/AR Solutions
 ---
 
 # AR/VR Development London | Transform Your Business with Immersive Technology

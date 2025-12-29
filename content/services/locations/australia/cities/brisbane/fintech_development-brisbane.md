@@ -1,15 +1,23 @@
 ---
-title: Fintech Software Development Services Brisbane | ASIC Compliant
-meta_description: Leading fintech development company in Brisbane. Banking apps, payment platforms, wealth management, ASIC & APRA compliant. Sydney, Melbourne, Brisbane.
-description: Enterprise fintech software development for Brisbanen financial services with ASIC and APRA compliance, NPP integration, and regulatory expertise
-short_description: Australian fintech developers building banking platforms, payment solutions, wealth management, and lending platforms with full regulatory compliance and local market expertise
-icon: dollar-sign
-features: Banking platforms, Payment systems, Wealth management, Lending platforms, Open Banking, ASIC compliance, APRA standards, NPP integration
 canonical: /services/locations/australia/cities/brisbane/fintech_development-brisbane.html
-location: Brisbane, Australia
-parent_service: fintech_development
+description: Enterprise fintech software development for Brisbanen financial services
+  with ASIC and APRA compliance, NPP integration, and regulatory expertise
+features: Banking platforms, Payment systems, Wealth management, Lending platforms,
+  Open Banking, ASIC compliance, APRA standards, NPP integration
+icon: dollar-sign
 is_location_page: true
+keywords:
+- Fintech
+location: Brisbane, Australia
+meta_description: Brisbane fintech software development services that ensure ASIC
+  & APRA compliance. Build secure banking and payment platforms with Big0. Request
+  your free consultation today.
 noindex: false
+parent_service: fintech_development
+short_description: Australian fintech developers building banking platforms, payment
+  solutions, wealth management, and lending platforms with full regulatory compliance
+  and local market expertise
+title: Brisbane Fintech Software Development Services - Get Quote Now
 ---
 
 # Fintech Software Development Services in Brisbane

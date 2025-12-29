@@ -1,12 +1,22 @@
 ---
-title: Insurance & InsurTech Solutions
+case_studies: AI fraud detection preventing $8M annual losses, Claims automation reducing
+  processing time 60%, Telematics platform enabling usage-based insurance
+challenge: Insurance industry faces legacy system constraints, manual underwriting
+  processes, fraudulent claims, poor customer experiences, and increasing regulatory
+  compliance complexity
+description: Digital transformation solutions for insurance carriers, MGAs, brokers,
+  and InsurTech innovators modernizing the insurance value chain
 icon: shield-alt
-meta_description: Transform insurance operations with AI, cloud, IoT, and data analytics. Policy administration, claims processing, underwriting automation, fraud detection, and customer engagement.
-description: Digital transformation solutions for insurance carriers, MGAs, brokers, and InsurTech innovators modernizing the insurance value chain
-short_description: Comprehensive technology solutions revolutionizing insurance operations from policy administration and claims processing to risk assessment and customer engagement
-challenge: Insurance industry faces legacy system constraints, manual underwriting processes, fraudulent claims, poor customer experiences, and increasing regulatory compliance complexity
-solutions: Policy administration systems, Claims automation, AI underwriting, Fraud detection, IoT telematics, Cloud migration, Customer portals, Analytics platforms
-case_studies: AI fraud detection preventing $8M annual losses, Claims automation reducing processing time 60%, Telematics platform enabling usage-based insurance
+keywords:
+- Insurance
+meta_description: Transform Insurance operations with AI-driven policy administration
+  and claims processing. Get your free consultation with Big0 today.
+short_description: Comprehensive technology solutions revolutionizing insurance operations
+  from policy administration and claims processing to risk assessment and customer
+  engagement
+solutions: Policy administration systems, Claims automation, AI underwriting, Fraud
+  detection, IoT telematics, Cloud migration, Customer portals, Analytics platforms
+title: 'Big0 Insurance Solutions: AI Claims & Underwriting'
 ---
 
 # Insurance & InsurTech: Digital Transformation for Modern Insurance

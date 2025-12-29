@@ -7,8 +7,8 @@ is_location_page: true
 keywords:
 - Custom
 location: UK
-meta_description: Software development company in UK. Enterprise applications, SaaS
-  platforms, business software. GDPR compliant solutions. London, Manchester, Edinburgh.
+meta_description: Build custom software with Big0's UK team. Get GDPR-compliant enterprise
+  solutions. Book your free consultation now.
 noindex: false
 parent_service: software-development
 title: Custom Software Development UK | Big0 Enterprise Solutions

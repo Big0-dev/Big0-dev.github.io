@@ -1,11 +1,15 @@
 ---
-title: Cybersecurity Services UK | Security Consulting London
-meta_description: Expert cybersecurity services in UK. Penetration testing, security audits, NCSC guidance. Cyber Essentials, CHECK scheme. London, Manchester, Birmingham.
 canonical: /services/locations/uk/security-services-uk.html
-location: UK
-parent_service: security-services
 is_location_page: true
+keywords:
+- Cybersecurity
+location: UK
+meta_description: Get expert cybersecurity services from Big0. Protect your business
+  with penetration testing, security audits, and NCSC guidance. Schedule your free
+  consultation today.
 noindex: false
+parent_service: security-services
+title: UK Cybersecurity Services | Urgent Threat Response Big0
 ---
 
 # Cybersecurity Services in the United Kingdom

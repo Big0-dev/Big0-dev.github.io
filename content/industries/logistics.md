@@ -1,12 +1,23 @@
 ---
-title: Logistics & Supply Chain Solutions
+case_studies: AI route optimization reducing delivery costs 25%, Warehouse automation
+  increasing throughput 40%, Supply chain visibility platform reducing stockouts 35%
+challenge: Supply chains face visibility gaps, manual processes, inefficient routing,
+  inventory imbalances, high fuel costs, driver shortages, and customer delivery expectations
+description: Digital transformation solutions for logistics providers, 3PLs, shippers,
+  and supply chain innovators optimizing operations end-to-end
 icon: truck
-meta_description: Transform logistics and supply chain operations with IoT, AI, blockchain, and cloud solutions. Fleet management, warehouse automation, route optimization, and supply chain visibility.
-description: Digital transformation solutions for logistics providers, 3PLs, shippers, and supply chain innovators optimizing operations end-to-end
-short_description: Comprehensive technology solutions modernizing logistics and supply chain operations from warehouse management and fleet optimization to last-mile delivery and supply chain visibility
-challenge: Supply chains face visibility gaps, manual processes, inefficient routing, inventory imbalances, high fuel costs, driver shortages, and customer delivery expectations
-solutions: Transportation management systems, Warehouse management systems, Fleet tracking IoT, Route optimization AI, Supply chain visibility, Blockchain traceability, Predictive analytics, Last-mile delivery automation
-case_studies: AI route optimization reducing delivery costs 25%, Warehouse automation increasing throughput 40%, Supply chain visibility platform reducing stockouts 35%
+keywords:
+- Logistics
+meta_description: Transform logistics operations with AI, IoT, and blockchain solutions
+  for fleet management and supply chain visibility. Get a free consultation with Big0
+  today.
+short_description: Comprehensive technology solutions modernizing logistics and supply
+  chain operations from warehouse management and fleet optimization to last-mile delivery
+  and supply chain visibility
+solutions: Transportation management systems, Warehouse management systems, Fleet
+  tracking IoT, Route optimization AI, Supply chain visibility, Blockchain traceability,
+  Predictive analytics, Last-mile delivery automation
+title: AI Logistics Solutions | Big0 - Transform Operations Now
 ---
 
 # Logistics & Supply Chain: Digital Transformation for Operational Excellence

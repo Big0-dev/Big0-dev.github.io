@@ -1,11 +1,15 @@
 ---
-title: IT Staff Augmentation Montreal | Tech Staffing Solutions
-meta_description: IT staffing and augmentation in Montreal. Developers, testers, consultants. Work permits, bilingual tech talent. Toronto, Vancouver, Montreal, Calgary.
 canonical: /services/locations/canada/cities/montreal/staff-augmentation-montreal.html
-location: Montreal, Canada
-parent_service: staff-augmentation
 is_location_page: true
+keywords:
+- IT
+location: Montreal, Canada
+meta_description: Scale your IT projects with Big0's staff augmentation in Montreal.
+  Get vetted developers, testers, and consultants. Contact us for a free consultation
+  today!
 noindex: false
+parent_service: staff-augmentation
+title: Hire IT Staff Montreal - BigO Talent Now
 ---
 
 # IT Staff Augmentation Services in Montreal

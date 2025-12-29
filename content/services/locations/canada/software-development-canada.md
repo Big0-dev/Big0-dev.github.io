@@ -1,12 +1,17 @@
 ---
-title: Custom Software Development Canada | Enterprise Solutions
-meta_description: Custom software development company in Canada. Enterprise apps, SaaS platforms, system integration. Bilingual support. Toronto, Vancouver, Montreal.
-description: Enterprise custom software development services across Canada with bilingual capabilities and regulatory compliance
 canonical: /services/locations/canada/software-development-canada.html
-location: Canada
-parent_service: software-development
+description: Enterprise custom software development services across Canada with bilingual
+  capabilities and regulatory compliance
 is_location_page: true
+keywords:
+- Custom
+location: Canada
+meta_description: Get custom software development in Canada from Big0. Enterprise-grade
+  AI solutions, SaaS platforms & system integration. Bilingual support. Contact us
+  for your free consultation today.
 noindex: false
+parent_service: software-development
+title: Custom Software Development Canada | Big0 Enterprise Solutions
 ---
 
 # Custom Software Development Canada | Enterprise Applications & SaaS Platforms

@@ -1,11 +1,14 @@
 ---
-title: Python Automation Canada | RPA & Workflow Automation
-meta_description: Python automation and RPA in Canada. Business process automation, workflow optimization. PIPEDA compliant. Toronto, Vancouver, Montreal, Calgary.
 canonical: /services/locations/canada/python-automation-canada.html
-location: Canada
-parent_service: python-automation
 is_location_page: true
+keywords:
+- Python
+location: Canada
+meta_description: Leverage Python automation to streamline Canadian business workflows.
+  Get a free consultation with Big0's experts for PIPEDA-compliant RPA solutions today.
 noindex: false
+parent_service: python-automation
+title: Python Automation Services Canada - Big0 RPA Solutions
 ---
 
 # Python Automation Services in Canada

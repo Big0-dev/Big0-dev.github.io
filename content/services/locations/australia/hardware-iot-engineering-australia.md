@@ -1,11 +1,15 @@
 ---
-title: IoT & Hardware Engineering Australia | Embedded Systems & Industrial IoT
-meta_description: IoT development and hardware engineering services in Australia. Embedded systems, PCB design, IoT platforms, industrial IoT for mining and agriculture. ACMA EMC compliance. Sydney, Melbourne.
 canonical: /services/locations/australia/hardware-iot-engineering-australia.html
-location: Australia
-parent_service: hardware-iot-engineering
 is_location_page: true
+keywords:
+- IoT
+location: Australia
+meta_description: Get expert IoT hardware engineering services in Australia. Big0
+  delivers compliant embedded systems and industrial IoT solutions for mining and
+  agriculture. Contact us for a free consultation today.
 noindex: false
+parent_service: hardware-iot-engineering
+title: IoT Development Services Australia | Big0 Industrial & Embedded Systems
 ---
 
 # IoT & Hardware Engineering Services in Australia | Industrial IoT Excellence

@@ -1,12 +1,16 @@
 ---
-title: Engineering Consultancy UK | Chartered Engineers London
-meta_description: Engineering services in UK. Civil, structural, mechanical, electrical. CEng chartered engineers. London, Manchester, Birmingham. UK Building Regulations, British Standards.
 canonical: /services/locations/uk/engineering-services-uk.html
-location: UK
-parent_service: engineering-services
+description: Professional engineering consultancy with Chartered Engineers (CEng)
+  providing UK Building Regulations compliant designs and British Standards expertise
 is_location_page: true
+keywords:
+- Engineering
+location: UK
+meta_description: Get expert engineering consultancy from chartered engineers in London.
+  Need a quote for your project? Contact us for a free consultation today.
 noindex: false
-description: Professional engineering consultancy with Chartered Engineers (CEng) providing UK Building Regulations compliant designs and British Standards expertise
+parent_service: engineering-services
+title: UK Engineering Services | Big0 Chartered Engineers Now
 ---
 
 # Engineering Consultancy UK | Chartered Engineering Excellence Across Britain

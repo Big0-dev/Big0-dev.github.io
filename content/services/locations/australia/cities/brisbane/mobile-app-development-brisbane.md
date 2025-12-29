@@ -9,8 +9,9 @@ is_location_page: true
 keywords:
 - Mobile
 location: Brisbane, Australia
-meta_description: Leading mobile app development in Brisbane. iOS, Android, React
-  Native, Flutter. App Store & Play Store optimization. OAIC compliant. Sydney, Melbourne.
+meta_description: Partner with Big0 for high-performance mobile app development in
+  Brisbane. Build scalable iOS & Android solutions with AI. Get your free consultation
+  today!
 noindex: false
 parent_service: mobile-app-development
 short_description: Australian mobile app specialists delivering iOS, Android, React

@@ -1,11 +1,14 @@
 ---
-title: Digital Marketing UK | SEO, PPC, Social Media London
-meta_description: Expert digital marketing in UK. SEO, Google Ads, social media marketing. GDPR and PECR compliant. Serving London, Manchester, Birmingham, Edinburgh.
 canonical: /services/locations/uk/digital_marketing_services-uk.html
-location: UK
-parent_service: digital-marketing-services
 is_location_page: true
+keywords:
+- Digital
+location: UK
+meta_description: Drive digital growth with Big0's AI-powered marketing. Get a free
+  consultation for SEO, PPC, and social media campaigns. Contact us to start.
 noindex: false
+parent_service: digital-marketing-services
+title: AI Digital Marketing UK | Big0 SEO & PPC Services
 ---
 
 # Digital Marketing Services in the United Kingdom

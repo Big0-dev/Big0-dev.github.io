@@ -1,11 +1,15 @@
 ---
-title: Healthcare IT Solutions Australia | Medical Software Development & EMR/EHR
-meta_description: Healthcare software development in Australia. EMR/EHR systems, telehealth platforms, patient portals. TGA compliant, My Health Record integration. Sydney, Melbourne.
 canonical: /services/locations/australia/healthcare_it_solutions-australia.html
-location: Australia
-parent_service: healthcare_it_solutions
 is_location_page: true
+keywords:
+- Healthcare
+location: Australia
+meta_description: Get TGA-compliant healthcare IT solutions in Australia. Big0 builds
+  secure EMR/EHR systems, telehealth platforms, and My Health Record integrations.
+  Get your free consultation.
 noindex: false
+parent_service: healthcare_it_solutions
+title: AI Healthcare Solutions Australia | Big0 EMR/EHR Development
 ---
 
 # Healthcare IT Solutions Australia | Medical Software & Digital Health Excellence

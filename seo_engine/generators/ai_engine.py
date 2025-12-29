@@ -485,14 +485,13 @@ Generate relevant FAQs:"""
             if title_rec.recommended_value:
                 recommendations.append(title_rec)
 
-            # Generate meta description if missing or short
-            if not page.meta_description or len(page.meta_description) < 100:
-                desc_rec = self.generate_meta_description(page, keywords, page.funnel_stage)
-                if desc_rec.recommended_value:
-                    recommendations.append(desc_rec)
+            # Generate meta description for all pages (always optimize)
+            desc_rec = self.generate_meta_description(page, keywords, page.funnel_stage)
+            if desc_rec.recommended_value and desc_rec.recommended_value != page.meta_description:
+                recommendations.append(desc_rec)
 
-            # Generate FAQ for service/industry pages without one
-            if page.content_type.value in ['service', 'industry'] and not page.has_faq:
+            # Generate FAQ for service, industry, blog, and case study pages without one
+            if page.content_type.value in ['service', 'industry', 'blog', 'case_study'] and not page.has_faq:
                 faq_rec = self.generate_faq_suggestions(page, keywords)
                 if faq_rec.recommended_value:
                     recommendations.append(faq_rec)

@@ -135,3 +135,4 @@ assets:
   root_assets:
     - robots.txt
     - linkedin_banner.png
+    - _redirects

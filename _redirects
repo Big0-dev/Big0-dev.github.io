@@ -1,0 +1,56 @@
+# Cloudflare Pages Redirects
+# Generated to fix soft 404s from non-.html URLs
+# See: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Homepage - canonical URL
+/index  /index.html  301
+/home  /index.html  301
+
+# Location service pages - bulk redirect
+/services/locations/:country/:service  /services/locations/:country/:service.html  301
+/services/locations/:country/cities/:city/:service  /services/locations/:country/cities/:city/:service.html  301
+
+# Service pages
+/services/:service  /services/:service.html  301
+
+# Industry pages
+/industries/:industry  /industries/:industry.html  301
+
+# Blog posts
+/blog/:slug  /blog/:slug.html  301
+/blogs/:slug  /blog/:slug.html  301
+
+# Case studies
+/case-studies/:slug  /case-studies/:slug.html  301
+/case_studies/:slug  /case-studies/:slug.html  301
+
+# News
+/news/:slug  /news/:slug.html  301
+
+# Products
+/products/:slug  /products/:slug.html  301
+
+# Gallery pages
+/gallery/:page  /gallery/:page.html  301
+
+# Static pages
+/about  /about.html  301
+/blog  /blog.html  301
+/blogs  /blog.html  301
+/careers  /careers.html  301
+/case-studies  /case-studies.html  301
+/case_studies  /case-studies.html  301
+/compliance  /compliance.html  301
+/contact  /contact.html  301
+/gallery  /gallery.html  301
+/industries  /industries.html  301
+/news  /news.html  301
+/partners  /partners.html  301
+/privacy  /privacy.html  301
+/products  /products.html  301
+/services  /services.html  301
+/terms  /terms.html  301
+
+# Old URL patterns that might still be indexed
+/service/:slug  /services/:slug.html  301
+/industry/:slug  /industries/:slug.html  301

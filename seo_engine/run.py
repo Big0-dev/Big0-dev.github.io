@@ -226,14 +226,14 @@ def run_full_analysis(config: Config, use_ai: bool = True):
         content_recommendations = ai_engine.batch_generate_recommendations(
             content_files,
             keyword_map,
-            limit=15  # Limit to control API costs
+            limit=200  # Process all pages - using low-cost model
         )
 
         # Generate design recommendations for problem pages
         problem_pages = [
             pd for pd in page_data
             if pd.bounce_rate > 0.7 or pd.rage_clicks > 5 or pd.scroll_depth < 0.3
-        ][:5]
+        ][:20]  # Analyze more problem pages
 
         for pd in problem_pages:
             clarity_issues = [

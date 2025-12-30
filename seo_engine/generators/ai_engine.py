@@ -390,6 +390,277 @@ Provide 2-4 design recommendations as JSON:"""
 
         return recommendations
 
+    def generate_cta_optimization(
+        self,
+        page: ContentFile,
+        funnel_stage: FunnelStage
+    ) -> ContentRecommendation:
+        """Generate optimized CTA copy based on page intent and funnel stage"""
+
+        stage_context = {
+            FunnelStage.TOFU: "Educational content - CTAs should offer more learning (guides, resources)",
+            FunnelStage.MOFU: "Consideration content - CTAs should offer comparison/evaluation help",
+            FunnelStage.BOFU: "Decision content - CTAs should drive direct conversion (contact, quote)",
+        }
+
+        messages = [
+            {
+                "role": "system",
+                "content": """You are a conversion rate optimization expert specializing in B2B tech companies.
+
+Generate compelling CTA (Call-to-Action) copy that:
+- Matches the user's intent at their funnel stage
+- Uses action verbs that create urgency
+- Promises specific value/outcome
+- Is concise (3-7 words for button text)
+
+Respond in this exact format:
+PRIMARY_CTA: [Button text]
+PRIMARY_HEADLINE: [Headline above CTA, 5-10 words]
+PRIMARY_SUBTEXT: [Supporting text, 10-20 words]
+SECONDARY_CTA: [Alternative softer CTA]"""
+            },
+            {
+                "role": "user",
+                "content": f"""Generate optimized CTAs for this page:
+
+Title: {page.title}
+Page Type: {page.content_type.value}
+Funnel Stage: {funnel_stage.value}
+Context: {stage_context[funnel_stage]}
+Current has CTA: {page.has_cta}
+
+Content excerpt:
+{page.body_content[:300]}
+
+Generate the CTA copy:"""
+            }
+        ]
+
+        response = self._call_api(messages, max_tokens=200)
+
+        return ContentRecommendation(
+            page_url=page.url,
+            recommendation_type="cta",
+            current_value="Existing CTA" if page.has_cta else "No CTA",
+            recommended_value=response.content.strip(),
+            target_keywords=[],
+            reasoning=f"CTA optimized for {funnel_stage.value} stage conversion",
+            priority=Priority.HIGH,
+            estimated_impact="high",
+            funnel_stage=funnel_stage,
+        )
+
+    def generate_content_expansion(
+        self,
+        page: ContentFile,
+        target_keywords: list[str],
+        target_word_count: int = 1500
+    ) -> ContentRecommendation:
+        """Generate content expansion for thin pages"""
+
+        if page.word_count >= target_word_count:
+            return None
+
+        words_needed = target_word_count - page.word_count
+
+        messages = [
+            {
+                "role": "system",
+                "content": """You are a senior content strategist for B2B technology companies.
+
+Generate content expansion suggestions that:
+- Add depth and expertise to existing content
+- Incorporate target keywords naturally
+- Provide actionable, valuable information
+- Match the existing tone and style
+- Are structured with clear H2/H3 headings
+
+Respond with 2-3 new sections to add, each with:
+## [Section Heading]
+[150-200 word content for that section]
+
+Focus on topics that would genuinely help the reader and demonstrate expertise."""
+            },
+            {
+                "role": "user",
+                "content": f"""This page needs approximately {words_needed} more words.
+
+Title: {page.title}
+Current word count: {page.word_count}
+Target: {target_word_count} words
+Page Type: {page.content_type.value}
+Target Keywords: {', '.join(target_keywords[:5])}
+
+Current content structure:
+{page.body_content[:800]}
+
+Generate new sections to add:"""
+            }
+        ]
+
+        response = self._call_api(messages, max_tokens=1000)
+
+        return ContentRecommendation(
+            page_url=page.url,
+            recommendation_type="content_expansion",
+            current_value=f"{page.word_count} words",
+            recommended_value=response.content.strip(),
+            target_keywords=target_keywords,
+            reasoning=f"Page is thin ({page.word_count} words). Adding {words_needed} words for better ranking.",
+            priority=Priority.MEDIUM,
+            estimated_impact="medium",
+            funnel_stage=page.funnel_stage,
+        )
+
+    def generate_heading_optimization(
+        self,
+        page: ContentFile,
+        target_keywords: list[str]
+    ) -> ContentRecommendation:
+        """Generate optimized H2/H3 headings for featured snippets"""
+
+        messages = [
+            {
+                "role": "system",
+                "content": """You are an SEO specialist focused on featured snippet optimization.
+
+Analyze the current headings and suggest improvements that:
+- Include target keywords naturally
+- Use question format where appropriate (for PAA boxes)
+- Create a logical content hierarchy
+- Are scannable and descriptive
+- Target featured snippet formats (lists, tables, definitions)
+
+Respond with optimized headings in this format:
+CURRENT: [existing heading if any]
+OPTIMIZED: [new heading]
+REASON: [why this is better]
+
+Provide 3-5 heading optimizations."""
+            },
+            {
+                "role": "user",
+                "content": f"""Optimize headings for this page:
+
+Title: {page.title}
+Target Keywords: {', '.join(target_keywords[:5])}
+Page Type: {page.content_type.value}
+
+Current content with headings:
+{page.body_content[:1500]}
+
+Suggest heading optimizations:"""
+            }
+        ]
+
+        response = self._call_api(messages, max_tokens=500)
+
+        return ContentRecommendation(
+            page_url=page.url,
+            recommendation_type="headings",
+            current_value="Current headings",
+            recommended_value=response.content.strip(),
+            target_keywords=target_keywords,
+            reasoning="Headings optimized for featured snippets and keyword targeting",
+            priority=Priority.MEDIUM,
+            estimated_impact="medium",
+            funnel_stage=page.funnel_stage,
+        )
+
+    def generate_internal_linking(
+        self,
+        page: ContentFile,
+        all_pages: list[ContentFile],
+        max_suggestions: int = 5
+    ) -> ContentRecommendation:
+        """Generate internal linking suggestions based on content relevance"""
+
+        # Find related pages by content type and keywords
+        related_pages = []
+        page_keywords = set(page.target_keywords[:10])
+
+        for other in all_pages:
+            if other.url == page.url:
+                continue
+
+            other_keywords = set(other.target_keywords[:10])
+            overlap = len(page_keywords & other_keywords)
+
+            # Prefer linking to different content types (services -> industries, etc)
+            type_bonus = 1 if other.content_type != page.content_type else 0
+
+            if overlap > 0 or type_bonus:
+                related_pages.append({
+                    'url': other.url,
+                    'title': other.title,
+                    'type': other.content_type.value,
+                    'score': overlap + type_bonus
+                })
+
+        # Sort by relevance score
+        related_pages.sort(key=lambda x: x['score'], reverse=True)
+        top_related = related_pages[:max_suggestions]
+
+        if not top_related:
+            return None
+
+        related_context = "\n".join([
+            f"- {p['title']} ({p['type']}): {p['url']}"
+            for p in top_related
+        ])
+
+        messages = [
+            {
+                "role": "system",
+                "content": """You are an internal linking strategist for SEO.
+
+Suggest specific places in the content where internal links should be added.
+
+For each suggestion, provide:
+ANCHOR_TEXT: [The text that should be linked, found in the content]
+LINK_TO: [URL to link to]
+CONTEXT: [The sentence where this link should appear]
+
+Good internal links:
+- Use descriptive anchor text (not "click here")
+- Link contextually relevant pages
+- Distribute links naturally throughout content
+- Support the user journey through the funnel
+
+Provide 3-5 specific linking suggestions."""
+            },
+            {
+                "role": "user",
+                "content": f"""Suggest internal links for this page:
+
+Current Page: {page.title}
+URL: {page.url}
+
+Content to add links to:
+{page.body_content[:2000]}
+
+Related pages to link to:
+{related_context}
+
+Suggest specific internal links:"""
+            }
+        ]
+
+        response = self._call_api(messages, max_tokens=600)
+
+        return ContentRecommendation(
+            page_url=page.url,
+            recommendation_type="internal_links",
+            current_value="Current internal links",
+            recommended_value=response.content.strip(),
+            target_keywords=[p['title'] for p in top_related],
+            reasoning=f"Add {len(top_related)} internal links to improve site structure",
+            priority=Priority.MEDIUM,
+            estimated_impact="medium",
+            funnel_stage=page.funnel_stage,
+        )
+
     def generate_faq_suggestions(
         self,
         page: ContentFile,
@@ -453,11 +724,18 @@ Generate relevant FAQs:"""
         self,
         pages: list[ContentFile],
         keyword_data: dict[str, list[str]],
-        limit: int = 10
+        limit: int = 10,
+        full_optimization: bool = True
     ) -> list[ContentRecommendation]:
         """
         Generate recommendations for multiple pages.
         Batched to manage API costs.
+
+        Args:
+            pages: List of content files to analyze
+            keyword_data: Map of page URLs to target keywords
+            limit: Maximum pages to process
+            full_optimization: If True, runs all optimization types (CTAs, content, headings, links)
         """
         recommendations = []
 
@@ -472,6 +750,8 @@ Generate relevant FAQs:"""
         )[:limit]
 
         print(f"  [AI] Generating recommendations for {len(priority_pages)} pages...")
+        if full_optimization:
+            print(f"  [AI] Full optimization enabled: CTAs, content expansion, headings, internal links")
 
         for i, page in enumerate(priority_pages):
             print(f"    Processing {i+1}/{len(priority_pages)}: {page.url}")
@@ -495,6 +775,32 @@ Generate relevant FAQs:"""
                 faq_rec = self.generate_faq_suggestions(page, keywords)
                 if faq_rec.recommended_value:
                     recommendations.append(faq_rec)
+
+            # Full optimization - additional recommendation types
+            if full_optimization:
+                # CTA optimization for all pages
+                cta_rec = self.generate_cta_optimization(page, page.funnel_stage)
+                if cta_rec and cta_rec.recommended_value:
+                    recommendations.append(cta_rec)
+
+                # Content expansion for thin pages (< 1500 words for services, < 800 for others)
+                min_words = 1500 if page.content_type.value in ['service', 'industry'] else 800
+                if page.word_count < min_words:
+                    expansion_rec = self.generate_content_expansion(page, keywords, min_words)
+                    if expansion_rec and expansion_rec.recommended_value:
+                        recommendations.append(expansion_rec)
+
+                # Heading optimization for main pages (not location variants)
+                if '/locations/' not in page.url and page.content_type.value in ['service', 'industry', 'blog']:
+                    heading_rec = self.generate_heading_optimization(page, keywords)
+                    if heading_rec and heading_rec.recommended_value:
+                        recommendations.append(heading_rec)
+
+                # Internal linking for main pages
+                if '/locations/' not in page.url:
+                    linking_rec = self.generate_internal_linking(page, priority_pages)
+                    if linking_rec and linking_rec.recommended_value:
+                        recommendations.append(linking_rec)
 
         print(f"  [AI] Generated {len(recommendations)} recommendations")
         return recommendations

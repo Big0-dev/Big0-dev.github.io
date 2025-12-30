@@ -128,6 +128,14 @@ class ContentApplier:
             self._update_frontmatter(file_path, 'meta_description', recommended, current)
         elif update_type == 'faq':
             self._add_faq_section(file_path, recommended)
+        elif update_type == 'cta':
+            self._update_cta(file_path, recommended)
+        elif update_type == 'content_expansion':
+            self._add_content_sections(file_path, recommended)
+        elif update_type == 'headings':
+            self._update_headings(file_path, recommended)
+        elif update_type == 'internal_links':
+            self._add_internal_links(file_path, recommended)
         elif update_type == 'content':
             # Content suggestions are logged but need manual review
             print("   ℹ Content suggestions require manual review")
@@ -302,6 +310,213 @@ class ContentApplier:
 
         except Exception as e:
             print(f"   ✗ Error adding FAQ: {e}")
+
+    def _update_cta(self, file_path: Path, cta_content: str) -> None:
+        """Update CTA in frontmatter for template use"""
+        if self.dry_run:
+            print(f"   [DRY RUN] Would update CTA")
+            return
+
+        try:
+            content = file_path.read_text(encoding='utf-8')
+
+            # Parse the CTA recommendation
+            cta_data = {}
+            for line in cta_content.split('\n'):
+                if ':' in line:
+                    key, value = line.split(':', 1)
+                    key = key.strip().lower().replace(' ', '_')
+                    cta_data[key] = value.strip()
+
+            if not cta_data:
+                print(f"   ⚠ Could not parse CTA content")
+                return
+
+            # Update frontmatter with CTA fields
+            if content.startswith('---'):
+                parts = content.split('---', 2)
+                if len(parts) >= 3:
+                    frontmatter = yaml.safe_load(parts[1]) or {}
+                    body = parts[2]
+
+                    # Add CTA fields to frontmatter
+                    if 'primary_cta' in cta_data:
+                        frontmatter['cta_button'] = cta_data['primary_cta']
+                    if 'primary_headline' in cta_data:
+                        frontmatter['cta_headline'] = cta_data['primary_headline']
+                    if 'primary_subtext' in cta_data:
+                        frontmatter['cta_subtext'] = cta_data['primary_subtext']
+                    if 'secondary_cta' in cta_data:
+                        frontmatter['cta_secondary'] = cta_data['secondary_cta']
+
+                    # Rebuild file
+                    new_frontmatter = yaml.dump(frontmatter, default_flow_style=False, allow_unicode=True)
+                    new_content = f"---\n{new_frontmatter}---{body}"
+
+                    file_path.write_text(new_content, encoding='utf-8')
+                    print(f"   ✓ Updated CTA in frontmatter")
+
+                    self.changes.append(AppliedChange(
+                        file_path=str(file_path),
+                        change_type="cta",
+                        field="cta",
+                        old_value="",
+                        new_value=cta_data.get('primary_cta', '')[:50],
+                        status="applied"
+                    ))
+
+        except Exception as e:
+            print(f"   ✗ Error updating CTA: {e}")
+
+    def _add_content_sections(self, file_path: Path, new_sections: str) -> None:
+        """Add new content sections to expand thin pages"""
+        if self.dry_run:
+            print(f"   [DRY RUN] Would add content sections")
+            return
+
+        try:
+            content = file_path.read_text(encoding='utf-8')
+
+            # Add new sections before the FAQ or last CTA, or at end
+            insert_point = None
+
+            # Try to find FAQ section
+            faq_match = re.search(r'\n##\s*(?:Frequently Asked Questions|FAQ)', content, re.IGNORECASE)
+            if faq_match:
+                insert_point = faq_match.start()
+
+            # Try to find last CTA
+            if insert_point is None and '{{template:cta' in content:
+                insert_point = content.rfind('{{template:cta')
+
+            if insert_point:
+                new_content = content[:insert_point] + f"\n\n{new_sections}\n\n" + content[insert_point:]
+            else:
+                new_content = content + f"\n\n{new_sections}\n"
+
+            file_path.write_text(new_content, encoding='utf-8')
+            print(f"   ✓ Added content sections")
+
+            self.changes.append(AppliedChange(
+                file_path=str(file_path),
+                change_type="content_expansion",
+                field="content",
+                old_value="",
+                new_value=new_sections[:100],
+                status="applied"
+            ))
+
+        except Exception as e:
+            print(f"   ✗ Error adding content sections: {e}")
+
+    def _update_headings(self, file_path: Path, heading_suggestions: str) -> None:
+        """Update headings based on AI suggestions"""
+        if self.dry_run:
+            print(f"   [DRY RUN] Would update headings")
+            return
+
+        try:
+            content = file_path.read_text(encoding='utf-8')
+            changes_made = 0
+
+            # Parse heading suggestions (CURRENT: ... OPTIMIZED: ... format)
+            current_pattern = re.compile(r'CURRENT:\s*(.+?)(?:\n|$)', re.IGNORECASE)
+            optimized_pattern = re.compile(r'OPTIMIZED:\s*(.+?)(?:\n|$)', re.IGNORECASE)
+
+            currents = current_pattern.findall(heading_suggestions)
+            optimizeds = optimized_pattern.findall(heading_suggestions)
+
+            for current, optimized in zip(currents, optimizeds):
+                current = current.strip()
+                optimized = optimized.strip()
+
+                if current and optimized and current != optimized:
+                    # Try to find and replace the heading
+                    # Match ## Current Heading or ### Current Heading
+                    heading_regex = re.compile(
+                        r'^(#{2,3})\s*' + re.escape(current) + r'\s*$',
+                        re.MULTILINE | re.IGNORECASE
+                    )
+
+                    if heading_regex.search(content):
+                        content = heading_regex.sub(r'\1 ' + optimized, content)
+                        changes_made += 1
+
+            if changes_made > 0:
+                file_path.write_text(content, encoding='utf-8')
+                print(f"   ✓ Updated {changes_made} headings")
+
+                self.changes.append(AppliedChange(
+                    file_path=str(file_path),
+                    change_type="headings",
+                    field="headings",
+                    old_value=f"{changes_made} headings",
+                    new_value="optimized",
+                    status="applied"
+                ))
+            else:
+                print(f"   ℹ No heading matches found to update")
+
+        except Exception as e:
+            print(f"   ✗ Error updating headings: {e}")
+
+    def _add_internal_links(self, file_path: Path, link_suggestions: str) -> None:
+        """Add internal links based on AI suggestions"""
+        if self.dry_run:
+            print(f"   [DRY RUN] Would add internal links")
+            return
+
+        try:
+            content = file_path.read_text(encoding='utf-8')
+            changes_made = 0
+
+            # Parse link suggestions (ANCHOR_TEXT: ... LINK_TO: ... format)
+            anchor_pattern = re.compile(r'ANCHOR_TEXT:\s*(.+?)(?:\n|$)', re.IGNORECASE)
+            link_pattern = re.compile(r'LINK_TO:\s*(.+?)(?:\n|$)', re.IGNORECASE)
+
+            anchors = anchor_pattern.findall(link_suggestions)
+            links = link_pattern.findall(link_suggestions)
+
+            for anchor, link_url in zip(anchors, links):
+                anchor = anchor.strip()
+                link_url = link_url.strip()
+
+                if anchor and link_url:
+                    # Only link first occurrence that isn't already linked
+                    # Check if anchor text exists and isn't already a link
+                    if anchor in content:
+                        # Make sure it's not already linked
+                        already_linked = re.search(
+                            r'\[' + re.escape(anchor) + r'\]\([^)]+\)',
+                            content
+                        )
+
+                        if not already_linked:
+                            # Replace first occurrence only
+                            content = content.replace(
+                                anchor,
+                                f'[{anchor}]({link_url})',
+                                1
+                            )
+                            changes_made += 1
+
+            if changes_made > 0:
+                file_path.write_text(content, encoding='utf-8')
+                print(f"   ✓ Added {changes_made} internal links")
+
+                self.changes.append(AppliedChange(
+                    file_path=str(file_path),
+                    change_type="internal_links",
+                    field="links",
+                    old_value="",
+                    new_value=f"{changes_made} links added",
+                    status="applied"
+                ))
+            else:
+                print(f"   ℹ No link opportunities found")
+
+        except Exception as e:
+            print(f"   ✗ Error adding internal links: {e}")
 
     def _save_change_log(self) -> None:
         """Save log of all changes"""

@@ -1,15 +1,20 @@
 ---
 canonical: /services/locations/australia/healthcare_it_solutions-australia.html
+cta_button: Get Your Custom Quote
+cta_headline: Transform Your Healthcare Operations Today
+cta_secondary: Book a Free Consultation
+cta_subtext: Get a custom solution designed for Australian healthcare compliance and
+  integration needs.
 is_location_page: true
 keywords:
 - Healthcare
 location: Australia
-meta_description: Get TGA-compliant healthcare IT solutions in Australia. Big0 builds
-  secure EMR/EHR systems, telehealth platforms, and My Health Record integrations.
-  Get your free consultation.
+meta_description: Get secure, TGA-compliant AI healthcare solutions in Australia.
+  Big0 builds custom EMR/EHR systems and telehealth platforms. Get your free consultation
+  today.
 noindex: false
 parent_service: healthcare_it_solutions
-title: AI Healthcare Solutions Australia | Big0 EMR/EHR Development
+title: AI Healthcare Solutions Australia | Big0 EMR/EHR
 ---
 
 # Healthcare IT Solutions Australia | Medical Software & Digital Health Excellence

@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/uk/cities/manchester/hardware-iot-engineering-manchester.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to Build Your IoT Solution?
+cta_secondary: Download Our UK IoT Guide
+cta_subtext: Get a custom quote within 24 hours from our UK IoT experts.
 description: Professional IoT and hardware engineering services across UK with expertise
   in embedded systems, industrial IoT, UKCA compliance, and smart device development
   for British markets.
@@ -7,12 +11,12 @@ is_location_page: true
 keywords:
 - IoT
 location: Manchester, UK
-meta_description: Need expert IoT & hardware engineering in Manchester or London?
-  Get embedded systems development and CE marking. Schedule your free consultation
-  today.
+meta_description: Get expert IoT development services in Manchester & London. Build
+  secure, scalable connected devices with embedded systems. Contact Big0 for your
+  free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
-title: IoT Development Services Manchester & London | Big0
+title: Get Expert IoT Development Services in Manchester & London
 ---
 
 # IoT & Hardware Engineering Services in the United Kingdom

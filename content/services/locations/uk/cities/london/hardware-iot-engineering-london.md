@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/uk/cities/london/hardware-iot-engineering-london.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your IoT Project in London
+cta_secondary: Download IoT Case Study
+cta_subtext: Get a custom quote within 24 hours for your hardware engineering needs
 description: Expert IoT development and hardware engineering services in London with
   UKCA compliance, industrial IoT expertise, and smart city solutions
 features: Industrial IoT, Smart city solutions, Embedded systems, PCB design, Cellular
@@ -9,15 +13,14 @@ is_location_page: true
 keywords:
 - IoT
 location: London, UK
-meta_description: Get IoT development services in London from Big0. Our AI-driven
-  embedded systems deliver industrial IoT solutions. Contact us for a free consultation
-  today.
+meta_description: Get IoT development services in London from Big0. Leverage our AI-driven
+  embedded systems for industrial IoT solutions. Contact us for a free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
 short_description: London-based IoT specialists delivering embedded systems, industrial
   IoT, and smart city solutions with local expertise in UK regulations and London's
   tech ecosystem
-title: IoT Development Services London UK - Big0 Hardware Engineering
+title: London IoT Development Services - Get Quote Now | Big0
 ---
 
 # IoT Development & Hardware Engineering Services in London

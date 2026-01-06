@@ -1,11 +1,15 @@
 ---
 canonical: /services/locations/canada/cities/montreal/game_development-montreal.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Montreal Game Project
+cta_secondary: View Our Portfolio
+cta_subtext: Partner with Big0's Canadian game dev experts for AI & Unity solutions.
 is_location_page: true
 keywords:
 - Game
 location: Montreal, Canada
-meta_description: Partner with Big0 for expert game development services. Unity &
-  Unreal specialists. Get your free consultation to start your project.
+meta_description: Ready to build your next game? Partner with Big0 for expert AI &
+  Unity game development services. Get your free consultation to start your project.
 noindex: false
 parent_service: game-development
 title: 'Montreal Game Dev Services: AI & Unity | Big0'

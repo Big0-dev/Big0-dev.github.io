@@ -1,15 +1,19 @@
 ---
 canonical: /services/locations/canada/engineering-services-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to Start Your Engineering Project?
+cta_secondary: View Case Studies
+cta_subtext: Connect with our P.Eng licensed experts for a detailed consultation and
+  project quote.
 is_location_page: true
 keywords:
 - Engineering
 location: Canada
-meta_description: Get expert engineering consultancy in Canada from Big0. P.Eng licensed
-  team delivers civil, structural, mechanical, electrical solutions. Contact us for
-  your free consultation today.
+meta_description: Get expert engineering services in Canada from Big0. Our P.Eng licensed
+  team delivers AI & software solutions. Contact us for your free consultation today.
 noindex: false
 parent_service: engineering-services
-title: Engineering Services Canada | Big0 AI & Software
+title: Get Expert Engineering Services Canada | Big0 AI
 ---
 
 # Engineering Consultancy Services in Canada

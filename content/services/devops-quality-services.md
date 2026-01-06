@@ -1,4 +1,9 @@
 ---
+cta_button: Get Your Custom Plan
+cta_headline: Ready to Accelerate Releases?
+cta_secondary: Book a Free Consultation
+cta_subtext: Partner with our DevOps experts to streamline delivery, boost security,
+  and deploy faster.
 description: Streamline development with DevOps automation and comprehensive quality
   assurance. CI/CD pipelines, infrastructure as code, and automated testing for reliable
   software delivery
@@ -8,9 +13,10 @@ features: CI/CD automation, Automated testing, Infrastructure as Code, Performan
 icon: settings
 keywords:
 - DevOps
-meta_description: Accelerate delivery with Big0's DevOps & Quality Engineering services.
-  CI/CD automation, infrastructure as code, automated testing. Schedule a free consultation.
-title: DevOps Services & Consulting | Accelerate Releases Big0
+meta_description: Accelerate releases with Big0's DevOps services. Automate CI/CD,
+  infrastructure, and testing for faster delivery. Schedule your free DevOps consultation
+  today.
+title: DevOps Services & Consulting | Big0
 ---
 
 # Accelerate Delivery With Built-In Quality
@@ -180,6 +186,20 @@ Automated 80% of regression testing for B2B SaaS platform. Reduced QA cycle from
 ## Industries We Serve
 
 {{related-industries:finance,healthcare,retail,manufacturing,telecom,energy}}
+
+
+## DevOps Security & Compliance Integration
+
+Embed security into your DevOps pipeline through DevSecOps practices that protect applications without slowing down delivery. Our approach integrates automated security scanning, compliance checks, and vulnerability assessments directly into your CI/CD workflow. We implement SAST and DAST tools that analyze code during every commit, catching security issues before they reach production. Container security scanning ensures your Docker images are free from known vulnerabilities, while dependency checking monitors third-party libraries continuously. Compliance automation handles regulatory requirements automatically, generating audit trails and reports for frameworks like SOC 2, HIPAA, or PCI-DSS. We also establish security policies as code, enforcing encryption standards, access controls, and network configurations across all environments. This proactive security model reduces breach risks by 70% compared to traditional post-deployment scanning. Your teams maintain development velocity while gaining confidence that every release meets enterprise security standards and compliance requirements.
+
+## Monitoring & Observability Strategy
+
+Gain complete visibility into your infrastructure and applications with comprehensive monitoring and observability solutions. We implement centralized logging, metrics collection, and distributed tracing to provide actionable insights across your entire technology stack. Our approach includes setting up Prometheus and Grafana for real-time metrics dashboards, ELK stack for log aggregation and analysis, and distributed tracing with Jaeger or OpenTelemetry to track requests across microservices. We establish intelligent alerting that notifies teams of anomalies before they impact users, using machine learning to detect unusual patterns. Custom dashboards display key performance indicators tailored to different stakeholders—from developers debugging issues to executives tracking business metrics. We also implement synthetic monitoring to proactively test critical user journeys and performance benchmarks. This observability foundation reduces mean time to resolution by 60% and transforms reactive firefighting into proactive system optimization, ensuring your applications deliver consistent performance and reliability.
+
+## Team Enablement & Knowledge Transfer
+
+Empower your internal teams with the skills and processes needed to sustain and evolve your DevOps practices long-term. Our consulting model focuses on knowledge transfer through hands-on training, documentation, and collaborative working sessions. We conduct workshops covering CI/CD best practices, infrastructure automation, and cloud-native architecture patterns. Your teams learn by doing as we pair-program through real implementations, building confidence and competence simultaneously. We establish comprehensive documentation standards, create runbooks for common scenarios, and build internal knowledge bases that become valuable organizational assets. Beyond technical training, we help cultivate a DevOps culture by facilitating cross-functional collaboration, establishing communication channels, and defining clear roles and responsibilities. We also implement metrics-driven improvement processes, teaching your teams how to measure and optimize their workflows continuously. This enablement approach ensures your organization doesn't just receive a solution but gains the internal capability to innovate and adapt independently, maximizing your long-term ROI from DevOps investments.
+
 
 ## Frequently Asked Questions
 

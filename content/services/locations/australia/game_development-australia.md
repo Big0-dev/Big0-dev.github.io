@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/game_development-australia.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to build your game?
+cta_secondary: View Our Portfolio
+cta_subtext: Get a detailed quote tailored to your project scope and budget within
+  24 hours.
 description: Full-service game development studio in Australia specializing in mobile
   games, PC, console, and serious games with deep understanding of Australian market
   and gaming culture.
@@ -10,11 +15,11 @@ is_location_page: true
 keywords:
 - Game
 location: Australia
-meta_description: Australian game development studio Big0 delivers mobile, PC & console
-  games. Get your free consultation and start building today.
+meta_description: Partner with Big0, a top Australian Game development studio. Build
+  your mobile, PC & console games. Get your free quote today!
 noindex: false
 parent_service: game-development
-title: Australian Game Development Services | Big0 - Get Quote
+title: Australian Game Dev Services | Big0 - Get Quote Today
 ---
 
 # Game Development Services in Australia

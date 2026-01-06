@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/uk/cities/manchester/fintech-development-manchester.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Regulated Fintech Solution
+cta_secondary: Schedule a Technical Consultation
+cta_subtext: Get a custom quote for your compliant fintech platform within 24 hours
 description: Professional fintech development services across UK with expertise in
   digital banking, payment platforms, regulatory compliance, and FCA-authorized solutions
   for British financial services.
@@ -7,12 +11,11 @@ is_location_page: true
 keywords:
 - Fintech
 location: Manchester, UK
-meta_description: Get Fintech solutions in London and Manchester? Big0 builds AI-powered
-  digital banking, payments, and Open Banking platforms. Book your free consultation
-  now.
+meta_description: Need AI Fintech services in Manchester or London? Big0 builds regulated
+  digital banking and payment platforms. Book your free consultation now.
 noindex: false
 parent_service: fintech-development
-title: AI Fintech Services Manchester & London | Regulated Solutions Now
+title: AI Fintech Services Manchester & London | Big0 Solutions Now
 ---
 
 # Fintech Development Services in the United Kingdom

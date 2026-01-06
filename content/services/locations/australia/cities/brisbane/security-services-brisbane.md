@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/cities/brisbane/security-services-brisbane.html
+cta_button: Get Your Free Quote
+cta_headline: Secure Your Brisbane Business Today
+cta_secondary: Speak with a Security Expert
+cta_subtext: Get a customized security assessment and transparent quote within 24
+  hours.
 description: Comprehensive cybersecurity services for Brisbanen businesses with penetration
   testing, security audits, and compliance expertise
 features: Penetration testing, Security audits, IRAP assessments, Essential Eight,
@@ -9,15 +14,14 @@ is_location_page: true
 keywords:
 - Cybersecurity
 location: Brisbane, Australia
-meta_description: Get enterprise cybersecurity services in Brisbane from Big0. ACSC-aligned
-  penetration testing, audits, IRAP & Essential Eight. Request your free consultation
-  today.
+meta_description: Get Brisbane cybersecurity services from Big0. ACSC-aligned penetration
+  testing, IRAP & Essential Eight audits. Contact us for your free consultation today.
 noindex: false
 parent_service: security-services
 short_description: Australian cybersecurity specialists delivering penetration testing,
   security assessments, IRAP compliance, and managed security services aligned with
   ACSC guidelines
-title: Brisbane Cybersecurity Services | Big0 Security Testing
+title: Brisbane Cybersecurity Services | Big0 - Book Now
 ---
 
 # Cybersecurity Services Brisbane | Enterprise Security & Compliance

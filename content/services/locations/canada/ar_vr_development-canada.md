@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/ar_vr_development-canada.html
+cta_button: Get Free AR/VR Quote
+cta_headline: Build Your Custom AR/VR Solution
+cta_secondary: View Portfolio
+cta_subtext: Get a detailed quote from our Canadian development team within 24 hours.
 is_location_page: true
 keywords:
 - AR/VR
 location: Canada
 meta_description: Partner with Big0 for expert AR/VR development in Canada. We build
-  custom training simulations and enterprise apps. Get your free consultation today!
+  custom enterprise apps and training simulations. Get your free consultation today!
 noindex: false
 parent_service: ar-vr-development
-title: AR/VR Development Services | Big0 Canada
+title: Get AR/VR Development Services in Canada | Big0
 ---
 
 # AR/VR Development Services in Canada

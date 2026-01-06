@@ -1,7 +1,7 @@
 ---
 auto_generated: true
 category: AI & ML
-date: '2025-12-29'
+date: December 29, 2025
 image_url: big0-company-profile-ai-software-development-experts.avif
 funnel_stage: tofu
 keywords:

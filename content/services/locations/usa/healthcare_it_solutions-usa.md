@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/healthcare_it_solutions-usa.html
+cta_button: Get Your Custom Quote
+cta_headline: Ready to secure your healthcare IT infrastructure?
+cta_secondary: Schedule a Free Consultation
+cta_subtext: Get a personalized quote for HIPAA-compliant solutions tailored to your
+  organization's needs.
 description: Comprehensive healthcare IT solutions for US medical providers with expertise
   in HIPAA compliance, EHR integration, and FDA medical device software regulations.
 features: HIPAA Compliance, HL7 FHIR, Epic/Cerner Integration, Telehealth, FDA SaMD,
@@ -9,11 +14,11 @@ is_location_page: true
 keywords:
 - Healthcare
 location: USA
-meta_description: Get HIPAA-compliant healthcare software from Big0. Custom EHR integration,
-  telehealth & patient portals. Request your free consultation now.
+meta_description: Get HIPAA-compliant healthcare IT solutions from Big0. Custom EHR
+  integration, telehealth, and patient portals. Request your free consultation now.
 noindex: false
 parent_service: healthcare_it_solutions
-title: US Healthcare IT Solutions | HIPAA Compliant EHR Integration
+title: Get US Healthcare IT Solutions | Big0 HIPAA Compliant
 ---
 
 # Healthcare IT Solutions in USA | HIPAA-Compliant Medical Software

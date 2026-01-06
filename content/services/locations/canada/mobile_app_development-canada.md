@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/canada/mobile_app_development-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Canadian Mobile App
+cta_secondary: Schedule a Discovery Call
+cta_subtext: Partner with Big0 for PIPEDA-compliant iOS & Android apps tailored for
+  the Canadian market.
 is_location_page: true
 keywords:
 - Mobile
 location: Canada
-meta_description: Get expert mobile app development in Canada for iOS & Android. AI-powered,
-  PIPEDA compliant. Schedule your free consultation today!
+meta_description: Hire expert mobile app developers in Canada for iOS & Android. AI-powered,
+  PIPEDA compliant. Get your free project consultation today!
 noindex: false
 parent_service: mobile-app-development
-title: Hire Mobile App Developers Canada | iOS & Android | Big0
+title: Hire Mobile App Developers Canada | iOS & Android - Big0
 ---
 
 # Mobile App Development Services in Canada

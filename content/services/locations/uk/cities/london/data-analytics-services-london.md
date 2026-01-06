@@ -1,11 +1,16 @@
 ---
 canonical: /services/locations/uk/cities/london/data-analytics-services-london.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Your Data Into Decisions
+cta_secondary: Schedule a Discovery Call
+cta_subtext: Request a free consultation and receive a tailored quote for your analytics
+  needs within 24 hours.
 is_location_page: true
 keywords:
 - Data
 location: London, UK
-meta_description: Ready to leverage data analytics for growth? Get started with Big0's
-  expert BI services in London. Free consultation available.
+meta_description: Get expert data analytics services in London. Big0's BI solutions
+  deliver actionable insights. Contact us for a free consultation today.
 noindex: false
 parent_service: data-analytics-services
 title: London Data Analytics Services - Get Expert BI Solutions Now

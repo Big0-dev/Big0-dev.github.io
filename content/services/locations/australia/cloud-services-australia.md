@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/cloud-services-australia.html
+cta_button: Get Your Free Quote
+cta_headline: Migrate with Confidence to the Cloud
+cta_secondary: Book a Free Consultation
+cta_subtext: Get a customized quote from our Australian cloud experts. Local support,
+  guaranteed compliance.
 description: Enterprise cloud consulting, migration, and managed services for Australian
   businesses with local data center expertise and government compliance
 features: Cloud migration, AWS Sydney, Azure Australia, Google Cloud, DevOps, Cloud-native
@@ -9,13 +14,13 @@ is_location_page: true
 keywords:
 - Cloud
 location: Australia
-meta_description: Get secure cloud migration & DevOps with BigO. IRAP, ISM compliant
-  Australian cloud services. Schedule your free consultation today.
+meta_description: Secure Australian cloud migration & DevOps services. IRAP & ISM
+  compliant. Get enterprise AI & software development support—schedule your free consultation.
 noindex: false
 parent_service: cloud-services
 short_description: Australian cloud specialists delivering AWS, Azure, and Google
   Cloud solutions with data sovereignty, IRAP compliance, and 24/7 support
-title: Secure Australian Cloud Migration & DevOps Services | BigO
+title: Secure Australian Cloud Migration Services | BigO
 ---
 
 # Enterprise Cloud Services in Australia | Local Data Centers, Compliance & 24/7 Support

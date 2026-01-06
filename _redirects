@@ -188,6 +188,109 @@
 /services/locations/australia/data-analytics-australia.html  /services/locations/australia/data-analytics-services-australia.html  301
 
 # ============================================
+# CITY-LEVEL PAGES -> COUNTRY-LEVEL
+# ============================================
+
+# USA Cities -> USA Country Level
+/services/locations/usa/cities/los-angeles/digital_marketing_services-los-angeles.html  /services/locations/usa/digital_marketing_services-usa.html  301
+/services/locations/usa/cities/san-francisco/digital_marketing_services-san-francisco.html  /services/locations/usa/digital_marketing_services-usa.html  301
+/services/locations/usa/cities/san-francisco/erp_implementation-san-francisco.html  /services/locations/usa/erp_implementation-usa.html  301
+/services/locations/usa/cities/san-francisco/staff-augmentation-san-francisco.html  /services/locations/usa/staff-augmentation-usa.html  301
+/services/locations/usa/cities/seattle/web-development-seattle.html  /services/locations/usa/web-development-usa.html  301
+/services/locations/usa/cities/chicago/ar_vr_development-chicago.html  /services/locations/usa/ar_vr_development-usa.html  301
+/services/locations/usa/cities/los-angeles/bpo-los-angeles.html  /services/locations/usa/bpo-usa.html  301
+/services/locations/usa/cities/new-york/e_commerce_solutions-new-york.html  /services/locations/usa/e_commerce_solutions-usa.html  301
+
+# UK Cities -> UK Country Level
+/services/locations/uk/cities/london/blockchain_development-london.html  /services/locations/uk/blockchain-development-uk.html  301
+/services/locations/uk/cities/london/digital_marketing_services-london.html  /services/locations/uk/digital_marketing_services-uk.html  301
+/services/locations/uk/cities/london/ar_vr_development-london.html  /services/locations/uk/ar_vr_development-uk.html  301
+/services/locations/uk/cities/london/game_development-london.html  /services/locations/uk/game_development-uk.html  301
+/services/locations/uk/cities/london/professional-technology-training-london.html  /services/locations/uk/professional-technology-training-uk.html  301
+/services/locations/uk/cities/birmingham/fintech_development-birmingham.html  /services/locations/uk/fintech-development-uk.html  301
+/services/locations/uk/cities/manchester/fintech_development-manchester.html  /services/locations/uk/fintech-development-uk.html  301
+
+# Canada Cities -> Canada Country Level
+/services/locations/canada/cities/montreal/data-analytics-montreal.html  /services/locations/canada/data-analytics-services-canada.html  301
+/services/locations/canada/cities/montreal/game_development-montreal.html  /services/locations/canada/game_development-canada.html  301
+/services/locations/canada/cities/montreal/game-development-montreal.html  /services/locations/canada/game_development-canada.html  301
+/services/locations/canada/cities/montreal/staff-augmentation-montreal.html  /services/locations/canada/staff-augmentation-canada.html  301
+/services/locations/canada/cities/montreal/web-development-montreal.html  /services/locations/canada/web-development-canada.html  301
+/services/locations/canada/cities/montreal/hardware_cad-montreal.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
+/services/locations/canada/cities/montreal/mobile_app.development-montreal.html  /services/locations/canada/mobile_app_development-canada.html  301
+/services/locations/canada/cities/vancouver/natural_language_processing-vancouver.html  /services/locations/canada/ai-ml-services-canada.html  301
+/services/locations/canada/cities/vancouver/data-analytics-vancouver.html  /services/locations/canada/data-analytics-services-canada.html  301
+/services/locations/canada/cities/vancouver/web-development-vancouver.html  /services/locations/canada/web-development-canada.html  301
+/services/locations/canada/cities/vancouver/ui_ux_design_services-vancouver.html  /services/locations/canada/design-services-canada.html  301
+/services/locations/canada/cities/vancouver/mobile_app.development-vancouver.html  /services/locations/canada/mobile_app_development-canada.html  301
+/services/locations/canada/cities/toronto/data-analytics-toronto.html  /services/locations/canada/data-analytics-services-canada.html  301
+/services/locations/canada/cities/toronto/computer_vision_service-toronto.html  /services/locations/canada/ai-ml-services-canada.html  301
+/services/locations/canada/cities/toronto/web-development-toronto.html  /services/locations/canada/web-development-canada.html  301
+/services/locations/canada/cities/toronto/erp_implementation-toronto.html  /services/locations/canada/erp_implementation-canada.html  301
+
+# Australia Cities -> Australia Country Level
+/services/locations/australia/cities/brisbane/bpo-brisbane.html  /services/locations/australia/bpo-australia.html  301
+/services/locations/australia/cities/brisbane/professional-technology-training-brisbane.html  /services/locations/australia/professional-technology-training-australia.html  301
+/services/locations/australia/cities/brisbane/ar_vr_development-brisbane.html  /services/locations/australia/ar_vr_development-australia.html  301
+/services/locations/australia/cities/brisbane/fintech_development-brisbane.html  /services/locations/australia/fintech_development-australia.html  301
+/services/locations/australia/cities/brisbane/mobile_app.development-brisbane.html  /services/locations/australia/mobile-app-development-australia.html  301
+/services/locations/australia/cities/brisbane/cybersecurity-solutions-brisbane.html  /services/locations/australia/security-services-australia.html  301
+/services/locations/australia/cities/brisbane/devops_consulting-brisbane.html  /services/locations/australia/devops-quality-services-australia.html  301
+/services/locations/australia/cities/brisbane/brand_and_digital_design-brisbane.html  /services/locations/australia/design-services-australia.html  301
+/services/locations/australia/cities/melbourne/bpo-melbourne.html  /services/locations/australia/bpo-australia.html  301
+/services/locations/australia/cities/melbourne/ui_ux_design_services-melbourne.html  /services/locations/australia/design-services-australia.html  301
+/services/locations/australia/cities/sydney/computer_vision_service-sydney.html  /services/locations/australia/ai-ml-services-australia.html  301
+/services/locations/australia/cities/sydney/iot_device_development-sydney.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
+/services/locations/australia/cities/sydney/cloud-managment-sydney.html  /services/locations/australia/cloud-services-australia.html  301
+/services/locations/australia/cities/sydney/brand_and_digital_design-sydney.html  /services/locations/australia/design-services-australia.html  301
+
+# ============================================
+# ADDITIONAL EXTENSIONLESS VARIANTS (root level)
+# ============================================
+/services/ui_ux_design_services  /services/design-services.html  301
+/services/embedded_systems_development  /services/hardware-iot-engineering.html  301
+/services/iot_device_development  /services/hardware-iot-engineering.html  301
+/services/natural_language_processing  /services/ai-ml-services.html  301
+
+# ============================================
+# LOCATION PATH FIXES (extensionless & hyphen variants)
+# ============================================
+
+# fintech_development -> fintech-development (UK)
+/services/locations/uk/fintech_development-uk.html  /services/locations/uk/fintech-development-uk.html  301
+/services/locations/uk/fintech_development-uk  /services/locations/uk/fintech-development-uk.html  301
+/services/locations/uk/blockchain_development-uk.html  /services/locations/uk/blockchain-development-uk.html  301
+
+# mobile_app.development fixes (dot to underscore)
+/services/locations/canada/mobile_app.development-canada.html  /services/locations/canada/mobile_app_development-canada.html  301
+/services/locations/australia/mobile_app.development-australia.html  /services/locations/australia/mobile-app-development-australia.html  301
+
+# Extensionless variants for location paths
+/services/locations/canada/cybersecurity-solutions-canada  /services/locations/canada/security-services-canada.html  301
+/services/locations/canada/iot_device_development-canada  /services/locations/canada/hardware-iot-engineering-canada.html  301
+/services/locations/uk/iot_device_development-uk  /services/locations/uk/hardware-iot-engineering-uk.html  301
+/services/locations/australia/computer_vision_service-australia  /services/locations/australia/ai-ml-services-australia.html  301
+/services/locations/canada/computer_vision_service-canada  /services/locations/canada/ai-ml-services-canada.html  301
+/services/locations/usa/computer_vision_service-usa  /services/locations/usa/ai-ml-services-usa.html  301
+/services/locations/australia/software_testing-australia  /services/locations/australia/devops-quality-services-australia.html  301
+/services/locations/uk/brand_and_digital_design-uk  /services/locations/uk/design-services-uk.html  301
+/services/locations/canada/pcb_design_and_layout-canada  /services/locations/canada/hardware-iot-engineering-canada.html  301
+/services/locations/uk/embedded_systems_development-uk  /services/locations/uk/hardware-iot-engineering-uk.html  301
+
+# Hyphen/underscore variants
+/services/locations/canada/ui-ux-design-services-canada.html  /services/locations/canada/design-services-canada.html  301
+/services/locations/uk/digital-marketing-services-uk.html  /services/locations/uk/digital_marketing_services-uk.html  301
+/services/locations/uk/brand-and-digital-design-uk.html  /services/locations/uk/design-services-uk.html  301
+/services/locations/australia/computer-vision-service-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
+/services/locations/canada/computer-vision-service-canada.html  /services/locations/canada/ai-ml-services-canada.html  301
+/services/locations/canada/iot-device-development-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
+/services/locations/australia/fintech-development-australia.html  /services/locations/australia/fintech_development-australia.html  301
+/services/locations/australia/erp-implementation-australia.html  /services/locations/australia/erp_implementation-australia.html  301
+/services/locations/australia/software-testing-australia.html  /services/locations/australia/devops-quality-services-australia.html  301
+/services/locations/canada/pcb-design-and-layout-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
+/services/locations/uk/embedded-systems-development-uk.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
+
+# ============================================
 # MISCELLANEOUS
 # ============================================
 /policy  /privacy  301

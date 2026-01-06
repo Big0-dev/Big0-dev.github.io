@@ -1,11 +1,15 @@
 ---
 canonical: /services/locations/uk/mobile_app_development-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Mobile App with UK Experts
+cta_secondary: See Our Portfolio
+cta_subtext: Get a detailed quote and timeline from our London team within 24 hours.
 is_location_page: true
 keywords:
 - Mobile
 location: UK
-meta_description: 'Expert mobile app development UK: iOS, Android, Flutter, React
-  Native. GDPR compliant. Build your enterprise app now. Get a free consultation.'
+meta_description: Hire expert mobile app developers UK. Big0 AI builds secure, scalable
+  iOS & Android enterprise apps. Get your free consultation today.
 noindex: false
 parent_service: mobile-app-development
 title: Hire Mobile App Developers UK | Big0 AI Apps London

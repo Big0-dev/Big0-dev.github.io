@@ -105,6 +105,13 @@ content_types:
     listing_template: products.html
     output_dir: products
 
+  newsletters:
+    content_dir: ./content/newsletters
+    template: newsletter_detail.html
+    listing_template: newsletters.html
+    output_dir: newsletters
+    per_page: 12
+
 # Navigation URLs
 navigation:
   home: index.html
@@ -113,6 +120,7 @@ navigation:
   services_page: services.html  # Alias for compatibility
   blog: blog.html
   blog_page: blog.html  # Alias for compatibility
+  newsletters: newsletters.html
   case_studies: case-studies.html
   careers: careers.html
   contact: contact.html

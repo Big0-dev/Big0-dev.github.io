@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/python-automation-australia.html
+cta_button: Get Your Quote
+cta_headline: Ready to Automate Your Australian Business?
+cta_secondary: Book a Free Consultation
+cta_subtext: Get a custom automation quote tailored to your specific needs within
+  24 hours.
 description: Professional Python automation and RPA services for Australian businesses
   with integration to Australian software platforms, compliance automation, and business
   efficiency solutions.
@@ -10,11 +15,11 @@ is_location_page: true
 keywords:
 - Python
 location: Australia
-meta_description: Expert Python automation services in Australia to streamline workflows.
-  Reduce costs with custom RPA solutions. Book your free consultation with Big0 today.
+meta_description: Get Python automation services from Big0 to streamline workflows
+  and cut costs. Book your free consultation today and get a quote.
 noindex: false
 parent_service: python-automation
-title: Python Automation Services Australia - Get a Quote Today
+title: Python Automation Services Australia | Big0
 ---
 
 # Python Automation Services in Australia

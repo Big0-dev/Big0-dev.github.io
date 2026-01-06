@@ -1,7 +1,7 @@
 ---
 auto_generated: true
 category: Software Development
-date: '2025-12-29'
+date: December 29, 2025
 image_url: bigcommerce-development-uk-building-scalable-e-commerce.avif
 funnel_stage: tofu
 keywords:

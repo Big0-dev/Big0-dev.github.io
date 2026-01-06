@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/security-services-australia.html
+cta_button: Get Your Free Quote
+cta_headline: Secure Your Business Now
+cta_secondary: Schedule a 15-min Call
+cta_subtext: Get a customized security quote from Australian experts. Protect your
+  organization today.
 description: Comprehensive cybersecurity services for Australian businesses with penetration
   testing, security audits, and compliance expertise
 features: Penetration testing, Security audits, IRAP assessments, Essential Eight,
@@ -9,15 +14,15 @@ is_location_page: true
 keywords:
 - Cybersecurity
 location: Australia
-meta_description: Get expert cybersecurity services in Australia. Big0 delivers ACSC-aligned
-  penetration testing, IRAP assessments & Essential Eight compliance. Contact us for
-  your free security consultation now.
+meta_description: Big0 delivers expert cybersecurity services in Australia, offering
+  ACSC-aligned penetration testing, IRAP assessments & Essential Eight compliance.
+  Secure your enterprise. Contact us for a free consultation.
 noindex: false
 parent_service: security-services
 short_description: Australian cybersecurity specialists delivering penetration testing,
   security assessments, IRAP compliance, and managed security services aligned with
   ACSC guidelines
-title: Cybersecurity Services Australia | Big0 Pen Testing & IRAP
+title: 'Cybersecurity Services Australia: IRAP & Pen Testing'
 ---
 
 # Cybersecurity Services Australia | Enterprise Security & Compliance

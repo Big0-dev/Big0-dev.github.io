@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/cities/vancouver/data-analytics-services-vancouver.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Your Data Into Revenue
+cta_secondary: Book a 15-min Strategy Call
+cta_subtext: Request a custom quote for your analytics project and see expected ROI
+  within 30 days.
 description: Enterprise data analytics and business intelligence services across Vancouver
   with PIPEDA compliance
 is_location_page: true
 keywords:
 - Data
 location: Vancouver, Canada
-meta_description: Get expert data analytics services in Vancouver & Toronto. Unlock
-  actionable insights with Power BI & Tableau. Schedule your free consultation with
-  Big0 today.
+meta_description: Unlock data analytics services in Vancouver. Get actionable insights
+  with Power BI & Tableau. Schedule your free consultation with Big0 AI today.
 noindex: false
 parent_service: data-analytics-services
 title: Data Analytics Services Vancouver | Big0 AI

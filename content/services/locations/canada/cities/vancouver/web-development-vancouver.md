@@ -1,17 +1,20 @@
 ---
 canonical: /services/locations/canada/cities/vancouver/web-development-vancouver.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your High-Performance Website
+cta_secondary: View Case Studies
+cta_subtext: Get a custom bilingual web solution tailored to your enterprise needs.
 description: Professional web development services across Vancouver with bilingual
   capabilities and accessibility compliance
 is_location_page: true
 keywords:
 - Web
 location: Vancouver, Canada
-meta_description: Get expert web development services in Vancouver. Build bilingual
-  (EN/FR), WCAG 2.0 accessible e-commerce sites that convert. Contact Big0 for a free
-  consultation.
+meta_description: Get expert Web Development Services in Vancouver. Build high-converting,
+  WCAG 2.0 accessible e-commerce sites. Contact Big0 for your free consultation today.
 noindex: false
 parent_service: web-development
-title: Web Development Services Vancouver | Big0 AI & Software
+title: 'Web Development Vancouver: Fast, WCAG 2.0 Sites'
 ---
 
 # Web Development Services Vancouver | Bilingual, Accessible, High-Performance Websites

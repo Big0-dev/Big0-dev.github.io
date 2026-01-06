@@ -1,15 +1,19 @@
 ---
 canonical: /services/locations/usa/fintech_development-usa.html
+cta_button: Get Your Free Quote
+cta_headline: Build Secure, Compliant Fintech Software
+cta_secondary: Schedule a Consultation
+cta_subtext: Get a custom quote for your US fintech project from our regulatory experts.
 is_location_page: true
 keywords:
 - Fintech
 location: USA
-meta_description: Get secure, compliant fintech software development from Big0. Build
-  digital banking, payments, and lending platforms that meet SEC, FINRA, and OCC standards.
+meta_description: Build secure, compliant fintech software with Big0. We engineer
+  digital banking, payment, and lending platforms that meet SEC, FINRA, and OCC standards.
   Contact us for a free consultation.
 noindex: false
 parent_service: fintech-development
-title: 'US Fintech Dev Services: Secure & Compliant | Big0'
+title: Secure Fintech Development Services | Big0 US
 ---
 
 # Fintech Development Services in USA

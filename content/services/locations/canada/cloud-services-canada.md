@@ -1,17 +1,20 @@
 ---
 canonical: /services/locations/canada/cloud-services-canada.html
+cta_button: Get Your Free Cloud Quote
+cta_headline: Power Your Canadian Cloud Migration
+cta_secondary: Schedule a 15-Minute Cloud Assessment
+cta_subtext: Leverage AWS, Azure, and GCP with Canadian data sovereignty and compliance.
 description: Enterprise cloud infrastructure and migration services across Canada
   with Canadian data residency and PIPEDA compliance
 is_location_page: true
 keywords:
 - Cloud
 location: Canada
-meta_description: Get enterprise cloud services in Canada from Big0. AWS, Azure, GCP
-  solutions with PIPEDA compliance and local data residency. Contact us for a free
-  consultation to get started.
+meta_description: Get enterprise cloud services Canada from Big0. AWS, Azure, GCP
+  solutions with PIPEDA compliance. Contact us for a free consultation to get started.
 noindex: false
 parent_service: cloud-services
-title: 'Big0 Cloud Services Canada: AWS Azure GCP Solutions Now'
+title: 'Big0 Cloud Services Canada: AWS Azure GCP Now'
 ---
 
 # Cloud Services Canada | Enterprise Cloud Infrastructure & Migration

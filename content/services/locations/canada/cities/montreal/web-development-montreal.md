@@ -1,16 +1,21 @@
 ---
 canonical: /services/locations/canada/cities/montreal/web-development-montreal.html
+cta_button: Get Free Quote
+cta_headline: Launch Your Montreal Website
+cta_secondary: View Portfolio
+cta_subtext: Get a bilingual, high-performance site built by Canadian experts. Request
+  your custom quote today.
 description: Professional web development services across Montreal with bilingual
   capabilities and accessibility compliance
 is_location_page: true
 keywords:
 - Web
 location: Montreal, Canada
-meta_description: Get expert web development services in Montreal. Build bilingual
-  (EN/FR), WCAG 2.0 accessible websites & apps. Schedule your free consultation today.
+meta_description: Looking for expert web development in Montreal? Big0 builds bilingual,
+  WCAG 2.0 compliant websites & apps. Get your free consultation today.
 noindex: false
 parent_service: web-development
-title: Montreal Web Development Services | Big0 AI & Apps
+title: Montreal Web Development Services | Big0 AI
 ---
 
 # Web Development Services Montreal | Bilingual, Accessible, High-Performance Websites

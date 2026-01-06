@@ -1,11 +1,16 @@
 ---
 canonical: /services/locations/usa/cities/austin/fintech_development-austin.html
+cta_button: Get Your Custom Quote
+cta_headline: Launch Your Fintech Solution
+cta_secondary: Schedule a Technical Consult
+cta_subtext: Get a compliant, high-performance platform built for US regulations and
+  your specific needs.
 is_location_page: true
 keywords:
 - Fintech
 location: Austin, USA
 meta_description: Get SEC, FINRA, OCC compliant fintech software development for banking,
-  payments, and lending. Get your free consultation with Big0 today.
+  payments, and lending. Contact Big0 for your free consultation today.
 noindex: false
 parent_service: fintech-development
 title: Secure Fintech Dev Services in Austin & NY | Big0

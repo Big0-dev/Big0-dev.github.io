@@ -1,14 +1,17 @@
 ---
 canonical: /services/locations/canada/cities/vancouver/design-services-vancouver.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Bilingual Design Project
+cta_secondary: View Our Portfolio
+cta_subtext: Get a custom quote for your UI/UX project in 24 hours.
 description: Professional UI/UX design services across Vancouver with bilingual capabilities
   and AODA compliance
 is_location_page: true
 keywords:
 - UI/UX
 location: Vancouver, Canada
-meta_description: Get expert UI/UX design services in Vancouver from Big0. Boost user
-  engagement and conversions with our AI-driven designs. Book your free consultation
-  now.
+meta_description: Get expert UI/UX design services in Vancouver from Big0. Boost engagement
+  and conversions with AI-driven designs. Book your free consultation now.
 noindex: false
 parent_service: design-services
 title: Top UI/UX Design Services in Vancouver | Big0

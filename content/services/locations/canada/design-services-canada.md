@@ -1,17 +1,20 @@
 ---
 canonical: /services/locations/canada/design-services-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Your Digital Experience Today
+cta_secondary: View Our Portfolio
+cta_subtext: Get a custom quote for your bilingual UI/UX project within 24 hours.
 description: Professional UI/UX design services across Canada with bilingual capabilities
   and AODA compliance
 is_location_page: true
 keywords:
 - UI/UX
 location: Canada
-meta_description: Get expert UI/UX design services in Canada. Big0 creates accessible,
-  high-conversion web & mobile experiences. Contact us for your free consultation
-  today.
+meta_description: Partner with Big0 for expert UI/UX design services in Canada. We
+  build high-conversion web & mobile apps. Contact us for your free consultation today.
 noindex: false
 parent_service: design-services
-title: Top UI/UX Design Services in Canada | Big0 Agency
+title: Top UI/UX Design Services in Canada | Get a Free Consultation
 ---
 
 # Expert UI/UX Design Services in Canada | Bilingual Digital Design Agency

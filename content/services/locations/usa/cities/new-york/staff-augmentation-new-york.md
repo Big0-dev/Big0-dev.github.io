@@ -1,17 +1,22 @@
 ---
 canonical: /services/locations/usa/cities/new-york/staff-augmentation-new-york.html
+cta_button: Get Instant Quote
+cta_headline: Scale Your NYC Tech Team Today
+cta_secondary: Schedule a 15-min call
+cta_subtext: Big0 delivers pre-vetted IT professionals ready to join your project
+  within 48 hours.
 description: Expert IT staff augmentation services for New York companies with skilled
   technology professionals, compliance expertise, and flexible engagement models
 is_location_page: true
 keywords:
 - IT
 location: New York, USA
-meta_description: Scale your IT projects with Big0's staff augmentation. Hire vetted
-  developers, engineers & consultants in NYC, SF, Austin & Seattle. Get a free consultation
+meta_description: Hire vetted IT staff in NYC with Big0's augmentation services. Scale
+  your tech team fast with expert developers & engineers. Get your free consultation
   now.
 noindex: false
 parent_service: staff-augmentation
-title: Hire IT Staff in NYC | Big0 Augmentation Services
+title: Hire IT Staff NYC | Big0 Augmentation - Get Quote
 ---
 
 # IT Staff Augmentation Services New York | Expert Technology Staffing

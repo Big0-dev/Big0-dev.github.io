@@ -1,15 +1,19 @@
 ---
 canonical: /services/locations/canada/e_commerce_solutions-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Canadian E-commerce Store
+cta_secondary: View Case Studies
+cta_subtext: Get a custom solution optimized for Canadian payments, taxes, and bilingual
+  needs.
 is_location_page: true
 keywords:
 - E-commerce
 location: Canada
 meta_description: Get expert e-commerce development in Canada from Big0. Build compliant
-  Shopify stores with bilingual support and Canadian payments. Get your free consultation
-  today.
+  bilingual stores with Canadian payments. Get your free consultation now.
 noindex: false
 parent_service: e-commerce-solutions
-title: Top E-commerce Development Canada | Big0 | Get Quote
+title: Get E-commerce Development Canada | Big0 Quote Now
 ---
 
 # E-commerce Development Services in Canada

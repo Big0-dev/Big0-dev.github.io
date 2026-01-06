@@ -1,4 +1,8 @@
 ---
+cta_button: Get Your Free Quote
+cta_headline: Transform Your Business with Custom AR/VR
+cta_secondary: View Our Portfolio
+cta_subtext: Get a tailored solution and transparent pricing for your AR/VR project.
 description: Cutting-edge AR/VR development services across Australia with expertise
   in Unity, Unreal Engine, and immersive technologies for mining, real estate, tourism,
   healthcare, and education sectors.
@@ -9,10 +13,10 @@ is_location_page: true
 keywords:
 - AR/VR
 location: Australia
-meta_description: Get custom AR/VR development solutions for enterprise. Big0 delivers
-  high-impact immersive applications. Schedule your free consultation today.
+meta_description: Get custom AR/VR development services in Australia from Big0. Drive
+  enterprise innovation with immersive solutions. Request your free consultation today.
 parent_service: ar-vr-development
-title: AR/VR Development Services Australia | Big0 - Get Quote Now
+title: AR/VR Development Services | Big0 Australia - Get Quote
 ---
 
 # AR/VR Development Services Australia | Immersive Technology Solutions

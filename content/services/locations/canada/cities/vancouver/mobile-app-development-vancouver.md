@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/canada/cities/vancouver/mobile-app-development-vancouver.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Mobile App in Vancouver
+cta_secondary: View Our Portfolio
+cta_subtext: Get a custom quote for your iOS or Android app project within 24 hours.
 is_location_page: true
 keywords:
 - Mobile

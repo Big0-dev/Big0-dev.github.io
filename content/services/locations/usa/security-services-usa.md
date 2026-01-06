@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/usa/security-services-usa.html
+cta_button: Get Your Quote
+cta_headline: Secure Your Enterprise Today
+cta_secondary: Schedule a Security Assessment
+cta_subtext: Get a customized cybersecurity proposal tailored to your compliance needs.
 description: Comprehensive cybersecurity services for US enterprises with expertise
   in NIST, FedRAMP, SOC 2, and state-level compliance requirements.
 features: NIST Framework, FedRAMP Compliance, SOC 2 Type II, Penetration Testing,
@@ -10,11 +14,10 @@ keywords:
 - Cybersecurity
 location: USA
 meta_description: Get expert cybersecurity services from Big0. Secure your enterprise
-  with penetration testing, SOC 2, FedRAMP compliance, and expert security consulting.
-  Request a free consultation today.
+  with SOC 2 & FedRAMP compliance. Request your free consultation today.
 noindex: false
 parent_service: security-services
-title: 'AI Cybersecurity Services: SOC 2 & FedRAMP Compliant | Big0'
+title: 'AI Cybersecurity Services: SOC 2 & FedRAMP | Big0'
 ---
 
 # Enterprise Cybersecurity Services in USA | NIST & FedRAMP Compliant

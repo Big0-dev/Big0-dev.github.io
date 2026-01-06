@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/web-development-australia.html
+cta_button: Get Your Free Quote
+cta_headline: Get a Custom Web Dev Quote Today
+cta_secondary: View Our Work
+cta_subtext: Receive a detailed proposal within 24 hours outlining your project scope,
+  timeline, and investment.
 description: Professional web development services for Australian businesses with
   responsive design, accessibility compliance, and local expertise
 features: Responsive websites, Web applications, Progressive web apps, E-commerce,
@@ -9,14 +14,14 @@ is_location_page: true
 keywords:
 - Web
 location: Australia
-meta_description: Get expert web development in Australia. WCAG 2.2 accessible e-commerce
-  & enterprise portals. Request your free consultation today.
+meta_description: Expert web development in Australia by Big0. WCAG 2.2 accessible
+  e-commerce & enterprise portals. Request your free consultation today.
 noindex: false
 parent_service: web-development
 short_description: Australian web development specialists delivering custom websites,
   web applications, and progressive web apps with WCAG 2.2 accessibility and government
   compliance
-title: 'Big0 Web Dev Services Australia: Get Quote Now'
+title: 'Web Dev Services Australia: Get Quote Now'
 ---
 
 # Professional Web Development Australia | Modern, Accessible & High-Performance

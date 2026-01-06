@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/hardware-iot-engineering-canada.html
+cta_button: Get Your Quote
+cta_headline: Build Your IoT Solution
+cta_secondary: View Case Studies
+cta_subtext: Get a custom quote for your hardware or IoT project within 24 hours.
 is_location_page: true
 keywords:
 - IoT
 location: Canada
-meta_description: Get IoT development in Canada from Big0. Embedded systems, industrial
-  IoT, smart devices. ISED compliant. Get your free consultation now!
+meta_description: Get IoT development services in Canada from Big0. AI-powered solutions,
+  embedded systems, industrial IoT. ISED compliant. Contact us for a free consultation!
 noindex: false
 parent_service: hardware-iot-engineering
-title: IoT Development Services Canada | Get Quote Big0
+title: Get IoT Development Services Canada | Big0 Quote Today
 ---
 
 # IoT & Hardware Engineering Services in Canada

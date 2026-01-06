@@ -1,15 +1,19 @@
 ---
 canonical: /services/locations/canada/bpo-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to Outsource with Confidence?
+cta_secondary: Book a Consultation
+cta_subtext: Get a custom BPO solution that's PIPEDA-compliant and bilingual within
+  24 hours.
 is_location_page: true
 keywords:
 - Business
 location: Canada
-meta_description: Get expert Business Process Outsourcing Canada services from Big0.
-  Bilingual support, finance BPO & back office operations. PIPEDA compliant. Get your
-  free consultation now.
+meta_description: Streamline operations with Big0's Business Process Outsourcing Canada
+  services. Get AI-driven back office & finance BPO solutions. Book your free consultation.
 noindex: false
 parent_service: bpo-services
-title: Canadian Business Process Outsourcing Services | Big0
+title: 'Canadian BPO Services: Finance & Back Office | Big0'
 ---
 
 # Business Process Outsourcing Services in Canada

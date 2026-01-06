@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/usa/cities/new-york/data-analytics-services-new-york.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Your Data Into Revenue
+cta_secondary: Schedule a Demo
+cta_subtext: Get a custom Power BI or Tableau solution with pricing in 24 hours.
 description: Advanced data analytics and business intelligence services for US enterprises
   with expertise in modern data stack, compliance, and industry-specific analytics.
 features: Modern Data Stack, CCPA Compliance, HIPAA Analytics, Snowflake, Databricks,
@@ -9,12 +13,11 @@ is_location_page: true
 keywords:
 - Data
 location: New York, USA
-meta_description: Power your enterprise with Big0's expert data analytics services
-  in New York. Unlock actionable insights and drive growth. Schedule your free consultation
-  today.
+meta_description: Get expert data analytics services in NYC from Big0. Unlock actionable
+  Power BI & Tableau insights to drive growth. Schedule your free consultation today.
 noindex: false
 parent_service: data-analytics-services
-title: NYC Data Analytics Services - Get Power BI & Tableau Solutions
+title: Get Data Analytics Services NYC - Power BI & Tableau
 ---
 
 # Enterprise Data Analytics Services in New York | Modern Data Stack Experts

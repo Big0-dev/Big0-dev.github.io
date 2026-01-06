@@ -1,14 +1,20 @@
 ---
 canonical: /services/locations/canada/python-automation-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Automate Your Business in Weeks
+cta_secondary: View Case Studies
+cta_subtext: Book a 30-minute consultation to receive a custom automation roadmap
+  and pricing.
 is_location_page: true
 keywords:
 - Python
 location: Canada
-meta_description: Leverage Python automation to streamline Canadian business workflows.
-  Get a free consultation with Big0's experts for PIPEDA-compliant RPA solutions today.
+meta_description: Leverage Python automation to streamline Canadian workflows. Get
+  a free consultation with Big0's experts for compliant RPA solutions. Contact us
+  today.
 noindex: false
 parent_service: python-automation
-title: Python Automation Services Canada - Big0 RPA Solutions
+title: 'Python Automation Services: Streamline Workflows with Big0'
 ---
 
 # Python Automation Services in Canada

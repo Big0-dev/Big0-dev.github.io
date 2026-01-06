@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/australia/cities/brisbane/professional-technology-training-brisbane.html
+cta_button: Get Instant Quote
+cta_headline: Close Your Skills Gap Today
+cta_secondary: View Course Catalog
+cta_subtext: Book expert training within 24 hours. Custom solutions for Brisbane teams.
 description: Comprehensive technology training services for Brisbanen enterprises
   with RTO partnerships, AQF alignment, government-approved cyber security training,
   and cloud certifications.
@@ -10,12 +14,11 @@ is_location_page: true
 keywords:
 - Technology
 location: Brisbane, Australia
-meta_description: Get tailored technology training services in Brisbane for your enterprise
-  team. Master AWS, Azure, DevOps & cyber security. Request your free consultation
-  today.
+meta_description: Get tailored technology training services in Brisbane. Master AWS,
+  Azure, DevOps & cyber security. Request your free consultation with Big0 AI today.
 noindex: false
 parent_service: professional-technology-training
-title: Urgent Technology Training Services Brisbane | Big0 AI
+title: 'Urgent Technology Training Brisbane: AWS, Azure & DevOps'
 ---
 
 # Professional Technology Training Services in Brisbane

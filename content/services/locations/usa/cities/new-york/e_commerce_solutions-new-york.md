@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/cities/new-york/e_commerce_solutions-new-york.html
+cta_button: Get Your Free Quote
+cta_headline: Dominate the $1T E-commerce Market
+cta_secondary: Book a Strategy Call
+cta_subtext: Get a custom solution from Big0's NYC e-commerce experts. Request your
+  free quote today.
 description: Comprehensive e-commerce development services for US retailers with expertise
   in leading platforms, payment processing, and multi-state compliance.
 features: Shopify Plus, Magento Commerce, BigCommerce, Headless Commerce, PCI DSS,
@@ -9,11 +14,12 @@ is_location_page: true
 keywords:
 - E-commerce
 location: New York, USA
-meta_description: NYC e-commerce development for enterprise brands. Build scalable
-  Shopify Plus, Magento, or custom platforms. Get your free consultation with Big0.
+meta_description: Build custom e-commerce platforms with AI for your NYC enterprise.
+  Scale with Shopify Plus, Magento, or bespoke solutions. Get your free consultation
+  with Big0.
 noindex: false
 parent_service: e_commerce_solutions
-title: 'NYC E-commerce Dev: AI Platforms & Store Solutions | Big0'
+title: 'Get NYC E-commerce Dev: AI Platforms & Store Solutions | Big0'
 ---
 
 # E-commerce Development Services in New York | Leading the $1 Trillion Market

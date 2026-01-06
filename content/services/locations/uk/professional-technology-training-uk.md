@@ -1,16 +1,21 @@
 ---
 canonical: /services/locations/uk/professional-technology-training-uk.html
+cta_button: Get Instant Quote
+cta_headline: Transform Your Team's Skills Today
+cta_secondary: Download Course Catalog
+cta_subtext: Get a customized training quote in 20 minutes. UK-based expert instructors.
+  Flexible delivery.
 description: Comprehensive technology training for UK businesses with government-funded
   options, NCSC certifications, and industry-recognized qualifications
 is_location_page: true
 keywords:
 - Technology
 location: UK
-meta_description: Get expert technology training in UK from Big0. Master AWS, Azure,
-  cybersecurity with NCSC-certified courses. Contact us for a free consultation.
+meta_description: Get expert technology training from Big0. Master Azure, AWS, cybersecurity
+  with NCSC-certified courses. Contact us for a free consultation today.
 noindex: false
 parent_service: professional-technology-training
-title: Technology Training UK | Big0 Corporate IT Courses Now
+title: Get UK Technology Training Courses | Big0 Now
 ---
 
 # Professional Technology Training UK | Upskill Your Teams with Expert IT Training

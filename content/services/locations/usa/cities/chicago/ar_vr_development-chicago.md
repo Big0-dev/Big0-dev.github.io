@@ -1,16 +1,22 @@
 ---
 canonical: /services/locations/usa/cities/chicago/ar_vr_development-chicago.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Chicago AR/VR Solution Today
+cta_secondary: View Our Portfolio
+cta_subtext: Get a custom proposal and technical consultation from Big0's local experts
+  within 24 hours.
 description: Expert AR/VR development services for Chicago businesses with immersive
   training, virtual experiences, and augmented reality applications
 is_location_page: true
 keywords:
 - AR/VR
 location: Chicago, USA
-meta_description: Partner with Big0 for AR/VR development in Chicago. Get custom VR
-  training simulations & AR experiences. Schedule your free consultation today!
+meta_description: Get AR/VR development services in Chicago from Big0. Build custom
+  VR training simulations & AR experiences that drive results. Schedule your free
+  consultation today!
 noindex: false
 parent_service: ar_vr_development
-title: Get AR/VR Development Services in Chicago - Big0
+title: Get Chicago AR/VR Development Services | Big0
 ---
 
 # AR/VR Development Services Chicago | Immersive Reality Excellence

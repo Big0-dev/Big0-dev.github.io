@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/uk/cities/london/professional-technology-training-london.html
+cta_button: Get Your Custom Quote
+cta_headline: Transform Your Team's Technical Capabilities
+cta_secondary: Download Course Catalog
+cta_subtext: Partner with London's leading IT training provider for tailored certifications
+  that deliver measurable ROI within 90 days.
 description: Comprehensive technology training for London businesses with government-funded
   options, NCSC certifications, and industry-recognized qualifications
 is_location_page: true
@@ -10,7 +15,7 @@ meta_description: Get tailored technology training in London for AI, cloud & cyb
   Upskill teams with Big0's expert-led courses. Request your free consultation today.
 noindex: false
 parent_service: professional-technology-training
-title: 'Technology Training London: Big0 IT Courses & Certifications'
+title: 'Get London Tech Training: Big0 AI & Cybersecurity Courses'
 ---
 
 # Professional Technology Training London | Upskill Your Teams with Expert IT Training

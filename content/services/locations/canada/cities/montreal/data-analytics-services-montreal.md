@@ -1,17 +1,22 @@
 ---
 canonical: /services/locations/canada/cities/montreal/data-analytics-services-montreal.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Data Into Your Competitive Edge
+cta_secondary: Book a Consultation
+cta_subtext: Request a custom quote for your Montreal enterprise and discover how
+  our BI & AI solutions deliver measurable ROI.
 description: Enterprise data analytics and business intelligence services across Montreal
   with PIPEDA compliance
 is_location_page: true
 keywords:
 - Data
 location: Montreal, Canada
-meta_description: Get actionable insights from data analytics services in Montreal
-  & Toronto. Big0 delivers Power BI & Tableau solutions. Schedule your free consultation
+meta_description: Get actionable data analytics services in Montreal & Toronto. Big0
+  builds custom BI & AI solutions that drive growth. Schedule your free consultation
   now.
 noindex: false
 parent_service: data-analytics-services
-title: Montreal Data Analytics Services | Big0 BI & AI
+title: Montreal Data Analytics Services | Big0 AI
 ---
 
 # Data Analytics Services Montreal | Enterprise Business Intelligence & Advanced Analytics

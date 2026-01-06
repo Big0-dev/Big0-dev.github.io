@@ -1,17 +1,20 @@
 ---
 canonical: /services/locations/uk/cities/london/ar_vr_development-london.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your London AR/VR Solution Today
+cta_secondary: Schedule a Free Consultation
+cta_subtext: Get a custom quote from Big0's London-based AR/VR experts within 24 hours.
 description: Cutting-edge AR/VR development for London businesses with NHS healthcare
   applications, industrial training, and immersive retail experiences
 is_location_page: true
 keywords:
 - AR/VR
 location: London, UK
-meta_description: Leading London AR/VR development company for enterprise solutions.
-  Transform training, retail, and therapy with custom VR/AR apps. Get your free consultation
-  today.
+meta_description: Hire AR/VR developers in London from Big0 for custom enterprise
+  solutions. Transform training, retail, and therapy. Get your free consultation today.
 noindex: false
 parent_service: ar-vr-development
-title: Hire AR/VR Developers London - Big0 VR/AR Solutions
+title: Hire AR/VR Developers London - Big0
 ---
 
 # AR/VR Development London | Transform Your Business with Immersive Technology

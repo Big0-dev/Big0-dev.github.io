@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/cities/seattle/hardware-iot-engineering-seattle.html
+cta_button: Get Your Custom Quote
+cta_headline: Accelerate Your IoT Hardware Project
+cta_secondary: View Our Case Studies
+cta_subtext: Partner with Big0's Seattle & Austin engineers for FCC-certified development.
+  Request your project quote today.
 description: Comprehensive IoT and hardware engineering services for US manufacturers
   with expertise in FCC certification, embedded systems, and industrial IoT applications.
 features: FCC Certification, UL Safety, Embedded Systems, PCB Design, Industrial IoT,
@@ -9,12 +14,11 @@ is_location_page: true
 keywords:
 - IoT
 location: Seattle, USA
-meta_description: Get expert IoT hardware engineering & embedded systems design in
-  Seattle. FCC certified. Partner with Big0 for your next project. Contact us for
-  a free consultation.
+meta_description: Partner with Big0 for expert IoT hardware engineering services.
+  Get FCC-certified embedded systems designed for scale. Contact us for a free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
-title: IoT Hardware Engineering Services | Big0 Seattle & Austin
+title: Seattle IoT Hardware Engineering Services | Big0 Free Consult
 ---
 
 # IoT & Hardware Engineering Services in Seattle | FCC Certified Development

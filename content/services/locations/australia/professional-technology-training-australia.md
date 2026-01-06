@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/professional-technology-training-australia.html
+cta_button: Get Your Quote
+cta_headline: Upskill Your Team Today
+cta_secondary: View Course Schedule
+cta_subtext: Contact us for a customized training plan tailored to your specific technical
+  needs.
 description: Comprehensive technology training services for Australian enterprises
   with RTO partnerships, AQF alignment, government-approved cyber security training,
   and cloud certifications.
@@ -10,11 +15,12 @@ is_location_page: true
 keywords:
 - Technology
 location: Australia
-meta_description: Get technology training services Australia for enterprise teams.
-  Upskill in AWS, Azure, DevOps & cyber security. Contact us for a free consultation.
+meta_description: Get technology training for enterprise teams in Australia. Upskill
+  in AWS, Azure, DevOps, and cyber security with expert guidance. Contact us for a
+  free consultation today.
 noindex: false
 parent_service: professional-technology-training
-title: Australia Tech Training Services | Expert AWS, Azure & DevOps
+title: 'Get Technology Training Australia: AWS, Azure & DevOps'
 ---
 
 # Professional Technology Training Services in Australia

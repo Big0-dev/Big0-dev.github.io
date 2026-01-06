@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/uk/hardware-iot-engineering-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to Build Your IoT Solution?
+cta_secondary: Download Case Study
+cta_subtext: Get a detailed project quote within 24 hours from our UK IoT engineering
+  team.
 description: Professional IoT and hardware engineering services across UK with expertise
   in embedded systems, industrial IoT, UKCA compliance, and smart device development
   for British markets.
@@ -7,11 +12,12 @@ is_location_page: true
 keywords:
 - IoT
 location: UK
-meta_description: Get expert IoT development and hardware engineering in UK. Big0
-  delivers industrial IoT solutions with CE/UKCA marking. Contact us for a free consultation.
+meta_description: Get expert IoT development services UK. Big0 delivers industrial
+  IoT solutions with CE/UKCA marking for enterprise. Contact us for a free consultation
+  today.
 noindex: false
 parent_service: hardware-iot-engineering
-title: IoT Development Services UK | Big0 London
+title: Get Expert IoT Development Services UK - Big0 London
 ---
 
 # IoT & Hardware Engineering Services in the United Kingdom

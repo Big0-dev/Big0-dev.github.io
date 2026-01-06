@@ -3,21 +3,26 @@ case_studies: AI route optimization reducing delivery costs 25%, Warehouse autom
   increasing throughput 40%, Supply chain visibility platform reducing stockouts 35%
 challenge: Supply chains face visibility gaps, manual processes, inefficient routing,
   inventory imbalances, high fuel costs, driver shortages, and customer delivery expectations
+cta_button: Get Your Custom Quote
+cta_headline: Transform Your Logistics Operations
+cta_secondary: Schedule a Demo
+cta_subtext: Join industry leaders using Big0 to cut costs by 30% and boost delivery
+  speed.
 description: Digital transformation solutions for logistics providers, 3PLs, shippers,
   and supply chain innovators optimizing operations end-to-end
 icon: truck
 keywords:
 - Logistics
-meta_description: Transform logistics operations with AI, IoT, and blockchain solutions
-  for fleet management and supply chain visibility. Get a free consultation with Big0
-  today.
+meta_description: Transform logistics operations with AI-driven fleet management and
+  real-time supply chain visibility. Solve bottlenecks and boost efficiency. Get a
+  free consultation with Big0 today.
 short_description: Comprehensive technology solutions modernizing logistics and supply
   chain operations from warehouse management and fleet optimization to last-mile delivery
   and supply chain visibility
 solutions: Transportation management systems, Warehouse management systems, Fleet
   tracking IoT, Route optimization AI, Supply chain visibility, Blockchain traceability,
   Predictive analytics, Last-mile delivery automation
-title: AI Logistics Solutions | Big0 - Transform Operations Now
+title: AI Logistics Solutions - Get Free Consultation | Big0
 ---
 
 # Logistics & Supply Chain: Digital Transformation for Operational Excellence

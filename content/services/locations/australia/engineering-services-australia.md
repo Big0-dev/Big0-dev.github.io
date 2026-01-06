@@ -1,4 +1,8 @@
 ---
+cta_button: Get Your Free Quote
+cta_headline: Get a Quote from Registered Engineers
+cta_secondary: View Project Portfolio
+cta_subtext: Receive a detailed proposal from our CPEng network within 24 hours.
 description: Comprehensive engineering consultancy services across Australia with
   Engineers Australia registered professionals. Structural, civil, mechanical, electrical,
   fire safety engineering for commercial, residential, industrial, and infrastructure
@@ -11,11 +15,11 @@ is_location_page: true
 keywords:
 - Engineering
 location: Australia
-meta_description: Need expert engineering consultants in Australia? Get a free consultation
-  with CPEng chartered engineers. Fast quote for structural, civil, mechanical & electrical
-  projects.
+meta_description: Hire expert engineering consultants in Australia. Get a free quote
+  from CPEng chartered engineers for structural, civil, mechanical & electrical projects.
+  Contact us today.
 parent_service: engineering-services
-title: Hire Engineering Consultants Australia - Get Quote Today
+title: Hire Expert Engineering Consultants - Big0 Australia
 ---
 
 # Engineering Consultancy Services Australia | Registered Professional Engineers

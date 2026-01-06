@@ -1,16 +1,20 @@
 ---
 canonical: /services/locations/uk/bpo-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Streamline Your Operations Today
+cta_secondary: Book a Consultation
+cta_subtext: See how our UK-based teams can cut costs by up to 40%.
 description: Comprehensive BPO solutions for UK enterprises with British accent customer
   support, UK GAAP accounting, and full GDPR compliance
 is_location_page: true
 keywords:
 - Business
 location: UK
-meta_description: Outsource business processes to Big0's UK BPO services in London.
-  Streamline operations with AI-driven solutions. Get your free consultation now.
+meta_description: Optimize business processes with Big0's UK BPO services. Leverage
+  AI-driven solutions to boost efficiency. Contact us for your free consultation today.
 noindex: false
 parent_service: bpo-services
-title: Business Process Outsourcing UK | Big0 BPO Services
+title: Get Business Process Outsourcing UK | Big0 AI Solutions
 ---
 
 # Business Process Outsourcing UK | Transform Your Operations with Expert BPO Services

@@ -255,7 +255,7 @@
       <div id="search-modal" popover class="search-popover">
         <div class="search-container">
           <div class="search-header">
-            <h2 class="text-2xl font-bold mb-lg">Search</h2>
+            <p class="text-2xl font-bold mb-lg" role="heading" aria-level="2">Search</p>
             <button
               class="close-btn"
               popovertarget="search-modal"
@@ -332,11 +332,20 @@
             </div>
 
             <div class="footer-section">
+              <p class="footer-heading">Connect</p>
+              <div class="footer-links">
+                <a href="{{ newsletters }}" class="footer-link">Newsletter</a>
+                <a href="{{ news }}" class="footer-link">News</a>
+                <a href="{{ contact }}" class="footer-link">Contact</a>
+              </div>
+            </div>
+
+            <div class="footer-section">
               <p class="footer-heading">Support</p>
               <div class="footer-links">
-                <a href="{{ contact }}" class="footer-link">Contact</a>
                 <a href="{{ gallery }}" class="footer-link">Gallery</a>
-                <a href="{{ news }}" class="footer-link">News</a>
+                <a href="{{ sitemap }}" class="footer-link">Sitemap</a>
+                <a href="{{ image_sitemap }}" class="footer-link">Image Sitemap</a>
               </div>
             </div>
 
@@ -352,8 +361,6 @@
             <div class="footer-section">
               <p class="footer-heading">Technical</p>
               <div class="footer-links">
-                <a href="{{ sitemap }}" class="footer-link">Sitemap</a>
-                <a href="{{ image_sitemap }}" class="footer-link">Image Sitemap</a>
                 <a href="{{ path_prefix }}rss.xml" class="footer-link">RSS Feed</a>
               </div>
             </div>

@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/cities/vancouver/hardware-iot-engineering-vancouver.html
+cta_button: Get a Free Quote
+cta_headline: Ready to build your IoT solution?
+cta_secondary: View Case Studies
+cta_subtext: Get a detailed quote within 24 hours for your hardware project.
 is_location_page: true
 keywords:
 - IoT
 location: Vancouver, Canada
-meta_description: Get expert IoT development in Vancouver. Big0 delivers embedded
-  systems & industrial IoT solutions. Contact us for a free consultation today.
+meta_description: Hire expert IoT engineers in Vancouver for embedded systems. Big0
+  delivers industrial IoT solutions. Contact us for a free consultation to get started.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Hire IoT Engineers in Vancouver | Embedded Systems | Big0
+title: Hire IoT Engineers Vancouver | Big0 Embedded Systems
 ---
 
 # IoT & Hardware Engineering Services in Vancouver

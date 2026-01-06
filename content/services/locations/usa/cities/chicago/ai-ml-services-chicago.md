@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/cities/chicago/ai-ml-services-chicago.html
+cta_button: Get Your AI Quote
+cta_headline: Build Your Custom AI Solution
+cta_secondary: View AI Case Studies
+cta_subtext: Get a free consultation and transparent pricing for your Chicago business
+  AI project.
 is_location_page: true
 keywords:
 - AI
@@ -8,7 +13,7 @@ meta_description: Get custom AI solutions in Chicago from Big0. Enterprise AI/ML
   computer vision, NLP. SOC 2, HIPAA compliant. Contact us for a free consultation.
 noindex: false
 parent_service: ai-ml-services
-title: Custom AI Solutions Chicago - Big0 Enterprise AI Services
+title: Chicago AI Solutions | Big0 Enterprise AI Services
 ---
 
 # AI & Machine Learning Services in Chicago

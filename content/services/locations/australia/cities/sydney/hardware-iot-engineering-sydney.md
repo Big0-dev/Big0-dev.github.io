@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/australia/cities/sydney/hardware-iot-engineering-sydney.html
+cta_button: Get Your Quote
+cta_headline: Ready to build robust IoT solutions?
+cta_secondary: Talk to an Engineer
+cta_subtext: Get a custom quote for your industrial IoT project in 24 hours.
 is_location_page: true
 keywords:
 - IoT
 location: Sydney, Australia
-meta_description: Need IoT hardware engineering in Sydney? Get embedded systems, PCB
-  design & industrial IoT for mining & agriculture. Get started today.
+meta_description: Get IoT engineering services in Sydney from Big0. Our embedded systems
+  & PCB design drive results for mining & agriculture. Contact us for a free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Sydney IoT Engineering Services | Big0 - Get Quote
+title: Sydney IoT Engineering Services | Get Quote Today
 ---
 
 # IoT & Hardware Engineering Services in Sydney | Industrial IoT Excellence

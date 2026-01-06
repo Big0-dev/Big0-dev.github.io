@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/uk/fintech-development-uk.html
+cta_button: Get Your Compliance Quote
+cta_headline: Build Your Compliant Fintech Solution
+cta_secondary: Schedule a technical consultation
+cta_subtext: Partner with UK regulation experts to launch your FCA-compliant platform
+  faster.
 description: Professional fintech development services across UK with expertise in
   digital banking, payment platforms, regulatory compliance, and FCA-authorized solutions
   for British financial services.
@@ -11,7 +16,7 @@ meta_description: Get Fintech solutions from Big0's AI experts. FCA regulated, U
   compliant. Contact us for a free consultation and get started now.
 noindex: false
 parent_service: fintech-development
-title: Regulated Fintech Services UK | Get Compliant Now Big0 London
+title: UK Fintech Compliance Services | Get Compliant Now Big0
 ---
 
 # Fintech Development Services in the United Kingdom

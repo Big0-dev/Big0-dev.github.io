@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/cities/brisbane/mobile-app-development-brisbane.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Brisbane App with Australia's Top Team
+cta_secondary: View Our Portfolio
+cta_subtext: Partner with Big0 AI for native iOS, Android, or cross-platform apps
+  built for your business growth.
 description: Professional mobile app development for Brisbanen businesses with native
   iOS, Android, and cross-platform solutions
 features: iOS development, Android development, React Native, Flutter, App Store optimization,
@@ -9,9 +14,8 @@ is_location_page: true
 keywords:
 - Mobile
 location: Brisbane, Australia
-meta_description: Partner with Big0 for high-performance mobile app development in
-  Brisbane. Build scalable iOS & Android solutions with AI. Get your free consultation
-  today!
+meta_description: Get high-performance mobile app development in Brisbane from Big0.
+  Build scalable iOS & Android solutions with AI. Get your free consultation today!
 noindex: false
 parent_service: mobile-app-development
 short_description: Australian mobile app specialists delivering iOS, Android, React

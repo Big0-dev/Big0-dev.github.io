@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/uk/web-development-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your High-Performance UK Website
+cta_secondary: View Our Portfolio
+cta_subtext: Get a custom solution built for British standards and your business goals.
 description: Professional web development services across UK with expertise in responsive
   websites, web applications, e-commerce platforms, WCAG accessibility, and GDPR compliance
   for British markets.
@@ -7,11 +11,11 @@ is_location_page: true
 keywords:
 - Web
 location: UK
-meta_description: Get custom web development services UK. Big0 builds secure, WCAG
-  2.1 & GDPR compliant sites. Get your free consultation and start your project.
+meta_description: Get custom Web Development Services UK from Big0. Secure, WCAG 2.1
+  & GDPR compliant sites. Get your free consultation and start your project today.
 noindex: false
 parent_service: web-development
-title: Web Development Services UK | Custom Sites Big0
+title: Custom Web Development Services UK | Big0 Free Consult
 ---
 
 # Web Development Services in the United Kingdom

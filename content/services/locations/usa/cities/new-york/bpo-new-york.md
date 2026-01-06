@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/cities/new-york/bpo-new-york.html
+cta_button: Get Your Custom Quote
+cta_headline: Ready to Optimize Your Operations?
+cta_secondary: Schedule a 15-min Consult
+cta_subtext: Receive a detailed proposal tailored to your New York business needs
+  within 24 hours.
 description: Comprehensive business process outsourcing services tailored for New
   York companies with American accent customer support and full regulatory compliance
 is_location_page: true
@@ -7,11 +12,11 @@ keywords:
 - Business
 location: New York, USA
 meta_description: Get expert Business Process Outsourcing Services New York with Big0's
-  AI-driven solutions for finance, support, and back office. Contact us for a free
-  consultation.
+  AI-driven solutions. Contact us for a free consultation to scale operations and
+  reduce costs.
 noindex: false
 parent_service: bpo
-title: 'New York BPO Services: Expert Business Process Outsourcing'
+title: NY Business Process Outsourcing Services - Big0 AI Solutions
 ---
 
 # Business Process Outsourcing Services in New York | American BPO Excellence

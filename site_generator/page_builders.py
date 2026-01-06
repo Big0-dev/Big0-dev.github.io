@@ -260,6 +260,10 @@ class ContentPageBuilder(BasePageBuilder):
             template = self.env.get_template(config['listing_template'])
             per_page = config.get('per_page', len(items))
 
+            # Sort items by date (newest first) for blog, news, case_studies
+            if content_type in ['blog', 'news', 'case_studies', 'newsletters']:
+                items = sorted(items, key=lambda x: x.get('date') or datetime.min, reverse=True)
+
             # Paginate if needed
             for page_num, i in enumerate(range(0, len(items), per_page), 1):
                 page_items = items[i:i + per_page]
@@ -283,6 +287,20 @@ class ContentPageBuilder(BasePageBuilder):
                 # Special handling for news template
                 if content_type == 'news':
                     list_context['news_articles'] = page_items
+
+                # Special handling for blog template - include newsletters
+                if content_type == 'blog':
+                    newsletters_config = self.config['content_types'].get('newsletters')
+                    if newsletters_config:
+                        newsletters_dir = Path(newsletters_config['content_dir'])
+                        if newsletters_dir.exists():
+                            newsletters = []
+                            for file_path in newsletters_dir.glob('*.md'):
+                                newsletter = self._load_markdown_content(file_path)
+                                newsletters.append(newsletter)
+                            # Sort by issue number descending
+                            newsletters.sort(key=lambda x: x.get('frontmatter', {}).get('issue_number', 0), reverse=True)
+                            list_context['all_newsletters'] = newsletters
 
                 html_content = template.render(**list_context)
                 output_path.write_text(html_content)

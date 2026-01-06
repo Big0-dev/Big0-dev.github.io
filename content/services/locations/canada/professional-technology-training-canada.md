@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/canada/professional-technology-training-canada.html
+cta_button: Get a Free Quote
+cta_headline: Transform Your Team's IT Skills Today
+cta_secondary: Download Course Catalog
+cta_subtext: Get a customized training plan and pricing for your organization within
+  24 hours.
 is_location_page: true
 keywords:
 - Technology
 location: Canada
-meta_description: 'Technology training Canada: Big0 delivers corporate IT training
-  in AWS, Azure, cybersecurity & data science. Get your free consultation today.'
+meta_description: Get technology training Canada for corporate IT teams in AWS, Azure,
+  cybersecurity & data science. Schedule your free BigO consultation today.
 noindex: false
 parent_service: professional-technology-training
-title: 'Technology Training Canada: Urgent Corporate IT Solutions | BigO'
+title: 'Urgent Tech Training Canada: BigO AWS & Cybersecurity'
 ---
 
 # Professional Technology Training Services in Canada

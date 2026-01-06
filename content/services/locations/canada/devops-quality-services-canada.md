@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/devops-quality-services-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Ship Flawless Software in Canada
+cta_secondary: Schedule a 15-min QA Audit
+cta_subtext: Partner with our expert QA teams for bulletproof compliance and quality.
 is_location_page: true
 keywords:
 - Software
 location: Canada
-meta_description: Get expert software testing & QA services in Canada. Achieve flawless
-  performance with PIPEDA compliance. Contact Big0 for your free consultation today.
+meta_description: Get expert software testing in Canada. Big0 delivers AI-driven QA
+  & automation for flawless performance. Contact us for your free consultation today.
 noindex: false
 parent_service: devops-quality-services
-title: 'Software Testing Canada: QA & Automation Services | Big0'
+title: 'Software Testing Canada: QA & Automation | Big0'
 ---
 
 # Software Testing & Quality Assurance Services in Canada

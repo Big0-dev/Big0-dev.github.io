@@ -113,6 +113,43 @@
 <!-- CTA Section -->
 {% include 'cta.html' %}
 
+<!-- Zero to One: Tech Frontiers Section -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Zero to One: Tech Frontiers</h2>
+      <p class="section-subtitle">
+        Your weekly guide to <span class="text-gradient">AI technology</span> and the future
+      </p>
+    </div>
+
+    <div class="grid grid-3 gap-xl grid-mobile-1">
+      {% for newsletter in all_newsletters[:3] %}
+      <article class="card card-hover">
+        <a href="./newsletters/{{ newsletter.slug }}.html" class="block p-lg">
+          <div class="flex items-center gap-md mb-md">
+            <span class="badge badge-primary">Issue #{{ newsletter.frontmatter.issue_number }}</span>
+            <span class="text-xs text-muted">{{ newsletter.frontmatter.date }}</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-sm">{{ newsletter.title }}</h3>
+          <p class="text-secondary text-sm line-clamp-2">{{ newsletter.meta_description }}</p>
+          <span class="text-primary font-medium text-sm mt-md inline-block">Read Issue →</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-xl">
+      <a href="./newsletters.html" class="btn btn-outline">
+        View All Issues
+        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Newsletter Section -->
 <section class="section">
   <div class="container">

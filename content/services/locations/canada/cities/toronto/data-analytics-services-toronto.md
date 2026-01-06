@@ -1,16 +1,21 @@
 ---
 canonical: /services/locations/canada/cities/toronto/data-analytics-services-toronto.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Data Into Your Competitive Edge
+cta_secondary: See Case Studies
+cta_subtext: Book a free consultation to unlock actionable insights and drive measurable
+  growth today.
 description: Enterprise data analytics and business intelligence services across Toronto
   with PIPEDA compliance
 is_location_page: true
 keywords:
 - Data
 location: Toronto, Canada
-meta_description: Get data analytics services in Toronto from Big0. Unlock insights
-  with Power BI, Tableau. PIPEDA compliant. Book your free consultation today.
+meta_description: Unlock data analytics services Toronto with Big0's Power BI & Tableau
+  solutions. Book your free consultation today to get started.
 noindex: false
 parent_service: data-analytics-services
-title: Data Analytics Services Toronto | Big0 BI Solutions
+title: 'Data Analytics Services Toronto: Get Insights Fast'
 ---
 
 # Data Analytics Services Toronto | Enterprise Business Intelligence & Advanced Analytics

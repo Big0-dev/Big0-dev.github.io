@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/cities/seattle/security-services-seattle.html
+cta_button: Get Your Quote
+cta_headline: Secure Your Seattle Operations Today
+cta_secondary: View Service Plans
+cta_subtext: Big0 delivers immediate pen testing and SOC 2 compliance for enterprise
+  infrastructure.
 description: Comprehensive cybersecurity services for US enterprises with expertise
   in NIST, FedRAMP, SOC 2, and state-level compliance requirements.
 features: NIST Framework, FedRAMP Compliance, SOC 2 Type II, Penetration Testing,
@@ -14,7 +19,7 @@ meta_description: Get expert cybersecurity services in Seattle. Big0 offers pene
   today.
 noindex: false
 parent_service: security-services
-title: Seattle Cybersecurity Services - Immediate Pen Testing & SOC 2
+title: 'Seattle Cybersecurity Services: Immediate Pen Testing & SOC 2'
 ---
 
 # Enterprise Cybersecurity Services in Seattle | NIST & FedRAMP Compliant

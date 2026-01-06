@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/uk/cities/manchester/data-analytics-services-manchester.html
+cta_button: Get Your Free Data Audit
+cta_headline: Transform Your Data Into Revenue
+cta_secondary: Download Case Study
+cta_subtext: Book a 30-min consultation with our analytics experts to identify high-impact
+  opportunities
 is_location_page: true
 keywords:
 - Data
 location: Manchester, UK
-meta_description: Ready to transform data into revenue? Get a free consultation on
-  AI-driven analytics from Big0. Unlock insights today.
+meta_description: Unlock revenue with Manchester Data Analytics Services from Big0.
+  Get your free AI-driven BI consultation to drive business growth now.
 noindex: false
 parent_service: data-analytics-services
-title: Manchester Data Analytics Services | Big0 BI & AI Solutions
+title: Manchester Data Analytics Services | Get Quote Today Big0
 ---
 
 # Data Analytics Services in the United Kingdom

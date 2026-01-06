@@ -1,4 +1,9 @@
 ---
+cta_button: Get Free AI Assessment
+cta_headline: See how AI transforms your specific operations
+cta_secondary: Compare AI Solutions
+cta_subtext: Get a customized analysis of automation opportunities and projected ROI
+  for your business.
 description: Comprehensive AI and machine learning services including custom model
   development, computer vision, natural language processing, and intelligent automation
 features: Custom AI models, Machine learning, Computer vision, Natural language processing,
@@ -6,10 +11,10 @@ features: Custom AI models, Machine learning, Computer vision, Natural language 
 icon: ai
 keywords:
 - AI
-meta_description: See how Big0's enterprise AI services drive efficiency with custom
-  models, computer vision, and NLP. Compare intelligent automation solutions to transform
-  your operations today.
-title: Best AI Solutions & Services | Big0 Transform Operations
+meta_description: See how Big0's enterprise AI solutions optimize operations with
+  custom models and NLP. Compare intelligent automation services to drive efficiency
+  today.
+title: 'Best AI Solutions by Big0: Boost Efficiency & Automation'
 ---
 
 # Transform Your Business with Artificial Intelligence

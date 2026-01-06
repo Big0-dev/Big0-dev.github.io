@@ -5,19 +5,25 @@ case_studies: Smart building automation reducing energy costs 30%, Property toke
 challenge: Real estate faces digital transformation challenges including manual processes,
   fragmented data, limited transparency, inefficient property management, and slow
   transaction cycles
+cta_button: Get Free Tech Assessment
+cta_headline: Optimize Your Property Tech Stack
+cta_secondary: See Platform Demo
+cta_subtext: Compare your current solutions against Big0's industry-leading platform
+  in a quick 15-minute audit.
 description: Digital transformation solutions for real estate developers, property
   managers, and PropTech innovators
 icon: building
 keywords:
 - Real
-meta_description: Real estate operations optimized with AI, blockchain, and IoT. See
-  how Big0 delivers property management and smart building solutions.
+meta_description: See how Big0 delivers real estate and PropTech solutions with AI,
+  blockchain, and IoT. Compare smart property management systems to find your best
+  fit today.
 short_description: Comprehensive technology solutions modernizing real estate operations
   from property development and management to transactions and tenant experiences
 solutions: Property management platforms, Smart building IoT, Blockchain tokenization,
   Virtual reality tours, AI property valuation, Cloud-based operations, Mobile tenant
   apps
-title: Top Real Estate & PropTech Solutions by Big0
+title: Best Real Estate & PropTech Solutions by Big0
 ---
 
 # Real Estate & PropTech: Digital Transformation for Property Excellence

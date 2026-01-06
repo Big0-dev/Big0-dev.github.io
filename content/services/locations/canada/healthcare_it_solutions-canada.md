@@ -1,14 +1,20 @@
 ---
 canonical: /services/locations/canada/healthcare_it_solutions-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Your Healthcare Operations Today
+cta_secondary: Schedule a Demo
+cta_subtext: Join 500+ Canadian healthcare providers who streamlined operations and
+  boosted compliance with Big0.
 is_location_page: true
 keywords:
 - Healthcare
 location: Canada
-meta_description: Partner with Big0 for compliant Canadian healthcare software solutions.
-  Get your free consultation for EMR, telehealth & patient portals today.
+meta_description: Get compliant Canadian Healthcare IT solutions from Big0. Deploy
+  custom EMR, telehealth & patient portals. Contact us for your free consultation
+  today.
 noindex: false
 parent_service: healthcare-it-solutions
-title: Healthcare IT Solutions Canada | Big0 Medical Software
+title: Get Big0 Healthcare IT Solutions Canada - Free Consultation
 ---
 
 # Healthcare IT Solutions in Canada

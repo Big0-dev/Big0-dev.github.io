@@ -1,11 +1,16 @@
 ---
 canonical: /services/locations/canada/cities/montreal/staff-augmentation-montreal.html
+cta_button: Get Free Staffing Quote
+cta_headline: Scale your tech team with pre-vetted IT talent
+cta_secondary: Download Talent Playbook
+cta_subtext: Get matched with specialized IT professionals in 48 hours. Zero upfront
+  costs.
 is_location_page: true
 keywords:
 - IT
 location: Montreal, Canada
-meta_description: Scale your IT projects with Big0's staff augmentation in Montreal.
-  Get vetted developers, testers, and consultants. Contact us for a free consultation
+meta_description: Hire expert IT staff in Montreal with BigO Talent. Scale your team
+  with vetted developers, testers, and consultants. Contact us for a free consultation
   today!
 noindex: false
 parent_service: staff-augmentation

@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/cities/vancouver/ai-ml-services-vancouver.html
+cta_button: Get Your AI Quote
+cta_headline: Build Your Custom AI Solution
+cta_secondary: View Case Studies
+cta_subtext: Leverage Vancouver's top AI talent for your specific enterprise needs.
+  Get a tailored quote today.
 description: Enterprise AI and ML development services across Vancouver with PIPEDA
   compliance and bilingual NLP capabilities
 is_location_page: true
 keywords:
 - AI
 location: Vancouver, Canada
-meta_description: Get enterprise AI solutions in Vancouver with Big0. Custom machine
-  learning models, computer vision, NLP. PIPEDA compliant. Schedule your free consultation
-  today.
+meta_description: 'Vancouver AI services by Big0: Custom ML models, NLP, & computer
+  vision. PIPEDA compliant. Schedule your free AI consultation to get started.'
 noindex: false
 parent_service: ai-ml-services
 title: 'Vancouver AI Services: Custom Models & NLP | Big0'

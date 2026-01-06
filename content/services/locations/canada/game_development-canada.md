@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/canada/game_development-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Hire Top Canadian Game Developers
+cta_secondary: View Developer Profiles
+cta_subtext: Get a custom quote within 24 hours. No obligation, just expert game dev
+  talent.
 is_location_page: true
 keywords:
 - Game
 location: Canada
-meta_description: Partner with Big0 for expert game development in Canada. Leverage
-  Unity, Unreal & tax credits. Get your free consultation.
+meta_description: Hire expert Canadian game developers at Big0. Leverage Unity, Unreal
+  & tax credits for your next project. Get your free consultation now.
 noindex: false
 parent_service: game-development
-title: Hire Canadian Game Developers Now | Big0 Game Dev Services
+title: Hire Expert Canadian Game Developers Now | Big0
 ---
 
 # Game Development Services in Canada

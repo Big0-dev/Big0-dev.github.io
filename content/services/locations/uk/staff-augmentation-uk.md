@@ -1,17 +1,21 @@
 ---
 canonical: /services/locations/uk/staff-augmentation-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Scale Your Tech Team Today
+cta_secondary: Book a Consultation
+cta_subtext: Connect with top UK tech talent in 48 hours. No obligation, instant access.
 description: Expert IT staff augmentation for UK businesses with IR35 compliance,
   security clearances, and access to top UK tech talent
 is_location_page: true
 keywords:
 - IT
 location: UK
-meta_description: Scale your IT projects with Big0's UK staff augmentation. IR35 compliant
-  developers, testers, consultants in London & Manchester. Get your free consultation
+meta_description: Hire expert IT staff augmentation in the UK. IR35 compliant developers,
+  testers & consultants in London and Manchester. Scale your team. Get your free consultation
   now.
 noindex: false
 parent_service: staff-augmentation
-title: Hire IT Staff Augmentation UK | Big0 Talent
+title: Hire IT Staff Augmentation UK - Big0 Talent
 ---
 
 # IT Staff Augmentation UK | Scale Your Tech Team with Top UK Talent

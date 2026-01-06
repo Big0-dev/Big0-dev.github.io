@@ -1,7 +1,7 @@
 ---
 auto_generated: true
 category: Cloud
-date: '2025-12-29'
+date: December 29, 2025
 image_url: cloud-services-in-london-choosing-the-right-provider.avif
 funnel_stage: tofu
 keywords:

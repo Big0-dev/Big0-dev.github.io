@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/blockchain_development-australia.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Blockchain Project Today
+cta_secondary: View Case Studies
+cta_subtext: Get a complimentary consultation and transparent pricing for your compliant
+  blockchain solution.
 description: Enterprise blockchain development services for Australian businesses
   with ASIC compliance, ATO crypto guidance, and local expertise
 features: Smart contracts, DeFi applications, NFT platforms, Blockchain consulting,
@@ -9,14 +14,13 @@ is_location_page: true
 keywords:
 - Blockchain
 location: Australia
-meta_description: Partner with Big0 for enterprise blockchain development services
-  in Australia. Get smart contracts, DeFi, NFT platforms & ASIC compliance. Schedule
-  your free consultation today.
+meta_description: Partner with Big0 for enterprise blockchain development in Australia.
+  Get secure smart contracts & ASIC compliance. Schedule your free consultation today.
 noindex: false
 parent_service: blockchain_development
 short_description: Australian blockchain developers delivering smart contracts, DeFi
   applications, and Web3 solutions with regulatory compliance and local market knowledge
-title: Blockchain Development Services Australia | Big0
+title: Australian Blockchain Development Services | Get Quote Big0
 ---
 
 # Blockchain Development Services in Australia

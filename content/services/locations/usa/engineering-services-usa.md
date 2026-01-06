@@ -1,16 +1,22 @@
 ---
 canonical: /services/locations/usa/engineering-services-usa.html
+cta_button: Get Your Free Quote
+cta_headline: Partner with Licensed U.S. Engineers
+cta_secondary: View Case Studies
+cta_subtext: Get a customized proposal and precise cost estimate for your project
+  within 24 hours.
 description: Expert engineering consultancy services for USA projects with PE-licensed
   engineers, comprehensive design, and regulatory compliance
 is_location_page: true
 keywords:
 - Engineering
 location: USA
-meta_description: Need engineering expertise for your next project? Get a free consultation
-  with Big0's licensed PEs. Start building with confidence.
+meta_description: Get expert engineering services from Big0's licensed PEs for civil,
+  structural, and mechanical projects. Request your free consultation now to start
+  building with confidence.
 noindex: false
 parent_service: engineering-services
-title: 'Engineering Services USA: Civil, Structural, Mechanical | Big0'
+title: Get Expert Engineering Services | Free Consultation Big0
 ---
 
 # Engineering Consultancy Services USA | Licensed Professional Engineering Excellence

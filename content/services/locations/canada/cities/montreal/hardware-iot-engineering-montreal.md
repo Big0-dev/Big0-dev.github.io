@@ -1,15 +1,18 @@
 ---
 canonical: /services/locations/canada/cities/montreal/hardware-iot-engineering-montreal.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to build your IoT product?
+cta_secondary: View Case Studies
+cta_subtext: Get a detailed quote within 24 hours from Montreal's IoT experts.
 is_location_page: true
 keywords:
 - IoT
 location: Montreal, Canada
-meta_description: Get expert IoT development in Montreal for embedded systems and
-  industrial IoT. Ensure ISED compliance across Canada. Schedule your free consultation
-  today.
+meta_description: Hire expert IoT developers in Montreal for embedded systems. Ensure
+  ISED compliance across Canada. Schedule your free IoT consultation with Big0 today.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Hire IoT Developers in Montreal - Big0 Embedded Systems
+title: Hire IoT Developers in Montreal - Big0 | Free Consult
 ---
 
 # IoT & Hardware Engineering Services in Montreal

@@ -1,16 +1,21 @@
 ---
 canonical: /services/locations/canada/data-analytics-services-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Transform Data Into Your Competitive Edge
+cta_secondary: Book a Data Strategy Call
+cta_subtext: Join Canadian enterprises using our analytics to drive revenue and compliance.
+  Get a custom quote in 24 hours.
 description: Enterprise data analytics and business intelligence services across Canada
   with PIPEDA compliance
 is_location_page: true
 keywords:
 - Data
 location: Canada
-meta_description: Get data analytics services in Canada from Big0. Power BI, Tableau
-  solutions for Toronto businesses. Request your free consultation now.
+meta_description: Get data analytics services in Canada from Big0. Transform raw data
+  into actionable insights that drive revenue growth. Contact us for a free consultation.
 noindex: false
 parent_service: data-analytics-services
-title: Data Analytics Services Canada | Big0
+title: Data Analytics Services Canada - Get Big0 Solutions Now
 ---
 
 # Data Analytics Services Canada | Enterprise Business Intelligence & Advanced Analytics

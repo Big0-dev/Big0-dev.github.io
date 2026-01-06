@@ -1,16 +1,21 @@
 ---
 canonical: /services/locations/canada/web-development-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Bilingual Website
+cta_secondary: View Case Studies
+cta_subtext: Our Canadian team builds accessible, high-performance sites that convert
+  across languages. Get a quote in 24 hours.
 description: Professional web development services across Canada with bilingual capabilities
   and accessibility compliance
 is_location_page: true
 keywords:
 - Web
 location: Canada
-meta_description: Get expert web development services in Canada. Build bilingual (EN/FR),
-  WCAG 2.0 accessible e-commerce sites. Schedule your free consultation today.
+meta_description: Get expert bilingual web development services in Canada. Build WCAG
+  2.0 accessible e-commerce sites that convert. Contact us for your free consultation.
 noindex: false
 parent_service: web-development
-title: Bilingual Web Development Services Canada | Big0
+title: Web Development Services Canada | Free Consultation Big0
 ---
 
 # Web Development Services Canada | Bilingual, Accessible, High-Performance Websites

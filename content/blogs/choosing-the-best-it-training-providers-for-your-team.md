@@ -1,7 +1,7 @@
 ---
 auto_generated: true
 category: Software Development
-date: '2025-12-29'
+date: December 29, 2025
 funnel_stage: tofu
 image_url: choosing-the-best-it-training-providers-for-your-team.avif
 keywords:

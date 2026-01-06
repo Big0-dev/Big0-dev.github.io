@@ -1,5 +1,9 @@
 ---
 canonical: /services/locations/australia/ai-ml-services-australia.html
+cta_button: Get Your Free AI Quote
+cta_headline: Transform Your Business with AI
+cta_secondary: Download Case Studies
+cta_subtext: Get a custom AI solution quote tailored to your specific enterprise needs.
 description: Enterprise AI and machine learning services for Australian businesses
   with data sovereignty compliance, OAIC privacy standards, and industry-specific
   solutions
@@ -10,15 +14,15 @@ is_location_page: true
 keywords:
 - AI
 location: Australia
-meta_description: Get enterprise AI & machine learning solutions in Australia. Custom
-  models, NLP, computer vision with local data sovereignty. Book your free AI consultation
+meta_description: Get enterprise AI solutions in Australia. Big0 delivers custom ML,
+  NLP & computer vision with local data sovereignty. Book your free AI consultation
   today.
 noindex: false
 parent_service: ai-ml-services
 short_description: Australian AI/ML specialists delivering custom models, computer
   vision, natural language processing, and predictive analytics with local expertise
   and regulatory compliance
-title: 'AI Solutions Australia: Custom ML & NLP Services | Big0'
+title: 'Get AI Solutions Australia: ML & NLP Services | Big0'
 ---
 
 # AI & Machine Learning Services in Australia

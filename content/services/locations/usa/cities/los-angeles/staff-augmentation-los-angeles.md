@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/usa/cities/los-angeles/staff-augmentation-los-angeles.html
+cta_button: Get Your Free Quote
+cta_headline: Scale Your Team in 72 Hours
+cta_secondary: Download Capability Deck
+cta_subtext: BigO connects you with pre-vetted LA tech talent. No upfront fees. Hire
+  top developers today.
 description: Expert IT staff augmentation services for Los Angeles companies with
   skilled technology professionals, compliance expertise, and flexible engagement
   models
@@ -11,7 +16,7 @@ meta_description: Need IT staff augmentation in Los Angeles? Big0 delivers exper
   developers & engineers fast. Scale your tech team today. Contact us for a free consultation.
 noindex: false
 parent_service: staff-augmentation
-title: IT Staff Augmentation LA | BigO Contract & FTE Developers
+title: IT Staff Augmentation LA | Big0 Expert Developers Fast
 ---
 
 # IT Staff Augmentation Services Los Angeles | Expert Technology Staffing

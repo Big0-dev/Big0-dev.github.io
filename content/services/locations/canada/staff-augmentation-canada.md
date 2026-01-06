@@ -1,11 +1,17 @@
 ---
 canonical: /services/locations/canada/staff-augmentation-canada.html
+cta_button: Get Free Quote
+cta_headline: Scale Your Team in 48 Hours
+cta_secondary: View Case Studies
+cta_subtext: Connect with pre-vetted Canadian IT talent today. No upfront costs or
+  obligations.
 is_location_page: true
 keywords:
 - IT
 location: Canada
-meta_description: Scale your IT projects with Big0’s staff augmentation. Hire vetted
-  Canadian developers, testers & consultants fast. Get your free consultation now.
+meta_description: Hire top IT talent in Canada with Big0’s staff augmentation. Scale
+  your projects fast with vetted developers, testers & consultants. Get your free
+  consultation now.
 noindex: false
 parent_service: staff-augmentation
 title: Hire IT Staff Canada | Big0 Talent Solutions Now

@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/uk/e_commerce_solutions-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Launch a UK-Compliant Store That Sells
+cta_secondary: See Our Work
+cta_subtext: Get a custom quote for your e-commerce project in 24 hours.
 is_location_page: true
 keywords:
 - E-commerce
 location: UK
-meta_description: Expert e-commerce development UK. Custom Shopify, WooCommerce, Magento
-  stores with VAT compliance. Get your free consultation with Big0 now.
+meta_description: Get expert e-commerce development UK from Big0. We build custom
+  Shopify, WooCommerce, Magento stores with VAT compliance. Get your free consultation
+  now.
 noindex: false
 parent_service: e-commerce-solutions
-title: UK E-commerce Development Services | Big0 - Get Quote Now
+title: UK E-commerce Development Services | Get Quote Now
 ---
 
 # E-commerce Development Services in the United Kingdom

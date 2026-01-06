@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/australia/mobile-app-development-australia.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to Build Your Mobile App?
+cta_secondary: View Case Studies
+cta_subtext: Get a free consultation and detailed quote from Australia's top mobile
+  app developers.
 description: Professional mobile app development for Australian businesses with native
   iOS, Android, and cross-platform solutions
 features: iOS development, Android development, React Native, Flutter, App Store optimization,
@@ -9,13 +14,13 @@ is_location_page: true
 keywords:
 - Mobile
 location: Australia
-meta_description: Get expert mobile app development in Australia from Big0 AI. Build
+meta_description: Get expert Mobile App Development in Australia from Big0 AI. Build
   scalable iOS & Android apps that convert. Contact us for a free consultation today.
 noindex: false
 parent_service: mobile-app-development
 short_description: Australian mobile app specialists delivering iOS, Android, React
   Native, and Flutter apps with OAIC privacy compliance and local market expertise
-title: 'Mobile App Dev Australia: iOS, Android & React Native | Big0 AI'
+title: 'Mobile App Development Australia: iOS & Android | Big0 AI'
 ---
 
 # Mobile App Development Australia | Native iOS, Android & Cross-Platform

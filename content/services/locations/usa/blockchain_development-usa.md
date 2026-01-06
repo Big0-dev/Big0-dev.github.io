@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/usa/blockchain_development-usa.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Blockchain Team Today
+cta_secondary: Schedule a Strategy Call
+cta_subtext: Partner with US-based blockchain experts who understand compliance. Get
+  a free quote in 24 hours.
 is_location_page: true
 keywords:
 - Blockchain
 location: USA
-meta_description: Hire expert Blockchain developers in USA for secure smart contracts
-  and DeFi. Get a free consultation with Big0 today.
+meta_description: Hire expert Blockchain developers in USA for secure smart contracts.
+  Get a free consultation with Big0's AI team today to start your project.
 noindex: false
 parent_service: blockchain-development
-title: Hire Blockchain Developers in USA | Big0
+title: Hire Blockchain Developers in USA - Secure Smart Contracts | Big0
 ---
 
 # Blockchain Development Services in USA

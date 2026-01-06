@@ -1,15 +1,19 @@
 ---
 canonical: /services/locations/uk/security-services-uk.html
+cta_button: Get Your Free Quote
+cta_headline: Secure Your Business Today
+cta_secondary: Schedule a 15-min Call
+cta_subtext: Speak with our UK-based security experts for a personalized threat assessment
+  and pricing.
 is_location_page: true
 keywords:
 - Cybersecurity
 location: UK
-meta_description: Get expert cybersecurity services from Big0. Protect your business
-  with penetration testing, security audits, and NCSC guidance. Schedule your free
-  consultation today.
+meta_description: Get urgent UK cybersecurity services from Big0 to neutralize active
+  threats. Contact us for rapid response and protect your business today.
 noindex: false
 parent_service: security-services
-title: UK Cybersecurity Services | Urgent Threat Response Big0
+title: Urgent UK Cybersecurity Services & Threat Response | Big0
 ---
 
 # Cybersecurity Services in the United Kingdom

@@ -1,4 +1,8 @@
 ---
+cta_button: Get Custom Quote
+cta_headline: Ready to Start Your Project?
+cta_secondary: View Case Studies
+cta_subtext: Receive a detailed engineering proposal within 24 hours.
 description: Comprehensive engineering consultancy covering civil, mechanical, electrical,
   and structural engineering with project management and technical feasibility studies
 features: Structural design, MEP systems, Project management, Feasibility studies,
@@ -6,9 +10,9 @@ features: Structural design, MEP systems, Project management, Feasibility studie
 icon: engineering
 keywords:
 - Engineering
-meta_description: Get expert engineering consultancy services from Big0. Solve complex
-  challenges with our AI-driven solutions and PEC-registered consultants. Request
-  your free consultation today.
+meta_description: Get expert Engineering Consultancy from Big0. Solve complex challenges
+  with AI-driven solutions and PEC-registered consultants. Request your free consultation
+  today.
 title: Engineering Consultancy Services | Big0 - Get Quote Now
 ---
 

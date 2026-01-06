@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/uk/devops-quality-services-uk.html
+cta_button: Get Your Quote
+cta_headline: Ship Flawless Software with Confidence
+cta_secondary: Download Service Overview
+cta_subtext: Partner with BigO's UK QA experts to eliminate bugs, ensure compliance,
+  and deliver superior user experiences.
 is_location_page: true
 keywords:
 - Software
 location: UK
-meta_description: Optimize your software quality with Big0's expert QA testing. Book
-  a free consultation today to reduce bugs and accelerate delivery.
+meta_description: Get expert software testing & QA services UK. Reduce bugs and accelerate
+  delivery. Book your free consultation with BigO's AI-powered QA team today.
 noindex: false
 parent_service: devops-quality-services
-title: Software Testing & QA Services UK | BigO
+title: 'Software QA Services UK: Fast Bug Fixes & Testing'
 ---
 
 # Software Testing & QA Services in the United Kingdom

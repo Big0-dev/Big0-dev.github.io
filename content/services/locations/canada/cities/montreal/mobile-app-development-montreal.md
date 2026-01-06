@@ -1,14 +1,18 @@
 ---
 canonical: /services/locations/canada/cities/montreal/mobile-app-development-montreal.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your Montreal App Now
+cta_secondary: View Our Portfolio
+cta_subtext: Get a custom quote in 24 hours for your iOS or Android project
 is_location_page: true
 keywords:
 - Mobile
 location: Montreal, Canada
-meta_description: Get expert mobile app development in Montreal for iOS & Android.
+meta_description: Get expert Mobile app development in Montreal for iOS & Android.
   Big0 builds secure, scalable apps. Book your free consultation today.
 noindex: false
 parent_service: mobile-app-development
-title: Mobile App Development Montreal | iOS Android Apps Big0
+title: 'Montreal Mobile App Dev: iOS Android | Big0 Free Consult'
 ---
 
 # Mobile App Development Services in Montreal

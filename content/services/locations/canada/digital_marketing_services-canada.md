@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/canada/digital_marketing_services-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Ready to Dominate the Canadian Market?
+cta_secondary: View Case Studies
+cta_subtext: Partner with Big0 for data-driven digital marketing strategies that deliver
+  measurable ROI.
 is_location_page: true
 keywords:
 - Digital
 location: Canada
-meta_description: Drive revenue with AI-powered digital marketing in Canada. Get a
+meta_description: Drive revenue with AI-powered Digital Marketing in Canada. Get a
   free consultation on SEO, PPC, and social media campaigns. Contact Big0 to start.
 noindex: false
 parent_service: digital-marketing-services
-title: 'Digital Marketing Canada: SEO, PPC & Social Media | Big0'
+title: 'Get Canada Digital Marketing: SEO, PPC & Social | Big0'
 ---
 
 # Digital Marketing Services in Canada

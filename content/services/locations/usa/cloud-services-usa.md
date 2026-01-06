@@ -1,14 +1,19 @@
 ---
 canonical: /services/locations/usa/cloud-services-usa.html
+cta_button: Get Your Custom Quote
+cta_headline: Power Your US Cloud Migration
+cta_secondary: Schedule a 15-min Expert Consultation
+cta_subtext: Get a tailored solution meeting FedRAMP, HIPAA, and SOC 2 compliance
+  requirements today.
 is_location_page: true
 keywords:
 - Cloud
 location: USA
-meta_description: 'Get US cloud services for enterprise: AWS, Azure, GCP with SOC
-  2, FedRAMP compliance. Get your free consultation with Big0 today.'
+meta_description: Get US cloud services on AWS, Azure, GCP. Big0 delivers SOC 2 &
+  FedRAMP compliance for enterprise. Schedule your free consultation today.
 noindex: false
 parent_service: cloud-services
-title: 'US Cloud Services: AWS Azure GCP - Big0'
+title: 'Get US Cloud Services: AWS, Azure, GCP | Big0'
 ---
 
 # Cloud Services in USA

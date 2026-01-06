@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/uk/cities/london/blockchain-development-london.html
+cta_button: Get Your Free Quote
+cta_headline: Launch Your UK Blockchain Project
+cta_secondary: Schedule a Discovery Call
+cta_subtext: Get a free consultation and transparent quote from our London blockchain
+  experts today.
 description: Professional blockchain development services across UK with expertise
   in DeFi protocols, smart contracts, tokenization, and FCA-compliant crypto solutions
   for British markets.
@@ -7,11 +12,11 @@ is_location_page: true
 keywords:
 - Blockchain
 location: London, UK
-meta_description: Partner with Big0 for expert blockchain development in London. Build
-  secure DeFi solutions and smart contracts. Schedule your free consultation today.
+meta_description: Get expert blockchain development in London. Big0 builds secure
+  DeFi solutions & smart contracts fast. Contact us for your free consultation today.
 noindex: false
 parent_service: blockchain-development
-title: 'Blockchain Development London: Fast Smart Contracts & DeFi'
+title: 'London Blockchain Development: Fast Smart Contracts & DeFi'
 ---
 
 # Blockchain Development Services in the United Kingdom

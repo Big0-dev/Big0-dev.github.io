@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Zero to One: Tech Frontiers - AI Newsletter{% endblock %}
+{% block meta_description %}Your weekly guide to AI technology and the future. Industry trends, technical deep-dives, and innovation stories from the frontlines of AI.{% endblock %}
+{% block canonical_path %}/newsletters.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+<link rel="stylesheet" href="{{ static }}/blog.css">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <span class="badge badge-primary mb-md">Newsletter</span>
+      <h1 class="text-4xl font-bold mb-lg">
+        Zero to One: <span class="text-gradient">Tech Frontiers</span>
+      </h1>
+      <p class="text-xl text-secondary">
+        Your weekly guide to AI technology and the future. Industry trends, technical deep-dives, and innovation stories from the frontlines of AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Issues Section -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">All Issues</h2>
+      <p class="section-subtitle">
+        Explore our complete archive of <span class="text-gradient">weekly insights</span>
+      </p>
+    </div>
+
+    <div class="grid grid-3 gap-2xl grid-mobile-1">
+      {% for newsletter in all_newsletters %}
+      <article class="card card-hover">
+        <a href="./newsletters/{{ newsletter.slug }}.html" class="insights-card">
+          <div class="insights-content">
+            <div class="insights-meta">
+              <span class="badge badge-primary">Issue #{{ newsletter.frontmatter.issue_number | default('') }}</span>
+              <span class="text-xs text-muted">{{ newsletter.frontmatter.date | default('') }}</span>
+            </div>
+
+            <h3>{{ newsletter.title }}</h3>
+            <p class="line-clamp-3">{{ newsletter.meta_description }}</p>
+
+            {% if newsletter.frontmatter.topics %}
+            <div class="mt-md">
+              {% for topic in newsletter.frontmatter.topics[:3] %}
+              <span class="text-xs text-tertiary mr-sm">#{{ topic }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <span class="text-primary font-medium mt-md">Read Issue</span>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if total_pages > 1 %}
+    <div class="pagination">
+      {% if page_num > 1 %}
+      <a href="./newsletters{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="page-link disabled" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </span>
+      {% endif %}
+
+      {% for page in range(1, total_pages + 1) %}
+      {% if page == page_num %}
+      <span class="page-link active" aria-current="page">{{ page }}</span>
+      {% else %}
+      <a href="./newsletters{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
+      {% endif %}
+      {% endfor %}
+
+      {% if page_num < total_pages %}
+      <a href="./newsletters-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </a>
+      {% else %}
+      <span class="page-link disabled" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- CTA Section -->
+{% include 'cta.html' %}
+{% endblock %}

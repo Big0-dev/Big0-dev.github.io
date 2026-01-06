@@ -1,5 +1,10 @@
 ---
 canonical: /services/locations/canada/software-development-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Custom Solution Today
+cta_secondary: View Case Studies
+cta_subtext: Partner with Big0 for world-class Canadian software development. Get
+  a detailed quote tailored to your project needs.
 description: Enterprise custom software development services across Canada with bilingual
   capabilities and regulatory compliance
 is_location_page: true
@@ -11,7 +16,7 @@ meta_description: Get custom software development in Canada from Big0. Enterpris
   for your free consultation today.
 noindex: false
 parent_service: software-development
-title: Custom Software Development Canada | Big0 Enterprise Solutions
+title: Custom Software Development Canada | Big0 Enterprise AI Solutions
 ---
 
 # Custom Software Development Canada | Enterprise Applications & SaaS Platforms

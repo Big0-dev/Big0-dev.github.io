@@ -1,15 +1,20 @@
 ---
 canonical: /services/locations/canada/security-services-canada.html
+cta_button: Get Your Free Quote
+cta_headline: Secure Your Business in 48 Hours
+cta_secondary: Talk to a Security Expert
+cta_subtext: Our Canadian experts will assess your vulnerabilities and provide a custom
+  protection plan.
 is_location_page: true
 keywords:
 - Cybersecurity
 location: Canada
-meta_description: Get expert cybersecurity services in Canada. Protect your enterprise
-  with penetration testing, security audits, and PIPEDA compliance. Request your free
+meta_description: Secure your business with Big0's cybersecurity services. Get expert
+  penetration testing, compliance, and 24/7 protection. Request your free security
   consultation today.
 noindex: false
 parent_service: security-services
-title: 'Cybersecurity Services Canada: Secure Your Business Now'
+title: Secure Canadian Cybersecurity Services | Big0 Protect Now
 ---
 
 # Cybersecurity Services in Canada

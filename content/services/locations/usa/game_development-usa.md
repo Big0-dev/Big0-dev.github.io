@@ -1,16 +1,21 @@
 ---
 canonical: /services/locations/usa/game_development-usa.html
+cta_button: Get Your Free Quote
+cta_headline: Build Your Next Hit Game
+cta_secondary: View Portfolio
+cta_subtext: Partner with Big0's USA-based experts to turn your game vision into a
+  market-ready success.
 description: Expert game development services for USA market with AAA quality, mobile
   games, indie titles, and immersive gaming experiences
 is_location_page: true
 keywords:
 - Game
 location: USA
-meta_description: Partner with Big0 for expert game development services. Get a free
-  consultation to build your mobile or console game. Contact us today.
+meta_description: Hire expert Game Development Services in USA with Big0. Get a free
+  consultation to build your mobile or console game. Contact us to get started.
 noindex: false
 parent_service: game_development
-title: Hire Big0 Game Dev Services in USA - Get Quote
+title: Hire Expert Game Dev Services in USA - Get Quote Now
 ---
 
 # Game Development Services USA | AAA Quality Gaming Excellence

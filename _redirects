@@ -291,7 +291,64 @@
 /services/locations/uk/embedded-systems-development-uk.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
 
 # ============================================
+# BLOGS (old paths without .html)
+# ============================================
+/blogs/ai-transformation-2024  /blog/ai-transformation-2024.html  301
+/blogs/cloud-migration-best-practices  /blog/cloud-migration-best-practices.html  301
+/blogs/cloud-migration-best-practices.html  /blog/cloud-migration-best-practices.html  301
+
+# ============================================
+# ADDITIONAL CITY-LEVEL -> COUNTRY-LEVEL
+# ============================================
+
+# Australia Cities
+/services/locations/australia/cities/brisbane/pcb_design_and_layout-brisbane.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
+/services/locations/australia/cities/melbourne/dashboards-melbourne.html  /services/locations/australia/data-analytics-services-australia.html  301
+
+# Canada Cities
+/services/locations/canada/cities/toronto/natural_language_processing-toronto.html  /services/locations/canada/ai-ml-services-canada.html  301
+/services/locations/canada/cities/vancouver/pcb_design_and_layout-vancouver.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
+
+# UK Cities
+/services/locations/uk/cities/birmingham/ui_ux_design_services-birmingham.html  /services/locations/uk/design-services-uk.html  301
+/services/locations/uk/cities/london/computer_vision_service-london.html  /services/locations/uk/ai-ml-services-uk.html  301
+/services/locations/uk/cities/london/data-analytics-london.html  /services/locations/uk/data-analytics-services-uk.html  301
+/services/locations/uk/cities/london/hardware_cad-london.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
+/services/locations/uk/cities/london/natural_language_processing-london.html  /services/locations/uk/ai-ml-services-uk.html  301
+/services/locations/uk/cities/manchester/data-analytics-manchester.html  /services/locations/uk/data-analytics-services-uk.html  301
+/services/locations/uk/cities/manchester/iot_device_development-manchester.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
+
+# USA Cities
+/services/locations/usa/cities/austin/fintech_development-austin.html  /services/locations/usa/fintech_development-usa.html  301
+/services/locations/usa/cities/austin/professional-technology-training-austin.html  /services/locations/usa/professional-technology-training-usa.html  301
+/services/locations/usa/cities/chicago/ai-integration-chicago.html  /services/locations/usa/ai-ml-services-usa.html  301
+/services/locations/usa/cities/chicago/hardware_cad-chicago.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
+/services/locations/usa/cities/los-angeles/ai-integration-los-angeles.html  /services/locations/usa/ai-ml-services-usa.html  301
+/services/locations/usa/cities/los-angeles/ui_ux_design_services-los-angeles.html  /services/locations/usa/design-services-usa.html  301
+/services/locations/usa/cities/new-york/brand_and_digital_design-new-york  /services/locations/usa/design-services-usa.html  301
+/services/locations/usa/cities/new-york/brand_and_digital_design-new-york.html  /services/locations/usa/design-services-usa.html  301
+/services/locations/usa/cities/new-york/brand-and-digital-design-new-york.html  /services/locations/usa/design-services-usa.html  301
+/services/locations/usa/cities/new-york/dashboards-new-york.html  /services/locations/usa/data-analytics-services-usa.html  301
+/services/locations/usa/cities/new-york/data-analytics-new-york.html  /services/locations/usa/data-analytics-services-usa.html  301
+/services/locations/usa/cities/san-francisco/ai-integration-san-francisco.html  /services/locations/usa/ai-ml-services-usa.html  301
+/services/locations/usa/cities/san-francisco/cloud-managment-san-francisco.html  /services/locations/usa/cloud-services-usa.html  301
+/services/locations/usa/cities/san-francisco/pcb_design_and_layout-san-francisco  /services/locations/usa/hardware-iot-engineering-usa.html  301
+/services/locations/usa/cities/san-francisco/pcb_design_and_layout-san-francisco.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
+/services/locations/usa/cities/san-francisco/ui_ux_design_services-san-francisco.html  /services/locations/usa/design-services-usa.html  301
+/services/locations/usa/cities/seattle/cybersecurity-solutions-seattle.html  /services/locations/usa/security-services-usa.html  301
+/services/locations/usa/cities/seattle/embedded_systems_development-seattle.html  /services/locations/usa/software-development-usa.html  301
+/services/locations/usa/cities/seattle/iot_device_development-seattle.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
+
+# ============================================
+# ADDITIONAL COUNTRY-LEVEL REDIRECTS (extensionless)
+# ============================================
+/services/locations/australia/web-development-australia  /services/locations/australia/web-development-australia.html  301
+/services/locations/usa/blockchain_development-usa  /services/locations/usa/blockchain_development-usa.html  301
+
+# ============================================
 # MISCELLANEOUS
 # ============================================
 /policy  /privacy  301
 /insights/*  /blog  301
+/case.html  /case-studies.html  301
+/gallery.html.html  /gallery.html  301

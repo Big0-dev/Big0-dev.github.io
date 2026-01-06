@@ -21,8 +21,9 @@ Options:
 
 import sys
 import argparse
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
+import os
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -55,6 +56,196 @@ def print_banner():
 ║          AI-Powered SEO Optimization & Lead Generation       ║
 ╚══════════════════════════════════════════════════════════════╝
 """)
+
+
+def check_exports_status(config: Config) -> dict:
+    """
+    Check the status of manual exports that contain data not available via API.
+    Returns dict with export status for each service.
+    """
+    exports_dir = Path(__file__).parent / "exports"
+    stale_days = 7  # Consider exports stale after 7 days
+    now = datetime.now()
+
+    status = {
+        'gsc': {
+            'name': 'Google Search Console',
+            'dir': exports_dir / 'gsc',
+            'exports': [],
+            'stale': [],
+            'missing': [
+                'coverage-drilldown',  # 404s, crawl errors, excluded pages
+                'core-web-vitals',     # LCP, FID, CLS issues
+                'mobile-usability',    # Mobile issues
+            ],
+            'dashboard_url': 'https://search.google.com/search-console?resource_id=sc-domain%3Abig0.dev',
+        },
+        'ga4': {
+            'name': 'Google Analytics 4',
+            'dir': exports_dir / 'ga4',
+            'exports': [],
+            'stale': [],
+            'missing': [
+                'funnel-exploration',  # Conversion funnels
+                'path-exploration',    # User paths
+            ],
+            'dashboard_url': 'https://analytics.google.com/analytics/web/#/p491064548/reports/intelligenthome',
+        },
+        'clarity': {
+            'name': 'Microsoft Clarity',
+            'dir': exports_dir / 'clarity',
+            'exports': [],
+            'stale': [],
+            'missing': [
+                'heatmaps',           # Click/scroll heatmaps
+                'session-recordings',  # User session videos (not exportable)
+            ],
+            'dashboard_url': 'https://clarity.microsoft.com/projects/view/t1zp8ama5q/dashboard',
+        },
+    }
+
+    for service_key, service in status.items():
+        service_dir = service['dir']
+        if service_dir.exists():
+            for f in service_dir.iterdir():
+                if f.is_file() and f.suffix in ['.csv', '.json', '.png', '.txt']:
+                    mtime = datetime.fromtimestamp(f.stat().st_mtime)
+                    age_days = (now - mtime).days
+
+                    export_info = {
+                        'file': f.name,
+                        'date': mtime.strftime('%Y-%m-%d'),
+                        'age_days': age_days,
+                    }
+
+                    service['exports'].append(export_info)
+
+                    if age_days > stale_days:
+                        service['stale'].append(export_info)
+
+                    # Remove from missing if we have a recent version
+                    for missing_type in service['missing'][:]:
+                        if missing_type in f.name.lower():
+                            if age_days <= stale_days:
+                                service['missing'].remove(missing_type)
+
+    return status
+
+
+def prompt_export_updates(config: Config, skip_prompt: bool = False) -> None:
+    """
+    Check for stale/missing exports and prompt user to update them.
+    """
+    status = check_exports_status(config)
+
+    has_issues = False
+    for service_key, service in status.items():
+        if service['stale'] or service['missing']:
+            has_issues = True
+            break
+
+    if not has_issues:
+        return
+
+    print("\n[Exports Check] Dashboard data not available via API:")
+    print("-" * 60)
+
+    for service_key, service in status.items():
+        if not service['stale'] and not service['missing']:
+            continue
+
+        print(f"\n  {service['name']}:")
+
+        if service['stale']:
+            print("    Stale exports (>7 days old):")
+            for exp in service['stale']:
+                print(f"      - {exp['file']} ({exp['age_days']} days old)")
+
+        if service['missing']:
+            print("    Missing exports:")
+            for missing in service['missing']:
+                print(f"      - {missing}")
+
+        print(f"    Dashboard: {service['dashboard_url']}")
+
+    print("\n" + "-" * 60)
+    print("  These reports contain data NOT available via API:")
+    print("    - GSC: 404 errors, crawl errors, Core Web Vitals, mobile issues")
+    print("    - GA4: Funnel visualizations, path explorations, cohort data")
+    print("    - Clarity: Heatmaps, session recordings")
+    print("\n  See: seo_engine/exports/README.md for export instructions")
+    print("-" * 60)
+
+    if skip_prompt:
+        return
+
+    # Ask user if they want to open dashboards
+    try:
+        response = input("\nOpen dashboards to update exports? [y/N]: ").strip().lower()
+        if response == 'y':
+            import webbrowser
+            for service_key, service in status.items():
+                if service['stale'] or service['missing']:
+                    print(f"  Opening {service['name']}...")
+                    webbrowser.open(service['dashboard_url'])
+            print("\n  Export files to: seo_engine/exports/<service>/")
+            input("  Press Enter when done exporting to continue...")
+    except (EOFError, KeyboardInterrupt):
+        print("\n  Skipping export update prompt.")
+
+
+def show_exports_status(config: Config) -> None:
+    """Display current exports status"""
+    status = check_exports_status(config)
+
+    print("\n" + "=" * 60)
+    print("              MANUAL EXPORTS STATUS")
+    print("=" * 60)
+
+    for service_key, service in status.items():
+        print(f"\n{service['name']}:")
+        print(f"  Directory: {service['dir']}")
+
+        if service['exports']:
+            print("  Current exports:")
+            for exp in service['exports']:
+                stale_marker = " (STALE)" if exp['age_days'] > 7 else ""
+                print(f"    - {exp['file']} [{exp['date']}]{stale_marker}")
+        else:
+            print("  No exports found")
+
+        if service['missing']:
+            print("  Missing/Stale:")
+            for missing in service['missing']:
+                print(f"    - {missing}")
+
+    print("\n" + "=" * 60)
+    print("Data available via Dashboard ONLY (not API):")
+    print("-" * 60)
+    print("""
+Google Search Console:
+  - Index Coverage (404s, crawl errors, excluded URLs)
+  - Core Web Vitals (LCP, FID, CLS by URL)
+  - Mobile Usability issues
+  - Sitemaps status
+  - Internal/External links report
+  - Rich results status
+
+Google Analytics 4:
+  - Funnel Exploration (visual conversion funnels)
+  - Path Exploration (user navigation flows)
+  - User Explorer (individual journeys)
+  - Cohort Analysis (retention by cohort)
+  - Attribution modeling
+  - Predictive metrics (churn/purchase probability)
+
+Microsoft Clarity:
+  - Session Recordings (video playback - not exportable)
+  - Heatmaps (click, scroll, area maps)
+  - Funnels (custom conversion funnels)
+  - Copilot AI insights
+""")
+    print("=" * 60)
 
 
 def run_full_analysis(config: Config, use_ai: bool = True):
@@ -521,6 +712,14 @@ def main():
         '--env', type=str, default=None,
         help='Path to .env file'
     )
+    parser.add_argument(
+        '--exports', action='store_true',
+        help='Show status of manual dashboard exports'
+    )
+    parser.add_argument(
+        '--no-export-check', action='store_true',
+        help='Skip the export status check prompt'
+    )
 
     args = parser.parse_args()
 
@@ -532,6 +731,8 @@ def main():
     # Determine mode
     if args.help_content:
         show_content_guide()
+    elif args.exports:
+        show_exports_status(config)
     elif args.apply or args.apply_all:
         run_apply_recommendations(config, dry_run=args.dry_run, auto_approve=args.apply_all)
     elif args.generate_blogs is not None:
@@ -541,8 +742,14 @@ def main():
     elif args.collect_only:
         run_collect_only(config)
     elif args.quick:
+        # Check exports before running analysis
+        if not args.no_export_check:
+            prompt_export_updates(config)
         run_quick_analysis(config)
     else:
+        # Check exports before running full analysis
+        if not args.no_export_check:
+            prompt_export_updates(config)
         # Default to full analysis
         run_full_analysis(config)
 

@@ -7,6 +7,7 @@ Generates website from templates and content files based on site_config.yaml
 import yaml
 import logging
 import os
+import shutil
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -207,7 +208,7 @@ class SiteGenerator:
             # Copy _redirects file for Cloudflare Pages
             redirects_src = Path("_redirects")
             if redirects_src.exists():
-                redirects_dst = self.output_dir / "_redirects"
+                redirects_dst = Path(self.output_dir) / "_redirects"
                 shutil.copy2(redirects_src, redirects_dst)
                 logger.info("Copied _redirects file for Cloudflare Pages")
 

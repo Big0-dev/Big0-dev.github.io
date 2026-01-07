@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}{{ current_case_studie.title }}{% endblock %}
-{% block meta_description %}{{ current_case_studie.meta_description }}{% endblock %}
-{% block canonical_path %}/case-studies/{{ current_case_studie.slug }}.html{% endblock %}
+{% block title %}{{ current_case_study.title }}{% endblock %}
+{% block meta_description %}{{ current_case_study.meta_description }}{% endblock %}
+{% block canonical_path %}/case-studies/{{ current_case_study.slug }}.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/detail-pages.css">
@@ -18,14 +18,14 @@
       <span class="breadcrumb-separator">/</span>
       <a href="{{ case_studies }}" class="breadcrumb-link">Case Studies</a>
       <span class="breadcrumb-separator">/</span>
-      <span class="breadcrumb-current">{{ current_case_studie.title }}</span>
+      <span class="breadcrumb-current">{{ current_case_study.title }}</span>
     </nav>
     
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">{{ current_case_studie.title }}</h1>
+      <h1 class="text-4xl font-bold mb-lg">{{ current_case_study.title }}</h1>
       <div class="flex items-center justify-center gap-md">
-        <span class="badge">{{ current_case_studie.frontmatter.industry | default('Technology') }}</span>
-        <span class="badge badge-secondary">{{ current_case_studie.frontmatter.type | default('Case Study') }}</span>
+        <span class="badge">{{ current_case_study.frontmatter.industry | default('Technology') }}</span>
+        <span class="badge badge-secondary">{{ current_case_study.frontmatter.type | default('Case Study') }}</span>
         <span class="text-sm text-tertiary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle;">
             <circle cx="12" cy="12" r="10"/>
@@ -44,10 +44,10 @@
     <div class="max-w-4xl mx-auto">
       
       <!-- Challenge and Solution -->
-      {% if current_case_studie.frontmatter.challenge or current_case_studie.frontmatter.solution %}
+      {% if current_case_study.frontmatter.challenge or current_case_study.frontmatter.solution %}
       <h2 class="sr-only">Overview</h2>
       <div class="grid grid-2 gap-xl mb-3xl grid-mobile-1">
-        {% if current_case_studie.frontmatter.challenge %}
+        {% if current_case_study.frontmatter.challenge %}
         <div class="card p-xl">
           <div class="icon-container icon-lg icon-gradient mb-lg">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -57,11 +57,11 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold mb-md">The Challenge</h3>
-          <p class="text-tertiary">{{ current_case_studie.frontmatter.challenge }}</p>
+          <p class="text-tertiary">{{ current_case_study.frontmatter.challenge }}</p>
         </div>
         {% endif %}
 
-        {% if current_case_studie.frontmatter.solution %}
+        {% if current_case_study.frontmatter.solution %}
         <div class="card p-xl">
           <div class="icon-container icon-lg icon-gradient mb-lg">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -70,20 +70,20 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold mb-md">Our Solution</h3>
-          <p class="text-tertiary">{{ current_case_studie.frontmatter.solution }}</p>
+          <p class="text-tertiary">{{ current_case_study.frontmatter.solution }}</p>
         </div>
         {% endif %}
       </div>
       {% endif %}
 
       <!-- Results & Impact -->
-      {% if current_case_studie.frontmatter.results %}
+      {% if current_case_study.frontmatter.results %}
       <div class="section-header mb-xl">
         <h2 class="section-title">Results & Impact</h2>
       </div>
       <div class="grid grid-2 gap-xl mb-3xl grid-mobile-1">
-        {% set results = current_case_studie.frontmatter.results.split(',') %}
-        {% set descriptions = current_case_studie.frontmatter.result_descriptions.split(',') if current_case_studie.frontmatter.result_descriptions else [] %}
+        {% set results = current_case_study.frontmatter.results.split(',') %}
+        {% set descriptions = current_case_study.frontmatter.result_descriptions.split(',') if current_case_study.frontmatter.result_descriptions else [] %}
         {% for result in results %}
         <div class="card p-lg text-center">
           <div class="text-3xl font-bold text-gradient mb-sm">{{ result.strip() }}</div>
@@ -97,15 +97,15 @@
 
       <!-- Main Content -->
       <div class="detail-content mb-3xl">
-        {{ current_case_studie.content_html | safe }}
+        {{ current_case_study.content_html | safe }}
       </div>
 
       <!-- Technologies Used -->
-      {% if current_case_studie.frontmatter.technologies %}
+      {% if current_case_study.frontmatter.technologies %}
       <div class="mb-3xl">
         <h3 class="text-lg font-semibold mb-lg">Technologies Used</h3>
         <div class="flex flex-wrap gap-sm">
-          {% for tech in current_case_studie.frontmatter.technologies.split(',') %}
+          {% for tech in current_case_study.frontmatter.technologies.split(',') %}
           <span class="badge badge-secondary">{{ tech.strip() }}</span>
           {% endfor %}
         </div>

@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}{{ current_conversation.title }}{% endblock %}
+{% block meta_description %}{{ current_conversation.meta_description }}{% endblock %}
+{% block canonical_path %}/conversations/{{ current_conversation.slug }}.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/detail-pages.css">
+<style>
+  .conversation-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .conversation-intro {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    border: 1px solid var(--border-color);
+  }
+
+  .conversation-intro p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .dialogue {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .dialogue-turn {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .dialogue-turn.speaker-b {
+    flex-direction: row-reverse;
+  }
+
+  .speaker-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .speaker-b .speaker-avatar {
+    background: var(--text-tertiary);
+  }
+
+  .dialogue-bubble {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    max-width: 85%;
+    border: 1px solid var(--border-color);
+  }
+
+  .dialogue-turn.speaker-b .dialogue-bubble {
+    background: var(--bg-tertiary);
+  }
+
+  .speaker-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-xs);
+  }
+
+  .speaker-b .speaker-name {
+    color: var(--text-secondary);
+    text-align: right;
+  }
+
+  .dialogue-text {
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+
+  .dialogue-text p {
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  .dialogue-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .conversation-footer {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+  }
+
+  .conversation-footer p {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 640px) {
+    .dialogue-bubble {
+      max-width: 90%;
+    }
+
+    .speaker-avatar {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Conversation Hero -->
+<section class="page-hero">
+  <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs mb-lg">
+      <a href="{{ home }}" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="breadcrumb-current">{{ current_conversation.title }}</span>
+    </nav>
+
+    <div class="hero-content text-center max-w-3xl mx-auto">
+      <span class="badge mb-md">{{ current_conversation.frontmatter.category | default('Conversation') }}</span>
+      <h1 class="text-4xl font-bold">{{ current_conversation.title }}</h1>
+      {% if current_conversation.frontmatter.subtitle %}
+      <p class="text-lg text-secondary mt-md">{{ current_conversation.frontmatter.subtitle }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Conversation Content -->
+<article class="section">
+  <div class="container">
+    <div class="conversation-container">
+      {% if current_conversation.frontmatter.intro %}
+      <div class="conversation-intro">
+        <p>{{ current_conversation.frontmatter.intro }}</p>
+      </div>
+      {% endif %}
+
+      <div class="card p-2xl">
+        <div class="detail-content">
+          {{ current_conversation.content_html | safe }}
+        </div>
+      </div>
+
+      <div class="conversation-footer">
+        <p>This conversation has been edited for clarity and length.</p>
+        <a href="{{ contact }}" class="btn btn-primary">Start Your Journey with Big0</a>
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %}

@@ -91,7 +91,7 @@
 
       <!-- Tags -->
       {% if current_newsletter.frontmatter.topics %}
-      <div class="detail-tags">
+      <div class="detail-tags mb-2xl">
         <span class="text-sm text-tertiary mr-md">Topics:</span>
         {% for topic in current_newsletter.frontmatter.topics %}
         <span class="detail-tag">#{{ topic }}</span>
@@ -100,7 +100,7 @@
       {% endif %}
 
       <!-- Navigation -->
-      <div class="text-center">
+      <div class="text-center mt-2xl">
         <a href="{{ path_prefix }}newsletters.html" class="btn btn-secondary">
           <svg class="mr-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5"/>

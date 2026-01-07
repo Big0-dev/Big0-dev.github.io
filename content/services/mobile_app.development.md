@@ -49,10 +49,10 @@ Our mobile app development service combines cutting-edge technology with user-ce
 
 ### Related Services
 Enhance your mobile app development with our complementary services:
-- [UI/UX Design Services](ui_ux_design_services.html) - Create exceptional user experiences with research-driven design
-- [Software Testing](software_testing.html) - Ensure flawless app performance with comprehensive mobile testing
+- [UI/UX Design Services](design-services.html) - Create exceptional user experiences with research-driven design
+- [Software Testing](devops-quality-services.html) - Ensure flawless app performance with comprehensive mobile testing
 - [Custom Software Development](software-development.html) - Build robust backend systems and APIs for your mobile apps
-- [Cloud Infrastructure Management](cloud-managment.html) - Scale your mobile backend with enterprise-grade cloud solutions
+- [Cloud Infrastructure Management](cloud-services.html) - Scale your mobile backend with enterprise-grade cloud solutions
 
 {{template:cta}}
 

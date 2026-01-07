@@ -61,7 +61,6 @@
           </svg>
           <span>{{ current_blog.frontmatter.category | default('Technology') }}</span>
         </div>
-        <span class="reading-time">{{ current_blog.reading_time | default('5 min read') }}</span>
       </div>
 
       <!-- Main Content -->
@@ -109,7 +108,7 @@
 
       <!-- Navigation -->
       <div class="text-center">
-        <a href="../blog.html" class="btn btn-secondary">
+        <a href="{{ blog }}" class="btn btn-secondary">
           <svg class="mr-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5"/>
             <polyline points="12 19 5 12 12 5"/>

@@ -151,11 +151,11 @@ Quickly adjust team size based on project demands without the overhead of perman
 Complement your augmented team with our full range of services:
 
 - [Software Development](software-development.html) - Full-cycle custom development
-- [AI Integration](ai-integration.html) - Add AI capabilities to your products
-- [Cloud Management](cloud-managment.html) - Infrastructure and DevOps support
+- [AI Integration](ai-ml-services.html) - Add AI capabilities to your products
+- [Cloud Management](cloud-services.html) - Infrastructure and DevOps support
 - [Professional Training](professional-technology-training.html) - Upskill your teams
 
-{{related-services:software-development,ai-integration,cloud-managment,cybersecurity-solutions}}
+{{related-services:software-development,ai-ml-services,cloud-services,security-services}}
 
 ## Global Talent Network
 

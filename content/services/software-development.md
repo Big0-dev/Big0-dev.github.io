@@ -60,7 +60,7 @@ We follow agile practices with:
 
 ## Related Services
 
-{{related-services:software_testing,devops_consulting,cloud-managment,mobile_app.development}}
+{{related-services:devops-quality-services,cloud-services,mobile_app.development}}
 
 ## Industries We Serve
 
@@ -68,9 +68,9 @@ We follow agile practices with:
 
 ### Related Services
 Enhance your software development with our complementary services:
-- [Software Testing](software_testing.html) - Ensure flawless quality with comprehensive QA and testing solutions
-- [DevOps Consulting](devops_consulting.html) - Streamline deployment with automated CI/CD pipelines and infrastructure
-- [Cloud Infrastructure Management](cloud-managment.html) - Scale your applications with enterprise-grade cloud solutions
+- [Software Testing & QA](devops-quality-services.html) - Ensure flawless quality with comprehensive QA and testing solutions
+- [DevOps & Quality Services](devops-quality-services.html) - Streamline deployment with automated CI/CD pipelines and infrastructure
+- [Cloud Infrastructure Management](cloud-services.html) - Scale your applications with enterprise-grade cloud solutions
 - [Mobile App Development](mobile_app.development.html) - Extend your reach with native and cross-platform mobile applications
 
 {{template:cta}}

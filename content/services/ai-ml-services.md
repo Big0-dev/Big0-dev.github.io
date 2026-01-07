@@ -220,7 +220,7 @@ Developed NLP system for law firm that automatically extracts key information fr
 Enhance your AI initiatives with our complementary services:
 - [Data Analytics Services](data-analytics-services.html) - Build robust data foundations for AI
 - [Python Automation](python-automation.html) - Automate AI workflows and deployments
-- [Cloud Infrastructure Management](cloud-managment.html) - Scale AI infrastructure efficiently
+- [Cloud Infrastructure Management](cloud-services.html) - Scale AI infrastructure efficiently
 - [Staff Augmentation](staff-augmentation.html) - Add AI expertise to your team
 
 {{template:cta}}

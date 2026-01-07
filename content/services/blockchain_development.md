@@ -85,7 +85,7 @@ Comprehensive **blockchain security solutions** that protect digital assets thro
 
 ## Related Services
 
-{{related-services:ai-integration,iot_device_development,cybersecurity-solutions,cloud-managment,data-analytics,software-development,software_testing,professional-technology-training}}
+{{related-services:ai-ml-services,hardware-iot-engineering,security-services,cloud-services,data-analytics-services,software-development,devops-quality-services,professional-technology-training}}
 
 ---
 

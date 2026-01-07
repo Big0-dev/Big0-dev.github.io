@@ -171,8 +171,6 @@ class SiteGenerator:
 
     def _clean_output(self):
         """Clean and recreate output directory structure."""
-        import shutil
-
         # Remove existing output directory
         if os.path.exists(self.output_dir):
             shutil.rmtree(self.output_dir)

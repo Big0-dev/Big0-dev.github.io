@@ -99,7 +99,7 @@ The business process outsourcing industry continues evolving with AI integration
 
 ## Related Services
 
-{{related-services:staff-augmentation,data-analytics,ai-integration,cloud-managment,software-development,digital_marketing_services,cybersecurity-solutions,erp_implementation}}
+{{related-services:staff-augmentation,data-analytics-services,ai-ml-services,cloud-services,software-development,digital_marketing_services,security-services,erp_implementation}}
 
 ## Industries We Serve
 

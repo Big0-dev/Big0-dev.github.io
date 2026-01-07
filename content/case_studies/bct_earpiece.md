@@ -3,6 +3,7 @@ title: BCT Professional Earpiece
 industry: Consumer Electronics
 type: Industrial Design & Product Development
 icon: headphones
+meta_description: See how Big0 designed a bone conduction earpiece generating $3.2M revenue with 89% customer satisfaction. Product design case study.
 challenge: Professionals in healthcare, security, and athletics needed hands-free audio without losing awareness of their environment—a safety-critical requirement that traditional earbuds couldn't meet.
 solution: Bone conduction earpiece engineered for professional environments, delivering clear audio while preserving complete situational awareness.
 results: $3.2M Revenue,89% Satisfaction,340% Growth,22% Market Share

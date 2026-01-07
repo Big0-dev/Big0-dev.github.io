@@ -222,7 +222,7 @@ class ContentPageBuilder(BasePageBuilder):
                             'services': 'service',
                             'industries': 'industry',
                             'blog': 'blog',
-                            'case_studies': 'case_studie'
+                            'case_studies': 'case_study'
                         }
                         singular = singular_map.get(content_type, content_type[:-1])
                         # Get base context

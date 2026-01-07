@@ -2,6 +2,7 @@
 title: Retail & E-commerce
 icon: retail
 order: 3
+meta_description: Transform retail with Big0's AI solutions. Personalization engines, inventory optimization, and omnichannel platforms to boost sales and efficiency.
 description: Transforming retail experiences through AI-powered personalization, inventory optimization, and omnichannel customer engagement
 short_description: Advanced retail solutions for personalized shopping experiences, inventory management, and customer engagement across all channels
 challenge: Retailers face intense competition, changing consumer behavior, inventory management complexities, and the need for seamless omnichannel experiences while maintaining profitability

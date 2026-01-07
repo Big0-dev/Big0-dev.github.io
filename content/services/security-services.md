@@ -193,7 +193,7 @@ Organizations implementing our security solutions report:
 
 ## Related Services
 
-{{related-services:cloud-services,devops_consulting,data-analytics,software-development,professional-technology-training}}
+{{related-services:cloud-services,devops-quality-services,data-analytics-services,software-development,professional-technology-training}}
 
 ---
 

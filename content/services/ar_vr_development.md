@@ -158,12 +158,12 @@ Stand out in your market by offering innovative experiences that demonstrate tec
 
 Enhance your AR VR initiatives with complementary capabilities:
 
-- [3D Modeling and Animation](brand_and_digital_design.html) - Create stunning visual assets
-- [Mobile App Development](mobile-app-development.html) - Native and cross-platform apps
-- [Cloud Infrastructure](cloud-managment.html) - Scalable backend solutions
-- [AI Integration](ai-integration.html) - Add intelligence to immersive experiences
+- [3D Modeling and Animation](design-services.html) - Create stunning visual assets
+- [Mobile App Development](mobile_app.development.html) - Native and cross-platform apps
+- [Cloud Infrastructure](cloud-services.html) - Scalable backend solutions
+- [AI Integration](ai-ml-services.html) - Add intelligence to immersive experiences
 
-{{related-services:mobile-app-development,ai-integration,brand_and_digital_design,cloud-managment}}
+{{related-services:mobile_app.development,ai-ml-services,design-services,cloud-services}}
 
 ## Why Choose Our AR VR Services
 

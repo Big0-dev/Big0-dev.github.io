@@ -3,6 +3,7 @@ title: Autonomous SIM Dispensing Robotic System
 industry: Robotics/Automation
 type: Custom Robotic Solution
 icon: robot
+meta_description: See how Big0 built a precision robotic system with ±0.02mm accuracy for 24/7 autonomous SIM dispensing. View our robotics case study.
 challenge: Telecommunications providers needed unmanned retail kiosks for 24/7 SIM card dispensing, but existing automation couldn't handle the precision required for small, delicate products.
 solution: Custom robotic arm with integrated camera system, achieving sub-millimeter precision for autonomous SIM dispensing in retail environments.
 results: ±0.02mm Precision,10K+ Cycles,24/7 Operation,Vision Integrated

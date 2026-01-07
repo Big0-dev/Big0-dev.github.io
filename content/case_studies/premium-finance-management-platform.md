@@ -3,6 +3,7 @@ title: Premium Finance Management Platform
 industry: Fintech/Insurtech
 type: Full-Stack Platform
 icon: credit-card
+meta_description: See how Big0 built a fintech platform achieving 95% automation and 60% faster underwriting for premium financing operations. View our case study.
 challenge: Insurance finance company needed automation for manual premium financing processes causing delays, errors, and limited portfolio visibility.
 solution: Full-stack fintech platform automating premium financing, credit assessment, document management, and real-time analytics.
 results: 95% Automation,60% Faster Underwriting,40% Fewer Errors,Real-time Analytics

@@ -3,6 +3,7 @@ title: Real Estate Analytics Platform
 industry: Real Estate Technology
 type: Advanced Analytics Platform
 icon: real-estate
+meta_description: See how Big0 built a real estate analytics platform with 10K+ users and 85% retention. Institutional-grade data for investors. View case study.
 challenge: Real estate investors lacked access to institutional-grade analytics and comprehensive market data, limiting their ability to compete with large investment firms.
 solution: Comprehensive analytics platform aggregating data from dozens of sources with advanced visualization, market intelligence, and subscription-based premium features.
 results: Sub-Second Queries,10K+ Users,15% Conversion,85% Retention

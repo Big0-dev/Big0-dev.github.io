@@ -150,9 +150,8 @@ Implemented predictive analytics for a manufacturing company, reducing equipment
 
 ### Related Services
 Enhance your data analytics with our complementary services:
-- [AI Integration](ai-integration.html) - Add machine learning capabilities for predictive insights
-- [Cloud Infrastructure Management](cloud-managment.html) - Scale your data processing with cloud-native platforms
-- [Natural Language Processing](natural_language_processing.html) - Extract insights from unstructured text data
+- [AI & Machine Learning](ai-ml-services.html) - Add machine learning capabilities for predictive insights
+- [Cloud Infrastructure Management](cloud-services.html) - Scale your data processing with cloud-native platforms
 - [Python Automation](python-automation.html) - Automate data collection and processing workflows
 
 {{template:cta}}

@@ -3,6 +3,7 @@ title: Agricultural Sprayer Drone
 industry: Agriculture Technology
 type: Custom Drone Platform
 icon: drone
+meta_description: See how Big0 built a precision agricultural drone at 65% lower cost, saving 84% water usage. AgTech case study for sustainable farming.
 challenge: Pakistani farmers needed precision spraying technology, but commercial agricultural drones cost $6,000-$10,000—forcing continued reliance on dangerous, wasteful manual methods.
 solution: Custom-built agricultural drone delivering commercial-grade performance at 65% lower cost, making precision agriculture accessible to resource-constrained farming operations.
 results: 53% Faster,84% Less Water,65% Cost Savings,$3500 Price Point

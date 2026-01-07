@@ -3,6 +3,7 @@ title: FirstClass Healthcare Document Management
 industry: Healthcare Technology
 type: HIPAA-Compliant Platform
 icon: shield-check
+meta_description: See how Big0 built a HIPAA-compliant document system with 75% faster access and zero security incidents. Healthcare case study inside.
 challenge: Healthcare organization needed secure, HIPAA-compliant system for managing patient documents and medical records while eliminating compliance risks.
 solution: Comprehensive healthcare document management platform with HIPAA compliance, encrypted storage, and streamlined clinical workflows.
 results: 100% HIPAA Compliance,75% Faster Access,Zero Incidents,Workflow Automation

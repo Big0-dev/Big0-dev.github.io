@@ -123,7 +123,7 @@ Enhance your design projects with our complementary services:
 - [Modern Web Development](web-development.html) - Bring your designs to life with responsive, high-performance websites
 - [Mobile App Development](mobile_app.development.html) - Create native mobile experiences that match your design vision
 - [E-commerce Solutions](e_commerce_solutions.html) - Design and build online stores that convert visitors to customers
-- [AI Integration](ai-integration.html) - Add intelligent features to enhance user experiences
+- [AI Integration](ai-ml-services.html) - Add intelligent features to enhance user experiences
 
 {{template:cta}}
 

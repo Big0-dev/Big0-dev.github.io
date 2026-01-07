@@ -125,7 +125,7 @@ Navigate regulatory requirements with confidence.
 - **Retention Management**: Apply retention schedules and legal holds
 - **Breach Response**: Incident response planning and execution
 
-{{related-services:ai-integration,software-development,data-analytics,cloud-management}}
+{{related-services:ai-ml-services,software-development,data-analytics-services,cloud-services}}
 
 ## Security & Confidentiality
 

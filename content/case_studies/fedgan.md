@@ -3,6 +3,7 @@ title: FedGAN - Privacy-Preserving Medical Image Generation
 industry: Healthcare AI Research
 type: Federated Learning Research Platform
 icon: shield-check
+meta_description: See how Big0 built a federated learning framework for HIPAA-compliant medical AI research across multiple hospitals. Published research inside.
 challenge: Medical AI development requires large datasets, but privacy regulations prevent healthcare institutions from sharing patient data—limiting collaborative research.
 solution: Research framework enabling multiple hospitals to collaboratively train AI models for medical image generation without sharing sensitive patient data.
 results: Privacy Compliant,Multi-Institution,84% Performance,Published Research

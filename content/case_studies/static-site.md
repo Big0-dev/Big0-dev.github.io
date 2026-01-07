@@ -3,6 +3,7 @@ title: Big0 Company Website
 industry: Technology Consulting
 type: Company Website Platform
 icon: code
+meta_description: See how Big0 built a zero-maintenance website with sub-second loads and 99+ Lighthouse scores using a custom static site generator.
 challenge: Big0 needed a fast-loading, SEO-optimized company website without expensive hosting, ongoing maintenance, or security vulnerabilities.
 solution: Custom static site generator delivering sub-second load times, perfect security posture, and zero maintenance requirements.
 results: Zero Maintenance,Sub-Second Loads,100% Uptime,Maximum Security

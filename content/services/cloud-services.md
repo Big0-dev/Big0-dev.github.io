@@ -153,7 +153,7 @@ Organizations typically achieve:
 
 ## Related Services
 
-{{related-services:devops_consulting,cybersecurity-solutions,data-analytics,software-development,ai-integration,professional-technology-training}}
+{{related-services:devops-quality-services,security-services,data-analytics-services,software-development,ai-ml-services,professional-technology-training}}
 
 ---
 

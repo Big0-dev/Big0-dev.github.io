@@ -93,7 +93,7 @@ Navigate complex regulations with confidence using our automated compliance solu
 - **Operational Risk Management**: Identify and mitigate process risks
 - **Stress Testing**: Automated scenario analysis for regulatory requirements
 
-{{related-services:ai-integration,data-analytics,cybersecurity-solutions,cloud-managment}}
+{{related-services:ai-ml-services,data-analytics-services,security-services,cloud-services}}
 
 ## Customer Experience Innovation
 

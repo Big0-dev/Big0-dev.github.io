@@ -313,9 +313,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return snippets.slice(0, 3); // Limit to 3 snippets max per result
   }
 
-  // Highlight search terms in text
+  // HTML escape function to prevent XSS
+  function escapeHtml(text) {
+    if (!text) return text;
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Highlight search terms in text (with XSS protection)
   function highlightSearchTerms(text, searchTerm) {
-    if (!searchTerm || !text) return text;
+    if (!searchTerm || !text) return escapeHtml(text) || '';
+
+    // First, escape the text to prevent XSS
+    const escapedText = escapeHtml(text);
 
     // Get all individual terms
     const terms =
@@ -326,9 +337,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .filter((term) => term.length > 2)
         : [searchTerm.toLowerCase()];
 
-    if (terms.length === 0) return text;
+    if (terms.length === 0) return escapedText;
 
-    let highlightedText = text;
+    let highlightedText = escapedText;
 
     // Highlight each term
     terms.forEach((term) => {
@@ -458,31 +469,48 @@ document.addEventListener("DOMContentLoaded", () => {
 // RECENT SEARCHES
 // ==========================
 
-// Manage recent searches with localStorage
-const recentSearches = {
-  add: function (query) {
-    if (!query.trim()) return;
+// Manage recent searches with localStorage (wrapped in IIFE to avoid global pollution)
+const recentSearches = (function() {
+  return {
+    add: function (query) {
+      if (!query || !query.trim()) return;
 
-    let searches = this.get();
+      let searches = this.get();
 
-    // Add new search to the beginning and remove duplicates
-    searches = [query, ...searches.filter((item) => item !== query)];
+      // Add new search to the beginning and remove duplicates
+      searches = [query, ...searches.filter((item) => item !== query)];
 
-    // Keep only the 5 most recent searches
-    searches = searches.slice(0, 5);
+      // Keep only the 5 most recent searches
+      searches = searches.slice(0, 5);
 
-    localStorage.setItem("recentSearches", JSON.stringify(searches));
-  },
+      try {
+        localStorage.setItem("recentSearches", JSON.stringify(searches));
+      } catch (e) {
+        // localStorage may be unavailable in private browsing
+        console.warn("Could not save recent searches:", e);
+      }
+    },
 
-  get: function () {
-    const searches = localStorage.getItem("recentSearches");
-    return searches ? JSON.parse(searches) : [];
-  },
+    get: function () {
+      try {
+        const searches = localStorage.getItem("recentSearches");
+        return searches ? JSON.parse(searches) : [];
+      } catch (e) {
+        // Handle corrupted data or unavailable localStorage
+        console.warn("Could not retrieve recent searches:", e);
+        return [];
+      }
+    },
 
-  clear: function () {
-    localStorage.removeItem("recentSearches");
-  },
-};
+    clear: function () {
+      try {
+        localStorage.removeItem("recentSearches");
+      } catch (e) {
+        console.warn("Could not clear recent searches:", e);
+      }
+    },
+  };
+})();
 
 // Add CSS for snippet separators - moved outside DOMContentLoaded for faster injection
 (function() {

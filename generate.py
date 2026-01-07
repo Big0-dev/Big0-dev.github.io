@@ -428,6 +428,16 @@ class SiteGenerator:
             })
 
         # Add content pages
+        # Map content types to singular display names
+        type_names = {
+            'blog': 'blog',
+            'services': 'service',
+            'industries': 'industry',
+            'case_studies': 'case study',
+            'news': 'news',
+            'products': 'product',
+            'newsletters': 'newsletter',
+        }
         for content_type, config in self.config['content_types'].items():
             items = self._load_content_items(config['content_dir'])
             for item in items:
@@ -436,7 +446,7 @@ class SiteGenerator:
                     'title': item.get('title', ''),
                     'content': item.get('content', ''),
                     'url': f"{config['output_dir']}/{item.get('slug', item.get('title', '').lower().replace(' ', '-'))}.html",
-                    'type': content_type.rstrip('s'),  # Remove plural
+                    'type': type_names.get(content_type, content_type.rstrip('s')),
                 })
 
         return search_items

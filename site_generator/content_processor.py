@@ -67,7 +67,7 @@ class ContentProcessor:
         link_path = output_path if output_path else file_path
         # Check both file_path and output_path for path matching (output_path uses hyphens, content_dir uses underscores)
         paths_to_check = [str(file_path), str(output_path) if output_path else '']
-        if any(path in p for p in paths_to_check for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'case-studies/', 'news/']):
+        if any(path in p for p in paths_to_check for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'case-studies/', 'news/', 'conversations/']):
             html_content = self.add_automatic_interlinking(html_content, link_path)
 
         # Extract first paragraph as excerpt
@@ -630,6 +630,80 @@ class ContentProcessor:
             'educational partnership': 'professional-technology-training'
         }
 
+        # Define case study mappings
+        case_study_links = {
+            # Agricultural Drone
+            'agricultural drone': 'agridrone',
+            'sprayer drone': 'agridrone',
+            'agridrone': 'agridrone',
+            'precision agriculture': 'agridrone',
+            'crop spraying': 'agridrone',
+
+            # AI Legal Document Analysis
+            'legal document analysis': 'ai-legal-document-analysis-tool',
+            'conveyancing': 'ai-legal-document-analysis-tool',
+            'legal ai': 'ai-legal-document-analysis-tool',
+            'document analysis tool': 'ai-legal-document-analysis-tool',
+
+            # SIM Dispensing Robot
+            'sim dispensing': 'autonomous-sim-dispensing-robotic-system',
+            'robotic kiosk': 'autonomous-sim-dispensing-robotic-system',
+            'unmanned kiosk': 'autonomous-sim-dispensing-robotic-system',
+            'telecom automation': 'autonomous-sim-dispensing-robotic-system',
+
+            # BCT Earpiece
+            'bone conduction': 'bct_earpiece',
+            'bct earpiece': 'bct_earpiece',
+            'professional earpiece': 'bct_earpiece',
+            'audio wearable': 'bct_earpiece',
+
+            # Civic Engagement Platform
+            'civic engagement': 'civic-engagement-digital-platform',
+            'member management': 'civic-engagement-digital-platform',
+            'civic platform': 'civic-engagement-digital-platform',
+            'grassroots organization': 'civic-engagement-digital-platform',
+
+            # Dental Scanner
+            'dental scanner': 'dental_scanner',
+            'dental ai': 'dental_scanner',
+            'oral health': 'dental_scanner',
+            'periodontal': 'dental_scanner',
+
+            # FedGAN
+            'fedgan': 'fedgan',
+            'federated learning': 'fedgan',
+            'medical image generation': 'fedgan',
+            'privacy-preserving ai': 'fedgan',
+            'hipaa compliant ai': 'fedgan',
+
+            # Healthcare Document Management
+            'healthcare document': 'firstclass-healthcare-document-management',
+            'firstclass': 'firstclass-healthcare-document-management',
+            'medical records management': 'firstclass-healthcare-document-management',
+
+            # Global Logistics Dashboard
+            'logistics dashboard': 'global-logistics-dashboard',
+            'global logistics': 'global-logistics-dashboard',
+            'shipping visibility': 'global-logistics-dashboard',
+            'container tracking': 'global-logistics-dashboard',
+
+            # Premium Finance Platform
+            'premium finance': 'premium-finance-management-platform',
+            'insurance premium': 'premium-finance-management-platform',
+            'finance management platform': 'premium-finance-management-platform',
+
+            # Real Estate Analytics
+            'real estate analytics': 'real_estate_analytics_case_study',
+            'property analytics': 'real_estate_analytics_case_study',
+            'real estate platform': 'real_estate_analytics_case_study',
+
+            # Sports Card Trading
+            'sports card': 'sports-card-trading-marketplace',
+            'card trading': 'sports-card-trading-marketplace',
+            'collectibles marketplace': 'sports-card-trading-marketplace',
+            'trading marketplace': 'sports-card-trading-marketplace',
+        }
+
         # Parse HTML
         soup = BeautifulSoup(html_content, 'html.parser')
 
@@ -660,20 +734,27 @@ class ContentProcessor:
             is_blog_page = 'blogs/' in file_path_str or 'blog/' in file_path_str
             is_case_study_page = 'case_studies/' in file_path_str or 'case-studies/' in file_path_str
             is_news_page = 'news/' in file_path_str
+            is_conversation_page = 'conversations/' in file_path_str
 
             # Collect all candidate keywords (combine industries and services)
             all_keywords = []
 
             # Add industry keywords if applicable
-            if is_service_page or is_blog_page or is_case_study_page or is_news_page:
+            if is_service_page or is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
                 for term, industry_slug in industry_links.items():
                     all_keywords.append((term, 'industry', industry_slug))
 
             # Add service keywords if applicable
-            if is_industry_page or is_blog_page or is_case_study_page or is_news_page:
+            if is_industry_page or is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
                 for term, service_slug in service_links.items():
                     if service_slug != current_slug:  # Don't link to self
                         all_keywords.append((term, 'service', service_slug))
+
+            # Add case study keywords for conversations, blogs, and news
+            if is_conversation_page or is_blog_page or is_news_page:
+                for term, case_study_slug in case_study_links.items():
+                    if case_study_slug != current_slug:  # Don't link to self
+                        all_keywords.append((term, 'case_study', case_study_slug))
 
             # Sort ALL keywords by length (longest first) to match specific phrases before generic ones
             # This ensures "E-Commerce Development Services" matches before just "E-Commerce"
@@ -694,6 +775,8 @@ class ContentProcessor:
                         matched_text = match.group(1)
                         if link_type == 'industry':
                             replacement = f'<a href="{path_prefix}industries/{slug}.html" class="auto-link">{matched_text}</a>'
+                        elif link_type == 'case_study':
+                            replacement = f'<a href="{path_prefix}case-studies/{slug}.html" class="auto-link">{matched_text}</a>'
                         else:  # service
                             replacement = f'<a href="{path_prefix}services/{slug}.html" class="auto-link">{matched_text}</a>'
                         matches_to_replace.append((match.start(), match.end(), matched_text, replacement, link_type))

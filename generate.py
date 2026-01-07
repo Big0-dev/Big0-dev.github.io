@@ -204,6 +204,13 @@ class SiteGenerator:
             self.asset_manager.copy_all_assets()
             logger.info("All assets copied successfully")
 
+            # Copy _redirects file for Cloudflare Pages
+            redirects_src = Path("_redirects")
+            if redirects_src.exists():
+                redirects_dst = self.output_dir / "_redirects"
+                shutil.copy2(redirects_src, redirects_dst)
+                logger.info("Copied _redirects file for Cloudflare Pages")
+
         except Exception as e:
             logger.error(f"Error copying assets: {e}")
             raise

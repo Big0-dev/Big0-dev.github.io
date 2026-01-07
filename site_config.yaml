@@ -12,7 +12,7 @@ static_pages:
   - template: about.html
     output: about.html
     title: About Us
-    description: Learn about Big0's mission to transform businesses through responsible AI innovation, our values, and commitment to excellence.
+    description: Meet the Big0 leadership team - Kamran Bashir (Chairman), Hassan Kamran (CEO), Muhammad Ahmad (COO), Musab Akram (CTO). Learn about our mission to transform businesses through responsible AI innovation.
     
   - template: contact.html
     output: contact.html

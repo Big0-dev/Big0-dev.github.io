@@ -44,51 +44,82 @@
 
 # ============================================
 # RENAMED/DELETED SERVICES -> CLOSEST MATCH
+# (both .html and extensionless versions)
 # ============================================
 # Security
+/services/cloud-security-solutions  /services/security-services.html  301
 /services/cloud-security-solutions.html  /services/security-services.html  301
+/services/cybersecurity-solutions  /services/security-services.html  301
 /services/cybersecurity-solutions.html  /services/security-services.html  301
+/services/cybersecurity  /services/security-services.html  301
 /services/cybersecurity.html  /services/security-services.html  301
 
 # Cloud
+/services/cloud-management  /services/cloud-services.html  301
 /services/cloud-management.html  /services/cloud-services.html  301
+/services/cloud-managment  /services/cloud-services.html  301
 /services/cloud-managment.html  /services/cloud-services.html  301
+/services/cloud-infrastructure  /services/cloud-services.html  301
 /services/cloud-infrastructure.html  /services/cloud-services.html  301
 
 # DevOps/Testing
+/services/software_testing  /services/devops-quality-services.html  301
 /services/software_testing.html  /services/devops-quality-services.html  301
+/services/devops-services  /services/devops-quality-services.html  301
 /services/devops-services.html  /services/devops-quality-services.html  301
+/services/devops_consulting  /services/devops-quality-services.html  301
 /services/devops_consulting.html  /services/devops-quality-services.html  301
 
 # Design/UX
+/services/ui_ux_design_services  /services/design-services.html  301
 /services/ui_ux_design_services.html  /services/design-services.html  301
+/services/ui-ux-design  /services/design-services.html  301
 /services/ui-ux-design.html  /services/design-services.html  301
+/services/brand_and_digital_design  /services/design-services.html  301
 /services/brand_and_digital_design.html  /services/design-services.html  301
+/services/cad-design  /services/hardware-iot-engineering.html  301
 /services/cad-design.html  /services/hardware-iot-engineering.html  301
 
 # Hardware/IoT/Embedded
+/services/pcb_design_and_layout  /services/hardware-iot-engineering.html  301
 /services/pcb_design_and_layout.html  /services/hardware-iot-engineering.html  301
+/services/hardware_cad  /services/hardware-iot-engineering.html  301
 /services/hardware_cad.html  /services/hardware-iot-engineering.html  301
+/services/embedded_systems_development  /services/hardware-iot-engineering.html  301
 /services/embedded_systems_development.html  /services/hardware-iot-engineering.html  301
+/services/iot_device_development  /services/hardware-iot-engineering.html  301
 /services/iot_device_development.html  /services/hardware-iot-engineering.html  301
 
 # AI/ML
+/services/ai-integration  /services/ai-ml-services.html  301
 /services/ai-integration.html  /services/ai-ml-services.html  301
+/services/computer_vision_service  /services/ai-ml-services.html  301
 /services/computer_vision_service.html  /services/ai-ml-services.html  301
+/services/natural_language_processing  /services/ai-ml-services.html  301
 /services/natural_language_processing.html  /services/ai-ml-services.html  301
 
 # Data
+/services/data-analytics  /services/data-analytics-services.html  301
 /services/data-analytics.html  /services/data-analytics-services.html  301
+/services/data-engineering  /services/data-analytics-services.html  301
 /services/data-engineering.html  /services/data-analytics-services.html  301
+/services/dashboards  /services/data-analytics-services.html  301
 /services/dashboards.html  /services/data-analytics-services.html  301
 
 # Other renamed
+/services/manufacturing-automation  /services/python-automation.html  301
 /services/manufacturing-automation.html  /services/python-automation.html  301
+/services/custom-software-development  /services/software-development.html  301
 /services/custom-software-development.html  /services/software-development.html  301
+/services/digital-marketing  /services/digital_marketing_services.html  301
 /services/digital-marketing.html  /services/digital_marketing_services.html  301
+/services/digital-marketing-services  /services/digital_marketing_services.html  301
 /services/digital-marketing-services.html  /services/digital_marketing_services.html  301
+/services/mobile-app-development  /services/mobile_app.development.html  301
 /services/mobile-app-development.html  /services/mobile_app.development.html  301
+/services/project-management  /products/ai-project-manager.html  301
 /services/project-management.html  /products/ai-project-manager.html  301
+/services/compliance-services  /services.html  301
 /services/compliance-services.html  /services.html  301
 
 # Old service articles/blogs that were in /services/
@@ -276,6 +307,19 @@
 /services/locations/uk/brand_and_digital_design-uk  /services/locations/uk/design-services-uk.html  301
 /services/locations/canada/pcb_design_and_layout-canada  /services/locations/canada/hardware-iot-engineering-canada.html  301
 /services/locations/uk/embedded_systems_development-uk  /services/locations/uk/hardware-iot-engineering-uk.html  301
+
+# Additional extensionless location variants from 404 list
+/services/locations/australia/ai-integration-australia  /services/locations/australia/ai-ml-services-australia.html  301
+/services/locations/australia/dashboards-australia  /services/locations/australia/data-analytics-services-australia.html  301
+/services/locations/australia/fintech_development-australia  /services/locations/australia/fintech_development-australia.html  301
+/services/locations/australia/cities/sydney/cloud-managment-sydney  /services/locations/australia/cloud-services-australia.html  301
+/services/locations/canada/cities/montreal/game_development-montreal  /services/locations/canada/game_development-canada.html  301
+/services/locations/canada/cities/toronto/data-analytics-toronto  /services/locations/canada/data-analytics-services-canada.html  301
+/services/locations/canada/software-development-canada  /services/locations/canada/software-development-canada.html  301
+/services/locations/canada/ui_ux_design_services-canada  /services/locations/canada/design-services-canada.html  301
+/services/locations/uk/digital_marketing_services-uk  /services/locations/uk/digital_marketing_services-uk.html  301
+/services/locations/uk/ui_ux_design_services-uk  /services/locations/uk/design-services-uk.html  301
+/services/locations/usa/ar_vr_development-usa  /services/locations/usa/ar_vr_development-usa.html  301
 
 # Hyphen/underscore variants
 /services/locations/canada/ui-ux-design-services-canada.html  /services/locations/canada/design-services-canada.html  301

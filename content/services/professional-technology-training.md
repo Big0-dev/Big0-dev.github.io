@@ -12,7 +12,7 @@ keywords:
 - Professional
 meta_description: Get professional tech training services from Big0's AI experts.
   Boost skills and productivity 40%. Contact us for your free consultation now!
-title: Professional Tech Training by Big0 - Boost Skills Now | [City]
+title: Professional Tech Training by Big0 - Boost Skills Now
 ---
 
 # Invest in Your Team's Future

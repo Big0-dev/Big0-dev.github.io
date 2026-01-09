@@ -419,6 +419,6 @@ Yes, dramatically. Digital-first insurers achieve Net Promoter Scores (NPS) of 4
 
 Major risks include implementation failures (30-40% of large IT projects fail), data migration errors causing policy inaccuracies, integration challenges with legacy systems, regulatory compliance issues with AI models, cybersecurity vulnerabilities, and disruption to ongoing operations. Financial risks include cost overruns (projects often exceed budgets 20-50%), delayed ROI realization, and opportunity costs from failed initiatives. Technical risks include vendor lock-in with proprietary platforms, scalability challenges, and inadequate disaster recovery. Organizational risks include employee resistance, skill gaps requiring training/hiring, and cultural transformation challenges. Mitigation strategies include phased implementations reducing risk, parallel running validating accuracy, comprehensive testing programs, regulatory engagement throughout development, robust cybersecurity programs, change management investments, vendor due diligence and contract negotiations, and maintaining legacy system stability while transforming.
 
-{{related-services:ai-ml-services,data-analytics-services,cloud-services,software-development,mobile_app.development,blockchain_development}}
+{{related-services:ai-ml-services,data-analytics-services,cloud-services,software-development,mobile_app_development,blockchain_development}}
 
 {{related-industries:finance,healthcare,retail,real-estate}}

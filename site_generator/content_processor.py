@@ -313,14 +313,14 @@ class ContentProcessor:
             'nodejs': 'web-development',
 
             # Mobile Development
-            'mobile app': 'mobile_app.development',
-            'mobile application': 'mobile_app.development',
-            'ios app': 'mobile_app.development',
-            'android app': 'mobile_app.development',
-            'flutter': 'mobile_app.development',
-            'react native': 'mobile_app.development',
-            'swift': 'mobile_app.development',
-            'kotlin': 'mobile_app.development',
+            'mobile app': 'mobile_app_development',
+            'mobile application': 'mobile_app_development',
+            'ios app': 'mobile_app_development',
+            'android app': 'mobile_app_development',
+            'flutter': 'mobile_app_development',
+            'react native': 'mobile_app_development',
+            'swift': 'mobile_app_development',
+            'kotlin': 'mobile_app_development',
 
             # Hardware & IoT Engineering (consolidated service)
             'cad': 'hardware-iot-engineering',

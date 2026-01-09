@@ -115,8 +115,8 @@
 /services/digital-marketing.html  /services/digital_marketing_services.html  301
 /services/digital-marketing-services  /services/digital_marketing_services.html  301
 /services/digital-marketing-services.html  /services/digital_marketing_services.html  301
-/services/mobile-app-development  /services/mobile_app.development.html  301
-/services/mobile-app-development.html  /services/mobile_app.development.html  301
+/services/mobile-app-development  /services/mobile_app_development.html  301
+/services/mobile-app-development.html  /services/mobile_app_development.html  301
 /services/project-management  /products/ai-project-manager.html  301
 /services/project-management.html  /products/ai-project-manager.html  301
 /services/compliance-services  /services.html  301
@@ -388,6 +388,35 @@
 # ============================================
 /services/locations/australia/web-development-australia  /services/locations/australia/web-development-australia.html  301
 /services/locations/usa/blockchain_development-usa  /services/locations/usa/blockchain_development-usa.html  301
+
+# ============================================
+# MOBILE APP DEVELOPMENT - Fix dot vs underscore
+# ============================================
+# Main service page
+/services/mobile_app.development  /services/mobile_app_development.html  301
+/services/mobile_app.development.html  /services/mobile_app_development.html  301
+
+# USA location
+/services/locations/usa/mobile_app.development-usa  /services/locations/usa/mobile_app_development-usa.html  301
+/services/locations/usa/mobile_app.development-usa.html  /services/locations/usa/mobile_app_development-usa.html  301
+
+# UK location
+/services/locations/uk/mobile_app.development-uk  /services/locations/uk/mobile_app_development-uk.html  301
+/services/locations/uk/mobile_app.development-uk.html  /services/locations/uk/mobile_app_development-uk.html  301
+
+# Canada location
+/services/locations/canada/mobile_app.development-canada  /services/locations/canada/mobile_app_development-canada.html  301
+/services/locations/canada/mobile_app.development-canada.html  /services/locations/canada/mobile_app_development-canada.html  301
+
+# Australia location
+/services/locations/australia/mobile_app.development-australia  /services/locations/australia/mobile-app-development-australia.html  301
+/services/locations/australia/mobile_app.development-australia.html  /services/locations/australia/mobile-app-development-australia.html  301
+
+# ============================================
+# 404 PAGE - Return proper 404 status
+# ============================================
+/404 /404.html 404!
+/404.html /404.html 404!
 
 # ============================================
 # MISCELLANEOUS

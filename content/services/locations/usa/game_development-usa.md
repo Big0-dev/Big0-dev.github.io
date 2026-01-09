@@ -368,7 +368,7 @@ ESRB ratings significantly impact distribution and market reach. Console platfor
 
 This decision depends on core competency, budget, and long-term strategy. Develop in-house when game development represents core business, you're building long-term IP, you need complete creative control, you have or can build required expertise, and you plan multiple game releases building team expertise. Outsource when you're entering gaming from other industry (entertainment, education, marketing), you're validating concept before commitment, you lack game development expertise, you need faster time to market, or you're budget-constrained. Hybrid approaches work well: in-house design and direction with outsourced art, audio, or specific technical components. Many successful studios started outsourced, validated concepts, then brought development in-house for subsequent titles.
 
-{{related-services:ar_vr_development,mobile_app.development,cloud-services}}
+{{related-services:ar_vr_development,mobile_app_development,cloud-services}}
 
 {{related-industries:retail,education,telecom}}
 

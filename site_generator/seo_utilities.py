@@ -119,18 +119,56 @@ class SEOUtilities:
                                                 urls.append(f"{self.config['domain']}/services/locations/{location_key}/cities/{city_key}/{city_slug}.html")
 
         # Add listing/index pages that are auto-generated
+        # Start with known listing pages
         listing_pages = [
-            'services.html',  # Main services listing page
+            'services.html',
             'blog.html',
             'industries.html',
             'case-studies.html',
-            'case-studies-2.html',  # Pagination page
-            'gallery-2.html'  # Pagination page
+            'gallery.html',
+            'newsletters.html',
+            'news.html',
         ]
-        for page in listing_pages:
+
+        # Dynamically discover all pagination pages (blog-2.html, blog-3.html, etc.)
+        output_path = Path(self.output_dir)
+        pagination_patterns = ['blog-*.html', 'case-studies-*.html', 'gallery-*.html', 'newsletters-*.html']
+        for pattern in pagination_patterns:
+            for page_file in output_path.glob(pattern):
+                listing_pages.append(page_file.name)
+
+        # Add newsletter detail pages
+        newsletters_dir = output_path / 'newsletters'
+        if newsletters_dir.exists():
+            for newsletter_file in newsletters_dir.glob('*.html'):
+                listing_pages.append(f'newsletters/{newsletter_file.name}')
+
+        # Add conversation pages
+        conversations_dir = output_path / 'conversations'
+        if conversations_dir.exists():
+            for conversation_file in conversations_dir.glob('*.html'):
+                listing_pages.append(f'conversations/{conversation_file.name}')
+
+        # Add product pages
+        products_dir = output_path / 'products'
+        if products_dir.exists():
+            for product_file in products_dir.glob('*.html'):
+                listing_pages.append(f'products/{product_file.name}')
+
+        # Deduplicate and add to urls
+        for page in set(listing_pages):
             # Check if the page actually exists in build directory
             if (Path(self.output_dir) / page).exists():
                 urls.append(f"{self.config['domain']}/{page}")
+
+        # Deduplicate URLs while preserving order
+        seen = set()
+        unique_urls = []
+        for url in urls:
+            if url not in seen:
+                seen.add(url)
+                unique_urls.append(url)
+        urls = unique_urls
 
         # Generate sitemap XML with lastmod, changefreq, and priority
         current_date = datetime.now().strftime('%Y-%m-%d')

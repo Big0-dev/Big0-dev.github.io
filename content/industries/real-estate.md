@@ -320,6 +320,6 @@ Change management represents the largest PropTech adoption barrier as real estat
 
 Blockchain improves real estate transactions through disintermediation, transparency, and automation. Smart contracts automatically execute upon condition satisfaction (payment receipt, inspection completion) eliminating intermediaries and reducing settlement time from 30-90 days to hours/days. Immutable blockchain records provide transparent ownership history, liens, and transaction details reducing title search time from days to minutes and preventing fraud. Tokenization enables fractional ownership, 24/7 trading, and global investor access. Automation reduces transaction costs 30-50% by eliminating intermediaries including title companies, escrow agents, and settlement attorneys. International transactions benefit from cryptocurrency settlement avoiding currency conversion, international wire delays, and trust issues. Challenges include regulatory uncertainty, integration with existing land registries, and technology adoption barriers requiring gradual implementation starting with wholesale transactions before expanding to retail markets.
 
-{{related-services:blockchain_development,ai-ml-services,hardware-iot-engineering,software-development,mobile_app.development,cloud-services,web-development,ar_vr_development}}
+{{related-services:blockchain_development,ai-ml-services,hardware-iot-engineering,software-development,mobile_app_development,cloud-services,web-development,ar_vr_development}}
 
 {{related-industries:finance,manufacturing,retail,government}}

@@ -176,7 +176,7 @@ Implemented city-wide sensor network with LoRaWAN connectivity monitoring air qu
 
 ## Related Services
 
-{{related-services:ai-ml-services,cloud-services,mobile_app.development,data-analytics-services,software-development}}
+{{related-services:ai-ml-services,cloud-services,mobile_app_development,data-analytics-services,software-development}}
 
 ---
 

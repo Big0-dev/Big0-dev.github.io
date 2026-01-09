@@ -60,7 +60,7 @@ We follow agile practices with:
 
 ## Related Services
 
-{{related-services:devops-quality-services,cloud-services,mobile_app.development}}
+{{related-services:devops-quality-services,cloud-services,mobile_app_development}}
 
 ## Industries We Serve
 
@@ -71,7 +71,7 @@ Enhance your software development with our complementary services:
 - [Software Testing & QA](devops-quality-services.html) - Ensure flawless quality with comprehensive QA and testing solutions
 - [DevOps & Quality Services](devops-quality-services.html) - Streamline deployment with automated CI/CD pipelines and infrastructure
 - [Cloud Infrastructure Management](cloud-services.html) - Scale your applications with enterprise-grade cloud solutions
-- [Mobile App Development](mobile_app.development.html) - Extend your reach with native and cross-platform mobile applications
+- [Mobile App Development](mobile_app_development.html) - Extend your reach with native and cross-platform mobile applications
 
 {{template:cta}}
 

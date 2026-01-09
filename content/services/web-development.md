@@ -53,7 +53,7 @@ Custom CMS solutions or implementations of WordPress, Drupal, and headless CMS p
 
 ## Related Services
 
-{{related-services:mobile_app.development,design-services,e_commerce_solutions,cloud-services}}
+{{related-services:mobile_app_development,design-services,e_commerce_solutions,cloud-services}}
 
 ## Industries We Serve
 
@@ -81,7 +81,7 @@ We implement industry-standard security practices including:
 
 ### Related Services
 Enhance your web presence with our complementary services:
-- [Mobile App Development](mobile_app.development.html) - Extend your reach with native mobile apps
+- [Mobile App Development](mobile_app_development.html) - Extend your reach with native mobile apps
 - [UI/UX Design Services](design-services.html) - Create exceptional user experiences
 - [E-commerce Solutions](e_commerce_solutions.html) - Build powerful online stores
 - [Cloud Infrastructure Management](cloud-services.html) - Scale your web applications

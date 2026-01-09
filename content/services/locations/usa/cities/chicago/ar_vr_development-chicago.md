@@ -320,7 +320,7 @@ Hardware requirements depend on target platform. Meta Quest requires only the he
 
 Development timelines correlate with scope and complexity. Simple mobile AR experiences require 1-3 months. Basic VR training modules need 2-4 months. Complex VR training programs require 4-8 months. Enterprise VR/AR platforms need 8-18 months. Location-based VR experiences take 6-12 months. These estimates assume clear requirements, responsive clients, and experienced teams. Add 20-30% buffer for first projects, new platforms, or innovative interactions requiring R&D. Iterative approaches deliver initial versions quickly (8-12 weeks) then enhance based on user feedback managing risk while providing early value.
 
-{{related-services:game_development,mobile_app.development,professional-technology-training}}
+{{related-services:game_development,mobile_app_development,professional-technology-training}}
 
 {{related-industries:healthcare,manufacturing,retail}}
 

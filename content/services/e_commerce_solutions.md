@@ -51,7 +51,7 @@ Our e-commerce development expertise spans custom platforms, marketplace solutio
 ### Related Services
 Enhance your e-commerce solutions with our complementary services:
 - [Modern Web Development](web-development.html) - Build fast, responsive e-commerce websites with cutting-edge technologies
-- [Mobile App Development](mobile_app.development.html) - Extend your reach with native mobile shopping apps
+- [Mobile App Development](mobile_app_development.html) - Extend your reach with native mobile shopping apps
 - [Digital Marketing Services](digital_marketing_services.html) - Drive traffic and increase conversions with data-driven marketing strategies
 - [Design Services](design-services.html) - Create exceptional shopping experiences that convert visitors to customers
 

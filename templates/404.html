@@ -4,6 +4,10 @@
 {% block meta_description %}The page you're looking for could not be found. Return to our homepage to explore our AI and digital transformation services.{% endblock %}
 {% block canonical_path %}/404.html{% endblock %}
 
+{% block preload %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">
 <style>

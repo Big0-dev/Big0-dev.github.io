@@ -419,6 +419,35 @@
 /404.html /404.html 404!
 
 # ============================================
+# SYSTEM ARTIFACTS (404 - can't redirect meaningfully)
+# ============================================
+/cgi-bin/*  /404.html  404
+/_next/*  /404.html  404
+
+# ============================================
+# ADDITIONAL LOCATION-LEVEL REDIRECTS
+# ============================================
+# UK location pages with underscore naming
+/services/locations/uk/blockchain_development-uk.html  /services/locations/uk/blockchain-development-uk.html  301
+/services/locations/uk/fintech_development-uk.html  /services/locations/uk/fintech-development-uk.html  301
+
+# Data analytics naming variations
+/services/locations/uk/data-analytics-uk.html  /services/locations/uk/data-analytics-services-uk.html  301
+/services/locations/canada/data-analytics-canada.html  /services/locations/canada/data-analytics-services-canada.html  301
+/services/locations/australia/data-analytics-australia.html  /services/locations/australia/data-analytics-services-australia.html  301
+
+# (software-development pages exist - no redirect needed)
+
+# Additional embedded systems redirects
+/services/locations/australia/embedded_systems_development-australia.html  /services/locations/australia/software-development-australia.html  301
+
+# Additional NLP redirects
+/services/locations/australia/natural_language_processing-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
+
+# Additional IoT redirects
+/services/locations/australia/iot_device_development-australia.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
+
+# ============================================
 # MISCELLANEOUS
 # ============================================
 /policy  /privacy  301

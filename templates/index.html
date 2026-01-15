@@ -72,17 +72,40 @@
       </p>
     </div>
 
-    <div class="clients-logo-grid clients-logo-grid-3">
-      <a href="https://www.auxiliouk.com/" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="Auxilio UK">
-        {{ inject_svg('clients/auxilio') | safe }}
-      </a>
-      <a href="https://awaampakistan.com/" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="Awaam Pakistan">
-        {{ inject_svg('clients/awaam-pakistan') | safe }}
-      </a>
-      <a href="https://slapstack.de/" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="Slap Stack">
-        {{ inject_svg('clients/slap-stack') | safe }}
-      </a>
+    {# Define clients list for easy management #}
+    {% set clients = [
+      {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+      {'url': 'https://awaampakistan.com/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'},
+      {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'}
+    ] %}
+
+    {% if clients|length >= 5 %}
+    {# Marquee mode for 5+ clients #}
+    <div class="clients-marquee">
+      <div class="clients-marquee-track">
+        {% for client in clients %}
+        <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="{{ client.name }}">
+          {{ inject_svg(client.logo) | safe }}
+        </a>
+        {% endfor %}
+        {# Duplicate for seamless loop #}
+        {% for client in clients %}
+        <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="{{ client.name }}">
+          {{ inject_svg(client.logo) | safe }}
+        </a>
+        {% endfor %}
+      </div>
     </div>
+    {% else %}
+    {# Grid mode for < 5 clients #}
+    <div class="clients-logo-grid clients-logo-grid-{{ clients|length }}">
+      {% for client in clients %}
+      <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="client-logo-item" aria-label="{{ client.name }}">
+        {{ inject_svg(client.logo) | safe }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 </section>
 

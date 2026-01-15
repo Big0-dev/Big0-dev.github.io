@@ -12,7 +12,7 @@ meta_description: Get expert software testing in Canada. Big0 delivers AI-driven
   & automation for flawless performance. Contact us for your free consultation today.
 noindex: false
 parent_service: devops-quality-services
-title: 'Software Testing Canada: QA & Automation | Big0'
+title: DevOps & QA Services in Canada | Big0
 ---
 
 # Software Testing & Quality Assurance Services in Canada

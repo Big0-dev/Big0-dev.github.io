@@ -13,16 +13,15 @@ description: Digital transformation solutions for logistics providers, 3PLs, shi
 icon: truck
 keywords:
 - Logistics
-meta_description: Transform logistics operations with AI-driven fleet management and
-  real-time supply chain visibility. Solve bottlenecks and boost efficiency. Get a
-  free consultation with Big0 today.
+meta_description: Technology solutions for logistics including fleet management, supply chain optimization, and warehouse management systems.
+
 short_description: Comprehensive technology solutions modernizing logistics and supply
   chain operations from warehouse management and fleet optimization to last-mile delivery
   and supply chain visibility
 solutions: Transportation management systems, Warehouse management systems, Fleet
   tracking IoT, Route optimization AI, Supply chain visibility, Blockchain traceability,
   Predictive analytics, Last-mile delivery automation
-title: AI Logistics Solutions - Get Free Consultation | Big0
+title: Logistics Industry Solutions | Big0
 ---
 
 # Logistics & Supply Chain: Digital Transformation for Operational Excellence

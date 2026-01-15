@@ -12,7 +12,7 @@ meta_description: Get expert mobile app development in Vancouver from Big0. Buil
   iOS & Android apps that drive ROI. Contact us for a free consultation today.
 noindex: false
 parent_service: mobile-app-development
-title: Mobile App Development Vancouver - Get Quote Today | Big0
+title: Mobile App Development in Vancouver | Big0
 ---
 
 # Mobile App Development Services in Vancouver

@@ -18,7 +18,7 @@ meta_description: Need FCC-certified IoT engineering services in USA? Get embedd
   systems & PCB design from Big0. Contact us for a free consultation today.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Expert IoT Engineering Services USA - Big0, Silicon Valley
+title: Hardware & IoT Engineering in USA | Big0
 ---
 
 # IoT & Hardware Engineering Services in USA | FCC Certified Development

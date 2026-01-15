@@ -13,7 +13,7 @@ meta_description: Hire expert Canadian game developers at Big0. Leverage Unity, 
   & tax credits for your next project. Get your free consultation now.
 noindex: false
 parent_service: game-development
-title: Hire Expert Canadian Game Developers Now | Big0
+title: Game Development Services in Canada | Big0
 ---
 
 # Game Development Services in Canada

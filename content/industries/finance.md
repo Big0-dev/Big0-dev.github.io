@@ -14,13 +14,13 @@ description: Transforming financial services with AI-powered solutions for risk 
 icon: dollar-sign
 keywords:
 - Finance
-meta_description: Deploy Big0's AI finance solutions to slash fraud 90% and automate
-  compliance. Get your free consultation today.
+meta_description: Technology solutions for financial services including banking software, risk management, fraud detection, and compliance systems.
+
 short_description: AI-powered solutions for modern banking, investment, and fintech
   companies to enhance security, compliance, and customer experience
 solutions: Risk Management AI, Real-time Fraud Detection, Algorithmic Trading, Customer
   Analytics, Regulatory Compliance Automation, Credit Scoring Models
-title: Reduce Finance Fraud 90% with Big0 AI Solutions Today
+title: Financial Services Solutions | Big0
 ---
 
 # Financial Services Technology Partner | Banking & Fintech Solutions

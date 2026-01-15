@@ -14,14 +14,14 @@ description: Transforming education through innovative EdTech solutions, persona
 icon: education
 keywords:
 - Education
-meta_description: Transform education with Big0's AI-powered solutions. Personalize
-  learning and boost outcomes. Get your free consultation now!
+meta_description: Digital solutions for education including e-learning platforms, student management systems, and educational technology development.
+
 order: 7
 short_description: Advanced educational technology solutions for enhanced learning
   outcomes, student engagement, and institutional efficiency
 solutions: Learning Management Systems, AI Tutoring, Student Analytics, Virtual Classrooms,
   Educational Content Management, Assessment Automation
-title: Get Big0 AI Education Solutions Now - Free Consult
+title: Education Industry Solutions | Big0
 ---
 
 # Education Solutions

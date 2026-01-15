@@ -16,7 +16,7 @@ meta_description: Get AR/VR development services in Chicago from Big0. Build cus
   consultation today!
 noindex: false
 parent_service: ar_vr_development
-title: Get Chicago AR/VR Development Services | Big0
+title: AR/VR Development Services in Chicago | Big0
 ---
 
 # AR/VR Development Services Chicago | Immersive Reality Excellence

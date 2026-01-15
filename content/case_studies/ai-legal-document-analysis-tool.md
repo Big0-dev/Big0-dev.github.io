@@ -13,9 +13,7 @@ icon: balance
 industry: Legal Technology
 keywords:
 - AI-Powered
-meta_description: See how Big0's AI-Powered document analysis cut conveyancing time
-  by 50% for UK firms. Compare efficiency gains and find out how to achieve solicitor-quality
-  accuracy today.
+meta_description: Case study on AI-powered legal document analysis platform for UK property conveyancing, enabling faster document review with solicitor-quality accuracy.
 order: 13
 result_descriptions: Analysis quality matching experienced conveyancers with rigorous
   validation,Document bundles that took hours to review now processed in minutes,Scalable
@@ -27,7 +25,7 @@ solution: AI-powered document analysis platform that reviews property document b
   enquiries, and flagging legal risks.
 technologies: Azure Document Intelligence,GPT-4 Turbo,Azure OpenAI Service,Python,Django,React,PostgreSQL,Azure
   UK South,GraphQL,REST API
-title: 'Best AI-Powered Document Analysis: 50% Faster Conveyancing'
+title: AI-Powered Legal Document Analysis Platform
 type: AI & Machine Learning
 ---
 

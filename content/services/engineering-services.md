@@ -10,10 +10,9 @@ features: Structural design, MEP systems, Project management, Feasibility studie
 icon: engineering
 keywords:
 - Engineering
-meta_description: Get expert Engineering Consultancy from Big0. Solve complex challenges
-  with AI-driven solutions and PEC-registered consultants. Request your free consultation
-  today.
-title: Engineering Consultancy Services | Big0 - Get Quote Now
+meta_description: Professional engineering consultancy services including technical architecture, system design, and engineering project management.
+
+title: Engineering Consultancy Services | Big0
 ---
 
 # Professional Engineering Consultancy Services

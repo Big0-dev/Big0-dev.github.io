@@ -14,7 +14,7 @@ meta_description: Secure your business with Big0's cybersecurity services. Get e
   consultation today.
 noindex: false
 parent_service: security-services
-title: Secure Canadian Cybersecurity Services | Big0 Protect Now
+title: Security Services in Canada | Big0
 ---
 
 # Cybersecurity Services in Canada

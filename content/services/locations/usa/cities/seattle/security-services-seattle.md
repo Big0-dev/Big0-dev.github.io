@@ -19,7 +19,7 @@ meta_description: Get expert cybersecurity services in Seattle. Big0 offers pene
   today.
 noindex: false
 parent_service: security-services
-title: 'Seattle Cybersecurity Services: Immediate Pen Testing & SOC 2'
+title: Security Services in Seattle | Big0
 ---
 
 # Enterprise Cybersecurity Services in Seattle | NIST & FedRAMP Compliant

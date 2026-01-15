@@ -20,7 +20,7 @@ parent_service: hardware-iot-engineering
 short_description: London-based IoT specialists delivering embedded systems, industrial
   IoT, and smart city solutions with local expertise in UK regulations and London's
   tech ecosystem
-title: London IoT Development Services - Get Quote Now | Big0
+title: Hardware & IoT Engineering in London | Big0
 ---
 
 # IoT Development & Hardware Engineering Services in London

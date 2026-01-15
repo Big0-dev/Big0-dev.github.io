@@ -13,10 +13,9 @@ features: CI/CD automation, Automated testing, Infrastructure as Code, Performan
 icon: settings
 keywords:
 - DevOps
-meta_description: Accelerate releases with Big0's DevOps services. Automate CI/CD,
-  infrastructure, and testing for faster delivery. Schedule your free DevOps consultation
-  today.
-title: DevOps Services & Consulting | Big0
+meta_description: DevOps consulting and QA services including CI/CD pipelines, infrastructure automation, testing, and software quality assurance.
+
+title: DevOps & QA Services | Big0
 ---
 
 # Accelerate Delivery With Built-In Quality

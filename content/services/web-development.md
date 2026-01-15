@@ -4,10 +4,9 @@ description: Create stunning, high-performance web applications with cutting-edg
 features: Responsive design, Progressive web apps, SEO optimization, Performance optimization,
   API integration, CMS development
 icon: web
-meta_description: Modern web development services for custom websites & web apps.
-  React, Vue, Node.js experts. Build fast, responsive sites that convert 40% more
-  visitors.
-title: Modern Web Development
+meta_description: Modern web development services including responsive websites, web applications, PWAs, and custom CMS solutions.
+
+title: Web Development Services | Big0
 ---
 
 # Build Your Digital Presence

@@ -16,7 +16,7 @@ meta_description: Get expert IoT development services in Manchester & London. Bu
   free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Get Expert IoT Development Services in Manchester & London
+title: Hardware & IoT Engineering in Manchester | Big0
 ---
 
 # IoT & Hardware Engineering Services in the United Kingdom

@@ -12,7 +12,7 @@ meta_description: Partner with Big0 for expert AR/VR development in Canada. We b
   custom enterprise apps and training simulations. Get your free consultation today!
 noindex: false
 parent_service: ar-vr-development
-title: Get AR/VR Development Services in Canada | Big0
+title: AR/VR Development Services in Canada | Big0
 ---
 
 # AR/VR Development Services in Canada

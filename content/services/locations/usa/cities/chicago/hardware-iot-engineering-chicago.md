@@ -19,7 +19,7 @@ meta_description: Get expert IoT hardware engineering in Chicago. Partner with B
   today.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Chicago IoT Hardware Engineering Services | Free Quote Big0
+title: Hardware & IoT Engineering in Chicago | Big0
 ---
 
 # IoT & Hardware Engineering Services in Chicago | FCC Certified Development

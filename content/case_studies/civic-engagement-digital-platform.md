@@ -14,9 +14,7 @@ icon: non-profit
 industry: Non-Profit & NGO
 keywords:
 - Civic
-meta_description: See how Big0's civic engagement platform drives top member management
-  outcomes for grassroots organizations. Compare enterprise-grade features, bilingual
-  web presence, and real-time analytics to find your solution.
+meta_description: Case study on civic engagement platform delivering member management, bilingual web presence, and real-time analytics for a grassroots organization.
 order: 12
 result_descriptions: Reduced 150K corrupted records to verified legitimate members,Infrastructure
   costs 80% below traditional cloud deployment,Clean standardized database with automated
@@ -25,7 +23,7 @@ results: 96% Data Cleanup,80% Cost Savings,6500+ Members,Zero Downtime
 solution: Complete digital platform delivering enterprise-grade member management,
   analytics, and engagement tools at 80% lower cost than traditional cloud solutions.
 technologies: Django 5.x,Streamlit Analytics,Tailwind CSS,HTMX,WhatsApp Business API,SQLite,Gunicorn,Plotly,Pandas,Python
-title: 'Big0 Civic Platform: Top Member Management Outcomes'
+title: Civic Engagement Digital Platform
 type: Full-Stack Digital Transformation
 ---
 

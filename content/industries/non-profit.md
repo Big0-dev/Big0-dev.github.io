@@ -13,16 +13,15 @@ description: Empowering non-profits, NGOs, and civic organizations with budget-f
 icon: non-profit
 keywords:
 - Non-Profit
-meta_description: Get a custom Non-Profit software solution from Big0 AI & Dev. Streamline
-  member management and fundraising with AI. Request your free consultation now to
-  cut costs.
+meta_description: Technology solutions for non-profit organizations including donor management, fundraising platforms, and volunteer coordination.
+
 order: 12
 short_description: Cost-effective technology solutions helping non-profits maximize
   impact through digital transformation, member management, and data-driven decision
   making
 solutions: Member Management Systems, Donor & Fundraising Platforms, Volunteer Coordination,
   Impact Analytics, Digital Engagement, Budget-Friendly Infrastructure
-title: Custom Non-Profit Software Solutions | Big0 AI & Dev
+title: Non-Profit Technology Solutions | Big0
 ---
 
 # Non-Profit & NGO Solutions

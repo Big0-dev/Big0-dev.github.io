@@ -10,9 +10,9 @@ features: 3D CAD design, PCB layout, Embedded firmware, IoT connectivity, Cloud 
 icon: microchip
 keywords:
 - Hardware
-meta_description: Expert hardware engineering services for enterprise IoT and embedded
-  systems. Prototype to production in 4-6 weeks. Get your free consultation today.
-title: 'Hardware Engineering Services: Prototyping to Production | Big0'
+meta_description: Hardware engineering and IoT development services including PCB design, embedded systems, firmware, and smart device development.
+
+title: Hardware & IoT Engineering | Big0
 ---
 
 # Transform Ideas Into Intelligent Connected Products

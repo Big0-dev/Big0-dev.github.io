@@ -14,7 +14,7 @@ meta_description: Get secure, TGA-compliant AI healthcare solutions in Australia
   today.
 noindex: false
 parent_service: healthcare_it_solutions
-title: AI Healthcare Solutions Australia | Big0 EMR/EHR
+title: Healthcare IT Solutions in Australia | Big0
 ---
 
 # Healthcare IT Solutions Australia | Medical Software & Digital Health Excellence

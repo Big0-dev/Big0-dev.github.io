@@ -14,7 +14,7 @@ meta_description: Get compliant Canadian Healthcare IT solutions from Big0. Depl
   today.
 noindex: false
 parent_service: healthcare-it-solutions
-title: Get Big0 Healthcare IT Solutions Canada - Free Consultation
+title: Healthcare IT Solutions in Canada | Big0
 ---
 
 # Healthcare IT Solutions in Canada

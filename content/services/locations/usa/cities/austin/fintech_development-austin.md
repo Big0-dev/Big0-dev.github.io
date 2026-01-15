@@ -13,7 +13,7 @@ meta_description: Get SEC, FINRA, OCC compliant fintech software development for
   payments, and lending. Contact Big0 for your free consultation today.
 noindex: false
 parent_service: fintech-development
-title: Secure Fintech Dev Services in Austin & NY | Big0
+title: Fintech Development Services in Austin | Big0
 ---
 
 # Fintech Development Services in Austin

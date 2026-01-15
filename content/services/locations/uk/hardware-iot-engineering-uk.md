@@ -17,7 +17,7 @@ meta_description: Get expert IoT development services UK. Big0 delivers industri
   today.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Get Expert IoT Development Services UK - Big0 London
+title: Hardware & IoT Engineering in UK | Big0
 ---
 
 # IoT & Hardware Engineering Services in the United Kingdom

@@ -13,7 +13,7 @@ meta_description: Get expert e-commerce development in Canada from Big0. Build c
   bilingual stores with Canadian payments. Get your free consultation now.
 noindex: false
 parent_service: e-commerce-solutions
-title: Get E-commerce Development Canada | Big0 Quote Now
+title: E-Commerce Solutions in Canada | Big0
 ---
 
 # E-commerce Development Services in Canada

@@ -22,7 +22,7 @@ parent_service: security-services
 short_description: Australian cybersecurity specialists delivering penetration testing,
   security assessments, IRAP compliance, and managed security services aligned with
   ACSC guidelines
-title: 'Cybersecurity Services Australia: IRAP & Pen Testing'
+title: Security Services in Australia | Big0
 ---
 
 # Cybersecurity Services Australia | Enterprise Security & Compliance

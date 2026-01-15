@@ -15,7 +15,7 @@ meta_description: Get blockchain development in Canada? Big0 delivers CSA compli
   DeFi, NFT & smart contract solutions. Book your free consultation today.
 noindex: false
 parent_service: blockchain-development
-title: 'Blockchain Development Canada: Fast Smart Contract Solutions'
+title: Blockchain Development Services in Canada | Big0
 ---
 
 # Blockchain Development Services Canada | Crypto, DeFi & Enterprise Blockchain Solutions

@@ -18,7 +18,7 @@ meta_description: Get HIPAA-compliant healthcare IT solutions from Big0. Custom 
   integration, telehealth, and patient portals. Request your free consultation now.
 noindex: false
 parent_service: healthcare_it_solutions
-title: Get US Healthcare IT Solutions | Big0 HIPAA Compliant
+title: Healthcare IT Solutions in USA | Big0
 ---
 
 # Healthcare IT Solutions in USA | HIPAA-Compliant Medical Software

@@ -21,7 +21,7 @@ parent_service: security-services
 short_description: Australian cybersecurity specialists delivering penetration testing,
   security assessments, IRAP compliance, and managed security services aligned with
   ACSC guidelines
-title: Brisbane Cybersecurity Services | Big0 - Book Now
+title: Security Services in Brisbane | Big0
 ---
 
 # Cybersecurity Services Brisbane | Enterprise Security & Compliance

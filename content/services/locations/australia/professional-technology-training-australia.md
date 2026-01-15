@@ -20,7 +20,7 @@ meta_description: Get technology training for enterprise teams in Australia. Ups
   free consultation today.
 noindex: false
 parent_service: professional-technology-training
-title: 'Get Technology Training Australia: AWS, Azure & DevOps'
+title: Technology Training in Australia | Big0
 ---
 
 # Professional Technology Training Services in Australia

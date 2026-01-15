@@ -16,7 +16,7 @@ meta_description: Hire vetted IT staff in NYC with Big0's augmentation services.
   now.
 noindex: false
 parent_service: staff-augmentation
-title: Hire IT Staff NYC | Big0 Augmentation - Get Quote
+title: IT Staff Augmentation in New York | Big0
 ---
 
 # IT Staff Augmentation Services New York | Expert Technology Staffing

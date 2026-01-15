@@ -14,15 +14,14 @@ description: Digital transformation solutions for insurance carriers, MGAs, brok
 icon: shield-alt
 keywords:
 - Insurance
-meta_description: Transform insurance operations with AI-driven claims & underwriting.
-  Streamline policy administration with Big0's custom software. Schedule your free
-  consultation today.
+meta_description: Technology solutions for insurance companies including claims processing, policy management, and insurtech development.
+
 short_description: Comprehensive technology solutions revolutionizing insurance operations
   from policy administration and claims processing to risk assessment and customer
   engagement
 solutions: Policy administration systems, Claims automation, AI underwriting, Fraud
   detection, IoT telematics, Cloud migration, Customer portals, Analytics platforms
-title: Get Big0 AI Insurance Software Solutions - Free Demo
+title: Insurance Industry Solutions | Big0
 ---
 
 # Insurance & InsurTech: Digital Transformation for Modern Insurance

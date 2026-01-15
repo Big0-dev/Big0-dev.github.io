@@ -15,7 +15,7 @@ meta_description: 'Vancouver AI services by Big0: Custom ML models, NLP, & compu
   vision. PIPEDA compliant. Schedule your free AI consultation to get started.'
 noindex: false
 parent_service: ai-ml-services
-title: 'Vancouver AI Services: Custom Models & NLP | Big0'
+title: AI & Machine Learning Services in Vancouver | Big0
 ---
 
 # AI & Machine Learning Services Vancouver | Enterprise AI Solutions & Research

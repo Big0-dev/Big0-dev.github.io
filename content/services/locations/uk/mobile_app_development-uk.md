@@ -12,7 +12,7 @@ meta_description: Hire expert mobile app developers UK. Big0 AI builds secure, s
   iOS & Android enterprise apps. Get your free consultation today.
 noindex: false
 parent_service: mobile-app-development
-title: Hire Mobile App Developers UK | Big0 AI Apps London
+title: Mobile App Development in UK | Big0
 ---
 
 # Mobile App Development Services in the United Kingdom

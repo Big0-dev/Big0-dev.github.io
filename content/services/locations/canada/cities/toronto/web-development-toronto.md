@@ -14,7 +14,7 @@ meta_description: Get expert web development services in Toronto. Big0 builds WC
   2.0 accessible, bilingual websites & apps. Contact us for a free consultation.
 noindex: false
 parent_service: web-development
-title: Toronto Web Development Services | Big0 AI
+title: Web Development Services in Toronto | Big0
 ---
 
 # Web Development Services Toronto | Bilingual, Accessible, High-Performance Websites

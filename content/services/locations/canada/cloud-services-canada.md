@@ -14,7 +14,7 @@ meta_description: Get enterprise cloud services Canada from Big0. AWS, Azure, GC
   solutions with PIPEDA compliance. Contact us for a free consultation to get started.
 noindex: false
 parent_service: cloud-services
-title: 'Big0 Cloud Services Canada: AWS Azure GCP Now'
+title: Cloud Services in Canada | Big0
 ---
 
 # Cloud Services Canada | Enterprise Cloud Infrastructure & Migration

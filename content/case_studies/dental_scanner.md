@@ -13,9 +13,7 @@ icon: smartphone
 industry: Healthcare Technology
 keywords:
 - AI-Powered
-meta_description: See how Big0's AI-Powered Dental Scanner Platform delivers 40% faster
-  diagnostics for Pakistani practices. Compare our cloud infrastructure and ML analysis
-  to find your solution.
+meta_description: Case study on AI-powered dental scanner platform for Pakistani dental practices, featuring mobile apps, cloud infrastructure, and machine learning diagnostics.
 order: 10
 result_descriptions: AI completes comprehensive dental assessments in under 30 seconds,Cloud
   infrastructure supporting over 10000 patient records,Full Urdu and English interface
@@ -27,7 +25,7 @@ solution: Complete dental analysis platform combining mobile application, cloud 
 technologies: React Native Android,Firebase Cloud Platform,TensorFlow Lite,React Admin
   Dashboard,AES-256 Encryption,Federated Learning,Real-time Data Sync,Multi-Language
   Processing
-title: 'Best AI-Powered Dental Scanner: Top Results for Big0'
+title: AI-Powered Dental Scanner Platform
 type: Comprehensive AI Platform
 ---
 

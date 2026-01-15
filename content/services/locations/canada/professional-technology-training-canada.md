@@ -13,7 +13,7 @@ meta_description: Get technology training Canada for corporate IT teams in AWS, 
   cybersecurity & data science. Schedule your free BigO consultation today.
 noindex: false
 parent_service: professional-technology-training
-title: 'Urgent Tech Training Canada: BigO AWS & Cybersecurity'
+title: Technology Training in Canada | Big0
 ---
 
 # Professional Technology Training Services in Canada

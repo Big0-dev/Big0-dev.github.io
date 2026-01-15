@@ -13,7 +13,7 @@ meta_description: Get expert engineering services in Canada from Big0. Our P.Eng
   team delivers AI & software solutions. Contact us for your free consultation today.
 noindex: false
 parent_service: engineering-services
-title: Get Expert Engineering Services Canada | Big0 AI
+title: Engineering Services in Canada | Big0
 ---
 
 # Engineering Consultancy Services in Canada

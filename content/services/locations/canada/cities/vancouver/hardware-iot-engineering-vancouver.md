@@ -12,7 +12,7 @@ meta_description: Hire expert IoT engineers in Vancouver for embedded systems. B
   delivers industrial IoT solutions. Contact us for a free consultation to get started.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Hire IoT Engineers Vancouver | Big0 Embedded Systems
+title: Hardware & IoT Engineering in Vancouver | Big0
 ---
 
 # IoT & Hardware Engineering Services in Vancouver

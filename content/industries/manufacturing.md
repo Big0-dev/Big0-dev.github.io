@@ -9,15 +9,14 @@ description: Revolutionizing manufacturing through Industry 4.0 solutions, predi
 icon: manufacturing
 keywords:
 - Manufacturing
-meta_description: Transform your manufacturing operations with Big0's AI-driven Industry
-  4.0 solutions. Request a free consultation to boost efficiency and reduce downtime
-  now.
+meta_description: Smart manufacturing solutions including industrial automation, IoT integration, and Industry 4.0 transformation.
+
 order: 4
 short_description: Smart manufacturing solutions for operational efficiency, predictive
   maintenance, and quality control in the digital factory
 solutions: Predictive Maintenance, Smart Factory Automation, Quality Control AI, Supply
   Chain Optimization, Digital Twins, IoT Integration
-title: AI Manufacturing Solutions | Big0 Smart Factory Automation
+title: Manufacturing Industry Solutions | Big0
 ---
 
 # Manufacturing Solutions

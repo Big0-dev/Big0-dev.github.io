@@ -13,7 +13,7 @@ meta_description: Get US cloud services on AWS, Azure, GCP. Big0 delivers SOC 2 
   FedRAMP compliance for enterprise. Schedule your free consultation today.
 noindex: false
 parent_service: cloud-services
-title: 'Get US Cloud Services: AWS, Azure, GCP | Big0'
+title: Cloud Services in USA | Big0
 ---
 
 # Cloud Services in USA

@@ -12,7 +12,7 @@ meta_description: Get IoT engineering services in Sydney from Big0. Our embedded
   & PCB design drive results for mining & agriculture. Contact us for a free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Sydney IoT Engineering Services | Get Quote Today
+title: Hardware & IoT Engineering in Sydney | Big0
 ---
 
 # IoT & Hardware Engineering Services in Sydney | Industrial IoT Excellence

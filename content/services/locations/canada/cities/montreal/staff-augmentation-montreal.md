@@ -14,7 +14,7 @@ meta_description: Hire expert IT staff in Montreal with BigO Talent. Scale your 
   today!
 noindex: false
 parent_service: staff-augmentation
-title: Hire IT Staff Montreal - BigO Talent Now
+title: IT Staff Augmentation in Montreal | Big0
 ---
 
 # IT Staff Augmentation Services in Montreal

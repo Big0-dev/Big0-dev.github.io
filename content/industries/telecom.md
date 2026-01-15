@@ -9,14 +9,14 @@ description: Advancing telecommunications with AI-driven network optimization, c
 icon: telecom
 keywords:
 - Telecommunications
-meta_description: Leverage Big0's AI-driven network optimization to transform telecommunications.
-  Cut costs and enhance 5G performance. Schedule your free consultation now.
+meta_description: Technology solutions for telecom industry including network management, billing systems, and customer experience platforms.
+
 order: 5
 short_description: Next-generation telecom solutions for network optimization, customer
   experience, and infrastructure management in the 5G era
 solutions: Network Optimization AI, Customer Churn Prevention, 5G Network Planning,
   Fraud Detection, Service Assurance, Edge Computing Solutions
-title: AI Telecommunications Solutions | Big0 - Act Now
+title: Telecommunications Solutions | Big0
 ---
 
 # Telecommunications Solutions

@@ -16,7 +16,7 @@ meta_description: Get expert blockchain development in London. Big0 builds secur
   DeFi solutions & smart contracts fast. Contact us for your free consultation today.
 noindex: false
 parent_service: blockchain-development
-title: 'London Blockchain Development: Fast Smart Contracts & DeFi'
+title: Blockchain Development Services in London | Big0
 ---
 
 # Blockchain Development Services in the United Kingdom

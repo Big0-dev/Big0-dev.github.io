@@ -14,7 +14,7 @@ meta_description: Hire top IT talent in Canada with Big0’s staff augmentation.
   consultation now.
 noindex: false
 parent_service: staff-augmentation
-title: Hire IT Staff Canada | Big0 Talent Solutions Now
+title: IT Staff Augmentation in Canada | Big0
 ---
 
 # IT Staff Augmentation Services in Canada

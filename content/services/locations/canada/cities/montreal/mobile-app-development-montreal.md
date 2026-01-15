@@ -12,7 +12,7 @@ meta_description: Get expert Mobile app development in Montreal for iOS & Androi
   Big0 builds secure, scalable apps. Book your free consultation today.
 noindex: false
 parent_service: mobile-app-development
-title: 'Montreal Mobile App Dev: iOS Android | Big0 Free Consult'
+title: Mobile App Development in Montreal | Big0
 ---
 
 # Mobile App Development Services in Montreal

@@ -12,9 +12,7 @@ icon: monitor
 industry: Logistics
 keywords:
 - Global
-meta_description: See how Big0's Global Logistics Operations Dashboard delivered 100%
-  order accuracy and real-time visibility across 50+ countries. Get the full case
-  study.
+meta_description: Case study on global logistics operations dashboard providing real-time visibility and order management across 50+ countries for a rental company.
 order: 1
 result_descriptions: Eliminated missed orders across all locations,Reduced costs through
   operational efficiency,Faster order processing and issue resolution,Unified operations
@@ -25,7 +23,7 @@ solution: Custom real-time dashboard with integrated data pipeline providing uni
 technologies: Microsoft Azure Cloud Platform,Real-time Data Pipeline Architecture,Interactive
   Kanban System,Natural Language Processing,Custom API Integration,Responsive Web
   Dashboard
-title: 'Global Logistics Dashboard: Top AI Solution Saved 20% Costs'
+title: Global Logistics Operations Dashboard
 type: Custom Dashboard
 ---
 

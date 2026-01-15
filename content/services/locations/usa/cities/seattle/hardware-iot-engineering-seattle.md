@@ -18,7 +18,7 @@ meta_description: Partner with Big0 for expert IoT hardware engineering services
   Get FCC-certified embedded systems designed for scale. Contact us for a free consultation.
 noindex: false
 parent_service: hardware-iot-engineering
-title: Seattle IoT Hardware Engineering Services | Big0 Free Consult
+title: Hardware & IoT Engineering in Seattle | Big0
 ---
 
 # IoT & Hardware Engineering Services in Seattle | FCC Certified Development

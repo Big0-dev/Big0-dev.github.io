@@ -13,14 +13,14 @@ description: Technology solutions for law firms, legal departments, and legal se
 icon: balance
 keywords:
 - Legal
-meta_description: Streamline legal operations with Big0's AI software. Automate compliance
-  and document workflows. Get your free consultation today!
+meta_description: Technology solutions for law firms including legal case management, document automation, and legal tech development.
+
 order: 13
 short_description: Custom software and AI solutions helping legal professionals streamline
   operations, automate workflows, and focus on high-value work
 solutions: Practice Management Systems, Client Portals, Document Automation, AI-Powered
   Analysis, Compliance Tools, Custom Legal Software
-title: Get Big0 Legal AI Solutions - Request Quote Now
+title: Legal Industry Solutions | Big0
 ---
 
 # Legal & Legal Tech Solutions

@@ -14,7 +14,7 @@ meta_description: Get expert Web Development Services in Vancouver. Build high-c
   WCAG 2.0 accessible e-commerce sites. Contact Big0 for your free consultation today.
 noindex: false
 parent_service: web-development
-title: 'Web Development Vancouver: Fast, WCAG 2.0 Sites'
+title: Web Development Services in Vancouver | Big0
 ---
 
 # Web Development Services Vancouver | Bilingual, Accessible, High-Performance Websites

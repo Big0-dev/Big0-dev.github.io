@@ -13,7 +13,7 @@ meta_description: Drive revenue with AI-powered Digital Marketing in Canada. Get
   free consultation on SEO, PPC, and social media campaigns. Contact Big0 to start.
 noindex: false
 parent_service: digital-marketing-services
-title: 'Get Canada Digital Marketing: SEO, PPC & Social | Big0'
+title: Digital Marketing Services in Canada | Big0
 ---
 
 # Digital Marketing Services in Canada

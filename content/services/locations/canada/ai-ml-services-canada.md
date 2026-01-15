@@ -15,7 +15,7 @@ meta_description: Get started with BigO's AI services in Canada. Custom enterpri
   solutions, computer vision, NLP. PIPEDA compliant. Request your free consultation.
 noindex: false
 parent_service: ai-ml-services
-title: Custom AI Services Canada | Big0 Enterprise Solutions
+title: AI & Machine Learning Services in Canada | Big0
 ---
 
 # AI & Machine Learning Services Canada | Enterprise AI Solutions & Research

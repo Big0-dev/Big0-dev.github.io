@@ -310,7 +310,7 @@ class AssetManager:
                 html_file.write_bytes(minified)
                 html_saved += len(original) - len(minified)
                 html_count += 1
-            except Exception:
+            except BaseException:
                 pass
 
         static_dir = target_dir / 'static'

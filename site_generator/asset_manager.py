@@ -46,32 +46,50 @@ class AssetManager:
     def _collect_referenced_images(self) -> Set[str]:
         """Scan templates and content to find all referenced image filenames."""
         referenced: Set[str] = set()
+
+        # Pattern for explicit image references with extensions
         image_pattern = re.compile(
             r'(?:src=["\']|url\(["\']?|image_url:\s*|hero_image:\s*|image:\s*)'
             r'(?:\.\./)?(?:static/)?([^"\')\s]+\.(?:avif|jpg|jpeg|png|webp))',
             re.IGNORECASE,
         )
 
-        # Scan templates
+        # Pattern for frontmatter fields where templates append .avif
+        bare_pattern = re.compile(
+            r'^(?:hero_image|image_url|preload):\s*(\S+)\s*$',
+            re.MULTILINE,
+        )
+
+        all_files: list[tuple[str, str]] = []
+
+        # Collect file contents
         templates_dir = Path("templates")
         if templates_dir.exists():
             for f in templates_dir.rglob("*.html"):
-                for m in image_pattern.finditer(f.read_text(encoding="utf-8", errors="ignore")):
-                    referenced.add(Path(m.group(1)).name)
+                all_files.append(("template", f.read_text(encoding="utf-8", errors="ignore")))
 
-        # Scan all content markdown files
         content_dir = Path("content")
         if content_dir.exists():
             for f in content_dir.rglob("*.md"):
-                text = f.read_text(encoding="utf-8", errors="ignore")
-                for m in image_pattern.finditer(text):
-                    referenced.add(Path(m.group(1)).name)
+                all_files.append(("content", f.read_text(encoding="utf-8", errors="ignore")))
 
-        # Scan site_config.yaml
         config_path = Path("site_config.yaml")
         if config_path.exists():
-            for m in image_pattern.finditer(config_path.read_text(encoding="utf-8")):
+            all_files.append(("config", config_path.read_text(encoding="utf-8")))
+
+        static_images = {p.name for p in Path(self.static_dir).glob("*") if p.suffix.lower() in self._IMAGE_EXTENSIONS}
+
+        for source_type, text in all_files:
+            for m in image_pattern.finditer(text):
                 referenced.add(Path(m.group(1)).name)
+            # Check bare names (no extension) that resolve to actual image files
+            for m in bare_pattern.finditer(text):
+                bare_name = m.group(1)
+                if '.' not in bare_name:
+                    for ext in ('.avif', '.jpg', '.png', '.webp'):
+                        candidate = bare_name + ext
+                        if candidate in static_images:
+                            referenced.add(candidate)
 
         return referenced
 

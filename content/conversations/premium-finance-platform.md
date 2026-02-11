@@ -1,11 +1,11 @@
 ---
 title: "Automating Premium Finance Operations Without Losing Control"
 subtitle: A conversation between two insurance finance executives
-meta_description: Two insurance finance executives discuss how Big0's platform achieved 95% automation and 60% faster underwriting while maintaining compliance and accuracy.
-category: Fintech & Insurance
+meta_description: Two insurance finance executives discuss how Big0's platform automated their premium financing operations while maintaining compliance and accuracy.
+category: Insurance Technology
 intro: "Robert Chen, CFO of a mid-sized premium finance company, meets Sarah Martinez, Operations Director at a competitor firm, at an industry conference to discuss operational challenges."
 date: 2024-12-22
-tags: fintech, insurance, premium finance, automation, digital transformation
+tags: insurance-tech, insurance, premium finance, automation, digital transformation
 ---
 
 ## The Conference Connection
@@ -72,7 +72,7 @@ tags: fintech, insurance, premium finance, automation, digital transformation
 
 **Sarah Martinez:** What numbers can you share?
 
-**Robert Chen:** Ninety-five percent of our processes are automated now. Underwriting that took two days takes under a day. Error rates down 40%. And we're handling three times the volume with the same team.
+**Robert Chen:** The vast majority of our processes are automated now. Underwriting that used to take days happens much faster. Manual errors dropped significantly. And we're handling far more volume with the same team.
 
 **Sarah Martinez:** The underwriting improvement—how did they speed that up so dramatically?
 

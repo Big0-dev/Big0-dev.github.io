@@ -1,7 +1,7 @@
 ---
 title: "Building a HIPAA-Compliant Document System That Actually Works"
-subtitle: A conversation between two healthcare IT directors
-meta_description: Two healthcare IT directors discuss how Big0's HIPAA-compliant document management system achieved 75% faster access with zero security incidents.
+subtitle: A conversation between two healthcare technology directors
+meta_description: Two healthcare technology directors discuss how Big0's HIPAA-compliant document management system improved document access and eliminated compliance gaps.
 category: Healthcare Technology
 intro: "Dr. Angela Torres, IT Director at a regional healthcare network, meets James Mitchell, CIO at a multi-location medical practice, at a healthcare technology summit to discuss document management challenges."
 date: 2024-12-20
@@ -80,7 +80,7 @@ tags: healthcare, HIPAA, document management, compliance, medical records
 
 **James Mitchell:** Have you had any security incidents since implementation?
 
-**Dr. Angela Torres:** Zero. In eighteen months, zero incidents. Compared to the near-misses we were having before, that's transformational.
+**Dr. Angela Torres:** None since we went live. Compared to the near-misses we were having before, that's transformational.
 
 ---
 

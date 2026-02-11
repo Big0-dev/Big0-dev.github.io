@@ -21,7 +21,7 @@ from pathlib import Path
 from datetime import datetime
 from functools import lru_cache
 from typing import Dict, Any, Optional, Union
-from bs4 import BeautifulSoup, NavigableString
+from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +65,6 @@ class ContentProcessor:
 
         # Auto-link industry and service mentions for specific page types
         link_path = output_path if output_path else file_path
-        # Check both file_path and output_path for path matching (output_path uses hyphens, content_dir uses underscores)
         paths_to_check = [str(file_path), str(output_path) if output_path else '']
         if any(path in p for p in paths_to_check for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'case-studies/', 'news/', 'conversations/']):
             html_content = self.add_automatic_interlinking(html_content, link_path)
@@ -125,21 +124,8 @@ class ContentProcessor:
                 frontmatter = {}
                 markdown_content = content
         else:
-            # Check if this is a blog file with the special format
-            lines = content.strip().split('\n')
-            if len(lines) >= 5 and 'blogs' in str(file_path):
-                # Parse blog format: title, category, date, image, description
-                frontmatter = {
-                    'title': lines[0],
-                    'category': lines[1],
-                    'date': lines[2],
-                    'image_url': lines[3] if lines[3] else '',
-                    'meta_description': lines[4]
-                }
-                markdown_content = '\n'.join(lines[5:]).strip()
-            else:
-                frontmatter = {}
-                markdown_content = content
+            frontmatter = {}
+            markdown_content = content
 
         return self.process_markdown(markdown_content, frontmatter, file_path, output_path)
 
@@ -155,7 +141,6 @@ class ContentProcessor:
             HTML content with automatic links added
         """
         # Calculate the relative path prefix based on file depth
-        # file_path is like "services/locations/usa/ai-integration-usa.html"
         depth = len(file_path.parts) - 1 if file_path.parts else 0
         path_prefix = "../" * depth
 
@@ -186,24 +171,8 @@ class ContentProcessor:
             'medical device': 'healthcare',
             'health information': 'healthcare',
 
-            # Retail Industry
-            'retail': 'retail',
-            'e-commerce': 'retail',
-            'ecommerce': 'retail',
-            'online shopping': 'retail',
-            'marketplace': 'retail',
-            'consumer goods': 'retail',
-            'fashion': 'retail',
-            'grocery': 'retail',
-            'wholesale': 'retail',
-
             # Manufacturing Industry
             'manufacturing': 'manufacturing',
-            'logistics': 'manufacturing',
-            'supply chain': 'manufacturing',
-            'warehouse': 'manufacturing',
-            'inventory': 'manufacturing',
-            # Removed 'production' as it's too ambiguous (software production vs manufacturing)
             'factory': 'manufacturing',
             'industrial': 'manufacturing',
             'automotive': 'manufacturing',
@@ -212,29 +181,27 @@ class ContentProcessor:
             'agricultural': 'manufacturing',
             'farming': 'manufacturing',
 
-            # Telecom & Media Industry
-            'telecommunications': 'telecom',
-            'telecom': 'telecom',
-            'media': 'telecom',
-            'entertainment': 'telecom',
-            'broadcasting': 'telecom',
-            'streaming': 'telecom',
-            'gaming': 'telecom',
-            'education technology': 'telecom',
-            'edtech': 'telecom',
-            'e-learning': 'telecom',
-            'online education': 'telecom',
+            # Logistics Industry
+            'logistics': 'logistics',
+            'supply chain': 'logistics',
+            'warehouse': 'logistics',
+            'shipping': 'logistics',
+            'freight': 'logistics',
+            'fleet management': 'logistics',
 
-            # Energy Industry
-            'energy': 'energy',
-            'oil and gas': 'energy',
-            'renewable energy': 'energy',
-            'solar': 'energy',
-            'wind energy': 'energy',
-            'utilities': 'energy',
-            'power generation': 'energy',
-            'electric': 'energy',
-            'sustainability': 'energy',
+            # Legal Industry
+            'legal': 'legal',
+            'law firm': 'legal',
+            'legal tech': 'legal',
+            'contract review': 'legal',
+            'due diligence': 'legal',
+            'compliance': 'legal',
+
+            # Real Estate Industry
+            'real estate': 'real-estate',
+            'property management': 'real-estate',
+            'property technology': 'real-estate',
+            'proptech': 'real-estate',
 
             # Non-Profit & NGO Industry
             'non-profit': 'non-profit',
@@ -296,31 +263,16 @@ class ContentProcessor:
             'simulation': 'software-development',
             'simulator': 'software-development',
 
-            # Web Development
-            'web development': 'web-development',
-            'web application': 'web-development',
-            'web app': 'web-development',
-            'website development': 'web-development',
-            'react': 'web-development',
-            'angular': 'web-development',
-            'vue': 'web-development',
-            'javascript': 'web-development',
-            'typescript': 'web-development',
-            'frontend': 'web-development',
-            'backend': 'web-development',
-            'full stack': 'web-development',
-            'node.js': 'web-development',
-            'nodejs': 'web-development',
-
-            # Mobile Development
-            'mobile app': 'mobile_app_development',
-            'mobile application': 'mobile_app_development',
-            'ios app': 'mobile_app_development',
-            'android app': 'mobile_app_development',
-            'flutter': 'mobile_app_development',
-            'react native': 'mobile_app_development',
-            'swift': 'mobile_app_development',
-            'kotlin': 'mobile_app_development',
+            # Web & Mobile Development (part of Custom Software Development)
+            'web development': 'software-development',
+            'web application': 'software-development',
+            'web app': 'software-development',
+            'website development': 'software-development',
+            'mobile app': 'software-development',
+            'mobile application': 'software-development',
+            'frontend': 'software-development',
+            'backend': 'software-development',
+            'full stack': 'software-development',
 
             # Hardware & IoT Engineering (consolidated service)
             'cad': 'hardware-iot-engineering',
@@ -411,29 +363,6 @@ class ContentProcessor:
             'eagle': 'hardware-iot-engineering',
             'kicad': 'hardware-iot-engineering',
 
-            # Cloud Services
-            'cloud service': 'cloud-services',
-            'cloud management': 'cloud-services',
-            'cloud solution': 'cloud-services',
-            'aws': 'cloud-services',
-            'azure': 'cloud-services',
-            'google cloud': 'cloud-services',
-            'gcp': 'cloud-services',
-            'cloud infrastructure': 'cloud-services',
-            '5g network': 'cloud-services',
-            '5g': 'cloud-services',
-            'cloud platform': 'cloud-services',
-
-            # DevOps & Quality Services
-            'devops': 'devops-quality-services',
-            'ci/cd': 'devops-quality-services',
-            'docker': 'devops-quality-services',
-            'kubernetes': 'devops-quality-services',
-            'jenkins': 'devops-quality-services',
-            'terraform': 'devops-quality-services',
-            'ansible': 'devops-quality-services',
-            'infrastructure as code': 'devops-quality-services',
-
             # Database & Analytics
             'data analytics': 'data-analytics-services',
             'data analysis': 'data-analytics-services',
@@ -461,173 +390,13 @@ class ContentProcessor:
             'power bi': 'data-analytics-services',
             'digital twin': 'data-analytics-services',
 
-            # Python Automation
-            'python': 'python-automation',
-            'python script': 'python-automation',
-            'automation': 'python-automation',
-            'web scraping': 'python-automation',
-            'pandas': 'python-automation',
-            'numpy': 'python-automation',
+            # UI/UX & Design (part of Custom Software Development)
+            'ui design': 'software-development',
+            'ux design': 'software-development',
+            'ui/ux': 'software-development',
+            'user interface': 'software-development',
+            'user experience': 'software-development',
 
-            # UI/UX & Design Services
-            'ui design': 'design-services',
-            'ux design': 'design-services',
-            'ui/ux': 'design-services',
-            'user interface': 'design-services',
-            'user experience': 'design-services',
-            'figma': 'design-services',
-            'sketch': 'design-services',
-            'adobe xd': 'design-services',
-            'wireframe': 'design-services',
-            'mockup': 'design-services',
-
-            # Brand & Digital Design (part of Design Services)
-            'brand design': 'design-services',
-            'branding': 'design-services',
-            'logo design': 'design-services',
-            'graphic design': 'design-services',
-            'visual identity': 'design-services',
-            'brand identity': 'design-services',
-
-            # Blockchain
-            'blockchain': 'blockchain_development',
-            'smart contract': 'blockchain_development',
-            'ethereum': 'blockchain_development',
-            'solidity': 'blockchain_development',
-            'web3': 'blockchain_development',
-            'cryptocurrency': 'blockchain_development',
-            'defi': 'blockchain_development',
-            'nft': 'blockchain_development',
-
-            # AR/VR Development
-            'ar development': 'ar_vr_development',
-            'vr development': 'ar_vr_development',
-            'ar vr development': 'ar_vr_development',
-            'ar vr app development': 'ar_vr_development',
-            'ar vr application development': 'ar_vr_development',
-            'augmented reality': 'ar_vr_development',
-            'virtual reality': 'ar_vr_development',
-            'ar/vr': 'ar_vr_development',
-            'ar vr': 'ar_vr_development',
-            'mixed reality': 'ar_vr_development',
-            'xr development': 'ar_vr_development',
-            'xr content': 'ar_vr_development',
-            'immersive experiences': 'ar_vr_development',
-            'virtual simulations': 'ar_vr_development',
-            'unity': 'ar_vr_development',
-            'unreal engine': 'ar_vr_development',
-            'oculus': 'ar_vr_development',
-            'metaverse': 'ar_vr_development',
-
-            # E-commerce
-            'e-commerce development services': 'e_commerce_solutions',
-            'ecommerce development services': 'e_commerce_solutions',
-            'e-commerce development': 'e_commerce_solutions',
-            'ecommerce development': 'e_commerce_solutions',
-            'e-commerce solutions': 'e_commerce_solutions',
-            'ecommerce solutions': 'e_commerce_solutions',
-            'e-commerce': 'e_commerce_solutions',
-            'ecommerce': 'e_commerce_solutions',
-            'online store': 'e_commerce_solutions',
-            'shopping cart': 'e_commerce_solutions',
-            'payment integration': 'e_commerce_solutions',
-            'shopify': 'e_commerce_solutions',
-            'woocommerce': 'e_commerce_solutions',
-            'magento': 'e_commerce_solutions',
-
-            # ERP Implementation
-            'erp': 'erp_implementation',
-            'enterprise resource planning': 'erp_implementation',
-            'sap': 'erp_implementation',
-            'oracle erp': 'erp_implementation',
-            'microsoft dynamics': 'erp_implementation',
-            'odoo': 'erp_implementation',
-
-            # Software Testing (part of DevOps & Quality Services)
-            'software testing': 'devops-quality-services',
-            'qa testing': 'devops-quality-services',
-            'quality assurance': 'devops-quality-services',
-            'test automation': 'devops-quality-services',
-            'selenium': 'devops-quality-services',
-            'unit testing': 'devops-quality-services',
-            'integration testing': 'devops-quality-services',
-            'performance testing': 'devops-quality-services',
-
-            # Cybersecurity & Security Services
-            'cybersecurity': 'security-services',
-            'security solution': 'security-services',
-            'penetration testing': 'security-services',
-            'security audit': 'security-services',
-            'vulnerability assessment': 'security-services',
-            'data security': 'security-services',
-
-            # FinTech
-            'fintech': 'fintech_development',
-            'financial technology': 'fintech_development',
-            'payment system': 'fintech_development',
-            'banking solution': 'fintech_development',
-            'trading platform': 'fintech_development',
-            'digital wallet': 'fintech_development',
-
-            # Healthcare IT
-            'healthcare it': 'healthcare_it_solutions',
-            'health tech': 'healthcare_it_solutions',
-            'medical software': 'healthcare_it_solutions',
-            'ehr system': 'healthcare_it_solutions',
-            'telemedicine': 'healthcare_it_solutions',
-            'hipaa compliant': 'healthcare_it_solutions',
-
-            # Game Development
-            'game development': 'game_development',
-            'game design': 'game_development',
-            'unity game': 'game_development',
-            'unreal game': 'game_development',
-            'mobile game': 'game_development',
-            'gamedev': 'game_development',
-
-            # Digital Marketing
-            'digital marketing': 'digital_marketing_services',
-            'seo': 'digital_marketing_services',
-            'search engine optimization': 'digital_marketing_services',
-            'ppc': 'digital_marketing_services',
-            'social media marketing': 'digital_marketing_services',
-            'content marketing': 'digital_marketing_services',
-
-            # Staff Augmentation
-            'staff augmentation': 'staff-augmentation',
-            'it staff augmentation': 'staff-augmentation',
-            'offshore staff augmentation': 'staff-augmentation',
-            'nearshore staff augmentation': 'staff-augmentation',
-            'remote developer staffing': 'staff-augmentation',
-            'team scaling': 'staff-augmentation',
-            'team augmentation': 'staff-augmentation',
-            'dedicated developer': 'staff-augmentation',
-            'resource augmentation': 'staff-augmentation',
-            'remote developer': 'staff-augmentation',
-            'offshore development': 'staff-augmentation',
-            'nearshore development': 'staff-augmentation',
-
-            # BPO Services
-            'bpo': 'bpo',
-            'business process outsourcing': 'bpo',
-            'outsourcing service': 'bpo',
-            'back office': 'bpo',
-            'customer support': 'bpo',
-
-            # Professional Training
-            'professional technology training services': 'professional-technology-training',
-            'professional technology training': 'professional-technology-training',
-            'professional training services': 'professional-technology-training',
-            'professional training': 'professional-technology-training',
-            'technology training services': 'professional-technology-training',
-            'technology training': 'professional-technology-training',
-            'training services': 'professional-technology-training',
-            'professional development': 'professional-technology-training',
-            'tech training': 'professional-technology-training',
-            'certification program': 'professional-technology-training',
-            'training program': 'professional-technology-training',
-            'workshop': 'professional-technology-training',
-            'educational partnership': 'professional-technology-training'
         }
 
         # Define case study mappings
@@ -645,29 +414,12 @@ class ContentProcessor:
             'legal ai': 'ai-legal-document-analysis-tool',
             'document analysis tool': 'ai-legal-document-analysis-tool',
 
-            # SIM Dispensing Robot
-            'sim dispensing': 'autonomous-sim-dispensing-robotic-system',
-            'robotic kiosk': 'autonomous-sim-dispensing-robotic-system',
-            'unmanned kiosk': 'autonomous-sim-dispensing-robotic-system',
-            'telecom automation': 'autonomous-sim-dispensing-robotic-system',
-
-            # BCT Earpiece
-            'bone conduction': 'bct_earpiece',
-            'bct earpiece': 'bct_earpiece',
-            'professional earpiece': 'bct_earpiece',
-            'audio wearable': 'bct_earpiece',
-
             # Civic Engagement Platform
             'civic engagement': 'civic-engagement-digital-platform',
             'member management': 'civic-engagement-digital-platform',
             'civic platform': 'civic-engagement-digital-platform',
             'grassroots organization': 'civic-engagement-digital-platform',
 
-            # Dental Scanner
-            'dental scanner': 'dental_scanner',
-            'dental ai': 'dental_scanner',
-            'oral health': 'dental_scanner',
-            'periodontal': 'dental_scanner',
 
             # FedGAN
             'fedgan': 'fedgan',
@@ -720,7 +472,6 @@ class ContentProcessor:
         # Process text nodes for auto-linking
         for text_node in soup.find_all(string=True):
             # Skip if already inside a link, script, style, code or pre tag
-            # Allow text inside formatting tags like strong, em, b, i
             if is_inside_link(text_node) or text_node.parent.name in ['a', 'script', 'style', 'code', 'pre']:
                 continue
 
@@ -747,17 +498,16 @@ class ContentProcessor:
             # Add service keywords if applicable
             if is_industry_page or is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
                 for term, service_slug in service_links.items():
-                    if service_slug != current_slug:  # Don't link to self
+                    if service_slug != current_slug:
                         all_keywords.append((term, 'service', service_slug))
 
             # Add case study keywords for conversations, blogs, and news
             if is_conversation_page or is_blog_page or is_news_page:
                 for term, case_study_slug in case_study_links.items():
-                    if case_study_slug != current_slug:  # Don't link to self
+                    if case_study_slug != current_slug:
                         all_keywords.append((term, 'case_study', case_study_slug))
 
             # Sort ALL keywords by length (longest first) to match specific phrases before generic ones
-            # This ensures "E-Commerce Development Services" matches before just "E-Commerce"
             all_keywords.sort(key=lambda x: len(x[0]), reverse=True)
 
             # Collect all matches first (to avoid overlapping links)
@@ -784,22 +534,17 @@ class ContentProcessor:
             # Apply all replacements from right to left (so positions don't shift)
             if matches_to_replace:
                 modified = True
-                # Sort by start position (descending) to replace from right to left
                 matches_to_replace.sort(key=lambda x: x[0], reverse=True)
                 for start, end, matched_text, replacement, link_type in matches_to_replace:
                     text = text[:start] + replacement + text[end:]
 
             # Replace the text node with new HTML if modified
             if modified:
-                # Parse the modified text and extract all children
                 new_soup = BeautifulSoup(text, 'html.parser')
-                # Get all the parsed elements (could be text and links mixed)
                 new_elements = list(new_soup.children)
                 if new_elements:
-                    # Replace the original text node with the first element
                     first_element = new_elements[0]
                     text_node.replace_with(first_element)
-                    # Insert any remaining elements after the first one
                     for element in new_elements[1:]:
                         first_element.insert_after(element)
                         first_element = element
@@ -828,83 +573,37 @@ class ContentProcessor:
         templates = {
             'cta': f'''
 <div class="inline-cta">
-  <p class="cta-title">Ready to Transform Your Business?</p>
-  <p>Let's discuss how we can help you achieve your goals with our innovative solutions.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started Today</a>
+  <p class="cta-title">Talk to Our Engineers</p>
+  <p>The people who built this are the people you'll talk to. No sales team in between.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Start a Conversation &rarr;</a>
 </div>
 ''',
             'cta-service': f'''
 <div class="inline-cta">
-  <p class="cta-title">Ready to Get Started?</p>
-  <p>Our experts are ready to help you implement these solutions for your business.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Schedule a Consultation</a>
+  <p class="cta-title">Need This Built?</p>
+  <p>Tell us what you're working on. Our engineers will scope it, not a sales team.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Talk to Engineers &rarr;</a>
 </div>
 ''',
             'cta-case-study': f'''
 <div class="inline-cta">
   <p class="cta-title">Want Similar Results?</p>
-  <p>Let's discuss how we can deliver transformative solutions for your organization.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Contact Our Team</a>
+  <p>Same engineers, same approach. Tell us what you're building.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Start a Conversation &rarr;</a>
 </div>
 ''',
-            # Location-specific CTAs
-            'cta-location-usa': f'''
+            'cta-industry': f'''
 <div class="inline-cta">
-  <p class="cta-title">Ready to Transform Your Business in the USA?</p>
-  <p>Connect with our US-based team to discuss your requirements and get started.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in the USA</a>
+  <p class="cta-title">Talk to Our Engineers</p>
+  <p>The people who built this are the people you'll talk to. No sales team in between.</p>
+  <a href="{path_prefix}contact.html" class="btn btn-primary">Start a Conversation &rarr;</a>
 </div>
 ''',
-            'cta-location-uk': f'''
-<div class="inline-cta">
-  <p class="cta-title">Ready to Transform Your Business in the UK?</p>
-  <p>Connect with our UK team to discuss your requirements and get started.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in the UK</a>
-</div>
-''',
-            'cta-location-canada': f'''
-<div class="inline-cta">
-  <p class="cta-title">Ready to Transform Your Business in Canada?</p>
-  <p>Connect with our Canadian team to discuss your requirements and get started.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in Canada</a>
-</div>
-''',
-            'cta-location-australia': f'''
-<div class="inline-cta">
-  <p class="cta-title">Ready to Transform Your Business in Australia?</p>
-  <p>Connect with our Australian team to discuss your requirements and get started.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in Australia</a>
-</div>
-'''
         }
 
         # Find and replace all template directives
         def replace_template(match):
             template_name = match.group(1)
-
-            # Handle city-specific CTAs dynamically
-            if template_name.startswith('cta-location-'):
-                location = template_name.replace('cta-location-', '')
-                # Check if it's a city name
-                city_names = {
-                    'new-york': 'New York', 'san-francisco': 'San Francisco',
-                    'los-angeles': 'Los Angeles', 'chicago': 'Chicago',
-                    'austin': 'Austin', 'seattle': 'Seattle',
-                    'london': 'London', 'manchester': 'Manchester', 'birmingham': 'Birmingham',
-                    'toronto': 'Toronto', 'vancouver': 'Vancouver', 'montreal': 'Montreal',
-                    'sydney': 'Sydney', 'melbourne': 'Melbourne', 'brisbane': 'Brisbane'
-                }
-
-                if location in city_names:
-                    city_display = city_names[location]
-                    return f'''
-<div class="inline-cta">
-  <h3>Ready to Transform Your Business in {city_display}?</h3>
-  <p>Connect with our {city_display} team to discuss your requirements and get started.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Get Started in {city_display}</a>
-</div>
-'''
-
             return templates.get(template_name, match.group(0))
 
         # Process {{template:name}} directives (updated to handle hyphens in template names)

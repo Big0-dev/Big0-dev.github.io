@@ -1,42 +1,44 @@
 ---
 title: Premium Finance Management Platform
-industry: Fintech/Insurtech
+industry: Fintech
 type: Full-Stack Platform
 icon: credit-card
-meta_description: See how Big0 built a fintech platform achieving 95% automation and 60% faster underwriting for premium financing operations. View our case study.
-challenge: Insurance finance company needed automation for manual premium financing processes causing delays, errors, and limited portfolio visibility.
-solution: Full-stack fintech platform automating premium financing, credit assessment, document management, and real-time analytics.
-results: 95% Automation,60% Faster Underwriting,40% Fewer Errors,Real-time Analytics
-result_descriptions: Automated premium calculations and payment scheduling,Streamlined credit assessment and approval workflows,Eliminated manual data entry errors,Real-time portfolio performance insights
-technologies: NestJS with TypeScript,Next.js with Ant Design,PostgreSQL Database,Redis Caching,DocuSign Integration,Experian Credit API,CubeJS Analytics,Docker & Kubernetes,Google Cloud Platform
-description: Comprehensive fintech platform that automated premium financing operations and provided real-time business intelligence.
-order: 2
+meta_description: Case study on fintech platform automating premium financing — from credit assessment and amortization to e-signatures and real-time portfolio analytics.
+challenge: Insurance finance company drowning in manual processes — spreadsheet-based amortization, multi-day credit assessments, error-prone payment tracking, and no portfolio visibility.
+solution: Full-stack fintech platform automating the premium financing lifecycle from quote to payoff, with integrated credit assessment, e-signatures, and real-time analytics.
+results: End-to-End Automation,Same-Day Underwriting,Multi-Method Reconciliation,Portfolio Analytics
+result_descriptions: Automated premium calculations and payment scheduling replace spreadsheets,Credit assessment moved from multi-day turnaround into the quoting process,ACH and check and cash payments reconcile automatically,Real-time dashboards showing policyholder behavior and agency performance
+technologies: Multi-party financial workflow,Real-time credit assessment integration,E-signature automation,Portfolio analytics dashboard
+description: Fintech platform automating premium financing operations from quote to payoff with integrated credit assessment and real-time portfolio analytics.
+order: 5
 ---
 
 ## The Business Problem
 
 A growing insurance premium financing company was hitting a wall. They help policyholders spread insurance payments over time—a straightforward business model that was drowning in manual processes.
 
-Calculating amortization schedules meant spreadsheets. Credit assessments required days of back-and-forth. Payment tracking was error-prone. Document collection and signatures created compliance risks and bottlenecks. And leadership had limited visibility into portfolio performance—making it difficult to identify trends, assess risk exposure, or plan strategically.
+Calculating amortization schedules meant spreadsheets. Credit assessments required days of back-and-forth between underwriters, credit bureaus, and approvers. Payment tracking across ACH, checks, and cash was error-prone and labor-intensive. Document collection and e-signatures created compliance bottlenecks. And leadership had no real-time view of portfolio performance—making it difficult to identify trends, assess risk exposure, or plan strategically.
 
-The manual approach couldn't scale. Every new customer meant more administrative burden, not just more revenue.
-
-{{template:cta}}
+Every new customer meant more administrative burden. The manual approach couldn't scale.
 
 ## The Solution
 
-Big0 built a complete platform that automates the premium financing lifecycle from quote to payoff.
+Big0 built a platform that automates the premium financing lifecycle from quote to payoff.
 
-Credit assessments that previously took days now happen during the quote process. The system pulls credit data in real-time, adjusts terms based on risk, and routes decisions through approval workflows automatically.
+**Credit assessment moved inline.** What previously required days of manual processing now happens during the quoting process. The system pulls credit data in real-time, calculates risk-adjusted terms, and routes decisions through approval workflows automatically. Underwriters focus on edge cases that need human judgment rather than routine applications.
 
-Complex amortization schedules are calculated instantly. Multiple payment methods—ACH, checks, cash—reconcile automatically. Financing agreements generate with personalized terms and collect signatures electronically.
+**Amortization and payments are handled automatically.** Complex schedules calculate instantly based on policy terms. Multiple payment methods—ACH, checks, cash—reconcile without manual data entry. The system flags missed payments and triggers follow-up workflows before accounts become problematic.
 
-Real-time dashboards show policyholder behavior, financing trends, and agency performance. Leadership can see portfolio health at a glance and spot opportunities or risks as they emerge.
+**Document management is integrated end-to-end.** Financing agreements generate with personalized terms based on the approved quote. E-signatures collect without printing, scanning, or mailing. All documents attach to the customer record automatically, creating a complete audit trail.
+
+**Portfolio analytics give leadership visibility.** Real-time dashboards show policyholder payment behavior, financing trends by product type, and agency performance. Leadership sees portfolio health at a glance and spots opportunities or risks as they emerge rather than waiting for monthly reports compiled manually.
 
 ## The Results
 
-The platform transformed premium financing from an administrative burden into a scalable operation. What used to take days now takes hours. What used to require manual tracking now happens automatically.
+The platform transformed premium financing from an administrative burden into a scalable operation. The company processes new applications in the same day rather than over multiple days. Payment reconciliation that consumed hours of staff time each week happens automatically.
 
-The company can grow transaction volume without proportional increases in staff. Underwriters focus on edge cases that need human judgment rather than routine processing. Leadership makes decisions with real-time data instead of waiting for monthly reports.
+The company can grow transaction volume without proportional increases in administrative staff. Underwriters spend their time on decisions that require judgment. Leadership makes strategic decisions with current data.
 
-Most importantly, the foundation is built. As the company grows, the platform grows with them—without the manual processes that were limiting their potential.
+The integrated approach also reduced errors at handoff points. When credit assessment flows directly into document generation and payment scheduling, there are fewer opportunities for data to be entered incorrectly or documents to go missing between steps.
+
+{{template:cta}}

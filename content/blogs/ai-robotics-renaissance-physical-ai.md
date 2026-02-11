@@ -7,9 +7,11 @@ meta_description: After decades of hype, physical AI is actually happening. How 
 tags: robotics, humanoids, physical-ai, automation, manufacturing
 ---
 
-For 60 years, robots have been "about to change everything." Self-driving cars were five years away - every year. Household robots were perpetually around the corner. Humanoids were always "nearly ready."
+*We've shipped physical AI &mdash; including an autonomous drone with an IEEE-published control system. This article covers the broader robotics renaissance and why foundation models are the inflection point. [See our work &rarr;](/case-studies.html)*
 
-Then something shifted. Not gradually - suddenly.
+For 60 years, robots have been "about to change everything." Self-driving cars were five years away &mdash; every year. Household robots were perpetually around the corner. Humanoids were always "nearly ready."
+
+Then something shifted. Not gradually &mdash; suddenly.
 
 In 2024, robots started doing things that weren't scripted. Machines started reasoning about physical environments. Systems started generalizing across tasks.
 

@@ -1,135 +1,99 @@
 ---
-title: "Creating Audio Products People Actually Want to Buy"
-subtitle: A conversation between two product developers about industrial design
-meta_description: Two audio product developers discuss how Big0's bone conduction earpiece design achieved $3.2M revenue and 89% customer satisfaction in the first year.
-category: Industrial Design
-intro: "Ryan Foster, founder of an audio accessories startup, meets his industry friend Michelle Torres, who leads product development at an established audio company, at a consumer electronics trade show."
-date: 2024-12-10
-tags: industrial design, audio, product development, bone conduction, wearables
+title: "Engineering Audio Without Blocking Your Ears"
+subtitle: A conversation between two hardware product managers
+meta_description: Two hardware product managers discuss Big0's bone conduction earpiece project — from transducer selection through PCB design to production-ready prototype.
+category: Hardware Engineering
+intro: "Raj Patel, Product Director at an industrial safety equipment company, meets Sarah Chen, Head of Product at a wearable technology firm, at a hardware engineering conference to discuss audio solutions for industrial environments."
+date: 2025-10-12
+tags: hardware, bone conduction, PCB design, prototyping, wearable technology
 ---
 
-## The Trade Show Meeting
+## The Conference Meeting
 
-**Michelle Torres:** Ryan! I saw your booth earlier. The bone conduction piece looks impressive. How's it performing?
+**Raj Patel:** Sarah, I keep running into the same problem. Our field teams need comms audio, but they also need to hear what's happening around them. Earbuds are a safety hazard on an active site.
 
-**Ryan Foster:** Michelle, better than we expected. Three point two million in revenue first year. Our category share is growing faster than we can keep up with.
+**Sarah Chen:** We dealt with the exact same tension. Audio quality versus situational awareness — pick one. That was the tradeoff until we found a team that could actually engineer bone conduction properly.
 
-**Michelle Torres:** That's exceptional for a new product in a crowded market. What's driving the success?
+**Raj Patel:** You went the bone conduction route? The commercial products I've tested are... underwhelming. Thin audio, uncomfortable after an hour, too fragile for real work environments.
 
-**Ryan Foster:** Honest answer? The design. Not just aesthetics—the engineering, the ergonomics, the materials. Big0 nailed everything that matters for professional users.
-
----
-
-## The Market Gap
-
-**Michelle Torres:** Tell me about the opportunity you saw.
-
-**Ryan Foster:** Professionals in healthcare, security, athletics—they need hands-free audio but can't afford to lose situational awareness. Traditional earbuds block external sound. That's dangerous in many professional environments.
-
-**Michelle Torres:** Bone conduction isn't new though. What made your approach different?
-
-**Ryan Foster:** Most bone conduction products are designed for casual consumers. Joggers, cyclists. We designed specifically for professional environments where audio quality and durability are non-negotiable.
-
-**Michelle Torres:** That's a meaningful distinction. The requirements are completely different.
-
-**Ryan Foster:** Exactly. A security professional needs crystal clear communication in a noisy environment. A healthcare worker needs to hear patients and colleagues while receiving alerts. The consumer products weren't built for those demands.
+**Sarah Chen:** That's why we didn't use a commercial product. We had Big0 engineer one from scratch.
 
 ---
 
-## The Design Process
+## The Technical Requirements
 
-**Michelle Torres:** How did you approach the design with Big0?
+**Raj Patel:** From scratch — meaning custom electronics, custom enclosure, everything?
 
-**Ryan Foster:** We started with deep user research. Interviewed fifty professionals across target segments—hospital staff, private security, athletic trainers. Understood their actual use cases and pain points.
+**Sarah Chen:** Everything. The transducer, the amplifier circuit, the PCB, the enclosure, the firmware. When you need specific performance in a specific form factor, off-the-shelf modules don't cut it.
 
-**Michelle Torres:** What surprised you in that research?
+**Raj Patel:** What drove that decision? Custom hardware is expensive.
 
-**Ryan Foster:** Comfort for extended wear was non-negotiable. These people wear audio devices for eight-hour shifts. Consumer products designed for one-hour workouts don't address that.
+**Sarah Chen:** We tried adapting existing products first. Consumer bone conduction headsets are designed for jogging — they're optimized for music, not voice intelligibility. And they fall apart in industrial conditions. We spent months trying to make modifications work before accepting that the foundation was wrong.
 
-**Michelle Torres:** How did that shape the design?
+**Raj Patel:** So you needed voice-optimized audio in a form factor that fits under a hard hat?
 
-**Ryan Foster:** Ergonomic modeling that accounts for human variation. Weight distribution that doesn't create pressure points. Materials that don't cause skin irritation over extended contact.
-
----
-
-## The Engineering
-
-**Michelle Torres:** What about the audio engineering? Bone conduction typically compromises on sound quality.
-
-**Ryan Foster:** That was Big0's breakthrough. Custom transducer design that delivers better frequency response than existing bone conduction technology. Our users get clear voice communication without sacrificing audio fidelity.
-
-**Michelle Torres:** How did they achieve that?
-
-**Ryan Foster:** Proprietary conduction materials, optimized contact geometry, signal processing tuned for the specific application. They treated this as a serious audio engineering challenge, not just a form factor exercise.
-
-**Michelle Torres:** And durability? Professional environments are hard on equipment.
-
-**Ryan Foster:** Built to survive drops, sweat, weather exposure. IP67 rating wasn't aspirational—we tested extensively before certifying. These products see real-world abuse.
+**Sarah Chen:** Under a hard hat, under a tactical helmet, inside hearing protection. The form factor constraints were strict. And the audio had to be clear in environments above 85 decibels.
 
 ---
 
-## The Results
+## The Development Process
 
-**Michelle Torres:** The revenue numbers are impressive. What's driving repeat purchases?
+**Raj Patel:** Walk me through how they approached it.
 
-**Ryan Foster:** Organizations buying for entire teams. A hospital tries a few units, staff loves them, then procurement orders fifty more. Security companies standardizing on our product across locations.
+**Sarah Chen:** They started with the transducer — which bone conduction driver, at what frequency response, driven by what amplifier profile. That's the core physics. Get that wrong and nothing else matters.
 
-**Michelle Torres:** Customer satisfaction?
+**Raj Patel:** How do you optimize for speech versus music?
 
-**Ryan Foster:** Eighty-nine percent satisfaction, 4.7 stars on reviews. The negative feedback we do get is mostly from people who bought it for consumer use and expected different characteristics.
+**Sarah Chen:** Different frequency emphasis. Speech intelligibility peaks in a narrower band than music reproduction. Big0 tuned the amplifier and firmware DSP to prioritize voice frequencies. The result sounds worse for music and better for understanding someone talking to you — which is exactly the right tradeoff.
 
-**Michelle Torres:** What about return rates?
+**Raj Patel:** What about the PCB?
 
-**Ryan Foster:** Under 4%. For audio products, that's excellent. People buy, they use them professionally, they keep them.
-
----
-
-## The Market Position
-
-**Michelle Torres:** You mentioned growing category share. Who are you competing against?
-
-**Ryan Foster:** We're not competing directly with consumer bone conduction brands. We're in a professional communications segment that was underserved. Our competition is traditional radio earpieces and professional headsets.
-
-**Michelle Torres:** That's smart positioning. You're not in a price war with consumer products.
-
-**Ryan Foster:** Exactly. We priced for value to professional buyers, not for consumer price sensitivity. The margins support continued R&D and product development.
-
-**Michelle Torres:** What's next for the product line?
-
-**Ryan Foster:** Variants optimized for specific verticals. Healthcare version with antimicrobial materials. Security version with encrypted communication integration. Same core design excellence, tailored for specific professional requirements.
+**Sarah Chen:** Custom board integrating the amplifier, Bluetooth module, battery management, and microphone. They got it small enough to sit behind the ear without feeling like you're wearing a brick. Multiple revision cycles to get the layout right — component placement affects both electrical performance and thermal management in something that small.
 
 ---
 
-## The Design Partner
+## The Prototyping Approach
 
-**Michelle Torres:** What made Big0 the right partner for this project?
+**Raj Patel:** How many prototype iterations?
 
-**Ryan Foster:** They understood that good design isn't just aesthetics. The product has to work perfectly for its intended use case. They pushed back when our ideas wouldn't work for professional users.
+**Sarah Chen:** Several for the enclosure. 3D printing let them test a new form factor every few days. The critical variable was contact pressure — how firmly the transducer presses against the temporal bone. Too light and you lose audio. Too heavy and it's uncomfortable within thirty minutes.
 
-**Michelle Torres:** Pushed back how?
+**Raj Patel:** That's a narrow window.
 
-**Ryan Foster:** We wanted certain visual elements that would have compromised comfort for extended wear. They showed us the tradeoffs and recommended alternatives that maintained the visual appeal while solving the functional requirement.
+**Sarah Chen:** Very narrow. And it has to work across different head sizes and shapes. The mounting mechanism went through its own iteration cycle independent of the enclosure shape.
 
-**Michelle Torres:** That's valuable. A lot of design firms just execute whatever the client wants.
+**Raj Patel:** What about environmental testing?
 
-**Ryan Foster:** Big0 genuinely cared about making a successful product, not just delivering what we asked for. That's a different relationship than typical agency work.
+**Sarah Chen:** Noise testing at different dB levels, Bluetooth range testing, battery life characterization, drop testing. They built a structured test protocol and ran every prototype revision through it. No guessing about whether a change actually improved things.
+
+---
+
+## The Deliverable
+
+**Raj Patel:** What did they hand over at the end?
+
+**Sarah Chen:** Complete engineering package. Schematics, PCB layouts, bill of materials with specific part numbers and suppliers, 3D models ready for injection molding tooling, firmware source code, test reports. Everything a contract manufacturer needs to produce units.
+
+**Raj Patel:** So you could take that package to any CM and get production units made?
+
+**Sarah Chen:** That was the point. Big0 handled the engineering. We choose the manufacturing partner. No vendor lock-in, no proprietary dependencies. We own every file.
+
+**Raj Patel:** How long from kick-off to that deliverable?
+
+**Sarah Chen:** Faster than our previous hardware projects, and those used more conventional technology. The 3D printing approach for enclosure iteration saved significant time compared to traditional tooling cycles.
 
 ---
 
 ## The Recommendation
 
-**Michelle Torres:** Ryan, our company is exploring a new product line. Would you recommend Big0 for established companies too?
+**Raj Patel:** Sarah, I've been evaluating three approaches — adapt a commercial product, license a reference design, or custom engineer. You're telling me custom was the right call?
 
-**Ryan Foster:** Absolutely. They scaled to our needs but they can handle larger, more complex projects. The methodology is the same—understand users, engineer for real requirements, don't compromise on quality.
+**Sarah Chen:** For our requirements, absolutely. If you need standard consumer specs, buy off the shelf. If you need specific performance in a specific form factor for a specific environment — custom engineering pays for itself because you don't spend months trying to make the wrong product work.
 
-**Michelle Torres:** What should we prepare if we approach them?
+**Raj Patel:** And Big0 handles the full stack — electronics, mechanical, firmware?
 
-**Ryan Foster:** Clear understanding of your target user. The more specific you are about use cases, the better they can design for actual needs. And be prepared to hear honest feedback—they won't just validate your assumptions.
+**Sarah Chen:** One team, one integration. No finger-pointing between an electronics vendor and a mechanical vendor and a firmware contractor when something doesn't work. They own the whole problem.
 
-**Michelle Torres:** Ryan, thank you. This is inspiring to hear. Shows what's possible when design and engineering align.
+**Raj Patel:** That's what I need. Our field teams deserve better than consumer products duct-taped into industrial service.
 
-**Ryan Foster:** Michelle, we spent three months with Big0 before any physical prototyping—just research and requirements refinement. That investment paid off in a product that actually fits the market instead of one we hoped would fit.
-
-**Michelle Torres:** Patience in the design process. That's often the hardest thing to justify internally.
-
-**Ryan Foster:** But it's what separates products that succeed from products that disappoint. Big0 helped us get it right.
+**Sarah Chen:** Get your requirements documented — form factor constraints, audio specs, environmental conditions, target cost. The clearer your brief, the faster they can move.

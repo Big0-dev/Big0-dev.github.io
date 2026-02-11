@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+{% set fm = current_service.frontmatter %}
+
+{% block title %}{{ fm.hero_title or current_service.title }}{% endblock %}
+{% block meta_description %}{{ current_service.meta_description }}{% endblock %}
+{% block canonical_path %}/services/{{ current_service.slug }}.html{% endblock %}
+
+{% block preload %}
+<link rel="preload" as="image" href="{{ static }}/{{ fm.hero_image }}.avif" type="image/avif" />
+{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+<link rel="stylesheet" href="{{ static }}/services-bespoke.css">
+<link rel="stylesheet" href="{{ static }}/detail-pages.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ static }}/detail-pages.css"></noscript>
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ static }}/contact-form-bant.css"></noscript>
+{% endblock %}
+
+{% block content %}
+
+<!-- Section 1: Hero -->
+<section class="hero svc-hero">
+  <div class="svc-hero-bg" style="background-image: url('{{ static }}/{{ fm.hero_image }}.avif')"></div>
+  <div class="container hero-inner">
+    <div class="svc-hero-icon">
+      {{ inject_svg(current_service.icon, True) | safe }}
+    </div>
+    {% if fm.hero_badges %}
+    <div class="hero-badges">
+      {% for badge in fm.hero_badges %}
+      <span class="badge badge-{{ badge.color or 'cyan' }}">{{ badge.text }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h1 class="hero-h1">{{ fm.hero_title or current_service.title }}<span class="hero-dot">.</span></h1>
+    {% if fm.hero_scramble %}
+    <div class="hero-scramble-wrapper">
+      <span class="hero-scramble hero-scramble-text svc-scramble">{{ fm.hero_scramble[0] }}</span>
+    </div>
+    {% endif %}
+    <p class="hero-sub">{{ fm.description }}</p>
+    <div class="hero-ctas">
+      <a href="{{ contact }}" class="btn btn-primary btn-lg">{{ fm.cta_button or 'Get Started' }} &rarr;</a>
+      <a href="#capabilities" class="btn btn-secondary btn-lg">See Capabilities</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v14M4 11l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+</section>
+
+<!-- Section 2: The Challenge -->
+{% if fm.challenge %}
+<section class="section">
+  <div class="container">
+    <div class="svc-challenge reveal">
+      <div class="section-label">The Challenge</div>
+      <h2 class="section-title">{{ fm.challenge_title or 'The Problem' }}</h2>
+      <p>{{ fm.challenge }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Section 3: Capabilities -->
+{% if fm.capabilities %}
+<section class="section section-alt" id="capabilities">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Capabilities</div>
+      <h2 class="section-title">What We Build</h2>
+      <p class="section-subtitle mb-2xl">{{ fm.capabilities_subtitle or 'Problems we actually solve.' }}</p>
+    </div>
+
+    <div class="svc-capabilities-grid reveal-stagger reveal">
+      {% for cap in fm.capabilities %}
+      <div class="svc-capability-card">
+        <div class="svc-cap-icon">
+          {{ inject_svg(cap.icon, True) | safe }}
+        </div>
+        <h3>{{ cap.title }}</h3>
+        <p>{{ cap.desc }}</p>
+        {% if cap.badge %}
+        <span class="badge badge-{{ cap.badge_color or 'cyan' }}">{{ cap.badge }}</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Section 4: Shipped Work / Evidence -->
+{% if fm.evidence_items %}
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Evidence</div>
+      <h2 class="section-title">{{ fm.evidence_title or "What We've Shipped" }}</h2>
+      <p class="section-subtitle mb-2xl">{{ fm.evidence_subtitle or 'Real deployments, real results.' }}</p>
+    </div>
+
+    <div class="svc-evidence-grid reveal-stagger reveal">
+      {% for item in fm.evidence_items %}
+      {% if item.slug %}
+      <a href="{{ path_prefix }}case-studies/{{ item.slug }}.html" class="svc-evidence-card">
+      {% else %}
+      <div class="svc-evidence-card">
+      {% endif %}
+        {% if item.image %}
+        <div class="svc-evidence-img">
+          <img src="{{ static }}/{{ item.image }}.avif" alt="{{ item.title }}" loading="lazy" width="400" height="180">
+        </div>
+        {% else %}
+        <div class="svc-evidence-icon">
+          {{ inject_svg(current_service.icon, True) | safe }}
+        </div>
+        {% endif %}
+        <div class="svc-evidence-body">
+          {% if item.badge %}
+          <span class="badge badge-{{ item.badge_color or 'cyan' }}" style="margin-bottom: 8px; display: inline-block;">{{ item.badge }}</span>
+          {% endif %}
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      {% if item.slug %}
+      </a>
+      {% else %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Section 5: How We Work -->
+{% if fm.process_steps %}
+<section class="section section-alt" id="how-we-work">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">How We Work</div>
+      <h2 class="section-title">{{ fm.process_title or 'Our Process' }}</h2>
+      <p class="section-subtitle mb-2xl">{{ fm.process_subtitle or 'Scope, build, ship, iterate.' }}</p>
+    </div>
+
+    <div class="process-grid{% if fm.process_steps|length == 3 %} process-grid-3{% endif %} reveal">
+      {% for step in fm.process_steps %}
+      <div class="process-step">
+        <div class="process-num">{{ step.num }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.desc }}</p>
+        {% if step.time %}
+        <span class="process-time">{{ step.time }}</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Section 6: Industries We Serve -->
+{% if fm.industries %}
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Industries</div>
+      <h2 class="section-title">Industries We Serve</h2>
+    </div>
+
+    <div class="svc-industries-grid reveal">
+      {% for ind in fm.industries %}
+      <a href="{{ path_prefix }}industries/{{ ind.slug }}.html" class="svc-industry-card">
+        <div class="svc-industry-icon">
+          {{ inject_svg(ind.icon, True) | safe }}
+        </div>
+        <span>{{ ind.name }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Section 7: FAQ -->
+{% if fm.faqs %}
+<section class="section section-alt">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
+      <div class="faq-section reveal">
+        <div class="faq-header">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-items">
+          {% for faq in fm.faqs %}
+          <div class="faq-item" data-faq-index="{{ loop.index }}">
+            <button class="faq-question" aria-expanded="false" aria-controls="svc-faq-{{ loop.index }}">
+              <span class="faq-question-text">{{ faq.q }}</span>
+              <span class="faq-icon">&#9660;</span>
+            </button>
+            <div class="faq-answer" id="svc-faq-{{ loop.index }}">
+              <div class="faq-answer-content">
+                <p>{{ faq.a }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Section 8: CTA -->
+{% with cta_title=fm.cta_headline or 'Talk to Our Engineers', cta_description=fm.cta_subtext or 'The people who built this are the people you will talk to.', cta_button=fm.cta_button or 'Start a Conversation' %}
+{% include 'cta.html' %}
+{% endwith %}
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ static }}/text-scramble.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Service-specific scramble phrases
+  var el = document.querySelector('.svc-scramble');
+  if (el) {
+    var phrases = [
+      {% for phrase in fm.hero_scramble %}'{{ phrase }}'{% if not loop.last %},{% endif %}{% endfor %}
+    ];
+    var checkInterval = setInterval(function() {
+      if (typeof TextScramble !== 'undefined') {
+        clearInterval(checkInterval);
+        var fx = new TextScramble(el);
+        var counter = 0;
+        var next = function() {
+          fx.setText(phrases[counter]).then(function() {
+            setTimeout(next, 3500);
+          });
+          counter = (counter + 1) % phrases.length;
+        };
+        next();
+      }
+    }, 100);
+    setTimeout(function() { clearInterval(checkInterval); }, 5000);
+  }
+
+  // Reveal animations
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el) { el.classList.add('revealed'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.querySelector('.faq-question').addEventListener('click', function() {
+      var active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function(o) {
+        if (o !== item) {
+          o.classList.remove('active');
+          o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('active', !active);
+      this.setAttribute('aria-expanded', !active);
+    });
+  });
+
+  // Smooth scroll for "See Capabilities"
+  document.querySelectorAll('a[href="#capabilities"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.getElementById('capabilities');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});
+</script>
+{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ fm.hero_title or current_service.title }}",
+  "description": "{{ current_service.meta_description }}",
+  "url": "{{ domain }}/services/{{ current_service.slug }}.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Big0",
+    "url": "https://big0.dev"
+  }
+}
+</script>
+{% if fm.faqs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in fm.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.q }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.a }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}

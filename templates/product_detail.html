@@ -26,17 +26,10 @@
       {% if current_product.frontmatter.status %}
       <span class="product-status mb-md">{{ current_product.frontmatter.status }}</span>
       {% endif %}
-      <h1 class="text-4xl font-bold">{{ current_product.title }}</h1>
-      <p class="text-xl text-secondary mt-lg">
+      <h1 class="page-hero-title">{{ current_product.title }}</h1>
+      <p style="color: var(--color-mist); margin-top: 16px; font-size: 16px; line-height: 1.7;">
         {{ current_product.frontmatter.tagline | default(current_product.description) }}
       </p>
-      {% if current_product.frontmatter.tech_stack %}
-      <div class="tech-tags mt-lg" style="justify-content: center;">
-        {% for tech in current_product.frontmatter.tech_stack.split(', ') %}
-        <span>{{ tech }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
     </div>
   </div>
 </section>

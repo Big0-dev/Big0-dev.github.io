@@ -1,5 +1,5 @@
 ---
-title: From Tractors to Terminators - How AI Is Quietly Revolutionizing Agriculture
+title: From Tractors to Terminators - How AI Is Quietly Transforming Agriculture
 category: AI Applications
 date: January 1, 2026
 image_url: ai-agriculture.avif
@@ -7,11 +7,13 @@ meta_description: John Deere is now an AI company. Autonomous tractors, precisio
 tags: agricultural-ai, precision-farming, autonomous-tractors, food-security, sustainability
 ---
 
-John Deere - yes, the tractor company - is now an AI company.
+*We built a precision agricultural sprayer drone at 65% lower cost than commercial alternatives, saving 84% water usage. This article covers the broader AI agriculture landscape &mdash; and why we think it matters more than another chatbot. [See our AgriDrone case study &rarr;](/case-studies/agridrone.html)*
+
+John Deere &mdash; yes, the tractor company &mdash; is now an AI company.
 
 In 2024, their autonomous tractors logged millions of acres without human operators. Computer vision systems identify weeds and spray them individually, reducing herbicide use by 80%. Drones monitor crop health across thousands of fields simultaneously.
 
-While the tech world debates ChatGPT and AGI, agriculture is undergoing its own AI revolution. And it might matter more for humanity's future than another chatbot.
+While the tech world debates ChatGPT and AGI, agriculture is undergoing its own AI transformation. And it might matter more for humanity's future than another chatbot.
 
 ## The Scope of the Challenge
 

@@ -71,7 +71,7 @@ Finance graduates with e-commerce expertise are increasingly valuable across mul
 
 ## Looking Forward
 
-This course represents the first step in a broader collaboration between Hassan Kamran and SZABIST University to integrate cutting-edge technology education with traditional business disciplines.
+This course represents the first step in a broader collaboration between Hassan Kamran and SZABIST University to integrate modern technology education with traditional business disciplines.
 
 Future initiatives may include:
 - Advanced FinTech workshops
@@ -84,4 +84,4 @@ Students completing this course will receive not just academic credit, but a com
 
 ---
 
-*For more information about Big0's educational partnerships and training programs, visit our Professional Technology Training Services page or explore our E-Commerce Development Services.*
+*For more information about Big0's services, visit our [Services](/services.html) page.*

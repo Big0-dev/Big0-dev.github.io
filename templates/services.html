@@ -1,102 +1,69 @@
 {% extends "base.html" %}
 
 {% block title %}Our Services{% endblock %}
-{% block meta_description %}Explore Big0's comprehensive AI and technology services including AI integration, cloud solutions, data analytics, and more.{% endblock %}
+{% block meta_description %}3 core services backed by shipped products, peer-reviewed research, and production deployments. AI &amp; data analytics, custom software, and hardware engineering.{% endblock %}
 {% block canonical_path %}/services.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">
-<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
+<link rel="stylesheet" href="{{ static }}/services-bespoke.css">
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ static }}/contact-form-bant.css"></noscript>
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="container">
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">
-        Our <span class="text-gradient">Services</span>
-      </h1>
-      <p class="text-xl text-secondary">
-        Comprehensive AI and technology solutions that transform how businesses operate, compete, and grow
+      <div class="section-label">What We Do</div>
+      <h1 class="page-hero-title">3 Services<span class="hero-dot">.</span> Each Backed by Shipped Work</h1>
+      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+        We don't list services we haven't delivered. Every capability below has real products, real deployments, and real evidence behind it.
       </p>
     </div>
   </div>
 </section>
 
-
-<!-- All Services Grid -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">All Services</h2>
-      <p class="section-subtitle">
-        Browse our complete portfolio of <span class="text-gradient">technology solutions</span>
-      </p>
-    </div>
-    
-    <!-- First set of services -->
-    <div class="grid grid-auto-md gap-2xl mb-3xl">
-      {% for service in all_services[:15] %}
-      <div class="service-preview-card hover-lift">
-        {% if service.icon %}
-        <div class="icon-container icon-lg icon-rounded mb-lg">
-          {{ inject_svg(service.icon, True) | safe }}
-        </div>
-        {% endif %}
-        
-        <h3 class="text-base font-semibold mb-sm">{{ service.title }}</h3>
-        <p class="text-tertiary text-sm mb-md line-clamp-3">{{ service.short_description }}</p>
-        
-        <a href="./services/{{ service.slug }}.html" class="btn btn-secondary btn-sm w-full mt-auto">
-          Learn About {{ service.title }}
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-{% include 'cta.html' %}
-
-<!-- Remaining Services -->
+<!-- Services Grid -->
 <section class="section">
   <div class="container">
-    <div class="grid grid-auto-md gap-2xl">
-      {% for service in all_services[15:] %}
-      <div class="service-preview-card hover-lift">
-        {% if service.icon %}
-        <div class="icon-container icon-lg icon-rounded mb-lg">
-          {{ inject_svg(service.icon, True) | safe }}
+    <div class="svc-listing-grid">
+      {% for service in all_services %}
+      <a href="./services/{{ service.slug }}.html" class="svc-listing-card">
+        <div class="svc-listing-img" style="background-image: url('{{ static }}/{{ service.frontmatter.hero_image }}.avif')"></div>
+        <div class="svc-listing-overlay"></div>
+        <div class="svc-listing-body">
+          {% if service.icon %}
+          <div class="svc-listing-icon">
+            {{ inject_svg(service.icon, True) | safe }}
+          </div>
+          {% endif %}
+          {% if service.frontmatter.hero_badges %}
+          <div class="svc-listing-badges">
+            {% for badge in service.frontmatter.hero_badges %}
+            <span class="badge badge-{{ badge.color or 'cyan' }}">{{ badge.text }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <h3>{{ service.frontmatter.hero_title or service.title }}</h3>
+          <p>{{ service.short_description }}</p>
+          {% if service.features %}
+          <div class="svc-listing-features">
+            {% for feature in service.features[:4] %}
+            <span class="svc-listing-feature">{{ feature }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
-        
-        <h3 class="text-base font-semibold mb-sm">{{ service.title }}</h3>
-        <p class="text-tertiary text-sm mb-md line-clamp-3">{{ service.short_description }}</p>
-        
-        <a href="./services/{{ service.slug }}.html" class="btn btn-secondary btn-sm w-full mt-auto">
-          Learn About {{ service.title }}
-        </a>
-      </div>
+      </a>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<!-- Contact Form Section -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Start Your Project</h2>
-      <p class="section-subtitle">
-        Tell us about your requirements and we'll provide a <span class="text-gradient">tailored solution</span>
-      </p>
-    </div>
-
-    <div class="max-w-2xl mx-auto">
-      {% include 'contact-form-bant.html' %}
-    </div>
-  </div>
-</section>
+<!-- CTA -->
+{% with cta_title="Not Sure Which Service Fits?", cta_description="Tell us what you're building. We'll tell you honestly whether we can help — and if we can't, we'll point you to someone who can.", cta_button="Talk to Our Engineers" %}
+{% include 'cta.html' %}
+{% endwith %}
 {% endblock %}

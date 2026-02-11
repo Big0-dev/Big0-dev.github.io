@@ -1,7 +1,7 @@
 ---
 title: "Building Digital Infrastructure for Grassroots Movements"
 subtitle: A conversation between two NGO directors about member management
-meta_description: Two NGO leaders discuss how Big0 transformed a civic organization with 150K corrupted records into a functioning digital platform at 80% lower cost.
+meta_description: Two NGO leaders discuss how Big0 transformed a civic organization with 150K corrupted records into a functioning digital platform on a non-profit budget.
 category: Non-Profit Technology
 intro: "Fatima Zahra, Executive Director of a civic engagement organization in Pakistan, speaks with Imran Malik, founder of a diaspora community group, about the challenges of managing member data across borders."
 date: 2025-01-02
@@ -84,7 +84,7 @@ tags: NGO, civic tech, member management, data cleanup, non-profit
 
 **Imran Malik:** What kind of savings are we talking about?
 
-**Fatima Zahra:** They eliminated our projected $18,000 annual cloud spend. The infrastructure that would have consumed a significant portion of our budget now costs a fraction of that.
+**Fatima Zahra:** They eliminated the need for expensive cloud hosting entirely. The infrastructure that would have consumed a significant portion of our budget now costs a fraction of that.
 
 **Imran Malik:** And it's reliable? Self-hosted sounds risky.
 

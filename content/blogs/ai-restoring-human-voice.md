@@ -7,6 +7,8 @@ meta_description: How neural interfaces and language models are restoring human 
 tags: medical-ai, assistive-technology, brain-computer-interface, voice-synthesis, neural-networks
 ---
 
+*We work at the intersection of hardware and medical AI &mdash; from AI dental diagnostics to privacy-preserving medical imaging (FedGAN). This article covers the frontier of neural interfaces and what they mean for assistive technology.*
+
 In August 2024, a story emerged that cut through the usual AI hype cycle. It wasn't about benchmark scores or corporate valuations. It was about a man with ALS who could speak again.
 
 Amyotrophic lateral sclerosis progressively destroys motor neurons, eventually robbing patients of the ability to move, swallow, and speak. For decades, communication options were limited to eye-tracking systems that produced robotic, letter-by-letter output - functional but stripped of personality, emotion, and the natural rhythm of human speech.

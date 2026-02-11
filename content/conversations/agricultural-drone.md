@@ -74,9 +74,9 @@ tags: agriculture, drones, Pakistan, precision farming, water conservation
 
 **Asif Mahmood:** What about your actual crop outcomes?
 
-**Tariq Hussain:** Better pest control because coverage is more consistent. Healthier plants because they're not getting over-sprayed in some areas and under-treated in others. My cotton yield improved 12% last season.
+**Tariq Hussain:** Better pest control because coverage is more consistent. Healthier plants because they're not getting over-sprayed in some areas and under-treated in others. My cotton looked noticeably better last season.
 
-**Asif Mahmood:** Twelve percent improvement?
+**Asif Mahmood:** You could see the difference?
 
 **Tariq Hussain:** Consistent input application. Every plant gets what it needs when it needs it. The precision makes a difference across hundreds of acres.
 

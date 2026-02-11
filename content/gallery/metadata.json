@@ -1,51 +1,58 @@
 {
   "nutech-jobfair-25-1.avif": {
     "title": "NuTech Job Fair 2025 - Opening Ceremony",
-    "description": "The grand opening of NuTech Job Fair 2025, showcasing the latest opportunities in technology and innovation. Industry leaders and students gathering for networking and career opportunities.",
+    "description": "The grand opening of NuTech Job Fair 2025, showcasing opportunities in technology and innovation. Industry leaders and students gathering for networking and career opportunities.",
     "category": "Events",
     "date": "2025-01-15",
-    "tags": ["job fair", "technology", "networking", "careers", "innovation"]
+    "tags": ["job fair", "technology", "networking", "careers"]
   },
   "nutech-jobfair-25-2.avif": {
     "title": "Big0 Booth at NuTech Job Fair",
-    "description": "Big0's impressive booth display at the NuTech Job Fair, highlighting our AI and machine learning solutions. Team members engaging with potential candidates and showcasing our innovative projects.",
+    "description": "Big0's booth at the NuTech Job Fair, highlighting our AI and machine learning work. Team members engaging with potential candidates and showcasing shipped projects.",
     "category": "Events",
     "date": "2025-01-15",
     "tags": ["Big0", "booth", "AI", "machine learning", "recruitment"]
   },
   "nutech-jobfair-25-3.avif": {
     "title": "Tech Demo Presentations",
-    "description": "Live demonstrations of cutting-edge technology solutions at the job fair. Companies presenting their latest innovations and technical capabilities to prospective employees and partners.",
+    "description": "Live demonstrations of technology solutions at the job fair. Companies presenting their latest work and technical capabilities.",
     "category": "Events",
     "date": "2025-01-15",
-    "tags": ["demo", "presentation", "technology", "innovation", "showcase"]
+    "tags": ["demo", "presentation", "technology", "showcase"]
   },
   "fintech-certification-1.avif": {
     "title": "SZABIST FinTech Certification - Opening Session",
-    "description": "Opening ceremony of the FinTech certification program at SZABIST. Industry experts and academic leaders launching the comprehensive financial technology training initiative.",
+    "description": "Opening ceremony of the FinTech certification program at SZABIST. Industry experts and academic leaders launching the financial technology training initiative.",
     "category": "Training",
     "date": "2025-02-10",
-    "tags": ["fintech", "certification", "SZABIST", "training", "education"]
+    "tags": ["fintech", "certification", "SZABIST", "training"]
   },
   "fintech-certification-2.avif": {
-    "title": "FinTech Workshop - Blockchain & Cryptocurrency",
-    "description": "Hands-on workshop session covering blockchain technology and cryptocurrency applications in modern finance. Participants learning about decentralized finance and digital payment systems.",
+    "title": "FinTech Workshop - Blockchain & Digital Payments",
+    "description": "Hands-on workshop session covering blockchain technology and digital payment systems in modern finance.",
     "category": "Training",
     "date": "2025-02-10",
-    "tags": ["blockchain", "cryptocurrency", "fintech", "workshop", "digital payments"]
+    "tags": ["blockchain", "fintech", "workshop", "digital payments"]
   },
   "fintech-certification-3.avif": {
     "title": "FinTech Certification - Graduation Ceremony",
-    "description": "Graduation ceremony celebrating successful completion of the FinTech certification program. Participants receiving their certificates and joining the growing community of fintech professionals.",
+    "description": "Graduation ceremony celebrating successful completion of the FinTech certification program. Participants receiving their certificates.",
     "category": "Training",
     "date": "2025-02-15",
-    "tags": ["graduation", "certification", "fintech", "achievement", "professionals"]
+    "tags": ["graduation", "certification", "fintech", "achievement"]
   },
-  "odoo-event-islamabad.avif": {
-    "title": "Odoo Partner Event - Islamabad",
-    "description": "Big0 team attending the Odoo Partner Event in Islamabad. Connecting with the Odoo community, exploring new features, and strengthening our partnership for delivering world-class ERP solutions.",
+  "stmu-talk-1.avif": {
+    "title": "Shifa Tameer-e-Millat University - Shield Presentation",
+    "description": "Shield presentation at Shifa Tameer-e-Millat University following a talk on AI and technology in finance. Faculty and organizers recognizing the speaker's contribution.",
     "category": "Events",
-    "date": "2025-12-18",
-    "tags": ["Odoo", "ERP", "partnership", "Islamabad", "conference"]
+    "date": "2026-02-01",
+    "tags": ["STMU", "talk", "AI", "finance", "recognition"]
+  },
+  "stmu-talk-2.avif": {
+    "title": "Shifa Tameer-e-Millat University - Group Photo",
+    "description": "Group photo of attendees at the Shifa Tameer-e-Millat University talk on AI and technology in finance.",
+    "category": "Events",
+    "date": "2026-02-01",
+    "tags": ["STMU", "talk", "group photo", "AI", "finance"]
   }
 }

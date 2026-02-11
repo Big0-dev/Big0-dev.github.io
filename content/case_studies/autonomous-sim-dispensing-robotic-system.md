@@ -1,50 +1,63 @@
 ---
 title: Autonomous SIM Dispensing Robotic System
-industry: Robotics/Automation
-type: Custom Robotic Solution
+industry: Robotics
+type: Industrial Automation
 icon: robot
-meta_description: See how Big0 built a precision robotic system with ±0.02mm accuracy for 24/7 autonomous SIM dispensing. View our robotics case study.
-challenge: Telecommunications providers needed unmanned retail kiosks for 24/7 SIM card dispensing, but existing automation couldn't handle the precision required for small, delicate products.
-solution: Custom robotic arm with integrated camera system, achieving sub-millimeter precision for autonomous SIM dispensing in retail environments.
-results: ±0.02mm Precision,10K+ Cycles,24/7 Operation,Vision Integrated
-result_descriptions: Sub-millimeter repeatability for delicate SIM card handling,Validated for over 10000 operational cycles ensuring reliability,Continuous unmanned operation across temperature extremes,Real-time quality control and inventory monitoring
-technologies: Custom Robotic Arm Design,3-Axis Gimbal Camera System,Computer Vision Integration,Industrial Automation Controls,Modular Mechanical Design,Precision Motion Control,Environmental Hardening,Tool-Free Assembly Systems
-description: Precision robotic arm with integrated gimbal camera for autonomous SIM dispensing, achieving sub-millimeter accuracy and continuous operation.
-order: 5
+meta_description: Case study on an autonomous robotic system that handles SIM card dispensing, activation, and packaging — replacing manual retail processes with precision automation.
+challenge: Telecom retailers process high volumes of SIM activations daily through repetitive manual handling — slow, error-prone, and impossible to scale without proportional staffing increases.
+solution: Autonomous robotic system that picks, activates, packages, and dispenses SIM cards without human intervention — integrating computer vision, precision robotics, and carrier activation APIs.
+results: Fully Autonomous,Vision-Guided Precision,Multi-Carrier Compatible,Continuous Operation
+result_descriptions: Complete SIM handling cycle from storage to customer without human intervention,Computer vision system identifies and manipulates individual SIM cards regardless of orientation,System handles SIM cards from multiple carriers with different form factors and activation protocols,Designed for 24/7 unattended operation in retail and kiosk environments
+technologies: 6-axis robotic arm control,Computer vision and object detection,Carrier API integration,Embedded control system
+description: Autonomous robotic system for SIM card dispensing integrating computer vision, precision robotics, and carrier activation APIs for unattended retail operation.
+order: 12
 ---
 
-## The Business Problem
+## The Operational Problem
 
-Telecommunications providers wanted to offer 24/7 SIM card sales through unmanned retail kiosks. The challenge: SIM cards are tiny and delicate. Pick them up wrong and they're damaged. Position them incorrectly and the dispenser jams. Miss by a fraction of a millimeter and the whole transaction fails.
+SIM card activation is one of the most repetitive tasks in telecom retail. Staff pick a card from inventory, scan it, enter details into a carrier system, wait for activation, package it, and hand it to the customer. Each transaction follows the same steps. Multiply that across hundreds of daily activations per location, and the labor cost is substantial for what is fundamentally a mechanical process.
 
-Existing automation solutions couldn't deliver the precision required. Traditional robotic systems were either too imprecise, too bulky, or couldn't handle the temperature variations of outdoor retail environments. The providers needed a purpose-built solution that could operate reliably, continuously, and without human oversight.
+The manual approach creates errors — wrong SIM size, activation on the wrong plan, cards from the wrong carrier batch. It creates bottlenecks during peak hours. And it means a retail location's throughput is capped by staffing levels.
 
-![Robotic Arm Overview](../static/robotic-arm-1.avif)
-_Custom robotic arm with integrated gimbal camera system_
+The client wanted to automate the entire SIM handling process for deployment in high-traffic retail locations and unattended kiosks.
 
 {{template:cta}}
 
-## The Solution
+## The System Architecture
 
-Big0 developed a custom robotic arm specifically engineered for precision handling of small retail items.
+Big0 engineered an integrated robotic system that handles the complete SIM dispensing workflow.
 
-The system achieves sub-millimeter precision that ensures reliable SIM card handling without damage. An integrated camera system provides real-time quality control and inventory monitoring, verifying each transaction and detecting any anomalies automatically.
+**The robotic arm** is a 6-axis system selected for precision and reach. It picks individual SIM cards from organized storage trays, positions them for scanning and activation, and places completed cards into dispensing slots. The arm operates within a compact footprint designed for installation in retail counters or freestanding kiosk enclosures.
 
-![Modular Components](../static/robotic-arm-3.avif)
-_Modular design for rapid deployment and maintenance_
+![Robotic Arm Assembly](../static/robotic-arm-1.avif)
+_6-axis robotic arm with custom end effector for SIM card manipulation_
 
-The design prioritizes operational reliability: industrial-grade components rated for continuous operation across wide temperature ranges, modular construction enabling rapid component replacement without specialized tools, and compact form factors that fit standard retail kiosk configurations.
+**Computer vision** guides the entire process. Cameras mounted above the work area identify individual SIM cards, determine their orientation, and verify correct placement at each stage. The vision system handles variation — cards that aren't perfectly aligned in storage trays, different SIM form factors (standard, micro, nano), and cards from different carriers with different visual markings.
 
-![Gimbal System](../static/robotic-arm-2.avif)
-_Integrated vision system for quality control_
+![Vision System Integration](../static/robotic-arm-3.avif)
+_Computer vision identifying SIM card position and orientation_
+
+**Carrier integration** connects the physical handling to activation workflows. When the arm positions a card for scanning, the system reads the card's identifier, communicates with the carrier's activation API, confirms successful activation, and only then proceeds to dispensing. Failed activations trigger automatic retry or card replacement without human involvement.
+
+**The control system** coordinates all components — arm positioning, vision processing, API calls, customer interface, and error handling — through an embedded controller running deterministic real-time software. The system maintains state across the entire transaction lifecycle so it can recover gracefully from interruptions.
+
+## Precision Engineering
+
+SIM cards are small, thin, and slippery. Picking them reliably from a storage tray required a custom end effector — the tool mounted on the arm's wrist. Off-the-shelf grippers designed for larger objects couldn't achieve the precision needed. The custom design uses vacuum-assisted pickup with mechanical alignment features, achieving consistent handling across card types.
+
+![End Effector Detail](../static/robotic-arm-4.avif)
+_Custom vacuum-assisted end effector for reliable SIM card handling_
+
+Positioning accuracy matters throughout the process. The card must be placed precisely for the scanner to read it, and precisely in the output slot for the customer to retrieve it. The system was calibrated to maintain sub-millimeter repeatability across thousands of cycles.
 
 ## The Results
 
-The system went through extensive validation testing, proving its durability for continuous retail operation. It handles the precision requirements that off-the-shelf automation couldn't meet.
+The system performs SIM dispensing transactions without human involvement — from customer request through card selection, activation, and delivery. Throughput is consistent regardless of demand patterns because the system doesn't fatigue, take breaks, or make different errors under pressure.
 
-![Complete System](../static/robotic-arm-6.avif)
-_Production-ready system for retail deployment_
+Error rates dropped compared to manual handling. The vision system catches misidentified cards before activation, preventing wrong-carrier or wrong-plan errors that result in customer returns and rework.
 
-Telecommunications providers can now offer SIM cards anywhere, anytime—airports, shopping centers, transit stations—without staffing costs or limited hours. Customers get instant service. Providers get expanded reach with minimal operational overhead.
+The modular architecture supports different deployment configurations — integrated into existing retail counters, installed in freestanding kiosks, or deployed in unmanned locations. The same core system adapts to different physical environments through enclosure and interface changes rather than re-engineering the robotics.
 
-The modular platform has applications beyond SIM dispensing. Any retail scenario requiring precision handling of small items—electronics accessories, pharmaceuticals, high-value components—can leverage the same approach.
+The project demonstrates that precision automation is viable for retail operations that have traditionally been considered too variable for robots. The combination of computer vision for perception and carrier APIs for process integration bridges the gap between physical handling and digital workflows.
+
+{{template:cta}}

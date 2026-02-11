@@ -1,15 +1,15 @@
 ---
 title: Agricultural Sprayer Drone
-industry: Agriculture Technology
-type: Custom Drone Platform
+industry: Agriculture
+type: Custom Drone
 icon: drone
-meta_description: See how Big0 built a precision agricultural drone at 65% lower cost, saving 84% water usage. AgTech case study for sustainable farming.
-challenge: Pakistani farmers needed precision spraying technology, but commercial agricultural drones cost $6,000-$10,000—forcing continued reliance on dangerous, wasteful manual methods.
+meta_description: Case study on Big0's precision agricultural drone — 65% lower cost than commercial alternatives, 84% less water, 53% faster coverage. IEEE-published research.
+challenge: Pakistani farmers needed precision spraying technology, but commercial agricultural drones cost $6,000-$10,000 — forcing continued reliance on dangerous, wasteful manual methods.
 solution: Custom-built agricultural drone delivering commercial-grade performance at 65% lower cost, making precision agriculture accessible to resource-constrained farming operations.
 results: 53% Faster,84% Less Water,65% Cost Savings,$3500 Price Point
 result_descriptions: Reduced spraying time from 16 to 7.5 minutes per acre,Decreased water usage from 59L to 10L per acre through precision application,System cost of $3500 versus $8500+ for commercial alternatives,ROI within 1.5 years for 200+ acre operations
-technologies: ROS & Gazebo Simulation,PX4 Autopilot,Carbon Fiber Construction,BLDC Motor Systems,Custom Spray Integration,Arduino Control,DJI N3 Flight Controller,Anti-Drift Nozzle Design
-description: Cost-effective agricultural drone platform democratizing precision spraying technology for resource-constrained farming operations.
+technologies: Custom drone airframe design,Autonomous flight control system,Precision agricultural spray system,IEEE-published research
+description: Precision agricultural drone platform making commercial-grade spraying accessible to resource-constrained farming operations. IEEE-published research.
 order: 9
 ---
 
@@ -17,28 +17,35 @@ order: 9
 
 Pakistani farmers face a painful choice. Manual pesticide spraying exposes workers to toxic chemicals, wastes product through poor coverage, and delivers inconsistent results. But commercial precision spraying drones cost $6,000-$10,000—completely out of reach for most agricultural operations.
 
-The global agricultural drone market is growing rapidly, but that growth isn't reaching the farmers who need it most. They're stuck with methods that are dangerous, inefficient, and increasingly uncompetitive.
+The global agricultural drone market is growing rapidly, but that growth isn't reaching the farmers who need it most. International drones are designed for American and European farms—large budgets, different crops, different scales. Pakistani farmers are stuck with methods that are dangerous, inefficient, and increasingly uncompetitive.
 
 {{template:cta}}
 
 ## The Solution
 
-Big0's research team, led by Hassan Kamran (ORCID: 0009-0005-3034-1679), developed a precision agricultural drone that delivers commercial performance at a price Pakistani farmers can actually afford.
+Big0's research team, led by Hassan Kamran (ORCID: 0009-0005-3034-1679), developed a precision agricultural drone that delivers commercial performance at a price Pakistani farmers can afford.
 
-The system uses simulation-driven development—virtually testing configurations before physical construction—to optimize both performance and cost. The result: an 8-motor drone with extended flight time, spray capacity, and precision application that puts chemicals exactly where they're needed.
+The system uses simulation-driven development—virtually testing airframe configurations, motor combinations, and spray patterns before physical construction—to optimize both performance and cost simultaneously. The result: an 8-motor octocopter with extended flight time, adequate spray capacity, and precision application that puts chemicals exactly where they're needed.
 
 ![Agricultural Drone Assembly](../static/agricultural-drone-assembly.avif)
 _Custom octocopter with integrated precision spray system_
 
-Anti-drift nozzle design keeps spray on target. The modular construction enables easy maintenance and component replacement without specialized tools or expertise.
+Anti-drift nozzle design keeps spray on target even in moderate wind conditions. GPS navigation plans flight paths for uniform coverage across irregularly shaped fields. The modular construction enables maintenance and component replacement without specialized tools or expertise—critical for adoption in rural areas without access to technical support.
 
 ## The Results
 
-Field testing validated performance across diverse Pakistani agricultural conditions. The system eliminates direct operator exposure to harmful chemicals while delivering spray accuracy that manual methods can't match.
+Field testing validated performance across diverse Pakistani agricultural conditions:
+
+- **Spraying speed**: 7.5 minutes per acre versus 16 minutes manually — 53% faster
+- **Water usage**: 10 liters per acre versus 59 liters manually — 84% reduction through precision application
+- **System cost**: approximately $3,500 versus $8,500+ for commercial alternatives — 65% savings
+- **Payback period**: within 1.5 years for operations of 200+ acres
 
 ![Spray System Performance](../static/agricultural-drone-field-test.avif)
 _Field testing demonstrating precision coverage_
 
-Coverage is faster and more uniform. Water and chemical usage drops dramatically through precision application. And at roughly $3,500, the economics work for operations that could never justify commercial drone prices.
+The drone eliminates direct operator exposure to harmful chemicals while delivering spray uniformity that manual methods can't match. Coverage is consistent across the entire field rather than degrading as laborers tire through a long day.
 
-The project demonstrates that advanced agricultural technology can be made accessible without compromising performance. The approach—simulation-driven development, cost-optimized engineering, local manufacturing considerations—provides a template for democratizing precision agriculture throughout South Asia and similar markets.
+The project demonstrates that precision agricultural technology can be made accessible without compromising performance. The approach—simulation-driven development, cost-optimized engineering, locally sourceable components—provides a template for similar markets across South Asia and Africa where the same cost barriers exist.
+
+The research was published in IEEE, validating the engineering approach through independent peer review.

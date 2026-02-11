@@ -5,70 +5,49 @@
 {% block canonical_path %}/news.html{% endblock %}
 
 {% block custom_css %}
-<style>
-  /* News grid: 2 columns on desktop, 1 on mobile */
-  @media (min-width: 768px) {
-    .news-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-    }
-  }
-</style>
+<link rel="stylesheet" href="{{ static }}/home.css">
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="container">
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">
-        Latest <span class="text-gradient">News</span>
-      </h1>
-      <p class="text-xl text-secondary">
-        Stay updated with our latest announcements, achievements, and industry insights
+      <div class="section-label">News</div>
+      <h1 class="page-hero-title">Latest News<span class="hero-dot">.</span></h1>
+      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+        Announcements, achievements, and updates from Big0
       </p>
     </div>
   </div>
 </section>
 
-<!-- News Section -->
+<!-- News -->
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Company News</h2>
-      <p class="section-subtitle">
-        Recent updates and achievements from <span class="text-gradient">Big0</span>
-      </p>
-    </div>
-
-    <div class="grid grid-auto-md gap-2xl news-grid">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       {% for article in news_articles %}
-      <article class="card card-hover">
-        {% if article.external_link %}
-        <a href="{{ article.external_link }}" target="_blank" rel="noopener noreferrer" class="insights-card">
-        {% else %}
-        <a href="./news/{{ article.slug }}.html" class="insights-card">
-        {% endif %}
-          <div class="insights-content">
-            <div class="insights-meta">
-              <span class="text-xs text-muted">{{ article.date.strftime('%B %d, %Y') }}</span>
-            </div>
-            <span class="badge mb-md">{{ article.category }}</span>
-            
-            <h3>{{ article.title }}</h3>
-            <p class="line-clamp-3">{{ article.excerpt }}</p>
-            
-            {% if article.tags %}
-            <div class="flex gap-xs flex-wrap mt-md mb-md">
-              {% for tag in article.tags %}
-              <span class="text-xs text-muted">#{{ tag }}</span>
-              {% endfor %}
-            </div>
-            {% endif %}
-            
-            <span class="text-primary font-medium">Read More →</span>
+      {% if article.external_link %}
+      <a href="{{ article.external_link }}" target="_blank" rel="noopener noreferrer" class="case-card" style="text-decoration: none;">
+      {% else %}
+      <a href="./news/{{ article.slug }}.html" class="case-card" style="text-decoration: none;">
+      {% endif %}
+        <div class="case-body">
+          <div class="case-badges">
+            <span class="badge badge-cyan">{{ article.category }}</span>
+            <span style="font-size: 11px; color: var(--color-mist);">{{ article.date.strftime('%B %d, %Y') }}</span>
           </div>
-        </a>
-      </article>
+          <h3 class="case-title">{{ article.title }}</h3>
+          <p class="case-desc">{{ article.excerpt }}</p>
+          {% if article.tags %}
+          <div class="capability-features" style="margin-top: 8px;">
+            {% for tag in article.tags[:3] %}
+            <span class="capability-feature">#{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </a>
       {% endfor %}
     </div>
 

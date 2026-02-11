@@ -7,7 +7,9 @@ meta_description: How autonomous weapons are reshaping military conflict. From U
 tags: autonomous-weapons, military-ai, drone-technology, ai-ethics, defense
 ---
 
-In 2021, a UN report documented something that military analysts had long predicted but hoped to avoid: the first confirmed use of autonomous lethal drones against humans without direct human command. Turkish-made Kargu-2 drones, operating in Libya, reportedly hunted and attacked retreating forces using onboard AI - no operator in the loop.
+*Our CEO is an Army Captain and PEC-registered engineer who built a precision agricultural drone for $3,500. This article examines the autonomous weapons landscape through the lens of someone who understands both military operations and drone engineering.*
+
+In 2021, a UN report documented something that military analysts had long predicted but hoped to avoid: the first confirmed use of autonomous lethal drones against humans without direct human command. Turkish-made Kargu-2 drones, operating in Libya, reportedly hunted and attacked retreating forces using onboard AI &mdash; no operator in the loop.
 
 That was four years ago. The technology has only advanced.
 

@@ -4,6 +4,7 @@ Refactored Static Site Generator
 Generates website from templates and content files based on site_config.yaml
 """
 
+import re
 import yaml
 import logging
 import os
@@ -21,7 +22,6 @@ from site_generator import (
 from site_generator.page_builders import (
     StaticPageBuilder,
     ContentPageBuilder,
-    LocationPageBuilder,
     GalleryPageBuilder,
 )
 
@@ -85,15 +85,6 @@ class SiteGenerator:
 
         return env
 
-    def _generate_location_pages_wrapper(self, content_dir, config):
-        """Wrapper function to generate location pages.
-
-        Args:
-            content_dir: Path to content directory
-            config: Content type configuration
-        """
-        return self.location_page_builder.generate_location_pages(content_dir, config)
-
     def _initialize_components(self):
         """Initialize all modular components."""
         # Content processor for markdown and template processing
@@ -133,14 +124,6 @@ class SiteGenerator:
             config=self.config,
             output_dir=self.output_dir,
             load_markdown_content_func=self.content_processor.load_markdown_content,
-            generate_location_pages_func=self._generate_location_pages_wrapper
-        )
-
-        self.location_page_builder = LocationPageBuilder(
-            env=self.env,
-            config=self.config,
-            output_dir=self.output_dir,
-            load_markdown_content_func=self.content_processor.load_markdown_content
         )
 
     def generate(self):
@@ -160,8 +143,8 @@ class SiteGenerator:
             # Generate SEO artifacts
             self._generate_seo_artifacts()
 
-            # Optional: Optimize output
-            self._optimize_output()
+            # Minify output
+            self.asset_manager.optimize_output()
 
             logger.info("Website generation complete!")
 
@@ -238,17 +221,13 @@ class SiteGenerator:
         else:
             logger.info("Content pages generated")
 
-        # Location-specific pages for SEO - ContentPageBuilder handles this
-        logger.info("Location pages generated as part of content pages")
-
     def _generate_seo_artifacts(self):
         """Generate all SEO-related artifacts."""
         # Collect all pages for sitemap
         all_pages = self._collect_all_pages()
-        location_pages = self._collect_location_pages()
 
         # Generate main sitemap
-        self.seo_utilities.generate_sitemap(all_pages, location_pages)
+        self.seo_utilities.generate_sitemap(all_pages)
         logger.info("Generated sitemap.xml")
 
         # Generate image sitemap
@@ -311,45 +290,6 @@ class SiteGenerator:
                     })
 
         return pages
-
-    def _collect_location_pages(self) -> List[Dict[str, Any]]:
-        """Collect all location-specific pages for sitemap.
-
-        Returns:
-            List of location page dictionaries
-        """
-        location_pages = []
-        services_dir = Path("./content/services")
-        locations_dir = services_dir / "locations"
-
-        if not locations_dir.exists():
-            return location_pages
-
-        # Collect country and city pages
-        for country_dir in locations_dir.iterdir():
-            if country_dir.is_dir():
-                # Country-level pages
-                for md_file in country_dir.glob("*.md"):
-                    location_pages.append({
-                        'path': f"services/locations/{country_dir.name}/{md_file.stem}.html",
-                        'type': 'location-country',
-                        'country': country_dir.name,
-                    })
-
-                # City-level pages
-                cities_dir = country_dir / "cities"
-                if cities_dir.exists():
-                    for city_dir in cities_dir.iterdir():
-                        if city_dir.is_dir():
-                            for md_file in city_dir.glob("*.md"):
-                                location_pages.append({
-                                    'path': f"services/locations/{country_dir.name}/cities/{city_dir.name}/{md_file.stem}.html",
-                                    'type': 'location-city',
-                                    'country': country_dir.name,
-                                    'city': city_dir.name,
-                                })
-
-        return location_pages
 
     def _collect_feed_items(self) -> List[Dict[str, Any]]:
         """Collect items for RSS feed generation.
@@ -441,30 +381,23 @@ class SiteGenerator:
         for content_type, config in self.config['content_types'].items():
             items = self._load_content_items(config['content_dir'])
             for item in items:
+                # Extract plain text from content_html, strip tags and limit to 1000 chars
+                content_html = item.get('content_html', '')
+                plain_text = re.sub(r'<[^>]+>', ' ', content_html)
+                plain_text = re.sub(r'\s+', ' ', plain_text).strip()[:1000]
+
                 search_items.append({
                     'id': item.get('slug', item.get('title', '').lower().replace(' ', '-')),
                     'title': item.get('title', ''),
-                    'content': item.get('content', ''),
+                    'content': plain_text,
+                    'description': item.get('meta_description', ''),
                     'url': f"{config['output_dir']}/{item.get('slug', item.get('title', '').lower().replace(' ', '-'))}.html",
                     'type': type_names.get(content_type, content_type.rstrip('s')),
+                    'category': item.get('category', ''),
+                    'date': str(item.get('date', '')) if item.get('date') else '',
                 })
 
         return search_items
-
-    def _optimize_output(self):
-        """Optimize all output files while preserving functionality."""
-        # Check if optimization is enabled (default: true, can be disabled via env var)
-        optimize = os.environ.get('OPTIMIZE_OUTPUT', 'true').lower() == 'true'
-
-        if optimize:
-            try:
-                stats = self.asset_manager.optimize_all_files()
-                logger.info(f"Optimization complete: {stats}")
-            except Exception as e:
-                logger.warning(f"Optimization failed (non-critical): {e}")
-        else:
-            logger.info("Output optimization skipped (disabled via OPTIMIZE_OUTPUT=false)")
-
 
 def main():
     """Main entry point for the refactored site generator."""

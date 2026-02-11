@@ -1,86 +1,71 @@
 {% extends "base.html" %}
 
-{% block title %}Blog & Insights{% endblock %}
-{% block meta_description %}Stay updated with Big0's latest insights on AI, cloud computing, digital transformation, and technology trends.{% endblock %}
+{% block title %}Insights{% endblock %}
+{% block meta_description %}Technical deep-dives, AI analysis, and engineering insights from the team that ships production AI systems.{% endblock %}
 {% block canonical_path %}/blog.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">
-<link rel="stylesheet" href="{{ static }}/blog.css">
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="container">
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">
-        Tech <span class="text-gradient">Insights</span>
-      </h1>
-      <p class="text-xl text-secondary">
-        Industry trends, technical deep-dives, and innovation stories from the frontlines of AI and technology
+      <div class="section-label">Insights</div>
+      <h1 class="page-hero-title">Technical Insights<span class="hero-dot">.</span></h1>
+      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+        AI analysis, engineering deep-dives, and industry perspectives from the team building production systems.
       </p>
     </div>
   </div>
 </section>
 
-<!-- All Articles Section -->
-<section class="section bg-light">
+<!-- Articles -->
+<section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">All Articles</h2>
-      <p class="section-subtitle">
-        Explore our complete library of <span class="text-gradient">insights and analysis</span>
-      </p>
-    </div>
-
-    <div class="grid grid-3 gap-2xl grid-mobile-1">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       {% for post in all_blog %}
-      <article class="card card-hover">
-        <a href="./blog/{{ post.slug }}.html" class="insights-card">
-          {% if post.frontmatter.image_url %}
-          <div class="insights-image">
-            <img
-              src="{{ static }}/{{ post.frontmatter.image_url }}"
-              alt="{{ post.title }}"
-              class="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-              width="400"
-              height="250"
-            />
+      <a href="./blog/{{ post.slug }}.html" class="case-card" style="text-decoration: none;">
+        {% if post.frontmatter.image_url %}
+        <div class="case-img" style="height: 140px;">
+          <img
+            src="{{ static }}/{{ post.frontmatter.image_url }}"
+            alt="{{ post.title }}"
+            style="width: 100%; height: 100%; object-fit: cover;"
+            loading="lazy"
+            decoding="async"
+            width="400"
+            height="250"
+          />
+        </div>
+        {% else %}
+        <div class="case-img" style="height: 60px;"></div>
+        {% endif %}
+        <div class="case-body">
+          <div class="case-badges">
+            <span class="badge badge-cyan">{{ post.frontmatter.category | default('Technology') }}</span>
+            {% if post.frontmatter.date %}
+            <span style="font-size: 11px; color: var(--color-mist);">{{ post.frontmatter.date }}</span>
+            {% endif %}
           </div>
-          {% endif %}
-
-          <div class="insights-content">
-            <div class="insights-meta">
-              <span class="text-xs text-muted">{{ post.frontmatter.date | default('') }}</span>
-            </div>
-            <span class="badge mb-md">{{ post.frontmatter.category | default('Technology') }}</span>
-
-            <h3>{{ post.title }}</h3>
-            <p class="line-clamp-3">{{ post.meta_description }}</p>
-            <span class="text-primary font-medium">Read More →</span>
-          </div>
-        </a>
-      </article>
+          <h3 class="case-title">{{ post.title }}</h3>
+          <p class="case-desc">{{ post.meta_description }}</p>
+        </div>
+      </a>
       {% endfor %}
     </div>
-
 
     {% if total_pages > 1 %}
     <div class="pagination">
       {% if page_num > 1 %}
       <a href="./blog{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
       </a>
       {% else %}
       <span class="page-link disabled" aria-disabled="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
       </span>
       {% endif %}
 
@@ -94,15 +79,11 @@
 
       {% if page_num < total_pages %}
       <a href="./blog-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       {% else %}
       <span class="page-link disabled" aria-disabled="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
       {% endif %}
     </div>
@@ -110,76 +91,6 @@
   </div>
 </section>
 
-<!-- CTA Section -->
+<!-- CTA -->
 {% include 'cta.html' %}
-
-<!-- Zero to One: Tech Frontiers Section -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Zero to One: Tech Frontiers</h2>
-      <p class="section-subtitle">
-        Your weekly guide to <span class="text-gradient">AI technology</span> and the future
-      </p>
-    </div>
-
-    <div class="grid grid-3 gap-xl grid-mobile-1">
-      {% for newsletter in all_newsletters[:3] %}
-      <article class="card card-hover">
-        <a href="./newsletters/{{ newsletter.slug }}.html" class="block p-lg">
-          <div class="flex items-center gap-md mb-md">
-            <span class="badge badge-primary">Issue #{{ newsletter.frontmatter.issue_number }}</span>
-            <span class="text-xs text-muted">{{ newsletter.frontmatter.date }}</span>
-          </div>
-          <h3 class="text-lg font-semibold mb-sm">{{ newsletter.title }}</h3>
-          <p class="text-secondary text-sm line-clamp-2">{{ newsletter.meta_description }}</p>
-          <span class="text-primary font-medium text-sm mt-md inline-block">Read Issue →</span>
-        </a>
-      </article>
-      {% endfor %}
-    </div>
-
-    <div class="text-center mt-xl">
-      <a href="./newsletters.html" class="btn btn-outline">
-        View All Issues
-        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter Section -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Stay Updated</h2>
-      <p class="section-subtitle">
-        Subscribe to our <span class="text-gradient">LinkedIn newsletter</span> for exclusive insights
-      </p>
-    </div>
-
-    <div class="card card-primary text-center max-w-2xl mx-auto p-2xl">
-      <div class="icon-container icon-lg icon-circle mx-auto mb-lg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-          <rect x="2" y="9" width="4" height="12"/>
-          <circle cx="4" cy="4" r="2"/>
-        </svg>
-      </div>
-      <p class="text-secondary mb-lg">
-        Subscribe to our LinkedIn newsletter for the latest insights on AI, technology trends, and industry innovations delivered directly to your feed.
-      </p>
-      <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7348601809155842050" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Subscribe on LinkedIn
-        <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
 {% endblock %}

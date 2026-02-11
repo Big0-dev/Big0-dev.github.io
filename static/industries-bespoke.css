@@ -1,0 +1,162 @@
+/* =============================================================================
+   INDUSTRIES-BESPOKE.CSS — Industry Listing + Detail Pages
+   Builds on design-system.css + home.css patterns.
+   ============================================================================= */
+
+/* --- Listing Grid (3-col, 7 items = 3+3+1) --- */
+.ind-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ind-listing-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: 360px;
+  border: 1px solid var(--color-steel);
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+.ind-listing-card:hover {
+  border-color: var(--color-signal);
+  box-shadow: 0 0 20px rgba(127, 62, 152, 0.15);
+}
+.ind-listing-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(127, 62, 152, 0.08) 0%, rgba(10, 15, 28, 0.95) 100%);
+}
+.ind-listing-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 28px;
+}
+.ind-listing-body .ind-listing-icon {
+  margin-bottom: auto;
+}
+.ind-listing-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(127, 62, 152, 0.15);
+  border: 1px solid rgba(127, 62, 152, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  margin-bottom: 16px;
+}
+.ind-listing-icon svg {
+  width: 28px;
+  height: 28px;
+}
+.ind-listing-badges {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.ind-listing-badges .badge {
+  white-space: nowrap;
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+}
+.ind-listing-body h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.ind-listing-body p {
+  font-size: 14px;
+  color: var(--color-mist);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(3 * 1.6em);
+}
+.ind-listing-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ind-listing-feature {
+  font-size: 11px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-ash);
+}
+
+/* --- Listing Responsive --- */
+@media (max-width: 1024px) {
+  .ind-listing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .ind-listing-grid {
+    grid-template-columns: 1fr;
+  }
+  .ind-listing-card {
+    min-height: 300px;
+  }
+}
+
+/* =============================================================================
+   INDUSTRY DETAIL — Hero with Gradient (no image)
+   ============================================================================= */
+
+.ind-hero {
+  position: relative;
+}
+.ind-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(127, 62, 152, 0.12) 0%, rgba(10, 15, 28, 1) 70%);
+}
+.ind-hero-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(127, 62, 152, 0.15);
+  border: 1px solid rgba(127, 62, 152, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  margin: 0 auto 20px;
+}
+.ind-hero-icon svg {
+  width: 32px;
+  height: 32px;
+}
+@media (max-width: 768px) {
+  .ind-hero-icon {
+    width: 52px;
+    height: 52px;
+  }
+  .ind-hero-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+}

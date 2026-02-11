@@ -1,8 +1,13 @@
-Computer Vision in Manufacturing: Real-World Applications and ROI
-AI & Machine Learning
-December 18, 2025
-computer-vision-manufacturing.avif
-How manufacturers are using computer vision for quality control, safety monitoring, and process optimization, with concrete examples and realistic ROI expectations.
+---
+title: "Computer Vision in Manufacturing: Real-World Applications and ROI"
+category: AI & Machine Learning
+date: December 18, 2025
+image_url: computer-vision-manufacturing.avif
+meta_description: How manufacturers use computer vision for quality control, safety monitoring, and process optimization. Concrete examples and realistic ROI expectations.
+tags: computer-vision, manufacturing, quality-control, ai-inspection, roi
+---
+
+*We build computer vision systems &mdash; from dental diagnostic scanners to robotic guidance with &plusmn;0.02mm precision. This article covers what actually works on the factory floor.*
 
 Every manufacturing facility generates vast amounts of visual information. Products moving down assembly lines. Workers operating machinery. Materials arriving and departing. Equipment showing subtle signs of wear. Until recently, capturing value from this visual data required human eyes—expensive, limited in attention span, and inconsistent across shifts.
 
@@ -84,7 +89,7 @@ The computer vision market includes established industrial automation companies,
 
 **Industrial automation vendors** (Cognex, Keyence, Omron) offer mature, reliable systems with extensive manufacturing experience. Their solutions tend to be more expensive but come with robust support and proven track records. Best for quality-critical applications where reliability is paramount.
 
-**AI-focused startups** often provide more advanced capabilities, particularly for complex defect detection or novel applications. Their systems may offer more flexibility but potentially less maturity. Best for applications requiring cutting-edge AI but where some implementation risk is acceptable.
+**AI-focused startups** often provide more advanced capabilities, particularly for complex defect detection or novel applications. Their systems may offer more flexibility but potentially less maturity. Best for applications requiring advanced AI but where some implementation risk is acceptable.
 
 **System integrators** combine components into complete solutions tailored to your requirements. They can be more cost-effective for straightforward applications but depend heavily on the specific integrator's capabilities. Best when you have unusual requirements or want to avoid vendor lock-in.
 

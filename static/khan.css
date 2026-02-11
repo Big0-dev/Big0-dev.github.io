@@ -1,0 +1,319 @@
+/* =============================================================================
+   KHAN.CSS — Khan AI Product Page
+   Builds on design-system.css + home.css patterns.
+   ============================================================================= */
+
+/* --- Hero Overrides --- */
+.khan-hero .hero-h1 {
+  font-size: clamp(48px, 8vw, 80px);
+  margin-bottom: 0;
+}
+.khan-status-badge {
+  margin-bottom: 20px;
+}
+.khan-hero .hero-scramble-wrapper {
+  height: 48px;
+  margin-bottom: 16px;
+}
+.khan-hero .hero-sub {
+  max-width: 520px;
+}
+@media (min-width: 768px) {
+  .khan-hero .hero-scramble-wrapper {
+    height: 56px;
+  }
+}
+
+/* --- Problem Section --- */
+.khan-problem-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.khan-problem-text {
+  text-align: left;
+}
+.khan-problem-text p {
+  font-size: 16px;
+  color: var(--color-mist);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.khan-problem-text p:last-child {
+  margin-bottom: 0;
+}
+.khan-problem-text strong {
+  color: var(--color-white);
+}
+
+/* --- Human-in-the-Loop Callout --- */
+.khan-callout {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: var(--color-slate);
+  border: 1px solid var(--color-steel);
+  border-left: 3px solid var(--color-signal);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+.khan-callout-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(127, 62, 152, 0.12);
+  border: 1px solid rgba(127, 62, 152, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+}
+.khan-callout-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.khan-callout-content h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+.khan-callout-content p {
+  font-size: 15px;
+  color: var(--color-mist);
+  line-height: 1.7;
+}
+
+/* --- Features Grid --- */
+.khan-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.khan-feature-card {
+  background: var(--color-slate);
+  border: 1px solid var(--color-steel);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.khan-feature-card:hover {
+  border-color: var(--color-signal);
+  transform: translateY(-2px);
+}
+.khan-feature-card-highlight {
+  border-color: rgba(127, 62, 152, 0.4);
+  background: linear-gradient(
+    135deg,
+    var(--color-slate) 0%,
+    rgba(127, 62, 152, 0.06) 100%
+  );
+}
+.khan-feature-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(127, 62, 152, 0.12);
+  border: 1px solid rgba(127, 62, 152, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  margin-bottom: 16px;
+}
+.khan-feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.khan-feature-card h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.khan-feature-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.khan-feature-card li {
+  font-size: 14px;
+  color: var(--color-mist);
+  line-height: 1.6;
+  padding: 4px 0 4px 20px;
+  position: relative;
+}
+.khan-feature-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-signal);
+  opacity: 0.6;
+}
+
+/* --- Methodology Section --- */
+.khan-methodology {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.khan-methodology-text {
+  text-align: left;
+}
+.khan-methodology-text p {
+  font-size: 16px;
+  color: var(--color-mist);
+  line-height: 1.7;
+}
+
+/* --- Pricing --- */
+.khan-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.khan-price-card {
+  background: var(--color-slate);
+  border: 1px solid var(--color-steel);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.khan-price-card:hover {
+  border-color: var(--color-signal);
+  transform: translateY(-2px);
+}
+.khan-price-card.featured {
+  border-color: var(--color-signal);
+  box-shadow: var(--shadow-glow);
+}
+.khan-price-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-signal);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.khan-price-header h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+.khan-price-amount {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.khan-price-amount span {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-mist);
+}
+.khan-price-limits {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-steel);
+}
+.khan-price-limits span {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.khan-price-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  flex: 1;
+}
+.khan-price-features li {
+  font-size: 14px;
+  color: var(--color-mist);
+  line-height: 1.5;
+  padding: 6px 0 6px 20px;
+  position: relative;
+}
+.khan-price-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--color-signal);
+  opacity: 0.5;
+}
+.khan-price-card.featured .khan-price-features li::before {
+  background: var(--color-signal);
+  opacity: 0.7;
+}
+.khan-price-cta {
+  width: 100%;
+  text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .khan-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .khan-pricing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .khan-hero .hero-h1 {
+    font-size: 48px;
+  }
+  .khan-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .khan-pricing {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .khan-callout {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .khan-hero .hero-h1 {
+    font-size: 40px;
+  }
+}

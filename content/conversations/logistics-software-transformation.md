@@ -16,7 +16,7 @@ tags: logistics, software development, digital transformation, client experience
 
 **David Chen:** Custom software? We've been looking at off-the-shelf solutions, but nothing seems to fit our workflow. Everything requires us to change how we operate rather than the other way around.
 
-**James Morrison:** That's exactly the problem we had. We tried three different platforms over five years. Each one promised to revolutionize our operations, and each one became a expensive lesson in compromise.
+**James Morrison:** That's exactly the problem we had. We tried three different platforms over five years. Each one promised to transform our operations, and each one became a expensive lesson in compromise.
 
 ---
 
@@ -44,7 +44,7 @@ tags: logistics, software development, digital transformation, client experience
 
 **David Chen:** That sounds expensive though. Custom development isn't cheap.
 
-**James Morrison:** It's not. But let me give you some numbers. Our old systems cost us about $4,000 a month in subscriptions alone. Plus we had two full-time people just managing data between systems. That's easily $150,000 a year in hidden costs.
+**James Morrison:** It's not. But think about the hidden costs of what you're doing now. Multiple subscription fees, people whose job is just moving data between systems, the time lost to manual workarounds. When you add it all up, the status quo is expensive too.
 
 **David Chen:** I never thought about it that way.
 
@@ -56,11 +56,11 @@ tags: logistics, software development, digital transformation, client experience
 
 **David Chen:** What kind of improvements are we talking about?
 
-**James Morrison:** Dispatch time dropped by 40%. We used to take 45 minutes to plan a route - now it's under 10. Driver utilization went up 25% because the system actually optimizes for our specific constraints, not generic ones.
+**James Morrison:** Dispatch time dropped dramatically. Route planning that used to take most of an hour now takes minutes. Driver utilization improved because the system actually optimizes for our specific constraints, not generic ones.
 
 **David Chen:** That's significant.
 
-**James Morrison:** The thing that really sold my board was the customer portal. Our clients can now track their shipments in real-time, get automatic updates, and access their complete shipping history. Customer complaints dropped by 60%. Our retention rate has never been higher.
+**James Morrison:** The thing that really sold my board was the customer portal. Our clients can now track their shipments in real-time, get automatic updates, and access their complete shipping history. Customer complaints dropped significantly. Our retention rate has never been higher.
 
 **David Chen:** Our clients have been asking for something like that for years.
 

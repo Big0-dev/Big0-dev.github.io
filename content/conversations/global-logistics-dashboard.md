@@ -68,7 +68,7 @@ tags: logistics, operations, dashboard, global business, real-time visibility
 
 **Jennifer Santos:** How long did implementation take?
 
-**Michael Chen:** Twelve weeks, phased approach. We started with three pilot depots—Singapore, London, LA—representing about 40% of our volume. Validated everything worked before rolling out globally.
+**Michael Chen:** Phased approach. We started with a few pilot depots across key regions. Validated everything worked before rolling out globally.
 
 **Jennifer Santos:** Change management must have been challenging with depot managers across so many regions.
 
@@ -76,7 +76,7 @@ tags: logistics, operations, dashboard, global business, real-time visibility
 
 **Jennifer Santos:** And they adopted it?
 
-**Michael Chen:** Once they saw they could resolve issues in minutes instead of hours, adoption wasn't a problem. The platform actually reduced their manual coordination time by 15 hours per week.
+**Michael Chen:** Once they saw they could resolve issues in minutes instead of hours, adoption wasn't a problem. The platform freed up significant time they used to spend on manual coordination.
 
 ---
 
@@ -84,15 +84,15 @@ tags: logistics, operations, dashboard, global business, real-time visibility
 
 **Jennifer Santos:** What's the actual impact you've measured?
 
-**Michael Chen:** Missed orders down 78%—that translated to $2.3 million in recovered revenue from contracts we would have lost. Client satisfaction scores went from NPS 32 to NPS 61.
+**Michael Chen:** Missed orders essentially disappeared. We went from constant firefighting to proactive management. Client satisfaction improved dramatically — they noticed.
 
-**Jennifer Santos:** Those are significant numbers.
+**Jennifer Santos:** That changes everything.
 
-**Michael Chen:** The automated alerts alone let us resolve 85% of potential delays before clients were even impacted. That's what changed our reputation.
+**Michael Chen:** The automated alerts mean we catch most potential delays before clients are even impacted. That's what changed our reputation.
 
 **Jennifer Santos:** And the operational efficiency?
 
-**Michael Chen:** We integrated 12 additional depots last year without increasing operational headcount. The platform scales with us. Leadership now demos our real-time visibility during RFPs—it's become a competitive advantage.
+**Michael Chen:** We've added new depots without increasing operational headcount. The platform scales with us. Leadership now demos our real-time visibility during RFPs—it's become a competitive advantage.
 
 ---
 

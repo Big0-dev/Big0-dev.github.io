@@ -71,13 +71,12 @@ class SEOUtilities:
         # Even in CDATA, we need to handle the CDATA end sequence
         return text.replace(']]>', ']]]]><![CDATA[>')
 
-    def generate_sitemap(self, pages: List[Dict[str, Any]], location_pages: List[Dict[str, Any]] = None) -> None:
+    def generate_sitemap(self, pages: List[Dict[str, Any]]) -> None:
         """
         Generate XML sitemap for all site pages.
 
         Args:
             pages: List of page dictionaries with URL and metadata
-            location_pages: Optional list of location-specific pages
         """
         sitemap_path = Path(self.output_dir) / "sitemap.xml"
 
@@ -94,29 +93,6 @@ class SEOUtilities:
                 for file_path in content_dir.glob('*.md'):
                     slug = file_path.stem
                     urls.append(f"{self.config['domain']}/{config['output_dir']}/{slug}.html")
-
-                # Add location pages for services
-                if content_type == 'services':
-                    locations_dir = content_dir / 'locations'
-                    if locations_dir.exists():
-                        # Add country-level location pages
-                        for location_dir in locations_dir.iterdir():
-                            if location_dir.is_dir():
-                                # Country pages
-                                for location_file in location_dir.glob('*.md'):
-                                    location_slug = location_file.stem
-                                    location_key = location_dir.name
-                                    urls.append(f"{self.config['domain']}/services/locations/{location_key}/{location_slug}.html")
-
-                                # City pages
-                                cities_dir = location_dir / 'cities'
-                                if cities_dir.exists():
-                                    for city_dir in cities_dir.iterdir():
-                                        if city_dir.is_dir():
-                                            for city_file in city_dir.glob('*.md'):
-                                                city_slug = city_file.stem
-                                                city_key = city_dir.name
-                                                urls.append(f"{self.config['domain']}/services/locations/{location_key}/cities/{city_key}/{city_slug}.html")
 
         # Add listing/index pages that are auto-generated
         # Start with known listing pages
@@ -189,9 +165,6 @@ class SEOUtilities:
                 changefreq = 'weekly'
             elif '/case-studies/' in url:
                 priority = '0.6'
-                changefreq = 'monthly'
-            elif '/locations/' in url:
-                priority = '0.5'
                 changefreq = 'monthly'
             else:
                 priority = '0.5'
@@ -380,10 +353,6 @@ class SEOUtilities:
 
                     # Add individual content pages from content_items
                     for item in content_items:
-                        # Skip location pages from search index
-                        if item.get('frontmatter', {}).get('is_location_page', False):
-                            continue
-
                         # Check if this item belongs to current content type
                         item_type = item.get('content_type', '')
                         if item_type != content_type:
@@ -442,107 +411,3 @@ class SEOUtilities:
         except Exception as e:
             logger.error(f"Error generating search index: {e}")
 
-    def collect_feed_items(self, content_loader_func: callable) -> List[Dict[str, Any]]:
-        """
-        Collect all feed items from news, blogs, and case studies.
-
-        Args:
-            content_loader_func: Function to load markdown content from file paths
-
-        Returns:
-            List of feed item dictionaries
-        """
-        feed_items = []
-
-        # Add news articles
-        news_dir = Path('content/news')
-        if news_dir.exists():
-            for file_path in news_dir.glob('*.md'):
-                item = content_loader_func(file_path)
-                feed_items.append({
-                    'title': item['title'],
-                    'url': f"news/{item['slug']}.html",
-                    'description': item['frontmatter'].get('description', item.get('excerpt', '')),
-                    'content_html': self._escape_xml_cdata(item.get('content_html', '')),
-                    'pub_date': formatdate(time.mktime(item['date'].timetuple()) if item.get('date') else time.time()),
-                    'category': item['frontmatter'].get('category', 'News'),
-                    'tags': item['frontmatter'].get('tags', '').split(',') if item['frontmatter'].get('tags') else [],
-                    'date_obj': item.get('date', datetime.now())
-                })
-
-        # Add blog posts
-        blog_dir = Path('content/blogs')
-        if blog_dir.exists():
-            for file_path in blog_dir.glob('*.md'):
-                item = content_loader_func(file_path)
-                feed_items.append({
-                    'title': item['title'],
-                    'url': f"blog/{item['slug']}.html",
-                    'description': item['frontmatter'].get('description', item.get('excerpt', '')),
-                    'content_html': self._escape_xml_cdata(item.get('content_html', '')),
-                    'pub_date': formatdate(time.mktime(item['date'].timetuple()) if item.get('date') else time.time()),
-                    'category': item['frontmatter'].get('category', 'Blog'),
-                    'tags': item['frontmatter'].get('tags', '').split(',') if item['frontmatter'].get('tags') else [],
-                    'date_obj': item.get('date', datetime.now())
-                })
-
-        # Add case studies
-        case_studies_dir = Path('content/case_studies')
-        if case_studies_dir.exists():
-            for file_path in case_studies_dir.glob('*.md'):
-                item = content_loader_func(file_path)
-                feed_items.append({
-                    'title': item['title'],
-                    'url': f"case-studies/{item['slug']}.html",
-                    'description': item['frontmatter'].get('description', item.get('excerpt', '')),
-                    'content_html': self._escape_xml_cdata(item.get('content_html', '')),
-                    'pub_date': formatdate(time.mktime(item['date'].timetuple()) if item.get('date') else time.time()),
-                    'category': 'Case Study',
-                    'tags': item['frontmatter'].get('tags', '').split(',') if item['frontmatter'].get('tags') else [],
-                    'date_obj': item.get('date', datetime.now())
-                })
-
-        return feed_items
-
-    def load_gallery_data(self) -> Dict[str, Any]:
-        """
-        Load gallery images and metadata for image sitemap generation.
-
-        Returns:
-            Dictionary containing gallery data with images list
-        """
-        gallery_dir = Path(self.config['assets']['gallery_dir'])
-        metadata_file = gallery_dir / 'metadata.json'
-
-        images = []
-
-        if metadata_file.exists():
-            with open(metadata_file, 'r') as f:
-                metadata = json.load(f)
-
-            # Get all image files
-            for image_file in sorted(gallery_dir.glob('*.avif')):
-                # Try to find metadata - check both with and without year variations
-                meta_key = image_file.name
-                if meta_key not in metadata:
-                    # Try with 2025 instead of 25
-                    alt_key = meta_key.replace('-25-', '-2025-')
-                    if alt_key in metadata:
-                        meta_key = alt_key
-
-                if meta_key in metadata:
-                    image_data = metadata[meta_key].copy()
-                    image_data['filename'] = image_file.name
-                    # Parse date if present
-                    if 'date' in image_data:
-                        image_data['date'] = datetime.strptime(image_data['date'], '%Y-%m-%d')
-                    images.append(image_data)
-                else:
-                    # Add image without metadata
-                    images.append({
-                        'filename': image_file.name,
-                        'title': image_file.stem.replace('-', ' ').title(),
-                        'description': f'Gallery image: {image_file.stem}'
-                    })
-
-        return {'images': images}

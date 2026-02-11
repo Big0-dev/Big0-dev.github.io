@@ -1,0 +1,366 @@
+/* =============================================================================
+   SERVICES-BESPOKE.CSS — Bespoke Service Detail Pages
+   Builds on design-system.css + home.css patterns.
+   ============================================================================= */
+
+/* --- Hero with Background Image --- */
+.svc-hero {
+  position: relative;
+}
+.svc-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.svc-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 28, 0.78);
+}
+.svc-hero-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(127, 62, 152, 0.15);
+  border: 1px solid rgba(127, 62, 152, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  margin: 0 auto 20px;
+}
+.svc-hero-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* --- Challenge Section --- */
+.svc-challenge {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.svc-challenge p {
+  font-size: 16px;
+  color: var(--color-mist);
+  line-height: 1.7;
+}
+.svc-challenge strong {
+  color: var(--color-white);
+}
+
+/* --- Capabilities Grid (2x2) --- */
+.svc-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.svc-capability-card {
+  background: var(--color-slate);
+  border: 1px solid var(--color-steel);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.svc-capability-card:hover {
+  border-color: var(--color-signal);
+  transform: translateY(-2px);
+}
+.svc-cap-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(127, 62, 152, 0.12);
+  border: 1px solid rgba(127, 62, 152, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  margin-bottom: 16px;
+}
+.svc-cap-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.svc-capability-card h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.svc-capability-card p {
+  font-size: 14px;
+  color: var(--color-mist);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* --- Evidence Grid (3-col) --- */
+.svc-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.svc-evidence-card {
+  background: var(--color-slate);
+  border: 1px solid var(--color-steel);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.svc-evidence-card:hover {
+  border-color: var(--color-signal);
+  transform: translateY(-2px);
+}
+.svc-evidence-img {
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-steel);
+}
+.svc-evidence-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.svc-evidence-card:hover .svc-evidence-img img {
+  transform: scale(1.03);
+}
+.svc-evidence-icon {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-midnight);
+  border-bottom: 1px solid var(--color-steel);
+}
+.svc-evidence-icon svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-signal);
+}
+.svc-evidence-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.svc-evidence-body h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.svc-evidence-body p {
+  font-size: 14px;
+  color: var(--color-mist);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* --- Industries Grid --- */
+.svc-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.svc-industry-card {
+  background: var(--color-slate);
+  border: 1px solid var(--color-steel);
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.svc-industry-card:hover {
+  border-color: var(--color-signal);
+  transform: translateY(-2px);
+}
+.svc-industry-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(127, 62, 152, 0.12);
+  border: 1px solid rgba(127, 62, 152, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  flex-shrink: 0;
+}
+.svc-industry-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.svc-industry-card span {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* --- Process Grid Variant (3 steps) --- */
+.process-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .svc-evidence-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .svc-capabilities-grid,
+  .svc-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .svc-hero-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .svc-hero-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* =============================================================================
+   SERVICES LISTING CARDS — Image-background cards for /services.html
+   ============================================================================= */
+
+.svc-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.svc-listing-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: 480px;
+  border: 1px solid var(--color-steel);
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+.svc-listing-card:hover {
+  border-color: var(--color-signal);
+  box-shadow: 0 0 20px rgba(127, 62, 152, 0.15);
+}
+.svc-listing-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s ease;
+}
+.svc-listing-card:hover .svc-listing-img {
+  transform: scale(1.05);
+}
+.svc-listing-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 15, 28, 0.5) 0%,
+    rgba(10, 15, 28, 0.75) 40%,
+    rgba(10, 15, 28, 0.95) 75%
+  );
+}
+.svc-listing-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 28px;
+}
+.svc-listing-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(127, 62, 152, 0.15);
+  border: 1px solid rgba(127, 62, 152, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-signal);
+  margin-bottom: 12px;
+}
+.svc-listing-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.svc-listing-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.svc-listing-body h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.svc-listing-body p {
+  font-size: 14px;
+  color: var(--color-mist);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.svc-listing-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.svc-listing-feature {
+  font-size: 11px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-ash);
+}
+@media (max-width: 1024px) {
+  .svc-listing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .svc-listing-grid {
+    grid-template-columns: 1fr;
+  }
+  .svc-listing-card {
+    min-height: 400px;
+  }
+}

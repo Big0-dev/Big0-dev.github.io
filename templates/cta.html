@@ -1,16 +1,15 @@
 <!-- CTA Section -->
-<section class="cta-section">
-  <div class="cta-background">
-    <div class="cta-pattern"></div>
-  </div>
-  
-  <div class="cta-content text-center">
-    <h2 class="cta-title">{{ cta_title | default('Ready to Transform Your Business?') }}</h2>
-    <p class="cta-description">
-      {{ cta_description | default("Let's discuss how our AI-powered solutions can drive your growth") }}
+<section class="section section-cta">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-orb cta-orb-2"></div>
+  <div class="cta-orb cta-orb-3"></div>
+  <div class="container text-center">
+    <h2 class="cta-heading">{{ cta_title | default('Talk to Our Engineers') }}</h2>
+    <p class="cta-sub">
+      {{ cta_description | default("Not salespeople. Engineers who've built production AI, shipped hardware, and published research.") }}
     </p>
-    <a href="{{ contact }}" class="btn btn-primary btn-lg hover-scale">
-      Schedule Your AI Consultation
-    </a>
+    <div class="cta-actions">
+      <a href="{{ cta_url | default(contact) }}" class="btn btn-primary btn-lg"{% if cta_external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ cta_button | default('Start a Conversation') }} &rarr;</a>
+    </div>
   </div>
 </section>

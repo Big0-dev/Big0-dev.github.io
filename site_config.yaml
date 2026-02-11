@@ -7,7 +7,7 @@ static_pages:
   - template: index.html
     output: index.html
     title: AI-Powered Digital Transformation
-    description: Big0 delivers cutting-edge AI solutions, cloud services, and digital transformation. Transform your business with responsible AI innovation.
+    description: Big0 builds production AI systems, ships hardware, and publishes research. Engineering that works.
     
   - template: about.html
     output: about.html
@@ -39,16 +39,6 @@ static_pages:
     title: Page Not Found
     description: The page you're looking for could not be found. Return to our homepage to explore our AI and digital transformation services.
     
-  - template: partners.html
-    output: partners.html
-    title: Our Partners
-    description: Explore Big0's strategic partnerships and collaborations that help us deliver comprehensive digital transformation solutions.
-    
-  - template: products.html
-    output: products.html
-    title: Our Products
-    description: Discover Big0's innovative products and solutions designed to accelerate digital transformation and business growth.
-    
   - template: gallery.html
     output: gallery.html
     title: Gallery
@@ -71,7 +61,7 @@ content_types:
     template: blog_post.html
     listing_template: blog.html
     output_dir: blog
-    per_page: 6
+    per_page: 9
     
   services:
     content_dir: ./content/services
@@ -90,7 +80,7 @@ content_types:
     template: case_study_detail.html
     listing_template: case_studies.html
     output_dir: case-studies
-    per_page: 6
+    per_page: 9
     
   news:
     content_dir: ./content/news
@@ -98,12 +88,6 @@ content_types:
     listing_template: news.html
     output_dir: news
     per_page: 10
-
-  products:
-    content_dir: ./content/products
-    template: product_detail.html
-    listing_template: products.html
-    output_dir: products
 
   newsletters:
     content_dir: ./content/newsletters
@@ -118,6 +102,11 @@ content_types:
     output_dir: conversations
     exclude_from_nav: true
 
+  products:
+    content_dir: ./content/products
+    template: product_detail.html
+    output_dir: products
+
 # Navigation URLs
 navigation:
   home: index.html
@@ -130,9 +119,10 @@ navigation:
   case_studies: case-studies.html
   careers: careers.html
   contact: contact.html
+  khan: products/ai-project-manager.html
+  products: products/ai-project-manager.html
+  products_page: products/ai-project-manager.html
   industries: industries.html
-  partners: partners.html
-  products: products.html
   gallery: gallery.html
   news: news.html
   privacy: privacy.html

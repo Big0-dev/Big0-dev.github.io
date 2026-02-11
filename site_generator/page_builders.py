@@ -6,8 +6,6 @@ in the static site generator.
 """
 
 import logging
-import re
-import yaml
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, List
@@ -99,8 +97,8 @@ class StaticPageBuilder(BasePageBuilder):
                             for file_path in content_dir.glob('*.md'):
                                 item = self._load_markdown_content(file_path)
                                 items.append(item)
-                            # Sort by date if available
-                            items.sort(key=lambda x: x.get('date') or datetime.min, reverse=True)
+                            # Sort by order field if available, then by date
+                            items.sort(key=lambda x: (x.get('frontmatter', {}).get('order', 999), -(x.get('date') or datetime.min).timestamp() if x.get('date') else 0))
                             page_context[f'all_{content_type}'] = items
 
                     # Also load news articles
@@ -181,10 +179,9 @@ class ContentPageBuilder(BasePageBuilder):
     """Builder for content pages from markdown files"""
 
     def __init__(self, env: Environment, config: Dict[str, Any], output_dir: str,
-                 load_markdown_content_func, generate_location_pages_func):
+                 load_markdown_content_func):
         super().__init__(env, config, output_dir)
         self._load_markdown_content = load_markdown_content_func
-        self._generate_location_pages = generate_location_pages_func
 
     def generate(self):
         """Generate pages from content files"""
@@ -201,19 +198,15 @@ class ContentPageBuilder(BasePageBuilder):
                 # Calculate the output path for correct link depth
                 output_path = Path(config['output_dir']) / f"{file_path.stem}.html"
                 item = self._load_markdown_content(file_path, output_path)
-                # Skip location pages from main listing
-                if not item.get('frontmatter', {}).get('is_location_page', False):
-                    items.append(item)
-
-            # Generate location pages for services
-            if content_type == 'services':
-                self._generate_location_pages(content_dir, config)
+                items.append(item)
 
             # Generate detail pages for all items
             if 'template' in config:
                 for item in items:
                     try:
-                        template = self.env.get_template(config['template'])
+                        custom_tpl = item.get('frontmatter', {}).get('template')
+                        template_name = custom_tpl if custom_tpl else config['template']
+                        template = self.env.get_template(template_name)
                         output_path = Path(self.output_dir) / config['output_dir'] / f"{item['slug']}.html"
 
                         # Get context with depth 1 for subdirectory pages
@@ -310,291 +303,3 @@ class ContentPageBuilder(BasePageBuilder):
             logger.error(f"Error generating {content_type} listing: {e}")
 
 
-class LocationPageBuilder(BasePageBuilder):
-    """Builder for location-specific service pages"""
-
-    def __init__(self, env: Environment, config: Dict[str, Any], output_dir: str,
-                 load_markdown_content_func):
-        super().__init__(env, config, output_dir)
-        self._load_markdown_content = load_markdown_content_func
-
-    def generate_location_pages(self, content_dir: Path, config: dict):
-        """Generate location-specific versions of service pages"""
-        # Dynamically discover locations from directory structure
-        locations_dir = content_dir / 'locations'
-        locations = {}
-
-        if locations_dir.exists():
-            for location_dir in locations_dir.iterdir():
-                if location_dir.is_dir():
-                    location_name = location_dir.name
-                    # Convert directory name to proper display name
-                    display_name = location_name.replace('-', ' ').title()
-
-                    # Special cases for country names
-                    name_mappings = {
-                        'usa': 'USA',
-                        'uk': 'UK',
-                        'uae': 'UAE'
-                    }
-
-                    display_name = name_mappings.get(location_name, display_name)
-
-                    locations[location_name] = {
-                        'name': display_name,
-                        'full_name': display_name if display_name != 'USA' else 'United States',
-                        'slug': location_name,
-                        'meta_suffix': f'in {display_name}' if display_name != 'USA' else 'in the USA',
-                        'content_suffix': f'across {display_name}' if display_name != 'USA' else 'across the United States',
-                        'type': 'country'
-                    }
-
-        # Dynamically discover cities from directory structure
-        cities = {}
-        for country_name, country_data in locations.items():
-            cities[country_name] = {}
-            country_cities_dir = locations_dir / country_name / 'cities'
-
-            if country_cities_dir.exists():
-                for city_dir in country_cities_dir.iterdir():
-                    if city_dir.is_dir():
-                        city_name = city_dir.name
-                        # Convert directory name to proper display name
-                        display_name = city_name.replace('-', ' ').title()
-
-                        cities[country_name][city_name] = {
-                            'name': display_name,
-                            'full_name': display_name,
-                            'slug': city_name,
-                            'meta_suffix': f'in {display_name}',
-                            'content_suffix': f'in {display_name}',
-                            'parent_country': country_name,
-                            'type': 'city'
-                        }
-
-        # Process each service file
-        for service_file in sorted(content_dir.glob('*.md')):
-
-            # Load the service content
-            service_item = self._load_markdown_content(service_file)
-
-            # Skip if already a location page
-            if service_item.get('frontmatter', {}).get('is_location_page'):
-                continue
-
-            # Generate country pages
-            for location_key, location in locations.items():
-                location_dir = locations_dir / location_key
-
-                # Check if location-specific markdown exists (exact match)
-                location_md_path = location_dir / f"{service_file.stem}-{location_key}.md"
-
-                if location_md_path.exists():
-                    # Load and generate the location page with correct output path for auto-linking
-                    output_path = Path(f"services/locations/{location_key}/{service_file.stem}-{location_key}.html")
-                    location_item = self._load_markdown_content(location_md_path, output_path)
-
-                    # Fix hardcoded service links in content (e.g., href="computer_vision_service.html")
-                    # These should point to ../../../services/computer_vision_service.html
-                    def fix_service_link(match):
-                        service_name = match.group(1)
-                        return f'href="../../../services/{service_name}.html"'
-
-                    # Fix links that are relative to current directory (no path prefix)
-                    location_item['content_html'] = re.sub(
-                        r'href="([a-zA-Z_\-]+)\.html"',
-                        fix_service_link,
-                        location_item['content_html']
-                    )
-
-                    # Generate the HTML page
-                    try:
-                        template = self.env.get_template(config.get('template', 'service_detail.html'))
-
-                        # Create output directory
-                        output_dir = Path(self.output_dir) / 'services' / 'locations' / location_key
-                        output_dir.mkdir(parents=True, exist_ok=True)
-
-                        output_path = output_dir / f"{service_file.stem}-{location_key}.html"
-
-                        # Get context with appropriate depth for nested directory
-                        base_context = self._get_base_context(depth=3)
-
-                        location_context = {
-                            **base_context,
-                            'current_service': location_item,
-                            'item': location_item
-                        }
-
-                        html_content = template.render(**location_context)
-                        output_path.write_text(html_content)
-
-                        logger.info(f"Generated location page: {output_path.relative_to(self.output_dir)}")
-
-                    except Exception as e:
-                        logger.error(f"Error generating location page {location_md_path}: {e}")
-
-            # Generate city pages
-            for country_key, country_cities in cities.items():
-                for city_key, city in country_cities.items():
-                    city_dir = locations_dir / country_key / 'cities' / city_key
-
-                    # Check if city-specific markdown exists
-                    city_md_path = city_dir / f"{service_file.stem}-{city_key}.md"
-
-                    if city_md_path.exists():
-                        # Load and generate the city page with correct output path for auto-linking
-                        output_path = Path(f"services/locations/{country_key}/cities/{city_key}/{service_file.stem}-{city_key}.html")
-                        city_item = self._load_markdown_content(city_md_path, output_path)
-
-                        # Fix hardcoded service links in content
-                        def fix_city_service_link(match):
-                            service_name = match.group(1)
-                            return f'href="../../../../../services/{service_name}.html"'
-
-                        city_item['content_html'] = re.sub(
-                            r'href="([a-zA-Z_\-]+)\.html"',
-                            fix_city_service_link,
-                            city_item['content_html']
-                        )
-
-                        # Generate the HTML page
-                        try:
-                            template = self.env.get_template(config.get('template', 'service_detail.html'))
-
-                            # Create output directory for city
-                            output_dir = Path(self.output_dir) / 'services' / 'locations' / country_key / 'cities' / city_key
-                            output_dir.mkdir(parents=True, exist_ok=True)
-
-                            output_path = output_dir / f"{service_file.stem}-{city_key}.html"
-
-                            # Get context with appropriate depth for deeply nested directory
-                            base_context = self._get_base_context(depth=5)
-
-                            city_context = {
-                                **base_context,
-                                'current_service': city_item,
-                                'item': city_item
-                            }
-
-                            html_content = template.render(**city_context)
-                            output_path.write_text(html_content)
-
-                            logger.info(f"Generated city page: {output_path.relative_to(self.output_dir)}")
-
-                        except Exception as e:
-                            logger.error(f"Error generating city page {city_md_path}: {e}")
-
-        # Process ALL remaining markdown files in location directories that don't match service patterns
-        # This handles files like engineering-consultancy-pakistan.md that don't follow the service-location pattern
-        services_dir = content_dir  # Define services_dir for checking existing services
-        for location_key in locations:
-            location_dir = locations_dir / location_key
-            if location_dir.exists():
-                # Process all .md files in this location directory
-                for md_file in location_dir.glob('*.md'):
-                    # Skip if already processed (matches service-location pattern)
-                    if any(md_file.stem == f"{service.stem}-{location_key}"
-                           for service in services_dir.glob('*.md')):
-                        continue
-
-                    # Generate this standalone location page
-                    try:
-                        output_path = Path(f"services/locations/{location_key}/{md_file.stem}.html")
-                        location_item = self._load_markdown_content(md_file, output_path)
-
-                        # Fix service links to point to correct relative path
-                        def fix_service_link(match):
-                            service_name = match.group(1)
-                            return f'href="../../../services/{service_name}.html"'
-
-                        location_item['content_html'] = re.sub(
-                            r'href="([a-zA-Z_\-]+)\.html"',
-                            fix_service_link,
-                            location_item['content_html']
-                        )
-
-                        # Generate the HTML page
-                        template = self.env.get_template(config.get('template', 'service_detail.html'))
-
-                        # Create output directory
-                        output_dir = Path(self.output_dir) / 'services' / 'locations' / location_key
-                        output_dir.mkdir(parents=True, exist_ok=True)
-
-                        output_path = output_dir / f"{md_file.stem}.html"
-
-                        # Get context with appropriate depth for nested directory
-                        base_context = self._get_base_context(depth=3)
-
-                        location_context = {
-                            **base_context,
-                            'current_service': location_item,
-                            'item': location_item
-                        }
-
-                        html_content = template.render(**location_context)
-                        output_path.write_text(html_content)
-
-                        logger.info(f"Generated standalone location page: {output_path.relative_to(self.output_dir)}")
-
-                    except Exception as e:
-                        logger.error(f"Error generating standalone location page {md_file}: {e}")
-
-        # Process city-specific standalone files
-        for country_key, country_cities in cities.items():
-            for city_key, city in country_cities.items():
-                city_dir = locations_dir / country_key / 'cities' / city_key
-
-                if city_dir.exists():
-                    # Process all .md files in this city directory
-                    for md_file in city_dir.glob('*.md'):
-                        # Skip if already processed (matches service-city pattern)
-                        if any(md_file.stem == f"{service.stem}-{city_key}"
-                               for service in services_dir.glob('*.md')):
-                            continue
-
-                        # Generate this standalone city page
-                        try:
-                            output_path = Path(f"services/locations/{country_key}/cities/{city_key}/{md_file.stem}.html")
-                            city_item = self._load_markdown_content(md_file, output_path)
-
-                            # Fix service links for city pages
-                            def fix_city_service_link(match):
-                                service_name = match.group(1)
-                                return f'href="../../../../../services/{service_name}.html"'
-
-                            city_item['content_html'] = re.sub(
-                                r'href="([a-zA-Z_\-]+)\.html"',
-                                fix_city_service_link,
-                                city_item['content_html']
-                            )
-
-                            # Generate the HTML page
-                            template = self.env.get_template(config.get('template', 'service_detail.html'))
-
-                            # Create output directory
-                            output_dir = Path(self.output_dir) / 'services' / 'locations' / country_key / 'cities' / city_key
-                            output_dir.mkdir(parents=True, exist_ok=True)
-
-                            output_path = output_dir / f"{md_file.stem}.html"
-
-                            # Get context with appropriate depth for deeply nested directory
-                            base_context = self._get_base_context(depth=5)
-
-                            city_context = {
-                                **base_context,
-                                'current_service': city_item,
-                                'item': city_item
-                            }
-
-                            html_content = template.render(**city_context)
-                            output_path.write_text(html_content)
-
-                            logger.info(f"Generated standalone city page: {output_path.relative_to(self.output_dir)}")
-
-                        except Exception as e:
-                            logger.error(f"Error generating standalone city page {md_file}: {e}")
-
-    def generate(self):
-        """Main entry point - not used directly, use generate_location_pages instead"""
-        pass

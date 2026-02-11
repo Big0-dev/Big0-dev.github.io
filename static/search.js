@@ -2,17 +2,21 @@
 // SEARCH FUNCTIONALITY
 // ==========================
 
-document.addEventListener("DOMContentLoaded", () => {
+(function initSearch() {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSearch);
+    return;
+  }
   // DOM Elements
   const searchButton = document.querySelector(".search-button");
-  const searchPopover = document.getElementById("search-box");
+  const searchPopover = document.getElementById("search-modal");
   const searchInput = document.getElementById("search-input");
   const searchForm = document.getElementById("search-form");
   const searchResultsContainer = document.getElementById(
     "search-results-container",
   );
   const searchResults = document.getElementById("search-results");
-  const closeSearchButton = document.querySelector("#search-box .close-btn");
+  const closeSearchButton = document.querySelector("#search-modal .close-btn");
 
   // MiniSearch instance
   let miniSearch = null;
@@ -443,27 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Update CSS variables on root to fix missing colors
-  // Use requestAnimationFrame to batch DOM reads and writes
-  requestAnimationFrame(() => {
-    const root = document.documentElement;
-    const hasBackgroundColor = getComputedStyle(root).getPropertyValue("--background-color");
-    
-    if (!hasBackgroundColor) {
-      // Batch all style changes together in a single operation
-      root.style.cssText += `
-        --background-color: #ffffff;
-        --text-color: #1c1c1c;
-        --border-color: #e0e0e0;
-        --hover-color: rgba(127, 62, 152, 0.1);
-        --accent-color: #7f3e98;
-        --text-color-light: #4a4a4a;
-        --primary-color-rgb: 127, 62, 152;
-        --primary-color-dark: #662d80;
-      `;
-    }
-  });
-});
+})();
 
 // ==========================
 // RECENT SEARCHES
@@ -519,23 +503,71 @@ const recentSearches = (function() {
         .snippet-separator {
             display: inline-block;
             margin: 0 4px;
-            color: var(--text-muted);
+            color: var(--color-mist);
             font-weight: bold;
         }
-        
         mark {
             background-color: rgba(127, 62, 152, 0.2);
-            color: inherit;
-            font-weight: bold;
+            color: var(--color-white);
+            font-weight: 600;
             padding: 0 2px;
             border-radius: 2px;
         }
-        
+        .result-section h3 {
+            font-family: var(--font-display);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-signal);
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--color-steel);
+        }
+        .result-section {
+            margin-bottom: 16px;
+        }
+        .result-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .result-item {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .result-item:hover {
+            background: var(--color-midnight);
+        }
+        .result-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-white);
+            margin-bottom: 2px;
+        }
+        .result-meta {
+            display: flex;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--color-mist);
+            margin-bottom: 4px;
+        }
+        .result-category {
+            color: var(--color-signal);
+        }
         .result-snippet {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-            margin-top: 4px;
+            font-size: 13px;
+            color: var(--color-mist);
+            line-height: 1.5;
+        }
+        .no-results {
+            text-align: center;
+            padding: 24px;
+            color: var(--color-mist);
+            font-size: 14px;
         }
     `;
   document.head.appendChild(style);

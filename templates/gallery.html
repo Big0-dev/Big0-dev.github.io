@@ -5,64 +5,52 @@
 {% block canonical_path %}/gallery.html{% endblock %}
 
 {% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="container">
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">
-        Project <span class="text-gradient">Gallery</span>
-      </h1>
-      <p class="text-xl text-secondary">
-        Showcasing our innovations and client success stories
+      <div class="section-label">Gallery</div>
+      <h1 class="page-hero-title">Event Highlights<span class="hero-dot">.</span></h1>
+      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+        Moments captured from our journey of innovation
       </p>
     </div>
   </div>
 </section>
 
-<section class="section bg-light">
+<section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Event Highlights</h2>
-      <p class="section-subtitle">
-        Moments captured from our <span class="text-gradient">journey of innovation</span>
-      </p>
-    </div>
-    
-    <div class="grid grid-auto-md gap-lg">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
       {% for image in images %}
-      <div class="card p-0 overflow-hidden position-relative gallery-item">
-        <button 
-          class="w-full h-full border-0 bg-transparent cursor-pointer p-0" 
+      <div class="case-card gallery-item" style="cursor: pointer;">
+        <button
+          style="width: 100%; border: 0; background: transparent; cursor: pointer; padding: 0;"
           popovertarget="gallery-lightbox-{{ loop.index }}"
           popovertargetaction="toggle"
-          style="aspect-ratio: 16/9;"
         >
-          <img 
-            src="{{ gallery_url }}/{{ image.filename }}" 
-            alt="{{ image.title }}"
-            loading="lazy"
-            style="width: 100%; height: 100%; object-fit: cover;"
-          />
-          <div class="position-absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-xl">
-            <div class="text-white w-full">
-              <h3 class="text-lg font-semibold mb-xs">{{ image.title }}</h3>
-              <div class="flex justify-between items-center">
-                <div>
-                  <span class="badge badge-primary">{{ image.category }}</span>
-                  {% if image.date %}
-                  <span class="text-sm text-white/70 ml-sm">{{ image.date.strftime('%B %Y') }}</span>
-                  {% endif %}
-                </div>
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                  <polyline points="15 3 21 3 21 9"/>
-                  <line x1="10" y1="14" x2="21" y2="3"/>
-                </svg>
-              </div>
+          <div class="case-img" style="height: 200px;">
+            <img
+              src="{{ gallery_url }}/{{ image.filename }}"
+              alt="{{ image.title }}"
+              loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+          <div class="case-body" style="text-align: left;">
+            <div class="case-badges">
+              <span class="badge badge-primary">{{ image.category }}</span>
+              {% if image.date %}
+              <span style="font-size: 11px; color: var(--color-mist);">{{ image.date.strftime('%B %Y') }}</span>
+              {% endif %}
             </div>
+            <h3 class="case-title">{{ image.title }}</h3>
+            {% if image.description %}
+            <p class="case-desc">{{ image.description }}</p>
+            {% endif %}
           </div>
         </button>
         

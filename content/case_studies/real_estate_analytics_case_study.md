@@ -1,42 +1,44 @@
 ---
 title: Real Estate Analytics Platform
-industry: Real Estate Technology
-type: Advanced Analytics Platform
+industry: Real Estate
+type: Analytics Platform
 icon: real-estate
-meta_description: See how Big0 built a real estate analytics platform with 10K+ users and 85% retention. Institutional-grade data for investors. View case study.
-challenge: Real estate investors lacked access to institutional-grade analytics and comprehensive market data, limiting their ability to compete with large investment firms.
-solution: Comprehensive analytics platform aggregating data from dozens of sources with advanced visualization, market intelligence, and subscription-based premium features.
-results: Sub-Second Queries,10K+ Users,15% Conversion,85% Retention
-result_descriptions: Advanced analytics processing with sub-second response times,Over 10000 registered users within first year,Premium subscription conversion rate exceeding industry benchmarks,Customer retention demonstrating clear value delivery
-technologies: Next.js & React,Webflow CMS,MapBox Integration,Cube.js Analytics Engine,Stripe Payment Processing,Multi-Source Data Scraping,PostgreSQL Database,Real-time Data Pipeline,RESTful APIs
-description: Comprehensive real estate analytics platform democratizing institutional-grade investment intelligence through advanced data aggregation and geospatial visualization.
+meta_description: Case study on real estate analytics platform aggregating dozens of data sources with geospatial visualization and sub-second query performance for investors.
+challenge: Retail real estate investors lack access to institutional-grade analytics — spending hours manually compiling fragmented data while larger firms have dedicated research teams.
+solution: Analytics platform aggregating data from dozens of public and private sources with geospatial visualization, predictive models, and a freemium subscription model.
+results: Sub-Second Queries,Multi-Source Aggregation,Freemium Adoption,Geospatial Analytics
+result_descriptions: Analytics queries return in under one second across large datasets,Data aggregated from Zillow and Realtor.com and Census and labor statistics,Free tier drives organic adoption with paid tiers for serious investors,Interactive maps showing property values and rental yields and market trends
+technologies: Geospatial analytics engine,Multi-source data aggregation pipeline,Stripe subscription system,Interactive map visualization
+description: Real estate analytics platform aggregating dozens of data sources with geospatial visualization and sub-second performance for retail investors.
 order: 7
 ---
 
 ## The Business Problem
 
-Real estate investing has an information problem. Large investment firms have dedicated research teams, proprietary data sources, and sophisticated analytics. Individual investors and smaller firms are stuck with fragmented data from dozens of sources, basic tools, and manual analysis.
+Real estate investing has an information asymmetry. Large investment firms have dedicated research teams, proprietary data feeds, and sophisticated analytics. Individual investors and smaller firms are stuck with fragmented data from dozens of sources, basic tools, and manual analysis.
 
-The result: retail investors can't compete. They spend hours compiling data that institutions have at their fingertips. They make decisions with incomplete information. They miss opportunities that better-equipped competitors capture.
-
-The market needed a way to give individual investors access to the same quality of intelligence that institutional players take for granted.
-
-{{template:cta}}
+Retail investors spend hours pulling data from Zillow, Realtor.com, Census records, and labor statistics—compiling it into spreadsheets that go stale immediately. They make decisions with incomplete information. They miss opportunities that better-equipped competitors capture.
 
 ## The Solution
 
-Big0 built an analytics platform that levels the playing field.
+Big0 built an analytics platform that aggregates data from dozens of public and private sources into a unified view.
 
-The platform aggregates data from major property platforms, government databases, and economic sources into a unified view. Instead of manually pulling data from Zillow, Realtor.com, Census records, and labor statistics, investors see everything in one place.
+Instead of manually pulling from multiple sites, investors see everything in one place. The aggregation pipeline normalizes data from sources with different formats, update frequencies, and geographic coverage into a consistent, queryable dataset.
 
-Advanced analytics calculate the metrics serious investors need: cap rates, cash-on-cash returns, market appreciation potential. Interactive maps show property values, rental yields, market activity, and demographic patterns across any geographic area. Predictive models identify emerging opportunities and assess investment risk.
+**Analytics calculate the metrics serious investors need:** cap rates, cash-on-cash returns, market appreciation trends. The platform does the math that investors would otherwise handle in spreadsheets—but across entire markets rather than individual properties.
 
-A freemium model makes sophisticated analytics accessible while premium tiers provide advanced features for serious investors willing to pay for edge.
+**Interactive maps** show property values, rental yields, market activity, and demographic patterns across any geographic area. Investors can zoom from national trends down to neighborhood-level data. Geospatial overlays reveal patterns that spreadsheets can't surface—like how proximity to transit or school districts correlates with rental demand.
+
+**Predictive models** identify emerging opportunities and assess investment risk based on historical patterns and current market signals.
+
+A freemium model makes the platform accessible. The free tier provides enough value to demonstrate the product, while premium tiers unlock advanced features for investors willing to pay for deeper analysis.
 
 ## The Results
 
-The platform found strong product-market fit. Users signed up, converted to paid subscriptions, and stayed—because the platform delivers real value they can't easily get elsewhere.
+The platform found product-market fit with organic adoption through the free tier converting to paid subscriptions. Investors use it to identify opportunities across markets they wouldn't have analyzed manually, compare properties with consistent metrics, and make faster decisions backed by aggregated data.
 
-Investors report identifying opportunities they would have missed, avoiding risks they wouldn't have seen, and making more confident investment decisions. The playing field isn't completely level—institutions still have advantages—but the gap has narrowed substantially.
+Sub-second query performance across large datasets means investors can explore interactively rather than waiting for reports to generate. The geospatial interface surfaces patterns that tabular data misses—making it easier to spot emerging neighborhoods and undervalued markets.
 
-The success demonstrated demand for democratizing sophisticated financial tools. The same approach—taking capabilities previously reserved for institutions and making them accessible—applies across financial services.
+The approach—taking analytical capabilities previously reserved for institutional research teams and making them accessible through engineering—applies across financial services wherever information asymmetry creates an opportunity.
+
+{{template:cta}}

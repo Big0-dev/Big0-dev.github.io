@@ -3,11 +3,11 @@ title: "The Enterprise AI Reality Check"
 issue_number: 3
 date: December 23, 2025
 meta_description: Only 18% of Salesforce customers use AI features. The gap between demo and deployment is brutal. Here's what's actually happening in enterprise AI.
-subtitle: Your weekly guide to AI technology and the future
+subtitle: Perspectives on AI technology and what's next
 topics: [enterprise, deployment, data-quality, change-management, roi]
 ---
 
-I spent last week talking to CTOs. Not the ones on conference stages - the ones in the trenches, actually deploying AI in production.
+I've been talking to CTOs. Not the ones on conference stages — the ones in the trenches, actually deploying AI in production.
 
 The gap between demo and deployment is brutal.
 
@@ -17,11 +17,11 @@ Here's what's actually happening.
 
 ---
 
-## This Week in AI
+## What's Moving
 
-### Salesforce Reports AI Feature Adoption Numbers
+### Salesforce's AI Adoption Problem
 
-**What's new:** Salesforce disclosed that only 18% of customers actively use their Einstein AI features, despite aggressive bundling into enterprise licenses.
+**The number:** Only 18% of Salesforce customers actively use their Einstein AI features, despite aggressive bundling into enterprise licenses.
 
 **The reasons cited:**
 - Integration complexity with existing workflows
@@ -29,29 +29,29 @@ Here's what's actually happening.
 - Unclear ROI measurement
 - Data quality prerequisites not met
 
-**Why it matters:** If Salesforce - with its massive installed base and aggressive AI push - sees 18% adoption, what does that suggest about enterprise AI uptake generally?
+**Why it matters:** If Salesforce — with its massive installed base and aggressive AI push — sees 18% adoption, what does that suggest about enterprise AI uptake generally?
 
 **The counterpoint:** Early adopters report meaningful productivity gains. The gap is between "works in theory" and "works in our environment."
 
 ---
 
-### Microsoft Copilot Gets Usage-Based Pricing Option
+### Usage-Based Pricing for AI Copilots
 
-**What's new:** Microsoft introduced usage-based pricing for Copilot alongside the existing per-seat model - an implicit acknowledgment that many seats go unused.
+**The shift:** Major vendors are introducing usage-based pricing alongside per-seat models — an implicit acknowledgment that many seats go unused.
 
 **The math:**
-- Per-seat: $30/user/month regardless of usage
-- Usage-based: $0.05 per interaction, capped at $30/user/month
+- Per-seat: ~$30/user/month regardless of usage
+- Usage-based: pay per interaction, capped at the seat price
 
-**What it signals:** Enterprises pushed back on paying full price for features employees don't use. Microsoft responded rather than lose deals.
+**What it signals:** Enterprises pushed back on paying full price for features employees don't use. Vendors responded rather than lose deals.
 
 **Our take:** This is healthy. Pricing that aligns with actual value delivered will accelerate adoption more than aggressive bundling.
 
 ---
 
-### IBM Launches "Enterprise AI Audit" Service
+### Enterprise AI Audits Become a Business
 
-**What's new:** IBM now offers comprehensive audits of enterprise AI deployments, assessing ROI, risks, and optimization opportunities.
+**The trend:** Consulting firms now offer comprehensive audits of enterprise AI deployments, assessing ROI, risks, and optimization opportunities.
 
 **What they're finding:**
 - 60% of AI projects don't have clear success metrics
@@ -59,9 +59,9 @@ Here's what's actually happening.
 - Most enterprises underinvest in change management
 - Security reviews often happen too late
 
-**The irony:** IBM is selling consulting to fix problems that rushed AI adoption created. This is a business model.
+**The irony:** Firms selling consulting to fix problems that rushed AI adoption created. This is a business model.
 
-**The value:** Third-party assessment may help executives understand what's working and what isn't.
+**The value:** Third-party assessment helps executives understand what's working and what isn't.
 
 ---
 
@@ -77,7 +77,7 @@ Here's what's actually happening.
 - Poorly documented
 - Not structured for AI consumption
 
-**The result:** Models trained on bad data produce bad outputs. Garbage in, garbage out - now at scale.
+**The result:** Models trained on bad data produce bad outputs. Garbage in, garbage out — now at scale.
 
 **The fix:** Data cleanup is boring and expensive. But it's prerequisite, not optional.
 
@@ -140,7 +140,7 @@ Here's what's actually happening.
 
 ---
 
-## Tool of the Week: LangSmith
+## Tool Worth Knowing: LangSmith
 
 LangChain's observability platform for LLM applications.
 
@@ -158,11 +158,11 @@ LangChain's observability platform for LLM applications.
 
 ## What We're Reading
 
-**"The AI Productivity Paradox"** - Harvard Business Review analysis of why measured productivity gains from AI lag expectations. Spoiler: measurement is hard.
+**"The AI Productivity Paradox"** — Harvard Business Review analysis of why measured productivity gains from AI lag expectations. Measurement is harder than it looks.
 
-**"When AI Projects Fail"** - McKinsey's post-mortem analysis of failed enterprise AI initiatives. Patterns are consistent and avoidable.
+**"When AI Projects Fail"** — McKinsey's post-mortem analysis of failed enterprise AI initiatives. Patterns are consistent and avoidable.
 
-**"Building AI Products, Not Features"** - Product management perspective on why bolted-on AI often disappoints.
+**"Building AI Products, Not Features"** — Product management perspective on why bolted-on AI often disappoints.
 
 ---
 
@@ -174,10 +174,10 @@ And there's a version that's hype: AI as magic pixie dust sprinkled on broken pr
 
 The difference isn't the technology. It's the implementation.
 
-The enterprises that win will be the ones that treat AI deployment like any other complex change initiative - with clear goals, realistic timelines, proper investment, and willingness to course-correct.
+The enterprises that win will be the ones that treat AI deployment like any other complex change initiative — with clear goals, realistic timelines, proper investment, and willingness to course-correct.
 
 That's less exciting than "AI will transform everything overnight." It's also true.
 
-See you next week.
+Until next time.
 
-*Zero to One: Tech Frontiers: Understanding AI technology and building the future.*
+*Zero to One: Tech Frontiers*

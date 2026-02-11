@@ -22,12 +22,12 @@
     </nav>
 
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <div class="flex items-center justify-center gap-md mb-md">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;">
         <span class="badge badge-primary">Zero to One</span>
         <span class="badge">Issue #{{ current_newsletter.frontmatter.issue_number | default('') }}</span>
-        <span class="text-sm text-tertiary">{{ current_newsletter.frontmatter.date | default('') }}</span>
+        <span style="font-size: 12px; color: var(--color-mist);">{{ current_newsletter.frontmatter.date | default('') }}</span>
       </div>
-      <h1 class="text-4xl font-bold">{{ current_newsletter.title }}</h1>
+      <h1 class="page-hero-title">{{ current_newsletter.title }}</h1>
       {% if current_newsletter.frontmatter.subtitle %}
       <p class="text-xl text-secondary mt-md">{{ current_newsletter.frontmatter.subtitle }}</p>
       {% endif %}
@@ -69,16 +69,16 @@
       </div>
 
       <!-- Main Content -->
-      <div class="card p-2xl mb-2xl">
+      <div style="background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: 12px; padding: 32px; margin-bottom: 32px;">
         <div class="detail-content newsletter-content">
           {{ current_newsletter.content_html | safe }}
         </div>
       </div>
 
       <!-- Subscribe CTA -->
-      <div class="card card-primary text-center p-xl mb-2xl">
-        <h3 class="mb-md">Enjoyed this issue?</h3>
-        <p class="text-secondary mb-lg">Subscribe to Zero to One: Tech Frontiers for AI insights delivered to your inbox.</p>
+      <div style="background: var(--color-slate); border: 1px solid var(--color-signal); border-radius: 12px; padding: 32px; margin-bottom: 32px; text-align: center;">
+        <h3 style="font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--color-white); margin-bottom: 8px;">Enjoyed this issue?</h3>
+        <p style="font-size: 14px; color: var(--color-mist); margin-bottom: 20px; line-height: 1.6;">Subscribe to Zero to One: Tech Frontiers for AI insights delivered to your inbox.</p>
         <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7348601809155842050" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           Subscribe on LinkedIn
           <svg class="ml-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -1,8 +1,11 @@
-IoT and Smart Cities: Building the Urban Future
-Internet of Things
-November 5, 2024
-iot.avif
-Explore how IoT technology is transforming urban environments into intelligent, sustainable, and citizen-centric smart cities.
+---
+title: "IoT and Smart Cities: Building the Urban Future"
+category: Internet of Things
+date: September 5, 2025
+image_url: cybersecurity.avif
+meta_description: How IoT infrastructure is reshaping cities — from traffic optimization to energy management. Integration patterns, sensor networks, and what actually works.
+tags: iot, smart-cities, sensor-networks, urban-technology, embedded-systems
+---
 
 Walk through any major city today and you're surrounded by invisible infrastructure. Sensors monitor traffic flow in real time. Smart meters track energy consumption across millions of endpoints. Environmental monitors detect air quality changes before they become health hazards. The urban environment has become a platform for computation, and the implications are only beginning to unfold.
 

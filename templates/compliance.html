@@ -5,100 +5,73 @@
 {% block canonical_path %}/compliance.html{% endblock %}
 
 {% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="container">
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">
-        Compliance & <span class="text-gradient">Certifications</span>
-      </h1>
-      <p class="text-xl text-secondary">
+      <div class="section-label">Compliance</div>
+      <h1 class="page-hero-title">Compliance & Certifications<span class="hero-dot">.</span></h1>
+      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
         Operating with transparency and regulatory compliance
       </p>
     </div>
   </div>
 </section>
 
-<!-- Compliance Content -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Regulatory Registrations</h2>
-      <p class="section-subtitle">
-        Fully registered and compliant with <span class="text-gradient">regulatory authorities</span>
-      </p>
-    </div>
-
-    <div class="grid grid-auto-md gap-xl mb-3xl">
-      <div class="card card-hover text-center p-lg">
-        <h3 class="text-xl font-semibold mb-sm">SECP</h3>
-        <p class="text-tertiary">Securities & Exchange Commission of Pakistan</p>
-        <p class="text-sm text-muted mt-sm">Corporate Unique Identification No. 0302113</p>
-      </div>
-
-      <div class="card card-hover text-center p-lg">
-        <h3 class="text-xl font-semibold mb-sm">FBR</h3>
-        <p class="text-tertiary">Federal Board of Revenue</p>
-        <p class="text-sm text-muted mt-sm">National Tax No. (NTN): H119396</p>
-      </div>
-
-      <div class="card card-hover text-center p-lg">
-        <h3 class="text-xl font-semibold mb-sm">PSEB</h3>
-        <p class="text-tertiary">Pakistan Software Export Board</p>
-        <p class="text-sm text-muted mt-sm">Registration No. Z-25-15805/25</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Standards Compliance Section -->
+<!-- Regulatory Registrations -->
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Standards Compliance</h2>
-      <p class="section-subtitle">
-        Our internal processes comply with <span class="text-gradient">international standards</span>
-      </p>
-      <p class="text-secondary max-w-3xl mx-auto mt-lg">
-        We are committed to following industry best practices and are actively working towards obtaining official certifications for the following standards:
-      </p>
-    </div>
+    <div class="section-label">Registrations</div>
+    <h2 class="section-title" style="margin-bottom: 32px;">Regulatory Registrations</h2>
 
-    <div class="grid grid-2 gap-lg max-w-3xl mx-auto grid-mobile-1">
-      <div class="card p-lg text-center">
-        <h4 class="text-lg font-semibold mb-sm text-gradient">ISO 9001:2015</h4>
-        <p class="text-sm text-secondary">Quality Management System</p>
+    <div class="differentiators-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="diff-card" style="text-align: center;">
+        <h3>SECP</h3>
+        <p style="color: var(--color-mist); font-size: 13px; margin-bottom: 8px;">Securities & Exchange Commission of Pakistan</p>
+        <span class="badge badge-green">No. 0302113</span>
       </div>
 
-      <div class="card p-lg text-center">
-        <h4 class="text-lg font-semibold mb-sm text-gradient">ISO/IEC 27001</h4>
-        <p class="text-sm text-secondary">Information Security Management</p>
+      <div class="diff-card" style="text-align: center;">
+        <h3>FBR</h3>
+        <p style="color: var(--color-mist); font-size: 13px; margin-bottom: 8px;">Federal Board of Revenue</p>
+        <span class="badge badge-cyan">NTN: H119396</span>
+      </div>
+
+      <div class="diff-card" style="text-align: center;">
+        <h3>PSEB</h3>
+        <p style="color: var(--color-mist); font-size: 13px; margin-bottom: 8px;">Pakistan Software Export Board</p>
+        <span class="badge badge-amber">No. Z-25-15805/25</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-{% include 'cta.html' %}
-
-<!-- Commitment Section -->
-<section class="section bg-light">
+<!-- Standards Compliance -->
+<section class="section section-alt">
   <div class="container">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-lg">Our Commitment to Compliance</h2>
-      <p class="text-lg text-secondary mb-xl leading-relaxed">
-        At Big0, we maintain the highest standards of regulatory compliance and professional ethics. 
-        Our registrations and memberships reflect our commitment to operating transparently and 
-        contributing to Pakistan's growing technology sector.
-      </p>
-      <a href="{{ contact }}" class="btn btn-primary btn-lg">
-        Get Compliance Documentation
-      </a>
+    <div class="section-label">Standards</div>
+    <h2 class="section-title" style="margin-bottom: 12px;">Standards Compliance</h2>
+    <p style="color: var(--color-mist); max-width: 560px; margin: 0 auto 32px; font-size: 15px; line-height: 1.6; text-align: center;">
+      We are committed to following industry best practices and are actively working towards obtaining official certifications.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 640px; margin: 0 auto;">
+      <div class="diff-card" style="text-align: center;">
+        <h3>ISO 9001:2015</h3>
+        <p>Quality Management System</p>
+      </div>
+      <div class="diff-card" style="text-align: center;">
+        <h3>ISO/IEC 27001</h3>
+        <p>Information Security Management</p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- CTA -->
+{% include 'cta.html' %}
 {% endblock %}

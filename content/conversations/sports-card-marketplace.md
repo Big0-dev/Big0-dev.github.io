@@ -2,7 +2,7 @@
 title: "Finally Trading Cards Without the Fear of Getting Scammed"
 subtitle: A conversation between two sports card collectors about secure trading
 meta_description: Two sports card collectors discuss how Big0's marketplace solved the trust problem with professional authentication and secure escrow for high-value trades.
-category: E-commerce & Collectibles
+category: Digital Marketplace
 intro: "Marcus Williams, a serious sports card collector from Chicago, meets his fellow collector Dave Patterson from Miami at a card show. They've been talking online for months about a potential trade but never had a safe way to execute it."
 date: 2024-12-25
 tags: sports cards, collectibles, marketplace, trading, authentication

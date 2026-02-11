@@ -3,7 +3,7 @@ title: Big0 Collaborates with SZABIST University for FinTech Certification Progr
 category: Partnership
 date: 2025-07-15
 tags: fintech,certification,education,szabist,training
-description: Big0 partners with SZABIST University Islamabad to launch comprehensive FinTech Certification Program, empowering professionals with cutting-edge financial technology skills.
+description: Big0 partners with SZABIST University Islamabad to launch a FinTech Certification Program, empowering professionals with modern financial technology skills.
 external_link:
 order: 2
 ---
@@ -37,10 +37,10 @@ The certification covers the full spectrum of FinTech disruption, from mobile wa
 
 ## Big0's Role
 
-As a technology partner, Big0 brings extensive experience from our [Professional Technology Training Services](/services/professional-technology-training.html), where we've successfully trained hundreds of professionals in cutting-edge technologies. Our contribution includes industry expertise, proven training methodology, and potential career opportunities for outstanding participants.
+As a technology partner, Big0 brings industry expertise in AI and financial technology, proven methodology, and potential career opportunities for outstanding participants.
 
 Join us in building the future of finance in Pakistan. This certification is more than just a course – it's your gateway to becoming a leader in the FinTech revolution.
 
 ---
 
-*For more information about Big0's FinTech solutions and services, visit our [FinTech Development Services](/services/fintech_development.html) page.*
+*For more information about Big0's services, visit our [Services](/services.html) page.*

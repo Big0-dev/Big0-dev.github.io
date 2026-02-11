@@ -7,6 +7,8 @@ meta_description: The secret sauce behind modern AI advances. How synthetic data
 tags: synthetic-data, machine-learning, training-data, ai-development, model-collapse
 ---
 
+*We built FedGAN &mdash; a federated learning framework for privacy-preserving medical image generation, published in peer-reviewed research. Synthetic data generation is core to our work. [See the FedGAN case study &rarr;](/case-studies/fedgan.html)*
+
 Here's a question that puzzles newcomers to AI: How do you train a model to do something humans can't evaluate?
 
 If you want AI to write code, humans can check if the code works. If you want AI to summarize documents, humans can judge quality. But what about:

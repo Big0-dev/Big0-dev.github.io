@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+
+{% block title %}Khan — AI Project Manager{% endblock %}
+{% block meta_description %}Khan is an AI project manager for small agencies. Built on PMI methodology with human-in-the-loop control. Free to start, works on real projects today.{% endblock %}
+{% block canonical_path %}/products/ai-project-manager.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+<link rel="stylesheet" href="{{ static }}/khan.css">
+{% endblock %}
+
+{% block content %}
+
+<!-- Section 1: Hero -->
+<section class="hero khan-hero">
+  <div class="container hero-inner">
+    <span class="badge badge-amber khan-status-badge">Working MVP</span>
+    <h1 class="hero-h1">Khan<span class="hero-dot">.</span></h1>
+    <div class="hero-scramble-wrapper">
+      <span class="hero-scramble hero-scramble-text khan-scramble">Watches Your Projects</span>
+    </div>
+    <p class="hero-sub">The AI project manager built for small agencies juggling too many projects with too few people. Khan monitors your tasks, spots problems before they escalate, and takes action &mdash; with your approval.</p>
+    <div class="hero-ctas">
+      <a href="https://khan.big0.dev" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Try Khan Free &rarr;</a>
+      <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v14M4 11l6 6 6-6"/></svg>
+    </div>
+  </div>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+</section>
+
+<!-- Section 2: The Problem -->
+<section class="section khan-problem">
+  <div class="container">
+    <div class="khan-problem-inner reveal">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">You're wearing 5 hats. Something always slips.</h2>
+      <div class="khan-problem-text">
+        <p>Small agencies (5&ndash;20 people) run 3&ndash;5 client projects simultaneously. The founder is the project manager, the accountant, the sales lead, and half the engineering team. Projects slip. Invoices go out late. Risks surface after they've already become fires.</p>
+        <p>Existing tools are either too simple (Trello, Notion) or too heavy (Jira, Monday.com). None of them actually <strong>watch</strong> your projects and tell you what's going wrong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: How Khan Works -->
+<section class="section section-alt" id="how-it-works">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Four steps. You stay in control.</h2>
+      <p class="section-subtitle mb-2xl">Khan runs a continuous loop across all your projects.</p>
+    </div>
+
+    <div class="process-grid reveal">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Sees</h3>
+        <p>Continuously monitors tasks, risks, timelines, and budgets across all your active projects. Tracks overdue items, engagement gaps, and burn rate anomalies.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Analyzes</h3>
+        <p>Spots issues before they escalate. A sprint 40% behind velocity, a risk probability spike, a client not updated in two weeks &mdash; Khan catches it.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Proposes</h3>
+        <p>Suggests specific actions with clear reasoning. Not "project at risk" &mdash; actual proposals: "Move Task X to Sprint 7, reassign to Dev B who has 12 available hours."</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h3>Acts</h3>
+        <p>Executes approved changes across your projects. Every action requires your explicit approval. Khan handles the busywork. You make the calls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Human-in-the-Loop Callout -->
+<section class="section">
+  <div class="container">
+    <div class="khan-callout reveal">
+      <div class="khan-callout-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <div class="khan-callout-content">
+        <h3>Human-in-the-Loop. Always.</h3>
+        <p>All actions require your approval before execution. Khan proposes, you decide. No autonomous changes to your projects, ever. This is a fundamental design principle, not a feature toggle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: What's Included -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">What's Included</div>
+      <h2 class="section-title">Everything an agency needs. Nothing it doesn't.</h2>
+      <p class="section-subtitle mb-2xl">Four modules that work together. Khan AI runs across all of them.</p>
+    </div>
+
+    <div class="khan-features-grid reveal-stagger reveal">
+      <div class="khan-feature-card">
+        <div class="khan-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <h3>Project Management</h3>
+        <ul>
+          <li>Projects &amp; tasks with dependencies</li>
+          <li>Sprint planning &amp; velocity tracking</li>
+          <li>Risk registers with probability/impact scoring</li>
+          <li>Budget tracking &amp; Earned Value Management</li>
+        </ul>
+      </div>
+
+      <div class="khan-feature-card">
+        <div class="khan-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Client Management</h3>
+        <ul>
+          <li>CRM &amp; pipeline tracking</li>
+          <li>Proposals &amp; contract management</li>
+          <li>Client portal for project visibility</li>
+          <li>Automated client status updates</li>
+        </ul>
+      </div>
+
+      <div class="khan-feature-card">
+        <div class="khan-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>Finance</h3>
+        <ul>
+          <li>Invoicing &amp; payment tracking</li>
+          <li>Time tracking (billable vs. non-billable)</li>
+          <li>Revenue forecasting from pipeline data</li>
+          <li>Accounts receivable management</li>
+        </ul>
+      </div>
+
+      <div class="khan-feature-card khan-feature-card-highlight">
+        <div class="khan-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/>
+          </svg>
+        </div>
+        <h3>Khan AI</h3>
+        <ul>
+          <li>Proactive problem detection across all projects</li>
+          <li>Specific, reasoned action proposals</li>
+          <li>Knowledge hub &mdash; learns your team's patterns</li>
+          <li>Cross-project insight correlation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: Built on PMI -->
+<section class="section">
+  <div class="container">
+    <div class="khan-methodology reveal">
+      <div class="section-label">Methodology</div>
+      <h2 class="section-title">Built on PMI. Not bolted on.</h2>
+      <div class="khan-methodology-text">
+        <p>Khan follows the Project Management Institute framework across the full project lifecycle: Initiation, Planning, Execution, Monitoring &amp; Controlling, and Closing. This isn't a to-do list with AI sprinkled on top. It's structured project management with an AI that understands the methodology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 7: Pricing -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Start free. Scale when you're ready.</h2>
+      <p class="section-subtitle mb-2xl">No credit card required. No trial expiration.</p>
+    </div>
+
+    <div class="khan-pricing reveal-stagger reveal">
+      <!-- Free -->
+      <div class="khan-price-card">
+        <div class="khan-price-header">
+          <h3>Free</h3>
+          <div class="khan-price-amount">$0<span>/mo</span></div>
+        </div>
+        <div class="khan-price-limits">
+          <span>5 projects</span>
+          <span>5 users</span>
+        </div>
+        <ul class="khan-price-features">
+          <li>Core project management</li>
+          <li>Task &amp; sprint tracking</li>
+          <li>Basic risk registers</li>
+          <li>Basic Khan AI suggestions</li>
+        </ul>
+        <a href="https://khan.big0.dev" class="btn btn-secondary btn-md khan-price-cta" target="_blank" rel="noopener noreferrer">Get Started Free</a>
+      </div>
+
+      <!-- Pro (Featured) -->
+      <div class="khan-price-card featured">
+        <div class="khan-price-badge">Most Popular</div>
+        <div class="khan-price-header">
+          <h3>Pro</h3>
+          <div class="khan-price-amount">$29<span>/mo</span></div>
+        </div>
+        <div class="khan-price-limits">
+          <span>50 projects</span>
+          <span>50 users</span>
+        </div>
+        <ul class="khan-price-features">
+          <li>Everything in Free</li>
+          <li>Full Khan AI with action proposals</li>
+          <li>CRM &amp; pipeline</li>
+          <li>Invoicing &amp; time tracking</li>
+          <li>Budget tracking &amp; EVM</li>
+        </ul>
+        <a href="https://khan.big0.dev" class="btn btn-primary btn-md khan-price-cta" target="_blank" rel="noopener noreferrer">Start Pro Trial &rarr;</a>
+      </div>
+
+      <!-- Agency -->
+      <div class="khan-price-card">
+        <div class="khan-price-header">
+          <h3>Agency</h3>
+          <div class="khan-price-amount">$79<span>/mo</span></div>
+        </div>
+        <div class="khan-price-limits">
+          <span>Unlimited projects</span>
+          <span>Unlimited users</span>
+        </div>
+        <ul class="khan-price-features">
+          <li>Everything in Pro</li>
+          <li>Client portal</li>
+          <li>Revenue forecasting</li>
+          <li>Priority support</li>
+          <li>Custom integrations</li>
+        </ul>
+        <a href="https://khan.big0.dev" class="btn btn-secondary btn-md khan-price-cta" target="_blank" rel="noopener noreferrer">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 8: CTA -->
+{% with cta_title="Try Khan Free", cta_description="No credit card. No sales call. Just sign up and start managing your projects with an AI that actually helps.", cta_button="Get Started", cta_url="https://khan.big0.dev", cta_external=true %}
+{% include 'cta.html' %}
+{% endwith %}
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ static }}/text-scramble.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Khan-specific scramble phrases
+  var el = document.querySelector('.khan-scramble');
+  if (!el) return;
+
+  var phrases = [
+    'Watches Your Projects',
+    'Catches Problems Early',
+    'Proposes Actions',
+    'You Stay in Control'
+  ];
+
+  // Override the default phrases by re-initializing
+  var TextScrambleClass = window.TextScramble || (function() {
+    // Wait for text-scramble.js to load
+    return null;
+  })();
+
+  // Use interval to wait for TextScramble to be available
+  var checkInterval = setInterval(function() {
+    if (typeof TextScramble !== 'undefined') {
+      clearInterval(checkInterval);
+      var fx = new TextScramble(el);
+      var counter = 0;
+      var next = function() {
+        fx.setText(phrases[counter]).then(function() {
+          setTimeout(next, 3500);
+        });
+        counter = (counter + 1) % phrases.length;
+      };
+      next();
+    }
+  }, 100);
+  // Clear after 5s if never loads
+  setTimeout(function() { clearInterval(checkInterval); }, 5000);
+
+  // Reveal animations
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el) { el.classList.add('revealed'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+
+  // Smooth scroll for "See How It Works"
+  document.querySelectorAll('a[href="#how-it-works"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.getElementById('how-it-works');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});
+</script>
+{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Khan",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "AI project manager for small agencies. Built on PMI methodology with human-in-the-loop control.",
+  "url": "https://khan.big0.dev",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "29",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Agency",
+      "price": "79",
+      "priceCurrency": "USD"
+    }
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Big0",
+    "url": "https://big0.dev"
+  }
+}
+</script>
+{% endblock %}

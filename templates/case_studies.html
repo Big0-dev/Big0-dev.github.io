@@ -1,97 +1,62 @@
 {% extends "base.html" %}
 
-{% block title %}Case Studies{% endblock %}
-{% block meta_description %}Explore Big0's successful AI and technology implementations across various industries. Real results from real clients.{% endblock %}
+{% block title %}Our Work{% endblock %}
+{% block meta_description %}Real products, real deployments, real evidence. See the AI systems, hardware, and software we've shipped for clients across industries.{% endblock %}
 {% block canonical_path %}/case-studies.html{% endblock %}
+
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">
-<link rel="stylesheet" href="{{ static }}/case-studies.css">
-<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="page-hero">
   <div class="container">
     <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold mb-lg">
-        Case <span class="text-gradient">Studies</span>
-      </h1>
-      <p class="text-xl text-secondary">
-        Real-world success stories and transformative solutions that drive business growth
+      <div class="section-label">Our Work</div>
+      <h1 class="page-hero-title">What We've Built<span class="hero-dot">.</span></h1>
+      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+        Real products, real deployments, real evidence. From autonomous drones to legal AI for UK law firms.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Case Studies Section -->
+<!-- All Case Studies -->
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Our Work</h2>
-      <p class="section-subtitle">
-        Transformative solutions that deliver <span class="text-gradient">measurable results</span>
-      </p>
-    </div>
-    
-    <!-- First set of case studies -->
-    <div class="grid grid-auto-md gap-xl mb-3xl">
-      {% for case_study in all_case_studies[:3] %}
-      <article class="card card-hover">
-        <a href="./case-studies/{{ case_study.slug }}.html" class="case-study-card">
-          <div class="case-study-header">
-            {% if case_study.icon %}
-            <div class="case-study-icon">
-              {{ inject_svg(case_study.icon, True) | safe }}
-            </div>
+    <div class="featured-work-grid">
+      {% for case_study in all_case_studies %}
+      <a href="./case-studies/{{ case_study.slug }}.html" class="case-card">
+        <div class="case-img">
+          {% if case_study.icon %}
+          <div class="case-img-icon">
+            {{ inject_svg(case_study.icon, True) | safe }}
+          </div>
+          {% endif %}
+        </div>
+        <div class="case-body">
+          <div class="case-badges">
+            {% if case_study.frontmatter.industry %}
+            <span class="badge badge-cyan">{{ case_study.frontmatter.industry }}</span>
             {% endif %}
-            
-            <div class="case-study-meta">
-              <span class="badge">{{ case_study.frontmatter.industry | default('Technology') }}</span>
-            </div>
-          </div>
-          
-          <div class="case-study-content">
-            <h3>{{ case_study.title }}</h3>
-            <p class="line-clamp-4">{{ case_study.short_description }}</p>
-            <span class="text-primary font-medium">Read more →</span>
-          </div>
-        </a>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- CTA Section -->
-{% include 'cta.html' %}
-
-<!-- Remaining Case Studies -->
-<section class="section">
-  <div class="container">
-    <div class="grid grid-auto-md gap-xl">
-      {% for case_study in all_case_studies[3:] %}
-      <article class="card card-hover">
-        <a href="./case-studies/{{ case_study.slug }}.html" class="case-study-card">
-          <div class="case-study-header">
-            {% if case_study.icon %}
-            <div class="case-study-icon">
-              {{ inject_svg(case_study.icon, True) | safe }}
-            </div>
+            {% if case_study.frontmatter.type %}
+            <span class="badge badge-green">{{ case_study.frontmatter.type }}</span>
             {% endif %}
-            
-            <div class="case-study-meta">
-              <span class="badge">{{ case_study.frontmatter.industry | default('Technology') }}</span>
+          </div>
+          <h3 class="case-title">{{ case_study.title }}</h3>
+          <p class="case-desc">{{ case_study.short_description }}</p>
+          {% if case_study.frontmatter.results %}
+          <div class="case-stats">
+            {% for result in case_study.frontmatter.results.split(',')[:2] %}
+            <div class="case-stat">
+              <div class="case-stat-val">{{ result.strip() }}</div>
             </div>
+            {% endfor %}
           </div>
-          
-          <div class="case-study-content">
-            <h3>{{ case_study.title }}</h3>
-            <p class="line-clamp-4">{{ case_study.short_description }}</p>
-            <span class="text-primary font-medium">Read more →</span>
-          </div>
-        </a>
-      </article>
+          {% endif %}
+        </div>
+      </a>
       {% endfor %}
     </div>
 
@@ -99,18 +64,14 @@
     <div class="pagination">
       {% if page_num > 1 %}
       <a href="./case-studies{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
       </a>
       {% else %}
       <span class="page-link disabled" aria-disabled="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
       </span>
       {% endif %}
-      
+
       {% for page in range(1, total_pages + 1) %}
       {% if page == page_num %}
       <span class="page-link active" aria-current="page">{{ page }}</span>
@@ -118,18 +79,14 @@
       <a href="./case-studies{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
       {% endif %}
       {% endfor %}
-      
+
       {% if page_num < total_pages %}
       <a href="./case-studies-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       {% else %}
       <span class="page-link disabled" aria-disabled="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </span>
       {% endif %}
     </div>
@@ -137,19 +94,6 @@
   </div>
 </section>
 
-<!-- Contact Form Section -->
-<section class="section bg-light">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Start Your Project</h2>
-      <p class="section-subtitle">
-        Tell us about your requirements and we'll provide a <span class="text-gradient">tailored solution</span>
-      </p>
-    </div>
-
-    <div class="max-w-2xl mx-auto">
-      {% include 'contact-form-bant.html' %}
-    </div>
-  </div>
-</section>
+<!-- CTA -->
+{% include 'cta.html' %}
 {% endblock %}

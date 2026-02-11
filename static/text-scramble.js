@@ -1,11 +1,12 @@
 /**
  * Text Scramble Effect
- * Creates a cyberpunk-style text scramble animation with glitches
+ * Cyberpunk-style text scramble for the hero headline.
+ * Adapted for the dark engineering aesthetic.
  */
 class TextScramble {
   constructor(el) {
     this.el = el;
-    this.chars = '!<>-_\\/[]{}—=+*^?#@$%&アイウエオカキク01';
+    this.chars = '!<>-_\\/[]{}—=+*^?#@$%&01';
     this.update = this.update.bind(this);
   }
 
@@ -38,25 +39,21 @@ class TextScramble {
 
       if (this.frame >= end) {
         complete++;
-        // Even completed chars occasionally glitch
-        if (Math.random() < 0.03) {
-          output += `<span class="scramble-char glitch">${this.randomChar()}</span>`;
+        if (Math.random() < 0.02) {
+          output += '<span class="scramble-char glitch">' + this.randomChar() + '</span>';
         } else {
           output += to;
         }
       } else if (this.frame >= start) {
-        // High frequency character changes for more glitchy effect
         if (Math.random() < 0.5) {
           char = this.randomChar();
           this.queue[i].char = char;
         }
-        // Random glitch intensity
-        const glitchClass = Math.random() < 0.2 ? 'scramble-char glitch-intense' : 'scramble-char';
-        output += `<span class="${glitchClass}">${char}</span>`;
+        const cls = Math.random() < 0.15 ? 'scramble-char glitch-intense' : 'scramble-char';
+        output += '<span class="' + cls + '">' + char + '</span>';
       } else {
-        // Pre-start chars also occasionally glitch
-        if (Math.random() < 0.05) {
-          output += `<span class="scramble-char glitch">${this.randomChar()}</span>`;
+        if (Math.random() < 0.04) {
+          output += '<span class="scramble-char glitch">' + this.randomChar() + '</span>';
         } else {
           output += from;
         }
@@ -66,7 +63,6 @@ class TextScramble {
     this.el.innerHTML = output;
 
     if (complete === this.queue.length) {
-      // Small delay then resolve to let final glitches settle
       setTimeout(() => this.resolve(), 100);
     } else {
       this.frameRequest = requestAnimationFrame(this.update);
@@ -79,17 +75,19 @@ class TextScramble {
   }
 }
 
-// Initialize text scramble on hero section - optimized to minimize CLS
 document.addEventListener('DOMContentLoaded', function() {
-  const el = document.querySelector('.hero-scramble-text');
+  const el = document.querySelector('.hero-scramble');
   if (!el) return;
 
   const phrases = [
-    'Next Level Innovation',
-    'AI-Powered Solutions',
-    'Digital Transformation',
-    'Intelligent Automation',
-    'Data-Driven Growth'
+    'AI Systems That Ship',
+    'Production-Grade AI',
+    'Research-Backed AI',
+    'Hardware That Works',
+    'Shipped & Proven',
+    'Software That Scales',
+    'Engineering You Trust',
+    'IoT That Delivers'
   ];
 
   const fx = new TextScramble(el);
@@ -97,16 +95,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const next = () => {
     fx.setText(phrases[counter]).then(() => {
-      setTimeout(next, 3000);
+      setTimeout(next, 3500);
     });
     counter = (counter + 1) % phrases.length;
   };
 
-  // Wait for first paint to complete before starting animation
-  // This prevents the animation from contributing to CLS metrics
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => next(), { timeout: 1000 });
+    requestIdleCallback(() => next(), { timeout: 800 });
   } else {
-    setTimeout(next, 500);
+    setTimeout(next, 400);
   }
 });

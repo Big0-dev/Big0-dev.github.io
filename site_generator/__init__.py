@@ -6,7 +6,7 @@ This module contains the site generation components for the Big0.dev static webs
 Components:
 - ContentProcessor: Handles all content processing tasks including markdown conversion,
   template directives, FAQ processing, and automatic interlinking.
-- AssetManager: Manages static assets, gallery images, SVG injection, and optimization.
+- AssetManager: Manages static assets, gallery images, SVG injection, and output minification.
 - SEOUtilities: Generates SEO artifacts including sitemaps, RSS feeds, and search indexes.
 - Page Builders: Specialized builders for different page types (static, content, location, gallery).
 """

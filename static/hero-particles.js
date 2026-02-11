@@ -9,7 +9,7 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) return;
 
-  const heroSection = document.querySelector('.page-hero');
+  const heroSection = document.querySelector('.hero');
   if (!heroSection) return;
 
   // Create container
@@ -28,12 +28,12 @@
   let isVisible = true;
   let time = 0;
 
-  // Color palette
+  // Color palette (matches --color-signal, --color-cyan)
   const colors = {
-    primary: { r: 127, g: 62, b: 152 },
-    secondary: { r: 163, g: 102, b: 196 },
-    accent: { r: 200, g: 150, b: 255 },
-    cyan: { r: 0, g: 255, b: 255 },
+    primary: { r: 59, g: 130, b: 246 },
+    secondary: { r: 96, g: 165, b: 250 },
+    accent: { r: 6, g: 182, b: 212 },
+    cyan: { r: 6, g: 182, b: 212 },
     white: { r: 255, g: 255, b: 255 }
   };
 

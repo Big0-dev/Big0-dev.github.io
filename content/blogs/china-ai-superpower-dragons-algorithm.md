@@ -75,7 +75,7 @@ America's most powerful lever against Chinese AI: semiconductor export restricti
 
 **The impact:**
 - Chinese labs can't easily access frontier training hardware
-- Cloud providers can't offer cutting-edge compute
+- Cloud providers can't offer frontier-grade compute
 - Some research directions become impractical
 
 **The response:**

@@ -1,7 +1,7 @@
 ---
 title: "Getting Institutional-Grade Data Without the Institutional Budget"
 subtitle: A conversation between two real estate investors about analytics
-meta_description: Two real estate investors discuss how Big0's analytics platform delivers institutional-grade data to individual investors, with 10K+ users and 85% retention.
+meta_description: Two real estate investors discuss how Big0's analytics platform delivers institutional-grade data to individual investors through multi-source aggregation.
 category: Real Estate Technology
 intro: "Kevin Park, an active real estate investor from Denver, connects with his mentor Thomas Reed, a retired institutional investor, to discuss how individual investors can compete with big firms."
 date: 2024-12-18
@@ -80,7 +80,7 @@ tags: real estate, analytics, investment, property data, market intelligence
 
 **Thomas Reed:** Did you get the property?
 
-**Kevin Park:** Closed last week. And my projections were within 3% of reality once I got actual tenant information. The data was that accurate.
+**Kevin Park:** Closed last week. And my projections were close to reality once I got actual tenant information. The data was that accurate.
 
 ---
 
@@ -104,7 +104,7 @@ tags: real estate, analytics, investment, property data, market intelligence
 
 **Thomas Reed:** What are your results since using the platform?
 
-**Kevin Park:** Three acquisitions in twelve months versus one the year before. Better properties at better prices. My portfolio cash flow improved 23% because I'm buying smarter.
+**Kevin Park:** More acquisitions in less time. Better properties at better prices. My portfolio cash flow improved noticeably because I'm buying smarter.
 
 **Thomas Reed:** Twenty-three percent improvement in cash flow?
 

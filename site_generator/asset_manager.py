@@ -5,24 +5,21 @@ Handles all asset operations including:
 - Static file copying
 - SVG injection with caching
 - Gallery image handling
-- File optimization and minification
+- Output minification (HTML, CSS, JS)
 """
 
 import os
+import re
 import shutil
 import json
-import re
 import logging
 from pathlib import Path
 from datetime import datetime
 from functools import lru_cache
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Set
 
-# Minification imports
-from bs4 import BeautifulSoup
 import minify_html
 import rcssmin
-import jsmin
 
 logger = logging.getLogger(__name__)
 
@@ -44,9 +41,44 @@ class AssetManager:
         self.output_dir = output_dir
         self._svg_cache = {}
 
+    _IMAGE_EXTENSIONS = {'.avif', '.jpg', '.jpeg', '.png', '.webp'}
+
+    def _collect_referenced_images(self) -> Set[str]:
+        """Scan templates and content to find all referenced image filenames."""
+        referenced: Set[str] = set()
+        image_pattern = re.compile(
+            r'(?:src=["\']|url\(["\']?|image_url:\s*|hero_image:\s*|image:\s*)'
+            r'(?:\.\./)?(?:static/)?([^"\')\s]+\.(?:avif|jpg|jpeg|png|webp))',
+            re.IGNORECASE,
+        )
+
+        # Scan templates
+        templates_dir = Path("templates")
+        if templates_dir.exists():
+            for f in templates_dir.rglob("*.html"):
+                for m in image_pattern.finditer(f.read_text(encoding="utf-8", errors="ignore")):
+                    referenced.add(Path(m.group(1)).name)
+
+        # Scan all content markdown files
+        content_dir = Path("content")
+        if content_dir.exists():
+            for f in content_dir.rglob("*.md"):
+                text = f.read_text(encoding="utf-8", errors="ignore")
+                for m in image_pattern.finditer(text):
+                    referenced.add(Path(m.group(1)).name)
+
+        # Scan site_config.yaml
+        config_path = Path("site_config.yaml")
+        if config_path.exists():
+            for m in image_pattern.finditer(config_path.read_text(encoding="utf-8")):
+                referenced.add(Path(m.group(1)).name)
+
+        return referenced
+
     def copy_static_assets(self, source: Optional[str] = None, destination: Optional[str] = None) -> None:
         """
-        Copy static assets excluding SVGs and favicon files
+        Copy static assets excluding SVGs and favicon files.
+        Only copies image files that are referenced in templates or content.
 
         Args:
             source: Source directory (defaults to self.static_dir)
@@ -61,6 +93,9 @@ class AssetManager:
 
         os.makedirs(dest_dir, exist_ok=True)
 
+        referenced_images = self._collect_referenced_images()
+        copied = skipped = 0
+
         for item in os.listdir(source_dir):
             # Skip SVG files and favicon files (handled separately)
             if item.endswith('.svg') or item.startswith('favicon'):
@@ -69,9 +104,17 @@ class AssetManager:
             src_path = os.path.join(source_dir, item)
             dest_path = os.path.join(dest_dir, item)
 
+            # For image files, only copy if referenced
+            ext = os.path.splitext(item)[1].lower()
+            if ext in self._IMAGE_EXTENSIONS:
+                if item not in referenced_images:
+                    skipped += 1
+                    continue
+
             try:
                 if os.path.isfile(src_path):
                     shutil.copy2(src_path, dest_path)
+                    copied += 1
                     logger.debug(f"Copied file: {item}")
                 elif os.path.isdir(src_path):
                     if os.path.exists(dest_path):
@@ -80,6 +123,9 @@ class AssetManager:
                     logger.debug(f"Copied directory: {item}")
             except Exception as e:
                 logger.error(f"Error copying {item}: {e}")
+
+        if skipped:
+            logger.info(f"Copied {copied} static files, skipped {skipped} unreferenced images")
 
     def copy_gallery_images(self, source: Optional[str] = None, destination: Optional[str] = None) -> None:
         """
@@ -242,262 +288,43 @@ class AssetManager:
             'gallery_url': gallery_url
         }
 
-    def optimize_html(self, html: str) -> str:
+    def optimize_output(self, directory: Optional[str] = None) -> None:
+        """Minify all HTML and CSS files in the build output.
+
+        Uses minify-html for HTML (single-pass Rust minifier that also handles
+        inline JS and CSS), and rcssmin for standalone CSS files.
         """
-        Optimize HTML content
+        target_dir = Path(directory or self.output_dir)
+        html_saved = css_saved = 0
+        html_count = css_count = 0
 
-        Args:
-            html: HTML content to optimize
-
-        Returns:
-            Minified HTML content
-        """
-        try:
-            # Extract and minify inline scripts and styles
-            soup = BeautifulSoup(html, 'html.parser')
-
-            # Minify inline JavaScript
-            for script in soup.find_all('script'):
-                if script.string and not script.get('src'):
-                    try:
-                        minified_js = jsmin.jsmin(script.string)
-                        script.string = minified_js
-                    except Exception as e:
-                        logger.warning(f"Failed to minify inline JS: {e}")
-
-            # Minify inline CSS
-            for style in soup.find_all('style'):
-                if style.string:
-                    try:
-                        minified_css = rcssmin.cssmin(style.string)
-                        style.string = minified_css
-                    except Exception as e:
-                        logger.warning(f"Failed to minify inline CSS: {e}")
-
-            # Convert back to string
-            modified_html = str(soup)
-
-            # Minify the entire HTML
+        for html_file in target_dir.rglob('*.html'):
+            original = html_file.read_bytes()
             try:
-                # Use conservative settings to preserve cookie consent functionality
-                minified_html = minify_html.minify(
-                    modified_html,
-                    minify_js=False,
-                    minify_css=False,
-                    remove_processing_instructions=False,
-                    keep_html_and_head_opening_tags=True,
-                    keep_closing_tags=True,
-                    minify_doctype=False
-                )
-                return minified_html
+                minified = minify_html.minify(
+                    original.decode('utf-8'),
+                    minify_js=True,
+                    minify_css=True,
+                    remove_processing_instructions=True,
+                ).encode('utf-8')
+                html_file.write_bytes(minified)
+                html_saved += len(original) - len(minified)
+                html_count += 1
             except Exception:
-                # If minify_html fails, use simple regex-based approach
-                return self._simple_html_minify(modified_html)
+                pass
 
-        except Exception as e:
-            logger.error(f"Error optimizing HTML: {e}")
-            return html
+        static_dir = target_dir / 'static'
+        if static_dir.exists():
+            for css_file in static_dir.rglob('*.css'):
+                original = css_file.read_bytes()
+                try:
+                    minified = rcssmin.cssmin(original.decode('utf-8')).encode('utf-8')
+                    css_file.write_bytes(minified)
+                    css_saved += len(original) - len(minified)
+                    css_count += 1
+                except Exception:
+                    pass
 
-    def optimize_css(self, css: str) -> str:
-        """
-        Optimize CSS content
+        total_kb = (html_saved + css_saved) / 1024
+        logger.info(f"Minified {html_count} HTML + {css_count} CSS files (saved {total_kb:.1f} KB)")
 
-        Args:
-            css: CSS content to optimize
-
-        Returns:
-            Minified CSS content
-        """
-        try:
-            return rcssmin.cssmin(css, keep_bang_comments=True)
-        except Exception as e:
-            logger.error(f"Error optimizing CSS: {e}")
-            return css
-
-    def optimize_js(self, js: str) -> str:
-        """
-        Optimize JavaScript content
-
-        Args:
-            js: JavaScript content to optimize
-
-        Returns:
-            Minified JavaScript content
-        """
-        try:
-            return jsmin.jsmin(js)
-        except Exception as e:
-            logger.error(f"Error optimizing JS: {e}")
-            return js
-
-    def optimize_all_files(self, directory: Optional[str] = None) -> Dict[str, Any]:
-        """
-        Optimize all files in the specified directory
-
-        Args:
-            directory: Directory to optimize (defaults to output_dir)
-
-        Returns:
-            Dictionary with optimization statistics
-        """
-        target_dir = directory or self.output_dir
-        logger.info("Starting post-generation optimization...")
-
-        # Track optimization stats
-        stats = {
-            'html_files': 0,
-            'html_saved': 0,
-            'css_files': 0,
-            'css_saved': 0,
-            'total_saved': 0
-        }
-
-        # Optimize HTML files
-        self._optimize_html_files(target_dir, stats)
-
-        # Optimize CSS files
-        self._optimize_css_files(target_dir, stats)
-
-        # Optimize JS files
-        self._optimize_js_files(target_dir, stats)
-
-        # Log optimization results
-        total_saved_kb = stats['total_saved'] / 1024
-        logger.info(f"Optimization complete! Saved {total_saved_kb:.2f} KB total")
-        logger.info(f"  - HTML: {stats['html_files']} files, saved {stats['html_saved']/1024:.2f} KB")
-        logger.info(f"  - CSS: {stats['css_files']} files, saved {stats['css_saved']/1024:.2f} KB")
-        logger.info(f"  - JS: {stats.get('js_files', 0)} files, saved {stats.get('js_saved', 0)/1024:.2f} KB")
-
-        return stats
-
-    def _optimize_html_files(self, directory: str, stats: Dict[str, Any]) -> None:
-        """Minify all HTML files in the specified directory"""
-        output_path = Path(directory)
-
-        for html_file in output_path.rglob('*.html'):
-            try:
-                # Read original content
-                original_content = html_file.read_text(encoding='utf-8')
-                original_size = len(original_content.encode('utf-8'))
-
-                # Optimize HTML
-                minified_html = self.optimize_html(original_content)
-
-                # Write optimized content
-                html_file.write_text(minified_html, encoding='utf-8')
-
-                # Calculate savings
-                minified_size = len(minified_html.encode('utf-8'))
-                saved = original_size - minified_size
-
-                stats['html_files'] += 1
-                stats['html_saved'] += saved
-                stats['total_saved'] += saved
-
-                if saved > 0:
-                    percent_saved = (saved / original_size) * 100
-                    logger.debug(f"Minified {html_file.relative_to(output_path)}: {percent_saved:.1f}% smaller")
-
-            except Exception as e:
-                logger.error(f"Error optimizing {html_file}: {e}")
-
-    def _optimize_css_files(self, directory: str, stats: Dict[str, Any]) -> None:
-        """Minify all CSS files in the static directory"""
-        static_dir = Path(directory) / 'static'
-
-        if not static_dir.exists():
-            return
-
-        for css_file in static_dir.rglob('*.css'):
-            try:
-                # Read original content
-                original_content = css_file.read_text(encoding='utf-8')
-                original_size = len(original_content.encode('utf-8'))
-
-                # Optimize CSS
-                minified_css = self.optimize_css(original_content)
-
-                # Write optimized content
-                css_file.write_text(minified_css, encoding='utf-8')
-
-                # Calculate savings
-                minified_size = len(minified_css.encode('utf-8'))
-                saved = original_size - minified_size
-
-                stats['css_files'] += 1
-                stats['css_saved'] += saved
-                stats['total_saved'] += saved
-
-                if saved > 0:
-                    percent_saved = (saved / original_size) * 100
-                    logger.debug(f"Minified {css_file.relative_to(static_dir)}: {percent_saved:.1f}% smaller")
-
-            except Exception as e:
-                logger.error(f"Error optimizing {css_file}: {e}")
-
-    def _optimize_js_files(self, directory: str, stats: Dict[str, Any]) -> None:
-        """Minify all JS files in the static directory"""
-        static_dir = Path(directory) / 'static'
-
-        if not static_dir.exists():
-            return
-
-        # Initialize JS stats if not present
-        if 'js_files' not in stats:
-            stats['js_files'] = 0
-            stats['js_saved'] = 0
-
-        for js_file in static_dir.rglob('*.js'):
-            # Skip already minified files
-            if '.min.' in js_file.name:
-                continue
-
-            try:
-                # Read original content
-                original_content = js_file.read_text(encoding='utf-8')
-                original_size = len(original_content.encode('utf-8'))
-
-                # Optimize JS
-                minified_js = self.optimize_js(original_content)
-
-                # Write optimized content
-                js_file.write_text(minified_js, encoding='utf-8')
-
-                # Calculate savings
-                minified_size = len(minified_js.encode('utf-8'))
-                saved = original_size - minified_size
-
-                stats['js_files'] += 1
-                stats['js_saved'] += saved
-                stats['total_saved'] += saved
-
-                if saved > 0:
-                    percent_saved = (saved / original_size) * 100
-                    logger.debug(f"Minified {js_file.relative_to(static_dir)}: {percent_saved:.1f}% smaller")
-
-            except Exception as e:
-                logger.error(f"Error optimizing {js_file}: {e}")
-
-    def _simple_html_minify(self, html: str) -> str:
-        """
-        Simple regex-based HTML minification fallback
-
-        Args:
-            html: HTML content to minify
-
-        Returns:
-            Minified HTML content
-        """
-        # Remove HTML comments (but keep IE conditional comments)
-        html = re.sub(r'<!--(?!\[if).*?-->', '', html, flags=re.DOTALL)
-
-        # Remove whitespace between tags
-        html = re.sub(r'>\s+<', '><', html)
-
-        # Remove leading/trailing whitespace
-        html = html.strip()
-
-        # Collapse multiple spaces to single space
-        html = re.sub(r'\s+', ' ', html)
-
-        return html

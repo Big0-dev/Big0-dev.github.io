@@ -6,7 +6,6 @@
 
 # ============================================
 # OLD BLOG PATH (/blogs/ -> /blog/)
-# Only for extensionless URLs
 # ============================================
 /blogs/*  /blog/:splat  301
 
@@ -25,62 +24,96 @@
 /industries/consumer-goods  /industries  301
 /industries/mining.html  /industries.html  301
 /industries/mining  /industries  301
+/industries/education.html  /industries.html  301
+/industries/education  /industries  301
+/industries/energy.html  /industries.html  301
+/industries/energy  /industries  301
+/industries/government.html  /industries.html  301
+/industries/government  /industries  301
+/industries/telecom.html  /industries.html  301
+/industries/telecom  /industries  301
+/industries/insurance.html  /industries.html  301
+/industries/insurance  /industries  301
+/industries/retail.html  /industries.html  301
+/industries/retail  /industries  301
 
 # ============================================
-# MISSING LOCATION PREFIX (old URL structure)
+# REMOVED SERVICES -> SERVICES LISTING
+# (18 services removed in redesign overhaul)
 # ============================================
-/services/engineering-services-australia.html  /services/locations/australia/engineering-services-australia.html  301
-/services/python-automation-australia.html  /services/locations/australia/python-automation-australia.html  301
-/services/bpo-australia.html  /services/locations/australia/bpo-australia.html  301
-/services/professional-technology-training-australia.html  /services/locations/australia/professional-technology-training-australia.html  301
-/services/staff-augmentation-australia.html  /services/locations/australia/staff-augmentation-australia.html  301
-/services/ar_vr_development-australia.html  /services/locations/australia/ar_vr_development-australia.html  301
-/services/game_development-uk.html  /services/locations/uk/game_development-uk.html  301
-/services/python-automation-uk.html  /services/locations/uk/python-automation-uk.html  301
-/services/professional-technology-training-uk.html  /services/locations/uk/professional-technology-training-uk.html  301
-/services/bpo-uk.html  /services/locations/uk/bpo-uk.html  301
-/services/bpo-usa.html  /services/locations/usa/bpo-usa.html  301
-/services/professional-technology-training-usa.html  /services/locations/usa/professional-technology-training-usa.html  301
+/services/professional-technology-training.html  /services.html  301
+/services/professional-technology-training  /services.html  301
+/services/ar_vr_development.html  /services.html  301
+/services/ar_vr_development  /services.html  301
+/services/blockchain_development.html  /services.html  301
+/services/blockchain_development  /services.html  301
+/services/bpo.html  /services.html  301
+/services/bpo  /services.html  301
+/services/game_development.html  /services.html  301
+/services/game_development  /services.html  301
+/services/staff-augmentation.html  /services.html  301
+/services/staff-augmentation  /services.html  301
+/services/digital_marketing_services.html  /services.html  301
+/services/digital_marketing_services  /services.html  301
+/services/security-services.html  /services.html  301
+/services/security-services  /services.html  301
+/services/fintech_development.html  /services.html  301
+/services/fintech_development  /services.html  301
+/services/e_commerce_solutions.html  /services.html  301
+/services/e_commerce_solutions  /services.html  301
+/services/python-automation.html  /services.html  301
+/services/python-automation  /services.html  301
+/services/erp_implementation.html  /services.html  301
+/services/erp_implementation  /services.html  301
+/services/healthcare_it_solutions.html  /services.html  301
+/services/healthcare_it_solutions  /services.html  301
+/services/cloud-services.html  /services.html  301
+/services/cloud-services  /services.html  301
+/services/devops-quality-services.html  /services.html  301
+/services/devops-quality-services  /services.html  301
+/services/design-services.html  /services/software-development.html  301
+/services/design-services  /services/software-development.html  301
+/services/mobile_app_development.html  /services/software-development.html  301
+/services/mobile_app_development  /services/software-development.html  301
+/services/web-development.html  /services/software-development.html  301
+/services/web-development  /services/software-development.html  301
+/services/engineering-services.html  /services/hardware-iot-engineering.html  301
+/services/engineering-services  /services/hardware-iot-engineering.html  301
 
 # ============================================
-# RENAMED/DELETED SERVICES -> CLOSEST MATCH
-# (both .html and extensionless versions)
+# OLD SERVICE NAME ALIASES -> KEPT SERVICES
 # ============================================
-# Security
-/services/cloud-security-solutions  /services/security-services.html  301
-/services/cloud-security-solutions.html  /services/security-services.html  301
-/services/cybersecurity-solutions  /services/security-services.html  301
-/services/cybersecurity-solutions.html  /services/security-services.html  301
-/services/cybersecurity  /services/security-services.html  301
-/services/cybersecurity.html  /services/security-services.html  301
+# Security/Cloud/DevOps -> services listing
+/services/cloud-security-solutions  /services.html  301
+/services/cloud-security-solutions.html  /services.html  301
+/services/cybersecurity-solutions  /services.html  301
+/services/cybersecurity-solutions.html  /services.html  301
+/services/cybersecurity  /services.html  301
+/services/cybersecurity.html  /services.html  301
+/services/cloud-management  /services.html  301
+/services/cloud-management.html  /services.html  301
+/services/cloud-managment  /services.html  301
+/services/cloud-managment.html  /services.html  301
+/services/cloud-infrastructure  /services.html  301
+/services/cloud-infrastructure.html  /services.html  301
+/services/software_testing  /services.html  301
+/services/software_testing.html  /services.html  301
+/services/devops-services  /services.html  301
+/services/devops-services.html  /services.html  301
+/services/devops_consulting  /services.html  301
+/services/devops_consulting.html  /services.html  301
 
-# Cloud
-/services/cloud-management  /services/cloud-services.html  301
-/services/cloud-management.html  /services/cloud-services.html  301
-/services/cloud-managment  /services/cloud-services.html  301
-/services/cloud-managment.html  /services/cloud-services.html  301
-/services/cloud-infrastructure  /services/cloud-services.html  301
-/services/cloud-infrastructure.html  /services/cloud-services.html  301
+# Design/UX -> software development
+/services/ui_ux_design_services  /services/software-development.html  301
+/services/ui_ux_design_services.html  /services/software-development.html  301
+/services/ui-ux-design  /services/software-development.html  301
+/services/ui-ux-design.html  /services/software-development.html  301
+/services/brand_and_digital_design  /services/software-development.html  301
+/services/brand_and_digital_design.html  /services/software-development.html  301
 
-# DevOps/Testing
-/services/software_testing  /services/devops-quality-services.html  301
-/services/software_testing.html  /services/devops-quality-services.html  301
-/services/devops-services  /services/devops-quality-services.html  301
-/services/devops-services.html  /services/devops-quality-services.html  301
-/services/devops_consulting  /services/devops-quality-services.html  301
-/services/devops_consulting.html  /services/devops-quality-services.html  301
-
-# Design/UX
-/services/ui_ux_design_services  /services/design-services.html  301
-/services/ui_ux_design_services.html  /services/design-services.html  301
-/services/ui-ux-design  /services/design-services.html  301
-/services/ui-ux-design.html  /services/design-services.html  301
-/services/brand_and_digital_design  /services/design-services.html  301
-/services/brand_and_digital_design.html  /services/design-services.html  301
+# Hardware/IoT/Embedded -> hardware-iot-engineering
 /services/cad-design  /services/hardware-iot-engineering.html  301
 /services/cad-design.html  /services/hardware-iot-engineering.html  301
-
-# Hardware/IoT/Embedded
 /services/pcb_design_and_layout  /services/hardware-iot-engineering.html  301
 /services/pcb_design_and_layout.html  /services/hardware-iot-engineering.html  301
 /services/hardware_cad  /services/hardware-iot-engineering.html  301
@@ -90,7 +123,7 @@
 /services/iot_device_development  /services/hardware-iot-engineering.html  301
 /services/iot_device_development.html  /services/hardware-iot-engineering.html  301
 
-# AI/ML
+# AI/ML aliases
 /services/ai-integration  /services/ai-ml-services.html  301
 /services/ai-integration.html  /services/ai-ml-services.html  301
 /services/computer_vision_service  /services/ai-ml-services.html  301
@@ -98,29 +131,31 @@
 /services/natural_language_processing  /services/ai-ml-services.html  301
 /services/natural_language_processing.html  /services/ai-ml-services.html  301
 
-# Data
-/services/data-analytics  /services/data-analytics-services.html  301
-/services/data-analytics.html  /services/data-analytics-services.html  301
-/services/data-engineering  /services/data-analytics-services.html  301
-/services/data-engineering.html  /services/data-analytics-services.html  301
-/services/dashboards  /services/data-analytics-services.html  301
-/services/dashboards.html  /services/data-analytics-services.html  301
+# Data aliases
+/services/data-analytics  /services/ai-ml-services.html  301
+/services/data-analytics.html  /services/ai-ml-services.html  301
+/services/data-engineering  /services/ai-ml-services.html  301
+/services/data-engineering.html  /services/ai-ml-services.html  301
+/services/dashboards  /services/ai-ml-services.html  301
+/services/dashboards.html  /services/ai-ml-services.html  301
 
-# Other renamed
-/services/manufacturing-automation  /services/python-automation.html  301
-/services/manufacturing-automation.html  /services/python-automation.html  301
+# Other old aliases -> services listing
+/services/manufacturing-automation  /services.html  301
+/services/manufacturing-automation.html  /services.html  301
 /services/custom-software-development  /services/software-development.html  301
 /services/custom-software-development.html  /services/software-development.html  301
-/services/digital-marketing  /services/digital_marketing_services.html  301
-/services/digital-marketing.html  /services/digital_marketing_services.html  301
-/services/digital-marketing-services  /services/digital_marketing_services.html  301
-/services/digital-marketing-services.html  /services/digital_marketing_services.html  301
-/services/mobile-app-development  /services/mobile_app_development.html  301
-/services/mobile-app-development.html  /services/mobile_app_development.html  301
-/services/project-management  /products/ai-project-manager.html  301
-/services/project-management.html  /products/ai-project-manager.html  301
+/services/digital-marketing  /services.html  301
+/services/digital-marketing.html  /services.html  301
+/services/digital-marketing-services  /services.html  301
+/services/digital-marketing-services.html  /services.html  301
+/services/mobile-app-development  /services/software-development.html  301
+/services/mobile-app-development.html  /services/software-development.html  301
+/services/project-management  /case-studies.html  301
+/services/project-management.html  /case-studies.html  301
 /services/compliance-services  /services.html  301
 /services/compliance-services.html  /services.html  301
+/services/mobile_app.development  /services/software-development.html  301
+/services/mobile_app.development.html  /services/software-development.html  301
 
 # Old service articles/blogs that were in /services/
 /services/federated-learning-collaborative-intelligence-without-compromise-1  /services  301
@@ -141,276 +176,111 @@
 /services/generative-ai-pioneering-the-future-of-artificial-intelligence  /services  301
 
 # ============================================
-# RENAMED SERVICES IN LOCATION PATHS
+# ALL REMOVED LOCATION VARIANTS -> SERVICES
+# (catch-all for removed service location pages)
 # ============================================
-/services/locations/usa/ui_ux_design_services-usa.html  /services/locations/usa/design-services-usa.html  301
-/services/locations/uk/ui_ux_design_services-uk.html  /services/locations/uk/design-services-uk.html  301
-/services/locations/canada/ui_ux_design_services-canada.html  /services/locations/canada/design-services-canada.html  301
-/services/locations/australia/ui_ux_design_services-australia.html  /services/locations/australia/design-services-australia.html  301
+/services/locations/*/ar_vr*  /services.html  301
+/services/locations/*/blockchain*  /services.html  301
+/services/locations/*/bpo*  /services.html  301
+/services/locations/*/game_development*  /services.html  301
+/services/locations/*/game-development*  /services.html  301
+/services/locations/*/staff-augmentation*  /services.html  301
+/services/locations/*/digital_marketing*  /services.html  301
+/services/locations/*/digital-marketing*  /services.html  301
+/services/locations/*/security-services*  /services.html  301
+/services/locations/*/cybersecurity*  /services.html  301
+/services/locations/*/fintech*  /services.html  301
+/services/locations/*/e_commerce*  /services.html  301
+/services/locations/*/e-commerce*  /services.html  301
+/services/locations/*/python-automation*  /services.html  301
+/services/locations/*/erp*  /services.html  301
+/services/locations/*/healthcare_it*  /services.html  301
+/services/locations/*/healthcare-it*  /services.html  301
+/services/locations/*/cloud-services*  /services.html  301
+/services/locations/*/cloud-managment*  /services.html  301
+/services/locations/*/devops*  /services.html  301
+/services/locations/*/design-services*  /services/software-development.html  301
+/services/locations/*/mobile*  /services/software-development.html  301
+/services/locations/*/web-development*  /services/software-development.html  301
+/services/locations/*/engineering-services*  /services/hardware-iot-engineering.html  301
+/services/locations/*/ui_ux*  /services/software-development.html  301
+/services/locations/*/brand_and_digital*  /services/software-development.html  301
+/services/locations/*/brand-and-digital*  /services/software-development.html  301
+/services/locations/*/software_testing*  /services.html  301
+/services/locations/*/software-testing*  /services.html  301
 
-/services/locations/usa/computer_vision_service-usa.html  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/uk/computer_vision_service-uk.html  /services/locations/uk/ai-ml-services-uk.html  301
-/services/locations/canada/computer_vision_service-canada.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/australia/computer_vision_service-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
+# All deleted location pages for surviving services -> parent service
+/services/locations/*/ai-ml-services*  /services/ai-ml-services.html  301
+/services/locations/*/hardware-iot*  /services/hardware-iot-engineering.html  301
+/services/locations/*/software-development*  /services/software-development.html  301
+/services/locations/*/data-analytics*  /services/ai-ml-services.html  301
+/services/locations/*/professional-technology-training*  /services.html  301
+/services/locations/*/computer_vision*  /services/ai-ml-services.html  301
+/services/locations/*/natural_language*  /services/ai-ml-services.html  301
+/services/locations/*/ai-integration*  /services/ai-ml-services.html  301
+/services/locations/*/embedded*  /services/hardware-iot-engineering.html  301
+/services/locations/*/iot*  /services/hardware-iot-engineering.html  301
+/services/locations/*/pcb*  /services/hardware-iot-engineering.html  301
+/services/locations/*/hardware_cad*  /services/hardware-iot-engineering.html  301
+/services/locations/*/dashboards*  /services/ai-ml-services.html  301
+/services/locations/*/engineering-consultancy*  /services/hardware-iot-engineering.html  301
 
-/services/locations/usa/iot_device_development-usa.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
-/services/locations/uk/iot_device_development-uk.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
-/services/locations/canada/iot_device_development-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/australia/iot_device_development-australia.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
-
-/services/locations/usa/embedded_systems_development-usa.html  /services/locations/usa/software-development-usa.html  301
-/services/locations/uk/embedded_systems_development-uk.html  /services/locations/uk/software-development-uk.html  301
-/services/locations/canada/embedded_systems_development-canada.html  /services/locations/canada/software-development-canada.html  301
-/services/locations/australia/embedded_systems_development-australia.html  /services/locations/australia/software-development-australia.html  301
-
-/services/locations/usa/natural_language_processing-usa.html  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/uk/natural_language_processing-uk.html  /services/locations/uk/ai-ml-services-uk.html  301
-/services/locations/canada/natural_language_processing-canada.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/australia/natural_language_processing-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
-
-/services/locations/usa/brand_and_digital_design-usa.html  /services/locations/usa/design-services-usa.html  301
-/services/locations/uk/brand_and_digital_design-uk.html  /services/locations/uk/design-services-uk.html  301
-/services/locations/canada/brand_and_digital_design-canada.html  /services/locations/canada/design-services-canada.html  301
-/services/locations/australia/brand_and_digital_design-australia.html  /services/locations/australia/design-services-australia.html  301
-
-/services/locations/usa/pcb_design_and_layout-usa.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
-/services/locations/uk/pcb_design_and_layout-uk.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
-/services/locations/canada/pcb_design_and_layout-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/australia/pcb_design_and_layout-australia.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
-
-/services/locations/usa/hardware_cad-usa.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
-/services/locations/uk/hardware_cad-uk.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
-/services/locations/canada/hardware_cad-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/australia/hardware_cad-australia.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
-
-/services/locations/usa/devops_consulting-usa.html  /services/locations/usa/devops-quality-services-usa.html  301
-/services/locations/uk/devops_consulting-uk.html  /services/locations/uk/devops-quality-services-uk.html  301
-/services/locations/canada/devops_consulting-canada.html  /services/locations/canada/devops-quality-services-canada.html  301
-/services/locations/australia/devops_consulting-australia.html  /services/locations/australia/devops-quality-services-australia.html  301
-
-/services/locations/usa/software_testing-usa.html  /services/locations/usa/devops-quality-services-usa.html  301
-/services/locations/uk/software_testing-uk.html  /services/locations/uk/devops-quality-services-uk.html  301
-/services/locations/canada/software_testing-canada.html  /services/locations/canada/devops-quality-services-canada.html  301
-/services/locations/australia/software_testing-australia.html  /services/locations/australia/devops-quality-services-australia.html  301
-
-/services/locations/usa/dashboards-usa.html  /services/locations/usa/data-analytics-services-usa.html  301
-/services/locations/uk/dashboards-uk.html  /services/locations/uk/data-analytics-services-uk.html  301
-/services/locations/canada/dashboards-canada.html  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/australia/dashboards-australia.html  /services/locations/australia/data-analytics-services-australia.html  301
-
-/services/locations/usa/cloud-managment-usa.html  /services/locations/usa/cloud-services-usa.html  301
-/services/locations/uk/cloud-managment-uk.html  /services/locations/uk/cloud-services-uk.html  301
-/services/locations/canada/cloud-managment-canada.html  /services/locations/canada/cloud-services-canada.html  301
-/services/locations/australia/cloud-managment-australia.html  /services/locations/australia/cloud-services-australia.html  301
-
-/services/locations/usa/cybersecurity-solutions-usa.html  /services/locations/usa/security-services-usa.html  301
-/services/locations/uk/cybersecurity-solutions-uk.html  /services/locations/uk/security-services-uk.html  301
-/services/locations/canada/cybersecurity-solutions-canada.html  /services/locations/canada/security-services-canada.html  301
-/services/locations/australia/cybersecurity-solutions-australia.html  /services/locations/australia/security-services-australia.html  301
-
-/services/locations/usa/ai-integration-usa.html  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/uk/ai-integration-uk.html  /services/locations/uk/ai-ml-services-uk.html  301
-/services/locations/canada/ai-integration-canada.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/australia/ai-integration-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
-
-/services/locations/usa/data-analytics-usa.html  /services/locations/usa/data-analytics-services-usa.html  301
-/services/locations/uk/data-analytics-uk.html  /services/locations/uk/data-analytics-services-uk.html  301
-/services/locations/canada/data-analytics-canada.html  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/australia/data-analytics-australia.html  /services/locations/australia/data-analytics-services-australia.html  301
+# Old root-level location pages (missing /locations/ prefix)
+/services/engineering-services-australia.html  /services/hardware-iot-engineering.html  301
+/services/python-automation-australia.html  /services.html  301
+/services/bpo-australia.html  /services.html  301
+/services/professional-technology-training-australia.html  /services.html  301
+/services/staff-augmentation-australia.html  /services.html  301
+/services/ar_vr_development-australia.html  /services.html  301
+/services/game_development-uk.html  /services.html  301
+/services/python-automation-uk.html  /services.html  301
+/services/professional-technology-training-uk.html  /services.html  301
+/services/bpo-uk.html  /services.html  301
+/services/bpo-usa.html  /services.html  301
+/services/professional-technology-training-usa.html  /services.html  301
 
 # ============================================
-# CITY-LEVEL PAGES -> COUNTRY-LEVEL
+# REMOVED BLOG POSTS -> BLOG LISTING
 # ============================================
-
-# USA Cities -> USA Country Level
-/services/locations/usa/cities/los-angeles/digital_marketing_services-los-angeles.html  /services/locations/usa/digital_marketing_services-usa.html  301
-/services/locations/usa/cities/san-francisco/digital_marketing_services-san-francisco.html  /services/locations/usa/digital_marketing_services-usa.html  301
-/services/locations/usa/cities/san-francisco/erp_implementation-san-francisco.html  /services/locations/usa/erp_implementation-usa.html  301
-/services/locations/usa/cities/san-francisco/staff-augmentation-san-francisco.html  /services/locations/usa/staff-augmentation-usa.html  301
-/services/locations/usa/cities/seattle/web-development-seattle.html  /services/locations/usa/web-development-usa.html  301
-/services/locations/usa/cities/chicago/ar_vr_development-chicago.html  /services/locations/usa/ar_vr_development-usa.html  301
-/services/locations/usa/cities/los-angeles/bpo-los-angeles.html  /services/locations/usa/bpo-usa.html  301
-/services/locations/usa/cities/new-york/e_commerce_solutions-new-york.html  /services/locations/usa/e_commerce_solutions-usa.html  301
-
-# UK Cities -> UK Country Level
-/services/locations/uk/cities/london/blockchain_development-london.html  /services/locations/uk/blockchain-development-uk.html  301
-/services/locations/uk/cities/london/digital_marketing_services-london.html  /services/locations/uk/digital_marketing_services-uk.html  301
-/services/locations/uk/cities/london/ar_vr_development-london.html  /services/locations/uk/ar_vr_development-uk.html  301
-/services/locations/uk/cities/london/game_development-london.html  /services/locations/uk/game_development-uk.html  301
-/services/locations/uk/cities/london/professional-technology-training-london.html  /services/locations/uk/professional-technology-training-uk.html  301
-/services/locations/uk/cities/birmingham/fintech_development-birmingham.html  /services/locations/uk/fintech-development-uk.html  301
-/services/locations/uk/cities/manchester/fintech_development-manchester.html  /services/locations/uk/fintech-development-uk.html  301
-
-# Canada Cities -> Canada Country Level
-/services/locations/canada/cities/montreal/data-analytics-montreal.html  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/canada/cities/montreal/game_development-montreal.html  /services/locations/canada/game_development-canada.html  301
-/services/locations/canada/cities/montreal/game-development-montreal.html  /services/locations/canada/game_development-canada.html  301
-/services/locations/canada/cities/montreal/staff-augmentation-montreal.html  /services/locations/canada/staff-augmentation-canada.html  301
-/services/locations/canada/cities/montreal/web-development-montreal.html  /services/locations/canada/web-development-canada.html  301
-/services/locations/canada/cities/montreal/hardware_cad-montreal.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/canada/cities/montreal/mobile_app.development-montreal.html  /services/locations/canada/mobile_app_development-canada.html  301
-/services/locations/canada/cities/vancouver/natural_language_processing-vancouver.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/canada/cities/vancouver/data-analytics-vancouver.html  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/canada/cities/vancouver/web-development-vancouver.html  /services/locations/canada/web-development-canada.html  301
-/services/locations/canada/cities/vancouver/ui_ux_design_services-vancouver.html  /services/locations/canada/design-services-canada.html  301
-/services/locations/canada/cities/vancouver/mobile_app.development-vancouver.html  /services/locations/canada/mobile_app_development-canada.html  301
-/services/locations/canada/cities/toronto/data-analytics-toronto.html  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/canada/cities/toronto/computer_vision_service-toronto.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/canada/cities/toronto/web-development-toronto.html  /services/locations/canada/web-development-canada.html  301
-/services/locations/canada/cities/toronto/erp_implementation-toronto.html  /services/locations/canada/erp_implementation-canada.html  301
-
-# Australia Cities -> Australia Country Level
-/services/locations/australia/cities/brisbane/bpo-brisbane.html  /services/locations/australia/bpo-australia.html  301
-/services/locations/australia/cities/brisbane/professional-technology-training-brisbane.html  /services/locations/australia/professional-technology-training-australia.html  301
-/services/locations/australia/cities/brisbane/ar_vr_development-brisbane.html  /services/locations/australia/ar_vr_development-australia.html  301
-/services/locations/australia/cities/brisbane/fintech_development-brisbane.html  /services/locations/australia/fintech_development-australia.html  301
-/services/locations/australia/cities/brisbane/mobile_app.development-brisbane.html  /services/locations/australia/mobile-app-development-australia.html  301
-/services/locations/australia/cities/brisbane/cybersecurity-solutions-brisbane.html  /services/locations/australia/security-services-australia.html  301
-/services/locations/australia/cities/brisbane/devops_consulting-brisbane.html  /services/locations/australia/devops-quality-services-australia.html  301
-/services/locations/australia/cities/brisbane/brand_and_digital_design-brisbane.html  /services/locations/australia/design-services-australia.html  301
-/services/locations/australia/cities/melbourne/bpo-melbourne.html  /services/locations/australia/bpo-australia.html  301
-/services/locations/australia/cities/melbourne/ui_ux_design_services-melbourne.html  /services/locations/australia/design-services-australia.html  301
-/services/locations/australia/cities/sydney/computer_vision_service-sydney.html  /services/locations/australia/ai-ml-services-australia.html  301
-/services/locations/australia/cities/sydney/iot_device_development-sydney.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
-/services/locations/australia/cities/sydney/cloud-managment-sydney.html  /services/locations/australia/cloud-services-australia.html  301
-/services/locations/australia/cities/sydney/brand_and_digital_design-sydney.html  /services/locations/australia/design-services-australia.html  301
+/blog/a-guide-to-acquiring-bpo-projects-from-the-uk-market.html  /blog.html  301
+/blog/best-bpo-projects-from-direct-clients-complete-guide.html  /blog.html  301
+/blog/how-to-get-amazon-bpo-projects-complete-guide.html  /blog.html  301
+/blog/how-to-get-bpo-projects-from-uk-a-strategic-guide.html  /blog.html  301
+/blog/best-online-it-training-providers-for-cloud-ai-skills.html  /blog.html  301
+/blog/choosing-the-best-it-training-providers-for-your-team.html  /blog.html  301
+/blog/bigcommerce-development-uk-building-scalable-e-commerce.html  /blog.html  301
+/blog/navigating-bigcommerce-development-for-uk-e-commerce.html  /blog.html  301
+/blog/how-to-evaluate-ecommerce-platforms-complete-guide.html  /blog.html  301
+/blog/cloud-services-in-london-choosing-the-right-provider.html  /blog.html  301
+/blog/cloud-services-in-london-top-providers-migration-strategies.html  /blog.html  301
+/blog/why-uk-businesses-need-expert-cloud-services-in-london.html  /blog.html  301
+/blog/big0-company-profile-ai-software-development-experts.html  /blog.html  301
+/blog/big0-your-partner-for-ai-cloud-software-solutions.html  /blog.html  301
+/blog/api-economy-integration.html  /blog.html  301
+/blog/build-vs-buy-software.html  /blog.html  301
+/blog/cloud-migration-best-practices.html  /blog.html  301
+/blog/cybersecurity-trends-2024.html  /blog.html  301
+/blog/data-driven-decision-making.html  /blog.html  301
+/blog/odoo-erp-business-case.html  /blog.html  301
+/blog/remote-engineering-teams.html  /blog.html  301
+/blog/technical-debt-hidden-costs.html  /blog.html  301
+/blog/true-cost-legacy-systems.html  /blog.html  301
+/blog/why-companies-choose-odoo-crm-over-standard-solutions.html  /blog.html  301
 
 # ============================================
-# ADDITIONAL EXTENSIONLESS VARIANTS (root level)
+# REMOVED PAGES -> CLOSEST MATCH
 # ============================================
-/services/ui_ux_design_services  /services/design-services.html  301
-/services/embedded_systems_development  /services/hardware-iot-engineering.html  301
-/services/iot_device_development  /services/hardware-iot-engineering.html  301
-/services/natural_language_processing  /services/ai-ml-services.html  301
-
-# ============================================
-# LOCATION PATH FIXES (extensionless & hyphen variants)
-# ============================================
-
-# fintech_development -> fintech-development (UK)
-/services/locations/uk/fintech_development-uk.html  /services/locations/uk/fintech-development-uk.html  301
-/services/locations/uk/fintech_development-uk  /services/locations/uk/fintech-development-uk.html  301
-/services/locations/uk/blockchain_development-uk.html  /services/locations/uk/blockchain-development-uk.html  301
-
-# mobile_app.development fixes (dot to underscore)
-/services/locations/canada/mobile_app.development-canada.html  /services/locations/canada/mobile_app_development-canada.html  301
-/services/locations/australia/mobile_app.development-australia.html  /services/locations/australia/mobile-app-development-australia.html  301
-
-# Extensionless variants for location paths
-/services/locations/canada/cybersecurity-solutions-canada  /services/locations/canada/security-services-canada.html  301
-/services/locations/canada/iot_device_development-canada  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/uk/iot_device_development-uk  /services/locations/uk/hardware-iot-engineering-uk.html  301
-/services/locations/australia/computer_vision_service-australia  /services/locations/australia/ai-ml-services-australia.html  301
-/services/locations/canada/computer_vision_service-canada  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/usa/computer_vision_service-usa  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/australia/software_testing-australia  /services/locations/australia/devops-quality-services-australia.html  301
-/services/locations/uk/brand_and_digital_design-uk  /services/locations/uk/design-services-uk.html  301
-/services/locations/canada/pcb_design_and_layout-canada  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/uk/embedded_systems_development-uk  /services/locations/uk/hardware-iot-engineering-uk.html  301
-
-# Additional extensionless location variants from 404 list
-/services/locations/australia/ai-integration-australia  /services/locations/australia/ai-ml-services-australia.html  301
-/services/locations/australia/dashboards-australia  /services/locations/australia/data-analytics-services-australia.html  301
-/services/locations/australia/fintech_development-australia  /services/locations/australia/fintech_development-australia.html  301
-/services/locations/australia/cities/sydney/cloud-managment-sydney  /services/locations/australia/cloud-services-australia.html  301
-/services/locations/canada/cities/montreal/game_development-montreal  /services/locations/canada/game_development-canada.html  301
-/services/locations/canada/cities/toronto/data-analytics-toronto  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/canada/software-development-canada  /services/locations/canada/software-development-canada.html  301
-/services/locations/canada/ui_ux_design_services-canada  /services/locations/canada/design-services-canada.html  301
-/services/locations/uk/digital_marketing_services-uk  /services/locations/uk/digital_marketing_services-uk.html  301
-/services/locations/uk/ui_ux_design_services-uk  /services/locations/uk/design-services-uk.html  301
-/services/locations/usa/ar_vr_development-usa  /services/locations/usa/ar_vr_development-usa.html  301
-
-# Hyphen/underscore variants
-/services/locations/canada/ui-ux-design-services-canada.html  /services/locations/canada/design-services-canada.html  301
-/services/locations/uk/digital-marketing-services-uk.html  /services/locations/uk/digital_marketing_services-uk.html  301
-/services/locations/uk/brand-and-digital-design-uk.html  /services/locations/uk/design-services-uk.html  301
-/services/locations/australia/computer-vision-service-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
-/services/locations/canada/computer-vision-service-canada.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/canada/iot-device-development-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/australia/fintech-development-australia.html  /services/locations/australia/fintech_development-australia.html  301
-/services/locations/australia/erp-implementation-australia.html  /services/locations/australia/erp_implementation-australia.html  301
-/services/locations/australia/software-testing-australia.html  /services/locations/australia/devops-quality-services-australia.html  301
-/services/locations/canada/pcb-design-and-layout-canada.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-/services/locations/uk/embedded-systems-development-uk.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
+/products.html  /products/ai-project-manager.html  301
+/products  /products/ai-project-manager  301
+/partners.html  /about.html  301
+/partners  /about  301
 
 # ============================================
-# BLOGS (old paths without .html)
+# BLOGS (old specific paths)
 # ============================================
 /blogs/ai-transformation-2024  /blog/ai-transformation-2024.html  301
 /blogs/cloud-migration-best-practices  /blog/cloud-migration-best-practices.html  301
 /blogs/cloud-migration-best-practices.html  /blog/cloud-migration-best-practices.html  301
-
-# ============================================
-# ADDITIONAL CITY-LEVEL -> COUNTRY-LEVEL
-# ============================================
-
-# Australia Cities
-/services/locations/australia/cities/brisbane/pcb_design_and_layout-brisbane.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
-/services/locations/australia/cities/melbourne/dashboards-melbourne.html  /services/locations/australia/data-analytics-services-australia.html  301
-
-# Canada Cities
-/services/locations/canada/cities/toronto/natural_language_processing-toronto.html  /services/locations/canada/ai-ml-services-canada.html  301
-/services/locations/canada/cities/vancouver/pcb_design_and_layout-vancouver.html  /services/locations/canada/hardware-iot-engineering-canada.html  301
-
-# UK Cities
-/services/locations/uk/cities/birmingham/ui_ux_design_services-birmingham.html  /services/locations/uk/design-services-uk.html  301
-/services/locations/uk/cities/london/computer_vision_service-london.html  /services/locations/uk/ai-ml-services-uk.html  301
-/services/locations/uk/cities/london/data-analytics-london.html  /services/locations/uk/data-analytics-services-uk.html  301
-/services/locations/uk/cities/london/hardware_cad-london.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
-/services/locations/uk/cities/london/natural_language_processing-london.html  /services/locations/uk/ai-ml-services-uk.html  301
-/services/locations/uk/cities/manchester/data-analytics-manchester.html  /services/locations/uk/data-analytics-services-uk.html  301
-/services/locations/uk/cities/manchester/iot_device_development-manchester.html  /services/locations/uk/hardware-iot-engineering-uk.html  301
-
-# USA Cities
-/services/locations/usa/cities/austin/fintech_development-austin.html  /services/locations/usa/fintech_development-usa.html  301
-/services/locations/usa/cities/austin/professional-technology-training-austin.html  /services/locations/usa/professional-technology-training-usa.html  301
-/services/locations/usa/cities/chicago/ai-integration-chicago.html  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/usa/cities/chicago/hardware_cad-chicago.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
-/services/locations/usa/cities/los-angeles/ai-integration-los-angeles.html  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/usa/cities/los-angeles/ui_ux_design_services-los-angeles.html  /services/locations/usa/design-services-usa.html  301
-/services/locations/usa/cities/new-york/brand_and_digital_design-new-york  /services/locations/usa/design-services-usa.html  301
-/services/locations/usa/cities/new-york/brand_and_digital_design-new-york.html  /services/locations/usa/design-services-usa.html  301
-/services/locations/usa/cities/new-york/brand-and-digital-design-new-york.html  /services/locations/usa/design-services-usa.html  301
-/services/locations/usa/cities/new-york/dashboards-new-york.html  /services/locations/usa/data-analytics-services-usa.html  301
-/services/locations/usa/cities/new-york/data-analytics-new-york.html  /services/locations/usa/data-analytics-services-usa.html  301
-/services/locations/usa/cities/san-francisco/ai-integration-san-francisco.html  /services/locations/usa/ai-ml-services-usa.html  301
-/services/locations/usa/cities/san-francisco/cloud-managment-san-francisco.html  /services/locations/usa/cloud-services-usa.html  301
-/services/locations/usa/cities/san-francisco/pcb_design_and_layout-san-francisco  /services/locations/usa/hardware-iot-engineering-usa.html  301
-/services/locations/usa/cities/san-francisco/pcb_design_and_layout-san-francisco.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
-/services/locations/usa/cities/san-francisco/ui_ux_design_services-san-francisco.html  /services/locations/usa/design-services-usa.html  301
-/services/locations/usa/cities/seattle/cybersecurity-solutions-seattle.html  /services/locations/usa/security-services-usa.html  301
-/services/locations/usa/cities/seattle/embedded_systems_development-seattle.html  /services/locations/usa/software-development-usa.html  301
-/services/locations/usa/cities/seattle/iot_device_development-seattle.html  /services/locations/usa/hardware-iot-engineering-usa.html  301
-
-# ============================================
-# ADDITIONAL COUNTRY-LEVEL REDIRECTS (extensionless)
-# ============================================
-/services/locations/australia/web-development-australia  /services/locations/australia/web-development-australia.html  301
-/services/locations/usa/blockchain_development-usa  /services/locations/usa/blockchain_development-usa.html  301
-
-# ============================================
-# MOBILE APP DEVELOPMENT - Fix dot vs underscore
-# ============================================
-# Main service page
-/services/mobile_app.development  /services/mobile_app_development.html  301
-/services/mobile_app.development.html  /services/mobile_app_development.html  301
-
-# USA location
-/services/locations/usa/mobile_app.development-usa  /services/locations/usa/mobile_app_development-usa.html  301
-/services/locations/usa/mobile_app.development-usa.html  /services/locations/usa/mobile_app_development-usa.html  301
-
-# UK location
-/services/locations/uk/mobile_app.development-uk  /services/locations/uk/mobile_app_development-uk.html  301
-/services/locations/uk/mobile_app.development-uk.html  /services/locations/uk/mobile_app_development-uk.html  301
-
-# Canada location
-/services/locations/canada/mobile_app.development-canada  /services/locations/canada/mobile_app_development-canada.html  301
-/services/locations/canada/mobile_app.development-canada.html  /services/locations/canada/mobile_app_development-canada.html  301
-
-# Australia location
-/services/locations/australia/mobile_app.development-australia  /services/locations/australia/mobile-app-development-australia.html  301
-/services/locations/australia/mobile_app.development-australia.html  /services/locations/australia/mobile-app-development-australia.html  301
 
 # ============================================
 # 404 PAGE - Return proper 404 status
@@ -419,33 +289,10 @@
 /404.html /404.html 404!
 
 # ============================================
-# SYSTEM ARTIFACTS (404 - can't redirect meaningfully)
+# SYSTEM ARTIFACTS
 # ============================================
 /cgi-bin/*  /404.html  404
 /_next/*  /404.html  404
-
-# ============================================
-# ADDITIONAL LOCATION-LEVEL REDIRECTS
-# ============================================
-# UK location pages with underscore naming
-/services/locations/uk/blockchain_development-uk.html  /services/locations/uk/blockchain-development-uk.html  301
-/services/locations/uk/fintech_development-uk.html  /services/locations/uk/fintech-development-uk.html  301
-
-# Data analytics naming variations
-/services/locations/uk/data-analytics-uk.html  /services/locations/uk/data-analytics-services-uk.html  301
-/services/locations/canada/data-analytics-canada.html  /services/locations/canada/data-analytics-services-canada.html  301
-/services/locations/australia/data-analytics-australia.html  /services/locations/australia/data-analytics-services-australia.html  301
-
-# (software-development pages exist - no redirect needed)
-
-# Additional embedded systems redirects
-/services/locations/australia/embedded_systems_development-australia.html  /services/locations/australia/software-development-australia.html  301
-
-# Additional NLP redirects
-/services/locations/australia/natural_language_processing-australia.html  /services/locations/australia/ai-ml-services-australia.html  301
-
-# Additional IoT redirects
-/services/locations/australia/iot_device_development-australia.html  /services/locations/australia/hardware-iot-engineering-australia.html  301
 
 # ============================================
 # MISCELLANEOUS

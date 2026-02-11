@@ -6,14 +6,14 @@
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/detail-pages.css">
-<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ static }}/contact-form-bant.css"></noscript>
 {% endblock %}
 
 {% block content %}
 <!-- Industry Detail Hero -->
 <section class="page-hero">
   <div class="container">
-    <!-- Breadcrumbs -->
     <nav class="breadcrumbs mb-lg">
       <a href="{{ home }}" class="breadcrumb-link">Home</a>
       <span class="breadcrumb-separator">/</span>
@@ -21,13 +21,17 @@
       <span class="breadcrumb-separator">/</span>
       <span class="breadcrumb-current">{{ current_industry.title }}</span>
     </nav>
-    
-    <div class="hero-content text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold">{{ current_industry.title }}</h1>
-      <p class="text-xl text-secondary mt-lg">
-        {{ current_industry.frontmatter.tagline | default('Transforming industries with innovative technology solutions') }}
-      </p>
-      <div class="text-sm text-tertiary mt-md">
+
+    <div class="max-w-3xl">
+      <h1 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px;">{{ current_industry.title }}</h1>
+      {% if current_industry.solutions %}
+      <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;">
+        {% for solution in current_industry.solutions[:4] %}
+        <span class="badge badge-cyan">{{ solution }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div style="color: var(--color-mist); font-size: 13px; display: flex; align-items: center; gap: 4px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle;">
           <circle cx="12" cy="12" r="10"/>
           <polyline points="12 6 12 12 16 14"/>
@@ -42,16 +46,13 @@
 <section class="section">
   <div class="container">
     <div class="max-w-4xl mx-auto">
-      <!-- Main Content -->
       <div class="detail-content">
-        <p class="lead">{{ current_industry.lead_text | default('We provide innovative technology solutions tailored specifically for the ' + current_industry.title|lower + ' industry, helping businesses optimize operations and drive growth.') }}</p>
         {{ current_industry.content_html | safe }}
       </div>
 
       {% if current_industry.solutions %}
-      <!-- Industry Solutions -->
       <div class="key-features-section">
-        <h3 class="text-lg font-semibold mb-lg text-gradient">Our Solutions</h3>
+        <h3>Our Solutions</h3>
         <div class="features-grid">
           {% for solution in current_industry.solutions %}
           <div class="feature-item">
@@ -66,15 +67,8 @@
       </div>
       {% endif %}
 
-      <!-- Navigation -->
       <div class="text-center mt-3xl">
-        <a href="../industries.html" class="btn btn-secondary">
-          <svg class="mr-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5"/>
-            <polyline points="12 19 5 12 12 5"/>
-          </svg>
-          Back to Industries
-        </a>
+        <a href="../industries.html" class="btn btn-secondary">&larr; Back to Industries</a>
       </div>
     </div>
   </div>
@@ -82,29 +76,26 @@
 
 <!-- Related Services -->
 {% if current_industry.related_services %}
-<section class="section bg-light">
+<section class="section section-alt">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Related Services</h2>
-      <p class="section-subtitle">
-        Explore our specialized <span class="text-gradient">solutions</span> for {{ current_industry.title | lower }}
-      </p>
-    </div>
+    <div class="section-label">Related Services</div>
+    <h2 class="section-title" style="margin-bottom: 32px;">How We Help {{ current_industry.title }}</h2>
 
-    <div class="grid grid-3 gap-xl grid-mobile-1">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto;">
       {% for service_slug in current_industry.related_services[:6] %}
         {% set service = services | selectattr("slug", "equalto", service_slug) | first %}
         {% if service %}
-        <div class="service-preview-card">
-          <div class="icon-container icon-lg icon-gradient">
+        <a href="../services/{{ service.slug }}.html" class="capability-card" style="text-decoration: none;">
+          {% if service.icon %}
+          <div class="capability-icon">
             {{ inject_svg(service.icon, True) | safe }}
           </div>
-          <h3 class="text-lg font-semibold">{{ service.title }}</h3>
-          <p class="text-tertiary text-sm">{{ service.excerpt }}</p>
-          <a href="../services/{{ service.slug }}.html" class="btn btn-secondary btn-sm mt-auto">
-            Learn About {{ service.title }}
-          </a>
-        </div>
+          {% endif %}
+          <div class="capability-content">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.excerpt }}</p>
+          </div>
+        </a>
         {% endif %}
       {% endfor %}
     </div>
@@ -112,10 +103,10 @@
 </section>
 {% endif %}
 
-<!-- Contact Form Section -->
+<!-- Contact Form -->
 <section class="section">
   <div class="container">
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       {% include 'contact-form-bant.html' %}
     </div>
   </div>
@@ -125,23 +116,23 @@
 {% block scripts %}
 {{ super() }}
 <script>
-// Calculate reading time
 document.addEventListener('DOMContentLoaded', function() {
-  const content = document.querySelector('.detail-content');
-  const readingTimeElement = document.querySelector('.reading-time');
-  
-  if (content && readingTimeElement) {
-    // Get text content and count words
-    const text = content.textContent || content.innerText;
-    const words = text.trim().split(/\s+/).length;
-    
-    // Calculate reading time (200 words per minute average)
-    const wordsPerMinute = 200;
-    const readingTime = Math.ceil(words / wordsPerMinute);
-    
-    // Update the display
-    readingTimeElement.textContent = `${readingTime} min read`;
+  var c = document.querySelector('.detail-content');
+  var r = document.querySelector('.reading-time');
+  if (c && r) {
+    var w = (c.textContent || c.innerText).trim().split(/\s+/).length;
+    r.textContent = Math.ceil(w / 200) + ' min read';
   }
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.querySelector('.faq-question').addEventListener('click', function() {
+      var active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function(o) {
+        if (o !== item) { o.classList.remove('active'); o.querySelector('.faq-question').setAttribute('aria-expanded','false'); }
+      });
+      item.classList.toggle('active', !active);
+      this.setAttribute('aria-expanded', !active);
+    });
+  });
 });
 </script>
 {% endblock %}

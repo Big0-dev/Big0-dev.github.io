@@ -1,7 +1,7 @@
 ---
 title: "How AI Transformed Our Conveyancing Practice"
 subtitle: A conversation between two UK property law firm partners
-meta_description: Two UK law firm partners discuss how Big0's AI document analysis cut conveyancing time by 50% while maintaining solicitor-quality accuracy.
+meta_description: Two UK law firm partners discuss how Big0's AI document analysis dramatically reduced conveyancing time while maintaining solicitor-quality accuracy.
 category: Legal Technology
 intro: "Sarah Mitchell, Managing Partner at Mitchell & Associates Solicitors in London, meets with her former colleague Richard Hayes, Senior Partner at Hayes Legal in Manchester, at a Law Society conference to discuss technology in modern conveyancing."
 date: 2025-01-03

@@ -2,14 +2,14 @@
 title: "AI Regulation Gets Real"
 issue_number: 6
 date: December 2, 2025
-meta_description: The EU AI Act isn't coming - it's here. First enforcement actions, FTC oversight expansion, and what builders need to know about compliance.
-subtitle: Your weekly guide to AI technology and the future
+meta_description: The EU AI Act is here. First enforcement actions, FTC oversight expansion, and what builders need to know about compliance.
+subtitle: Perspectives on AI technology and what's next
 topics: [regulation, eu-ai-act, compliance, ftc, policy]
 ---
 
 The compliance emails are arriving. If you're building AI products for European customers, you know exactly what I'm talking about.
 
-The EU AI Act isn't coming. It's here. And it's the first binding regulation with real teeth to reach production AI systems.
+The EU AI Act isn't theoretical. It's enforceable. And it's the first binding regulation with real teeth to reach production AI systems.
 
 Whether you're building in Brussels or Boston, this matters. The EU sets the template others follow. What starts in Europe rarely stays in Europe.
 
@@ -17,18 +17,18 @@ Here's what you need to know.
 
 ---
 
-## This Week in AI
+## What's Moving
 
-### EU AI Act First Enforcement Actions
+### EU AI Act Enforcement Begins
 
-**What's new:** The EU AI Office issued formal warnings to three companies for non-compliance with high-risk system requirements.
+**The reality:** The EU AI Office has started issuing formal warnings for non-compliance with high-risk system requirements.
 
 **The issues cited:**
 - Insufficient human oversight mechanisms
 - Inadequate risk documentation
 - Missing technical documentation for regulatory review
 
-**The fines possible:** Up to 7% of global revenue for serious violations. These warnings precede enforcement.
+**The fines possible:** Up to 7% of global revenue for serious violations. Warnings precede enforcement.
 
 **The signal:** This isn't paper regulation. Enforcement has teeth.
 
@@ -36,7 +36,7 @@ Here's what you need to know.
 
 ### US Federal Trade Commission Expands AI Oversight
 
-**What's new:** FTC announced it will use existing consumer protection authority to police AI harms - no new legislation required.
+**The approach:** The FTC is using existing consumer protection authority to police AI harms — no new legislation required.
 
 **The focus:**
 - Deceptive AI marketing claims
@@ -44,7 +44,7 @@ Here's what you need to know.
 - Discrimination in AI-powered services
 - Unfair data practices in model training
 
-**The mechanism:** Section 5 of the FTC Act prohibits "unfair or deceptive acts." AI harms can fit this framework.
+**The mechanism:** Section 5 of the FTC Act prohibits "unfair or deceptive acts." AI harms fit this framework.
 
 **The implication:** Federal AI regulation through enforcement, not legislation.
 
@@ -52,7 +52,7 @@ Here's what you need to know.
 
 ### China Updates Generative AI Service Rules
 
-**What's new:** China's CAC (Cyberspace Administration) expanded rules requiring pre-deployment security assessments for generative AI services.
+**The direction:** China's CAC (Cyberspace Administration) continues expanding rules requiring pre-deployment security assessments for generative AI services.
 
 **The requirements:**
 - Training data must be "lawful" (politically as well as legally)
@@ -175,29 +175,29 @@ Here's what you need to know.
 
 ---
 
-## Tool of the Week: AI Compliance Tracker
+## Tool Worth Knowing: AI Compliance Trackers
 
-Open-source dashboard for tracking AI regulatory requirements across jurisdictions.
+Open-source dashboards for tracking AI regulatory requirements across jurisdictions.
 
-**What it does:**
-- Maps regulations to system features
-- Tracks compliance status
-- Generates documentation templates
-- Alerts for regulatory updates
+**What they do:**
+- Map regulations to system features
+- Track compliance status
+- Generate documentation templates
+- Alert for regulatory updates
 
-**Who it's for:** Teams building AI products for international markets.
+**Who they're for:** Teams building AI products for international markets.
 
-**The limitation:** Regulation is complex. This is a starting point, not legal advice.
+**The limitation:** Regulation is complex. These are starting points, not legal advice.
 
 ---
 
 ## What We're Reading
 
-**"The Brussels Effect in AI"** - Analysis of how EU regulation shapes global AI development, even for non-European companies.
+**"The Brussels Effect in AI"** — Analysis of how EU regulation shapes global AI development, even for non-European companies.
 
-**"Compliance as Competitive Advantage"** - Counter-intuitive argument that early compliance creates market position.
+**"Compliance as Competitive Advantage"** — Counter-intuitive argument that early compliance creates market position.
 
-**"The Regulatory Fragmentation Problem"** - Survey of global AI regulation and its implications for development.
+**"The Regulatory Fragmentation Problem"** — Survey of global AI regulation and its implications for development.
 
 ---
 
@@ -209,10 +209,10 @@ The best case: regulation that prevents genuine harms while preserving innovatio
 
 The worst case: patchwork rules that add friction without preventing harm, or overly broad restrictions that push development to less regulated jurisdictions.
 
-Builders have a stake in this. Engaging with regulatory processes - providing technical input, identifying unintended consequences, proposing workable alternatives - isn't just good citizenship. It's self-interest.
+Builders have a stake in this. Engaging with regulatory processes — providing technical input, identifying unintended consequences, proposing workable alternatives — isn't just good citizenship. It's self-interest.
 
-The rules being written now will shape AI development for decades. Showing up matters.
+The rules being written now will shape AI development for years to come. Showing up matters.
 
-See you next week.
+Until next time.
 
-*Zero to One: Tech Frontiers: Understanding AI technology and building the future.*
+*Zero to One: Tech Frontiers*

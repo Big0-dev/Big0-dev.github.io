@@ -1,665 +1,198 @@
-<!-- BANT Contact Form - Jinja2 Template -->
+<!-- Contact Form -->
 <div class="contact-form-container">
-  <div class="form-header">
-    <h2>Let's Discuss Your Project</h2>
-    <p>
-      Tell us about your requirements and we'll provide a tailored solution for
-      your business needs within 24 Hrs.
-    </p>
-  </div>
-
   <form
     id="contactForm"
     class="contact-form"
     action="https://api.web3forms.com/submit"
     method="POST"
   >
-    <!-- Web3Forms Access Key -->
-    <input
-      type="hidden"
-      name="access_key"
-      value="4995bef8-9b68-4453-ae2b-6618d35c4278"
-    />
-
-    <!-- Honeypot for spam protection -->
+    <input type="hidden" name="access_key" value="4995bef8-9b68-4453-ae2b-6618d35c4278" />
     <input type="checkbox" name="botcheck" style="display: none" />
 
-    <!-- Contact Information Section -->
-    <div class="form-section">
-      <h3 class="form-section-title">Contact Information</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name" class="form-label">
-            Full Name <span class="required">*</span>
-          </label>
-          <div class="input-wrapper">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-input"
-              placeholder="Enter your full name"
-              required
-              autocomplete="name"
-            />
-            <div class="input-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="name-error"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="email" class="form-label">
-            Email Address <span class="required">*</span>
-          </label>
-          <div class="input-wrapper">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-input"
-              placeholder="email@company.com"
-              required
-              autocomplete="email"
-            />
-            <div class="input-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="email-error"></div>
-        </div>
+    <!-- Row 1: Name + Email -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name" class="form-label">Full Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required autocomplete="name" />
+        <div class="form-error" id="name-error"></div>
       </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone" class="form-label">
-            Phone Number <span class="required">*</span>
-          </label>
-          <div class="input-wrapper">
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="form-input"
-              placeholder="+1 (555) 123-4567"
-              required
-              autocomplete="tel"
-            />
-            <div class="input-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="phone-error"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="company" class="form-label">
-            Company Name <span class="required">*</span>
-          </label>
-          <div class="input-wrapper">
-            <input
-              type="text"
-              id="company"
-              name="company"
-              class="form-input"
-              placeholder="Your Company Ltd."
-              required
-              autocomplete="organization"
-            />
-            <div class="input-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M3 21h18"></path>
-                <path d="M5 21V7l8-4v18"></path>
-                <path d="M19 21V11l-6-4"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="company-error"></div>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="job_title" class="form-label">
-            Job Title <span class="required">*</span>
-          </label>
-          <div class="input-wrapper">
-            <input
-              type="text"
-              id="job_title"
-              name="job_title"
-              class="form-input"
-              placeholder="CEO, CTO, PM, etc."
-              required
-            />
-            <div class="input-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="job_title-error"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="company_size" class="form-label">
-            Company Size <span class="required">*</span>
-          </label>
-          <div class="select-wrapper">
-            <select
-              id="company_size"
-              name="company_size"
-              class="form-select"
-              required
-            >
-              <option value="">Select company size</option>
-              <option value="1-10">1-10 employees</option>
-              <option value="11-50">11-50 employees</option>
-              <option value="51-200">51-200 employees</option>
-              <option value="201-1000">201-1,000 employees</option>
-              <option value="1000+">1,000+ employees</option>
-            </select>
-            <div class="select-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="company_size-error"></div>
-        </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="email@company.com" required autocomplete="email" />
+        <div class="form-error" id="email-error"></div>
       </div>
     </div>
 
-    <!-- Project Details Section (BANT) -->
-    <div class="form-section">
-      <h3 class="form-section-title">Project Requirements</h3>
-
-      <!-- Need & Technical Fit -->
+    <!-- Row 2: Phone + Company -->
+    <div class="form-row">
       <div class="form-group">
-        <label for="project_type" class="form-label">
-          Service Needed <span class="required">*</span>
-        </label>
-        <div class="select-wrapper">
-          <select
-            id="project_type"
-            name="project_type"
-            class="form-select"
-            required
-          >
-            <option value="">Select the service you need</option>
-            <option value="staff-augmentation">Staff Augmentation</option>
-            <option value="ai-ml-integration">
-              AI & Machine Learning Integration
-            </option>
-            <option value="ar-vr-development">AR/VR Development</option>
-            <option value="blockchain-development">
-              Blockchain Development
-            </option>
-            <option value="brand-digital-design">Brand & Digital Design</option>
-            <option value="business-process-outsourcing">
-              Business Process Outsourcing
-            </option>
-            <option value="cloud-infrastructure-management">
-              Cloud Infrastructure Management
-            </option>
-            <option value="computer-vision">Computer Vision</option>
-            <option value="custom-software-development">
-              Custom Software Development
-            </option>
-            <option value="data-analytics-bi">
-              Data Analytics & Business Intelligence
-            </option>
-            <option value="devops-consulting">DevOps Consulting</option>
-            <option value="digital-marketing">
-              Digital Marketing Services
-            </option>
-            <option value="ecommerce-solutions">E-commerce Solutions</option>
-            <option value="erp-implementation">ERP Implementation</option>
-            <option value="embedded-systems">
-              Embedded Systems Development
-            </option>
-            <option value="cybersecurity">
-              Enterprise Cybersecurity Solutions
-            </option>
-            <option value="fintech-development">Fintech Development</option>
-            <option value="game-development">Game Development</option>
-            <option value="hardware-cad-design">Hardware CAD Design</option>
-            <option value="healthcare-it">Healthcare IT Solutions</option>
-            <option value="interactive-dashboards">
-              Interactive Dashboard Development
-            </option>
-            <option value="iot-development">IoT Device Development</option>
-            <option value="mobile-app-development">
-              Mobile App Development
-            </option>
-            <option value="web-development">Modern Web Development</option>
-            <option value="natural-language-processing">
-              Natural Language Processing
-            </option>
-            <option value="pcb-design">PCB Design & Layout</option>
-            <option value="technology-training">
-              Professional Technology Training
-            </option>
-            <option value="python-automation">
-              Python Automation & Scripting
-            </option>
-            <option value="software-testing">Software Testing Services</option>
-            <option value="ui-ux-design">UI/UX Design Services</option>
-            <option value="multiple-services">Multiple Services</option>
-            <option value="not-sure">Not Sure / Need Consultation</option>
-          </select>
-          <div class="select-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <polyline points="6,9 12,15 18,9"></polyline>
-            </svg>
-          </div>
-        </div>
+        <label for="phone" class="form-label">Phone <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 123-4567" required autocomplete="tel" />
+        <div class="form-error" id="phone-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="company" class="form-label">Company <span class="required">*</span></label>
+        <input type="text" id="company" name="company" class="form-input" placeholder="Your Company Ltd." required autocomplete="organization" />
+        <div class="form-error" id="company-error"></div>
+      </div>
+    </div>
+
+    <!-- Row 3: Job Title + Company Size -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="job_title" class="form-label">Job Title <span class="required">*</span></label>
+        <input type="text" id="job_title" name="job_title" class="form-input" placeholder="CEO, CTO, PM, etc." required />
+        <div class="form-error" id="job_title-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="company_size" class="form-label">Company Size <span class="required">*</span></label>
+        <select id="company_size" name="company_size" class="form-input" required>
+          <option value="">Select size</option>
+          <option value="1-10">1-10 employees</option>
+          <option value="11-50">11-50 employees</option>
+          <option value="51-200">51-200 employees</option>
+          <option value="201-1000">201-1,000 employees</option>
+          <option value="1000+">1,000+ employees</option>
+        </select>
+        <div class="form-error" id="company_size-error"></div>
+      </div>
+    </div>
+
+    <!-- Row 4: Service + Budget -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="project_type" class="form-label">Service Needed <span class="required">*</span></label>
+        <select id="project_type" name="project_type" class="form-input" required>
+          <option value="">Select service</option>
+          <option value="ai-ml-integration">AI & Machine Learning</option>
+          <option value="hardware-engineering">Hardware & Engineering</option>
+          <option value="custom-software-development">Custom Software Development</option>
+          <option value="multiple-services">Multiple Services</option>
+          <option value="not-sure">Not Sure</option>
+        </select>
         <div class="form-error" id="project_type-error"></div>
       </div>
-
-      <!-- Budget -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="budget_range" class="form-label">
-            Budget Range <span class="required">*</span>
-          </label>
-          <div class="select-wrapper">
-            <select
-              id="budget_range"
-              name="budget_range"
-              class="form-select"
-              required
-            >
-              <option value="">Select budget range</option>
-              <option value="under-10k">Under $10,000</option>
-              <option value="10k-25k">$10,000 - $25,000</option>
-              <option value="25k-50k">$25,000 - $50,000</option>
-              <option value="50k-100k">$50,000 - $100,000</option>
-              <option value="100k-250k">$100,000 - $250,000</option>
-              <option value="250k+">$250,000+</option>
-              <option value="discuss">Prefer to discuss</option>
-            </select>
-            <div class="select-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="budget_range-error"></div>
-        </div>
-
-        <!-- Timeline -->
-        <div class="form-group">
-          <label for="timeline" class="form-label">
-            Timeline <span class="required">*</span>
-          </label>
-          <div class="select-wrapper">
-            <select id="timeline" name="timeline" class="form-select" required>
-              <option value="">Select timeline</option>
-              <option value="asap">ASAP (within 1 month)</option>
-              <option value="1-3-months">1-3 months</option>
-              <option value="3-6-months">3-6 months</option>
-              <option value="6-12-months">6-12 months</option>
-              <option value="12-months+">12+ months</option>
-              <option value="flexible">Flexible timeline</option>
-            </select>
-            <div class="select-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </div>
-          </div>
-          <div class="form-error" id="timeline-error"></div>
-        </div>
-      </div>
-
-      <!-- Authority -->
       <div class="form-group">
-        <label for="decision_maker" class="form-label">
-          Decision Making Authority <span class="required">*</span>
-        </label>
-        <div class="select-wrapper">
-          <select
-            id="decision_maker"
-            name="decision_maker"
-            class="form-select"
-            required
-          >
-            <option value="">Select your role in decision making</option>
-            <option value="final-decision">I make the final decision</option>
-            <option value="recommend">I recommend, others decide</option>
-            <option value="influence">I influence the decision</option>
-            <option value="gather-info">I'm gathering information</option>
-          </select>
-          <div class="select-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <polyline points="6,9 12,15 18,9"></polyline>
-            </svg>
-          </div>
-        </div>
-        <div class="form-error" id="decision_maker-error"></div>
-      </div>
-
-      <!-- Message -->
-      <div class="form-group">
-        <label for="message" class="form-label">
-          Project Details <span class="required">*</span>
-        </label>
-        <div class="textarea-wrapper">
-          <textarea
-            id="message"
-            name="message"
-            class="form-textarea"
-            placeholder="Please describe your project requirements, technical challenges, and specific goals..."
-            rows="5"
-            required
-          ></textarea>
-          <div class="textarea-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-        <div class="form-error" id="message-error"></div>
+        <label for="budget_range" class="form-label">Budget Range <span class="required">*</span></label>
+        <select id="budget_range" name="budget_range" class="form-input" required>
+          <option value="">Select budget</option>
+          <option value="10k-25k">$10k - $25k</option>
+          <option value="25k-50k">$25k - $50k</option>
+          <option value="50k-100k">$50k - $100k</option>
+          <option value="100k-250k">$100k - $250k</option>
+          <option value="250k+">$250k+</option>
+          <option value="discuss">Prefer to discuss</option>
+        </select>
+        <div class="form-error" id="budget_range-error"></div>
       </div>
     </div>
 
-    <!-- Submit Button -->
-    <div class="form-submit">
-      <button type="submit" class="form-button" id="submitBtn">
-        <span class="button-content">
-          <span class="button-text">Send Message</span>
-          <span class="button-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22,2 15,22 11,13 2,9"></polygon>
-            </svg>
-          </span>
-        </span>
-        <span class="button-loading" style="display: none">
-          <svg class="loading-spinner" viewBox="0 0 24 24">
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              opacity="0.25"
-            />
-            <path
-              d="M12 2a10 10 0 0 1 10 10"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-            />
-          </svg>
-          <span>Sending...</span>
-        </span>
-      </button>
+    <!-- Row 5: Timeline (full width) -->
+    <div class="form-group">
+      <label for="timeline" class="form-label">Timeline <span class="required">*</span></label>
+      <select id="timeline" name="timeline" class="form-input" required>
+        <option value="">Select timeline</option>
+        <option value="asap">ASAP (within 1 month)</option>
+        <option value="1-3-months">1-3 months</option>
+        <option value="3-6-months">3-6 months</option>
+        <option value="6-12-months">6-12 months</option>
+        <option value="12-months+">12+ months</option>
+        <option value="flexible">Flexible</option>
+      </select>
+      <div class="form-error" id="timeline-error"></div>
     </div>
 
-    <!-- Success/Error Messages -->
-    <div class="form-message" id="formMessage" style="display: none">
-      <div class="message-content">
-        <div class="message-icon" id="messageIcon"></div>
-        <div class="message-text" id="messageText"></div>
-      </div>
+    <!-- Message -->
+    <div class="form-group">
+      <label for="message" class="form-label">Project Details <span class="required">*</span></label>
+      <textarea id="message" name="message" class="form-input form-textarea" placeholder="What are you building? What problem are you solving?" rows="4" required></textarea>
+      <div class="form-error" id="message-error"></div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width: 100%; margin-top: 8px;">
+      <span class="button-content">Send Message &rarr;</span>
+      <span class="button-loading" style="display: none;">Sending...</span>
+    </button>
+
+    <!-- Status -->
+    <div class="form-message" id="formMessage" style="display: none;">
+      <span id="messageText"></span>
     </div>
   </form>
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const buttonText = submitBtn.querySelector(".button-content");
-    const buttonLoading = submitBtn.querySelector(".button-loading");
-    const formMessage = document.getElementById("formMessage");
-    const messageText = document.getElementById("messageText");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const btnContent = submitBtn.querySelector(".button-content");
+  const btnLoading = submitBtn.querySelector(".button-loading");
+  const formMessage = document.getElementById("formMessage");
+  const messageText = document.getElementById("messageText");
 
-    // Form validation
-    function validateField(field) {
-      const value = field.value.trim();
-      const fieldName = field.name;
-      const errorElement = document.getElementById(`${fieldName}-error`);
-      let isValid = true;
-      let errorMessage = "";
+  function validateField(field) {
+    const value = field.value.trim();
+    const errorEl = document.getElementById(`${field.name}-error`);
+    if (!errorEl) return true;
+    let valid = true, msg = "";
+    field.classList.remove("error");
+    errorEl.style.display = "none";
 
-      field.classList.remove("error");
-      field.parentElement.classList.remove("error");
-      errorElement.classList.remove("show");
-
-      if (field.hasAttribute("required") && !value) {
-        isValid = false;
-        errorMessage = `This field is required.`;
-      } else if (fieldName === "email" && value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-          isValid = false;
-          errorMessage = "Please enter a valid email address.";
-        }
-      } else if (fieldName === "phone" && value) {
-        const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{8,}$/;
-        if (!phoneRegex.test(value)) {
-          isValid = false;
-          errorMessage = "Please enter a valid phone number.";
-        }
-      } else if (fieldName === "message" && value && value.length < 20) {
-        isValid = false;
-        errorMessage = "Please provide more details (minimum 20 characters).";
-      }
-
-      if (!isValid) {
-        field.classList.add("error");
-        field.parentElement.classList.add("error");
-        errorElement.textContent = errorMessage;
-        errorElement.classList.add("show");
-      }
-
-      return isValid;
+    if (field.required && !value) {
+      valid = false; msg = "Required.";
+    } else if (field.name === "email" && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      valid = false; msg = "Enter a valid email.";
+    } else if (field.name === "phone" && value && !/^[\+]?[1-9][\d\s\-\(\)]{8,}$/.test(value)) {
+      valid = false; msg = "Enter a valid phone number.";
+    } else if (field.name === "message" && value && value.length < 20) {
+      valid = false; msg = "Minimum 20 characters.";
     }
-
-    // Real-time validation
-    const formFields = form.querySelectorAll(
-      ".form-input, .form-textarea, .form-select",
-    );
-    formFields.forEach((field) => {
-      field.addEventListener("blur", () => validateField(field));
-      field.addEventListener("input", () => {
-        if (field.classList.contains("error")) {
-          validateField(field);
-        }
-      });
-    });
-
-    // Show message
-    function showMessage(type, message) {
-      formMessage.className = `form-message ${type}`;
-      messageText.textContent = message;
-      formMessage.style.display = "block";
-      formMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    if (!valid) {
+      field.classList.add("error");
+      errorEl.textContent = msg;
+      errorEl.style.display = "block";
     }
+    return valid;
+  }
 
-    // Hide message
-    function hideMessage() {
-      formMessage.style.display = "none";
-    }
-
-    // Form submission
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      hideMessage();
-
-      // Validate all fields
-      let isFormValid = true;
-      formFields.forEach((field) => {
-        if (!validateField(field)) {
-          isFormValid = false;
-        }
-      });
-
-      if (!isFormValid) {
-        showMessage("error", "Please fix the errors above and try again.");
-        return;
-      }
-
-      // Show loading state
-      submitBtn.disabled = true;
-      buttonText.style.display = "none";
-      buttonLoading.style.display = "flex";
-
-      try {
-        // Create FormData
-        const formData = new FormData();
-
-        // Add all form fields
-        formData.append("access_key", "4995bef8-9b68-4453-ae2b-6618d35c4278");
-        formData.append("name", document.getElementById("name").value);
-        formData.append("email", document.getElementById("email").value);
-        formData.append("phone", document.getElementById("phone").value);
-        formData.append("company", document.getElementById("company").value);
-        formData.append(
-          "job_title",
-          document.getElementById("job_title").value,
-        );
-        formData.append(
-          "company_size",
-          document.getElementById("company_size").value,
-        );
-        formData.append(
-          "project_type",
-          document.getElementById("project_type").value,
-        );
-        formData.append(
-          "budget_range",
-          document.getElementById("budget_range").value,
-        );
-        formData.append("timeline", document.getElementById("timeline").value);
-        formData.append(
-          "decision_maker",
-          document.getElementById("decision_maker").value,
-        );
-        formData.append("message", document.getElementById("message").value);
-        formData.append("botcheck", "");
-
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          showMessage(
-            "success",
-            "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.",
-          );
-          form.reset();
-        } else {
-          showMessage(
-            "error",
-            data.message ||
-              "There was an error sending your message. Please try again.",
-          );
-        }
-      } catch (error) {
-        console.error("Form submission error:", error);
-        showMessage(
-          "error",
-          "There was an error sending your message. Please try again or contact us directly at contact@big0.dev",
-        );
-      } finally {
-        // Reset button state
-        submitBtn.disabled = false;
-        buttonText.style.display = "flex";
-        buttonLoading.style.display = "none";
-      }
-    });
-
-    // Auto-resize textarea
-    const textarea = document.getElementById("message");
-    textarea.addEventListener("input", function () {
-      this.style.height = "auto";
-      this.style.height = Math.max(this.scrollHeight, 120) + "px";
-    });
+  form.querySelectorAll(".form-input, .form-textarea").forEach(f => {
+    f.addEventListener("blur", () => validateField(f));
+    f.addEventListener("input", () => { if (f.classList.contains("error")) validateField(f); });
   });
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    formMessage.style.display = "none";
+    let valid = true;
+    form.querySelectorAll(".form-input, .form-textarea").forEach(f => { if (!validateField(f)) valid = false; });
+    if (!valid) return;
+
+    submitBtn.disabled = true;
+    btnContent.style.display = "none";
+    btnLoading.style.display = "inline";
+
+    try {
+      const fd = new FormData(form);
+      const res = await fetch(form.action, { method: "POST", body: fd });
+      const data = await res.json();
+      if (data.success) {
+        formMessage.className = "form-message success";
+        messageText.textContent = "Message sent! We'll get back to you within 24 hours.";
+        form.reset();
+      } else {
+        formMessage.className = "form-message error";
+        messageText.textContent = data.message || "Error sending message. Please try again.";
+      }
+    } catch (err) {
+      formMessage.className = "form-message error";
+      messageText.textContent = "Error sending message. Email us at contact@big0.dev";
+    } finally {
+      submitBtn.disabled = false;
+      btnContent.style.display = "inline";
+      btnLoading.style.display = "none";
+      formMessage.style.display = "block";
+    }
+  });
+});
 </script>

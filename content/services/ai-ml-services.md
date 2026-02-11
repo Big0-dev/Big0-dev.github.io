@@ -8,8 +8,8 @@ meta_description: AI systems that replace manual work — document processing, w
   automation, visual inspection, and predictive intelligence. Backed by peer-reviewed
   research.
 icon: ai
-features: "Document automation, Workflow intelligence, Visual inspection, Demand forecasting,
-  Data infrastructure, Research-grade AI"
+features: "Doc automation, Workflows, Vision AI, Forecasting,
+  Data infra, Research-grade AI"
 keywords:
   - AI
 hero_image: ai

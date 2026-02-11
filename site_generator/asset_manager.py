@@ -47,10 +47,9 @@ class AssetManager:
         """Scan templates and content to find all referenced image filenames."""
         referenced: Set[str] = set()
 
-        # Pattern for explicit image references with extensions
+        # Pattern for any image filename (with extension) appearing in source files
         image_pattern = re.compile(
-            r'(?:src=["\']|url\(["\']?|image_url:\s*|hero_image:\s*|image:\s*)'
-            r'(?:\.\./)?(?:static/)?([^"\')\s]+\.(?:avif|jpg|jpeg|png|webp))',
+            r'([\w][\w.\-]*\.(?:avif|jpg|jpeg|png|webp))',
             re.IGNORECASE,
         )
 

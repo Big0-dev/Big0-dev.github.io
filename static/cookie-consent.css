@@ -83,7 +83,7 @@
 
 .cookie-consent-btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(127, 62, 152, 0.4);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
 }
 
 .cookie-consent-btn-secondary {

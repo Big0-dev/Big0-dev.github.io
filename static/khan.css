@@ -63,8 +63,8 @@
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: rgba(127, 62, 152, 0.12);
-  border: 1px solid rgba(127, 62, 152, 0.2);
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -106,18 +106,18 @@
   transform: translateY(-2px);
 }
 .khan-feature-card-highlight {
-  border-color: rgba(127, 62, 152, 0.4);
+  border-color: rgba(13, 148, 136, 0.4);
   background: linear-gradient(
     135deg,
     var(--color-slate) 0%,
-    rgba(127, 62, 152, 0.06) 100%
+    rgba(13, 148, 136, 0.06) 100%
   );
 }
 .khan-feature-icon {
   width: 44px;
   height: 44px;
-  background: rgba(127, 62, 152, 0.12);
-  border: 1px solid rgba(127, 62, 152, 0.2);
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: 10px;
   display: flex;
   align-items: center;

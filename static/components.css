@@ -1,6 +1,6 @@
 /* =============================================================================
    COMPONENTS.CSS — Reusable UI Components
-   Dark engineering aesthetic. Brand purple (#7f3e98).
+   Dark engineering aesthetic. Brand teal (#0D9488).
    ============================================================================= */
 
 /* --- NAVBAR --- */
@@ -206,7 +206,7 @@
   padding: 0;
 }
 .close-btn:hover {
-  background: rgba(127, 62, 152, 0.1);
+  background: rgba(13, 148, 136, 0.1);
   border-color: var(--color-signal);
   transform: rotate(90deg);
 }
@@ -292,7 +292,7 @@
 #search-input:focus {
   outline: none;
   border-color: var(--color-signal);
-  box-shadow: 0 0 0 3px rgba(127, 62, 152, 0.1);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 .search-submit {
   background: transparent;
@@ -576,8 +576,8 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: rgba(127, 62, 152, 0.12);
-  border: 1px solid rgba(127, 62, 152, 0.2);
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: 8px;
 }
 .service-preview-card .icon-container svg {
@@ -621,8 +621,8 @@
 .case-study-icon {
   width: 40px;
   height: 40px;
-  background: rgba(127, 62, 152, 0.12);
-  border: 1px solid rgba(127, 62, 152, 0.2);
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -830,7 +830,7 @@
   border: none;
 }
 .btn-secondary.nav-search-btn:hover {
-  background: rgba(127, 62, 152, 0.1);
+  background: rgba(13, 148, 136, 0.1);
   border: none;
 }
 #search-form .btn-primary {
@@ -839,7 +839,7 @@
   padding: 4px;
 }
 #search-form .btn-primary:hover {
-  background: rgba(127, 62, 152, 0.1) !important;
+  background: rgba(13, 148, 136, 0.1) !important;
   transform: none;
   box-shadow: none;
 }
@@ -1131,7 +1131,7 @@
 }
 .lightbox-nav:hover {
   opacity: 1;
-  background: rgba(127, 62, 152, 0.8);
+  background: rgba(13, 148, 136, 0.8);
   border-color: white;
   transform: translateY(-50%) scale(1.1);
 }

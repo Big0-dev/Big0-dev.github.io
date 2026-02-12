@@ -507,7 +507,7 @@ const recentSearches = (function() {
             font-weight: bold;
         }
         mark {
-            background-color: rgba(127, 62, 152, 0.2);
+            background-color: rgba(13, 148, 136, 0.2);
             color: var(--color-white);
             font-weight: 600;
             padding: 0 2px;

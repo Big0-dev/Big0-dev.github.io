@@ -42,7 +42,7 @@
   white-space: nowrap;
 }
 .hero-dot {
-  color: var(--color-signal, #7f3e98);
+  color: var(--color-signal, #0D9488);
 }
 .hero-sub {
   font-size: 16px;
@@ -78,7 +78,7 @@
 .hero-blob-1 {
   width: 400px;
   height: 400px;
-  background: var(--color-signal, #7f3e98);
+  background: var(--color-signal, #0D9488);
   top: 10%;
   left: -5%;
 }
@@ -92,7 +92,7 @@
 .hero-blob-3 {
   width: 250px;
   height: 250px;
-  background: var(--color-signal, #7f3e98);
+  background: var(--color-signal, #0D9488);
   top: 50%;
   right: 20%;
   opacity: 0.08;
@@ -100,17 +100,17 @@
 
 /* --- Scramble text animation (used by text-scramble.js) --- */
 .scramble-char {
-  color: var(--color-signal, #7f3e98);
+  color: var(--color-signal, #0D9488);
   opacity: 0.9;
   display: inline-block;
 }
 .scramble-char.glitch {
   color: #fff;
-  text-shadow: 0 0 5px var(--color-signal, #7f3e98);
+  text-shadow: 0 0 5px var(--color-signal, #0D9488);
 }
 .scramble-char.glitch-intense {
   color: #fff;
-  text-shadow: 0 0 10px var(--color-signal, #7f3e98), 2px 0 var(--color-cyan, #06B6D4), -2px 0 var(--color-signal, #7f3e98);
+  text-shadow: 0 0 10px var(--color-signal, #0D9488), 2px 0 var(--color-cyan, #06B6D4), -2px 0 var(--color-signal, #0D9488);
 }
 .hero-scramble-text {
   display: inline-block;
@@ -195,7 +195,7 @@
   flex-direction: column;
 }
 .case-card:hover {
-  border-color: var(--color-signal, #7f3e98);
+  border-color: var(--color-signal, #0D9488);
   transform: translateY(-2px);
 }
 .case-img {
@@ -209,7 +209,7 @@
 .case-img-icon {
   width: 48px;
   height: 48px;
-  color: var(--color-signal, #7f3e98);
+  color: var(--color-signal, #0D9488);
 }
 .case-img-icon svg {
   width: 100%;
@@ -290,7 +290,7 @@
   align-items: flex-start;
 }
 .capability-card:hover {
-  border-color: var(--color-signal, #7f3e98);
+  border-color: var(--color-signal, #0D9488);
   transform: translateY(-2px);
 }
 .capability-hero {
@@ -304,13 +304,13 @@
   width: 48px;
   height: 48px;
   flex-shrink: 0;
-  background: rgba(127, 62, 152, 0.12);
-  border: 1px solid rgba(127, 62, 152, 0.2);
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-signal, #7f3e98);
+  color: var(--color-signal, #0D9488);
 }
 .capability-icon svg {
   width: 24px;
@@ -340,8 +340,8 @@
   font-size: 11px;
   font-weight: 500;
   color: var(--color-cloud, #F1F5F9);
-  background: rgba(127, 62, 152, 0.1);
-  border: 1px solid rgba(127, 62, 152, 0.15);
+  background: rgba(13, 148, 136, 0.1);
+  border: 1px solid rgba(13, 148, 136, 0.15);
   padding: 4px 8px;
   border-radius: 4px;
 }
@@ -362,7 +362,7 @@
   font-family: var(--font-display, 'Exo 2', sans-serif);
   font-size: 32px;
   font-weight: 700;
-  color: var(--color-signal, #7f3e98);
+  color: var(--color-signal, #0D9488);
   margin-bottom: 12px;
   line-height: 1;
 }
@@ -403,13 +403,13 @@
 .diff-icon {
   width: 44px;
   height: 44px;
-  background: rgba(127, 62, 152, 0.12);
-  border: 1px solid rgba(127, 62, 152, 0.2);
+  background: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-signal, #7f3e98);
+  color: var(--color-signal, #0D9488);
   margin-bottom: 16px;
 }
 .diff-icon svg {

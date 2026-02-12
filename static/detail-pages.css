@@ -261,7 +261,7 @@
   background: var(--color-signal-glow) !important;
   color: white !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(127, 62, 152, 0.3);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
 }
 
 /* Legacy detail-cta-box (same treatment) */
@@ -284,7 +284,7 @@
 .detail-cta-box .btn:hover {
   background: var(--color-signal-glow);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(127, 62, 152, 0.3);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
 }
 
 /* --- KEY FEATURES SECTION --- */
@@ -624,7 +624,7 @@ a.auto-link:hover {
   transition: background 0.2s;
   font-family: inherit;
 }
-.faq-question:hover { background: rgba(127, 62, 152, 0.03); }
+.faq-question:hover { background: rgba(13, 148, 136, 0.03); }
 .faq-question:focus { outline: none; }
 .faq-question-text {
   color: var(--color-white);

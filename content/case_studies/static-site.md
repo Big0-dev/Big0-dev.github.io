@@ -1,4 +1,5 @@
 ---
+attribution: big0_work
 title: Big0 Company Website
 industry: Technology
 type: Static Site

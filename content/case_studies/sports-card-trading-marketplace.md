@@ -1,4 +1,5 @@
 ---
+attribution: previous_firm
 challenge: Sports card collectors needed a secure way to execute complex multi-item trades
   with strangers — but counterfeits, condition disputes, and fraud risk made high-value
   exchanges too risky without a trusted intermediary.

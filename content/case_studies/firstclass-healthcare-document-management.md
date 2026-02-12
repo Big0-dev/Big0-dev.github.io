@@ -1,4 +1,5 @@
 ---
+attribution: previous_firm
 title: FirstClass Healthcare Document Management
 industry: Healthcare
 type: HIPAA Platform

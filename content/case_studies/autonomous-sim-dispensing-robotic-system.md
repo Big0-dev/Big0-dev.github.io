@@ -1,4 +1,5 @@
 ---
+attribution: research
 title: Autonomous SIM Dispensing Robotic System
 industry: Robotics
 type: Industrial Automation

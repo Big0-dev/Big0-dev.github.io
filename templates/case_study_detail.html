@@ -22,6 +22,13 @@
 
     <div class="max-w-3xl">
       <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+        {% if current_case_study.frontmatter.attribution == 'big0_work' %}
+        <span class="badge badge-green">Big0 Client Work</span>
+        {% elif current_case_study.frontmatter.attribution == 'previous_firm' %}
+        <span class="badge badge-primary">Previous Firm</span>
+        {% elif current_case_study.frontmatter.attribution == 'research' %}
+        <span class="badge badge-cyan">Founder's Research</span>
+        {% endif %}
         <span class="badge badge-cyan">{{ current_case_study.frontmatter.industry | default('Technology') }}</span>
         <span class="badge badge-green">{{ current_case_study.frontmatter.type | default('Case Study') }}</span>
         <span style="color: var(--color-mist); font-size: 13px; display: flex; align-items: center; gap: 4px;">

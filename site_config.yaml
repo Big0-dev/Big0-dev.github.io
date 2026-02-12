@@ -1,23 +1,23 @@
 # Site Configuration
 domain: https://big0.dev
-title: Big0 - AI-Powered Digital Transformation
+title: Big0 - Your Engineering Team, Without the Overhead
 
 # Static Pages - These templates contain their own content
 static_pages:
   - template: index.html
     output: index.html
-    title: AI-Powered Digital Transformation
-    description: Big0 builds production AI systems, ships hardware, and publishes research. Engineering that works.
+    title: Your Engineering Team, Without the Overhead
+    description: Big0 is the engineering team startups and growing companies hire when they need senior developers but not the overhead of a full team. AI-powered applications, custom software, and startup engineering.
     
   - template: about.html
     output: about.html
     title: About Us
-    description: Meet the Big0 leadership team - Kamran Bashir (Chairman), Hassan Kamran (CEO), Muhammad Ahmad (COO), Musab Akram (CTO). Learn about our mission to transform businesses through responsible AI innovation.
+    description: A small engineering team where the CEO writes code and the CTO reviews every PR. We build AI-powered applications and custom software for startups and growing companies.
     
   - template: contact.html
     output: contact.html
     title: Contact Us
-    description: Get in touch with Big0 for AI consulting, cloud solutions, and digital transformation services. Let's discuss how we can help transform your business.
+    description: Talk to our engineers directly — no sales team in between. Based in Islamabad (PKT/GMT+5) with overlap for UK and US time zones.
     
   - template: careers.html
     output: careers.html
@@ -69,12 +69,6 @@ content_types:
     listing_template: services.html
     output_dir: services
     
-  industries:
-    content_dir: ./content/industries
-    template: industry_detail.html
-    listing_template: industries.html
-    output_dir: industries
-    
   case_studies:
     content_dir: ./content/case_studies
     template: case_study_detail.html
@@ -122,7 +116,6 @@ navigation:
   khan: products/ai-project-manager.html
   products: products/ai-project-manager.html
   products_page: products/ai-project-manager.html
-  industries: industries.html
   gallery: gallery.html
   news: news.html
   privacy: privacy.html

@@ -1,4 +1,5 @@
 ---
+attribution: previous_firm
 title: Premium Finance Management Platform
 industry: Fintech
 type: Full-Stack Platform

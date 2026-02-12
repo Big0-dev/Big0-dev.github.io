@@ -10,32 +10,35 @@
 /blogs/*  /blog/:splat  301
 
 # ============================================
-# DELETED INDUSTRIES -> CATEGORY PAGE
+# ALL INDUSTRIES -> SERVICES (industries removed)
 # ============================================
-/industries/telecommunications.html  /industries.html  301
-/industries/telecommunications  /industries  301
-/industries/technology.html  /industries.html  301
-/industries/technology  /industries  301
-/industries/automotive.html  /industries.html  301
-/industries/automotive  /industries  301
-/industries/construction.html  /industries.html  301
-/industries/construction  /industries  301
-/industries/consumer-goods.html  /industries.html  301
-/industries/consumer-goods  /industries  301
-/industries/mining.html  /industries.html  301
-/industries/mining  /industries  301
-/industries/education.html  /industries.html  301
-/industries/education  /industries  301
-/industries/energy.html  /industries.html  301
-/industries/energy  /industries  301
-/industries/government.html  /industries.html  301
-/industries/government  /industries  301
-/industries/telecom.html  /industries.html  301
-/industries/telecom  /industries  301
-/industries/insurance.html  /industries.html  301
-/industries/insurance  /industries  301
-/industries/retail.html  /industries.html  301
-/industries/retail  /industries  301
+/industries/*  /services.html  301
+/industries.html  /services.html  301
+/industries  /services.html  301
+/industries/telecommunications.html  /services.html  301
+/industries/telecommunications  /services.html  301
+/industries/technology.html  /services.html  301
+/industries/technology  /services.html  301
+/industries/automotive.html  /services.html  301
+/industries/automotive  /services.html  301
+/industries/construction.html  /services.html  301
+/industries/construction  /services.html  301
+/industries/consumer-goods.html  /services.html  301
+/industries/consumer-goods  /services.html  301
+/industries/mining.html  /services.html  301
+/industries/mining  /services.html  301
+/industries/education.html  /services.html  301
+/industries/education  /services.html  301
+/industries/energy.html  /services.html  301
+/industries/energy  /services.html  301
+/industries/government.html  /services.html  301
+/industries/government  /services.html  301
+/industries/telecom.html  /services.html  301
+/industries/telecom  /services.html  301
+/industries/insurance.html  /services.html  301
+/industries/insurance  /services.html  301
+/industries/retail.html  /services.html  301
+/industries/retail  /services.html  301
 
 # ============================================
 # REMOVED SERVICES -> SERVICES LISTING
@@ -71,14 +74,24 @@
 /services/cloud-services  /services.html  301
 /services/devops-quality-services.html  /services.html  301
 /services/devops-quality-services  /services.html  301
-/services/design-services.html  /services/software-development.html  301
-/services/design-services  /services/software-development.html  301
-/services/mobile_app_development.html  /services/software-development.html  301
-/services/mobile_app_development  /services/software-development.html  301
-/services/web-development.html  /services/software-development.html  301
-/services/web-development  /services/software-development.html  301
-/services/engineering-services.html  /services/hardware-iot-engineering.html  301
-/services/engineering-services  /services/hardware-iot-engineering.html  301
+/services/design-services.html  /services/custom-software-development.html  301
+/services/design-services  /services/custom-software-development.html  301
+/services/mobile_app_development.html  /services/custom-software-development.html  301
+/services/mobile_app_development  /services/custom-software-development.html  301
+/services/web-development.html  /services/custom-software-development.html  301
+/services/web-development  /services/custom-software-development.html  301
+/services/engineering-services.html  /services/startup-engineering.html  301
+/services/engineering-services  /services/startup-engineering.html  301
+
+# ============================================
+# OLD SERVICE SLUGS -> NEW SERVICE SLUGS
+# ============================================
+/services/ai-ml-services  /services/ai-powered-applications.html  301
+/services/ai-ml-services.html  /services/ai-powered-applications.html  301
+/services/software-development  /services/custom-software-development.html  301
+/services/software-development.html  /services/custom-software-development.html  301
+/services/hardware-iot-engineering  /services/startup-engineering.html  301
+/services/hardware-iot-engineering.html  /services/startup-engineering.html  301
 
 # ============================================
 # OLD SERVICE NAME ALIASES -> KEPT SERVICES
@@ -104,58 +117,56 @@
 /services/devops_consulting.html  /services.html  301
 
 # Design/UX -> software development
-/services/ui_ux_design_services  /services/software-development.html  301
-/services/ui_ux_design_services.html  /services/software-development.html  301
-/services/ui-ux-design  /services/software-development.html  301
-/services/ui-ux-design.html  /services/software-development.html  301
-/services/brand_and_digital_design  /services/software-development.html  301
-/services/brand_and_digital_design.html  /services/software-development.html  301
+/services/ui_ux_design_services  /services/custom-software-development.html  301
+/services/ui_ux_design_services.html  /services/custom-software-development.html  301
+/services/ui-ux-design  /services/custom-software-development.html  301
+/services/ui-ux-design.html  /services/custom-software-development.html  301
+/services/brand_and_digital_design  /services/custom-software-development.html  301
+/services/brand_and_digital_design.html  /services/custom-software-development.html  301
 
 # Hardware/IoT/Embedded -> hardware-iot-engineering
-/services/cad-design  /services/hardware-iot-engineering.html  301
-/services/cad-design.html  /services/hardware-iot-engineering.html  301
-/services/pcb_design_and_layout  /services/hardware-iot-engineering.html  301
-/services/pcb_design_and_layout.html  /services/hardware-iot-engineering.html  301
-/services/hardware_cad  /services/hardware-iot-engineering.html  301
-/services/hardware_cad.html  /services/hardware-iot-engineering.html  301
-/services/embedded_systems_development  /services/hardware-iot-engineering.html  301
-/services/embedded_systems_development.html  /services/hardware-iot-engineering.html  301
-/services/iot_device_development  /services/hardware-iot-engineering.html  301
-/services/iot_device_development.html  /services/hardware-iot-engineering.html  301
+/services/cad-design  /services/startup-engineering.html  301
+/services/cad-design.html  /services/startup-engineering.html  301
+/services/pcb_design_and_layout  /services/startup-engineering.html  301
+/services/pcb_design_and_layout.html  /services/startup-engineering.html  301
+/services/hardware_cad  /services/startup-engineering.html  301
+/services/hardware_cad.html  /services/startup-engineering.html  301
+/services/embedded_systems_development  /services/startup-engineering.html  301
+/services/embedded_systems_development.html  /services/startup-engineering.html  301
+/services/iot_device_development  /services/startup-engineering.html  301
+/services/iot_device_development.html  /services/startup-engineering.html  301
 
 # AI/ML aliases
-/services/ai-integration  /services/ai-ml-services.html  301
-/services/ai-integration.html  /services/ai-ml-services.html  301
-/services/computer_vision_service  /services/ai-ml-services.html  301
-/services/computer_vision_service.html  /services/ai-ml-services.html  301
-/services/natural_language_processing  /services/ai-ml-services.html  301
-/services/natural_language_processing.html  /services/ai-ml-services.html  301
+/services/ai-integration  /services/ai-powered-applications.html  301
+/services/ai-integration.html  /services/ai-powered-applications.html  301
+/services/computer_vision_service  /services/ai-powered-applications.html  301
+/services/computer_vision_service.html  /services/ai-powered-applications.html  301
+/services/natural_language_processing  /services/ai-powered-applications.html  301
+/services/natural_language_processing.html  /services/ai-powered-applications.html  301
 
 # Data aliases
-/services/data-analytics  /services/ai-ml-services.html  301
-/services/data-analytics.html  /services/ai-ml-services.html  301
-/services/data-engineering  /services/ai-ml-services.html  301
-/services/data-engineering.html  /services/ai-ml-services.html  301
-/services/dashboards  /services/ai-ml-services.html  301
-/services/dashboards.html  /services/ai-ml-services.html  301
+/services/data-analytics  /services/ai-powered-applications.html  301
+/services/data-analytics.html  /services/ai-powered-applications.html  301
+/services/data-engineering  /services/ai-powered-applications.html  301
+/services/data-engineering.html  /services/ai-powered-applications.html  301
+/services/dashboards  /services/ai-powered-applications.html  301
+/services/dashboards.html  /services/ai-powered-applications.html  301
 
 # Other old aliases -> services listing
 /services/manufacturing-automation  /services.html  301
 /services/manufacturing-automation.html  /services.html  301
-/services/custom-software-development  /services/software-development.html  301
-/services/custom-software-development.html  /services/software-development.html  301
 /services/digital-marketing  /services.html  301
 /services/digital-marketing.html  /services.html  301
 /services/digital-marketing-services  /services.html  301
 /services/digital-marketing-services.html  /services.html  301
-/services/mobile-app-development  /services/software-development.html  301
-/services/mobile-app-development.html  /services/software-development.html  301
+/services/mobile-app-development  /services/custom-software-development.html  301
+/services/mobile-app-development.html  /services/custom-software-development.html  301
 /services/project-management  /case-studies.html  301
 /services/project-management.html  /case-studies.html  301
 /services/compliance-services  /services.html  301
 /services/compliance-services.html  /services.html  301
-/services/mobile_app.development  /services/software-development.html  301
-/services/mobile_app.development.html  /services/software-development.html  301
+/services/mobile_app.development  /services/custom-software-development.html  301
+/services/mobile_app.development.html  /services/custom-software-development.html  301
 
 # Old service articles/blogs that were in /services/
 /services/federated-learning-collaborative-intelligence-without-compromise-1  /services  301
@@ -199,34 +210,34 @@
 /services/locations/*/cloud-services*  /services.html  301
 /services/locations/*/cloud-managment*  /services.html  301
 /services/locations/*/devops*  /services.html  301
-/services/locations/*/design-services*  /services/software-development.html  301
-/services/locations/*/mobile*  /services/software-development.html  301
-/services/locations/*/web-development*  /services/software-development.html  301
-/services/locations/*/engineering-services*  /services/hardware-iot-engineering.html  301
-/services/locations/*/ui_ux*  /services/software-development.html  301
-/services/locations/*/brand_and_digital*  /services/software-development.html  301
-/services/locations/*/brand-and-digital*  /services/software-development.html  301
+/services/locations/*/design-services*  /services/custom-software-development.html  301
+/services/locations/*/mobile*  /services/custom-software-development.html  301
+/services/locations/*/web-development*  /services/custom-software-development.html  301
+/services/locations/*/engineering-services*  /services/startup-engineering.html  301
+/services/locations/*/ui_ux*  /services/custom-software-development.html  301
+/services/locations/*/brand_and_digital*  /services/custom-software-development.html  301
+/services/locations/*/brand-and-digital*  /services/custom-software-development.html  301
 /services/locations/*/software_testing*  /services.html  301
 /services/locations/*/software-testing*  /services.html  301
 
 # All deleted location pages for surviving services -> parent service
-/services/locations/*/ai-ml-services*  /services/ai-ml-services.html  301
-/services/locations/*/hardware-iot*  /services/hardware-iot-engineering.html  301
-/services/locations/*/software-development*  /services/software-development.html  301
-/services/locations/*/data-analytics*  /services/ai-ml-services.html  301
+/services/locations/*/ai-ml-services*  /services/ai-powered-applications.html  301
+/services/locations/*/hardware-iot*  /services/startup-engineering.html  301
+/services/locations/*/software-development*  /services/custom-software-development.html  301
+/services/locations/*/data-analytics*  /services/ai-powered-applications.html  301
 /services/locations/*/professional-technology-training*  /services.html  301
-/services/locations/*/computer_vision*  /services/ai-ml-services.html  301
-/services/locations/*/natural_language*  /services/ai-ml-services.html  301
-/services/locations/*/ai-integration*  /services/ai-ml-services.html  301
-/services/locations/*/embedded*  /services/hardware-iot-engineering.html  301
-/services/locations/*/iot*  /services/hardware-iot-engineering.html  301
-/services/locations/*/pcb*  /services/hardware-iot-engineering.html  301
-/services/locations/*/hardware_cad*  /services/hardware-iot-engineering.html  301
-/services/locations/*/dashboards*  /services/ai-ml-services.html  301
-/services/locations/*/engineering-consultancy*  /services/hardware-iot-engineering.html  301
+/services/locations/*/computer_vision*  /services/ai-powered-applications.html  301
+/services/locations/*/natural_language*  /services/ai-powered-applications.html  301
+/services/locations/*/ai-integration*  /services/ai-powered-applications.html  301
+/services/locations/*/embedded*  /services/startup-engineering.html  301
+/services/locations/*/iot*  /services/startup-engineering.html  301
+/services/locations/*/pcb*  /services/startup-engineering.html  301
+/services/locations/*/hardware_cad*  /services/startup-engineering.html  301
+/services/locations/*/dashboards*  /services/ai-powered-applications.html  301
+/services/locations/*/engineering-consultancy*  /services/startup-engineering.html  301
 
 # Old root-level location pages (missing /locations/ prefix)
-/services/engineering-services-australia.html  /services/hardware-iot-engineering.html  301
+/services/engineering-services-australia.html  /services/startup-engineering.html  301
 /services/python-automation-australia.html  /services.html  301
 /services/bpo-australia.html  /services.html  301
 /services/professional-technology-training-australia.html  /services.html  301

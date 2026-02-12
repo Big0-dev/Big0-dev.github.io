@@ -372,7 +372,6 @@ class SiteGenerator:
         type_names = {
             'blog': 'blog',
             'services': 'service',
-            'industries': 'industry',
             'case_studies': 'case study',
             'news': 'news',
             'products': 'product',

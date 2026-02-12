@@ -1,4 +1,5 @@
 ---
+attribution: big0_work
 challenge: Grassroots civic organization with members across multiple countries needed
   digital infrastructure to manage operations and engage supporters—but enterprise
   solutions were far beyond their budget.

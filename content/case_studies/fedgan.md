@@ -1,4 +1,5 @@
 ---
+attribution: research
 title: FedGAN - Privacy-Preserving Medical Image Generation
 industry: Healthcare AI
 type: Federated Learning

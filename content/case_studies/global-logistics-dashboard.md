@@ -1,4 +1,5 @@
 ---
+attribution: previous_firm
 challenge: Global rental company losing money from missed orders due to poor visibility
   across 50+ country operations and legacy system limitations.
 cta_button: Request a Custom Demo

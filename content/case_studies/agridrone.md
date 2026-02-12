@@ -1,4 +1,5 @@
 ---
+attribution: research
 title: Agricultural Sprayer Drone
 industry: Agriculture
 type: Custom Drone

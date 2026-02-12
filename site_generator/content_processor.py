@@ -66,7 +66,7 @@ class ContentProcessor:
         # Auto-link industry and service mentions for specific page types
         link_path = output_path if output_path else file_path
         paths_to_check = [str(file_path), str(output_path) if output_path else '']
-        if any(path in p for p in paths_to_check for path in ['services/', 'industries/', 'blogs/', 'case_studies/', 'case-studies/', 'news/', 'conversations/']):
+        if any(path in p for p in paths_to_check for path in ['services/', 'blogs/', 'case_studies/', 'case-studies/', 'news/', 'conversations/']):
             html_content = self.add_automatic_interlinking(html_content, link_path)
 
         # Extract first paragraph as excerpt
@@ -144,258 +144,185 @@ class ContentProcessor:
         depth = len(file_path.parts) - 1 if file_path.parts else 0
         path_prefix = "../" * depth
 
-        # Define industry mappings (expanded)
-        industry_links = {
-            # Finance Industry
-            'financial services': 'finance',
-            'fintech': 'finance',
-            'banking': 'finance',
-            'investment': 'finance',
-            'trading': 'finance',
-            'insurance': 'finance',
-            'wealth management': 'finance',
-            'payment processing': 'finance',
-            'digital banking': 'finance',
-            'financial institution': 'finance',
-
-            # Healthcare Industry
-            'healthcare': 'healthcare',
-            'health tech': 'healthcare',
-            'medical': 'healthcare',
-            'life sciences': 'healthcare',
-            'pharmaceutical': 'healthcare',
-            'biotech': 'healthcare',
-            'hospital': 'healthcare',
-            'clinical': 'healthcare',
-            'patient care': 'healthcare',
-            'medical device': 'healthcare',
-            'health information': 'healthcare',
-
-            # Manufacturing Industry
-            'manufacturing': 'manufacturing',
-            'factory': 'manufacturing',
-            'industrial': 'manufacturing',
-            'automotive': 'manufacturing',
-            'aerospace': 'manufacturing',
-            'agriculture': 'manufacturing',
-            'agricultural': 'manufacturing',
-            'farming': 'manufacturing',
-
-            # Logistics Industry
-            'logistics': 'logistics',
-            'supply chain': 'logistics',
-            'warehouse': 'logistics',
-            'shipping': 'logistics',
-            'freight': 'logistics',
-            'fleet management': 'logistics',
-
-            # Legal Industry
-            'legal': 'legal',
-            'law firm': 'legal',
-            'legal tech': 'legal',
-            'contract review': 'legal',
-            'due diligence': 'legal',
-            'compliance': 'legal',
-
-            # Real Estate Industry
-            'real estate': 'real-estate',
-            'property management': 'real-estate',
-            'property technology': 'real-estate',
-            'proptech': 'real-estate',
-
-            # Non-Profit & NGO Industry
-            'non-profit': 'non-profit',
-            'nonprofit': 'non-profit',
-            'ngo': 'non-profit',
-            'charity': 'non-profit',
-            'foundation': 'non-profit',
-            'advocacy': 'non-profit',
-            'civic organization': 'non-profit',
-            'community organization': 'non-profit',
-            'grassroots': 'non-profit',
-            'social impact': 'non-profit',
-            'volunteer organization': 'non-profit'
-        }
-
         # Define service mappings (comprehensive keyword dictionary)
         service_links = {
             # AI & Machine Learning
-            'ai integration': 'ai-ml-services',
-            'artificial intelligence': 'ai-ml-services',
-            'machine learning': 'ai-ml-services',
-            'deep learning': 'ai-ml-services',
-            'neural network': 'ai-ml-services',
-            'ai model': 'ai-ml-services',
-            'ml model': 'ai-ml-services',
-            'predictive analytics': 'ai-ml-services',
-            'ai solution': 'ai-ml-services',
+            'ai integration': 'ai-powered-applications',
+            'artificial intelligence': 'ai-powered-applications',
+            'machine learning': 'ai-powered-applications',
+            'deep learning': 'ai-powered-applications',
+            'neural network': 'ai-powered-applications',
+            'ai model': 'ai-powered-applications',
+            'ml model': 'ai-powered-applications',
+            'predictive analytics': 'ai-powered-applications',
+            'ai solution': 'ai-powered-applications',
 
             # Computer Vision (part of AI/ML services)
-            'computer vision': 'ai-ml-services',
-            'computer vision applications': 'ai-ml-services',
-            'computer vision services': 'ai-ml-services',
-            'image recognition': 'ai-ml-services',
-            'image recognition systems': 'ai-ml-services',
-            'object detection': 'ai-ml-services',
-            'facial recognition': 'ai-ml-services',
-            'image processing': 'ai-ml-services',
-            'visual data': 'ai-ml-services',
-            'opencv': 'ai-ml-services',
+            'computer vision': 'ai-powered-applications',
+            'computer vision applications': 'ai-powered-applications',
+            'computer vision services': 'ai-powered-applications',
+            'image recognition': 'ai-powered-applications',
+            'image recognition systems': 'ai-powered-applications',
+            'object detection': 'ai-powered-applications',
+            'facial recognition': 'ai-powered-applications',
+            'image processing': 'ai-powered-applications',
+            'visual data': 'ai-powered-applications',
+            'opencv': 'ai-powered-applications',
 
             # Natural Language Processing (part of AI/ML services)
-            'natural language processing': 'ai-ml-services',
-            'nlp': 'ai-ml-services',
-            'text analysis': 'ai-ml-services',
-            'sentiment analysis': 'ai-ml-services',
-            'chatbot': 'ai-ml-services',
-            'language model': 'ai-ml-services',
+            'natural language processing': 'ai-powered-applications',
+            'nlp': 'ai-powered-applications',
+            'text analysis': 'ai-powered-applications',
+            'sentiment analysis': 'ai-powered-applications',
+            'chatbot': 'ai-powered-applications',
+            'language model': 'ai-powered-applications',
 
             # Software Development
-            'custom software': 'software-development',
-            'software development': 'software-development',
-            'software solution': 'software-development',
-            'application development': 'software-development',
-            'software engineering': 'software-development',
-            'ros': 'software-development',
-            'ROS': 'software-development',
-            'gazebo': 'software-development',
-            'Gazebo': 'software-development',
-            'simulation': 'software-development',
-            'simulator': 'software-development',
+            'custom software': 'custom-software-development',
+            'software development': 'custom-software-development',
+            'software solution': 'custom-software-development',
+            'application development': 'custom-software-development',
+            'software engineering': 'custom-software-development',
+            'ros': 'custom-software-development',
+            'ROS': 'custom-software-development',
+            'gazebo': 'custom-software-development',
+            'Gazebo': 'custom-software-development',
+            'simulation': 'custom-software-development',
+            'simulator': 'custom-software-development',
 
             # Web & Mobile Development (part of Custom Software Development)
-            'web development': 'software-development',
-            'web application': 'software-development',
-            'web app': 'software-development',
-            'website development': 'software-development',
-            'mobile app': 'software-development',
-            'mobile application': 'software-development',
-            'frontend': 'software-development',
-            'backend': 'software-development',
-            'full stack': 'software-development',
+            'web development': 'custom-software-development',
+            'web application': 'custom-software-development',
+            'web app': 'custom-software-development',
+            'website development': 'custom-software-development',
+            'mobile app': 'custom-software-development',
+            'mobile application': 'custom-software-development',
+            'frontend': 'custom-software-development',
+            'backend': 'custom-software-development',
+            'full stack': 'custom-software-development',
 
             # Hardware & IoT Engineering (consolidated service)
-            'cad': 'hardware-iot-engineering',
-            'cad model': 'hardware-iot-engineering',
-            'hardware design': 'hardware-iot-engineering',
-            'mechanical design': 'hardware-iot-engineering',
-            '3d modeling': 'hardware-iot-engineering',
-            '3d design': 'hardware-iot-engineering',
-            '3d scanning': 'hardware-iot-engineering',
-            '3d ear scanning': 'hardware-iot-engineering',
-            'ergonomic design': 'hardware-iot-engineering',
-            'ergonomic 3d design': 'hardware-iot-engineering',
-            'product design': 'hardware-iot-engineering',
-            'industrial design': 'hardware-iot-engineering',
-            'mechanical construction': 'hardware-iot-engineering',
-            'modular construction': 'hardware-iot-engineering',
-            'modular mechanical design': 'hardware-iot-engineering',
-            'precision mechanical design': 'hardware-iot-engineering',
-            '3-axis gimbal': 'hardware-iot-engineering',
-            'gimbal': 'hardware-iot-engineering',
-            'biomechanical': 'hardware-iot-engineering',
-            'solidworks': 'hardware-iot-engineering',
-            'autocad': 'hardware-iot-engineering',
-            'fusion 360': 'hardware-iot-engineering',
-            'carbon fiber': 'hardware-iot-engineering',
-            'carbon fiber construction': 'hardware-iot-engineering',
-            'prototype': 'hardware-iot-engineering',
-            'prototyping': 'hardware-iot-engineering',
-            'wheelbase': 'hardware-iot-engineering',
-            'modular design': 'hardware-iot-engineering',
+            'cad': 'startup-engineering',
+            'cad model': 'startup-engineering',
+            'hardware design': 'startup-engineering',
+            'mechanical design': 'startup-engineering',
+            '3d modeling': 'startup-engineering',
+            '3d design': 'startup-engineering',
+            '3d scanning': 'startup-engineering',
+            '3d ear scanning': 'startup-engineering',
+            'ergonomic design': 'startup-engineering',
+            'ergonomic 3d design': 'startup-engineering',
+            'product design': 'startup-engineering',
+            'industrial design': 'startup-engineering',
+            'mechanical construction': 'startup-engineering',
+            'modular construction': 'startup-engineering',
+            'modular mechanical design': 'startup-engineering',
+            'precision mechanical design': 'startup-engineering',
+            '3-axis gimbal': 'startup-engineering',
+            'gimbal': 'startup-engineering',
+            'biomechanical': 'startup-engineering',
+            'solidworks': 'startup-engineering',
+            'autocad': 'startup-engineering',
+            'fusion 360': 'startup-engineering',
+            'carbon fiber': 'startup-engineering',
+            'carbon fiber construction': 'startup-engineering',
+            'prototype': 'startup-engineering',
+            'prototyping': 'startup-engineering',
+            'wheelbase': 'startup-engineering',
+            'modular design': 'startup-engineering',
 
             # Embedded Systems (part of Hardware & IoT Engineering)
-            'embedded system': 'hardware-iot-engineering',
-            'embedded software': 'hardware-iot-engineering',
-            'embedded': 'hardware-iot-engineering',
-            'arduino': 'hardware-iot-engineering',
-            'Arduino': 'hardware-iot-engineering',
-            'raspberry pi': 'hardware-iot-engineering',
-            'microcontroller': 'hardware-iot-engineering',
-            'firmware': 'hardware-iot-engineering',
-            'px4': 'hardware-iot-engineering',
-            'PX4': 'hardware-iot-engineering',
-            'px4 autopilot': 'hardware-iot-engineering',
-            'PX4 Autopilot': 'hardware-iot-engineering',
-            'flight controller': 'hardware-iot-engineering',
-            'dji n3': 'hardware-iot-engineering',
-            'DJI N3': 'hardware-iot-engineering',
-            'stm32': 'hardware-iot-engineering',
-            'STM32': 'hardware-iot-engineering',
-            'esp32': 'hardware-iot-engineering',
-            'ESP32': 'hardware-iot-engineering',
-            'bldc': 'hardware-iot-engineering',
-            'BLDC': 'hardware-iot-engineering',
-            'bldc motor': 'hardware-iot-engineering',
-            'BLDC motor': 'hardware-iot-engineering',
-            'motor control': 'hardware-iot-engineering',
-            'autopilot': 'hardware-iot-engineering',
+            'embedded system': 'startup-engineering',
+            'embedded software': 'startup-engineering',
+            'embedded': 'startup-engineering',
+            'arduino': 'startup-engineering',
+            'Arduino': 'startup-engineering',
+            'raspberry pi': 'startup-engineering',
+            'microcontroller': 'startup-engineering',
+            'firmware': 'startup-engineering',
+            'px4': 'startup-engineering',
+            'PX4': 'startup-engineering',
+            'px4 autopilot': 'startup-engineering',
+            'PX4 Autopilot': 'startup-engineering',
+            'flight controller': 'startup-engineering',
+            'dji n3': 'startup-engineering',
+            'DJI N3': 'startup-engineering',
+            'stm32': 'startup-engineering',
+            'STM32': 'startup-engineering',
+            'esp32': 'startup-engineering',
+            'ESP32': 'startup-engineering',
+            'bldc': 'startup-engineering',
+            'BLDC': 'startup-engineering',
+            'bldc motor': 'startup-engineering',
+            'BLDC motor': 'startup-engineering',
+            'motor control': 'startup-engineering',
+            'autopilot': 'startup-engineering',
 
             # IoT Development (part of Hardware & IoT Engineering)
-            'iot': 'hardware-iot-engineering',
-            'internet of things': 'hardware-iot-engineering',
-            'iot device': 'hardware-iot-engineering',
-            'smart device': 'hardware-iot-engineering',
-            'sensor': 'hardware-iot-engineering',
-            'sensing layer': 'hardware-iot-engineering',
-            'environmental sensor': 'hardware-iot-engineering',
-            'smart meter': 'hardware-iot-engineering',
-            'drone': 'hardware-iot-engineering',
-            'octocopter': 'hardware-iot-engineering',
-            'uav': 'hardware-iot-engineering',
-            'spray system': 'hardware-iot-engineering',
-            'precision spraying': 'hardware-iot-engineering',
-            'agricultural drone': 'hardware-iot-engineering',
-            'sprayer drone': 'hardware-iot-engineering',
-            'telemetry': 'hardware-iot-engineering',
-            'mqtt': 'hardware-iot-engineering',
-            'lorawan': 'hardware-iot-engineering',
-            'edge computing': 'hardware-iot-engineering',
-            'smart city': 'hardware-iot-engineering',
-            'smart cities': 'hardware-iot-engineering',
+            'iot': 'startup-engineering',
+            'internet of things': 'startup-engineering',
+            'iot device': 'startup-engineering',
+            'smart device': 'startup-engineering',
+            'sensor': 'startup-engineering',
+            'sensing layer': 'startup-engineering',
+            'environmental sensor': 'startup-engineering',
+            'smart meter': 'startup-engineering',
+            'drone': 'startup-engineering',
+            'octocopter': 'startup-engineering',
+            'uav': 'startup-engineering',
+            'spray system': 'startup-engineering',
+            'precision spraying': 'startup-engineering',
+            'agricultural drone': 'startup-engineering',
+            'sprayer drone': 'startup-engineering',
+            'telemetry': 'startup-engineering',
+            'mqtt': 'startup-engineering',
+            'lorawan': 'startup-engineering',
+            'edge computing': 'startup-engineering',
+            'smart city': 'startup-engineering',
+            'smart cities': 'startup-engineering',
 
             # PCB Design (part of Hardware & IoT Engineering)
-            'pcb': 'hardware-iot-engineering',
-            'circuit board': 'hardware-iot-engineering',
-            'circuit design': 'hardware-iot-engineering',
-            'electronics design': 'hardware-iot-engineering',
-            'altium': 'hardware-iot-engineering',
-            'eagle': 'hardware-iot-engineering',
-            'kicad': 'hardware-iot-engineering',
+            'pcb': 'startup-engineering',
+            'circuit board': 'startup-engineering',
+            'circuit design': 'startup-engineering',
+            'electronics design': 'startup-engineering',
+            'altium': 'startup-engineering',
+            'eagle': 'startup-engineering',
+            'kicad': 'startup-engineering',
 
             # Database & Analytics
-            'data analytics': 'data-analytics-services',
-            'data analysis': 'data-analytics-services',
-            'business intelligence': 'data-analytics-services',
-            'bi solution': 'data-analytics-services',
-            'data visualization': 'data-analytics-services',
-            'big data': 'data-analytics-services',
-            'data science': 'data-analytics-services',
-            'sql': 'data-analytics-services',
-            'database': 'data-analytics-services',
-            'data warehouse': 'data-analytics-services',
-            'real-time analytics': 'data-analytics-services',
-            'predictive modeling': 'data-analytics-services',
-            'data processing': 'data-analytics-services',
+            'data analytics': 'ai-powered-applications',
+            'data analysis': 'ai-powered-applications',
+            'business intelligence': 'ai-powered-applications',
+            'bi solution': 'ai-powered-applications',
+            'data visualization': 'ai-powered-applications',
+            'big data': 'ai-powered-applications',
+            'data science': 'ai-powered-applications',
+            'sql': 'ai-powered-applications',
+            'database': 'ai-powered-applications',
+            'data warehouse': 'ai-powered-applications',
+            'real-time analytics': 'ai-powered-applications',
+            'predictive modeling': 'ai-powered-applications',
+            'data processing': 'ai-powered-applications',
 
             # Dashboard Development (part of Data Analytics)
-            'dashboard': 'data-analytics-services',
-            'analytics dashboard': 'data-analytics-services',
-            'reporting dashboard': 'data-analytics-services',
-            'real-time dashboard': 'data-analytics-services',
-            'kpi dashboard': 'data-analytics-services',
-            'management dashboard': 'data-analytics-services',
-            'city management dashboard': 'data-analytics-services',
-            'tableau': 'data-analytics-services',
-            'power bi': 'data-analytics-services',
-            'digital twin': 'data-analytics-services',
+            'dashboard': 'ai-powered-applications',
+            'analytics dashboard': 'ai-powered-applications',
+            'reporting dashboard': 'ai-powered-applications',
+            'real-time dashboard': 'ai-powered-applications',
+            'kpi dashboard': 'ai-powered-applications',
+            'management dashboard': 'ai-powered-applications',
+            'city management dashboard': 'ai-powered-applications',
+            'tableau': 'ai-powered-applications',
+            'power bi': 'ai-powered-applications',
+            'digital twin': 'ai-powered-applications',
 
             # UI/UX & Design (part of Custom Software Development)
-            'ui design': 'software-development',
-            'ux design': 'software-development',
-            'ui/ux': 'software-development',
-            'user interface': 'software-development',
-            'user experience': 'software-development',
+            'ui design': 'custom-software-development',
+            'ux design': 'custom-software-development',
+            'ui/ux': 'custom-software-development',
+            'user interface': 'custom-software-development',
+            'user experience': 'custom-software-development',
 
         }
 
@@ -481,22 +408,16 @@ class ContentProcessor:
             # Determine what to link based on page type
             file_path_str = str(file_path)
             is_service_page = 'services/' in file_path_str
-            is_industry_page = 'industries/' in file_path_str
             is_blog_page = 'blogs/' in file_path_str or 'blog/' in file_path_str
             is_case_study_page = 'case_studies/' in file_path_str or 'case-studies/' in file_path_str
             is_news_page = 'news/' in file_path_str
             is_conversation_page = 'conversations/' in file_path_str
 
-            # Collect all candidate keywords (combine industries and services)
+            # Collect all candidate keywords (services and case studies)
             all_keywords = []
 
-            # Add industry keywords if applicable
-            if is_service_page or is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
-                for term, industry_slug in industry_links.items():
-                    all_keywords.append((term, 'industry', industry_slug))
-
             # Add service keywords if applicable
-            if is_industry_page or is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
+            if is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
                 for term, service_slug in service_links.items():
                     if service_slug != current_slug:
                         all_keywords.append((term, 'service', service_slug))
@@ -523,9 +444,7 @@ class ContentProcessor:
                     )
                     if not overlaps:
                         matched_text = match.group(1)
-                        if link_type == 'industry':
-                            replacement = f'<a href="{path_prefix}industries/{slug}.html" class="auto-link">{matched_text}</a>'
-                        elif link_type == 'case_study':
+                        if link_type == 'case_study':
                             replacement = f'<a href="{path_prefix}case-studies/{slug}.html" class="auto-link">{matched_text}</a>'
                         else:  # service
                             replacement = f'<a href="{path_prefix}services/{slug}.html" class="auto-link">{matched_text}</a>'
@@ -592,13 +511,6 @@ class ContentProcessor:
   <a href="{path_prefix}contact.html" class="btn btn-primary">Start a Conversation &rarr;</a>
 </div>
 ''',
-            'cta-industry': f'''
-<div class="inline-cta">
-  <p class="cta-title">Talk to Our Engineers</p>
-  <p>The people who built this are the people you'll talk to. No sales team in between.</p>
-  <a href="{path_prefix}contact.html" class="btn btn-primary">Start a Conversation &rarr;</a>
-</div>
-''',
         }
 
         # Find and replace all template directives
@@ -623,54 +535,14 @@ class ContentProcessor:
 
         content = re.sub(r'\{\{related-services:([^}]+)\}\}', replace_related_services, content)
 
-        # Process {{related-industries:industry1,industry2}} directives
-        def replace_related_industries(match):
-            industries = [i.strip() for i in match.group(1).split(',')]
-            html = '<div class="related-industries-inline">\n<h3>Industries We Serve</h3>\n<div class="related-industries-grid">\n'
-            for industry in industries:
-                html += f'  <a href="{path_prefix}industries/{industry}.html" class="related-industry-link">\n'
-                html += f'    <span class="link-icon">→</span>\n'
-                html += f'    <span>{industry.replace("-", " ").title()}</span>\n'
-                html += f'  </a>\n'
-            html += '</div>\n</div>'
-            return html
+        # Process {{related-industries:...}} directives (no-op, industries removed)
+        content = re.sub(r'\{\{related-industries:([^}]+)\}\}', '', content)
 
-        content = re.sub(r'\{\{related-industries:([^}]+)\}\}', replace_related_industries, content)
+        # Process {{industry-challenges:...}} directives (no-op, industries removed)
+        content = re.sub(r'\{\{industry-challenges:([^}]+)\}\}', '', content)
 
-        # Process {{industry-challenges:challenge1,challenge2}} directives
-        def replace_industry_challenges(match):
-            challenges = [c.strip() for c in match.group(1).split('|')]
-            html = '<div class="industry-challenges">\n<h3>Key Challenges We Address</h3>\n<div class="challenges-grid">\n'
-            for challenge in challenges:
-                html += f'  <div class="challenge-item">\n'
-                html += f'    <svg class="challenge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">\n'
-                html += f'      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>\n'
-                html += f'    </svg>\n'
-                html += f'    <p>{challenge}</p>\n'
-                html += f'  </div>\n'
-            html += '</div>\n</div>'
-            return html
-
-        content = re.sub(r'\{\{industry-challenges:([^}]+)\}\}', replace_industry_challenges, content)
-
-        # Process {{industry-solutions:solution1|description1,solution2|description2}} directives
-        def replace_industry_solutions(match):
-            solutions = [s.strip() for s in match.group(1).split(',')]
-            html = '<div class="industry-solutions">\n<h3>Our Solutions</h3>\n<div class="solutions-grid">\n'
-            for solution in solutions:
-                if '|' in solution:
-                    title, desc = solution.split('|', 1)
-                else:
-                    title, desc = solution, ''
-                html += f'  <div class="solution-card">\n'
-                html += f'    <h4>{title.strip()}</h4>\n'
-                if desc:
-                    html += f'    <p>{desc.strip()}</p>\n'
-                html += f'  </div>\n'
-            html += '</div>\n</div>'
-            return html
-
-        content = re.sub(r'\{\{industry-solutions:([^}]+)\}\}', replace_industry_solutions, content)
+        # Process {{industry-solutions:...}} directives (no-op, industries removed)
+        content = re.sub(r'\{\{industry-solutions:([^}]+)\}\}', '', content)
 
         return content
 

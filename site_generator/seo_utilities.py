@@ -99,7 +99,6 @@ class SEOUtilities:
         listing_pages = [
             'services.html',
             'blog.html',
-            'industries.html',
             'case-studies.html',
             'gallery.html',
             'newsletters.html',

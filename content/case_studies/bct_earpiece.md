@@ -1,4 +1,5 @@
 ---
+attribution: research
 title: Bone Conduction Tactical Earpiece
 industry: Electronics
 type: Hardware Product

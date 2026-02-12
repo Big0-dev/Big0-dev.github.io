@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}We Build AI Systems That Ship{% endblock %}
-{% block meta_description %}AI engineering firm with peer-reviewed research in PLOS ONE and IEEE, shipped hardware, and production AI for UK law firms. Talk to our engineers.{% endblock %}
+{% block title %}Your Engineering Team, Without the Overhead{% endblock %}
+{% block meta_description %}Big0 is the engineering team startups hire when they need senior developers but not the overhead. AI-powered applications, custom software, and startup engineering.{% endblock %}
 {% block canonical_path %}/{% endblock %}
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">
@@ -16,15 +16,15 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-badges">
-      <span class="badge badge-cyan">Research-backed AI</span>
-      <span class="badge badge-green">Production-proven</span>
-      <span class="badge badge-amber">Shipped Hardware</span>
+      <span class="badge badge-cyan">Shipped Software</span>
+      <span class="badge badge-green">AI Integration</span>
+      <span class="badge badge-amber">Startup-Ready</span>
     </div>
-    <h1 class="hero-h1">We Build <span class="hero-scramble-line"><span class="hero-scramble">AI Systems That Ship</span><span class="hero-dot">.</span></span></h1>
-    <p class="hero-sub">From legal document AI for UK law firms to an autonomous drone with an IEEE-published control system &mdash; we engineer production-grade AI backed by peer-reviewed research in PLOS ONE and IEEE.</p>
+    <h1 class="hero-h1">Your Engineering Team, <span class="hero-scramble-line"><span class="hero-scramble">Without the Overhead</span><span class="hero-dot">.</span></span></h1>
+    <p class="hero-sub">We're the engineering team startups and growing companies hire when they need senior developers but not the overhead of a full team. The CEO writes code. The CTO reviews every PR. You talk to engineers, not salespeople.</p>
     <div class="hero-ctas">
       <a href="{{ case_studies }}" class="btn btn-primary btn-lg">See Our Work &rarr;</a>
-      <a href="{{ contact }}" class="btn btn-secondary btn-lg">Talk to Our Engineers</a>
+      <a href="{{ contact }}" class="btn btn-secondary btn-lg">Talk to an Engineer</a>
     </div>
     <div class="hero-scroll-hint">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v14M4 11l6 6 6-6"/></svg>
@@ -77,8 +77,12 @@
         </div>
         <div class="case-body">
           <div class="case-badges">
-            {% if case_study.frontmatter.industry %}
-            <span class="badge badge-cyan">{{ case_study.frontmatter.industry }}</span>
+            {% if case_study.frontmatter.attribution == 'big0_work' %}
+            <span class="badge badge-green">Big0 Client Work</span>
+            {% elif case_study.frontmatter.attribution == 'previous_firm' %}
+            <span class="badge badge-primary">Previous Firm</span>
+            {% elif case_study.frontmatter.attribution == 'research' %}
+            <span class="badge badge-cyan">Founder's Research</span>
             {% endif %}
             {% if case_study.frontmatter.type %}
             <span class="badge badge-green">{{ case_study.frontmatter.type }}</span>
@@ -199,10 +203,21 @@
     <div class="differentiators-grid reveal-stagger reveal">
       <div class="diff-card">
         <div class="diff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        </div>
+        <h3>The CEO Writes Code</h3>
+        <p>Your first call is with the people who'll build it. No account managers, no project managers, no handoffs. Direct access to senior engineers from day one.</p>
+        <div class="diff-evidence">
+          <span class="badge badge-green">Direct Access</span>
+          <span class="badge badge-cyan">No Salespeople</span>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
         </div>
-        <h3>Peer-Reviewed Research</h3>
-        <p>Published in PLOS ONE and IEEE. Our AI isn't based on tutorials &mdash; it's based on research we authored and defended.</p>
+        <h3>Published AI Research</h3>
+        <p>Published in PLOS ONE and IEEE. Our AI isn't based on tutorials &mdash; it's based on research we authored and defended. That depth shows in everything we build.</p>
         <div class="diff-evidence">
           <span class="badge badge-green">PLOS ONE</span>
           <span class="badge badge-cyan">IEEE</span>
@@ -210,35 +225,24 @@
       </div>
       <div class="diff-card">
         <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>Hardware That Ships</h3>
-        <p>We built an autonomous drone with an IEEE-published control system. Not prototypes &mdash; field-tested hardware.</p>
+        <h3>Senior Talent, Fair Rates</h3>
+        <p>Our engineering hub is in Islamabad. You get senior developers with founder-level attention at rates that make sense for startups. No juniors, no bench rotation.</p>
         <div class="diff-evidence">
-          <span class="badge badge-amber">Shipped Hardware</span>
-          <span class="badge badge-cyan">IEEE Published</span>
+          <span class="badge badge-amber">Islamabad Hub</span>
+          <span class="badge badge-primary">Founder Attention</span>
         </div>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <h3>Regulated Environments</h3>
-        <p>Production AI for UK law firms. FCA-aware, GDPR-compliant, Cyber Essentials certified. We know what regulated industries actually require.</p>
+        <h3>We've Been Burned Too</h3>
+        <p>We know what it's like to hire a team and get excuses instead of software. That's why we show working software every 2 weeks &mdash; not status reports, not slide decks.</p>
         <div class="diff-evidence">
-          <span class="badge badge-primary">GDPR</span>
-          <span class="badge badge-primary">Cyber Essentials</span>
-        </div>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-        </div>
-        <h3>Engineers, Not Salespeople</h3>
-        <p>Your first call is with the people who'll build it. No account managers, no handoffs. The CEO writes code. The CTO reviews every PR.</p>
-        <div class="diff-evidence">
-          <span class="badge badge-green">PEC Registered</span>
-          <span class="badge badge-cyan">SZABIST Faculty</span>
+          <span class="badge badge-green">2-Week Sprints</span>
+          <span class="badge badge-cyan">Working Demos</span>
         </div>
       </div>
     </div>
@@ -301,7 +305,7 @@
             <span class="badge badge-amber">SZABIST Faculty</span>
             <span class="badge badge-primary">PEC Registered</span>
           </div>
-          <p class="founder-bio">From military engineering to peer-reviewed AI research to building production systems for UK law firms. Hassan brings the rare combination of military discipline, academic rigor, and the ability to ship real products &mdash; from an autonomous drone with an IEEE-published control system to legal AI deployed at UK law firms.</p>
+          <p class="founder-bio">Builds AI-powered applications for startups. From military engineering to peer-reviewed AI research (PLOS ONE, IEEE) to shipping production software for clients across the UK and US. Hassan still writes code and talks to every client directly.</p>
         </div>
       </div>
 
@@ -326,7 +330,7 @@
             <span class="badge badge-green">7+ Years Shipping</span>
             <span class="badge badge-amber">Full Stack</span>
           </div>
-          <p class="founder-bio">NUST Computer Engineering grad who spent 5 years at CarbonTeq rising from Senior Developer to Engineering Manager, then shipped full-stack products at Radity before joining Big0 as CTO. Musab has built everything from decentralized exchanges to enterprise web apps. He reviews every PR and owns the technical architecture across all Big0 products.</p>
+          <p class="founder-bio">Reviews every PR across all Big0 projects. NUST Computer Engineering grad who spent 5 years at CarbonTeq rising to Engineering Manager, then shipped full-stack products at Radity. Musab owns the technical architecture and code quality across everything we build.</p>
         </div>
       </div>
     </div>
@@ -334,7 +338,7 @@
 </section>
 
 <!-- Section 6: CTA Footer -->
-{% with cta_description="Not salespeople. Engineers who've built production AI, shipped hardware, and published research. Tell us what you're building." %}
+{% with cta_title="Talk to Our Engineers. Not Salespeople.", cta_description="The people who built our published AI systems are the people you'll talk to. Tell us what you're building and we'll tell you honestly if we can help." %}
 {% include 'cta.html' %}
 {% endwith %}
 

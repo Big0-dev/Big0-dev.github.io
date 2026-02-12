@@ -37,6 +37,13 @@
         </div>
         <div class="case-body">
           <div class="case-badges">
+            {% if case_study.frontmatter.attribution == 'big0_work' %}
+            <span class="badge badge-green">Big0 Client Work</span>
+            {% elif case_study.frontmatter.attribution == 'previous_firm' %}
+            <span class="badge badge-primary">Previous Firm</span>
+            {% elif case_study.frontmatter.attribution == 'research' %}
+            <span class="badge badge-cyan">Founder's Research</span>
+            {% endif %}
             {% if case_study.frontmatter.industry %}
             <span class="badge badge-cyan">{{ case_study.frontmatter.industry }}</span>
             {% endif %}

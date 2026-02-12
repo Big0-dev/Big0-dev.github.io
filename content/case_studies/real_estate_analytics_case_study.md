@@ -1,4 +1,5 @@
 ---
+attribution: previous_firm
 title: Real Estate Analytics Platform
 industry: Real Estate
 type: Analytics Platform

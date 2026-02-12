@@ -1,15 +1,16 @@
 ---
 template: service_bespoke.html
-title: "AI, ML & Data Analytics | Big0"
-hero_title: "AI, ML & Data Analytics"
-description: "We build AI that replaces manual work — document processing, workflow
-  automation, visual inspection, and predictive intelligence for regulated industries."
-meta_description: AI systems that replace manual work — document processing, workflow
-  automation, visual inspection, and predictive intelligence. Backed by peer-reviewed
-  research.
+title: "AI-Powered Applications | Big0"
+hero_title: "AI-Powered Applications"
+description: "We build AI features into your product — document processing, intelligent
+  search, workflow automation, and data analytics. Practical AI that ships, backed
+  by peer-reviewed research."
+meta_description: AI-powered applications for startups and growing companies — document
+  processing, intelligent search, workflow automation, and data analytics. Backed by
+  published research in PLOS ONE and IEEE.
 icon: ai
-features: "Doc automation, Workflows, Vision AI, Forecasting,
-  Data infra, Research-grade AI"
+features: "Doc processing, Smart search, Workflow AI, Analytics,
+  Data pipelines, Research-backed"
 keywords:
   - AI
 hero_image: ai
@@ -20,37 +21,37 @@ hero_badges:
     color: green
 hero_scramble:
   - "Automates Documents"
-  - "Predicts What Matters"
-  - "Inspects at Scale"
+  - "Ships Real AI"
   - "Replaces Manual Work"
-challenge: "Every business has processes that are slow, manual, and error-prone. Documents
-  that take hours to review. Decisions made on gut feeling instead of data. Quality
-  checks done by tired humans at the end of a shift."
-challenge_title: "Your Team Shouldn't Be Doing Work a Machine Can Do Better"
+  - "Backed by Research"
+challenge: "Most AI projects fail because teams over-engineer or pick the wrong problem.
+  We start with your actual bottleneck — the process that's slow, manual, or expensive —
+  and build the simplest AI that fixes it."
+challenge_title: "AI That Solves Your Actual Problem"
 capabilities:
-  - title: "Document Automation"
+  - title: "Document Intelligence"
     desc: "Systems that read, extract, classify, and route documents automatically.
-      Contracts, invoices, medical records, legal filings."
+      Contracts, invoices, medical records, legal filings — we've built them all."
     icon: layers
-    badge: "AI-Powered"
+    badge: "Shipped"
     badge_color: cyan
-  - title: "Operational Intelligence"
-    desc: "Dashboards and analytics that surface what matters — demand forecasts,
-      anomaly detection, and real-time operational intelligence."
+  - title: "Analytics & Dashboards"
+    desc: "Turn your data into decisions. Real-time dashboards, demand forecasts,
+      anomaly detection — built on your existing data sources."
     icon: dashboard
     badge: "Real-Time"
     badge_color: green
-  - title: "Computer Vision"
-    desc: "Visual inspection systems that work faster and more consistently than
-      humans. Defect detection, grading, counting at manufacturing scale."
-    icon: vision
+  - title: "AI Integration"
+    desc: "Add intelligent features to your existing product — smart search, content
+      generation, automated workflows. We embed AI into your stack, not bolt it on."
+    icon: ai
     badge: "Production-Grade"
     badge_color: amber
-  - title: "AI Strategy"
-    desc: "We assess your operations, identify the highest-ROI automation
-      opportunities, and tell you honestly what AI can and can't do."
-    icon: ai
-    badge: "Honest Assessment"
+  - title: "Honest Assessment"
+    desc: "We'll tell you if AI is the wrong tool. Sometimes a database query or process
+      change solves the problem better. We save your budget for where AI matters."
+    icon: settings
+    badge: "No BS"
     badge_color: primary
 evidence_items:
   - title: "Legal Document AI"
@@ -74,29 +75,19 @@ evidence_items:
 process_steps:
   - num: "01"
     title: "Assess"
-    desc: "We study your problem, your data, and your operations. We deliver a clear
+    desc: "We study your problem, your data, and your operations. You get a clear
       assessment of what's worth automating and what isn't."
     time: "Week 1–2"
   - num: "02"
     title: "Build & Iterate"
-    desc: "You see working software every two weeks, not status reports. If something
-      isn't working, we catch it early."
-    time: "Week 3–6"
+    desc: "Working software every two weeks. You see demos, give feedback, and
+      course-correct early — not months into a project."
+    time: "Week 3–8"
   - num: "03"
     title: "Deploy & Measure"
     desc: "Production deployment with monitoring. We measure results against the
       goals we agreed on. If it's not delivering value, we fix it."
-    time: "Week 7+"
-industries:
-  - slug: healthcare
-    name: Healthcare
-    icon: healthcare
-  - slug: finance
-    name: Finance
-    icon: finance
-  - slug: manufacturing
-    name: Manufacturing
-    icon: manufacturing
+    time: "Week 9+"
 faqs:
   - q: "How do you know AI is the right solution for my problem?"
     a: "Sometimes it isn't. We start every engagement with an honest assessment. If
@@ -112,15 +103,14 @@ faqs:
       We don't ask you to rip and replace."
   - q: "Is our data safe?"
     a: "Yes. We built a peer-reviewed federated learning system specifically for
-      privacy-sensitive healthcare data. We know how to handle sensitive information
-      in regulated environments — GDPR, HIPAA, FCA compliance are part of how we
-      design, not afterthoughts."
+      privacy-sensitive healthcare data. We know how to handle sensitive information —
+      GDPR, HIPAA, and FCA compliance are part of how we design, not afterthoughts."
   - q: "What happens after you deliver?"
     a: "We provide monitoring, maintenance, and continuous improvement. Models drift
       over time, requirements change, and your team will want new features. We plan
       for all of that from day one."
-cta_headline: "See How AI Transforms Your Operations"
-cta_button: "Get Free AI Assessment"
-cta_subtext: "Get a customized analysis of automation opportunities and projected
-  ROI for your business."
+cta_headline: "Talk to Our Engineers About AI"
+cta_button: "Start a Conversation"
+cta_subtext: "The people who built our published AI systems are the people you'll
+  talk to. No sales team in between."
 ---

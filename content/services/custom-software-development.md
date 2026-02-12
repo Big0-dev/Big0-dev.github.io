@@ -2,42 +2,44 @@
 template: service_bespoke.html
 title: "Custom Software Development | Big0"
 hero_title: "Custom Software Development"
-description: "Web platforms, mobile apps, APIs, and AI-integrated systems that solve
-  real operational problems for healthcare, finance, legal, and logistics companies."
-meta_description: Custom software for healthcare, finance, legal, and logistics — web
-  platforms, mobile apps, and AI-integrated systems that solve real operational problems.
+description: "Web platforms, mobile apps, APIs, and internal tools — built by senior
+  engineers who ship working software every two weeks. No project managers in between."
+meta_description: Custom software development for startups and growing companies — web
+  platforms, mobile apps, APIs, and internal tools. Senior engineers, working software
+  every two weeks.
 icon: code
-features: "Web platforms, Mobile apps, API integration, AI-powered tools, Legacy
-  modernization, Regulated industries"
+features: "Web platforms, Mobile apps, API design, Internal tools,
+  Legacy migration, AI integration"
 keywords:
   - Custom
 hero_image: cloud
 hero_badges:
-  - text: "Production-Proven"
+  - text: "Senior Engineers"
     color: green
-  - text: "Regulated Industries"
+  - text: "Ship Every 2 Weeks"
     color: cyan
 hero_scramble:
   - "Replaces Spreadsheets"
   - "Ships Every Two Weeks"
   - "Integrates Everything"
   - "Scales With You"
-challenge: "You don't need a React app or a Python backend. You need software that
-  makes your business work better — fewer manual steps, fewer errors, happier
-  customers, clearer data."
+challenge: "You need software that makes your business work better — fewer manual steps,
+  fewer errors, happier customers, clearer data. Not a framework demo. Not a pitch deck.
+  Working software."
 challenge_title: "Software That Solves the Problem You Actually Have"
 capabilities:
-  - title: "Workflow Platforms"
-    desc: "Replace spreadsheets and email chains with purpose-built platforms that
-      automate your business processes end to end."
-    icon: settings
-    badge: "Core"
-    badge_color: cyan
-  - title: "Customer-Facing Apps"
-    desc: "Web portals, mobile apps, dashboards — built for the people who use them
-      every day, not for a demo."
+  - title: "Web Platforms & Apps"
+    desc: "Customer portals, internal dashboards, mobile apps — built for the people
+      who use them every day, not for a demo."
     icon: monitor
-    badge: "User-Centered"
+    badge: "Full-Stack"
+    badge_color: cyan
+  - title: "Internal Tools"
+    desc: "Replace spreadsheets and email chains with purpose-built tools that
+      automate your workflows. Your team stops doing data entry and starts doing
+      their actual job."
+    icon: settings
+    badge: "Practical"
     badge_color: green
   - title: "System Integration"
     desc: "Connect payment processors, document management, third-party APIs, and
@@ -74,52 +76,39 @@ process_steps:
   - num: "01"
     title: "Scope & Spec"
     desc: "We define exactly what ships. A technical specification you understand,
-      not a slide deck. You sign off on what we're building before we write code."
+      not a slide deck. You sign off before we write code."
     time: "Week 1–2"
   - num: "02"
     title: "Sprint Build"
-    desc: "Sprint-based delivery. Working demos every two weeks. You see progress,
-      give feedback, and course-correct early."
+    desc: "Working demos every two weeks. You see progress, give feedback, and
+      course-correct before it gets expensive."
     time: "Week 3–12"
   - num: "03"
     title: "Ship & Support"
     desc: "Production deployment with real users. Monitoring, bug fixes, and
-      iteration based on actual usage data."
+      iteration based on actual usage — not guesses."
     time: "Week 12+"
-industries:
-  - slug: finance
-    name: Finance
-    icon: finance
-  - slug: healthcare
-    name: Healthcare
-    icon: healthcare
-  - slug: legal
-    name: Legal
-    icon: balance
-  - slug: logistics
-    name: Logistics
-    icon: truck
 faqs:
   - q: "How long does a typical project take?"
     a: "An MVP ships in 8-12 weeks. Full platforms take 4-9 months. You see working
       software every two weeks, so you're never in the dark about progress."
-  - q: "Can you integrate AI into our existing software?"
+  - q: "Can you add AI features to our software?"
     a: "Yes — it's one of our strengths. We embed document intelligence, automated
       workflows, and smart features into new and existing applications. The AI works
-      inside your software, not as a separate tool your team has to learn."
+      inside your software, not as a separate tool."
   - q: "What happens if requirements change mid-project?"
     a: "They always do. We work in 2-week sprints specifically so we can adapt.
       Changing direction in week 6 is easy. Changing direction in month 12 of a
-      waterfall project is expensive. That's why we build this way."
+      waterfall project is expensive."
   - q: "Do you provide ongoing maintenance?"
     a: "Yes. Bug fixes, security updates, performance optimization, and feature
       enhancements. We build it, we stand behind it."
-  - q: "How do you handle sensitive data and compliance?"
-    a: "We build for regulated industries — healthcare, finance, legal. GDPR, data
-      encryption, audit trails, and role-based access are part of our standard
-      approach, not add-ons."
+  - q: "How do you handle sensitive data?"
+    a: "We've built systems for healthcare, finance, and legal — industries where
+      getting data security wrong has real consequences. Encryption, audit trails,
+      and access controls are part of how we build, not add-ons."
 cta_headline: "Let's Build Something That Works"
-cta_button: "Start Your Project"
-cta_subtext: "From scoping to deployment — tell us what you need and we'll show you
-  how we'd build it."
+cta_button: "Talk to an Engineer"
+cta_subtext: "Tell us what you need. The engineers who'll build it are the ones
+  you'll talk to."
 ---

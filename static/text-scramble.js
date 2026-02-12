@@ -80,14 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!el) return;
 
   const phrases = [
-    'AI Systems That Ship',
-    'Production-Grade AI',
+    'Without the Overhead',
+    'Senior Engineers Only',
+    'Ship Every Two Weeks',
+    'No Salespeople',
     'Research-Backed AI',
-    'Hardware That Works',
-    'Shipped & Proven',
-    'Software That Scales',
-    'Engineering You Trust',
-    'IoT That Delivers'
+    'Startup-Ready',
+    'Code, Not Slide Decks',
+    'Engineers You Trust'
   ];
 
   const fx = new TextScramble(el);

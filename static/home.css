@@ -563,17 +563,42 @@
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 100px 0 60px;
+    padding: 80px 0 24px;
   }
   .hero-h1 {
     font-size: 28px;
     min-height: 2.3em;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    margin-bottom: 20px;
+  }
+  .hero-badges {
+    margin-bottom: 16px;
   }
   .hero-scramble-line {
     display: block;
     font-size: 0.85em;
     height: 1.15em;
     overflow: hidden;
+  }
+  .trusted-strip {
+    padding: 16px 0;
+  }
+  .trusted-strip-inner {
+    flex-direction: row;
+    gap: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .trusted-strip-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .trusted-logos {
+    gap: 20px;
+    flex-wrap: nowrap;
   }
   .featured-work-grid,
   .capabilities-grid,
@@ -588,10 +613,6 @@
   .capability-hero,
   .capability-proven {
     grid-column: span 1;
-  }
-  .trusted-strip-inner {
-    flex-direction: column;
-    gap: 16px;
   }
   .hero-scroll-hint {
     display: none;

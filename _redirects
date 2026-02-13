@@ -184,7 +184,11 @@
 /services/computer-vision-the-future-of-visual-data-interpretation  /services  301
 /services/ml-ops-at-big-0  /services  301
 /services/natural-language-processing-unleashing-the-power-of-words  /services  301
+/services/natural-language-processing-unleashing-the-power-of-words.html  /services  301
 /services/generative-ai-pioneering-the-future-of-artificial-intelligence  /services  301
+/services/generative-ai-pioneering-the-future-of-artificial-intelligence.html  /services  301
+/services/computer-vision-the-future-of-visual-data-interpretation  /services  301
+/services/computer-vision-the-future-of-visual-data-interpretation.html  /services  301
 
 # ============================================
 # ALL REMOVED LOCATION VARIANTS -> SERVICES
@@ -304,6 +308,7 @@
 # ============================================
 /cgi-bin/*  /404.html  404
 /_next/*  /404.html  404
+/cdn-cgi/*  /404.html  404
 
 # ============================================
 # MISCELLANEOUS

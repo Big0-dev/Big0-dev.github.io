@@ -5,9 +5,11 @@
 # Do NOT add redirects like /about -> /about.html (causes loops!)
 
 # ============================================
-# BLOG PATH (now uses plural /blogs/ for consistency)
+# OLD BLOG PATH (410 Gone - now uses plural /blogs/)
 # ============================================
-# Removed - /blogs/* is now the correct path
+/blog/*  /404.html  410
+/blog.html  /404.html  410
+/blog  /404.html  410
 
 # ============================================
 # ALL INDUSTRIES (410 Gone - old positioning)

@@ -10,35 +10,12 @@
 /blogs/*  /blog/:splat  301
 
 # ============================================
-# ALL INDUSTRIES -> SERVICES (industries removed)
+# ALL INDUSTRIES (410 Gone - old positioning)
+# Old site didn't rank well anyway - no SEO value to preserve
 # ============================================
-/industries/*  /services.html  301
-/industries.html  /services.html  301
-/industries  /services.html  301
-/industries/telecommunications.html  /services.html  301
-/industries/telecommunications  /services.html  301
-/industries/technology.html  /services.html  301
-/industries/technology  /services.html  301
-/industries/automotive.html  /services.html  301
-/industries/automotive  /services.html  301
-/industries/construction.html  /services.html  301
-/industries/construction  /services.html  301
-/industries/consumer-goods.html  /services.html  301
-/industries/consumer-goods  /services.html  301
-/industries/mining.html  /services.html  301
-/industries/mining  /services.html  301
-/industries/education.html  /services.html  301
-/industries/education  /services.html  301
-/industries/energy.html  /services.html  301
-/industries/energy  /services.html  301
-/industries/government.html  /services.html  301
-/industries/government  /services.html  301
-/industries/telecom.html  /services.html  301
-/industries/telecom  /services.html  301
-/industries/insurance.html  /services.html  301
-/industries/insurance  /services.html  301
-/industries/retail.html  /services.html  301
-/industries/retail  /services.html  301
+/industries/*  /404.html  410
+/industries.html  /404.html  410
+/industries  /404.html  410
 
 # ============================================
 # REMOVED SERVICES (410 Gone - old service offerings)

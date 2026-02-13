@@ -5,9 +5,9 @@
 # Do NOT add redirects like /about -> /about.html (causes loops!)
 
 # ============================================
-# OLD BLOG PATH (/blogs/ -> /blog/)
+# OLD BLOG PATH (410 Gone)
 # ============================================
-/blogs/*  /blog/:splat  301
+/blogs/*  /404.html  410
 
 # ============================================
 # ALL INDUSTRIES (410 Gone - old positioning)
@@ -65,14 +65,14 @@
 /services/engineering-services  /404.html  410
 
 # ============================================
-# OLD SERVICE SLUGS -> NEW SERVICE SLUGS
+# OLD SERVICE SLUGS (410 Gone)
 # ============================================
-/services/ai-ml-services  /services/ai-powered-applications.html  301
-/services/ai-ml-services.html  /services/ai-powered-applications.html  301
-/services/software-development  /services/custom-software-development.html  301
-/services/software-development.html  /services/custom-software-development.html  301
-/services/hardware-iot-engineering  /services/startup-engineering.html  301
-/services/hardware-iot-engineering.html  /services/startup-engineering.html  301
+/services/ai-ml-services  /404.html  410
+/services/ai-ml-services.html  /404.html  410
+/services/software-development  /404.html  410
+/services/software-development.html  /404.html  410
+/services/hardware-iot-engineering  /404.html  410
+/services/hardware-iot-engineering.html  /404.html  410
 
 # ============================================
 # OLD SERVICE ALIASES (410 Gone - removed)
@@ -206,19 +206,19 @@
 /blog/why-companies-choose-odoo-crm-over-standard-solutions.html  /404.html  410
 
 # ============================================
-# REMOVED PAGES -> CLOSEST MATCH
+# REMOVED PAGES (410 Gone)
 # ============================================
-/products.html  /products/ai-project-manager.html  301
-/products  /products/ai-project-manager  301
-/partners.html  /about.html  301
-/partners  /about  301
+/products.html  /404.html  410
+/products  /404.html  410
+/partners.html  /404.html  410
+/partners  /404.html  410
 
 # ============================================
-# BLOGS (old specific paths)
+# OLD BLOG PATHS (410 Gone)
 # ============================================
-/blogs/ai-transformation-2024  /blog/ai-transformation-2024.html  301
-/blogs/cloud-migration-best-practices  /blog/cloud-migration-best-practices.html  301
-/blogs/cloud-migration-best-practices.html  /blog/cloud-migration-best-practices.html  301
+/blogs/ai-transformation-2024  /404.html  410
+/blogs/cloud-migration-best-practices  /404.html  410
+/blogs/cloud-migration-best-practices.html  /404.html  410
 
 # ============================================
 # 404 PAGE - Return proper 404 status
@@ -234,9 +234,9 @@
 /cdn-cgi/*  /404.html  410
 
 # ============================================
-# MISCELLANEOUS
+# MISCELLANEOUS (410 Gone)
 # ============================================
-/policy  /privacy  301
-/insights/*  /blog  301
-/case.html  /case-studies.html  301
-/gallery.html.html  /gallery.html  301
+/policy  /404.html  410
+/insights/*  /404.html  410
+/case.html  /404.html  410
+/gallery.html.html  /404.html  410

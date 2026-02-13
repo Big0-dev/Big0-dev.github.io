@@ -41,51 +41,51 @@
 /industries/retail  /services.html  301
 
 # ============================================
-# REMOVED SERVICES -> SERVICES LISTING
-# (18 services removed in redesign overhaul)
+# REMOVED SERVICES (410 Gone - old service offerings)
+# 18 services removed in redesign overhaul
 # ============================================
-/services/professional-technology-training.html  /services.html  301
-/services/professional-technology-training  /services.html  301
-/services/ar_vr_development.html  /services.html  301
-/services/ar_vr_development  /services.html  301
-/services/ar-vr-development.html  /services.html  301
-/services/ar-vr-development  /services.html  301
-/services/blockchain_development.html  /services.html  301
-/services/blockchain_development  /services.html  301
-/services/blockchain-development.html  /services.html  301
-/services/blockchain-development  /services.html  301
-/services/bpo.html  /services.html  301
-/services/bpo  /services.html  301
-/services/game_development.html  /services.html  301
-/services/game_development  /services.html  301
-/services/staff-augmentation.html  /services.html  301
-/services/staff-augmentation  /services.html  301
-/services/digital_marketing_services.html  /services.html  301
-/services/digital_marketing_services  /services.html  301
-/services/security-services.html  /services.html  301
-/services/security-services  /services.html  301
-/services/fintech_development.html  /services.html  301
-/services/fintech_development  /services.html  301
-/services/e_commerce_solutions.html  /services.html  301
-/services/e_commerce_solutions  /services.html  301
-/services/python-automation.html  /services.html  301
-/services/python-automation  /services.html  301
-/services/erp_implementation.html  /services.html  301
-/services/erp_implementation  /services.html  301
-/services/healthcare_it_solutions.html  /services.html  301
-/services/healthcare_it_solutions  /services.html  301
-/services/cloud-services.html  /services.html  301
-/services/cloud-services  /services.html  301
-/services/devops-quality-services.html  /services.html  301
-/services/devops-quality-services  /services.html  301
-/services/design-services.html  /services/custom-software-development.html  301
-/services/design-services  /services/custom-software-development.html  301
-/services/mobile_app_development.html  /services/custom-software-development.html  301
-/services/mobile_app_development  /services/custom-software-development.html  301
-/services/web-development.html  /services/custom-software-development.html  301
-/services/web-development  /services/custom-software-development.html  301
-/services/engineering-services.html  /services/startup-engineering.html  301
-/services/engineering-services  /services/startup-engineering.html  301
+/services/professional-technology-training.html  /404.html  410
+/services/professional-technology-training  /404.html  410
+/services/ar_vr_development.html  /404.html  410
+/services/ar_vr_development  /404.html  410
+/services/ar-vr-development.html  /404.html  410
+/services/ar-vr-development  /404.html  410
+/services/blockchain_development.html  /404.html  410
+/services/blockchain_development  /404.html  410
+/services/blockchain-development.html  /404.html  410
+/services/blockchain-development  /404.html  410
+/services/bpo.html  /404.html  410
+/services/bpo  /404.html  410
+/services/game_development.html  /404.html  410
+/services/game_development  /404.html  410
+/services/staff-augmentation.html  /404.html  410
+/services/staff-augmentation  /404.html  410
+/services/digital_marketing_services.html  /404.html  410
+/services/digital_marketing_services  /404.html  410
+/services/security-services.html  /404.html  410
+/services/security-services  /404.html  410
+/services/fintech_development.html  /404.html  410
+/services/fintech_development  /404.html  410
+/services/e_commerce_solutions.html  /404.html  410
+/services/e_commerce_solutions  /404.html  410
+/services/python-automation.html  /404.html  410
+/services/python-automation  /404.html  410
+/services/erp_implementation.html  /404.html  410
+/services/erp_implementation  /404.html  410
+/services/healthcare_it_solutions.html  /404.html  410
+/services/healthcare_it_solutions  /404.html  410
+/services/cloud-services.html  /404.html  410
+/services/cloud-services  /404.html  410
+/services/devops-quality-services.html  /404.html  410
+/services/devops-quality-services  /404.html  410
+/services/design-services.html  /404.html  410
+/services/design-services  /404.html  410
+/services/mobile_app_development.html  /404.html  410
+/services/mobile_app_development  /404.html  410
+/services/web-development.html  /404.html  410
+/services/web-development  /404.html  410
+/services/engineering-services.html  /404.html  410
+/services/engineering-services  /404.html  410
 
 # ============================================
 # OLD SERVICE SLUGS -> NEW SERVICE SLUGS
@@ -98,193 +98,135 @@
 /services/hardware-iot-engineering.html  /services/startup-engineering.html  301
 
 # ============================================
-# OLD SERVICE NAME ALIASES -> KEPT SERVICES
+# OLD SERVICE ALIASES (410 Gone - removed)
 # ============================================
-# Security/Cloud/DevOps -> services listing
-/services/cloud-security-solutions  /services.html  301
-/services/cloud-security-solutions.html  /services.html  301
-/services/cybersecurity-solutions  /services.html  301
-/services/cybersecurity-solutions.html  /services.html  301
-/services/cybersecurity  /services.html  301
-/services/cybersecurity.html  /services.html  301
-/services/cloud-management  /services.html  301
-/services/cloud-management.html  /services.html  301
-/services/cloud-managment  /services.html  301
-/services/cloud-managment.html  /services.html  301
-/services/cloud-infrastructure  /services.html  301
-/services/cloud-infrastructure.html  /services.html  301
-/services/software_testing  /services.html  301
-/services/software_testing.html  /services.html  301
-/services/devops-services  /services.html  301
-/services/devops-services.html  /services.html  301
-/services/devops_consulting  /services.html  301
-/services/devops_consulting.html  /services.html  301
+/services/cloud-security-solutions  /404.html  410
+/services/cloud-security-solutions.html  /404.html  410
+/services/cybersecurity-solutions  /404.html  410
+/services/cybersecurity-solutions.html  /404.html  410
+/services/cybersecurity  /404.html  410
+/services/cybersecurity.html  /404.html  410
+/services/cloud-management  /404.html  410
+/services/cloud-management.html  /404.html  410
+/services/cloud-managment  /404.html  410
+/services/cloud-managment.html  /404.html  410
+/services/cloud-infrastructure  /404.html  410
+/services/cloud-infrastructure.html  /404.html  410
+/services/software_testing  /404.html  410
+/services/software_testing.html  /404.html  410
+/services/devops-services  /404.html  410
+/services/devops-services.html  /404.html  410
+/services/devops_consulting  /404.html  410
+/services/devops_consulting.html  /404.html  410
+/services/ui_ux_design_services  /404.html  410
+/services/ui_ux_design_services.html  /404.html  410
+/services/ui-ux-design  /404.html  410
+/services/ui-ux-design.html  /404.html  410
+/services/brand_and_digital_design  /404.html  410
+/services/brand_and_digital_design.html  /404.html  410
+/services/cad-design  /404.html  410
+/services/cad-design.html  /404.html  410
+/services/pcb_design_and_layout  /404.html  410
+/services/pcb_design_and_layout.html  /404.html  410
+/services/hardware_cad  /404.html  410
+/services/hardware_cad.html  /404.html  410
+/services/embedded_systems_development  /404.html  410
+/services/embedded_systems_development.html  /404.html  410
+/services/iot_device_development  /404.html  410
+/services/iot_device_development.html  /404.html  410
+/services/ai-integration  /404.html  410
+/services/ai-integration.html  /404.html  410
+/services/computer_vision_service  /404.html  410
+/services/computer_vision_service.html  /404.html  410
+/services/natural_language_processing  /404.html  410
+/services/natural_language_processing.html  /404.html  410
+/services/data-analytics  /404.html  410
+/services/data-analytics.html  /404.html  410
+/services/data-engineering  /404.html  410
+/services/data-engineering.html  /404.html  410
+/services/dashboards  /404.html  410
+/services/dashboards.html  /404.html  410
+/services/manufacturing-automation  /404.html  410
+/services/manufacturing-automation.html  /404.html  410
+/services/digital-marketing  /404.html  410
+/services/digital-marketing.html  /404.html  410
+/services/digital-marketing-services  /404.html  410
+/services/digital-marketing-services.html  /404.html  410
+/services/mobile-app-development  /404.html  410
+/services/mobile-app-development.html  /404.html  410
+/services/project-management  /404.html  410
+/services/project-management.html  /404.html  410
+/services/compliance-services  /404.html  410
+/services/compliance-services.html  /404.html  410
+/services/mobile_app.development  /404.html  410
+/services/mobile_app.development.html  /404.html  410
 
-# Design/UX -> software development
-/services/ui_ux_design_services  /services/custom-software-development.html  301
-/services/ui_ux_design_services.html  /services/custom-software-development.html  301
-/services/ui-ux-design  /services/custom-software-development.html  301
-/services/ui-ux-design.html  /services/custom-software-development.html  301
-/services/brand_and_digital_design  /services/custom-software-development.html  301
-/services/brand_and_digital_design.html  /services/custom-software-development.html  301
-
-# Hardware/IoT/Embedded -> hardware-iot-engineering
-/services/cad-design  /services/startup-engineering.html  301
-/services/cad-design.html  /services/startup-engineering.html  301
-/services/pcb_design_and_layout  /services/startup-engineering.html  301
-/services/pcb_design_and_layout.html  /services/startup-engineering.html  301
-/services/hardware_cad  /services/startup-engineering.html  301
-/services/hardware_cad.html  /services/startup-engineering.html  301
-/services/embedded_systems_development  /services/startup-engineering.html  301
-/services/embedded_systems_development.html  /services/startup-engineering.html  301
-/services/iot_device_development  /services/startup-engineering.html  301
-/services/iot_device_development.html  /services/startup-engineering.html  301
-
-# AI/ML aliases
-/services/ai-integration  /services/ai-powered-applications.html  301
-/services/ai-integration.html  /services/ai-powered-applications.html  301
-/services/computer_vision_service  /services/ai-powered-applications.html  301
-/services/computer_vision_service.html  /services/ai-powered-applications.html  301
-/services/natural_language_processing  /services/ai-powered-applications.html  301
-/services/natural_language_processing.html  /services/ai-powered-applications.html  301
-
-# Data aliases
-/services/data-analytics  /services/ai-powered-applications.html  301
-/services/data-analytics.html  /services/ai-powered-applications.html  301
-/services/data-engineering  /services/ai-powered-applications.html  301
-/services/data-engineering.html  /services/ai-powered-applications.html  301
-/services/dashboards  /services/ai-powered-applications.html  301
-/services/dashboards.html  /services/ai-powered-applications.html  301
-
-# Other old aliases -> services listing
-/services/manufacturing-automation  /services.html  301
-/services/manufacturing-automation.html  /services.html  301
-/services/digital-marketing  /services.html  301
-/services/digital-marketing.html  /services.html  301
-/services/digital-marketing-services  /services.html  301
-/services/digital-marketing-services.html  /services.html  301
-/services/mobile-app-development  /services/custom-software-development.html  301
-/services/mobile-app-development.html  /services/custom-software-development.html  301
-/services/project-management  /case-studies.html  301
-/services/project-management.html  /case-studies.html  301
-/services/compliance-services  /services.html  301
-/services/compliance-services.html  /services.html  301
-/services/mobile_app.development  /services/custom-software-development.html  301
-/services/mobile_app.development.html  /services/custom-software-development.html  301
-
-# Old service articles/blogs that were in /services/
-/services/federated-learning-collaborative-intelligence-without-compromise-1  /services  301
-/services/data-bricks-powering-data-driven-innovation-1  /services  301
-/services/introduction-to-cloud-optimization-at-big-o  /services  301
-/services/introduction-to-cloud-operations-and-migration-at-big-o  /services  301
-/services/introduction-to-cloud-integration-at-big-o  /services  301
-/services/introduction-to-cloud-application-development-and-integration-at-big-o  /services  301
-/services/introduction-to-cloud-consulting-at-big-o  /services  301
-/services/introduction-to-managed-cloud-services-at-big-o  /services  301
-/services/data-engineering-building-robust-data-foundations-1  /services  301
-/services/data-pipelines-optimizing-data-flow-for-efficient-business-operations  /services  301
-/services/big-o-data-factory-simplifying-data-integration-and-management  /services  301
-/services/edge-and-embedded-ai-powering-devices-at-the-source  /services  301
-/services/computer-vision-the-future-of-visual-data-interpretation  /services  301
-/services/ml-ops-at-big-0  /services  301
-/services/natural-language-processing-unleashing-the-power-of-words  /services  301
-/services/natural-language-processing-unleashing-the-power-of-words.html  /services  301
-/services/generative-ai-pioneering-the-future-of-artificial-intelligence  /services  301
-/services/generative-ai-pioneering-the-future-of-artificial-intelligence.html  /services  301
-/services/computer-vision-the-future-of-visual-data-interpretation  /services  301
-/services/computer-vision-the-future-of-visual-data-interpretation.html  /services  301
+# Old service articles/blogs (410 Gone - removed content)
+/services/federated-learning-collaborative-intelligence-without-compromise-1  /404.html  410
+/services/data-bricks-powering-data-driven-innovation-1  /404.html  410
+/services/introduction-to-cloud-optimization-at-big-o  /404.html  410
+/services/introduction-to-cloud-operations-and-migration-at-big-o  /404.html  410
+/services/introduction-to-cloud-integration-at-big-o  /404.html  410
+/services/introduction-to-cloud-application-development-and-integration-at-big-o  /404.html  410
+/services/introduction-to-cloud-consulting-at-big-o  /404.html  410
+/services/introduction-to-managed-cloud-services-at-big-o  /404.html  410
+/services/data-engineering-building-robust-data-foundations-1  /404.html  410
+/services/data-pipelines-optimizing-data-flow-for-efficient-business-operations  /404.html  410
+/services/big-o-data-factory-simplifying-data-integration-and-management  /404.html  410
+/services/edge-and-embedded-ai-powering-devices-at-the-source  /404.html  410
+/services/computer-vision-the-future-of-visual-data-interpretation  /404.html  410
+/services/ml-ops-at-big-0  /404.html  410
+/services/natural-language-processing-unleashing-the-power-of-words  /404.html  410
+/services/natural-language-processing-unleashing-the-power-of-words.html  /404.html  410
+/services/generative-ai-pioneering-the-future-of-artificial-intelligence  /404.html  410
+/services/generative-ai-pioneering-the-future-of-artificial-intelligence.html  /404.html  410
+/services/computer-vision-the-future-of-visual-data-interpretation  /404.html  410
+/services/computer-vision-the-future-of-visual-data-interpretation.html  /404.html  410
 
 # ============================================
-# ALL REMOVED LOCATION VARIANTS -> SERVICES
-# (catch-all for removed service location pages)
+# ALL REMOVED LOCATION PAGES (410 Gone - old positioning)
+# These were part of the old "AI firm with locations" model
+# Now permanently removed - returning 410 for fast Google cleanup
 # ============================================
-/services/locations/*/ar_vr*  /services.html  301
-/services/locations/*/blockchain*  /services.html  301
-/services/locations/*/bpo*  /services.html  301
-/services/locations/*/game_development*  /services.html  301
-/services/locations/*/game-development*  /services.html  301
-/services/locations/*/staff-augmentation*  /services.html  301
-/services/locations/*/digital_marketing*  /services.html  301
-/services/locations/*/digital-marketing*  /services.html  301
-/services/locations/*/security-services*  /services.html  301
-/services/locations/*/cybersecurity*  /services.html  301
-/services/locations/*/fintech*  /services.html  301
-/services/locations/*/e_commerce*  /services.html  301
-/services/locations/*/e-commerce*  /services.html  301
-/services/locations/*/python-automation*  /services.html  301
-/services/locations/*/erp*  /services.html  301
-/services/locations/*/healthcare_it*  /services.html  301
-/services/locations/*/healthcare-it*  /services.html  301
-/services/locations/*/cloud-services*  /services.html  301
-/services/locations/*/cloud-managment*  /services.html  301
-/services/locations/*/devops*  /services.html  301
-/services/locations/*/design-services*  /services/custom-software-development.html  301
-/services/locations/*/mobile*  /services/custom-software-development.html  301
-/services/locations/*/web-development*  /services/custom-software-development.html  301
-/services/locations/*/engineering-services*  /services/startup-engineering.html  301
-/services/locations/*/ui_ux*  /services/custom-software-development.html  301
-/services/locations/*/brand_and_digital*  /services/custom-software-development.html  301
-/services/locations/*/brand-and-digital*  /services/custom-software-development.html  301
-/services/locations/*/software_testing*  /services.html  301
-/services/locations/*/software-testing*  /services.html  301
+/services/locations/*  /404.html  410
 
-# All deleted location pages for surviving services -> parent service
-/services/locations/*/ai-ml-services*  /services/ai-powered-applications.html  301
-/services/locations/*/hardware-iot*  /services/startup-engineering.html  301
-/services/locations/*/software-development*  /services/custom-software-development.html  301
-/services/locations/*/data-analytics*  /services/ai-powered-applications.html  301
-/services/locations/*/professional-technology-training*  /services.html  301
-/services/locations/*/computer_vision*  /services/ai-powered-applications.html  301
-/services/locations/*/natural_language*  /services/ai-powered-applications.html  301
-/services/locations/*/ai-integration*  /services/ai-powered-applications.html  301
-/services/locations/*/embedded*  /services/startup-engineering.html  301
-/services/locations/*/iot*  /services/startup-engineering.html  301
-/services/locations/*/pcb*  /services/startup-engineering.html  301
-/services/locations/*/hardware_cad*  /services/startup-engineering.html  301
-/services/locations/*/dashboards*  /services/ai-powered-applications.html  301
-/services/locations/*/engineering-consultancy*  /services/startup-engineering.html  301
-
-# Old root-level location pages (missing /locations/ prefix)
-/services/engineering-services-australia.html  /services/startup-engineering.html  301
-/services/python-automation-australia.html  /services.html  301
-/services/bpo-australia.html  /services.html  301
-/services/professional-technology-training-australia.html  /services.html  301
-/services/staff-augmentation-australia.html  /services.html  301
-/services/ar_vr_development-australia.html  /services.html  301
-/services/game_development-uk.html  /services.html  301
-/services/python-automation-uk.html  /services.html  301
-/services/professional-technology-training-uk.html  /services.html  301
-/services/bpo-uk.html  /services.html  301
-/services/bpo-usa.html  /services.html  301
-/services/professional-technology-training-usa.html  /services.html  301
+# Old root-level location pages (410 Gone - old positioning)
+/services/*-australia.html  /404.html  410
+/services/*-australia  /404.html  410
+/services/*-uk.html  /404.html  410
+/services/*-uk  /404.html  410
+/services/*-usa.html  /404.html  410
+/services/*-usa  /404.html  410
+/services/*-canada.html  /404.html  410
+/services/*-canada  /404.html  410
 
 # ============================================
-# REMOVED BLOG POSTS -> BLOG LISTING
+# REMOVED BLOG POSTS (410 Gone - low quality SEO content)
 # ============================================
-/blog/a-guide-to-acquiring-bpo-projects-from-the-uk-market.html  /blog.html  301
-/blog/best-bpo-projects-from-direct-clients-complete-guide.html  /blog.html  301
-/blog/how-to-get-amazon-bpo-projects-complete-guide.html  /blog.html  301
-/blog/how-to-get-bpo-projects-from-uk-a-strategic-guide.html  /blog.html  301
-/blog/best-online-it-training-providers-for-cloud-ai-skills.html  /blog.html  301
-/blog/choosing-the-best-it-training-providers-for-your-team.html  /blog.html  301
-/blog/bigcommerce-development-uk-building-scalable-e-commerce.html  /blog.html  301
-/blog/navigating-bigcommerce-development-for-uk-e-commerce.html  /blog.html  301
-/blog/how-to-evaluate-ecommerce-platforms-complete-guide.html  /blog.html  301
-/blog/cloud-services-in-london-choosing-the-right-provider.html  /blog.html  301
-/blog/cloud-services-in-london-top-providers-migration-strategies.html  /blog.html  301
-/blog/why-uk-businesses-need-expert-cloud-services-in-london.html  /blog.html  301
-/blog/big0-company-profile-ai-software-development-experts.html  /blog.html  301
-/blog/big0-your-partner-for-ai-cloud-software-solutions.html  /blog.html  301
-/blog/api-economy-integration.html  /blog.html  301
-/blog/build-vs-buy-software.html  /blog.html  301
-/blog/cloud-migration-best-practices.html  /blog.html  301
-/blog/cybersecurity-trends-2024.html  /blog.html  301
-/blog/data-driven-decision-making.html  /blog.html  301
-/blog/odoo-erp-business-case.html  /blog.html  301
-/blog/remote-engineering-teams.html  /blog.html  301
-/blog/technical-debt-hidden-costs.html  /blog.html  301
-/blog/true-cost-legacy-systems.html  /blog.html  301
-/blog/why-companies-choose-odoo-crm-over-standard-solutions.html  /blog.html  301
+/blog/a-guide-to-acquiring-bpo-projects-from-the-uk-market.html  /404.html  410
+/blog/best-bpo-projects-from-direct-clients-complete-guide.html  /404.html  410
+/blog/how-to-get-amazon-bpo-projects-complete-guide.html  /404.html  410
+/blog/how-to-get-bpo-projects-from-uk-a-strategic-guide.html  /404.html  410
+/blog/best-online-it-training-providers-for-cloud-ai-skills.html  /404.html  410
+/blog/choosing-the-best-it-training-providers-for-your-team.html  /404.html  410
+/blog/bigcommerce-development-uk-building-scalable-e-commerce.html  /404.html  410
+/blog/navigating-bigcommerce-development-for-uk-e-commerce.html  /404.html  410
+/blog/how-to-evaluate-ecommerce-platforms-complete-guide.html  /404.html  410
+/blog/cloud-services-in-london-choosing-the-right-provider.html  /404.html  410
+/blog/cloud-services-in-london-top-providers-migration-strategies.html  /404.html  410
+/blog/why-uk-businesses-need-expert-cloud-services-in-london.html  /404.html  410
+/blog/big0-company-profile-ai-software-development-experts.html  /404.html  410
+/blog/big0-your-partner-for-ai-cloud-software-solutions.html  /404.html  410
+/blog/api-economy-integration.html  /404.html  410
+/blog/build-vs-buy-software.html  /404.html  410
+/blog/cloud-migration-best-practices.html  /404.html  410
+/blog/cybersecurity-trends-2024.html  /404.html  410
+/blog/data-driven-decision-making.html  /404.html  410
+/blog/odoo-erp-business-case.html  /404.html  410
+/blog/remote-engineering-teams.html  /404.html  410
+/blog/technical-debt-hidden-costs.html  /404.html  410
+/blog/true-cost-legacy-systems.html  /404.html  410
+/blog/why-companies-choose-odoo-crm-over-standard-solutions.html  /404.html  410
 
 # ============================================
 # REMOVED PAGES -> CLOSEST MATCH
@@ -308,11 +250,11 @@
 /404.html /404.html 404!
 
 # ============================================
-# SYSTEM ARTIFACTS
+# SYSTEM ARTIFACTS (410 Gone - permanently removed)
 # ============================================
-/cgi-bin/*  /404.html  404
-/_next/*  /404.html  404
-/cdn-cgi/*  /404.html  404
+/cgi-bin/*  /404.html  410
+/_next/*  /404.html  410
+/cdn-cgi/*  /404.html  410
 
 # ============================================
 # MISCELLANEOUS

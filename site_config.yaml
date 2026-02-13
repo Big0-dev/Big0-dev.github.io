@@ -56,11 +56,11 @@ static_pages:
 
 # Dynamic Pages - Generated from content files
 content_types:
-  blog:
+  blogs:
     content_dir: ./content/blogs
     template: blog_post.html
-    listing_template: blog.html
-    output_dir: blog
+    listing_template: blogs.html
+    output_dir: blogs
     per_page: 9
     
   services:
@@ -107,8 +107,8 @@ navigation:
   about: about.html
   services: services.html
   services_page: services.html  # Alias for compatibility
-  blog: blog.html
-  blog_page: blog.html  # Alias for compatibility
+  blog: blogs.html
+  blog_page: blogs.html  # Alias for compatibility
   newsletters: newsletters.html
   case_studies: case-studies.html
   careers: careers.html

@@ -214,7 +214,7 @@ class ContentPageBuilder(BasePageBuilder):
                         singular_map = {
                             'services': 'service',
                             'industries': 'industry',
-                            'blog': 'blog',
+                            'blogs': 'blog',
                             'case_studies': 'case_study'
                         }
                         singular = singular_map.get(content_type, content_type[:-1])
@@ -254,7 +254,7 @@ class ContentPageBuilder(BasePageBuilder):
             per_page = config.get('per_page', len(items))
 
             # Sort items by date (newest first) for blog, news, case_studies
-            if content_type in ['blog', 'news', 'case_studies', 'newsletters']:
+            if content_type in ['blogs', 'news', 'case_studies', 'newsletters']:
                 items = sorted(items, key=lambda x: x.get('date') or datetime.min, reverse=True)
 
             # Paginate if needed
@@ -281,8 +281,8 @@ class ContentPageBuilder(BasePageBuilder):
                 if content_type == 'news':
                     list_context['news_articles'] = page_items
 
-                # Special handling for blog template - include newsletters
-                if content_type == 'blog':
+                # Special handling for blogs template - include newsletters
+                if content_type == 'blogs':
                     newsletters_config = self.config['content_types'].get('newsletters')
                     if newsletters_config:
                         newsletters_dir = Path(newsletters_config['content_dir'])

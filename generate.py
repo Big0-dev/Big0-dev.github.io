@@ -300,7 +300,7 @@ class SiteGenerator:
         feed_items = []
 
         # Collect from configured content types that should be in feed
-        feed_types = ['news', 'blog', 'case_studies']
+        feed_types = ['news', 'blogs', 'case_studies']
 
         for content_type in feed_types:
             if content_type in self.config['content_types']:
@@ -370,7 +370,7 @@ class SiteGenerator:
         # Add content pages
         # Map content types to singular display names
         type_names = {
-            'blog': 'blog',
+            'blogs': 'blog',
             'services': 'service',
             'case_studies': 'case study',
             'news': 'news',

@@ -2,7 +2,7 @@
 
 {% block title %}Insights{% endblock %}
 {% block meta_description %}Technical deep-dives, AI analysis, and engineering insights from the team that ships production AI systems.{% endblock %}
-{% block canonical_path %}/blog.html{% endblock %}
+{% block canonical_path %}/blogs.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">
@@ -26,8 +26,8 @@
 <section class="section">
   <div class="container">
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-      {% for post in all_blog %}
-      <a href="./blog/{{ post.slug }}.html" class="case-card" style="text-decoration: none;">
+      {% for post in all_blogs %}
+      <a href="./blogs/{{ post.slug }}.html" class="case-card" style="text-decoration: none;">
         {% if post.frontmatter.image_url %}
         <div class="case-img" style="height: 140px;">
           <img
@@ -60,7 +60,7 @@
     {% if total_pages > 1 %}
     <div class="pagination">
       {% if page_num > 1 %}
-      <a href="./blog{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
+      <a href="./blogs{% if page_num == 2 %}.html{% else %}-{{ page_num - 1 }}.html{% endif %}" class="page-link" aria-label="Previous page">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
       </a>
       {% else %}
@@ -73,12 +73,12 @@
       {% if page == page_num %}
       <span class="page-link active" aria-current="page">{{ page }}</span>
       {% else %}
-      <a href="./blog{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
+      <a href="./blogs{% if page > 1 %}-{{ page }}{% endif %}.html" class="page-link">{{ page }}</a>
       {% endif %}
       {% endfor %}
 
       {% if page_num < total_pages %}
-      <a href="./blog-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
+      <a href="./blogs-{{ page_num + 1 }}.html" class="page-link" aria-label="Next page">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
       {% else %}

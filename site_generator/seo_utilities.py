@@ -82,8 +82,10 @@ class SEOUtilities:
 
         urls = []
 
-        # Add static pages
+        # Add static pages (exclude 404 page from sitemap)
         for page in self.config['static_pages']:
+            if page['output'] == '404.html':
+                continue
             urls.append(f"{self.config['domain']}/{page['output']}")
 
         # Add content pages

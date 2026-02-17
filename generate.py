@@ -193,6 +193,13 @@ class SiteGenerator:
                 shutil.copy2(redirects_src, redirects_dst)
                 logger.info("Copied _redirects file for Cloudflare Pages")
 
+            # Copy robots.txt
+            robots_src = Path("robots.txt")
+            if robots_src.exists():
+                robots_dst = Path(self.output_dir) / "robots.txt"
+                shutil.copy2(robots_src, robots_dst)
+                logger.info("Copied robots.txt")
+
         except Exception as e:
             logger.error(f"Error copying assets: {e}")
             raise

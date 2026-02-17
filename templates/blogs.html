@@ -25,7 +25,7 @@
 <!-- Articles -->
 <section class="section">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    <div class="blog-grid">
       {% for post in all_blogs %}
       <a href="./blogs/{{ post.slug }}.html" class="case-card" style="text-decoration: none;">
         {% if post.frontmatter.image_url %}

@@ -200,6 +200,13 @@ class SiteGenerator:
                 shutil.copy2(robots_src, robots_dst)
                 logger.info("Copied robots.txt")
 
+            # Copy _routes.json for Cloudflare Pages Functions routing
+            routes_src = Path("_routes.json")
+            if routes_src.exists():
+                routes_dst = Path(self.output_dir) / "_routes.json"
+                shutil.copy2(routes_src, routes_dst)
+                logger.info("Copied _routes.json for Cloudflare Pages")
+
         except Exception as e:
             logger.error(f"Error copying assets: {e}")
             raise

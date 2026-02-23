@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "include": [
+    "/blog",
+    "/blog.html",
+    "/blog/*",
+    "/blogs/ai-transformation-2024",
+    "/blogs/cloud-migration-best-practices",
+    "/blogs/cloud-migration-best-practices.html",
+    "/industries",
+    "/industries.html",
+    "/industries/*",
+    "/services/*",
+    "/cgi-bin/*",
+    "/_next/*",
+    "/cdn-cgi/*",
+    "/insights/*",
+    "/products",
+    "/products.html",
+    "/partners",
+    "/partners.html",
+    "/policy",
+    "/case.html",
+    "/gallery.html.html"
+  ],
+  "exclude": []
+}

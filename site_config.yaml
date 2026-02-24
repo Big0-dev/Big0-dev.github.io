@@ -101,6 +101,12 @@ content_types:
     template: product_detail.html
     output_dir: products
 
+  team:
+    content_dir: ./content/team
+    template: team_detail.html
+    output_dir: team
+    exclude_from_nav: true
+
 # Navigation URLs
 navigation:
   home: index.html

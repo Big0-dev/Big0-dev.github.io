@@ -548,10 +548,9 @@
 }
 .section-subtitle {
   font-size: 15px;
-  color: var(--color-mist);
+  color: var(--color-cloud);
   max-width: 560px;
-  margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* --- SERVICE PREVIEW CARDS --- */

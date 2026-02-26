@@ -426,27 +426,38 @@ a:hover {
 .section-header { text-align: center; margin-bottom: var(--space-2xl); }
 .section-label {
   font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--color-mist);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-signal);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-signal);
+  border-radius: 1px;
 }
 .section-title {
   font-family: var(--font-display);
-  font-size: var(--font-heading-secondary);
+  font-size: clamp(1.625rem, 3.5vw, 2.25rem);
   font-weight: 700;
   color: var(--color-white);
-  letter-spacing: var(--tracking-tight);
-  margin-bottom: var(--space-sm);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 12px;
 }
 .section-subtitle {
-  font-size: var(--font-md);
-  color: var(--color-mist);
-  line-height: 1.6;
-  max-width: 640px;
-  margin: 0 auto;
+  font-size: 15px;
+  color: var(--color-cloud);
+  line-height: 1.7;
+  max-width: 560px;
 }
 
 /* Icon Container */

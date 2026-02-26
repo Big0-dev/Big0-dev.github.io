@@ -412,7 +412,7 @@ class SiteGenerator:
                 plain_text = re.sub(r'\s+', ' ', plain_text).strip()[:1000]
 
                 search_items.append({
-                    'id': item.get('slug', item.get('title', '').lower().replace(' ', '-')),
+                    'id': f"{type_names.get(content_type, content_type.rstrip('s'))}-{item.get('slug', item.get('title', '').lower().replace(' ', '-'))}",
                     'title': item.get('title', ''),
                     'content': plain_text,
                     'description': item.get('meta_description', ''),

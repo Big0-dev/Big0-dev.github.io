@@ -14,7 +14,7 @@
 <!-- Section 1: Hero -->
 <section class="hero khan-hero">
   <div class="container hero-inner">
-    <span class="badge badge-amber khan-status-badge">Working MVP</span>
+    <span class="badge badge-green khan-status-badge">Free Beta</span>
     <h1 class="hero-h1">Khan<span class="hero-dot">.</span></h1>
     <div class="hero-scramble-wrapper">
       <span class="hero-scramble hero-scramble-text khan-scramble">Watches Your Projects</span>
@@ -184,81 +184,8 @@
   </div>
 </section>
 
-<!-- Section 7: Pricing -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Pricing</div>
-      <h2 class="section-title">Start free. Scale when you're ready.</h2>
-      <p class="section-subtitle mb-2xl">No credit card required. No trial expiration.</p>
-    </div>
-
-    <div class="khan-pricing reveal-stagger reveal">
-      <!-- Free -->
-      <div class="khan-price-card">
-        <div class="khan-price-header">
-          <h3>Free</h3>
-          <div class="khan-price-amount">$0<span>/mo</span></div>
-        </div>
-        <div class="khan-price-limits">
-          <span>5 projects</span>
-          <span>5 users</span>
-        </div>
-        <ul class="khan-price-features">
-          <li>Core project management</li>
-          <li>Task &amp; sprint tracking</li>
-          <li>Basic risk registers</li>
-          <li>Basic Khan AI suggestions</li>
-        </ul>
-        <a href="https://khan.big0.dev" class="btn btn-secondary btn-md khan-price-cta" target="_blank" rel="noopener noreferrer">Get Started Free</a>
-      </div>
-
-      <!-- Pro (Featured) -->
-      <div class="khan-price-card featured">
-        <div class="khan-price-badge">Most Popular</div>
-        <div class="khan-price-header">
-          <h3>Pro</h3>
-          <div class="khan-price-amount">$29<span>/mo</span></div>
-        </div>
-        <div class="khan-price-limits">
-          <span>50 projects</span>
-          <span>50 users</span>
-        </div>
-        <ul class="khan-price-features">
-          <li>Everything in Free</li>
-          <li>Full Khan AI with action proposals</li>
-          <li>CRM &amp; pipeline</li>
-          <li>Invoicing &amp; time tracking</li>
-          <li>Budget tracking &amp; EVM</li>
-        </ul>
-        <a href="https://khan.big0.dev" class="btn btn-primary btn-md khan-price-cta" target="_blank" rel="noopener noreferrer">Start Pro Trial &rarr;</a>
-      </div>
-
-      <!-- Agency -->
-      <div class="khan-price-card">
-        <div class="khan-price-header">
-          <h3>Agency</h3>
-          <div class="khan-price-amount">$79<span>/mo</span></div>
-        </div>
-        <div class="khan-price-limits">
-          <span>Unlimited projects</span>
-          <span>Unlimited users</span>
-        </div>
-        <ul class="khan-price-features">
-          <li>Everything in Pro</li>
-          <li>Client portal</li>
-          <li>Revenue forecasting</li>
-          <li>Priority support</li>
-          <li>Custom integrations</li>
-        </ul>
-        <a href="https://khan.big0.dev" class="btn btn-secondary btn-md khan-price-cta" target="_blank" rel="noopener noreferrer">Contact Sales</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section 8: CTA -->
-{% with cta_title="Try Khan Free", cta_description="No credit card. No sales call. Just sign up and start managing your projects with an AI that actually helps.", cta_button="Get Started", cta_url="https://khan.big0.dev", cta_external=true %}
+<!-- Section 7: CTA -->
+{% with cta_title="Try the Free Beta", cta_description="Khan is in free beta. All features, no credit card, no time limit. Just sign up and start managing your projects.", cta_button="Try Khan Free", cta_url="https://khan.big0.dev", cta_external=true %}
 {% include 'cta.html' %}
 {% endwith %}
 
@@ -343,26 +270,12 @@ document.addEventListener('DOMContentLoaded', function() {
   "operatingSystem": "Web",
   "description": "AI project manager for small agencies. Built on PMI methodology with human-in-the-loop control.",
   "url": "https://khan.big0.dev",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Free",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    {
-      "@type": "Offer",
-      "name": "Pro",
-      "price": "29",
-      "priceCurrency": "USD"
-    },
-    {
-      "@type": "Offer",
-      "name": "Agency",
-      "price": "79",
-      "priceCurrency": "USD"
-    }
-  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "Free Beta",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
   "author": {
     "@type": "Organization",
     "name": "Big0",

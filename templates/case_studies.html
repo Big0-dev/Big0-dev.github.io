@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Our Work{% endblock %}
+{% block title %}Our Work{% if page_num|default(1) > 1 %} - Page {{ page_num }}{% endif %}{% endblock %}
 {% block meta_description %}Real products, real deployments, real evidence. See the AI systems, hardware, and software we've shipped for clients across industries.{% endblock %}
-{% block canonical_path %}/case-studies.html{% endblock %}
+{% block canonical_path %}/case-studies{% if page_num|default(1) > 1 %}-{{ page_num }}{% endif %}.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">

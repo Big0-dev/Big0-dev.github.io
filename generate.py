@@ -311,6 +311,9 @@ class SiteGenerator:
         Returns:
             List of feed items from news, blogs, and case studies
         """
+        from email.utils import formatdate
+        from time import mktime
+
         feed_items = []
 
         # Collect from configured content types that should be in feed
@@ -324,12 +327,21 @@ class SiteGenerator:
                 # Convert to feed format
                 for item in items:
                     if item and isinstance(item, dict):
+                        # Format date as RFC 2822 for RSS pubDate
+                        pub_date = ''
+                        date_obj = item.get('date')
+                        if date_obj:
+                            pub_date = formatdate(mktime(date_obj.timetuple()))
+
                         feed_item = {
                             'title': item.get('title', ''),
                             'url': f"{config['output_dir']}/{item.get('slug', '')}.html",
                             'description': item.get('frontmatter', {}).get('description', item.get('excerpt', '')),
-                            'date': item.get('date'),
-                            'content': item.get('content', ''),
+                            'pub_date': pub_date,
+                            'date_obj': date_obj,
+                            'content_html': item.get('content_html', ''),
+                            'category': item.get('category', ''),
+                            'tags': item.get('tags', []),
                             'type': content_type.rstrip('s'),  # Remove plural
                         }
                         feed_items.append(feed_item)

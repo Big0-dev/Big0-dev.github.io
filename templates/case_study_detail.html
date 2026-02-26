@@ -115,6 +115,29 @@
 {% include 'cta.html' %}
 {% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ current_case_study.title }}",
+  "description": "{{ current_case_study.meta_description }}",
+  "url": "{{ domain }}/case-studies/{{ current_case_study.slug }}.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Big0",
+    "url": "{{ domain }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Big0",
+    "url": "{{ domain }}",
+    "logo": { "@type": "ImageObject", "url": "{{ domain }}/static/big0_logo.svg" }
+  }
+}
+</script>
+{% endblock %}
+
 {% block scripts %}
 {{ super() }}
 <script>

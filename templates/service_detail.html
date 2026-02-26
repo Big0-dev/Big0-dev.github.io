@@ -85,6 +85,23 @@
 </section>
 {% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ current_service.title }}",
+  "description": "{{ current_service.meta_description }}",
+  "url": "{{ domain }}/services/{{ current_service.slug }}.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Big0",
+    "url": "{{ domain }}"
+  }
+}
+</script>
+{% endblock %}
+
 {% block scripts %}
 {{ super() }}
 <script>

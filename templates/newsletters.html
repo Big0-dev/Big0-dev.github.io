@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Zero to One: Tech Frontiers - AI Newsletter{% endblock %}
+{% block title %}Zero to One: Tech Frontiers - AI Newsletter{% if page_num|default(1) > 1 %} - Page {{ page_num }}{% endif %}{% endblock %}
 {% block meta_description %}Your weekly guide to AI technology and the future. Industry trends, technical deep-dives, and innovation stories from the frontlines of AI.{% endblock %}
-{% block canonical_path %}/newsletters.html{% endblock %}
+{% block canonical_path %}/newsletters{% if page_num|default(1) > 1 %}-{{ page_num }}{% endif %}.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">

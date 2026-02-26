@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Gallery{% endblock %}
+{% block title %}Gallery{% if page_num|default(1) > 1 %} - Page {{ page_num }}{% endif %}{% endblock %}
 {% block meta_description %}Explore Big0's project gallery showcasing our work in AI, cloud computing, and digital transformation.{% endblock %}
-{% block canonical_path %}/gallery.html{% endblock %}
+{% block canonical_path %}/gallery{% if page_num|default(1) > 1 %}-{{ page_num }}{% endif %}.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">

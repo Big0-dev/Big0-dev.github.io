@@ -8,6 +8,20 @@
     {% if base_tag %} {{ base_tag | safe }} {% endif %} 
     <link rel="canonical" href="{{ domain }}{% block canonical_path %}/{% endblock %}">
     <title>{% block title %}Page{% endblock %} - Big0</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:site_name" content="Big0">
+    <meta property="og:title" content="{% block og_title %}{{ self.title() }} - Big0{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ self.meta_description() }}{% endblock %}">
+    <meta property="og:url" content="{{ domain }}{{ self.canonical_path() }}">
+    <meta property="og:image" content="{% block og_image %}{{ domain }}/static/big0_logo.svg{% endblock %}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ self.og_title() }}">
+    <meta name="twitter:description" content="{{ self.og_description() }}">
+    <meta name="twitter:image" content="{{ self.og_image() }}">
     
     {% block preload %}
     {% if preload %}

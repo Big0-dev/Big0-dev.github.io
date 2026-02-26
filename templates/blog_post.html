@@ -98,6 +98,30 @@
 {% include 'cta.html' %}
 {% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ current_blog.title }}",
+  "description": "{{ current_blog.meta_description }}",
+  "url": "{{ domain }}/blogs/{{ current_blog.slug }}.html",
+  "datePublished": "{{ current_blog.frontmatter.date | default('') }}",
+  "author": {
+    "@type": "Person",
+    "name": "Hassan Kamran",
+    "url": "{{ domain }}/team/hassan-kamran.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Big0",
+    "url": "{{ domain }}",
+    "logo": { "@type": "ImageObject", "url": "{{ domain }}/static/big0_logo.svg" }
+  }
+}
+</script>
+{% endblock %}
+
 {% block scripts %}
 {{ super() }}
 <script>

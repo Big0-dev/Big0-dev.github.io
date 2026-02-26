@@ -268,7 +268,7 @@ class SEOUtilities:
             # Sort by date (newest first)
             sorted_items = sorted(
                 feed_items,
-                key=lambda x: x.get('date_obj', datetime.min),
+                key=lambda x: x.get('date_obj') or datetime.min,
                 reverse=True
             )
 

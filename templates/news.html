@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}News & Updates{% endblock %}
+{% block title %}News & Updates{% if page_num|default(1) > 1 %} - Page {{ page_num }}{% endif %}{% endblock %}
 {% block meta_description %}Stay updated with Big0's latest news, announcements, and company updates.{% endblock %}
-{% block canonical_path %}/news.html{% endblock %}
+{% block canonical_path %}/news{% if page_num|default(1) > 1 %}-{{ page_num }}{% endif %}.html{% endblock %}
 
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/home.css">

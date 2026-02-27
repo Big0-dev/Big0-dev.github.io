@@ -14,6 +14,7 @@ const EXACT_410 = new Set([
   '/blog', '/blog.html',
   '/industries', '/industries.html',
   '/products', '/products.html',
+  '/products/ai-project-manager', '/products/ai-project-manager.html',
   '/partners', '/partners.html',
   '/policy',
   '/case.html',

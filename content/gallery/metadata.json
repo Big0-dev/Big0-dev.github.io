@@ -54,5 +54,19 @@
     "category": "Events",
     "date": "2026-02-01",
     "tags": ["STMU", "talk", "group photo", "AI", "finance"]
+  },
+  "lums-talk-1.avif": {
+    "title": "LUMS SDSB - Group Photo",
+    "description": "Group photo with students at the Suleman Dawood School of Business (SDSB), LUMS, after a talk on entrepreneurship in Pakistan.",
+    "category": "Events",
+    "date": "2026-02-19",
+    "tags": ["LUMS", "SDSB", "entrepreneurship", "speaking", "Lahore"]
+  },
+  "lums-talk-2.avif": {
+    "title": "LUMS SDSB - Entrepreneurship Talk",
+    "description": "Big0 CEO speaking to students at the Suleman Dawood School of Business on the realities of entrepreneurship in Pakistan — from retiring from the Pakistan Army to building Big0 and Khan.",
+    "category": "Events",
+    "date": "2026-02-19",
+    "tags": ["LUMS", "SDSB", "entrepreneurship", "talk", "Big0", "Khan"]
   }
 }

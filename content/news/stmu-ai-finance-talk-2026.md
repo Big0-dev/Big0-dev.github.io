@@ -5,7 +5,7 @@ date: 2026-01-12
 tags: ai,finance,big-data,speaking,education,stmu,islamabad
 description: Big0 CEO to deliver a talk on AI in Finance and Big Data Analytics at STMU, sharing real-world lessons from building AI solutions for clients across the UK, Australia, and Middle East.
 external_link:
-order: 1
+order: 2
 ---
 
 Big0 is excited to announce that our CEO will be speaking at Shifa Tameer-e-Millat University (STMU) on **AI in Finance & Big Data Analytics** — sharing real-world lessons from building AI solutions for clients across the globe.

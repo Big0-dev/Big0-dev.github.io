@@ -8,11 +8,11 @@ meta_description: Custom software development for startups and growing companies
   platforms, mobile apps, APIs, and internal tools. Senior engineers, working software
   every two weeks.
 icon: code
+hero_image: cloud
 features: "Web platforms, Mobile apps, API design, Internal tools,
   Legacy migration, AI integration"
 keywords:
   - Custom
-hero_image: cloud
 hero_badges:
   - text: "Senior Engineers"
     color: green

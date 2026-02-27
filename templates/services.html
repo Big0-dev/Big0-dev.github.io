@@ -31,7 +31,7 @@
     <div class="svc-listing-grid">
       {% for service in all_services %}
       <a href="./services/{{ service.slug }}.html" class="svc-listing-card">
-        <div class="svc-listing-img" style="background-image: url('{{ static }}/{{ service.frontmatter.hero_image }}.avif')"></div>
+        {% if service.frontmatter.hero_image %}<div class="svc-listing-img" style="background-image: url('{{ static }}/{{ service.frontmatter.hero_image }}.avif')"></div>{% endif %}
         <div class="svc-listing-overlay"></div>
         <div class="svc-listing-body">
           {% if service.icon %}

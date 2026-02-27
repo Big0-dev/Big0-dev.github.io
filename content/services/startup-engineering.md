@@ -9,11 +9,11 @@ meta_description: Startup engineering — your technical co-founder without the 
   We take your product from idea to shipped with architecture, development, deployment,
   and iteration.
 icon: microchip
+hero_image: iot
 features: "MVP builds, Architecture, Full-stack dev, Cloud infra,
   Hardware prototyping, Technical strategy"
 keywords:
   - Startup
-hero_image: iot
 hero_badges:
   - text: "Shipped Products"
     color: amber

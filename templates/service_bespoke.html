@@ -6,7 +6,7 @@
 {% block canonical_path %}/services/{{ current_service.slug }}.html{% endblock %}
 
 {% block preload %}
-<link rel="preload" as="image" href="{{ static }}/{{ fm.hero_image }}.avif" type="image/avif" />
+{% if fm.hero_image %}<link rel="preload" as="image" href="{{ static }}/{{ fm.hero_image }}.avif" type="image/avif" />{% endif %}
 {% endblock %}
 
 {% block custom_css %}
@@ -22,7 +22,7 @@
 
 <!-- Section 1: Hero -->
 <section class="hero svc-hero">
-  <div class="svc-hero-bg" style="background-image: url('{{ static }}/{{ fm.hero_image }}.avif')"></div>
+  {% if fm.hero_image %}<div class="svc-hero-bg" style="background-image: url('{{ static }}/{{ fm.hero_image }}.avif')"></div>{% endif %}
   <div class="container hero-inner">
     <div class="svc-hero-icon">
       {{ inject_svg(current_service.icon, True) | safe }}

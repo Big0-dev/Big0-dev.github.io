@@ -9,11 +9,11 @@ meta_description: AI-powered applications for startups and growing companies —
   processing, intelligent search, workflow automation, and data analytics. Backed by
   published research in PLOS ONE and IEEE.
 icon: ai
+hero_image: ai
 features: "Doc processing, Smart search, Workflow AI, Analytics,
   Data pipelines, Research-backed"
 keywords:
   - AI
-hero_image: ai
 hero_badges:
   - text: "Peer-Reviewed Research"
     color: cyan

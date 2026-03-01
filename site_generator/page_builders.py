@@ -183,9 +183,36 @@ class ContentPageBuilder(BasePageBuilder):
         super().__init__(env, config, output_dir)
         self._load_markdown_content = load_markdown_content_func
 
+    def _build_case_study_lookup(self):
+        """Build a slug→metadata lookup from case study files."""
+        lookup = {}
+        cs_config = self.config['content_types'].get('case_studies')
+        if not cs_config:
+            return lookup
+        cs_dir = Path(cs_config['content_dir'])
+        if cs_dir.exists():
+            for file_path in cs_dir.glob('*.md'):
+                output_path = Path(cs_config['output_dir']) / f"{file_path.stem}.html"
+                item = self._load_markdown_content(file_path, output_path)
+                lookup[item['slug']] = item
+        return lookup
+
+    def _enrich_evidence_items(self, item, case_study_lookup):
+        """Add case study metadata (icon, image) to service evidence_items."""
+        fm = item.get('frontmatter', {})
+        for evidence in fm.get('evidence_items', []):
+            slug = evidence.get('slug')
+            if slug and slug in case_study_lookup:
+                cs = case_study_lookup[slug]
+                if 'icon' not in evidence and cs.get('icon'):
+                    evidence['icon'] = cs['icon']
+
     def generate(self):
         """Generate pages from content files"""
         context = self._get_base_context()
+
+        # Pre-load case study lookup for enriching service evidence_items
+        case_study_lookup = self._build_case_study_lookup()
 
         for content_type, config in self.config['content_types'].items():
             content_dir = Path(config['content_dir'])
@@ -199,6 +226,11 @@ class ContentPageBuilder(BasePageBuilder):
                 output_path = Path(config['output_dir']) / f"{file_path.stem}.html"
                 item = self._load_markdown_content(file_path, output_path)
                 items.append(item)
+
+            # Enrich service evidence_items with case study icons
+            if content_type == 'services' and case_study_lookup:
+                for item in items:
+                    self._enrich_evidence_items(item, case_study_lookup)
 
             # Generate detail pages for all items
             if 'template' in config:

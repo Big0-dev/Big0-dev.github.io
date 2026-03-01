@@ -117,7 +117,7 @@
         </div>
         {% else %}
         <div class="svc-evidence-icon">
-          {{ inject_svg(current_service.icon, True) | safe }}
+          {{ inject_svg(item.icon or current_service.icon, True) | safe }}
         </div>
         {% endif %}
         <div class="svc-evidence-body">

@@ -1,126 +1,248 @@
 {% extends "base.html" %}
 
 {% block title %}Get Started — Talk to an Engineer{% endblock %}
-{% block meta_description %}Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Projects typically start at $8K–$10K.{% endblock %}
+{% block meta_description %}Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Projects from $8K–$10K+.{% endblock %}
 {% block canonical_path %}/get-started.html{% endblock %}
 
 {% block custom_css %}
-<link rel="stylesheet" href="{{ static }}/home.css">
-<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
 <style>
-/* Landing page — two-column above-the-fold layout */
-.lp-fold { padding: 32px 0 48px; }
-.lp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-.lp-left h1 { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 36px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px; }
-.lp-left .lp-sub { color: var(--color-mist); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
-.lp-points { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-.lp-point { display: flex; align-items: flex-start; gap: 10px; }
-.lp-point-icon { color: var(--color-signal); flex-shrink: 0; margin-top: 2px; }
-.lp-point-text { font-size: 14px; color: var(--color-cloud); line-height: 1.5; }
-.lp-point-text strong { color: var(--color-white); }
-.lp-price { margin-bottom: 20px; }
-.lp-price .price-range { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--color-signal); }
-.lp-price p { font-size: 13px; color: var(--color-mist); margin-top: 4px; }
-.lp-logos { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.lp-logos .trusted-label { font-size: 11px; }
-.lp-logos .trusted-logo-item svg { height: 20px; width: auto; }
-.lp-right h2 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
-.lp-right .lp-form-sub { color: var(--color-mist); font-size: 13px; margin-bottom: 16px; }
-.lp-whatsapp { text-align: center; margin-top: 12px; }
-.lp-whatsapp a { color: var(--color-signal); text-decoration: none; font-size: 13px; }
-.lp-whatsapp a:hover { text-decoration: underline; }
+  /* Override base: landing page hides main nav/footer */
+  .navbar, .footer, .back-to-top, .cookie-consent-banner { display: none !important; }
 
-/* Case study bar below fold */
-.lp-case-bar { background: var(--color-slate); border-top: 1px solid var(--color-steel); border-bottom: 1px solid var(--color-steel); padding: 24px 0; }
-.lp-case-inner { display: flex; align-items: center; gap: 32px; justify-content: center; flex-wrap: wrap; }
-.lp-case-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-signal); font-weight: 600; }
-.lp-case-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-white); }
-.lp-case-stats { display: flex; gap: 20px; }
-.lp-case-stat { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--color-signal); }
+  /* Top bar — matches navbar height feel */
+  .lp-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px var(--space-xl); border-bottom: 1px solid var(--color-steel); }
+  .lp-bar-logo { height: 28px; width: auto; }
+  .lp-bar-logo path { fill: var(--color-white); }
+  .lp-bar a:first-child:hover .lp-bar-logo path { fill: var(--color-signal); }
+  .lp-bar-link { color: var(--color-mist); font-size: 14px; text-decoration: none; transition: color var(--transition-fast); }
+  .lp-bar-link:hover { color: var(--color-white); }
 
-@media (max-width: 768px) {
-  .lp-grid { grid-template-columns: 1fr; gap: 32px; }
-  .lp-case-inner { flex-direction: column; text-align: center; gap: 8px; }
-  .lp-case-stats { justify-content: center; }
-}
+  /* Two-column layout — viewport height minus top bar */
+  .lp-main { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 53px); }
+  .lp-left {
+    padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-2xl);
+    display: flex; flex-direction: column; justify-content: center;
+    max-width: 640px; margin-left: auto;
+    position: relative;
+    background: url('{{ static }}/lp-hero.avif') center/cover no-repeat;
+  }
+  .lp-left::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,15,28,0.92) 0%, rgba(10,15,28,0.85) 100%);
+  }
+  .lp-left > * { position: relative; z-index: 1; }
+  .lp-right { padding: var(--space-xl) var(--space-2xl) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; justify-content: center; background: var(--color-midnight); border-left: 1px solid var(--color-steel); max-width: 560px; }
+
+  /* Left: value prop — uses site font sizes */
+  .lp-badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-signal); background: var(--signal-12); border: 1px solid var(--signal-20); padding: 4px 10px; border-radius: var(--radius-full); margin-bottom: var(--space-md); }
+  .lp-h1 { font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: var(--space-sm); }
+  .lp-sub { color: var(--color-mist); font-size: 15px; line-height: 1.6; margin-bottom: var(--space-lg); }
+  .lp-checks { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+  .lp-check { display: flex; align-items: center; gap: var(--space-sm); font-size: 14px; color: var(--color-cloud); }
+  .lp-check svg { color: var(--color-signal); flex-shrink: 0; }
+  .lp-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-signal); margin-bottom: 2px; }
+  .lp-price-note { font-size: 13px; color: var(--color-mist); margin-bottom: var(--space-lg); }
+  .lp-logos { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
+  .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .lp-logos svg { height: 18px; width: auto; opacity: 0.5; }
+  .lp-contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-top: var(--space-md); }
+  .lp-contact-card { background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: var(--radius-base); padding: var(--space-sm) var(--space-xs); text-align: center; text-decoration: none; transition: border-color var(--transition-fast); display: block; }
+  .lp-contact-card:hover { border-color: var(--color-signal); }
+  .lp-contact-label { display: block; font-size: 11px; font-weight: 600; color: var(--color-mist); margin-bottom: 1px; }
+  .lp-contact-value { display: block; font-size: 12px; color: var(--color-signal); }
+
+  /* Right: form — matches site form styling */
+  .lp-form-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
+  .lp-form-sub { font-size: 14px; color: var(--color-mist); margin-bottom: var(--space-md); }
+  .lp-form { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .lp-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+  .lp-field label {
+    display: block; font-family: var(--font-display); font-size: 12px; font-weight: 600;
+    color: var(--color-mist); letter-spacing: 0.02em; margin-bottom: 3px;
+  }
+  .lp-field input, .lp-field select, .lp-field textarea {
+    width: 100%; padding: 10px 14px; font-size: 14px; font-family: var(--font-body);
+    background: var(--bg-dark); border: 1px solid var(--color-steel); border-radius: var(--radius-base);
+    color: var(--color-white); line-height: 1.5; transition: border-color var(--transition-base);
+    appearance: none; -webkit-appearance: none;
+  }
+  .lp-field input:focus, .lp-field select:focus, .lp-field textarea:focus {
+    outline: none; border-color: var(--color-signal); box-shadow: 0 0 0 2px var(--signal-15);
+  }
+  .lp-field input::placeholder, .lp-field textarea::placeholder { color: var(--color-steel); }
+  .lp-field select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394A3B8' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px;
+  }
+  .lp-field select option { background: var(--color-slate); color: var(--color-white); }
+  .lp-field textarea { resize: vertical; min-height: 64px; }
+  .lp-submit {
+    width: 100%; padding: 12px; font-size: 15px; font-weight: 600; font-family: var(--font-body);
+    background: var(--color-signal); color: #fff; border: none; border-radius: var(--radius-base);
+    cursor: pointer; transition: background var(--transition-fast); margin-top: var(--space-xs);
+  }
+  .lp-submit:hover { background: var(--color-signal-glow); }
+  .lp-msg { padding: 10px 14px; border-radius: var(--radius-base); font-size: 13px; display: none; margin-top: var(--space-xs); }
+  .lp-msg.success { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: var(--color-success); display: block; }
+  .lp-msg.error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--color-danger); display: block; }
+  .lp-wa { text-align: center; margin-top: var(--space-sm); font-size: 13px; color: var(--color-mist); }
+  .lp-wa a { color: var(--color-signal); text-decoration: none; }
+  .lp-wa a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .lp-main { grid-template-columns: 1fr; height: auto; }
+    .lp-left { padding: var(--space-lg) var(--space-md); max-width: none; }
+    .lp-right { padding: var(--space-lg) var(--space-md); border-left: none; border-top: 1px solid var(--color-steel); max-width: none; }
+    .lp-bar { padding: var(--space-sm) var(--space-md); }
+    .lp-row { grid-template-columns: 1fr; }
+  }
 </style>
 {% endblock %}
 
 {% block content %}
-<!-- Above the fold: value prop + form -->
-<section class="lp-fold">
-  <div class="container">
-    <div class="lp-grid">
-      <!-- Left: value proposition -->
-      <div class="lp-left">
-        <div class="badge-row" style="margin-bottom: 16px;">
-          <span class="badge badge-green">Free Consultation</span>
-          <span class="badge badge-cyan">Senior Engineers</span>
-        </div>
-        <h1>Your Engineering Team, Without the Overhead.</h1>
-        <p class="lp-sub">Tell us what you're building. Your first consultation is free &mdash; you'll talk to the engineers who'll actually build it.</p>
+<!-- Custom top bar: logo + link back to main site -->
+<div class="lp-bar">
+  <a href="{{ home }}" aria-label="Big0 Home">
+    {{ inject_svg('big0_logo', False, 'lp-bar-logo') | safe }}
+  </a>
+  <a href="{{ home }}" class="lp-bar-link">big0.dev &rarr;</a>
+</div>
 
-        <div class="lp-points">
-          <div class="lp-point">
-            <svg class="lp-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <div class="lp-point-text"><strong>Direct engineer access</strong> &mdash; no salespeople, no account managers</div>
-          </div>
-          <div class="lp-point">
-            <svg class="lp-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <div class="lp-point-text"><strong>Working demos every 2 weeks</strong> &mdash; software you can click, not slide decks</div>
-          </div>
-          <div class="lp-point">
-            <svg class="lp-point-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <div class="lp-point-text"><strong>Research-backed AI</strong> &mdash; peer-reviewed engineering, not tutorial code</div>
-          </div>
-        </div>
+<div class="lp-main">
+  <!-- Left: value prop -->
+  <div class="lp-left">
+    <span class="lp-badge">Free Consultation</span>
+    <h1 class="lp-h1">Your Engineering Team,<br>Without the Overhead.</h1>
+    <p class="lp-sub">Senior engineers build your product. You talk to them directly. No salespeople, no middlemen.</p>
 
-        <div class="lp-price">
-          <span class="price-range">$8,000 &ndash; $10,000+</span>
-          <p>Every project scoped individually. Free consultation first.</p>
-        </div>
+    <ul class="lp-checks">
+      <li class="lp-check">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Direct engineer access from day one
+      </li>
+      <li class="lp-check">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Working demos every 2 weeks
+      </li>
+      <li class="lp-check">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        Same senior team, every sprint
+      </li>
+    </ul>
 
-        <div class="lp-logos">
-          <span class="trusted-label">Trusted by</span>
-          {% set clients = [
-            {'url': 'https://khan.big0.dev', 'name': 'Khan', 'logo': 'clients/khan'},
-            {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
-            {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
-            {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
-          ] %}
-          {% for client in clients %}
-          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">
-            {{ inject_svg(client.logo) | safe }}
-          </a>
-          {% endfor %}
-        </div>
-      </div>
+    <div class="lp-price">$8,000 &ndash; $10,000+</div>
+    <p class="lp-price-note">Every project scoped individually. First consultation is free.</p>
 
-      <!-- Right: form -->
-      <div class="lp-right">
-        <h2>Talk to an Engineer</h2>
-        <p class="lp-form-sub">Free consultation. No commitment. We reply within 24 hours.</p>
-        {% include 'contact-form-bant.html' %}
-        <div class="lp-whatsapp">
-          <p style="color: var(--color-mist); font-size: 13px; margin-top: 12px;">Prefer a quick chat? <a href="https://wa.me/923039441945">WhatsApp us directly</a></p>
-        </div>
+    <div class="lp-logos">
+      <span class="lp-logos-label">Trusted by</span>
+      {% set clients = [
+        {'name': 'Khan', 'logo': 'clients/khan'},
+        {'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
+        {'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+        {'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
+      ] %}
+      {% for client in clients %}
+      <span aria-label="{{ client.name }}">{{ inject_svg(client.logo) | safe }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="lp-contact-cards">
+      <a href="mailto:contact@big0.dev" class="lp-contact-card">
+        <span class="lp-contact-label">Email</span>
+        <span class="lp-contact-value">contact@big0.dev</span>
+      </a>
+      <a href="tel:+923039441945" class="lp-contact-card">
+        <span class="lp-contact-label">Phone</span>
+        <span class="lp-contact-value">+92 303 944 1945</span>
+      </a>
+      <div class="lp-contact-card">
+        <span class="lp-contact-label">Location</span>
+        <span class="lp-contact-value" style="color: var(--color-mist);">Islamabad, PKT (GMT+5)</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Case study bar — just below fold, single line -->
-<div class="lp-case-bar">
-  <div class="container">
-    <div class="lp-case-inner">
-      <span class="lp-case-label">Case Study &mdash; Auxilio UK</span>
-      <span class="lp-case-title">AI Legal Document Analysis</span>
-      <div class="lp-case-stats">
-        <span class="lp-case-stat">Hours &rarr; Minutes</span>
-        <span class="lp-case-stat">Production Deployed</span>
-        <span class="lp-case-stat">UK Law Firms</span>
+  <!-- Right: simplified form -->
+  <div class="lp-right">
+    <h2 class="lp-form-title">Talk to an Engineer</h2>
+    <p class="lp-form-sub">No commitment. We reply within 24 hours.</p>
+
+    <form class="lp-form" id="lpForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="4995bef8-9b68-4453-ae2b-6618d35c4278">
+      <input type="hidden" name="subject" value="New lead from get-started page">
+      <input type="hidden" name="from_name" value="Big0 Landing Page">
+      <input type="checkbox" name="botcheck" style="display:none">
+
+      <div class="lp-row">
+        <div class="lp-field">
+          <label for="lp-name">Name <span style="color: var(--color-danger);">*</span></label>
+          <input type="text" id="lp-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="lp-field">
+          <label for="lp-email">Email <span style="color: var(--color-danger);">*</span></label>
+          <input type="email" id="lp-email" name="email" placeholder="you@company.com" required autocomplete="email">
+        </div>
       </div>
+      <div class="lp-row">
+        <div class="lp-field">
+          <label for="lp-phone">Phone <span style="color: var(--color-danger);">*</span></label>
+          <input type="tel" id="lp-phone" name="phone" placeholder="+1 (555) 123-4567" required autocomplete="tel">
+        </div>
+        <div class="lp-field">
+          <label for="lp-company">Company <span style="color: var(--color-danger);">*</span></label>
+          <input type="text" id="lp-company" name="company" placeholder="Your company" required autocomplete="organization">
+        </div>
+      </div>
+      <div class="lp-field">
+        <label for="lp-budget">Budget Range <span style="color: var(--color-danger);">*</span></label>
+        <select id="lp-budget" name="budget_range" required>
+          <option value="">Select budget</option>
+          <option value="10k-25k">$10k – $25k</option>
+          <option value="25k-50k">$25k – $50k</option>
+          <option value="50k-100k">$50k – $100k</option>
+          <option value="100k+">$100k+</option>
+          <option value="discuss">Prefer to discuss</option>
+        </select>
+      </div>
+      <div class="lp-field">
+        <label for="lp-message">What are you building? <span style="color: var(--color-danger);">*</span></label>
+        <textarea id="lp-message" name="message" placeholder="Brief description of your project" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="lp-submit" id="lpSubmit">Get Free Consultation &rarr;</button>
+      <div class="lp-msg" id="lpMsg"></div>
+    </form>
+
+    <div class="lp-wa">
+      Prefer WhatsApp? <a href="https://wa.me/923039441945">Message us</a>
     </div>
   </div>
 </div>
+
+<script>
+document.getElementById('lpForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('lpSubmit');
+  var msg = document.getElementById('lpMsg');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  msg.className = 'lp-msg'; msg.style.display = 'none';
+  try {
+    var res = await fetch(this.action, { method: 'POST', body: new FormData(this) });
+    var data = await res.json();
+    if (data.success) {
+      msg.className = 'lp-msg success';
+      msg.textContent = "Sent! We'll get back to you within 24 hours.";
+      this.reset();
+    } else {
+      msg.className = 'lp-msg error';
+      msg.textContent = data.message || 'Something went wrong. Try again.';
+    }
+  } catch(err) {
+    msg.className = 'lp-msg error';
+    msg.textContent = 'Error sending. Email us at contact@big0.dev';
+  }
+  btn.disabled = false; btn.textContent = 'Get Free Consultation \u2192';
+  msg.style.display = 'block';
+});
+</script>
 {% endblock %}

@@ -320,15 +320,15 @@ class AssetManager:
             try:
                 minified = minify_html.minify(
                     original.decode('utf-8'),
-                    minify_js=True,
+                    minify_js=False,
                     minify_css=True,
                     remove_processing_instructions=True,
                 ).encode('utf-8')
                 html_file.write_bytes(minified)
                 html_saved += len(original) - len(minified)
                 html_count += 1
-            except Exception:
-                pass
+            except BaseException as e:
+                logger.warning(f"Skipped minification for {html_file.name}: {e}")
 
         static_dir = target_dir / 'static'
         if static_dir.exists():

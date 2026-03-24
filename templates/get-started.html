@@ -96,6 +96,10 @@
     .lp-right { padding: var(--space-lg) var(--space-md); border-left: none; border-top: 1px solid var(--color-steel); max-width: none; }
     .lp-bar { padding: var(--space-sm) var(--space-md); }
     .lp-row { grid-template-columns: 1fr; }
+    .lp-logos { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: var(--space-lg); padding-bottom: var(--space-xs); }
+    .lp-logos::-webkit-scrollbar { display: none; }
+    .lp-logos span, .lp-logos .lp-logos-label { flex-shrink: 0; }
+    .lp-contact-cards { grid-template-columns: 1fr; }
   }
 </style>
 {% endblock %}

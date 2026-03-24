@@ -42,8 +42,9 @@
   .lp-check svg { color: var(--color-signal); flex-shrink: 0; }
   .lp-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-signal); margin-bottom: 2px; }
   .lp-price-note { font-size: 13px; color: var(--color-mist); margin-bottom: var(--space-lg); }
+  .lp-trust { display: flex; align-items: center; gap: var(--space-md); }
+  .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; flex-shrink: 0; }
   .lp-logos { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
-  .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
   .lp-logos svg { height: 18px; width: auto; opacity: 0.5; }
   .lp-contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-top: var(--space-md); }
   .lp-contact-card { background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: var(--radius-base); padding: var(--space-sm) var(--space-xs); text-align: center; text-decoration: none; transition: border-color var(--transition-fast); display: block; }
@@ -96,9 +97,9 @@
     .lp-right { padding: var(--space-lg) var(--space-md); border-left: none; border-top: 1px solid var(--color-steel); max-width: none; }
     .lp-bar { padding: var(--space-sm) var(--space-md); }
     .lp-row { grid-template-columns: 1fr; }
-    .lp-logos { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: var(--space-lg); padding-bottom: var(--space-xs); }
+    .lp-logos { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: var(--space-lg); }
     .lp-logos::-webkit-scrollbar { display: none; }
-    .lp-logos span, .lp-logos .lp-logos-label { flex-shrink: 0; }
+    .lp-logos span { flex-shrink: 0; }
     .lp-contact-cards { grid-template-columns: 1fr; }
   }
 </style>
@@ -138,17 +139,19 @@
     <div class="lp-price">$8,000 &ndash; $10,000+</div>
     <p class="lp-price-note">Every project scoped individually. First consultation is free.</p>
 
-    <div class="lp-logos">
+    <div class="lp-trust">
       <span class="lp-logos-label">Trusted by</span>
-      {% set clients = [
-        {'name': 'Khan', 'logo': 'clients/khan'},
-        {'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
-        {'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
-        {'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
-      ] %}
-      {% for client in clients %}
-      <span aria-label="{{ client.name }}">{{ inject_svg(client.logo) | safe }}</span>
-      {% endfor %}
+      <div class="lp-logos">
+        {% set clients = [
+          {'name': 'Khan', 'logo': 'clients/khan'},
+          {'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
+          {'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+          {'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
+        ] %}
+        {% for client in clients %}
+        <span aria-label="{{ client.name }}">{{ inject_svg(client.logo) | safe }}</span>
+        {% endfor %}
+      </div>
     </div>
 
     <div class="lp-contact-cards">

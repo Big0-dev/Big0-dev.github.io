@@ -173,6 +173,9 @@ cython_debug/
 # macOS
 .DS_Store
 
+# Claude Code - local settings (personal permissions, not shared)
+.claude/settings.local.json
+
 # SEO Engine
 seo_engine/.env
 seo_engine/cache/

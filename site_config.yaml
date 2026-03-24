@@ -54,6 +54,11 @@ static_pages:
     title: Compliance & Certifications
     description: Big0's compliance and regulatory certifications. Registered with SECP, FBR, PSEB, PEC and member of PASHA and Islamabad Chamber of Commerce.
 
+  - template: get-started.html
+    output: get-started.html
+    title: Get Started — Talk to an Engineer
+    description: Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Projects typically start at $8K–$10K.
+
 # Dynamic Pages - Generated from content files
 content_types:
   blogs:
@@ -124,6 +129,7 @@ navigation:
   privacy: privacy.html
   terms: terms.html
   compliance: compliance.html
+  get_started: get-started.html
   sitemap: sitemap.xml
   image_sitemap: sitemap-images.xml
 

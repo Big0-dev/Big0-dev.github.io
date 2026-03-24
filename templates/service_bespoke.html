@@ -218,7 +218,7 @@
 {% endif %}
 
 <!-- Section 8: CTA -->
-{% with cta_title=fm.cta_headline or 'Talk to Our Engineers', cta_description=fm.cta_subtext or 'The people who built this are the people you will talk to.', cta_button=fm.cta_button or 'Start a Conversation' %}
+{% with cta_title='Free Consultation — Talk to an Engineer', cta_description='Not sure about scope or budget? Projects typically start at $8K–$10K. Your first consultation is free — we\'ll scope it honestly before you commit to anything.', cta_button='Get Started', cta_url=path_prefix + 'get-started.html' %}
 {% include 'cta.html' %}
 {% endwith %}
 

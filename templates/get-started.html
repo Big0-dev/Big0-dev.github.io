@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}Get Started — Talk to an Engineer{% endblock %}
+{% block meta_description %}Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Projects typically start at $8K–$10K.{% endblock %}
+{% block canonical_path %}/get-started.html{% endblock %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/home.css">
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
+<style>
+/* Landing page: hide nav to minimize exit points */
+.navbar { display: none !important; }
+.lp-back { position: fixed; top: 16px; left: 16px; z-index: 100; color: var(--color-mist); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 4px; transition: color 0.15s; }
+.lp-back:hover { color: var(--color-white); }
+.lp-hero { padding: 80px 0 48px; text-align: center; }
+.lp-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 720px; margin: 0 auto 48px; }
+.lp-proof-item { background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: var(--radius-lg); padding: 20px; text-align: center; }
+.lp-proof-item h3 { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
+.lp-proof-item p { font-size: 13px; color: var(--color-mist); margin: 0; line-height: 1.5; }
+.lp-case { background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: var(--radius-lg); padding: 32px; max-width: 720px; margin: 0 auto 48px; }
+.lp-case-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-signal); font-weight: 600; margin-bottom: 8px; }
+.lp-case h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--color-white); margin-bottom: 8px; }
+.lp-case p { color: var(--color-cloud); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+.lp-case-stats { display: flex; gap: 24px; }
+.lp-case-stat { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-signal); }
+.lp-pricing { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.lp-pricing h3 { font-family: var(--font-display); font-size: 20px; color: var(--color-white); margin-bottom: 8px; }
+.lp-pricing p { color: var(--color-mist); font-size: 15px; line-height: 1.6; }
+.lp-pricing .price-range { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-signal); }
+.lp-form-section { max-width: 560px; margin: 0 auto; }
+.lp-form-section h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-white); text-align: center; margin-bottom: 8px; }
+.lp-form-section .lp-form-sub { color: var(--color-mist); font-size: 14px; text-align: center; margin-bottom: 24px; }
+.lp-whatsapp { text-align: center; margin-top: 16px; }
+.lp-whatsapp a { color: var(--color-signal); text-decoration: none; font-size: 14px; }
+.lp-whatsapp a:hover { text-decoration: underline; }
+.lp-process { max-width: 720px; margin: 0 auto 48px; }
+.lp-process h3 { font-family: var(--font-display); font-size: 18px; color: var(--color-white); text-align: center; margin-bottom: 24px; }
+.lp-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.lp-step { text-align: center; padding: 16px 8px; }
+.lp-step-num { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-signal); margin-bottom: 4px; }
+.lp-step-label { font-size: 13px; color: var(--color-cloud); }
+.lp-step-time { font-size: 11px; color: var(--color-mist); margin-top: 2px; }
+@media (max-width: 768px) {
+  .lp-proof { grid-template-columns: 1fr; }
+  .lp-case-stats { flex-direction: column; gap: 8px; }
+  .lp-steps { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Minimal back link instead of full nav -->
+<a href="{{ home }}" class="lp-back">&larr; big0.dev</a>
+
+<!-- Hero — matches ad copy -->
+<section class="lp-hero">
+  <div class="container">
+    <div class="hero-badges" style="justify-content: center; margin-bottom: 16px;">
+      <span class="badge badge-green">Free Consultation</span>
+      <span class="badge badge-cyan">Senior Engineers</span>
+    </div>
+    <h1 class="detail-title" style="text-align: center; margin-bottom: 16px;">Your Engineering Team, Without the Overhead.</h1>
+    <p class="hero-subtitle">Tell us what you're building. Your first consultation is free &mdash; you'll talk to the engineers who'll actually build it.</p>
+  </div>
+</section>
+
+<!-- Trusted By -->
+<section style="padding-bottom: 48px;">
+  <div class="container">
+    <div class="trusted-strip-inner" style="justify-content: center;">
+      <span class="trusted-label">Trusted by</span>
+      {% set clients = [
+        {'url': 'https://khan.big0.dev', 'name': 'Khan', 'logo': 'clients/khan'},
+        {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
+        {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+        {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
+      ] %}
+      <div class="trusted-logos">
+        {% for client in clients %}
+        <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">
+          {{ inject_svg(client.logo) | safe }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 Proof Points -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="lp-proof">
+      <div class="lp-proof-item">
+        <h3>Direct Engineer Access</h3>
+        <p>Talk to the people who build. No salespeople, no account managers.</p>
+      </div>
+      <div class="lp-proof-item">
+        <h3>Working Demos Every 2 Weeks</h3>
+        <p>Sprint-based delivery. You see working software, not status reports.</p>
+      </div>
+      <div class="lp-proof-item">
+        <h3>Research-Backed AI</h3>
+        <p>Peer-reviewed engineering applied to real products for real clients.</p>
+      </div>
+    </div>
+
+    <!-- Case Study Snapshot -->
+    <div class="lp-case">
+      <div class="lp-case-label">Case Study &mdash; Auxilio UK</div>
+      <h3>AI Legal Document Analysis</h3>
+      <p>Built an AI system for UK law firms that reads, analyzes, and extracts insights from legal documents &mdash; cutting solicitor review time from hours to minutes.</p>
+      <div class="lp-case-stats">
+        <span class="lp-case-stat">Hours &rarr; Minutes</span>
+        <span class="lp-case-stat">Production Deployed</span>
+        <span class="lp-case-stat">UK Law Firms</span>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <div class="lp-process">
+      <h3>How We Work</h3>
+      <div class="lp-steps">
+        <div class="lp-step">
+          <div class="lp-step-num">01</div>
+          <div class="lp-step-label">Scope &amp; Spec</div>
+          <div class="lp-step-time">1&ndash;2 weeks</div>
+        </div>
+        <div class="lp-step">
+          <div class="lp-step-num">02</div>
+          <div class="lp-step-label">Build &amp; Test</div>
+          <div class="lp-step-time">4&ndash;12 weeks</div>
+        </div>
+        <div class="lp-step">
+          <div class="lp-step-num">03</div>
+          <div class="lp-step-label">Ship &amp; Validate</div>
+          <div class="lp-step-time">1&ndash;2 weeks</div>
+        </div>
+        <div class="lp-step">
+          <div class="lp-step-num">04</div>
+          <div class="lp-step-label">Support &amp; Scale</div>
+          <div class="lp-step-time">Ongoing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Signal -->
+    <div class="lp-pricing">
+      <h3>Investment</h3>
+      <p class="price-range">$8,000 &ndash; $10,000+</p>
+      <p>Every project is scoped individually. Your first consultation is free &mdash; we'll tell you what it takes and what it costs before you commit to anything.</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="lp-form-section">
+      <h2>Talk to an Engineer</h2>
+      <p class="lp-form-sub">Free consultation. No commitment. We'll get back to you within 24 hours.</p>
+
+      {% include 'contact-form-bant.html' %}
+
+      <div class="lp-whatsapp">
+        <p style="color: var(--color-mist); font-size: 13px; margin-top: 16px;">Prefer a quick chat? <a href="https://wa.me/923039441945">WhatsApp us directly</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}

@@ -23,9 +23,9 @@
     </nav>
 
     <div class="max-w-3xl">
-      <h1 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px;">{{ current_service.title }}</h1>
+      <h1 class="detail-title" style="margin-bottom: 12px;">{{ current_service.title }}</h1>
       {% if current_service.features %}
-      <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;">
+      <div class="badge-row" style="margin-bottom: 16px;">
         {% for feature in current_service.features[:4] %}
         <span class="badge badge-cyan">{{ feature }}</span>
         {% endfor %}
@@ -104,24 +104,5 @@
 
 {% block scripts %}
 {{ super() }}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var c = document.querySelector('.detail-content');
-  var r = document.querySelector('.reading-time');
-  if (c && r) {
-    var w = (c.textContent || c.innerText).trim().split(/\s+/).length;
-    r.textContent = Math.ceil(w / 200) + ' min read';
-  }
-  document.querySelectorAll('.faq-item').forEach(function(item) {
-    item.querySelector('.faq-question').addEventListener('click', function() {
-      var active = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(function(o) {
-        if (o !== item) { o.classList.remove('active'); o.querySelector('.faq-question').setAttribute('aria-expanded','false'); }
-      });
-      item.classList.toggle('active', !active);
-      this.setAttribute('aria-expanded', !active);
-    });
-  });
-});
-</script>
+{% include 'detail-scripts.html' %}
 {% endblock %}

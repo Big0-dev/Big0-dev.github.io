@@ -206,7 +206,7 @@
   padding: 0;
 }
 .close-btn:hover {
-  background: rgba(13, 148, 136, 0.1);
+  background: var(--signal-10);
   border-color: var(--color-signal);
   transform: rotate(90deg);
 }
@@ -292,7 +292,7 @@
 #search-input:focus {
   outline: none;
   border-color: var(--color-signal);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+  box-shadow: 0 0 0 3px var(--signal-10);
 }
 .search-submit {
   background: transparent;
@@ -575,8 +575,8 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: rgba(13, 148, 136, 0.12);
-  border: 1px solid rgba(13, 148, 136, 0.2);
+  background: var(--signal-12);
+  border: 1px solid var(--signal-20);
   border-radius: 8px;
 }
 .service-preview-card .icon-container svg {
@@ -620,8 +620,8 @@
 .case-study-icon {
   width: 40px;
   height: 40px;
-  background: rgba(13, 148, 136, 0.12);
-  border: 1px solid rgba(13, 148, 136, 0.2);
+  background: var(--signal-12);
+  border: 1px solid var(--signal-20);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -829,7 +829,7 @@
   border: none;
 }
 .btn-secondary.nav-search-btn:hover {
-  background: rgba(13, 148, 136, 0.1);
+  background: var(--signal-10);
   border: none;
 }
 #search-form .btn-primary {
@@ -838,7 +838,7 @@
   padding: 4px;
 }
 #search-form .btn-primary:hover {
-  background: rgba(13, 148, 136, 0.1) !important;
+  background: var(--signal-10) !important;
   transform: none;
   box-shadow: none;
 }
@@ -1130,7 +1130,7 @@
 }
 .lightbox-nav:hover {
   opacity: 1;
-  background: rgba(13, 148, 136, 0.8);
+  background: var(--signal-80);
   border-color: white;
   transform: translateY(-50%) scale(1.1);
 }

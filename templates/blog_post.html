@@ -21,13 +21,13 @@
     </nav>
 
     <div class="max-w-3xl">
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+      <div class="badge-row">
         <span class="badge badge-cyan">{{ current_blog.frontmatter.category | default('Technology') }}</span>
         {% if current_blog.frontmatter.date %}
-        <span style="color: var(--color-mist); font-size: 13px;">{{ current_blog.frontmatter.date }}</span>
+        <span class="meta-text">{{ current_blog.frontmatter.date }}</span>
         {% endif %}
       </div>
-      <h1 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.15;">{{ current_blog.title }}</h1>
+      <h1 class="detail-title">{{ current_blog.title }}</h1>
     </div>
   </div>
 </section>
@@ -40,7 +40,7 @@
       <div class="detail-meta">
         {% if current_blog.frontmatter.date %}
         <div class="meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-inline">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
             <line x1="16" y1="2" x2="16" y2="6"/>
             <line x1="8" y1="2" x2="8" y2="6"/>
@@ -50,7 +50,7 @@
         </div>
         {% endif %}
         <div class="meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-inline">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
@@ -62,13 +62,13 @@
       </div>
 
       <!-- Content -->
-      <div class="detail-content" style="margin-bottom: 32px;">
+      <div class="detail-content section-heading">
         {{ current_blog.content_html | safe }}
       </div>
 
       <!-- Author -->
       <div class="author-box">
-        <img src="{{ static }}/team-ceo.avif" alt="Hassan Kamran" class="author-avatar" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+        <img src="{{ static }}/team-ceo.avif" alt="Hassan Kamran" class="author-avatar image-avatar">
         <div class="author-info">
           <h4>Hassan Kamran</h4>
           <p class="author-title">Founder &amp; CEO, Big0</p>
@@ -124,24 +124,5 @@
 
 {% block scripts %}
 {{ super() }}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var c = document.querySelector('.detail-content');
-  var r = document.querySelector('.reading-time');
-  if (c && r) {
-    var w = (c.textContent || c.innerText).trim().split(/\s+/).length;
-    r.textContent = Math.ceil(w / 200) + ' min read';
-  }
-  document.querySelectorAll('.faq-item').forEach(function(item) {
-    item.querySelector('.faq-question').addEventListener('click', function() {
-      var active = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(function(o) {
-        if (o !== item) { o.classList.remove('active'); o.querySelector('.faq-question').setAttribute('aria-expanded','false'); }
-      });
-      item.classList.toggle('active', !active);
-      this.setAttribute('aria-expanded', !active);
-    });
-  });
-});
-</script>
+{% include 'detail-scripts.html' %}
 {% endblock %}

@@ -138,12 +138,6 @@
     ctx.restore();
   }
 
-  // ========== GLITCH EFFECT (Disabled - was causing flashes) ==========
-  function updateGlitch() {
-    // Glitch effect disabled to prevent unwanted flashing
-    // Keep the function for potential future use with user toggle
-  }
-
   // ========== MAIN ANIMATION ==========
   function resize() {
     const rect = heroSection.getBoundingClientRect();
@@ -166,9 +160,6 @@
 
     // Layer 2: Mid-ground
     drawStarfield();
-
-    // CSS animations
-    updateGlitch();
 
     animationId = requestAnimationFrame(animate);
   }

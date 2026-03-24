@@ -269,15 +269,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el) { observer.observe(el); });
 
-  // FAQ accordion
+  // FAQ accordion (shared logic)
   document.querySelectorAll('.faq-item').forEach(function(item) {
-    item.querySelector('.faq-question').addEventListener('click', function() {
+    var q = item.querySelector('.faq-question');
+    if (q) q.addEventListener('click', function() {
       var active = item.classList.contains('active');
       document.querySelectorAll('.faq-item').forEach(function(o) {
-        if (o !== item) {
-          o.classList.remove('active');
-          o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        }
+        if (o !== item) { o.classList.remove('active'); o.querySelector('.faq-question').setAttribute('aria-expanded','false'); }
       });
       item.classList.toggle('active', !active);
       this.setAttribute('aria-expanded', !active);

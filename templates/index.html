@@ -43,7 +43,8 @@
       {% set clients = [
         {'url': 'https://khan.big0.dev', 'name': 'Khan', 'logo': 'clients/khan'},
         {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
-        {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'}
+        {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+        {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
       ] %}
       <div class="trusted-logos">
         {% for client in clients %}
@@ -258,7 +259,7 @@
     </div>
 
     <div class="founders-grid reveal-stagger reveal">
-      <a href="team/kamran-bashir.html" class="founder-section" style="text-decoration: none; transition: border-color 0.15s; border: 1px solid transparent; border-radius: 16px;" onmouseover="this.style.borderColor='var(--color-steel)'" onmouseout="this.style.borderColor='transparent'">
+      <a href="team/kamran-bashir.html" class="founder-section card-link">
         <div class="founder-photo-container">
           <img src="{{ static }}/team-chairman.avif" alt="Kamran Bashir, Chairman of Big0 Dev" class="founder-photo" loading="lazy" width="140" height="160">
         </div>
@@ -283,7 +284,7 @@
         </div>
       </a>
 
-      <a href="team/hassan-kamran.html" class="founder-section" style="text-decoration: none; transition: border-color 0.15s; border: 1px solid transparent; border-radius: 16px;" onmouseover="this.style.borderColor='var(--color-steel)'" onmouseout="this.style.borderColor='transparent'">
+      <a href="team/hassan-kamran.html" class="founder-section card-link">
         <div class="founder-photo-container">
           <img src="{{ static }}/team-ceo.avif" alt="Hassan Kamran, CEO & Founder of Big0 Dev" class="founder-photo" loading="lazy" width="140" height="160">
         </div>
@@ -309,7 +310,7 @@
         </div>
       </a>
 
-      <a href="team/musab-akram.html" class="founder-section" style="text-decoration: none; transition: border-color 0.15s; border: 1px solid transparent; border-radius: 16px;" onmouseover="this.style.borderColor='var(--color-steel)'" onmouseout="this.style.borderColor='transparent'">
+      <a href="team/musab-akram.html" class="founder-section card-link">
         <div class="founder-photo-container">
           <img src="{{ static }}/team-cto.avif" alt="Musab Akram, CTO of Big0 Dev" class="founder-photo" loading="lazy" width="140" height="160">
         </div>

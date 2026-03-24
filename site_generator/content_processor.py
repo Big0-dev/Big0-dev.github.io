@@ -19,7 +19,6 @@ import logging
 import markdown
 from pathlib import Path
 from datetime import datetime
-from functools import lru_cache
 from typing import Dict, Any, Optional, Union
 from bs4 import BeautifulSoup
 
@@ -29,9 +28,220 @@ logger = logging.getLogger(__name__)
 class ContentProcessor:
     """Handles all content processing tasks for the static site generator"""
 
+    # Service keyword → slug mappings (class-level constant)
+    SERVICE_LINKS = {
+        'ai integration': 'ai-powered-applications',
+        'artificial intelligence': 'ai-powered-applications',
+        'machine learning': 'ai-powered-applications',
+        'deep learning': 'ai-powered-applications',
+        'neural network': 'ai-powered-applications',
+        'ai model': 'ai-powered-applications',
+        'ml model': 'ai-powered-applications',
+        'predictive analytics': 'ai-powered-applications',
+        'ai solution': 'ai-powered-applications',
+        'computer vision': 'ai-powered-applications',
+        'computer vision applications': 'ai-powered-applications',
+        'computer vision services': 'ai-powered-applications',
+        'image recognition': 'ai-powered-applications',
+        'image recognition systems': 'ai-powered-applications',
+        'object detection': 'ai-powered-applications',
+        'facial recognition': 'ai-powered-applications',
+        'image processing': 'ai-powered-applications',
+        'visual data': 'ai-powered-applications',
+        'opencv': 'ai-powered-applications',
+        'natural language processing': 'ai-powered-applications',
+        'nlp': 'ai-powered-applications',
+        'text analysis': 'ai-powered-applications',
+        'sentiment analysis': 'ai-powered-applications',
+        'chatbot': 'ai-powered-applications',
+        'language model': 'ai-powered-applications',
+        'custom software': 'custom-software-development',
+        'software development': 'custom-software-development',
+        'software solution': 'custom-software-development',
+        'application development': 'custom-software-development',
+        'software engineering': 'custom-software-development',
+        'ros': 'custom-software-development',
+        'gazebo': 'custom-software-development',
+        'simulation': 'custom-software-development',
+        'simulator': 'custom-software-development',
+        'web development': 'custom-software-development',
+        'web application': 'custom-software-development',
+        'web app': 'custom-software-development',
+        'website development': 'custom-software-development',
+        'mobile app': 'custom-software-development',
+        'mobile application': 'custom-software-development',
+        'frontend': 'custom-software-development',
+        'backend': 'custom-software-development',
+        'full stack': 'custom-software-development',
+        'cad': 'startup-engineering',
+        'cad model': 'startup-engineering',
+        'hardware design': 'startup-engineering',
+        'mechanical design': 'startup-engineering',
+        '3d modeling': 'startup-engineering',
+        '3d design': 'startup-engineering',
+        '3d scanning': 'startup-engineering',
+        '3d ear scanning': 'startup-engineering',
+        'ergonomic design': 'startup-engineering',
+        'ergonomic 3d design': 'startup-engineering',
+        'product design': 'startup-engineering',
+        'industrial design': 'startup-engineering',
+        'mechanical construction': 'startup-engineering',
+        'modular construction': 'startup-engineering',
+        'modular mechanical design': 'startup-engineering',
+        'precision mechanical design': 'startup-engineering',
+        '3-axis gimbal': 'startup-engineering',
+        'gimbal': 'startup-engineering',
+        'biomechanical': 'startup-engineering',
+        'solidworks': 'startup-engineering',
+        'autocad': 'startup-engineering',
+        'fusion 360': 'startup-engineering',
+        'carbon fiber': 'startup-engineering',
+        'carbon fiber construction': 'startup-engineering',
+        'prototype': 'startup-engineering',
+        'prototyping': 'startup-engineering',
+        'wheelbase': 'startup-engineering',
+        'modular design': 'startup-engineering',
+        'embedded system': 'startup-engineering',
+        'embedded software': 'startup-engineering',
+        'embedded': 'startup-engineering',
+        'arduino': 'startup-engineering',
+        'raspberry pi': 'startup-engineering',
+        'microcontroller': 'startup-engineering',
+        'firmware': 'startup-engineering',
+        'px4': 'startup-engineering',
+        'px4 autopilot': 'startup-engineering',
+        'flight controller': 'startup-engineering',
+        'dji n3': 'startup-engineering',
+        'stm32': 'startup-engineering',
+        'esp32': 'startup-engineering',
+        'bldc': 'startup-engineering',
+        'bldc motor': 'startup-engineering',
+        'motor control': 'startup-engineering',
+        'autopilot': 'startup-engineering',
+        'iot': 'startup-engineering',
+        'internet of things': 'startup-engineering',
+        'iot device': 'startup-engineering',
+        'smart device': 'startup-engineering',
+        'sensor': 'startup-engineering',
+        'sensing layer': 'startup-engineering',
+        'environmental sensor': 'startup-engineering',
+        'smart meter': 'startup-engineering',
+        'drone': 'startup-engineering',
+        'octocopter': 'startup-engineering',
+        'uav': 'startup-engineering',
+        'spray system': 'startup-engineering',
+        'precision spraying': 'startup-engineering',
+        'agricultural drone': 'startup-engineering',
+        'sprayer drone': 'startup-engineering',
+        'telemetry': 'startup-engineering',
+        'mqtt': 'startup-engineering',
+        'lorawan': 'startup-engineering',
+        'edge computing': 'startup-engineering',
+        'smart city': 'startup-engineering',
+        'smart cities': 'startup-engineering',
+        'pcb': 'startup-engineering',
+        'circuit board': 'startup-engineering',
+        'circuit design': 'startup-engineering',
+        'electronics design': 'startup-engineering',
+        'altium': 'startup-engineering',
+        'eagle': 'startup-engineering',
+        'kicad': 'startup-engineering',
+        'data analytics': 'ai-powered-applications',
+        'data analysis': 'ai-powered-applications',
+        'business intelligence': 'ai-powered-applications',
+        'bi solution': 'ai-powered-applications',
+        'data visualization': 'ai-powered-applications',
+        'big data': 'ai-powered-applications',
+        'data science': 'ai-powered-applications',
+        'sql': 'ai-powered-applications',
+        'database': 'ai-powered-applications',
+        'data warehouse': 'ai-powered-applications',
+        'real-time analytics': 'ai-powered-applications',
+        'predictive modeling': 'ai-powered-applications',
+        'data processing': 'ai-powered-applications',
+        'dashboard': 'ai-powered-applications',
+        'analytics dashboard': 'ai-powered-applications',
+        'reporting dashboard': 'ai-powered-applications',
+        'real-time dashboard': 'ai-powered-applications',
+        'kpi dashboard': 'ai-powered-applications',
+        'management dashboard': 'ai-powered-applications',
+        'city management dashboard': 'ai-powered-applications',
+        'tableau': 'ai-powered-applications',
+        'power bi': 'ai-powered-applications',
+        'digital twin': 'ai-powered-applications',
+        'ui design': 'custom-software-development',
+        'ux design': 'custom-software-development',
+        'ui/ux': 'custom-software-development',
+        'user interface': 'custom-software-development',
+        'user experience': 'custom-software-development',
+    }
+
+    # Case study keyword → slug mappings (class-level constant)
+    CASE_STUDY_LINKS = {
+        'agricultural drone': 'agridrone',
+        'sprayer drone': 'agridrone',
+        'agridrone': 'agridrone',
+        'precision agriculture': 'agridrone',
+        'crop spraying': 'agridrone',
+        'legal document analysis': 'ai-legal-document-analysis-tool',
+        'conveyancing': 'ai-legal-document-analysis-tool',
+        'legal ai': 'ai-legal-document-analysis-tool',
+        'document analysis tool': 'ai-legal-document-analysis-tool',
+        'civic engagement': 'civic-engagement-digital-platform',
+        'member management': 'civic-engagement-digital-platform',
+        'civic platform': 'civic-engagement-digital-platform',
+        'grassroots organization': 'civic-engagement-digital-platform',
+        'fedgan': 'fedgan',
+        'federated learning': 'fedgan',
+        'medical image generation': 'fedgan',
+        'privacy-preserving ai': 'fedgan',
+        'hipaa compliant ai': 'fedgan',
+        'healthcare document': 'firstclass-healthcare-document-management',
+        'firstclass': 'firstclass-healthcare-document-management',
+        'medical records management': 'firstclass-healthcare-document-management',
+        'logistics dashboard': 'global-logistics-dashboard',
+        'global logistics': 'global-logistics-dashboard',
+        'shipping visibility': 'global-logistics-dashboard',
+        'container tracking': 'global-logistics-dashboard',
+        'premium finance': 'premium-finance-management-platform',
+        'insurance premium': 'premium-finance-management-platform',
+        'finance management platform': 'premium-finance-management-platform',
+        'real estate analytics': 'real_estate_analytics_case_study',
+        'property analytics': 'real_estate_analytics_case_study',
+        'real estate platform': 'real_estate_analytics_case_study',
+        'sports card': 'sports-card-trading-marketplace',
+        'card trading': 'sports-card-trading-marketplace',
+        'collectibles marketplace': 'sports-card-trading-marketplace',
+        'trading marketplace': 'sports-card-trading-marketplace',
+    }
+
+    # Pre-sorted keyword lists (sorted by length descending, computed once)
+    _SERVICE_KEYWORDS_SORTED = sorted(
+        SERVICE_LINKS.items(), key=lambda x: len(x[0]), reverse=True
+    )
+    _CASE_STUDY_KEYWORDS_SORTED = sorted(
+        CASE_STUDY_LINKS.items(), key=lambda x: len(x[0]), reverse=True
+    )
+
+    # Pre-compiled regex for removing deprecated directives
+    _DEPRECATED_DIRECTIVES_RE = re.compile(
+        r'\{\{(?:related-industries|industry-challenges|industry-solutions):([^}]+)\}\}'
+    )
+
+    # Date formats to try when parsing
+    _DATE_FORMATS = [
+        '%Y-%m-%d',
+        '%B %d, %Y',
+        '%b %d, %Y',
+        '%d %B %Y',
+        '%d %b %Y',
+    ]
+
+    # Date parse cache (module-level dict instead of broken lru_cache on instance method)
+    _date_cache: Dict[str, Optional[datetime]] = {}
+
     def __init__(self):
         """Initialize the content processor with markdown converter"""
-        # Initialize markdown converter with extensions
         self._md_converter = markdown.Markdown(
             extensions=['extra', 'codehilite', 'toc']
         )
@@ -130,335 +340,74 @@ class ContentProcessor:
         return self.process_markdown(markdown_content, frontmatter, file_path, output_path)
 
     def add_automatic_interlinking(self, html_content: str, file_path: Path) -> str:
-        """
-        Add automatic links to industry and service mentions in the content
-
-        Args:
-            html_content: HTML content to process
-            file_path: Path to the file (for depth calculation and self-link avoidance)
-
-        Returns:
-            HTML content with automatic links added
-        """
-        # Calculate the relative path prefix based on file depth
+        """Add automatic links to service/case-study mentions in the content."""
         depth = len(file_path.parts) - 1 if file_path.parts else 0
         path_prefix = "../" * depth
 
-        # Define service mappings (comprehensive keyword dictionary)
-        service_links = {
-            # AI & Machine Learning
-            'ai integration': 'ai-powered-applications',
-            'artificial intelligence': 'ai-powered-applications',
-            'machine learning': 'ai-powered-applications',
-            'deep learning': 'ai-powered-applications',
-            'neural network': 'ai-powered-applications',
-            'ai model': 'ai-powered-applications',
-            'ml model': 'ai-powered-applications',
-            'predictive analytics': 'ai-powered-applications',
-            'ai solution': 'ai-powered-applications',
-
-            # Computer Vision (part of AI/ML services)
-            'computer vision': 'ai-powered-applications',
-            'computer vision applications': 'ai-powered-applications',
-            'computer vision services': 'ai-powered-applications',
-            'image recognition': 'ai-powered-applications',
-            'image recognition systems': 'ai-powered-applications',
-            'object detection': 'ai-powered-applications',
-            'facial recognition': 'ai-powered-applications',
-            'image processing': 'ai-powered-applications',
-            'visual data': 'ai-powered-applications',
-            'opencv': 'ai-powered-applications',
-
-            # Natural Language Processing (part of AI/ML services)
-            'natural language processing': 'ai-powered-applications',
-            'nlp': 'ai-powered-applications',
-            'text analysis': 'ai-powered-applications',
-            'sentiment analysis': 'ai-powered-applications',
-            'chatbot': 'ai-powered-applications',
-            'language model': 'ai-powered-applications',
-
-            # Software Development
-            'custom software': 'custom-software-development',
-            'software development': 'custom-software-development',
-            'software solution': 'custom-software-development',
-            'application development': 'custom-software-development',
-            'software engineering': 'custom-software-development',
-            'ros': 'custom-software-development',
-            'ROS': 'custom-software-development',
-            'gazebo': 'custom-software-development',
-            'Gazebo': 'custom-software-development',
-            'simulation': 'custom-software-development',
-            'simulator': 'custom-software-development',
-
-            # Web & Mobile Development (part of Custom Software Development)
-            'web development': 'custom-software-development',
-            'web application': 'custom-software-development',
-            'web app': 'custom-software-development',
-            'website development': 'custom-software-development',
-            'mobile app': 'custom-software-development',
-            'mobile application': 'custom-software-development',
-            'frontend': 'custom-software-development',
-            'backend': 'custom-software-development',
-            'full stack': 'custom-software-development',
-
-            # Hardware & IoT Engineering (consolidated service)
-            'cad': 'startup-engineering',
-            'cad model': 'startup-engineering',
-            'hardware design': 'startup-engineering',
-            'mechanical design': 'startup-engineering',
-            '3d modeling': 'startup-engineering',
-            '3d design': 'startup-engineering',
-            '3d scanning': 'startup-engineering',
-            '3d ear scanning': 'startup-engineering',
-            'ergonomic design': 'startup-engineering',
-            'ergonomic 3d design': 'startup-engineering',
-            'product design': 'startup-engineering',
-            'industrial design': 'startup-engineering',
-            'mechanical construction': 'startup-engineering',
-            'modular construction': 'startup-engineering',
-            'modular mechanical design': 'startup-engineering',
-            'precision mechanical design': 'startup-engineering',
-            '3-axis gimbal': 'startup-engineering',
-            'gimbal': 'startup-engineering',
-            'biomechanical': 'startup-engineering',
-            'solidworks': 'startup-engineering',
-            'autocad': 'startup-engineering',
-            'fusion 360': 'startup-engineering',
-            'carbon fiber': 'startup-engineering',
-            'carbon fiber construction': 'startup-engineering',
-            'prototype': 'startup-engineering',
-            'prototyping': 'startup-engineering',
-            'wheelbase': 'startup-engineering',
-            'modular design': 'startup-engineering',
-
-            # Embedded Systems (part of Hardware & IoT Engineering)
-            'embedded system': 'startup-engineering',
-            'embedded software': 'startup-engineering',
-            'embedded': 'startup-engineering',
-            'arduino': 'startup-engineering',
-            'Arduino': 'startup-engineering',
-            'raspberry pi': 'startup-engineering',
-            'microcontroller': 'startup-engineering',
-            'firmware': 'startup-engineering',
-            'px4': 'startup-engineering',
-            'PX4': 'startup-engineering',
-            'px4 autopilot': 'startup-engineering',
-            'PX4 Autopilot': 'startup-engineering',
-            'flight controller': 'startup-engineering',
-            'dji n3': 'startup-engineering',
-            'DJI N3': 'startup-engineering',
-            'stm32': 'startup-engineering',
-            'STM32': 'startup-engineering',
-            'esp32': 'startup-engineering',
-            'ESP32': 'startup-engineering',
-            'bldc': 'startup-engineering',
-            'BLDC': 'startup-engineering',
-            'bldc motor': 'startup-engineering',
-            'BLDC motor': 'startup-engineering',
-            'motor control': 'startup-engineering',
-            'autopilot': 'startup-engineering',
-
-            # IoT Development (part of Hardware & IoT Engineering)
-            'iot': 'startup-engineering',
-            'internet of things': 'startup-engineering',
-            'iot device': 'startup-engineering',
-            'smart device': 'startup-engineering',
-            'sensor': 'startup-engineering',
-            'sensing layer': 'startup-engineering',
-            'environmental sensor': 'startup-engineering',
-            'smart meter': 'startup-engineering',
-            'drone': 'startup-engineering',
-            'octocopter': 'startup-engineering',
-            'uav': 'startup-engineering',
-            'spray system': 'startup-engineering',
-            'precision spraying': 'startup-engineering',
-            'agricultural drone': 'startup-engineering',
-            'sprayer drone': 'startup-engineering',
-            'telemetry': 'startup-engineering',
-            'mqtt': 'startup-engineering',
-            'lorawan': 'startup-engineering',
-            'edge computing': 'startup-engineering',
-            'smart city': 'startup-engineering',
-            'smart cities': 'startup-engineering',
-
-            # PCB Design (part of Hardware & IoT Engineering)
-            'pcb': 'startup-engineering',
-            'circuit board': 'startup-engineering',
-            'circuit design': 'startup-engineering',
-            'electronics design': 'startup-engineering',
-            'altium': 'startup-engineering',
-            'eagle': 'startup-engineering',
-            'kicad': 'startup-engineering',
-
-            # Database & Analytics
-            'data analytics': 'ai-powered-applications',
-            'data analysis': 'ai-powered-applications',
-            'business intelligence': 'ai-powered-applications',
-            'bi solution': 'ai-powered-applications',
-            'data visualization': 'ai-powered-applications',
-            'big data': 'ai-powered-applications',
-            'data science': 'ai-powered-applications',
-            'sql': 'ai-powered-applications',
-            'database': 'ai-powered-applications',
-            'data warehouse': 'ai-powered-applications',
-            'real-time analytics': 'ai-powered-applications',
-            'predictive modeling': 'ai-powered-applications',
-            'data processing': 'ai-powered-applications',
-
-            # Dashboard Development (part of Data Analytics)
-            'dashboard': 'ai-powered-applications',
-            'analytics dashboard': 'ai-powered-applications',
-            'reporting dashboard': 'ai-powered-applications',
-            'real-time dashboard': 'ai-powered-applications',
-            'kpi dashboard': 'ai-powered-applications',
-            'management dashboard': 'ai-powered-applications',
-            'city management dashboard': 'ai-powered-applications',
-            'tableau': 'ai-powered-applications',
-            'power bi': 'ai-powered-applications',
-            'digital twin': 'ai-powered-applications',
-
-            # UI/UX & Design (part of Custom Software Development)
-            'ui design': 'custom-software-development',
-            'ux design': 'custom-software-development',
-            'ui/ux': 'custom-software-development',
-            'user interface': 'custom-software-development',
-            'user experience': 'custom-software-development',
-
-        }
-
-        # Define case study mappings
-        case_study_links = {
-            # Agricultural Drone
-            'agricultural drone': 'agridrone',
-            'sprayer drone': 'agridrone',
-            'agridrone': 'agridrone',
-            'precision agriculture': 'agridrone',
-            'crop spraying': 'agridrone',
-
-            # AI Legal Document Analysis
-            'legal document analysis': 'ai-legal-document-analysis-tool',
-            'conveyancing': 'ai-legal-document-analysis-tool',
-            'legal ai': 'ai-legal-document-analysis-tool',
-            'document analysis tool': 'ai-legal-document-analysis-tool',
-
-            # Civic Engagement Platform
-            'civic engagement': 'civic-engagement-digital-platform',
-            'member management': 'civic-engagement-digital-platform',
-            'civic platform': 'civic-engagement-digital-platform',
-            'grassroots organization': 'civic-engagement-digital-platform',
-
-
-            # FedGAN
-            'fedgan': 'fedgan',
-            'federated learning': 'fedgan',
-            'medical image generation': 'fedgan',
-            'privacy-preserving ai': 'fedgan',
-            'hipaa compliant ai': 'fedgan',
-
-            # Healthcare Document Management
-            'healthcare document': 'firstclass-healthcare-document-management',
-            'firstclass': 'firstclass-healthcare-document-management',
-            'medical records management': 'firstclass-healthcare-document-management',
-
-            # Global Logistics Dashboard
-            'logistics dashboard': 'global-logistics-dashboard',
-            'global logistics': 'global-logistics-dashboard',
-            'shipping visibility': 'global-logistics-dashboard',
-            'container tracking': 'global-logistics-dashboard',
-
-            # Premium Finance Platform
-            'premium finance': 'premium-finance-management-platform',
-            'insurance premium': 'premium-finance-management-platform',
-            'finance management platform': 'premium-finance-management-platform',
-
-            # Real Estate Analytics
-            'real estate analytics': 'real_estate_analytics_case_study',
-            'property analytics': 'real_estate_analytics_case_study',
-            'real estate platform': 'real_estate_analytics_case_study',
-
-            # Sports Card Trading
-            'sports card': 'sports-card-trading-marketplace',
-            'card trading': 'sports-card-trading-marketplace',
-            'collectibles marketplace': 'sports-card-trading-marketplace',
-            'trading marketplace': 'sports-card-trading-marketplace',
-        }
-
-        # Parse HTML
         soup = BeautifulSoup(html_content, 'html.parser')
-
-        # Get current page slug to avoid self-linking
         current_slug = file_path.stem
 
-        # Function to check if text is already inside a link
+        # Determine page type once (not per text node)
+        file_path_str = str(file_path)
+        is_blog_page = 'blogs/' in file_path_str or 'blog/' in file_path_str
+        is_case_study_page = 'case_studies/' in file_path_str or 'case-studies/' in file_path_str
+        is_news_page = 'news/' in file_path_str
+        is_conversation_page = 'conversations/' in file_path_str
+
+        # Build keyword list once using pre-sorted class-level constants
+        all_keywords = []
+        if is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
+            for term, slug in self._SERVICE_KEYWORDS_SORTED:
+                if slug != current_slug:
+                    all_keywords.append((term, 'service', slug))
+
+        if is_conversation_page or is_blog_page or is_news_page:
+            for term, slug in self._CASE_STUDY_KEYWORDS_SORTED:
+                if slug != current_slug:
+                    all_keywords.append((term, 'case_study', slug))
+
+        # Re-sort combined list by length (longest first)
+        all_keywords.sort(key=lambda x: len(x[0]), reverse=True)
+
+        if not all_keywords:
+            return html_content
+
+        # Skip tags that should not be auto-linked
+        skip_tags = frozenset(['a', 'script', 'style', 'code', 'pre'])
+
         def is_inside_link(element):
             for parent in element.parents:
                 if parent.name == 'a':
                     return True
             return False
 
-        # Process text nodes for auto-linking
         for text_node in soup.find_all(string=True):
-            # Skip if already inside a link, script, style, code or pre tag
-            if is_inside_link(text_node) or text_node.parent.name in ['a', 'script', 'style', 'code', 'pre']:
+            if is_inside_link(text_node) or text_node.parent.name in skip_tags:
                 continue
 
             text = str(text_node)
-            modified = False
-
-            # Determine what to link based on page type
-            file_path_str = str(file_path)
-            is_service_page = 'services/' in file_path_str
-            is_blog_page = 'blogs/' in file_path_str or 'blog/' in file_path_str
-            is_case_study_page = 'case_studies/' in file_path_str or 'case-studies/' in file_path_str
-            is_news_page = 'news/' in file_path_str
-            is_conversation_page = 'conversations/' in file_path_str
-
-            # Collect all candidate keywords (services and case studies)
-            all_keywords = []
-
-            # Add service keywords if applicable
-            if is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
-                for term, service_slug in service_links.items():
-                    if service_slug != current_slug:
-                        all_keywords.append((term, 'service', service_slug))
-
-            # Add case study keywords for conversations, blogs, and news
-            if is_conversation_page or is_blog_page or is_news_page:
-                for term, case_study_slug in case_study_links.items():
-                    if case_study_slug != current_slug:
-                        all_keywords.append((term, 'case_study', case_study_slug))
-
-            # Sort ALL keywords by length (longest first) to match specific phrases before generic ones
-            all_keywords.sort(key=lambda x: len(x[0]), reverse=True)
-
-            # Collect all matches first (to avoid overlapping links)
             matches_to_replace = []
 
             for term, link_type, slug in all_keywords:
                 pattern = r'\b(' + re.escape(term) + r')\b'
                 for match in re.finditer(pattern, text, re.IGNORECASE):
-                    # Check if this match overlaps with any existing match
                     overlaps = any(
-                        match.start() < existing_end and match.end() > existing_start
-                        for existing_start, existing_end, _, _, _ in matches_to_replace
+                        match.start() < ee and match.end() > es
+                        for es, ee, _, _ in matches_to_replace
                     )
                     if not overlaps:
                         matched_text = match.group(1)
                         if link_type == 'case_study':
                             replacement = f'<a href="{path_prefix}case-studies/{slug}.html" class="auto-link">{matched_text}</a>'
-                        else:  # service
+                        else:
                             replacement = f'<a href="{path_prefix}services/{slug}.html" class="auto-link">{matched_text}</a>'
-                        matches_to_replace.append((match.start(), match.end(), matched_text, replacement, link_type))
+                        matches_to_replace.append((match.start(), match.end(), matched_text, replacement))
 
-            # Apply all replacements from right to left (so positions don't shift)
             if matches_to_replace:
-                modified = True
                 matches_to_replace.sort(key=lambda x: x[0], reverse=True)
-                for start, end, matched_text, replacement, link_type in matches_to_replace:
+                for start, end, _, replacement in matches_to_replace:
                     text = text[:start] + replacement + text[end:]
 
-            # Replace the text node with new HTML if modified
-            if modified:
                 new_soup = BeautifulSoup(text, 'html.parser')
                 new_elements = list(new_soup.children)
                 if new_elements:
@@ -535,14 +484,8 @@ class ContentProcessor:
 
         content = re.sub(r'\{\{related-services:([^}]+)\}\}', replace_related_services, content)
 
-        # Process {{related-industries:...}} directives (no-op, industries removed)
-        content = re.sub(r'\{\{related-industries:([^}]+)\}\}', '', content)
-
-        # Process {{industry-challenges:...}} directives (no-op, industries removed)
-        content = re.sub(r'\{\{industry-challenges:([^}]+)\}\}', '', content)
-
-        # Process {{industry-solutions:...}} directives (no-op, industries removed)
-        content = re.sub(r'\{\{industry-solutions:([^}]+)\}\}', '', content)
+        # Remove deprecated industry directives (single pass)
+        content = self._DEPRECATED_DIRECTIVES_RE.sub('', content)
 
         return content
 
@@ -703,68 +646,39 @@ class ContentProcessor:
         # Then process any directives that are already in the markdown
         html_content = self.process_template_directives(html_content, file_path)
 
-        # Also handle directives that got wrapped in <p> tags
-        # Replace <p>{{template:xxx}}</p> patterns
-        def replace_p_wrapped_template(match):
-            directive = match.group(1)
-            templates = {
-                'cta': '''<div class="inline-cta">
-  <p class="cta-title">Ready to Transform Your Business?</p>
-  <p>Let's discuss how we can help you achieve your goals with our innovative solutions.</p>
-  <a href="../contact.html" class="btn btn-primary">Get Started Today</a>
-</div>''',
-                'cta-service': '''<div class="inline-cta">
-  <p class="cta-title">Ready to Get Started?</p>
-  <p>Our experts are ready to help you implement these solutions for your business.</p>
-  <a href="../contact.html" class="btn btn-primary">Schedule a Consultation</a>
-</div>''',
-                'cta-case-study': '''<div class="inline-cta">
-  <p class="cta-title">Want Similar Results?</p>
-  <p>Let's discuss how we can deliver transformative solutions for your organization.</p>
-  <a href="../contact.html" class="btn btn-primary">Contact Our Team</a>
-</div>'''
-            }
-            return templates.get(directive, match.group(0))
-
-        html_content = re.sub(r'<p>\{\{template:([\w-]+)\}\}</p>', replace_p_wrapped_template, html_content)
+        # Handle directives that got wrapped in <p> tags — re-run directive processing
+        html_content = re.sub(
+            r'<p>\{\{template:([\w-]+)\}\}</p>',
+            lambda m: self.process_template_directives(
+                '{{template:' + m.group(1) + '}}', file_path
+            ),
+            html_content
+        )
 
         return html_content
 
-    @lru_cache(maxsize=128)
     def _parse_date(self, date_value: Union[str, datetime, None]) -> Optional[datetime]:
-        """
-        Parse date from various formats with caching
-
-        Args:
-            date_value: Date value to parse
-
-        Returns:
-            Parsed datetime object or None if parsing fails
-        """
+        """Parse date from various formats with dict-based caching."""
         if not date_value:
             return None
 
-        # If already a datetime object
         if isinstance(date_value, datetime):
             return date_value
 
         date_str = str(date_value)
 
-        # Try different date formats
-        date_formats = [
-            '%Y-%m-%d',          # 2024-01-15
-            '%B %d, %Y',         # January 15, 2024
-            '%b %d, %Y',         # Jan 15, 2024
-            '%d %B %Y',          # 15 January 2024
-            '%d %b %Y',          # 15 Jan 2024
-        ]
+        # Check cache first
+        if date_str in self._date_cache:
+            return self._date_cache[date_str]
 
-        for fmt in date_formats:
+        for fmt in self._DATE_FORMATS:
             try:
-                return datetime.strptime(date_str, fmt)
+                result = datetime.strptime(date_str, fmt)
+                self._date_cache[date_str] = result
+                return result
             except ValueError:
                 continue
 
-        # If no format matches, return None
         logger.warning(f"Could not parse date: {date_str}")
+        self._date_cache[date_str] = None
         return None

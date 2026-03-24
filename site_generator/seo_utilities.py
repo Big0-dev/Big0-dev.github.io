@@ -256,13 +256,13 @@ class SEOUtilities:
         image_sitemap_path.write_text(sitemap_xml)
         logger.info(f"Generated sitemap-images.xml with {len(pages_with_images)} pages and {sum(len(imgs) for imgs in pages_with_images.values())} images")
 
-    def generate_rss_feed(self, feed_items: List[Dict[str, Any]], template_renderer: Any) -> None:
+    def generate_rss_feed(self, feed_items: List[Dict[str, Any]], env: Any) -> None:
         """
         Generate RSS feed for news and blog posts.
 
         Args:
             feed_items: List of feed item dictionaries
-            template_renderer: Template rendering function or object
+            env: Jinja2 Environment instance
         """
         try:
             # Sort by date (newest first)
@@ -273,20 +273,17 @@ class SEOUtilities:
             )
 
             # Remove date_obj from items for template rendering
-            clean_items = []
-            for item in sorted_items:
-                clean_item = item.copy()
-                if 'date_obj' in clean_item:
-                    del clean_item['date_obj']
-                clean_items.append(clean_item)
+            clean_items = [
+                {k: v for k, v in item.items() if k != 'date_obj'}
+                for item in sorted_items
+            ]
 
-            # Generate RSS using template
-            rss_content = template_renderer.render(
-                'rss.xml',  # Template name
+            # Generate RSS using Jinja2 template directly
+            rss_content = env.get_template('rss.xml').render(
                 domain=self.config['domain'],
                 build_date=formatdate(time.time()),
                 current_year=datetime.now().year,
-                feed_items=clean_items[:20]  # Limit to 20 most recent items
+                feed_items=clean_items[:20]
             )
 
             rss_path = Path(self.output_dir) / "rss.xml"

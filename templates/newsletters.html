@@ -15,7 +15,7 @@
     <div class="hero-content text-center max-w-3xl mx-auto">
       <div class="section-label">Newsletter</div>
       <h1 class="page-hero-title">Zero to One: Tech Frontiers<span class="hero-dot">.</span></h1>
-      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+      <p class="hero-subtitle">
         Your weekly guide to AI technology and the future. Industry trends, technical deep-dives, and innovation stories.
       </p>
     </div>
@@ -31,7 +31,7 @@
         <div class="case-body">
           <div class="case-badges">
             <span class="badge badge-primary">Issue #{{ newsletter.frontmatter.issue_number | default('') }}</span>
-            <span style="font-size: 11px; color: var(--color-mist);">{{ newsletter.frontmatter.date | default('') }}</span>
+            <span class="meta-text-xs">{{ newsletter.frontmatter.date | default('') }}</span>
           </div>
           <h3 class="case-title">{{ newsletter.title }}</h3>
           <p class="case-desc">{{ newsletter.meta_description }}</p>

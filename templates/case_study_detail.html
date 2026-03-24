@@ -21,7 +21,7 @@
     </nav>
 
     <div class="max-w-3xl">
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+      <div class="badge-row">
         {% if current_case_study.frontmatter.attribution == 'big0_work' %}
         <span class="badge badge-green">Big0 Client Work</span>
         {% elif current_case_study.frontmatter.attribution == 'previous_firm' %}
@@ -31,15 +31,15 @@
         {% endif %}
         <span class="badge badge-cyan">{{ current_case_study.frontmatter.industry | default('Technology') }}</span>
         <span class="badge badge-green">{{ current_case_study.frontmatter.type | default('Case Study') }}</span>
-        <span style="color: var(--color-mist); font-size: 13px; display: flex; align-items: center; gap: 4px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle;">
+        <span class="meta-text" style="display: flex; align-items: center; gap: 4px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-inline" style="display: inline-block; vertical-align: middle;">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
           <span class="reading-time">Calculating...</span>
         </span>
       </div>
-      <h1 style="font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.15;">{{ current_case_study.title }}</h1>
+      <h1 class="detail-title">{{ current_case_study.title }}</h1>
     </div>
   </div>
 </section>
@@ -53,15 +53,15 @@
       {% if current_case_study.frontmatter.challenge or current_case_study.frontmatter.solution %}
       <div class="grid-2" style="gap: 16px; margin-bottom: 48px;">
         {% if current_case_study.frontmatter.challenge %}
-        <div style="background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: 12px; padding: 24px;">
-          <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--color-white); margin-bottom: 8px;">The Challenge</h3>
-          <p style="color: var(--color-cloud); font-size: 14px; line-height: 1.6; margin: 0;">{{ current_case_study.frontmatter.challenge }}</p>
+        <div class="info-card">
+          <h3 class="info-card-heading">The Challenge</h3>
+          <p class="info-card-text">{{ current_case_study.frontmatter.challenge }}</p>
         </div>
         {% endif %}
         {% if current_case_study.frontmatter.solution %}
-        <div style="background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: 12px; padding: 24px;">
-          <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--color-white); margin-bottom: 8px;">Our Solution</h3>
-          <p style="color: var(--color-cloud); font-size: 14px; line-height: 1.6; margin: 0;">{{ current_case_study.frontmatter.solution }}</p>
+        <div class="info-card">
+          <h3 class="info-card-heading">Our Solution</h3>
+          <p class="info-card-text">{{ current_case_study.frontmatter.solution }}</p>
         </div>
         {% endif %}
       </div>
@@ -94,8 +94,8 @@
       <!-- Technologies -->
       {% if current_case_study.frontmatter.technologies %}
       <div style="margin-bottom: 48px;">
-        <h3 style="font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--color-white); margin-bottom: 12px;">How We Built It</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+        <h3 class="info-card-heading" style="margin-bottom: 12px;">How We Built It</h3>
+        <div class="badge-row">
           {% for tech in current_case_study.frontmatter.technologies.split(',') %}
           <span class="badge badge-primary">{{ tech.strip() }}</span>
           {% endfor %}
@@ -140,24 +140,5 @@
 
 {% block scripts %}
 {{ super() }}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var c = document.querySelector('.detail-content');
-  var r = document.querySelector('.reading-time');
-  if (c && r) {
-    var w = (c.textContent || c.innerText).trim().split(/\s+/).length;
-    r.textContent = Math.ceil(w / 200) + ' min read';
-  }
-  document.querySelectorAll('.faq-item').forEach(function(item) {
-    item.querySelector('.faq-question').addEventListener('click', function() {
-      var active = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(function(o) {
-        if (o !== item) { o.classList.remove('active'); o.querySelector('.faq-question').setAttribute('aria-expanded','false'); }
-      });
-      item.classList.toggle('active', !active);
-      this.setAttribute('aria-expanded', !active);
-    });
-  });
-});
-</script>
+{% include 'detail-scripts.html' %}
 {% endblock %}

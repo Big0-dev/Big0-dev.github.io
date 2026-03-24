@@ -39,7 +39,7 @@ class AssetManager:
         self.config = config
         self.static_dir = static_dir
         self.output_dir = output_dir
-        self._svg_cache = {}
+        # Note: SVG caching is handled by @lru_cache on inject_svg()
 
     _IMAGE_EXTENSIONS = {'.avif', '.jpg', '.jpeg', '.png', '.webp'}
 
@@ -327,7 +327,7 @@ class AssetManager:
                 html_file.write_bytes(minified)
                 html_saved += len(original) - len(minified)
                 html_count += 1
-            except BaseException:
+            except Exception:
                 pass
 
         static_dir = target_dir / 'static'

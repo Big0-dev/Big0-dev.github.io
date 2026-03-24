@@ -273,13 +273,14 @@
     const snippetLength = 100; // Characters before and after the match
 
     // Find snippets for each search term
+    const contentLower = content.toLowerCase();
     queryTerms.forEach((term) => {
       let startPos = 0;
       const maxSnippets = 2; // Max snippets per term
       let snippetCount = 0;
 
       while (startPos < content.length && snippetCount < maxSnippets) {
-        const termPos = content.toLowerCase().indexOf(term, startPos);
+        const termPos = contentLower.indexOf(term, startPos);
         if (termPos === -1) break;
 
         const snippetStart = Math.max(0, termPos - snippetLength);
@@ -377,9 +378,12 @@
     }
   }
 
+  // Cache search button references once
+  const allSearchButtons = document.querySelectorAll(".search-button");
+
   // Event Listeners
   if (searchButton) {
-    document.querySelectorAll(".search-button").forEach((btn) => {
+    allSearchButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
         openSearch();
@@ -439,7 +443,7 @@
       searchPopover &&
       searchPopover.hasAttribute("popover-open") &&
       !searchPopover.contains(e.target) &&
-      !Array.from(document.querySelectorAll(".search-button")).some((btn) =>
+      !Array.from(allSearchButtons).some((btn) =>
         btn.contains(e.target),
       )
     ) {

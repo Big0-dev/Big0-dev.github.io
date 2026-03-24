@@ -1,0 +1,21 @@
+{# Shared scripts for detail pages (reading time + FAQ accordion) #}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var c = document.querySelector('.detail-content');
+  var r = document.querySelector('.reading-time');
+  if (c && r) {
+    var w = (c.textContent || c.innerText).trim().split(/\s+/).length;
+    r.textContent = Math.ceil(w / 200) + ' min read';
+  }
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.querySelector('.faq-question').addEventListener('click', function() {
+      var active = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function(o) {
+        if (o !== item) { o.classList.remove('active'); o.querySelector('.faq-question').setAttribute('aria-expanded','false'); }
+      });
+      item.classList.toggle('active', !active);
+      this.setAttribute('aria-expanded', !active);
+    });
+  });
+});
+</script>

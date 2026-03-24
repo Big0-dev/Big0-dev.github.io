@@ -15,7 +15,7 @@
     <div class="hero-content text-center max-w-3xl mx-auto">
       <div class="section-label">Insights</div>
       <h1 class="page-hero-title">Technical Insights<span class="hero-dot">.</span></h1>
-      <p style="color: var(--color-mist); max-width: 560px; margin: 16px auto 0; font-size: 16px; line-height: 1.7;">
+      <p class="hero-subtitle">
         AI analysis, engineering deep-dives, and industry perspectives from the team building production systems.
       </p>
     </div>
@@ -47,7 +47,7 @@
           <div class="case-badges">
             <span class="badge badge-cyan">{{ post.frontmatter.category | default('Technology') }}</span>
             {% if post.frontmatter.date %}
-            <span style="font-size: 11px; color: var(--color-mist);">{{ post.frontmatter.date }}</span>
+            <span class="meta-text-xs">{{ post.frontmatter.date }}</span>
             {% endif %}
           </div>
           <h3 class="case-title">{{ post.title }}</h3>

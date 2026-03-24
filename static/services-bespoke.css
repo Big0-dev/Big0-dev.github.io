@@ -22,8 +22,8 @@
 .svc-hero-icon {
   width: 56px;
   height: 56px;
-  background: rgba(13, 148, 136, 0.15);
-  border: 1px solid rgba(13, 148, 136, 0.3);
+  background: var(--signal-15);
+  border: 1px solid var(--signal-30);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -71,8 +71,8 @@
 .svc-cap-icon {
   width: 44px;
   height: 44px;
-  background: rgba(13, 148, 136, 0.12);
-  border: 1px solid rgba(13, 148, 136, 0.2);
+  background: var(--signal-12);
+  border: 1px solid var(--signal-20);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -193,8 +193,8 @@
 .svc-industry-icon {
   width: 40px;
   height: 40px;
-  background: rgba(13, 148, 136, 0.12);
-  border: 1px solid rgba(13, 148, 136, 0.2);
+  background: var(--signal-12);
+  border: 1px solid var(--signal-20);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -267,7 +267,7 @@
 }
 .svc-listing-card:hover {
   border-color: var(--color-signal);
-  box-shadow: 0 0 20px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 20px var(--signal-15);
 }
 .svc-listing-img {
   position: absolute;
@@ -301,8 +301,8 @@
 .svc-listing-icon {
   width: 44px;
   height: 44px;
-  background: rgba(13, 148, 136, 0.15);
-  border: 1px solid rgba(13, 148, 136, 0.3);
+  background: var(--signal-15);
+  border: 1px solid var(--signal-30);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -349,7 +349,7 @@
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-ash);
+  color: var(--color-mist);
 }
 @media (max-width: 1024px) {
   .svc-listing-grid {

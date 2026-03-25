@@ -24,14 +24,7 @@
     padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-2xl);
     display: flex; flex-direction: column; justify-content: center;
     max-width: 640px; margin-left: auto;
-    position: relative;
-    background: url('{{ static }}/lp-hero.avif') center/cover no-repeat;
   }
-  .lp-left::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(10,15,28,0.92) 0%, rgba(10,15,28,0.85) 100%);
-  }
-  .lp-left > * { position: relative; z-index: 1; }
   .lp-right { padding: var(--space-xl) var(--space-2xl) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; justify-content: center; background: var(--color-midnight); border-left: 1px solid var(--color-steel); max-width: 560px; }
 
   /* Left: value prop — uses site font sizes */

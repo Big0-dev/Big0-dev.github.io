@@ -613,7 +613,7 @@
 
     <!-- Hero Particles Animation (loaded on non-homepage pages with .page-hero) -->
     <script>
-      if (document.querySelector('.page-hero')) {
+      if (document.querySelector('.page-hero') || document.querySelector('.lp-left')) {
         var s = document.createElement('script');
         s.src = '{{ static }}/hero-particles.js';
         document.head.appendChild(s);

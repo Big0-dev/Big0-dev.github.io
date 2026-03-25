@@ -9,7 +9,7 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) return;
 
-  const heroSection = document.querySelector('.hero');
+  const heroSection = document.querySelector('.hero') || document.querySelector('.lp-left');
   if (!heroSection) return;
 
   // Create container

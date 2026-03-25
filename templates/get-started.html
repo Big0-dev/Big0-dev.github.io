@@ -42,8 +42,8 @@
   .lp-check svg { color: var(--color-signal); flex-shrink: 0; }
   .lp-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-signal); margin-bottom: 2px; }
   .lp-price-note { font-size: 13px; color: var(--color-mist); margin-bottom: var(--space-lg); }
-  .lp-trust { display: flex; align-items: center; gap: var(--space-md); }
-  .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; flex-shrink: 0; }
+  .lp-trust { display: flex; align-items: center; gap: var(--space-md); overflow: hidden; }
+  .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; flex-shrink: 0; white-space: nowrap; }
   .lp-logos { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
   .lp-logos svg { height: 18px; width: auto; opacity: 0.5; }
   .lp-contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-top: var(--space-md); }
@@ -97,7 +97,8 @@
     .lp-right { padding: var(--space-lg) var(--space-md); border-left: none; border-top: 1px solid var(--color-steel); max-width: none; }
     .lp-bar { padding: var(--space-sm) var(--space-md); }
     .lp-row { grid-template-columns: 1fr; }
-    .lp-logos { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: var(--space-lg); }
+    .lp-trust { flex-direction: column; align-items: flex-start; gap: var(--space-xs); overflow: visible; }
+    .lp-logos { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: var(--space-lg); width: 100%; }
     .lp-logos::-webkit-scrollbar { display: none; }
     .lp-logos span { flex-shrink: 0; }
     .lp-contact-cards { grid-template-columns: 1fr; }

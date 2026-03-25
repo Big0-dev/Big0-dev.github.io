@@ -154,14 +154,10 @@
   color: var(--color-mist, #94A3B8);
   white-space: nowrap;
 }
-.trusted-logos {
-  width: 100%;
-}
 .trusted-logos-track {
   display: flex;
   align-items: center;
-  gap: 48px;
-  justify-content: center;
+  gap: 32px;
 }
 @keyframes marquee {
   0% { transform: translateX(0); }

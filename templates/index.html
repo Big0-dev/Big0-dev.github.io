@@ -47,11 +47,18 @@
         {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
       ] %}
       <div class="trusted-logos">
-        {% for client in clients %}
-        <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">
-          {{ inject_svg(client.logo) | safe }}
-        </a>
-        {% endfor %}
+        <div class="trusted-logos-track">
+          {% for client in clients %}
+          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">
+            {{ inject_svg(client.logo) | safe }}
+          </a>
+          {% endfor %}
+          {% for client in clients %}
+          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}" aria-hidden="true">
+            {{ inject_svg(client.logo) | safe }}
+          </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>

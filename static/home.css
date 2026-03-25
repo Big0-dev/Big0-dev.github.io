@@ -586,19 +586,25 @@
     padding: 16px 0;
   }
   .trusted-strip-inner {
-    flex-direction: row;
-    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 var(--space-md);
+  }
+  .trusted-logos {
+    display: flex;
+    gap: 20px;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    width: 100%;
   }
-  .trusted-strip-inner::-webkit-scrollbar {
+  .trusted-logos::-webkit-scrollbar {
     display: none;
   }
-  .trusted-logos {
-    gap: 20px;
-    flex-wrap: nowrap;
+  .trusted-logo-item {
+    flex-shrink: 0;
   }
   .featured-work-grid,
   .capabilities-grid,

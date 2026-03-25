@@ -5,6 +5,7 @@
 {% block canonical_path %}/get-started.html{% endblock %}
 
 {% block custom_css %}
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
 <style>
   /* Override base: landing page hides main nav/footer */
   .navbar, .footer, .back-to-top, .cookie-consent-banner { display: none !important; }
@@ -52,41 +53,9 @@
   .lp-contact-label { display: block; font-size: 11px; font-weight: 600; color: var(--color-mist); margin-bottom: 1px; }
   .lp-contact-value { display: block; font-size: 12px; color: var(--color-signal); }
 
-  /* Right: form — matches site form styling */
+  /* Right: form */
   .lp-form-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
   .lp-form-sub { font-size: 14px; color: var(--color-mist); margin-bottom: var(--space-md); }
-  .lp-form { display: flex; flex-direction: column; gap: var(--space-sm); }
-  .lp-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
-  .lp-field label {
-    display: block; font-family: var(--font-display); font-size: 12px; font-weight: 600;
-    color: var(--color-mist); letter-spacing: 0.02em; margin-bottom: 3px;
-  }
-  .lp-field input, .lp-field select, .lp-field textarea {
-    width: 100%; padding: 10px 14px; font-size: 14px; font-family: var(--font-body);
-    background: var(--bg-dark); border: 1px solid var(--color-steel); border-radius: var(--radius-base);
-    color: var(--color-white); line-height: 1.5; transition: border-color var(--transition-base);
-    appearance: none; -webkit-appearance: none;
-  }
-  .lp-field input:focus, .lp-field select:focus, .lp-field textarea:focus {
-    outline: none; border-color: var(--color-signal); box-shadow: 0 0 0 2px var(--signal-15);
-  }
-  .lp-field input::placeholder, .lp-field textarea::placeholder { color: var(--color-steel); }
-  .lp-field select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394A3B8' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px;
-  }
-  .lp-field select option { background: var(--color-slate); color: var(--color-white); }
-  .lp-field textarea { resize: vertical; min-height: 64px; }
-  .lp-submit {
-    width: 100%; padding: 12px; font-size: 15px; font-weight: 600; font-family: var(--font-body);
-    background: var(--color-signal); color: #fff; border: none; border-radius: var(--radius-base);
-    cursor: pointer; transition: background var(--transition-fast); margin-top: var(--space-xs);
-  }
-  .lp-submit:hover { background: var(--color-signal-glow); }
-  .lp-msg { padding: 10px 14px; border-radius: var(--radius-base); font-size: 13px; display: none; margin-top: var(--space-xs); }
-  .lp-msg.success { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: var(--color-success); display: block; }
-  .lp-msg.error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: var(--color-danger); display: block; }
   .lp-wa { text-align: center; margin-top: var(--space-sm); font-size: 13px; color: var(--color-mist); }
   .lp-wa a { color: var(--color-signal); text-decoration: none; }
   .lp-wa a:hover { text-decoration: underline; }
@@ -171,55 +140,12 @@
     </div>
   </div>
 
-  <!-- Right: simplified form -->
+  <!-- Right: form -->
   <div class="lp-right">
     <h2 class="lp-form-title">Talk to an Engineer</h2>
     <p class="lp-form-sub">No commitment. We reply within 24 hours.</p>
 
-    <form class="lp-form" id="lpForm" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="4995bef8-9b68-4453-ae2b-6618d35c4278">
-      <input type="hidden" name="subject" value="New lead from get-started page">
-      <input type="hidden" name="from_name" value="Big0 Landing Page">
-      <input type="checkbox" name="botcheck" style="display:none">
-
-      <div class="lp-row">
-        <div class="lp-field">
-          <label for="lp-name">Name <span style="color: var(--color-danger);">*</span></label>
-          <input type="text" id="lp-name" name="name" placeholder="Your name" required autocomplete="name">
-        </div>
-        <div class="lp-field">
-          <label for="lp-email">Email <span style="color: var(--color-danger);">*</span></label>
-          <input type="email" id="lp-email" name="email" placeholder="you@company.com" required autocomplete="email">
-        </div>
-      </div>
-      <div class="lp-row">
-        <div class="lp-field">
-          <label for="lp-phone">Phone <span style="color: var(--color-danger);">*</span></label>
-          <input type="tel" id="lp-phone" name="phone" placeholder="+1 (555) 123-4567" required autocomplete="tel">
-        </div>
-        <div class="lp-field">
-          <label for="lp-company">Company <span style="color: var(--color-danger);">*</span></label>
-          <input type="text" id="lp-company" name="company" placeholder="Your company" required autocomplete="organization">
-        </div>
-      </div>
-      <div class="lp-field">
-        <label for="lp-budget">Budget Range <span style="color: var(--color-danger);">*</span></label>
-        <select id="lp-budget" name="budget_range" required>
-          <option value="">Select budget</option>
-          <option value="10k-25k">$10k – $25k</option>
-          <option value="25k-50k">$25k – $50k</option>
-          <option value="50k-100k">$50k – $100k</option>
-          <option value="100k+">$100k+</option>
-          <option value="discuss">Prefer to discuss</option>
-        </select>
-      </div>
-      <div class="lp-field">
-        <label for="lp-message">What are you building? <span style="color: var(--color-danger);">*</span></label>
-        <textarea id="lp-message" name="message" placeholder="Brief description of your project" rows="3" required></textarea>
-      </div>
-      <button type="submit" class="lp-submit" id="lpSubmit">Get Free Consultation &rarr;</button>
-      <div class="lp-msg" id="lpMsg"></div>
-    </form>
+    {% include 'contact-form-bant.html' %}
 
     <div class="lp-wa">
       Prefer WhatsApp? <a href="https://wa.me/923039441945">Message us</a>
@@ -227,30 +153,4 @@
   </div>
 </div>
 
-<script>
-document.getElementById('lpForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var btn = document.getElementById('lpSubmit');
-  var msg = document.getElementById('lpMsg');
-  btn.disabled = true; btn.textContent = 'Sending...';
-  msg.className = 'lp-msg'; msg.style.display = 'none';
-  try {
-    var res = await fetch(this.action, { method: 'POST', body: new FormData(this) });
-    var data = await res.json();
-    if (data.success) {
-      msg.className = 'lp-msg success';
-      msg.textContent = "Sent! We'll get back to you within 24 hours.";
-      this.reset();
-    } else {
-      msg.className = 'lp-msg error';
-      msg.textContent = data.message || 'Something went wrong. Try again.';
-    }
-  } catch(err) {
-    msg.className = 'lp-msg error';
-    msg.textContent = 'Error sending. Email us at contact@big0.dev';
-  }
-  btn.disabled = false; btn.textContent = 'Get Free Consultation \u2192';
-  msg.style.display = 'block';
-});
-</script>
 {% endblock %}

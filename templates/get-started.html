@@ -31,25 +31,15 @@
   .lp-left .hero-canvas-main { width: 100%; height: 100%; }
   .lp-right { padding: var(--space-xl) var(--space-2xl) var(--space-xl) var(--space-xl); display: flex; flex-direction: column; justify-content: center; background: var(--color-midnight); border-left: 1px solid var(--color-steel); max-width: 560px; }
 
-  /* Left: value prop — uses site font sizes */
-  .lp-badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-signal); background: var(--signal-12); border: 1px solid var(--signal-20); padding: 4px 10px; border-radius: var(--radius-full); margin-bottom: var(--space-md); }
-  .lp-h1 { font-family: var(--font-display); font-size: clamp(24px, 2.5vw, 36px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: var(--space-sm); }
-  .lp-sub { color: var(--color-mist); font-size: 15px; line-height: 1.6; margin-bottom: var(--space-lg); }
-  .lp-checks { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-lg); }
-  .lp-check { display: flex; align-items: center; gap: var(--space-sm); font-size: 14px; color: var(--color-cloud); }
-  .lp-check svg { color: var(--color-signal); flex-shrink: 0; }
-  .lp-price { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-signal); margin-bottom: 2px; }
+  /* Left: value prop */
+  .lp-h1 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 42px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: var(--space-md); }
+  .lp-sub { color: var(--color-mist); font-size: 16px; line-height: 1.7; margin-bottom: var(--space-xl); }
+  .lp-price { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-signal); margin-bottom: 4px; }
   .lp-price-note { font-size: 13px; color: var(--color-mist); margin-bottom: var(--space-lg); }
   .lp-trust { display: flex; align-items: center; gap: var(--space-md); overflow: hidden; }
   .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; flex-shrink: 0; white-space: nowrap; }
   .lp-logos { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
   .lp-logos svg { height: 18px; width: auto; opacity: 0.5; }
-  .lp-contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-top: var(--space-md); }
-  .lp-contact-card { background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: var(--radius-base); padding: var(--space-sm) var(--space-xs); text-align: center; text-decoration: none; transition: border-color var(--transition-fast); display: block; }
-  .lp-contact-card:hover { border-color: var(--color-signal); }
-  .lp-contact-label { display: block; font-size: 11px; font-weight: 600; color: var(--color-mist); margin-bottom: 1px; }
-  .lp-contact-value { display: block; font-size: 12px; color: var(--color-signal); }
-
   /* Right: form */
   .lp-form-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
   .lp-form-sub { font-size: 14px; color: var(--color-mist); margin-bottom: var(--space-md); }
@@ -84,27 +74,11 @@
 <div class="lp-main">
   <!-- Left: value prop -->
   <div class="lp-left">
-    <span class="lp-badge">Free Consultation</span>
-    <h1 class="lp-h1">Your Engineering Team,<br>Without the Overhead.</h1>
-    <p class="lp-sub">Senior engineers build your product. You talk to them directly. No salespeople, no middlemen.</p>
+    <h1 class="lp-h1">Build Faster.<br>Ship Sooner.</h1>
+    <p class="lp-sub">Senior engineers who build your product and talk to you directly. No salespeople. No middlemen. Working demos every two weeks.</p>
 
-    <ul class="lp-checks">
-      <li class="lp-check">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        Direct engineer access from day one
-      </li>
-      <li class="lp-check">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        Working demos every 2 weeks
-      </li>
-      <li class="lp-check">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        Same senior team, every sprint
-      </li>
-    </ul>
-
-    <div class="lp-price">$8,000 &ndash; $10,000+</div>
-    <p class="lp-price-note">Every project scoped individually. First consultation is free.</p>
+    <div class="lp-price">Projects from $8,000+</div>
+    <p class="lp-price-note">Free first consultation. Every project scoped individually.</p>
 
     <div class="lp-trust">
       <span class="lp-logos-label">Trusted by</span>
@@ -118,21 +92,6 @@
         {% for client in clients %}
         <span aria-label="{{ client.name }}">{{ inject_svg(client.logo) | safe }}</span>
         {% endfor %}
-      </div>
-    </div>
-
-    <div class="lp-contact-cards">
-      <a href="mailto:contact@big0.dev" class="lp-contact-card">
-        <span class="lp-contact-label">Email</span>
-        <span class="lp-contact-value">contact@big0.dev</span>
-      </a>
-      <a href="tel:+923039441945" class="lp-contact-card">
-        <span class="lp-contact-label">Phone</span>
-        <span class="lp-contact-value">+92 303 944 1945</span>
-      </a>
-      <div class="lp-contact-card">
-        <span class="lp-contact-label">Location</span>
-        <span class="lp-contact-value" style="color: var(--color-mist);">Islamabad, PKT (GMT+5)</span>
       </div>
     </div>
   </div>

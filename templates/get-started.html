@@ -8,19 +8,11 @@
 <link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
 <link rel="stylesheet" href="{{ static }}/home.css">
 <style>
-  /* Override base: landing page hides main nav/footer */
-  .navbar, .footer, .back-to-top, .cookie-consent-banner { display: none !important; }
+  /* Hide footer only */
+  .footer, .back-to-top { display: none !important; }
   /* Full viewport, no scroll */
   html, body { height: 100%; overflow: hidden; }
-  .lp-wrapper { display: flex; flex-direction: column; height: 100vh; }
-
-  /* Top bar — matches navbar height feel */
-  .lp-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px var(--space-xl); border-bottom: 1px solid var(--color-steel); flex-shrink: 0; }
-  .lp-bar-logo { height: 28px; width: auto; }
-  .lp-bar-logo path { fill: var(--color-white); }
-  .lp-bar a:first-child:hover .lp-bar-logo path { fill: var(--color-signal); }
-  .lp-bar-link { color: var(--color-mist); font-size: 14px; text-decoration: none; transition: color var(--transition-fast); }
-  .lp-bar-link:hover { color: var(--color-white); }
+  .lp-wrapper { display: flex; flex-direction: column; height: calc(100vh - 64px); margin-top: 64px; }
 
   /* Two-column layout — fills remaining space */
   .lp-main { display: grid; grid-template-columns: 1fr 1fr; flex: 1; min-height: 0; }
@@ -52,12 +44,11 @@
 
   @media (max-width: 768px) {
     html, body { overflow: auto; }
-    .lp-wrapper { height: auto; }
+    .lp-wrapper { height: auto; margin-top: 56px; }
     .lp-main { grid-template-columns: 1fr; flex: none; }
     /* Form comes first on mobile */
     .lp-right { order: -1; padding: var(--space-md) var(--space-md); border-left: none; border-bottom: 1px solid var(--color-steel); max-width: none; }
     .lp-left { padding: var(--space-md) var(--space-md); max-width: none; }
-    .lp-bar { padding: var(--space-sm) var(--space-md); }
     .lp-h1 { font-size: 22px; margin-bottom: var(--space-sm); }
     .lp-sub { font-size: 14px; line-height: 1.5; margin-bottom: var(--space-md); }
     .lp-price { font-size: 17px; }
@@ -73,14 +64,6 @@
 
 {% block content %}
 <div class="lp-wrapper">
-<!-- Custom top bar: logo + link back to main site -->
-<div class="lp-bar">
-  <a href="{{ home }}" aria-label="Big0 Home">
-    {{ inject_svg('big0_logo', False, 'lp-bar-logo') | safe }}
-  </a>
-  <a href="{{ home }}" class="lp-bar-link">big0.dev &rarr;</a>
-</div>
-
 <div class="lp-main">
   <!-- Left: value prop -->
   <div class="lp-left">

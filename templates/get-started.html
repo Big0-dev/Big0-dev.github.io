@@ -38,11 +38,7 @@
   .lp-checks { list-style: none; padding: 0; margin: 0 0 var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
   .lp-checks li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--color-cloud); }
   .lp-checks li::before { content: '✓'; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(13, 148, 136, 0.15); color: var(--color-signal); font-size: 12px; font-weight: 700; flex-shrink: 0; }
-  .lp-price-tag { display: inline-block; font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--color-white); background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: 8px; padding: 6px 14px; margin-bottom: var(--space-lg); }
-  .lp-trust { display: flex; align-items: center; gap: var(--space-md); overflow: hidden; }
-  .lp-logos-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; flex-shrink: 0; white-space: nowrap; }
-  .lp-logos { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
-  .lp-logos svg { height: 18px; width: auto; opacity: 0.5; }
+  .lp-price-tag { display: inline-block; font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--color-white); background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: 8px; padding: 6px 14px; }
   /* Right: form */
   .lp-form-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
   .lp-form-sub { font-size: 14px; color: var(--color-mist); margin-bottom: var(--space-md); }
@@ -62,10 +58,6 @@
     .lp-form-sub { font-size: 13px; margin-bottom: var(--space-sm); }
 
     .lp-row { grid-template-columns: 1fr; }
-    .lp-trust { flex-direction: column; align-items: flex-start; gap: var(--space-xs); overflow: visible; }
-    .lp-logos { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: var(--space-lg); width: 100%; }
-    .lp-logos::-webkit-scrollbar { display: none; }
-    .lp-logos span { flex-shrink: 0; }
     .lp-contact-cards { grid-template-columns: 1fr; }
   }
 </style>
@@ -91,22 +83,6 @@
       <li>No salespeople, no middlemen</li>
     </ul>
     <div class="lp-price-tag">Projects from $6,000+</div>
-
-    <div class="lp-trust">
-      <span class="lp-logos-label">Trusted by</span>
-      <div class="lp-logos">
-        {% set clients = [
-          {'name': 'Khan', 'logo': 'clients/khan'},
-          {'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
-          {'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
-          {'name': 'SZABIST', 'logo': 'clients/szabist'},
-          {'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
-        ] %}
-        {% for client in clients %}
-        <span aria-label="{{ client.name }}">{{ inject_svg(client.logo) | safe }}</span>
-        {% endfor %}
-      </div>
-    </div>
   </div>
 
   <!-- Right: form -->
@@ -117,5 +93,35 @@
     {% include 'contact-form-bant.html' %}
   </div>
 </div>
+
+<!-- Trusted By — same marquee as homepage -->
+<section class="trusted-strip">
+  <div class="container">
+    <div class="trusted-strip-inner">
+      <span class="trusted-label">Trusted by</span>
+      {% set clients = [
+        {'url': 'https://khan.big0.dev', 'name': 'Khan', 'logo': 'clients/khan'},
+        {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
+        {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+        {'url': 'https://szabist-isb.edu.pk/', 'name': 'SZABIST', 'logo': 'clients/szabist'},
+        {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
+      ] %}
+      <div class="trusted-logos">
+        <div class="trusted-logos-track">
+          {% for client in clients %}
+          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">
+            {{ inject_svg(client.logo) | safe }}
+          </a>
+          {% endfor %}
+          {% for client in clients %}
+          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}" aria-hidden="true">
+            {{ inject_svg(client.logo) | safe }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

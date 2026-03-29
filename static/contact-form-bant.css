@@ -100,9 +100,24 @@ select.form-input option {
 }
 @media (max-width: 768px) {
   .contact-form-container {
-    padding: 24px;
+    padding: 16px;
+  }
+  .contact-form {
+    gap: 10px;
   }
   .form-row {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .form-input,
+  .form-textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .form-textarea {
+    min-height: 70px;
+  }
+  .form-label {
+    font-size: 11px;
   }
 }

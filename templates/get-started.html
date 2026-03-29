@@ -10,17 +10,22 @@
 <style>
   /* Override base: landing page hides main nav/footer */
   .navbar, .footer, .back-to-top, .cookie-consent-banner { display: none !important; }
+  /* Full viewport, no scroll */
+  html, body { height: 100%; overflow: hidden; }
+  .lp-wrapper { display: flex; flex-direction: column; height: 100vh; }
 
   /* Top bar — matches navbar height feel */
-  .lp-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px var(--space-xl); border-bottom: 1px solid var(--color-steel); }
+  .lp-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px var(--space-xl); border-bottom: 1px solid var(--color-steel); flex-shrink: 0; }
   .lp-bar-logo { height: 28px; width: auto; }
   .lp-bar-logo path { fill: var(--color-white); }
   .lp-bar a:first-child:hover .lp-bar-logo path { fill: var(--color-signal); }
   .lp-bar-link { color: var(--color-mist); font-size: 14px; text-decoration: none; transition: color var(--transition-fast); }
   .lp-bar-link:hover { color: var(--color-white); }
 
-  /* Two-column layout — viewport height minus top bar */
-  .lp-main { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 53px); }
+  /* Two-column layout — fills remaining space */
+  .lp-main { display: grid; grid-template-columns: 1fr 1fr; flex: 1; min-height: 0; }
+  /* Trusted strip at bottom */
+  .lp-wrapper .trusted-strip { flex-shrink: 0; }
   .lp-left {
     padding: var(--space-xl) var(--space-2xl);
     display: flex; flex-direction: column; justify-content: center;
@@ -46,7 +51,9 @@
 
 
   @media (max-width: 768px) {
-    .lp-main { grid-template-columns: 1fr; height: auto; }
+    html, body { overflow: auto; }
+    .lp-wrapper { height: auto; }
+    .lp-main { grid-template-columns: 1fr; flex: none; }
     /* Form comes first on mobile */
     .lp-right { order: -1; padding: var(--space-md) var(--space-md); border-left: none; border-bottom: 1px solid var(--color-steel); max-width: none; }
     .lp-left { padding: var(--space-md) var(--space-md); max-width: none; }
@@ -65,6 +72,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="lp-wrapper">
 <!-- Custom top bar: logo + link back to main site -->
 <div class="lp-bar">
   <a href="{{ home }}" aria-label="Big0 Home">
@@ -124,5 +132,6 @@
     </div>
   </div>
 </section>
+</div>
 
 {% endblock %}

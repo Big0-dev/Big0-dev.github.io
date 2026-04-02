@@ -9,40 +9,29 @@
 <link rel="stylesheet" href="{{ static }}/contact-form-bant.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{{ static }}/contact-form-bant.css"></noscript>
 <style>
-  /* Full-viewport offers page — no scroll on desktop */
-  .offers-page { height: 100vh; overflow: hidden; }
-  .offers-page .main-content { flex: 0 0 auto; min-height: 0; }
-  .offers-page .footer { padding: 8px 0; margin-top: auto; }
-  .offers-page .footer-content { display: none; }
-  .offers-page .footer-bottom { padding-top: 0; border-top: none; }
-  .offers-page .back-to-top, .offers-page .whatsapp-btn { display: none; }
-  .offer-hero { padding: 66px 0 0; }
-  .offer-header { margin-bottom: 6px; }
-  .offer-header .section-label { margin-bottom: 0; font-size: 11px; }
-  .offer-header .page-hero-title { font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 0; }
-  .offer-header .hero-subtitle { font-size: 13px; margin-bottom: 0; }
-  .offers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 880px; margin: 0 auto; align-items: stretch; }
-  .offer-card { background: var(--color-midnight); border: 1px solid var(--color-steel); border-radius: 10px; padding: 16px 20px; display: flex; flex-direction: column; }
-  .offer-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(13, 148, 136, 0.12); border: 1px solid rgba(13, 148, 136, 0.3); border-radius: 16px; padding: 3px 9px; font-size: 10px; font-weight: 600; color: var(--color-signal); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; align-self: flex-start; }
-  .offer-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--color-signal); }
+  .offer-hero { padding: 100px 0 40px; }
+  .offer-header { margin-bottom: var(--space-lg); }
+  .offers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); max-width: 880px; margin: 0 auto; align-items: stretch; }
+  .offer-card { background: var(--color-midnight); border: 1px solid var(--color-steel); border-radius: 10px; padding: var(--space-xl); display: flex; flex-direction: column; }
+  .offer-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(13, 148, 136, 0.12); border: 1px solid rgba(13, 148, 136, 0.3); border-radius: 16px; padding: 4px 12px; font-size: 11px; font-weight: 600; color: var(--color-signal); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: var(--space-sm); align-self: flex-start; }
+  .offer-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-signal); }
   .offer-badge-free { background: rgba(6, 182, 212, 0.12); border-color: rgba(6, 182, 212, 0.3); color: var(--color-cyan); }
   .offer-badge-free::before { background: var(--color-cyan); }
-  .offer-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); line-height: 1.15; margin-bottom: 4px; }
-  .offer-sub { font-size: 12px; color: var(--color-mist); line-height: 1.45; margin-bottom: 10px; }
-  .offer-price-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 1px; }
-  .offer-price { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; }
-  .offer-price-period { font-size: 12px; color: var(--color-mist); }
-  .offer-price-note { font-size: 11px; color: var(--color-mist); margin-bottom: 8px; }
-  .offer-includes { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-  .offer-includes li { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-cloud); line-height: 1.35; }
-  .offer-includes li::before { content: '\2713'; display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%; background: rgba(13, 148, 136, 0.15); color: var(--color-signal); font-size: 9px; font-weight: 700; flex-shrink: 0; }
-  .offer-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
-  .offer-cta-row .btn { font-size: 12px; padding: 7px 16px; }
+  .offer-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--color-white); line-height: 1.15; margin-bottom: 6px; }
+  .offer-sub { font-size: 14px; color: var(--color-mist); line-height: 1.5; margin-bottom: var(--space-md); }
+  .offer-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .offer-price { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; }
+  .offer-price-period { font-size: 14px; color: var(--color-mist); }
+  .offer-price-note { font-size: 13px; color: var(--color-mist); margin-bottom: var(--space-md); }
+  .offer-includes { list-style: none; padding: 0; margin: 0 0 var(--space-lg); display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .offer-includes li { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-cloud); line-height: 1.4; }
+  .offer-includes li::before { content: '\2713'; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: rgba(13, 148, 136, 0.15); color: var(--color-signal); font-size: 10px; font-weight: 700; flex-shrink: 0; }
+  .offer-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
 
   @media (max-width: 768px) {
     .offer-hero { padding: 80px 0 40px; }
-    .offers-grid { grid-template-columns: 1fr; max-width: 420px; }
-    .offer-card { padding: 20px; }
+    .offers-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .offer-card { padding: var(--space-lg); }
     .offer-price { font-size: 28px; }
     .offer-cta-row { flex-direction: column; }
     .offer-cta-row .btn { width: 100%; text-align: center; }
@@ -51,8 +40,6 @@
 {% endblock %}
 
 {% block content %}
-<script>document.querySelector('.page-wrapper').classList.add('offers-page');</script>
-
 <!-- MVP Pilot Offer -->
 <section class="offer-hero">
   <div class="container">
@@ -120,10 +107,6 @@
 
 {% block scripts %}
 {{ super() }}
-<script>
-var wb=document.querySelector('.whatsapp-btn');if(wb)wb.style.display='none';
-var bt=document.querySelector('.back-to-top');if(bt)bt.style.display='none';
-</script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var els = document.querySelectorAll('.reveal');

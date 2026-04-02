@@ -54,10 +54,15 @@ static_pages:
     title: Compliance & Certifications
     description: Big0's compliance and regulatory certifications. Registered with SECP, FBR, PSEB, PEC and member of PASHA and Islamabad Chamber of Commerce.
 
+  - template: offers.html
+    output: offers.html
+    title: Offers
+    description: MVP Pilot — 8 weeks, $6,000. Get a working product built by senior engineers. Free discovery call included.
+
   - template: get-started.html
     output: get-started.html
     title: Get Started — Talk to an Engineer
-    description: Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Projects typically start at $8K–$10K.
+    description: Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Pilots from $6,000.
 
 # Dynamic Pages - Generated from content files
 content_types:
@@ -129,6 +134,7 @@ navigation:
   privacy: privacy.html
   terms: terms.html
   compliance: compliance.html
+  offers: offers.html
   get_started: get-started.html
   sitemap: sitemap.xml
   image_sitemap: sitemap-images.xml

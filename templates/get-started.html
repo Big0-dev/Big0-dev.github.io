@@ -5,6 +5,23 @@
 {% block canonical_path %}/get-started.html{% endblock %}
 
 {% block custom_css %}
+<!-- Google Ads conversion tracking for lead form submit -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18058016051/gsW-CI-zmpQcELPq3aJD',
+      'value': 1.0,
+      'currency': 'PKR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
 <link rel="stylesheet" href="{{ static }}/home.css">
 <style>

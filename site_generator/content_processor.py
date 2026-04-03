@@ -276,7 +276,7 @@ class ContentProcessor:
         # Auto-link industry and service mentions for specific page types
         link_path = output_path if output_path else file_path
         paths_to_check = [str(file_path), str(output_path) if output_path else '']
-        if any(path in p for p in paths_to_check for path in ['services/', 'blogs/', 'case_studies/', 'case-studies/', 'news/', 'conversations/']):
+        if any(path in p for p in paths_to_check for path in ['services/', 'blogs/', 'case_studies/', 'case-studies/', 'news/']):
             html_content = self.add_automatic_interlinking(html_content, link_path)
 
         # Extract first paragraph as excerpt
@@ -352,16 +352,15 @@ class ContentProcessor:
         is_blog_page = 'blogs/' in file_path_str or 'blog/' in file_path_str
         is_case_study_page = 'case_studies/' in file_path_str or 'case-studies/' in file_path_str
         is_news_page = 'news/' in file_path_str
-        is_conversation_page = 'conversations/' in file_path_str
 
         # Build keyword list once using pre-sorted class-level constants
         all_keywords = []
-        if is_blog_page or is_case_study_page or is_news_page or is_conversation_page:
+        if is_blog_page or is_case_study_page or is_news_page:
             for term, slug in self._SERVICE_KEYWORDS_SORTED:
                 if slug != current_slug:
                     all_keywords.append((term, 'service', slug))
 
-        if is_conversation_page or is_blog_page or is_news_page:
+        if is_blog_page or is_news_page:
             for term, slug in self._CASE_STUDY_KEYWORDS_SORTED:
                 if slug != current_slug:
                     all_keywords.append((term, 'case_study', slug))

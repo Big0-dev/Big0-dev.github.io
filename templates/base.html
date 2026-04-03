@@ -129,29 +129,20 @@
       })();
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18058016051"></script>
     <script>
-      // Defer Google Analytics loading until after page load
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
+      function gtag(){dataLayer.push(arguments);}
 
-      // Set default consent to denied immediately
       gtag('consent', 'default', {
         'analytics_storage': 'denied',
         'ad_storage': 'denied'
       });
 
-      // Load GA script after page load to avoid render blocking
-      window.addEventListener('load', function() {
-        var gaScript = document.createElement('script');
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-5BCYEF9S7N';
-        gaScript.async = true;
-        gaScript.onload = function() {
-          gtag("js", new Date());
-          gtag("config", "G-5BCYEF9S7N");
-          gtag("config", "AW-18058016051");
-        };
-        document.head.appendChild(gaScript);
-      });
+      gtag('js', new Date());
+      gtag('config', 'AW-18058016051');
+      gtag('config', 'G-5BCYEF9S7N');
     </script>
     <script type="text/javascript">
     // Store the Clarity initialization function

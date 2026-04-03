@@ -38,9 +38,7 @@ TYPE_NAMES = {
     'services': 'service',
     'case_studies': 'case study',
     'news': 'news',
-    'products': 'product',
     'newsletters': 'newsletter',
-    'conversations': 'conversation',
     'team': 'team',
 }
 

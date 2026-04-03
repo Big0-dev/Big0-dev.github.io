@@ -100,16 +100,6 @@ content_types:
     output_dir: newsletters
     per_page: 12
 
-  conversations:
-    content_dir: ./content/conversations
-    template: conversation_detail.html
-    output_dir: conversations
-    exclude_from_nav: true
-
-  products:
-    content_dir: ./content/products
-    template: product_detail.html
-    output_dir: products
 
   team:
     content_dir: ./content/team

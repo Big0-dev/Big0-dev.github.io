@@ -120,17 +120,7 @@ class SEOUtilities:
             for newsletter_file in newsletters_dir.glob('*.html'):
                 listing_pages.append(f'newsletters/{newsletter_file.name}')
 
-        # Add conversation pages
-        conversations_dir = output_path / 'conversations'
-        if conversations_dir.exists():
-            for conversation_file in conversations_dir.glob('*.html'):
-                listing_pages.append(f'conversations/{conversation_file.name}')
 
-        # Add product pages
-        products_dir = output_path / 'products'
-        if products_dir.exists():
-            for product_file in products_dir.glob('*.html'):
-                listing_pages.append(f'products/{product_file.name}')
 
         # Deduplicate and add to urls
         for page in set(listing_pages):

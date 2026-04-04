@@ -64,6 +64,11 @@ static_pages:
     title: Get Started — Talk to an Engineer
     description: Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Pilots from $6,000.
 
+  - template: get-started-eu.html
+    output: get-started-eu.html
+    title: Get Started — Talk to an Engineer
+    description: Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Pilots from $6,000.
+
 # Dynamic Pages - Generated from content files
 content_types:
   blogs:

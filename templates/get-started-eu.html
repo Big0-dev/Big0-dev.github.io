@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Get Started — Talk to an Engineer{% endblock %}
+{% block meta_description %}Free consultation with senior engineers. Tell us what you're building and we'll scope it honestly. Projects from $8K–$10K+.{% endblock %}
+{% block canonical_path %}/get-started-eu.html{% endblock %}
+
+{% block custom_css %}
+<!-- Google Ads conversion tracking for lead form submit (GDPR: fires only after consent granted) -->
+<script data-cfasync="false">
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18058016051/gsW-CI-zmpQcELPq3aJD',
+      'value': 1.0,
+      'currency': 'PKR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+<link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
+<link rel="stylesheet" href="{{ static }}/home.css">
+<style>
+  /* Hide footer only */
+  .footer, .back-to-top { display: none !important; }
+  /* Full viewport, no scroll */
+  html, body { height: 100%; overflow: hidden; }
+  .lp-wrapper { display: flex; flex-direction: column; height: calc(100vh - 64px); margin-top: 64px; }
+
+  /* Two-column layout — fills remaining space */
+  .lp-main { display: grid; grid-template-columns: 1fr 1fr; flex: 1; min-height: 0; }
+  /* Trusted strip at bottom */
+  .lp-wrapper .trusted-strip { flex-shrink: 0; }
+  .lp-left {
+    padding: var(--space-xl) var(--space-2xl);
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .lp-left > *:not(.hero-bg-animation) { position: relative; z-index: 1; }
+  .lp-left .hero-bg-animation { position: absolute; inset: 0; z-index: 0; }
+  .lp-left .hero-canvas-main { width: 100%; height: 100%; }
+  .lp-right { padding: var(--space-xl) var(--space-2xl); display: flex; flex-direction: column; justify-content: center; background: var(--color-midnight); border-left: 1px solid var(--color-steel); }
+
+  /* Left: value prop */
+  .lp-h1 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 42px); font-weight: 700; color: var(--color-white); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: var(--space-md); }
+  .lp-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(13, 148, 136, 0.12); border: 1px solid rgba(13, 148, 136, 0.3); border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 600; color: var(--color-signal); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: var(--space-md); }
+  .lp-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--color-signal); animation: lp-pulse 2s ease-in-out infinite; }
+  @keyframes lp-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .lp-checks { list-style: none; padding: 0; margin: 0 0 var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+  .lp-checks li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--color-cloud); }
+  .lp-checks li::before { content: '✓'; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(13, 148, 136, 0.15); color: var(--color-signal); font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .lp-price-tag { display: inline-block; font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--color-white); background: var(--color-slate); border: 1px solid var(--color-steel); border-radius: 8px; padding: 6px 14px; }
+  /* Right: form */
+  .lp-form-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-white); margin-bottom: 4px; }
+  .lp-form-sub { font-size: 14px; color: var(--color-mist); margin-bottom: var(--space-md); }
+
+
+  @media (max-width: 768px) {
+    html, body { overflow: auto; }
+    .lp-wrapper { height: auto; margin-top: 56px; }
+    .lp-main { grid-template-columns: 1fr; flex: none; }
+    /* Form comes first on mobile */
+    .lp-right { order: -1; padding: var(--space-md) var(--space-md); border-left: none; border-bottom: 1px solid var(--color-steel); max-width: none; }
+    .lp-left { padding: var(--space-md) var(--space-md); max-width: none; }
+    .lp-h1 { font-size: 22px; margin-bottom: var(--space-sm); }
+    .lp-sub { font-size: 14px; line-height: 1.5; margin-bottom: var(--space-md); }
+    .lp-price { font-size: 17px; }
+    .lp-price-note { font-size: 12px; margin-bottom: var(--space-sm); }
+    .lp-form-title { font-size: 18px; }
+    .lp-form-sub { font-size: 13px; margin-bottom: var(--space-sm); }
+
+    .lp-row { grid-template-columns: 1fr; }
+    .lp-contact-cards { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="lp-wrapper">
+<div class="lp-main">
+  <!-- Left: value prop -->
+  <div class="lp-left">
+    <div class="lp-badge">Free Consultation</div>
+    <h1 class="lp-h1">Your AI App.<br>Built by Senior Engineers.</h1>
+    <ul class="lp-checks">
+      <li>Talk directly to the team that builds it</li>
+      <li>Working demos every two weeks</li>
+      <li>No salespeople, no middlemen</li>
+    </ul>
+    <div class="lp-price-tag">Pilots from $6,000</div>
+  </div>
+
+  <!-- Right: form -->
+  <div class="lp-right">
+    <h2 class="lp-form-title">Talk to an Engineer</h2>
+    <p class="lp-form-sub">No commitment. We reply within 24 hours.</p>
+
+    {% include 'contact-form-bant.html' %}
+  </div>
+</div>
+
+<!-- Trusted By — same marquee as homepage -->
+<section class="trusted-strip">
+  <div class="container">
+    <div class="trusted-strip-inner">
+      <span class="trusted-label">Trusted by</span>
+      {% set clients = [
+        {'url': 'https://khan.big0.dev', 'name': 'Khan', 'logo': 'clients/khan'},
+        {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
+        {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+        {'url': 'https://szabist-isb.edu.pk/', 'name': 'SZABIST', 'logo': 'clients/szabist'},
+        {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
+      ] %}
+      <div class="trusted-logos">
+        <div class="trusted-logos-track">
+          {% for client in clients %}
+          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">
+            {{ inject_svg(client.logo) | safe }}
+          </a>
+          {% endfor %}
+          {% for client in clients %}
+          <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}" aria-hidden="true">
+            {{ inject_svg(client.logo) | safe }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+{% endblock %}

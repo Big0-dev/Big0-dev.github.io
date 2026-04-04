@@ -5,6 +5,13 @@
 {% block canonical_path %}/get-started.html{% endblock %}
 
 {% block custom_css %}
+<!-- Grant all tracking on landing page (US-only campaign, no GDPR requirement) -->
+<script data-cfasync="false">
+  gtag('consent', 'update', {
+    'analytics_storage': 'granted',
+    'ad_storage': 'granted'
+  });
+</script>
 <!-- Google Ads conversion tracking for lead form submit -->
 <script data-cfasync="false">
 function gtag_report_conversion(url) {
@@ -22,6 +29,11 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+<!-- Initialize Clarity and hide cookie banner on landing page -->
+<script data-cfasync="false">
+  if (window.clarityInitFunction) window.clarityInitFunction();
+</script>
+<style>.cookie-consent-banner { display: none !important; }</style>
 <link rel="stylesheet" href="{{ static }}/contact-form-bant.css">
 <link rel="stylesheet" href="{{ static }}/home.css">
 <style>

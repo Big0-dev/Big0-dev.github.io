@@ -108,6 +108,10 @@ document.addEventListener("DOMContentLoaded", function () {
         formMessage.className = "form-message success";
         messageText.textContent = "Message sent! We'll get back to you within 24 hours.";
         form.reset();
+        // Google Ads: track successful form submission as conversion
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {'send_to': 'AW-18058016051/KdpGCMHCv5UcELPq3aJD'});
+        }
       } else {
         formMessage.className = "form-message error";
         messageText.textContent = data.message || "Error sending message. Please try again.";

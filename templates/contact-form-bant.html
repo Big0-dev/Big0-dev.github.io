@@ -27,16 +27,15 @@
 
     <!-- Row 2: Company (full width) -->
     <div class="form-group">
-      <label for="company" class="form-label">Company <span class="required">*</span></label>
-      <input type="text" id="company" name="company" class="form-input" placeholder="Your company" required autocomplete="organization" />
+      <label for="company" class="form-label">Company</label>
+      <input type="text" id="company" name="company" class="form-input" placeholder="Your company" autocomplete="organization" />
       <div class="form-error" id="company-error"></div>
     </div>
 
     <!-- Message -->
     <div class="form-group">
-      <label for="message" class="form-label">What are you building? <span class="required">*</span></label>
-      <textarea id="message" name="message" class="form-input form-textarea" placeholder="Brief description of your project" rows="4" required></textarea>
-      <div class="form-error" id="message-error"></div>
+      <label for="message" class="form-label">Anything you'd like us to know?</label>
+      <textarea id="message" name="message" class="form-input form-textarea" placeholder="Optional — we can discuss everything on the call" rows="3"></textarea>
     </div>
 
     <!-- Submit -->
@@ -73,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
       valid = false; msg = "Required.";
     } else if (field.name === "email" && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       valid = false; msg = "Enter a valid email.";
-    } else if (field.name === "message" && value && value.length < 20) {
-      valid = false; msg = "Minimum 20 characters.";
     }
     if (!valid) {
       field.classList.add("error");

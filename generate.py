@@ -7,7 +7,6 @@ Generates website from templates and content files based on site_config.yaml
 import re
 import yaml
 import logging
-import os
 import shutil
 from email.utils import formatdate
 from time import mktime
@@ -126,20 +125,19 @@ class SiteGenerator:
 
     def _clean_output(self):
         """Clean and recreate output directory structure."""
-        if os.path.exists(self.output_dir):
-            shutil.rmtree(self.output_dir)
+        output = Path(self.output_dir)
+        if output.exists():
+            shutil.rmtree(output)
 
         # Create all required directories in one pass
         dirs_to_create = [
-            os.path.join(self.output_dir, "static"),
-            os.path.join(self.output_dir, "content/gallery"),
+            output / "static",
+            output / "content" / "gallery",
         ]
         for content_type in self.config['content_types'].values():
-            dirs_to_create.append(
-                os.path.join(self.output_dir, content_type['output_dir'])
-            )
+            dirs_to_create.append(output / content_type['output_dir'])
         for dir_path in dirs_to_create:
-            os.makedirs(dir_path, exist_ok=True)
+            dir_path.mkdir(parents=True, exist_ok=True)
 
         logger.info("Output directory cleaned and prepared")
 

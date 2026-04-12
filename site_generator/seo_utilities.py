@@ -140,37 +140,28 @@ class SEOUtilities:
         # Generate sitemap XML with lastmod, changefreq, and priority
         current_date = datetime.now().strftime('%Y-%m-%d')
 
-        sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-        sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        parts = [
+            '<?xml version="1.0" encoding="UTF-8"?>',
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        ]
 
         for url in urls:
             # Determine priority and changefreq based on URL type
             if url.endswith('/index.html'):
-                priority = '1.0'
-                changefreq = 'daily'
-            elif '/services/' in url and '/locations/' not in url:
-                priority = '0.9'
-                changefreq = 'weekly'
+                priority, changefreq = '1.0', 'daily'
+            elif '/services/' in url:
+                priority, changefreq = '0.9', 'weekly'
             elif '/blog/' in url or '/news/' in url:
-                priority = '0.7'
-                changefreq = 'weekly'
+                priority, changefreq = '0.7', 'weekly'
             elif '/case-studies/' in url:
-                priority = '0.6'
-                changefreq = 'monthly'
+                priority, changefreq = '0.6', 'monthly'
             else:
-                priority = '0.5'
-                changefreq = 'monthly'
+                priority, changefreq = '0.5', 'monthly'
 
-            sitemap_xml += f'  <url>\n'
-            sitemap_xml += f'    <loc>{url}</loc>\n'
-            sitemap_xml += f'    <lastmod>{current_date}</lastmod>\n'
-            sitemap_xml += f'    <changefreq>{changefreq}</changefreq>\n'
-            sitemap_xml += f'    <priority>{priority}</priority>\n'
-            sitemap_xml += f'  </url>\n'
+            parts.append(f'  <url>\n    <loc>{self.xml_escape(url)}</loc>\n    <lastmod>{current_date}</lastmod>\n    <changefreq>{changefreq}</changefreq>\n    <priority>{priority}</priority>\n  </url>')
 
-        sitemap_xml += '</urlset>'
-
-        sitemap_path.write_text(sitemap_xml)
+        parts.append('</urlset>')
+        sitemap_path.write_text('\n'.join(parts))
         logger.info("Generated sitemap.xml")
 
     def generate_image_sitemap(self, images: List[Dict[str, Any]]) -> None:
@@ -288,106 +279,20 @@ class SEOUtilities:
         Generate search index for all pages compatible with MiniSearch.
 
         Args:
-            content_items: List of content item dictionaries with search data
+            content_items: Pre-formatted list of search documents (with 'id' and 'url' keys)
         """
         try:
-            search_documents = []
-            doc_id = 1  # Initialize doc_id before conditional
+            search_documents = list(content_items)
 
-            # If content_items are already in the correct format, use them directly
-            if content_items and all('id' in item and 'url' in item for item in content_items):
-                # Use the passed content_items directly as they're already formatted
-                search_documents = content_items
-                # Set doc_id to continue from where content_items left off
-                doc_id = len(content_items) + 1
-            else:
-                # Fall back to old logic if needed
-
-                # Index static pages
-                for page in self.config['static_pages']:
-                    # Skip sitemap pages
-                    if page['output'].endswith('.xml'):
-                        continue
-
-                    doc = {
-                        'id': doc_id,
-                        'url': page['output'],
-                        'title': page.get('title', page['output'].replace('.html', '').title()),
-                        'content': '',  # Could extract content from template if needed
-                        'description': page.get('description', ''),
-                        'type': 'page'
-                    }
-                    search_documents.append(doc)
-                    doc_id += 1
-
-                # Index all content pages
-                for content_type, config in self.config['content_types'].items():
-                    content_dir = Path(config['content_dir'])
-                    if not content_dir.exists():
-                        continue
-
-                    # Add listing page
-                    if 'listing_template' in config:
-                        doc = {
-                            'id': doc_id,
-                            'url': f"{content_type.replace('_', '-')}.html",
-                            'title': content_type.replace('_', ' ').title(),
-                            'content': '',
-                            'description': f"Browse all {content_type.replace('_', ' ')}",
-                            'type': 'listing'
-                        }
-                        search_documents.append(doc)
-                        doc_id += 1
-
-                    # Add individual content pages from content_items
-                    for item in content_items:
-                        # Check if this item belongs to current content type
-                        item_type = item.get('content_type', '')
-                        if item_type != content_type:
-                            continue
-
-                        # Clean content for search - remove HTML tags
-                        clean_content = ''
-                        if item.get('content_html'):
-                            try:
-                                from bs4 import BeautifulSoup
-                                soup = BeautifulSoup(item['content_html'], 'html.parser')
-                                clean_content = soup.get_text(' ', strip=True)
-                            except ImportError:
-                                # Fallback if BeautifulSoup is not available
-                                import re
-                                clean_content = re.sub(r'<[^>]+>', '', item.get('content_html', ''))
-
-                        # Fix type for news articles and industries
-                        doc_type = content_type.rstrip('s')  # Remove plural
-                        if content_type == 'news':
-                            doc_type = 'news'  # Keep 'news' as is, don't change to 'new'
-                        elif content_type == 'industries':
-                            doc_type = 'industry'  # Change 'industries' to 'industry', not 'industrie'
-
-                        doc = {
-                            'id': doc_id,
-                            'url': f"{config['output_dir']}/{item['slug']}.html",
-                            'title': item['title'],
-                            'content': clean_content[:1000],  # Limit content length
-                            'description': item.get('short_description', item.get('excerpt', '')),
-                            'type': doc_type,
-                            'category': item.get('category', ''),
-                            'date': item['date'].strftime('%Y-%m-%d') if item.get('date') else ''
-                        }
-                        search_documents.append(doc)
-                        doc_id += 1
-
-            # Add gallery page if it exists
-            gallery_doc = {
-                'id': doc_id,
+            # Add gallery page
+            search_documents.append({
+                'id': f"page-gallery",
                 'url': 'gallery.html',
                 'title': 'Gallery',
                 'content': 'Photo gallery showcasing our events, team, and projects',
                 'description': 'Browse through our collection of photos from events, team activities, and project showcases',
-                'type': 'page'
-            }
-            search_documents.append(gallery_doc)
+                'type': 'page',
+            })
 
             # Write search index
             search_index_path = Path(self.output_dir) / 'static' / 'search-index.json'

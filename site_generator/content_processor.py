@@ -245,6 +245,7 @@ class ContentProcessor:
         self._md_converter = markdown.Markdown(
             extensions=['extra', 'codehilite', 'toc']
         )
+        self._content_cache: Dict[str, Dict[str, Any]] = {}
 
     def process_markdown(self, content: str, metadata: Dict[str, Any],
                         file_path: Path, output_path: Optional[Path] = None) -> Dict[str, Any]:
@@ -307,13 +308,16 @@ class ContentProcessor:
             'excerpt': metadata.get('description', excerpt[:200] + '...' if len(excerpt) > 200 else excerpt),
             'category': metadata.get('category', 'General'),
             'date': self._parse_date(metadata.get('date')),
-            'tags': metadata.get('tags', '').split(',') if metadata.get('tags') else [],
+            'tags': metadata.get('tags') if isinstance(metadata.get('tags'), list) else [t.strip() for t in str(metadata.get('tags', '')).split(',') if t.strip()],
             'external_link': metadata.get('external_link', ''),
         }
 
     def load_markdown_content(self, file_path: Path, output_path: Optional[Path] = None) -> Dict[str, Any]:
         """
-        Load and parse markdown content from file
+        Load and parse markdown content from file with caching.
+
+        Results are cached by (file_path, output_path) to avoid redundant
+        parsing when the same file is loaded by multiple builders.
 
         Args:
             file_path: Path to markdown file
@@ -322,6 +326,10 @@ class ContentProcessor:
         Returns:
             Dict with processed content and metadata
         """
+        cache_key = f"{file_path}:{output_path or ''}"
+        if cache_key in self._content_cache:
+            return self._content_cache[cache_key]
+
         content = file_path.read_text(encoding='utf-8')
 
         # Extract frontmatter
@@ -337,7 +345,9 @@ class ContentProcessor:
             frontmatter = {}
             markdown_content = content
 
-        return self.process_markdown(markdown_content, frontmatter, file_path, output_path)
+        result = self.process_markdown(markdown_content, frontmatter, file_path, output_path)
+        self._content_cache[cache_key] = result
+        return result
 
     def add_automatic_interlinking(self, html_content: str, file_path: Path) -> str:
         """Add automatic links to service/case-study mentions in the content."""

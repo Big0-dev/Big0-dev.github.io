@@ -23,6 +23,12 @@ import rcssmin
 
 logger = logging.getLogger(__name__)
 
+# Pre-compiled regex for replacing dark fill/stroke colors with currentColor
+_DARK_COLOR_RE = re.compile(
+    r'((?:fill|stroke)=")(?:#000(?:000)?|#0F0F0F|#1C1C1C|#1C274C|#212121|#080341|#292929)(")',
+    re.IGNORECASE,
+)
+
 
 class AssetManager:
     """Manages all asset operations for the site generator"""
@@ -229,14 +235,8 @@ class AssetManager:
         try:
             svg_content = svg_path.read_text(encoding='utf-8')
 
-            # Replace hardcoded dark colors with currentColor for theme compatibility
-            dark_colors = [
-                '#000000', '#000', '#0F0F0F', '#1C1C1C', '#1C274C',
-                '#212121', '#080341', '#292929'
-            ]
-            for color in dark_colors:
-                svg_content = svg_content.replace(f'fill="{color}"', 'fill="currentColor"')
-                svg_content = svg_content.replace(f'stroke="{color}"', 'stroke="currentColor"')
+            # Replace hardcoded dark colors with currentColor (single regex pass)
+            svg_content = _DARK_COLOR_RE.sub(r'\1currentColor\2', svg_content)
 
             if css_class:
                 svg_content = svg_content.replace('<svg', f'<svg class="{css_class}"', 1)
@@ -327,7 +327,7 @@ class AssetManager:
                 html_file.write_bytes(minified)
                 html_saved += len(original) - len(minified)
                 html_count += 1
-            except BaseException as e:
+            except Exception as e:
                 logger.warning(f"Skipped minification for {html_file.name}: {e}")
 
         static_dir = target_dir / 'static'

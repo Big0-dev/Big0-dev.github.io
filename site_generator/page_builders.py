@@ -178,6 +178,17 @@ class GalleryPageBuilder(BasePageBuilder):
 class ContentPageBuilder(BasePageBuilder):
     """Builder for content pages from markdown files"""
 
+    # Map plural content type keys to singular template variable names
+    _SINGULAR_MAP = {
+        'services': 'service',
+        'industries': 'industry',
+        'blogs': 'blog',
+        'case_studies': 'case_study',
+        'newsletters': 'newsletter',
+        'news': 'news',
+        'team': 'team',
+    }
+
     def __init__(self, env: Environment, config: Dict[str, Any], output_dir: str,
                  load_markdown_content_func):
         super().__init__(env, config, output_dir)
@@ -242,14 +253,7 @@ class ContentPageBuilder(BasePageBuilder):
                         output_path = Path(self.output_dir) / config['output_dir'] / f"{item['slug']}.html"
 
                         # Get context with depth 1 for subdirectory pages
-                        # Map content_type to singular form
-                        singular_map = {
-                            'services': 'service',
-                            'industries': 'industry',
-                            'blogs': 'blog',
-                            'case_studies': 'case_study'
-                        }
-                        singular = singular_map.get(content_type, content_type[:-1])
+                        singular = self._SINGULAR_MAP.get(content_type, content_type.rstrip('s'))
                         # Get base context
                         base_context = self._get_base_context(depth=1)
 

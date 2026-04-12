@@ -688,7 +688,7 @@
 .bento-hero-stats { display: flex; gap: 24px; padding-top: 16px; border-top: 1px solid var(--color-steel, #334155); }
 .bento-stat { display: flex; flex-direction: column; gap: 2px; }
 .bento-stat-val { font-family: var(--font-display, 'Exo 2', sans-serif); font-size: 14px; font-weight: 700; color: var(--color-cyan, #06B6D4); }
-.bento-stat-label { font-size: 11px; color: var(--color-steel, #334155); }
+.bento-stat-label { font-size: 12px; color: #94A3B8; }
 .bento-sm {
   background: var(--color-slate, #1E293B); border: 1px solid var(--color-steel, #334155);
   border-radius: 12px; padding: 24px; text-decoration: none; color: inherit;

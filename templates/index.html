@@ -65,7 +65,7 @@
   </div>
 </section>
 
-<!-- Section 3: Featured Work -->
+<!-- Section 3: Featured Work — Bento Grid -->
 <section class="section">
   <div class="container">
     <div class="reveal">
@@ -74,39 +74,56 @@
       <p class="section-subtitle mb-2xl">Real products, real deployments, real evidence.</p>
     </div>
 
-    <div class="featured-work-grid reveal-stagger reveal">
-      {% for case_study in all_case_studies[:3] %}
-      <a href="./case-studies/{{ case_study.slug }}.html" class="case-card">
-        <div class="case-img">
-          {% if case_study.icon %}
-          <div class="case-img-icon">
-            {{ inject_svg(case_study.icon, True) | safe }}
+    <div class="bento-grid reveal">
+      {% set hero_cs = all_case_studies[0] %}
+      <a href="./case-studies/{{ hero_cs.slug }}.html" class="bento-hero">
+        <div class="bento-hero-icon">
+          {% if hero_cs.icon %}{{ inject_svg(hero_cs.icon, True) | safe }}{% endif %}
+        </div>
+        <div class="bento-hero-body">
+          <div class="case-badges">
+            {% if hero_cs.frontmatter.attribution == 'big0_work' %}
+            <span class="badge badge-green">Big0 Client Work</span>
+            {% elif hero_cs.frontmatter.attribution == 'research' %}
+            <span class="badge badge-cyan">Founder's Research</span>
+            {% endif %}
+            {% if hero_cs.frontmatter.type %}
+            <span class="badge badge-green">{{ hero_cs.frontmatter.type }}</span>
+            {% endif %}
+          </div>
+          <h3 class="bento-hero-title">{{ hero_cs.title }}</h3>
+          <p class="bento-hero-desc">{{ hero_cs.short_description }}</p>
+          {% if hero_cs.frontmatter.results %}
+          <div class="bento-hero-stats">
+            {% for result in hero_cs.frontmatter.results.split(',')[:3] %}
+            <div class="bento-stat">
+              <span class="bento-stat-val">{{ result.strip() }}</span>
+              {% if hero_cs.frontmatter.result_descriptions %}
+              <span class="bento-stat-label">{{ hero_cs.frontmatter.result_descriptions.split(',')[loop.index0].strip() }}</span>
+              {% endif %}
+            </div>
+            {% endfor %}
           </div>
           {% endif %}
         </div>
-        <div class="case-body">
+      </a>
+      {% for case_study in all_case_studies[1:3] %}
+      <a href="./case-studies/{{ case_study.slug }}.html" class="bento-sm">
+        <div class="bento-sm-icon">
+          {% if case_study.icon %}{{ inject_svg(case_study.icon, True) | safe }}{% endif %}
+        </div>
+        <div class="bento-sm-body">
           <div class="case-badges">
             {% if case_study.frontmatter.attribution == 'big0_work' %}
             <span class="badge badge-green">Big0 Client Work</span>
-            {% elif case_study.frontmatter.attribution == 'previous_firm' %}
-            <span class="badge badge-primary">Previous Firm</span>
-            {% elif case_study.frontmatter.attribution == 'research' %}
-            <span class="badge badge-cyan">Founder's Research</span>
             {% endif %}
             {% if case_study.frontmatter.type %}
             <span class="badge badge-green">{{ case_study.frontmatter.type }}</span>
             {% endif %}
           </div>
-          <h3 class="case-title">{{ case_study.title }}</h3>
-          <p class="case-desc">{{ case_study.short_description }}</p>
+          <h3 class="bento-sm-title">{{ case_study.title }}</h3>
           {% if case_study.frontmatter.results %}
-          <div class="case-stats">
-            {% for result in case_study.frontmatter.results.split(',')[:2] %}
-            <div class="case-stat">
-              <div class="case-stat-val">{{ result.strip() }}</div>
-            </div>
-            {% endfor %}
-          </div>
+          <div class="bento-sm-stat">{{ case_study.frontmatter.results.split(',')[0].strip() }}</div>
           {% endif %}
         </div>
       </a>
@@ -162,7 +179,7 @@
   </div>
 </section>
 
-<!-- Section 5: Our Process -->
+<!-- Section 5: Our Process — Connected Timeline -->
 <section class="section">
   <div class="container">
     <div class="reveal">
@@ -171,36 +188,39 @@
       <p class="section-subtitle mb-2xl">No discovery workshops that run for months. We scope, build, ship, and iterate.</p>
     </div>
 
-    <div class="process-grid reveal">
-      <div class="process-step">
-        <div class="process-num">01</div>
-        <h3>Scope &amp; Spec</h3>
-        <p>We define exactly what ships. Technical spec, not a slide deck. You sign off on architecture before a line of code is written.</p>
-        <span class="process-time">1&ndash;2 weeks</span>
-      </div>
-      <div class="process-step">
-        <div class="process-num">02</div>
-        <h3>Build &amp; Test</h3>
-        <p>Sprint-based delivery with working demos every two weeks. You see progress, not status reports. If something isn't working, we catch it early.</p>
-        <span class="process-time">4&ndash;12 weeks</span>
-      </div>
-      <div class="process-step">
-        <div class="process-num">03</div>
-        <h3>Ship &amp; Validate</h3>
-        <p>Production deployment with real users. We measure what matters &mdash; not vanity metrics. If it's hardware, it gets field-tested before handoff.</p>
-        <span class="process-time">1&ndash;2 weeks</span>
-      </div>
-      <div class="process-step">
-        <div class="process-num">04</div>
-        <h3>Support &amp; Scale</h3>
-        <p>Post-launch monitoring and iteration. We transfer knowledge so your team owns it. When you outgrow the first version, we help you scale it.</p>
-        <span class="process-time">Ongoing</span>
+    <div class="timeline reveal">
+      <div class="timeline-line"></div>
+      <div class="timeline-steps">
+        <div class="timeline-step">
+          <div class="timeline-node">01</div>
+          <h3 class="timeline-title">Scope &amp; Spec</h3>
+          <p class="timeline-desc">We define exactly what ships. Technical spec, not a slide deck. You sign off on architecture before a line of code is written.</p>
+          <span class="timeline-time">1&ndash;2 weeks</span>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-node">02</div>
+          <h3 class="timeline-title">Build &amp; Test</h3>
+          <p class="timeline-desc">Sprint-based delivery with working demos every two weeks. You see progress, not status reports.</p>
+          <span class="timeline-time">4&ndash;12 weeks</span>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-node">03</div>
+          <h3 class="timeline-title">Ship &amp; Validate</h3>
+          <p class="timeline-desc">Production deployment with real users. We measure what matters &mdash; not vanity metrics.</p>
+          <span class="timeline-time">1&ndash;2 weeks</span>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-node">04</div>
+          <h3 class="timeline-title">Support &amp; Scale</h3>
+          <p class="timeline-desc">Post-launch monitoring and iteration. We transfer knowledge so your team owns it.</p>
+          <span class="timeline-time">Ongoing</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 6: Why Choose Us -->
+<!-- Section 6: Why Choose Us — Metrics Strip + Feature Blocks -->
 <section class="section section-alt">
   <div class="container">
     <div class="reveal">
@@ -209,50 +229,41 @@
       <p class="section-subtitle mb-2xl">Not claims. Evidence.</p>
     </div>
 
-    <div class="differentiators-grid reveal-stagger reveal">
-      <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-        </div>
+    <div class="metrics-strip reveal">
+      <div class="metric">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        <span class="metric-label">Direct Engineer Access</span>
+      </div>
+      <div class="metric">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span class="metric-label">Published Research</span>
+      </div>
+      <div class="metric">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="metric-label">Senior Talent, Fair Rates</span>
+      </div>
+      <div class="metric">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span class="metric-label">2-Week Sprint Demos</span>
+      </div>
+    </div>
+
+    <div class="hp-diff-blocks reveal">
+      <div class="hp-diff-block">
         <h3>Direct Engineer Access</h3>
         <p>Your first call is with the people who'll build it. No account managers, no project managers, no handoffs. Senior engineers from day one.</p>
-        <div class="diff-evidence">
-          <span class="badge badge-green">Direct Access</span>
-          <span class="badge badge-cyan">No Salespeople</span>
-        </div>
       </div>
-      <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        </div>
+      <div class="hp-diff-block">
         <h3>Research-Backed AI</h3>
         <p>Our AI work is grounded in peer-reviewed research, not tutorials. That depth shows in the systems we ship for clients.</p>
-        <div class="diff-evidence">
-          <span class="badge badge-green">Peer-Reviewed</span>
-          <span class="badge badge-cyan">Published Research</span>
-        </div>
       </div>
-      <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+      <div class="hp-diff-block">
         <h3>Senior Talent, Fair Rates</h3>
         <p>Senior developers at rates that make sense for startups. No juniors, no bench rotation. The same team every sprint.</p>
-        <div class="diff-evidence">
-          <span class="badge badge-green">Senior Only</span>
-          <span class="badge badge-cyan">Same Team Always</span>
-        </div>
       </div>
-      <div class="diff-card">
-        <div class="diff-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
+      <div class="hp-diff-block">
         <h3>Working Software Every 2 Weeks</h3>
         <p>Sprint-based delivery with working demos you can test. Not status reports, not slide decks &mdash; software you can click.</p>
-        <div class="diff-evidence">
-          <span class="badge badge-green">2-Week Sprints</span>
-          <span class="badge badge-cyan">Working Demos</span>
-        </div>
       </div>
     </div>
   </div>

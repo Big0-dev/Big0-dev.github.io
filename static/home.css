@@ -752,8 +752,18 @@
   .timeline-desc { max-width: 180px; }
 }
 @media (max-width: 768px) {
-  .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .bento-hero { grid-row: auto; }
+  .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: var(--space-sm); }
+
+  /* Homogenize all bento cards on mobile */
+  .bento-hero {
+    grid-row: auto;
+    padding: var(--space-lg);
+    background: var(--color-slate);
+    border: 1px solid var(--color-steel);
+  }
+  .bento-hero-icon { width: var(--icon-md); height: var(--icon-md); margin-bottom: var(--space-md); }
+  .bento-hero-title { font-size: var(--font-sm); }
+  .bento-hero-desc { font-size: var(--font-xs); margin-bottom: var(--space-md); }
   .bento-hero-stats { flex-wrap: wrap; gap: var(--space-md); }
   .timeline-line { display: none; }
   .timeline-steps { grid-template-columns: 1fr; gap: var(--space-xl); }

@@ -897,21 +897,21 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #25D366;
-  color: #fff;
+  background: var(--color-signal);
+  color: var(--color-white);
   padding: 12px 20px;
   border-radius: 50px;
   text-decoration: none;
   font-family: var(--font-body, 'DM Sans', sans-serif);
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px var(--signal-30);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 .whatsapp-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-  color: #fff;
+  box-shadow: 0 6px 20px var(--signal-40);
+  color: var(--color-white);
 }
 .whatsapp-btn svg {
   flex-shrink: 0;
@@ -921,7 +921,7 @@
 }
 @media (max-width: 480px) {
   .whatsapp-btn {
-    bottom: calc(var(--space-md) + 36px + var(--space-lg));
+    bottom: calc(var(--space-md) + 36px + var(--space-lg) + var(--space-2xs));
     right: var(--space-md);
     padding: 12px;
     border-radius: 50%;

@@ -891,7 +891,7 @@
 /* --- WHATSAPP BUTTON --- */
 .whatsapp-btn {
   position: fixed;
-  bottom: calc(var(--space-lg) + var(--icon-md) + var(--space-lg));
+  bottom: calc(var(--space-lg) + var(--icon-md) + var(--space-xl));
   right: var(--space-lg);
   z-index: 999;
   display: flex;

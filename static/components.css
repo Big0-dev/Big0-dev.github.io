@@ -891,8 +891,8 @@
 /* --- WHATSAPP BUTTON --- */
 .whatsapp-btn {
   position: fixed;
-  bottom: 24px;
-  left: 24px;
+  bottom: 80px;
+  right: 24px;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -921,6 +921,8 @@
 }
 @media (max-width: 480px) {
   .whatsapp-btn {
+    bottom: 68px;
+    right: 16px;
     padding: 12px;
     border-radius: 50%;
   }

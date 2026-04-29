@@ -30,7 +30,7 @@
 --color-slate: #1E293B;
 --color-steel: #334155;
 --color-signal: #0D9488;
---color-signal-glow: #0D9488;
+--color-signal-glow: #14B8A6;
 --color-cyan: #06B6D4;
 --color-cloud: #F1F5F9;
 --color-mist: #94A3B8;
@@ -68,8 +68,8 @@
 --overlay-strong: var(--signal-8);
 --gradient-primary: var(--color-signal);
 --gradient-dark: linear-gradient(180deg,var(--color-void) 0%,var(--color-midnight) 100%);
---link-color: var(--color-signal-glow);
---link-hover: var(--color-signal);
+--link-color: var(--color-signal);
+--link-hover: var(--color-signal-glow);
 --success-color: var(--color-success);
 --danger-color: var(--color-danger);
 --warning-color: var(--color-warning);
@@ -217,12 +217,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--color-signal-glow);
+  color: var(--color-signal);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 a:hover {
-  color: var(--color-signal);
+  color: var(--color-signal-glow);
 }
 
 /* .b0 — disambiguates the "0" in "Big0" from an "O" in body copy.

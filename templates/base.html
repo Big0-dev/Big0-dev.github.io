@@ -15,7 +15,9 @@
     <meta property="og:title" content="{% block og_title %}{{ self.title() }} - Big0{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ self.meta_description() }}{% endblock %}">
     <meta property="og:url" content="{{ domain }}{{ self.canonical_path() }}">
-    <meta property="og:image" content="{% block og_image %}{{ domain }}/static/big0_logo.svg{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ domain }}/static/big0_logo_black.png{% endblock %}">
+    <meta property="og:image:width" content="1287">
+    <meta property="og:image:height" content="360">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
@@ -64,9 +66,9 @@
       .navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,15,28,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--color-steel);z-index:var(--z-fixed)}
       .nav-container{height:100%;display:flex;align-items:center;justify-content:space-between}
       .nav-logo{display:inline-flex;align-items:center;text-decoration:none}
-      .nav-logo-svg{height:32px;width:auto;display:block}
-      .nav-logo-svg path{fill:var(--color-white);transition:fill 0.15s}
-      .nav-logo:hover .nav-logo-svg path{fill:var(--color-signal)}
+      .nav-logo-svg{height:32px;width:auto;display:block;transition:opacity 0.15s}
+      .nav-logo-mark-svg{height:32px;width:auto;display:none;transition:opacity 0.15s}
+      .nav-logo:hover .nav-logo-svg,.nav-logo:hover .nav-logo-mark-svg{opacity:0.85}
       .nav-menu{display:flex;align-items:center;gap:28px}
       .nav-links{display:flex;align-items:center;gap:28px}
       .nav-link{color:var(--color-mist);font-size:14px;font-weight:500;text-decoration:none;font-family:var(--font-body);transition:color 0.15s}
@@ -78,7 +80,7 @@
       .hamburger-line{display:block;width:100%;height:2px;background-color:var(--color-white);border-radius:2px}
       .hide-mobile{display:flex}
       .hide-desktop{display:none}
-      @media(max-width:768px){body{padding-top:64px}.navbar{height:64px}.hamburger-btn{display:flex}.nav-menu,.nav-actions .nav-cta,.nav-actions .nav-search-btn,.hide-mobile{display:none!important}.hide-desktop{display:flex}}
+      @media(max-width:768px){body{padding-top:64px}.navbar{height:64px}.hamburger-btn{display:flex}.nav-menu,.nav-actions .nav-cta,.nav-actions .nav-search-btn,.hide-mobile{display:none!important}.hide-desktop{display:flex}.nav-logo-svg{display:none}.nav-logo-mark-svg{display:block}}
     </style>
     
     <!-- Load CSS with media attribute for non-critical styles -->
@@ -96,8 +98,13 @@
     {% endblock %}
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="{{ path_prefix }}favicon.png">
-    <link rel="apple-touch-icon" href="{{ path_prefix }}favicon.png">
+    <link rel="icon" type="image/svg+xml" href="{{ path_prefix }}favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ path_prefix }}favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ path_prefix }}favicon-16.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ path_prefix }}favicon-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ path_prefix }}apple-touch-icon.png">
+    <link rel="manifest" href="{{ path_prefix }}site.webmanifest">
+    <meta name="theme-color" content="#0D9488">
     
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Big0 - News & Insights RSS Feed" href="{{ path_prefix }}rss.xml">
@@ -175,6 +182,7 @@
         <div class="container nav-container">
           <a href="{{ home }}" class="nav-logo" aria-label="Home">
             {{ inject_svg('big0_logo', False, 'nav-logo-svg') | safe }}
+            {{ inject_svg('big0_mark', False, 'nav-logo-mark-svg') | safe }}
           </a>
 
           <!-- Mobile Menu Toggle -->
@@ -356,7 +364,7 @@
           <!-- Footer Bottom -->
           <div class="footer-bottom">
             <p class="text-sm text-tertiary">
-              © {{ copyright }} Big0 Dev Private Limited. All rights reserved.
+              © {{ copyright }} Big<span class="b0">0</span> Dev Private Limited. All rights reserved.
             </p>
             <div class="footer-social">
               <a 

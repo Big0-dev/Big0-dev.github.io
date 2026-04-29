@@ -85,6 +85,7 @@
    ============================================================================= */
 --font-display: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 --font-body: 'DM Sans', sans-serif;
+--font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
 --font-2xs: 0.6875rem;
 --font-xs: 0.8125rem;
@@ -222,6 +223,14 @@ a {
 }
 a:hover {
   color: var(--color-signal);
+}
+
+/* .b0 — disambiguates the "0" in "Big0" from an "O" in body copy.
+   Renders the digit in monospace with the slashed-zero OpenType feature.
+   Do not use inside the wordmark SVG (already handled) or <title> tags. */
+.b0 {
+  font-family: var(--font-mono);
+  font-feature-settings: "zero" 1;
 }
 
 /* =============================================================================

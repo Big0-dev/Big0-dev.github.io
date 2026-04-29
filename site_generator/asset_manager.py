@@ -120,8 +120,8 @@ class AssetManager:
         copied = skipped = 0
 
         for item in os.listdir(source_dir):
-            # Skip SVG files and favicon files (handled separately)
-            if item.endswith('.svg') or item.startswith('favicon'):
+            # Skip SVG files, favicon files, and root-level files (handled separately)
+            if item.endswith('.svg') or item.startswith('favicon') or item in ('apple-touch-icon.png', 'site.webmanifest'):
                 continue
 
             src_path = os.path.join(source_dir, item)
@@ -193,17 +193,18 @@ class AssetManager:
                     except Exception as e:
                         logger.error(f"Error copying root asset {asset}: {e}")
 
-        # Copy favicon files to build root
-        favicon_files = ['favicon.ico', 'favicon.png']
-        for favicon in favicon_files:
-            src = Path(self.static_dir) / favicon
-            if src.exists():
-                dest = Path(self.output_dir) / favicon
-                try:
-                    shutil.copy2(src, dest)
-                    logger.debug(f"Copied favicon: {favicon}")
-                except Exception as e:
-                    logger.error(f"Error copying favicon {favicon}: {e}")
+        # Copy favicon files, apple-touch-icon, and web manifest to build root
+        static_path = Path(self.static_dir)
+        root_files = [p.name for p in static_path.iterdir()
+                      if p.is_file() and (p.name.startswith('favicon') or p.name in ('apple-touch-icon.png', 'site.webmanifest'))]
+        for filename in root_files:
+            src = static_path / filename
+            dest = Path(self.output_dir) / filename
+            try:
+                shutil.copy2(src, dest)
+                logger.debug(f"Copied root file: {filename}")
+            except Exception as e:
+                logger.error(f"Error copying root file {filename}: {e}")
 
     def copy_all_assets(self) -> None:
         """Copy all assets according to configuration"""

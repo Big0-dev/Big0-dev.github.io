@@ -122,8 +122,8 @@ class SEOUtilities:
 
 
 
-        # Deduplicate and add to urls
-        for page in set(listing_pages):
+        # Deduplicate and add to urls (sorted for deterministic, reproducible output)
+        for page in sorted(set(listing_pages)):
             # Check if the page actually exists in build directory
             if (Path(self.output_dir) / page).exists():
                 urls.append(f"{self.config['domain']}/{page}")

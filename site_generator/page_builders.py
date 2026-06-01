@@ -95,7 +95,10 @@ class StaticPageBuilder(BasePageBuilder):
                         if content_dir.exists():
                             items = []
                             for file_path in content_dir.glob('*.md'):
-                                item = self._load_markdown_content(file_path)
+                                # Use the detail-page output_path so this shares the
+                                # ContentProcessor cache (one parse per file, not two).
+                                item_out = Path(config['output_dir']) / f"{file_path.stem}.html"
+                                item = self._load_markdown_content(file_path, item_out)
                                 items.append(item)
                             # Sort by order field if available, then by date
                             items.sort(key=lambda x: (x.get('frontmatter', {}).get('order', 999), -(x.get('date') or datetime.min).timestamp() if x.get('date') else 0))
@@ -106,7 +109,8 @@ class StaticPageBuilder(BasePageBuilder):
                     if news_dir.exists():
                         news_articles = []
                         for file_path in news_dir.glob('*.md'):
-                            article = self._load_markdown_content(file_path)
+                            item_out = Path('news') / f"{file_path.stem}.html"
+                            article = self._load_markdown_content(file_path, item_out)
                             news_articles.append(article)
                         news_articles.sort(key=lambda x: x.get('date') or datetime.min, reverse=True)
                         page_context['news_articles'] = news_articles
@@ -324,7 +328,8 @@ class ContentPageBuilder(BasePageBuilder):
                         if newsletters_dir.exists():
                             newsletters = []
                             for file_path in newsletters_dir.glob('*.md'):
-                                newsletter = self._load_markdown_content(file_path)
+                                nl_out = Path(newsletters_config['output_dir']) / f"{file_path.stem}.html"
+                                newsletter = self._load_markdown_content(file_path, nl_out)
                                 newsletters.append(newsletter)
                             # Sort by issue number descending
                             newsletters.sort(key=lambda x: x.get('frontmatter', {}).get('issue_number', 0), reverse=True)

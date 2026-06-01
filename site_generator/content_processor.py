@@ -215,13 +215,18 @@ class ContentProcessor:
         'trading marketplace': 'sports-card-trading-marketplace',
     }
 
-    # Pre-sorted keyword lists (sorted by length descending, computed once)
-    _SERVICE_KEYWORDS_SORTED = sorted(
-        SERVICE_LINKS.items(), key=lambda x: len(x[0]), reverse=True
-    )
-    _CASE_STUDY_KEYWORDS_SORTED = sorted(
-        CASE_STUDY_LINKS.items(), key=lambda x: len(x[0]), reverse=True
-    )
+    # Pre-sorted keyword lists as (term, slug, compiled_pattern), sorted by length
+    # descending. Patterns are compiled ONCE here and reused for every text node,
+    # instead of re-escaping/re-compiling ~250 patterns per node (the build's old
+    # hot path: ~670k re.escape/re.compile calls).
+    _SERVICE_KEYWORDS_SORTED = [
+        (term, slug, re.compile(r'\b(' + re.escape(term) + r')\b', re.IGNORECASE))
+        for term, slug in sorted(SERVICE_LINKS.items(), key=lambda x: len(x[0]), reverse=True)
+    ]
+    _CASE_STUDY_KEYWORDS_SORTED = [
+        (term, slug, re.compile(r'\b(' + re.escape(term) + r')\b', re.IGNORECASE))
+        for term, slug in sorted(CASE_STUDY_LINKS.items(), key=lambda x: len(x[0]), reverse=True)
+    ]
 
     # Pre-compiled regex for removing deprecated directives
     _DEPRECATED_DIRECTIVES_RE = re.compile(
@@ -366,14 +371,14 @@ class ContentProcessor:
         # Build keyword list once using pre-sorted class-level constants
         all_keywords = []
         if is_blog_page or is_case_study_page or is_news_page:
-            for term, slug in self._SERVICE_KEYWORDS_SORTED:
+            for term, slug, pat in self._SERVICE_KEYWORDS_SORTED:
                 if slug != current_slug:
-                    all_keywords.append((term, 'service', slug))
+                    all_keywords.append((term, 'service', slug, pat))
 
         if is_blog_page or is_news_page:
-            for term, slug in self._CASE_STUDY_KEYWORDS_SORTED:
+            for term, slug, pat in self._CASE_STUDY_KEYWORDS_SORTED:
                 if slug != current_slug:
-                    all_keywords.append((term, 'case_study', slug))
+                    all_keywords.append((term, 'case_study', slug, pat))
 
         # Re-sort combined list by length (longest first)
         all_keywords.sort(key=lambda x: len(x[0]), reverse=True)
@@ -397,9 +402,8 @@ class ContentProcessor:
             text = str(text_node)
             matches_to_replace = []
 
-            for term, link_type, slug in all_keywords:
-                pattern = r'\b(' + re.escape(term) + r')\b'
-                for match in re.finditer(pattern, text, re.IGNORECASE):
+            for term, link_type, slug, pat in all_keywords:
+                for match in pat.finditer(text):
                     overlaps = any(
                         match.start() < ee and match.end() > es
                         for es, ee, _, _ in matches_to_replace

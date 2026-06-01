@@ -426,30 +426,26 @@
   color: var(--color-signal);
 }
 
-/* --- RELATED SERVICES / INDUSTRIES WIDGET --- */
-.related-services-inline,
-.related-industries-inline {
+/* --- RELATED SERVICES WIDGET --- */
+.related-services-inline {
   background: var(--color-slate);
   border-radius: var(--radius-lg);
   padding: var(--space-2xl);
   margin: var(--space-2xl) 0;
   border: 1px solid var(--color-steel);
 }
-.related-services-inline h3,
-.related-industries-inline h3 {
+.related-services-inline h3 {
   color: var(--color-white);
   font-size: var(--font-lg);
   font-weight: 600;
   margin-bottom: var(--space-lg);
 }
-.related-services-grid,
-.related-industries-grid {
+.related-services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-md);
 }
-.related-service-link,
-.related-industry-link {
+.related-service-link {
   background: var(--color-midnight);
   border: 1px solid var(--color-steel);
   border-radius: var(--radius-base);
@@ -470,94 +466,16 @@
   transition: transform 0.2s;
   display: inline-block;
 }
-.related-service-link:hover,
-.related-industry-link:hover {
+.related-service-link:hover {
   border-color: var(--color-signal);
   color: var(--color-white) !important;
   transform: translateY(-1px);
 }
-.related-service-link:hover span,
-.related-industry-link:hover span {
+.related-service-link:hover span {
   color: var(--color-white) !important;
 }
-.related-service-link:hover .link-icon,
-.related-industry-link:hover .link-icon {
+.related-service-link:hover .link-icon {
   transform: translateX(3px);
-}
-
-/* --- INDUSTRY CHALLENGES / SOLUTIONS --- */
-.industry-challenges,
-.industry-solutions {
-  background: var(--color-slate);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  margin: var(--space-2xl) 0;
-  border: 1px solid var(--color-steel);
-}
-.industry-challenges h3,
-.industry-solutions h3 {
-  color: var(--color-white);
-  font-size: var(--font-lg);
-  font-weight: 600;
-  margin-bottom: var(--space-lg);
-}
-.challenges-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-md);
-}
-.challenge-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--color-midnight);
-  border-radius: var(--radius-base);
-  border: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-.challenge-item:hover {
-  border-color: var(--color-steel);
-}
-.challenge-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--color-signal);
-}
-.challenge-item p {
-  margin: 0;
-  color: var(--color-mist);
-  font-size: var(--font-sm);
-  line-height: 1.6;
-}
-
-.solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-md);
-}
-.solution-card {
-  background: var(--color-midnight);
-  border: 1px solid var(--color-steel);
-  border-radius: var(--radius-base);
-  padding: var(--space-lg);
-  transition: border-color 0.2s;
-}
-.solution-card:hover {
-  border-color: var(--color-signal);
-}
-.solution-card h4 {
-  color: var(--color-white);
-  font-size: var(--font-base);
-  font-weight: 600;
-  margin: 0 0 var(--space-sm) 0;
-}
-.solution-card p {
-  color: var(--color-mist);
-  font-size: var(--font-sm);
-  line-height: 1.6;
-  margin: 0;
 }
 
 /* --- AUTO-LINKS --- */

@@ -164,30 +164,7 @@
 </section>
 {% endif %}
 
-<!-- Section 6: Industries We Serve -->
-{% if fm.industries %}
-<section class="section">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Industries</div>
-      <h2 class="section-title">Industries We Serve</h2>
-    </div>
-
-    <div class="svc-industries-grid reveal">
-      {% for ind in fm.industries %}
-      <a href="{{ path_prefix }}industries/{{ ind.slug }}.html" class="svc-industry-card">
-        <div class="svc-industry-icon">
-          {{ inject_svg(ind.icon, True) | safe }}
-        </div>
-        <span>{{ ind.name }}</span>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<!-- Section 7: FAQ -->
+<!-- Section 6: FAQ -->
 {% if fm.faqs %}
 <section class="section section-alt">
   <div class="container">

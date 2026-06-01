@@ -168,51 +168,6 @@
   flex: 1;
 }
 
-/* --- Industries Grid --- */
-.svc-industries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-.svc-industry-card {
-  background: var(--color-slate);
-  border: 1px solid var(--color-steel);
-  border-radius: 12px;
-  padding: 20px;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.2s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.svc-industry-card:hover {
-  border-color: var(--color-signal);
-  transform: translateY(-2px);
-}
-.svc-industry-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--signal-12);
-  border: 1px solid var(--signal-20);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-signal);
-  flex-shrink: 0;
-}
-.svc-industry-icon svg {
-  width: 20px;
-  height: 20px;
-}
-.svc-industry-card span {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-white);
-}
-
 /* --- Process Grid Variant (3 steps) --- */
 .process-grid-3 {
   grid-template-columns: repeat(3, 1fr);

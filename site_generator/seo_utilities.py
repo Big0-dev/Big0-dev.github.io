@@ -100,16 +100,16 @@ class SEOUtilities:
         # Start with known listing pages
         listing_pages = [
             'services.html',
-            'blog.html',
+            'blogs.html',
             'case-studies.html',
             'gallery.html',
             'newsletters.html',
             'news.html',
         ]
 
-        # Dynamically discover all pagination pages (blog-2.html, blog-3.html, etc.)
+        # Dynamically discover all pagination pages (blogs-2.html, blogs-3.html, etc.)
         output_path = Path(self.output_dir)
-        pagination_patterns = ['blog-*.html', 'case-studies-*.html', 'gallery-*.html', 'newsletters-*.html']
+        pagination_patterns = ['blogs-*.html', 'case-studies-*.html', 'gallery-*.html', 'newsletters-*.html']
         for pattern in pagination_patterns:
             for page_file in output_path.glob(pattern):
                 listing_pages.append(page_file.name)

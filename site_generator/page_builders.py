@@ -181,7 +181,6 @@ class ContentPageBuilder(BasePageBuilder):
     # Map plural content type keys to singular template variable names
     _SINGULAR_MAP = {
         'services': 'service',
-        'industries': 'industry',
         'blogs': 'blog',
         'case_studies': 'case_study',
         'newsletters': 'newsletter',

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 64" fill="none">
+  <defs>
+    <clipPath id="pl-mark">
+      <rect x="0" y="0" width="91" height="444" rx="22"/>
+      <circle cx="130" cy="134" r="132"/>
+    </clipPath>
+  </defs>
+  <!-- Pinnacle "P" mark (brand burgundy) -->
+  <g transform="translate(3 9) scale(0.104)">
+    <g clip-path="url(#pl-mark)">
+      <rect x="0" y="0" width="91" height="444" rx="22" fill="#6B0D16"/>
+      <circle cx="130" cy="134" r="132" fill="#82161C"/>
+      <polygon points="0,0 262,0 262,52 0,168" fill="#C27280"/>
+    </g>
+  </g>
+  <!-- Wordmark -->
+  <text x="40" y="43" font-family="'Exo 2', system-ui, sans-serif" font-size="30" font-weight="700" letter-spacing="-0.3" fill="#C27280">Pinnacle Law</text>
+</svg>

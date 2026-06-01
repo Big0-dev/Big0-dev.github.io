@@ -1,0 +1,20 @@
+{# Shared "Trusted by" client logo marquee. Edit the client list here once;
+   used by index.html, get-started.html, get-started-eu.html. #}
+{% set clients = [
+  {'url': 'https://pinnacle.law', 'name': 'Pinnacle Law', 'logo': 'clients/pinnacle'},
+  {'url': 'https://khan.big0.dev', 'name': 'Khan', 'logo': 'clients/khan'},
+  {'url': 'https://slapstack.de/', 'name': 'Slap Stack', 'logo': 'clients/slap-stack'},
+  {'url': 'https://www.auxiliouk.com/', 'name': 'Auxilio UK', 'logo': 'clients/auxilio'},
+  {'url': 'https://szabist-isb.edu.pk/', 'name': 'SZABIST', 'logo': 'clients/szabist'},
+  {'url': 'https://awaampakistan.org/', 'name': 'Awaam Pakistan', 'logo': 'clients/awaam-pakistan'}
+] %}
+<div class="trusted-logos">
+  <div class="trusted-logos-track">
+    {% for client in clients %}
+    <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}">{{ inject_svg(client.logo) | safe }}</a>
+    {% endfor %}
+    {% for client in clients %}
+    <a href="{{ client.url }}" target="_blank" rel="noopener noreferrer" class="trusted-logo-item" aria-label="{{ client.name }}" aria-hidden="true">{{ inject_svg(client.logo) | safe }}</a>
+    {% endfor %}
+  </div>
+</div>

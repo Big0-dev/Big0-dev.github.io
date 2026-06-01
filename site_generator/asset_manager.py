@@ -321,7 +321,7 @@ class AssetManager:
             try:
                 minified = minify_html.minify(
                     original.decode('utf-8'),
-                    minify_js=False,
+                    minify_js=True,
                     minify_css=True,
                     remove_processing_instructions=True,
                 ).encode('utf-8')

@@ -20,6 +20,7 @@ from typing import Dict, Any, List, Optional, Set
 
 import minify_html
 import rcssmin
+import rjsmin
 
 logger = logging.getLogger(__name__)
 
@@ -307,14 +308,15 @@ class AssetManager:
         }
 
     def optimize_output(self, directory: Optional[str] = None) -> None:
-        """Minify all HTML and CSS files in the build output.
+        """Minify all HTML, CSS, and JS files in the build output.
 
         Uses minify-html for HTML (single-pass Rust minifier that also handles
-        inline JS and CSS), and rcssmin for standalone CSS files.
+        inline JS and CSS), rcssmin for standalone CSS, and rjsmin for
+        standalone JS (already-minified *.min.js files are skipped).
         """
         target_dir = Path(directory or self.output_dir)
-        html_saved = css_saved = 0
-        html_count = css_count = 0
+        html_saved = css_saved = js_saved = 0
+        html_count = css_count = js_count = 0
 
         for html_file in target_dir.rglob('*.html'):
             original = html_file.read_bytes()
@@ -343,6 +345,18 @@ class AssetManager:
                 except Exception:
                     pass
 
-        total_kb = (html_saved + css_saved) / 1024
-        logger.info(f"Minified {html_count} HTML + {css_count} CSS files (saved {total_kb:.1f} KB)")
+            for js_file in static_dir.rglob('*.js'):
+                if js_file.name.endswith('.min.js'):
+                    continue  # already minified (e.g. minisearch)
+                original = js_file.read_bytes()
+                try:
+                    minified = rjsmin.jsmin(original.decode('utf-8')).encode('utf-8')
+                    js_file.write_bytes(minified)
+                    js_saved += len(original) - len(minified)
+                    js_count += 1
+                except Exception as e:
+                    logger.warning(f"Skipped JS minification for {js_file.name}: {e}")
+
+        total_kb = (html_saved + css_saved + js_saved) / 1024
+        logger.info(f"Minified {html_count} HTML + {css_count} CSS + {js_count} JS files (saved {total_kb:.1f} KB)")
 

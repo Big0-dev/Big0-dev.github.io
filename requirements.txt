@@ -16,6 +16,8 @@ pyyaml==6.0.2
     # via big0-dev-github-io
 rcssmin==1.2.2
     # via big0-dev-github-io
+rjsmin==1.2.5
+    # via big0-dev-github-io
 soupsieve==2.6
     # via beautifulsoup4
 typing-extensions==4.12.2

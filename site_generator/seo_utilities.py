@@ -56,21 +56,6 @@ class SEOUtilities:
         text = text.replace("'", '&apos;')
         return text
 
-    def _escape_xml_cdata(self, text: str) -> str:
-        """
-        Escape XML for CDATA sections.
-
-        Args:
-            text: Text to escape for CDATA
-
-        Returns:
-            CDATA-safe text
-        """
-        if not text:
-            return text
-        # Even in CDATA, we need to handle the CDATA end sequence
-        return text.replace(']]>', ']]]]><![CDATA[>')
-
     def generate_sitemap(self, pages: List[Dict[str, Any]]) -> None:
         """
         Generate XML sitemap for all site pages.

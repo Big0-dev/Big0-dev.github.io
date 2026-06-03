@@ -85,7 +85,7 @@ class AssetManager:
 
         static_images = {p.name for p in Path(self.static_dir).glob("*") if p.suffix.lower() in self._IMAGE_EXTENSIONS}
 
-        for source_type, text in all_files:
+        for _source_type, text in all_files:
             for m in image_pattern.finditer(text):
                 referenced.add(Path(m.group(1)).name)
             # Check bare names (no extension) that resolve to actual image files

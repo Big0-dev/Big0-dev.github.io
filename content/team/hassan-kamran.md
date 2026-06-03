@@ -86,7 +86,7 @@ education:
   - institution: "Pakistan Military Academy"
     degree: "Officer Training (Commissioned Officer)"
     period: "2019 — 2020"
-  - institution: "NUST"
+  - institution: "National University of Sciences and Technology"
     degree: "BE Mechatronics Engineering"
     period: "2014 — 2019"
 ---

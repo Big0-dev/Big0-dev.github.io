@@ -20,7 +20,6 @@
 
   // MiniSearch instance
   let miniSearch = null;
-  let searchDocuments = []; // Store the full documents for context extraction
 
   // Determine current page depth for URL correction
   function getPathDepth() {
@@ -82,9 +81,6 @@
         return response.json();
       })
       .then((documents) => {
-        // Store documents for context extraction
-        searchDocuments = documents;
-
         // Add documents to the index
         miniSearch.addAll(documents);
       })

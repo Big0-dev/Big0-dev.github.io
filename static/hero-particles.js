@@ -93,7 +93,6 @@
   function drawCyberGrid() {
     const horizon = height * 0.7;
     const gridLines = 15;
-    const perspective = 400;
 
     ctx.save();
     ctx.globalAlpha = 0.3;

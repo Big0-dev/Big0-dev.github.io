@@ -161,28 +161,31 @@ class SEOUtilities:
         # Dictionary to store images by page URL
         pages_with_images = {}
 
-        # Add gallery images - split between gallery.html and gallery-2.html if needed
+        # Add gallery images, paginated to match GalleryPageBuilder exactly
+        # (same date-descending order and per_page from config) so each image
+        # is listed under the page where it actually appears.
         if images:
-            # First 12 images for gallery.html
-            gallery1_images = images[:12]
-            pages_with_images[f'{self.config["domain"]}/gallery.html'] = []
-            for image in gallery1_images:
-                pages_with_images[f'{self.config["domain"]}/gallery.html'].append({
-                    'loc': f'{self.config["domain"]}/content/gallery/{image["filename"]}',
-                    'title': image.get('title'),
-                    'caption': image.get('description')
-                })
-
-            # Remaining images for gallery-2.html if exists
-            if len(images) > 12:
-                gallery2_images = images[12:]
-                pages_with_images[f'{self.config["domain"]}/gallery-2.html'] = []
-                for image in gallery2_images:
-                    pages_with_images[f'{self.config["domain"]}/gallery-2.html'].append({
+            per_page = self.config.get('assets', {}).get('gallery_per_page', 6)
+            sorted_images = sorted(
+                images,
+                key=lambda x: x.get('date') or datetime.min,
+                reverse=True,
+            )
+            total_pages = (len(sorted_images) + per_page - 1) // per_page
+            for page_num in range(1, total_pages + 1):
+                page_images = sorted_images[(page_num - 1) * per_page: page_num * per_page]
+                if page_num == 1:
+                    page_url = f'{self.config["domain"]}/gallery.html'
+                else:
+                    page_url = f'{self.config["domain"]}/gallery-{page_num}.html'
+                pages_with_images[page_url] = [
+                    {
                         'loc': f'{self.config["domain"]}/content/gallery/{image["filename"]}',
                         'title': image.get('title'),
-                        'caption': image.get('description')
-                    })
+                        'caption': image.get('description'),
+                    }
+                    for image in page_images
+                ]
 
         # Add favicon for homepage
         pages_with_images[f'{self.config["domain"]}/index.html'] = [{

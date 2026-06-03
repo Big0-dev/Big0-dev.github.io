@@ -138,6 +138,7 @@ navigation:
 assets:
   static_dir: ./static
   gallery_dir: ./content/gallery
+  gallery_per_page: 6  # must drive both the gallery pages and the image sitemap
   output_dir: ./build
   root_assets:
     - robots.txt

@@ -141,8 +141,8 @@ class GalleryPageBuilder(BasePageBuilder):
             # Sort images by date descending (newest first)
             images.sort(key=lambda x: x.get('date') or datetime.min, reverse=True)
 
-            # Pagination settings
-            per_page = 6
+            # Pagination settings (shared with the image sitemap via config)
+            per_page = self.config.get('assets', {}).get('gallery_per_page', 6)
             total_images = len(images)
             total_pages = (total_images + per_page - 1) // per_page if total_images > 0 else 1
 

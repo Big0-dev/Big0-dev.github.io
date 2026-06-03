@@ -74,7 +74,7 @@
             
             <!-- Navigation -->
             {% if loop.index > 1 %}
-            <button 
+            <button
               class="lightbox-nav prev"
               popovertarget="gallery-lightbox-{{ loop.index }}"
               popovertargetaction="hide"
@@ -85,10 +85,20 @@
                 <polyline points="15 18 9 12 15 6"/>
               </svg>
             </button>
+            {% elif page_num and page_num > 1 %}
+            <a
+              class="lightbox-nav prev"
+              href="./gallery{% if page_num == 2 %}{% else %}-{{ page_num - 1 }}{% endif %}.html#open-{{ per_page }}"
+              aria-label="Previous image"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </a>
             {% endif %}
-            
+
             {% if loop.index < images|length %}
-            <button 
+            <button
               class="lightbox-nav next"
               popovertarget="gallery-lightbox-{{ loop.index }}"
               popovertargetaction="hide"
@@ -99,6 +109,16 @@
                 <polyline points="9 18 15 12 9 6"/>
               </svg>
             </button>
+            {% elif page_num and total_pages and page_num < total_pages %}
+            <a
+              class="lightbox-nav next"
+              href="./gallery-{{ page_num + 1 }}.html#open-1"
+              aria-label="Next image"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </a>
             {% endif %}
             
             <div class="lightbox-inner">
@@ -190,6 +210,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Ensure all lightboxes start closed
   closeAllLightboxes();
+
+  // Cross-page navigation: when arriving via a prev/next link from another
+  // gallery page (e.g. gallery-2.html#open-1), open the requested lightbox.
+  const openMatch = location.hash.match(/^#open-(\d+)$/);
+  if (openMatch) {
+    const target = document.getElementById('gallery-lightbox-' + openMatch[1]);
+    if (target) target.showPopover();
+  }
 
   // Add click handlers to gallery buttons to close other lightboxes first
   const galleryButtons = document.querySelectorAll('.gallery-item button');

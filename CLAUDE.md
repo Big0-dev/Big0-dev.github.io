@@ -6,7 +6,7 @@ This is the marketing website for **Big0 Dev** (https://big0.dev), a software en
 
 ## About the Company
 
-**Big0 Dev** is an engineer-led software firm that builds AI-powered applications, custom software, and startup engineering solutions for clients in the UK, US, Australia, and Middle East.
+**Big0 Dev** is an engineer-led software firm that builds AI-powered applications, custom software, and startup engineering solutions for clients across the globe.
 
 **Key differentiators:**
 - The CEO (Hassan Kamran) writes code and talks to every client directly — no salespeople

@@ -26,7 +26,7 @@ experience:
     period: "Jul 2025 — Present"
     location: "Islamabad, Pakistan"
     highlights:
-      - "Founded an engineer-led AI/ML and custom software consultancy for EU, UK & US clients — profitable within four months"
+      - "Founded an engineer-led AI/ML and custom software consultancy for clients across the globe — profitable within four months"
       - "Runs acquisition, delivery, team, finance & strategy end-to-end while still writing code and reviewing architecture"
       - "Delivers industry workshops on applied AI & automation; guest lectures at LUMS SDSB, SS CASE IT & STMU"
   - company: "SZABIST Islamabad"
@@ -91,4 +91,4 @@ education:
     period: "2014 — 2019"
 ---
 
-Army captain turned engineer turned published AI researcher. Hassan founded Big0 after watching too many startups burn cash on agencies that ship slide decks instead of software — and made it profitable within four months. He has led 50+ personnel in uniform, now runs delivery for EU, UK and US clients, and is finishing an MBA at the Asia School of Business (in collaboration with MIT Sloan). He still writes code, reviews the architecture, talks to every client directly, and publishes peer-reviewed research in PLOS ONE and IEEE. No account managers, no handoffs.
+Army captain turned engineer turned published AI researcher. Hassan founded Big0 after watching too many startups burn cash on agencies that ship slide decks instead of software — and made it profitable within four months. He has led 50+ personnel in uniform, now runs delivery for clients across the globe, and is finishing an MBA at the Asia School of Business (in collaboration with MIT Sloan). He still writes code, reviews the architecture, talks to every client directly, and publishes peer-reviewed research in PLOS ONE and IEEE. No account managers, no handoffs.

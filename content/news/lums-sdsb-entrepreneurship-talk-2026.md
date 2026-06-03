@@ -16,7 +16,7 @@ The talk covered what it actually takes to build something in a market where the
 
 ## The Journey
 
-Hassan shared his own path — retiring from the Pakistan Army, building Big0 from zero to international clients across the UK, Australia, and the Middle East, and developing **Khan**, an AI-powered project management platform, alongside it all.
+Hassan shared his own path — retiring from the Pakistan Army, building Big0 from zero to clients across the globe, and developing **Khan**, an AI-powered project management platform, alongside it all.
 
 ## The Friction Is the Filter
 

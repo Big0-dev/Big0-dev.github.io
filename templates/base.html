@@ -613,9 +613,11 @@
     </script>
     {% endblock %}
 
-    <!-- Hero Particles Animation (loaded on non-homepage pages with .page-hero) -->
+    <!-- Hero Particles Animation. hero-particles.js targets .hero/.lp-left;
+         only .lp-left pages actually have that target, so we only load it there
+         (loading on .page-hero pages was a no-op — they have no .hero element). -->
     <script>
-      if (document.querySelector('.page-hero') || document.querySelector('.lp-left')) {
+      if (document.querySelector('.lp-left')) {
         var s = document.createElement('script');
         s.src = '{{ static }}/hero-particles.js';
         document.head.appendChild(s);

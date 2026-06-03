@@ -2,13 +2,13 @@
 title: "Hassan Kamran"
 role: "Founder & CEO"
 photo: "team-ceo.avif"
-meta_description: "Hassan Kamran — Founder & CEO of Big0 Dev. Army captain turned engineer turned published AI researcher (PLOS ONE, IEEE), MBA candidate at the Asia School of Business (MIT Sloan). Builds AI-powered software that ships."
+meta_description: "Hassan Kamran — Founder & CEO of Big0 Dev. Engineer turned army captain turned published AI researcher (PLOS ONE, IEEE), MBA candidate at the Asia School of Business (MIT Sloan). Builds AI-powered software that ships."
 linkedin: "https://www.linkedin.com/in/engr-hassan-kamran/"
 website: "https://engrhassankamran.com"
 orcid: "https://orcid.org/0009-0005-3034-1679"
 timeline:
-  - "Army Captain"
   - "NUST Engineer"
+  - "Army Captain"
   - "Published Researcher"
   - "Founder & CEO"
 badges:
@@ -97,4 +97,4 @@ education:
     period: "2014 — 2019"
 ---
 
-Army captain turned engineer turned published AI researcher. Hassan founded Big0 after watching too many startups burn cash on agencies that ship slide decks instead of software — and made it profitable within four months. He has led 50+ personnel in uniform, now runs delivery for clients across the globe, and is finishing an MBA at the Asia School of Business (in collaboration with MIT Sloan). He still writes code, reviews the architecture, talks to every client directly, and publishes peer-reviewed research in PLOS ONE and IEEE. No account managers, no handoffs.
+Engineer turned army captain turned published AI researcher. Hassan founded Big0 after watching too many startups burn cash on agencies that ship slide decks instead of software — and made it profitable within four months. He has led 50+ personnel in uniform, now runs delivery for clients across the globe, and is finishing an MBA at the Asia School of Business (in collaboration with MIT Sloan). He still writes code, reviews the architecture, talks to every client directly, and publishes peer-reviewed research in PLOS ONE and IEEE. No account managers, no handoffs.

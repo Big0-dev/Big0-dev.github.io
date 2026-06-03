@@ -31,7 +31,7 @@ experience:
       - "Delivers industry workshops on applied AI & automation; guest lectures at LUMS SDSB, SS CASE IT & STMU"
   - company: "SZABIST Islamabad"
     role: "Adjunct Faculty Member"
-    period: "Sep 2025 — Jul 2026"
+    period: "Sep 2025 — Aug 2026"
     location: "Islamabad, Pakistan"
     highlights:
       - "Teaches e-commerce strategy & digital business models to BS Accounting & Finance students"
@@ -76,7 +76,7 @@ certifications:
 education:
   - institution: "Asia School of Business (with MIT Sloan)"
     degree: "Master of Business Administration"
-    period: "Expected 2027"
+    period: "2026 — 2027"
   - institution: "SZABIST"
     degree: "Master of Project Management"
     period: "2025 — 2026"

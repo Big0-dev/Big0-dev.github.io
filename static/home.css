@@ -28,7 +28,7 @@
   flex-wrap: wrap;
 }
 .hero-h1 {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   color: var(--color-white, #fff);
@@ -146,7 +146,7 @@
   flex-wrap: wrap;
 }
 .trusted-label {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -239,7 +239,7 @@
   font-size: 11px;
 }
 .case-title {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 16px;
   font-weight: 700;
   color: var(--color-white, #fff);
@@ -270,7 +270,7 @@
   border-top: 1px solid var(--color-steel, #334155);
 }
 .case-stat-val {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 12px;
   font-weight: 600;
   color: var(--color-cyan, #06B6D4);
@@ -278,71 +278,13 @@
 
 /* --- Capabilities Grid --- */
 /* 2-col grid: works for 3 services */
-.capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.capability-card {
-  background: var(--color-slate, #1E293B);
-  border: 1px solid var(--color-steel, #334155);
-  border-radius: 12px;
-  padding: 28px;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.2s, transform 0.2s;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.capability-card:hover {
-  border-color: var(--color-signal, #0D9488);
-  transform: translateY(-2px);
-}
-.capability-hero {
-  grid-column: span 1;
-}
-.capability-proven {
-  grid-column: span 1;
-}
-
-.capability-icon {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  background: var(--signal-12);
-  border: 1px solid var(--signal-20);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-signal, #0D9488);
-}
-.capability-icon svg {
-  width: 24px;
-  height: 24px;
-}
-.capability-content h3 {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--color-white, #fff);
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-.capability-content p {
-  font-size: 14px;
-  color: var(--color-mist, #94A3B8);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
 .capability-features {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 .capability-feature {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 11px;
   font-weight: 500;
   color: var(--color-cloud, #F1F5F9);
@@ -365,7 +307,7 @@
   padding: 24px;
 }
 .process-num {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 32px;
   font-weight: 700;
   color: var(--color-signal, #0D9488);
@@ -373,7 +315,7 @@
   line-height: 1;
 }
 .process-step h3 {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 16px;
   font-weight: 700;
   color: var(--color-white, #fff);
@@ -386,7 +328,7 @@
   margin-bottom: 16px;
 }
 .process-time {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 11px;
   font-weight: 600;
   color: var(--color-cyan, #06B6D4);
@@ -423,7 +365,7 @@
   height: 22px;
 }
 .diff-card h3 {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 16px;
   font-weight: 700;
   color: var(--color-white, #fff);
@@ -435,18 +377,8 @@
   line-height: 1.6;
   margin-bottom: 12px;
 }
-.diff-evidence {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
 
 /* --- Founders Grid --- */
-.founders-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
 .founder-section {
   background: var(--color-slate, #1E293B);
   border: 1px solid var(--color-steel, #334155);
@@ -465,19 +397,11 @@
 .founder-section-horizontal .founder-photo-container {
   margin-bottom: 0;
 }
-.founder-photo {
-  width: 100%;
-  max-width: 140px;
-  height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--color-steel, #334155);
-  object-fit: cover;
-}
 .founder-info {
   /* text content area */
 }
 .founder-name {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 18px;
   font-weight: 700;
   color: var(--color-white, #fff);
@@ -496,7 +420,7 @@
   margin-bottom: 12px;
 }
 .timeline-tag {
-  font-family: var(--font-display, 'Exo 2', sans-serif);
+  font-family: var(--font-display, "Exo 2", sans-serif);
   font-size: 10px;
   font-weight: 600;
   color: var(--color-cloud, #F1F5F9);
@@ -549,21 +473,11 @@
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-  .capabilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .capability-hero,
-  .capability-proven {
-    grid-column: span 1;
-  }
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .differentiators-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .founders-grid {
-    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 768px) {
@@ -613,18 +527,12 @@
     display: flex;
   }
   .featured-work-grid,
-  .capabilities-grid,
   .differentiators-grid,
-  .process-grid,
-  .founders-grid {
+  .process-grid{
     grid-template-columns: 1fr;
   }
   .founder-section-horizontal {
     flex-direction: column;
-  }
-  .capability-hero,
-  .capability-proven {
-    grid-column: span 1;
   }
   .hero-scroll-hint {
     display: none;

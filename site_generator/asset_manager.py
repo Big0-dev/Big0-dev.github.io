@@ -168,9 +168,10 @@ class AssetManager:
 
         os.makedirs(dest_dir, exist_ok=True)
 
-        # Copy gallery images and metadata
+        # Copy gallery images only — metadata.json is a build-time source file
+        # (titles/captions are baked into the rendered HTML), so it isn't served.
         for item in os.listdir(gallery_dir):
-            if item.endswith(('.avif', '.jpg', '.jpeg', '.png', '.webp', '.json')):
+            if item.endswith(tuple(self._IMAGE_EXTENSIONS)):
                 src_path = os.path.join(gallery_dir, item)
                 dest_path = os.path.join(dest_dir, item)
 

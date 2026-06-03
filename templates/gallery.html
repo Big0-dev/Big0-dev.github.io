@@ -267,6 +267,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
       }
     });
+
+    // Click on the dark backdrop (outside the image, details, and controls)
+    // closes the lightbox — popover="manual" doesn't light-dismiss on its own.
+    lightbox.addEventListener('click', function(event) {
+      if (!event.target.closest('.lightbox-inner') &&
+          !event.target.closest('.lightbox-nav') &&
+          !event.target.closest('.lightbox-close')) {
+        lightbox.hidePopover();
+      }
+    });
   });
 });
 </script>

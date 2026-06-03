@@ -4,7 +4,6 @@ Static Site Generator
 Generates website from templates and content files based on site_config.yaml
 """
 
-import os
 import re
 import yaml
 import logging
@@ -117,10 +116,7 @@ class SiteGenerator:
             self._copy_assets()
             self._generate_pages()
             self._generate_seo_artifacts()
-            if os.environ.get('OPTIMIZE_OUTPUT', 'true').strip().lower() not in ('false', '0', 'no'):
-                self.asset_manager.optimize_output()
-            else:
-                logger.info("Skipping output optimization (OPTIMIZE_OUTPUT=false)")
+            self.asset_manager.optimize_output()
             logger.info("Website generation complete!")
 
         except Exception as e:

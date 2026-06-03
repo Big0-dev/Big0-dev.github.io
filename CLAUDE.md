@@ -72,9 +72,6 @@ python generate.py
 
 # Preview locally
 cd build && python -m http.server 8000
-
-# Build with optimization disabled (faster for dev)
-OPTIMIZE_OUTPUT=false uv run python generate.py
 ```
 
 ## Content Workflow

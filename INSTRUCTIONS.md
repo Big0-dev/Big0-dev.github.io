@@ -38,11 +38,6 @@ cd build && python -m http.server 8000
 # Open http://localhost:8000
 ```
 
-### Quick build (skip minification during development):
-```bash
-OPTIMIZE_OUTPUT=false uv run python generate.py
-```
-
 ---
 
 ## 3. Project Map

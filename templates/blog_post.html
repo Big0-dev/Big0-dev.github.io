@@ -4,6 +4,12 @@
 {% block meta_description %}{{ current_blog.meta_description }}{% endblock %}
 {% block canonical_path %}/blogs/{{ current_blog.slug }}.html{% endblock %}
 
+{% block og_type %}article{% endblock %}
+{% block og_image %}{% if current_blog.frontmatter.image_url %}{{ domain }}/static/{{ current_blog.frontmatter.image_url }}{% else %}{{ super() }}{% endif %}{% endblock %}
+{% block og_image_w %}1200{% endblock %}
+{% block og_image_h %}630{% endblock %}
+{% block twitter_card %}summary_large_image{% endblock %}
+
 {% block custom_css %}
 <link rel="stylesheet" href="{{ static }}/detail-pages.css">
 {% endblock %}

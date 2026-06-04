@@ -8,6 +8,7 @@ Handles all asset operations including:
 - Output minification (HTML, CSS, JS)
 """
 
+import hashlib
 import os
 import re
 import shutil
@@ -309,32 +310,23 @@ class AssetManager:
         }
 
     def optimize_output(self, directory: Optional[str] = None) -> None:
-        """Minify all HTML, CSS, and JS files in the build output.
+        """Minify HTML, CSS, and JS, then fingerprint asset references.
 
         Uses minify-html for HTML (single-pass Rust minifier that also handles
         inline JS and CSS), rcssmin for standalone CSS, and rjsmin for
         standalone JS (already-minified *.min.js files are skipped).
+
+        After minifying, every local CSS/JS reference in the HTML gets a
+        content-hash cache-buster appended (e.g. ``components.css?v=a1b2c3d4``)
+        so returning visitors always receive the latest assets after a deploy
+        instead of a stale cached copy.
         """
         target_dir = Path(directory or self.output_dir)
         html_saved = css_saved = js_saved = 0
         html_count = css_count = js_count = 0
-
-        for html_file in target_dir.rglob('*.html'):
-            original = html_file.read_bytes()
-            try:
-                minified = minify_html.minify(
-                    original.decode('utf-8'),
-                    minify_js=True,
-                    minify_css=True,
-                    remove_processing_instructions=True,
-                ).encode('utf-8')
-                html_file.write_bytes(minified)
-                html_saved += len(original) - len(minified)
-                html_count += 1
-            except Exception as e:
-                logger.warning(f"Skipped minification for {html_file.name}: {e}")
-
         static_dir = target_dir / 'static'
+
+        # 1) Minify standalone CSS/JS first so fingerprints reflect served bytes.
         if static_dir.exists():
             for css_file in static_dir.rglob('*.css'):
                 original = css_file.read_bytes()
@@ -358,6 +350,40 @@ class AssetManager:
                 except Exception as e:
                     logger.warning(f"Skipped JS minification for {js_file.name}: {e}")
 
+        # 2) Fingerprint every served CSS/JS asset by content hash.
+        asset_versions = {}
+        if static_dir.exists():
+            for asset in static_dir.rglob('*'):
+                if asset.is_file() and asset.suffix in ('.css', '.js'):
+                    asset_versions[asset.name] = hashlib.sha1(asset.read_bytes()).hexdigest()[:8]
+
+        # Matches static CSS/JS refs (any path depth), skipping already-stamped ones.
+        ref_pattern = re.compile(r'((?:\.\./)*static/([\w.@-]+\.(?:css|js)))\b(?!\?)')
+
+        def _bust(match):
+            version = asset_versions.get(match.group(2))
+            return f"{match.group(1)}?v={version}" if version else match.group(0)
+
+        # 3) Minify HTML and stamp asset references with their content hash.
+        for html_file in target_dir.rglob('*.html'):
+            original = html_file.read_bytes()
+            try:
+                minified = minify_html.minify(
+                    original.decode('utf-8'),
+                    minify_js=True,
+                    minify_css=True,
+                    remove_processing_instructions=True,
+                )
+                stamped = ref_pattern.sub(_bust, minified).encode('utf-8')
+                html_file.write_bytes(stamped)
+                html_saved += len(original) - len(stamped)
+                html_count += 1
+            except Exception as e:
+                logger.warning(f"Skipped minification for {html_file.name}: {e}")
+
         total_kb = (html_saved + css_saved + js_saved) / 1024
-        logger.info(f"Minified {html_count} HTML + {css_count} CSS + {js_count} JS files (saved {total_kb:.1f} KB)")
+        logger.info(
+            f"Minified {html_count} HTML + {css_count} CSS + {js_count} JS files "
+            f"(saved {total_kb:.1f} KB); fingerprinted {len(asset_versions)} assets"
+        )
 

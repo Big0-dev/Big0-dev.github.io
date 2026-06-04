@@ -95,6 +95,12 @@ education:
   - institution: "National University of Sciences and Technology"
     degree: "BE Mechatronics Engineering"
     period: "2014 — 2019"
+  - institution: "St Mary's Academy"
+    degree: "A Levels (Sciences)"
+    period: "2012 — 2014"
+  - institution: "Beaconhouse School System"
+    degree: "O Levels (Sciences)"
+    period: "2010 — 2012"
 ---
 
 Engineer turned army captain turned published AI researcher. Hassan founded Big0 after watching too many startups burn cash on agencies that ship slide decks instead of software — and made it profitable within four months. He has led 50+ personnel in uniform, now runs delivery for clients across the globe, and holds an MBA from the Asia School of Business (in collaboration with MIT Sloan). He still writes code, reviews the architecture, talks to every client directly, and publishes peer-reviewed research in PLOS ONE and IEEE. No account managers, no handoffs.

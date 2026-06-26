@@ -199,6 +199,17 @@
    ============================================================================= */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Paint the root element + declare the page as dark so the browser's canvas,
+   overscroll "rubber-band" area, and scrollbars all use the void color.
+   Without this, Chrome (esp. Incognito / dark OS) shows a browser-themed bar
+   in the overscroll gap instead of the site background.
+   overscroll-behavior-y stops the rubber-band bounce so the page just fits. */
+html {
+  color-scheme: dark;
+  background-color: var(--color-void);
+  overscroll-behavior-y: none;
+}
+
 body {
   background-color: var(--color-void);
   color: var(--color-cloud);

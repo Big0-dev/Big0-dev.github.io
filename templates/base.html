@@ -83,6 +83,12 @@
       @media(max-width:768px){body{padding-top:64px}.navbar{height:64px}.hamburger-btn{display:flex}.nav-menu,.nav-actions .nav-cta,.nav-actions .nav-search-btn,.hide-mobile{display:none!important}.hide-desktop{display:flex}.nav-logo-svg{display:none}.nav-logo-mark-svg{display:block}}
     </style>
     
+    <!-- Preload above-the-fold fonts so the hero lays out in the real font from
+         first paint — prevents the font-swap reflow that Chrome otherwise only
+         corrects on a window resize. -->
+    <link rel="preload" href="{{ static }}/Exo2-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ static }}/DMSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Load CSS with media attribute for non-critical styles -->
     <link rel="stylesheet" href="{{ static }}/design-system.css" />
     <link rel="stylesheet" href="{{ static }}/base.css" />

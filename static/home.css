@@ -4,14 +4,28 @@
    ============================================================================= */
 
 /* --- Hero Section --- */
+/* First screen = hero + trusted strip, filling exactly one viewport.
+   Hero grows to absorb leftover height so the trusted strip pins to the
+   bottom of the fold — no empty void band peeks below it on tall windows. */
+.hero-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .hero {
   position: relative;
-  min-height: 90vh;
+  flex: 1 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   padding: 120px 0 80px;
+}
+@media (max-width: 768px) {
+  /* Phones: hero flows naturally (no forced 100vh fill) so the trusted
+     logos aren't pushed off-screen and the hero isn't over-stretched. */
+  .hero-screen { display: block; min-height: 0; }
+  .hero { min-height: 90vh; }
 }
 .hero-inner {
   position: relative;
